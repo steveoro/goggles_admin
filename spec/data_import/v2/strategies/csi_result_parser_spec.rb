@@ -8,7 +8,7 @@ require_relative '../../../../app/data_import/v2/strategies/csi_result_parser'
 
 
 describe CsiResultParser, type: :strategy do
-  let(:fixture_filename) { File.join(Rails.root, 'test/fixtures/samples/ris20150201csiprova2.csv') }
+  let(:fixture_filename) { File.join(Rails.root, 'spec/fixtures/ris/ris20150201csiprova2.csv') }
 
   context "as a valid instance," do
     subject { CsiResultParser.new( fixture_filename ) }

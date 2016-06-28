@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 require_relative '../../../data_import/v3/builders/swimmer_builder'
-require_relative '../../../strategies/sql_converter'
+#require_relative '../../../strategies/sql_converter'
 
 
 =begin

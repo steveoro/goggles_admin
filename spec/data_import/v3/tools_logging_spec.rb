@@ -3,7 +3,7 @@ require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
 require_relative '../../../app/data_import/v3/tools_logging'
-require_relative '../../../lib/framework/string_logger'
+#require_relative '../../../lib/framework/string_logger'
 
 
 describe Tools::Logging::V3, type: :model do

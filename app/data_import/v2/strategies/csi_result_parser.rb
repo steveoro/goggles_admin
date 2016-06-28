@@ -25,7 +25,7 @@ require_relative '../../../data_import/v2/services/data_import_swimmer_builder'
 require_relative '../../../data_import/v2/services/data_import_team_builder'
 require_relative '../../../data_import/v2/services/data_import_time_standard_builder'
 
-require_relative '../../../strategies/sql_converter'
+#require_relative '../../../strategies/sql_converter'
                                                     # The following applies only to Ruby <= 1.9.2
 require 'iconv' unless String.method_defined?( :encode )
 

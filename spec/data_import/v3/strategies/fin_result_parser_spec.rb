@@ -16,7 +16,7 @@ describe V3::FinResultParser, type: :strategy do
   context "as a stand-alone class," do
     subject do
       V3::FinResultParser.new(
-        File.join(Rails.root, 'test/fixtures/samples/fixture0-nodata-sample.txt'),
+        File.join(Rails.root, 'spec/fixtures/samples/fixture0-nodata-sample.txt'),
         V3::FinResultDefs.new
       )
     end

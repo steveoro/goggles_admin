@@ -13,7 +13,7 @@ describe "FinResultParser parsing fixture file sta20140308firenze,", type: :inte
     @result_hash = V2::FinResultParser.parse_txt_file(
       File.join(
         Rails.root,
-        'test/fixtures/samples/sta20140308firenze-sample.txt'
+        'spec/fixtures/sta/sta20140308firenze-sample.txt'
       )
     )
   end

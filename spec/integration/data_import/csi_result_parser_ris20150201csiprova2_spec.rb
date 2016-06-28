@@ -9,7 +9,7 @@ describe "CsiResultParser parsing fixture ris20150201csiprova2.csv,", type: :int
   # We need to parse the fixture file just once to speed-up tests:
   before( :all ) do
     @csi_importer = CsiResultParser.new(
-      File.join(Rails.root, 'test/fixtures/samples/ris20150201csiprova2.csv'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20150201csiprova2.csv'),
     )
 # DEBUG
 #    puts "\r\n" << @csi_importer.process_text_log

@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require_relative '../../../strategies/sql_converter'
+#require_relative '../../../strategies/sql_converter'
 
 
 =begin

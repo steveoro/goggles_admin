@@ -16,7 +16,7 @@ describe DataImporter, type: :integration do
 
     context "after successful completion, w/ FORCE meeting & team creation ENABLED," do
       # before(:all) do
-        # file_name = File.join(Rails.root, 'test/fixtures/samples/ris20131110bologna-sample.txt')
+        # file_name = File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-sample.txt')
         # @phase_1_session = create(
           # :data_import_session,
           # file_name: file_name,

@@ -16,22 +16,22 @@ describe V2::ParseResultConverter, type: :strategy do
   before(:all) do
     # Since parsing takes some time, a single random sample will suffice:
     random_sample_filename = [
-      File.join(Rails.root, 'test/fixtures/samples/ris20081221mussi-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/ris20091213livorno-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/ris20101212livorno-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/ris20101219mussi-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/ris20130513pontedera-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/ris20131117poggibonsi-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/ris20140330lucca-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20081221mussi-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20091213livorno-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20101212livorno-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20101219mussi-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20130513pontedera-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20131117poggibonsi-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20140330lucca-sample.txt'),
 
-      File.join(Rails.root, 'test/fixtures/samples/sta20121027verolanuova.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/sta20131102osimo.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/sta20131103specliguria.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/sta20131116albenga.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/sta20131117poggibonsi-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/sta20140208regtoscana-sample.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/sta20140216regabruzzo.txt'),
-      File.join(Rails.root, 'test/fixtures/samples/sta20140308firenze-sample.txt')
+      File.join(Rails.root, 'spec/fixtures/sta/sta20121027verolanuova.txt'),
+      File.join(Rails.root, 'spec/fixtures/sta/sta20131102osimo.txt'),
+      File.join(Rails.root, 'spec/fixtures/sta/sta20131103specliguria.txt'),
+      File.join(Rails.root, 'spec/fixtures/sta/sta20131116albenga.txt'),
+      File.join(Rails.root, 'spec/fixtures/sta/sta20131117poggibonsi-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/sta/sta20140208regtoscana-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/sta/sta20140216regabruzzo.txt'),
+      File.join(Rails.root, 'spec/fixtures/sta/sta20140308firenze-sample.txt')
     ].sort{ rand - 0.5 }[0]
     source_parsing_defs = V2::Fin2ResultDefs.new
     result_hash = V2::FinResultParser.parse_txt_file(

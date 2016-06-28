@@ -10,7 +10,7 @@ describe Admin::V3::DataImportController, :type => :controller do
 #    @admin = Admin.first
 #  end
 
-  let( :fixture_file ) { "./test/fixtures/samples/fixture1-ris20120414molinella-sample.txt" }
+  let( :fixture_file ) { "./spec/fixtures/samples/fixture1-ris20120414molinella-sample.txt" }
 
 
   describe '[GET #index]' do

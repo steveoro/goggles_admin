@@ -10,7 +10,7 @@
 class NewsletterMailer < ActionMailer::Base
 
   # Hostname shown as mail sender domain (ENV['HOSTNAME'] is not good, because it uses the local IP)
-  HOSTNAME = Goggles::Application.config.action_mailer.default_url_options[:host]
+  HOSTNAME = ::GogglesAdmin::Application.config.action_mailer.default_url_options[:host]
 
   # Internal Mailer address for the "From" field of the e-mails. Usually something like "no-reply@fasar.software.it"
   #

@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 require_relative '../../../data_import/v2/services/data_import_entity_committer'
-require_relative '../../../strategies/sql_converter'
+#require_relative '../../../strategies/sql_converter'
 
 
 =begin

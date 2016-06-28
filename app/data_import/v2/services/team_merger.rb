@@ -1,8 +1,8 @@
 # encoding: utf-8
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../strategies/sql_converter'
-require_relative '../../../strategies/entity_row_dup_collector'
+#require_relative '../../../strategies/sql_converter'
+#require_relative '../../../strategies/entity_row_dup_collector'
 
 
 module V2

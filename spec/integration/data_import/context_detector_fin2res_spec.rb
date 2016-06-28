@@ -2,7 +2,7 @@
 require 'spec_helper'
 
 require 'common/encoding_tools'
-require 'framework/console_logger'
+#require 'framework/console_logger'
 require_relative './context_detector_checks_for_parsing'
 
 

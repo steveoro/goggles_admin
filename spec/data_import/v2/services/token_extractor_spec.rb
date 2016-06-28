@@ -3,7 +3,7 @@ require 'spec_helper'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
 require_relative '../../../../app/data_import/v2/services/token_extractor'
-require_relative '../../../../lib/framework/console_logger'
+#require_relative '../../../../lib/framework/console_logger'
 require_relative '../../../../app/data_import/v2/fin_result_consts'
 
 

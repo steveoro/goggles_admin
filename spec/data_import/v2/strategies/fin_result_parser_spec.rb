@@ -25,7 +25,7 @@ describe V2::FinResultParser, type: :strategy do
     describe "#parse_txt_file" do
       before(:all) do
         @result_hash = V2::FinResultParser.parse_txt_file(
-          File.join(Rails.root, 'test/fixtures/samples/fixture0-nodata-sample.txt'),
+          File.join(Rails.root, 'spec/fixtures/samples/fixture0-nodata-sample.txt'),
           nil,
           V2::FinResultDefs.new
         )

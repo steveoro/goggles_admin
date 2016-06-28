@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../strategies/fuzzy_string_matcher'
+#require_relative '../../../strategies/fuzzy_string_matcher'
 require_relative '../../../data_import/v3/dao/swimmer_analysis_report_dao'
 
 

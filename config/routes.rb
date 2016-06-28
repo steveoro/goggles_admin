@@ -1,4 +1,6 @@
 GogglesAdmin::Application.routes.draw do
+  mount RailsAdmin::Engine => '/dashboard', :as => 'rails_admin'
+
   devise_for :admins
 
   mount RailsAdmin::Engine => '/goggles_dashboard', as: 'rails_admin' # Feel free to change '/admin' to any namespace you need.

@@ -26,7 +26,7 @@
 
 
 rspec_options = {
-  results_file: 'tmp/guard_rspec_results.txt', # This option must match the path in custom_plan.rb
+  results_file: Dir.pwd + "/tmp/guard_rspec_results.txt", # This option must match the path in engine_plan.rb
   # Run any spec using zeus as a pre-loader, excluding profiling/performance specs:
   cmd: "zeus rspec --color -f progress -t ~type:performance",
   all_after_pass: false,

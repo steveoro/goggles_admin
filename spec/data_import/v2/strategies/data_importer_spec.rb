@@ -277,7 +277,7 @@ describe DataImporter, type: :strategy do
       # Let's create a shared "subject" instance variable with a session
       # associated:
       before( :all ) do
-        file_name = File.join(Rails.root, 'test/fixtures/samples/ris20131110bologna-fake.txt')
+        file_name = File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-fake.txt')
         @phase_1_session = create(
           :data_import_session,
           file_name: file_name,
@@ -368,7 +368,7 @@ describe DataImporter, type: :strategy do
     describe "#phase_1_2_serialize" do
       context "when invoked not in the right sequence" do
         before( :all ) do
-          file_name = File.join(Rails.root, 'test/fixtures/samples/ris20131110bologna-fake.txt')
+          file_name = File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-fake.txt')
           @phase_1_session = create(
             :data_import_session,
             file_name: file_name,
@@ -396,7 +396,7 @@ describe DataImporter, type: :strategy do
 
       context "after a successful completion, w/ force meeting & team creation DISABLED (Team-Analysis required)," do
         before( :all ) do
-          file_name = File.join(Rails.root, 'test/fixtures/samples/ris20131110bologna-fake.txt')
+          file_name = File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-fake.txt')
           @phase_1_session = create(
             :data_import_session,
             file_name: file_name,
@@ -441,7 +441,7 @@ describe DataImporter, type: :strategy do
 
       context "after successful completion, w/ FORCE meeting & team creation ENABLED," do
         before(:all) do
-          file_name = File.join(Rails.root, 'test/fixtures/samples/ris20131110bologna-fake.txt')
+          file_name = File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-fake.txt')
           @phase_1_session = create(
             :data_import_session,
             file_name: file_name,
@@ -611,7 +611,7 @@ describe DataImporter, type: :strategy do
     describe "#phase_3_commit" do
       context "when invoked not in the right sequence" do
         before( :all ) do
-          file_name = File.join(Rails.root, 'test/fixtures/samples/ris20131110bologna-fake.txt')
+          file_name = File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-fake.txt')
           @phase_1_session = create(
             :data_import_session,
             file_name: file_name,

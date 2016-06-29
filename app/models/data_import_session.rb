@@ -17,4 +17,8 @@ class DataImportSession < ActiveRecord::Base
   validates_associated :season
 
   belongs_to :admin, foreign_key: 'user_id'
+
+  attr_accessible :phase, :file_format, :file_name, :source_data, :admin,
+                  :total_data_rows, :season_id, :phase_1_log, :phase_2_log, :phase_3_log,
+                  :sql_diff, :user_id
 end

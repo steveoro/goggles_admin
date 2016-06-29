@@ -31,6 +31,12 @@ class DataImportMeetingSession < ActiveRecord::Base
   validates_presence_of :description
   validates_length_of :description, maximum: 100, allow_nil: false
 
+  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+                  :user, :user_id,
+                  :session_order, :scheduled_date, :warm_up_time, :begin_time,
+                  :notes,
+                  :data_import_meeting_id, :meeting_id, :swimming_pool_id, :description,
+                  :day_part_type_id
 
   scope :sort_by_user,          ->(dir) { order("users.name #{dir.to_s}, data_import_meeting_sessions.scheduled_date #{dir.to_s}") }
   scope :sort_by_meeting,       ->(dir) { order("meetings.description #{dir.to_s}, data_import_meeting_sessions.session_order #{dir.to_s}") }

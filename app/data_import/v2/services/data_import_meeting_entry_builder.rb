@@ -44,12 +44,12 @@ class V2::DataImportMeetingEntryBuilder < V2::DataImportEntityBuilder
     raise ArgumentError.new("'gender_type' must be a valid instance of GenderType!")     unless gender_type.instance_of?(GenderType)
     raise ArgumentError.new("'category_type' must be a valid instance of CategoryType!") unless category_type.instance_of?(CategoryType)
 # DEBUG
-#    puts "\r\n========================================================================================================================="
-#    puts "MENTRY - build_from_parameters: data_import_session ID: #{data_import_session.id}"
-#    puts "- parsed detail_row: #{detail_row.inspect}"
-#    puts "- gender_type: #{gender_type.inspect}"
-#    puts "- category_type: #{category_type.inspect}"
-#    puts "- MPRG: #{meeting_program.inspect}"
+    puts "\r\n========================================================================================================================="
+    puts "MENTRY - build_from_parameters: data_import_session ID: #{data_import_session.id}"
+    puts "- parsed detail_row: #{detail_row.inspect}"
+    puts "- gender_type: #{gender_type.inspect}"
+    puts "- category_type: #{category_type.inspect}"
+    puts "- MPRG: #{meeting_program.inspect}"
 
     self.build( data_import_session ) do
       entity  MeetingEntry

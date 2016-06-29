@@ -37,6 +37,15 @@ class DataImportMeetingTeamScore < ActiveRecord::Base
   validates_numericality_of :season_relay_points
   validates_numericality_of :season_team_points
 
+  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+                  :user, :user_id,
+                  :sum_individual_points, :sum_relay_points, :sum_team_points,
+                  :data_import_team_id, :data_import_meeting_id,
+                  :team_id, :meeting_id, :season_id, :team_affiliation_id,
+                  :rank,
+                  :meeting_individual_points, :meeting_relay_points, :meeting_team_points,
+                  :season_individual_points, :season_relay_points, :season_team_points,
+
 
   # ----------------------------------------------------------------------------
   # Base methods:

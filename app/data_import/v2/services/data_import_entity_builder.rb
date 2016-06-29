@@ -346,15 +346,15 @@ class V2::DataImportEntityBuilder
       end
     rescue
 # DEBUG
-#      puts "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
-#      puts "#{ $!.to_s }\r\n" if $!
+      puts "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
+      puts "#{ $!.to_s }\r\n" if $!
       @data_import_session.phase_2_log << "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
       @data_import_session.phase_2_log << "#{ $!.to_s }\r\n" if $!
     else
       if @result_row
         @result_id = @result_row.id
 # DEBUG
-#        puts "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
+        puts "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
         @data_import_session.phase_2_log << "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
 
         # Log the SQL diff statement only if the creation entity is not actually a

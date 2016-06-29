@@ -129,7 +129,7 @@ describe V2::DataImportCityBuilder, type: :integration do
     end
 
     describe "#result_row" do
-      it "returns a primary entity instance when the process is successful" do
+      it "returns a secondary entity instance when the process is successful" do
         expect( subject.result_row ).to be_an_instance_of( DataImportCity )
       end
     end

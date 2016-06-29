@@ -69,7 +69,7 @@ class V2::DataImportSwimmerBuilder < V2::DataImportEntityBuilder
                                   category_type, force_team_or_swimmer_creation )
     raise ArgumentError.new("'gender_type' must be a valid instance of GenderType!") unless gender_type.instance_of?(GenderType)
 # DEBUG
-#    puts "\r\nSwimmer -- build_from_parameters: data_import_session ID: #{data_import_session.id}, swimmer_name: #{swimmer_name}, swimmer_year: #{swimmer_year}, gender_type_id: #{gender_type.id}"
+    puts "\r\nSwimmer -- build_from_parameters: data_import_session ID: #{data_import_session.id}, swimmer_name: #{swimmer_name}, swimmer_year: #{swimmer_year}, gender_type_id: #{gender_type.id}"
     self.build( data_import_session ) do
       entity      Swimmer
 
@@ -93,7 +93,7 @@ class V2::DataImportSwimmerBuilder < V2::DataImportEntityBuilder
           swimmer_year = category_type.season.begin_date.year - category_type.age_end
           @max_year    = category_type.season.end_date.year - category_type.age_begin
 # DEBUG
-#          puts "=> swimmer_year guessed! Range: #{swimmer_year}..#{@max_year}, setting default (for creation, in case search fails) as min."
+          puts "=> swimmer_year guessed! Range: #{swimmer_year}..#{@max_year}, setting default (for creation, in case search fails) as min."
           primary   [
             "(year_of_birth > ?) AND (year_of_birth < ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)",
             swimmer_year-1, @max_year+1, gender_type.id, @complete_name+'%'
@@ -104,7 +104,7 @@ class V2::DataImportSwimmerBuilder < V2::DataImportEntityBuilder
           ]
         else
 # DEBUG
-#          puts "Search params: '#{@complete_name}', #{swimmer_year}, gender: #{gender_type.id})"
+          puts "Search params: '#{@complete_name}', #{swimmer_year}, gender: #{gender_type.id})"
           @max_year = nil
           primary   [
             "(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)",
@@ -117,8 +117,8 @@ class V2::DataImportSwimmerBuilder < V2::DataImportEntityBuilder
         end
         default_search
 # DEBUG
-#        puts "primary_search_ok!"   if primary_search_ok?
-#        puts "secondary_search_ok!" if secondary_search_ok?
+        puts "primary_search_ok!"   if primary_search_ok?
+        puts "secondary_search_ok!" if secondary_search_ok?
       end
                                                   # 2) Search for a Swimmer ALIAS:
       if_not_found  do
@@ -134,7 +134,7 @@ class V2::DataImportSwimmerBuilder < V2::DataImportEntityBuilder
         unless force_team_or_swimmer_creation
           prefilter = @complete_name.split(/\s/)
 # DEBUG
-#          puts "Search failed: analyzing name (prefilter: #{prefilter.inspect}, gender: #{gender_type.id})..."
+          puts "Search failed: analyzing name (prefilter: #{prefilter.inspect}, gender: #{gender_type.id})..."
 
           # Not found & can't create a new row? => Do a full depth-first analyze of
           # the swimmer name in search for a match and report the results via the builder
@@ -148,7 +148,7 @@ class V2::DataImportSwimmerBuilder < V2::DataImportEntityBuilder
             "(complete_name LIKE \"%#{prefilter.first}%\" OR complete_name LIKE \"%#{prefilter.last}%\")"
           ).reload
 # DEBUG
-#          analyzer.swimmers.each{ |row| puts "\r\n- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
+          analyzer.swimmers.each{ |row| puts "\r\n- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
           result = analyzer.analyze(
               @complete_name,
               swimmer_year,
@@ -194,7 +194,9 @@ class V2::DataImportSwimmerBuilder < V2::DataImportEntityBuilder
         # If we are authorized to create a brand new entity row, we'll do it now:
         if force_team_or_swimmer_creation
 # DEBUG
-#          puts "Search failed: preparing add_new..."
+          puts "Search failed: preparing add_new..."
+          puts "Attributes for creation:\r\n- '#{@first_name} #{@last_name}' (#{@complete_name})\r\n" <<
+               "- year: #{swimmer_year}/#{@max_year}\r\n- gender id: #{gender_type.id}"
           attributes_for_creation(
             data_import_session_id: data_import_session.id,
             # [Steve] By splitting the import_text with can detect later if the

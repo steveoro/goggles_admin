@@ -7,5 +7,6 @@
   %ul
     - @meeting_array.each do |meeting|
       %li
-        = link_to( meeting.description, meeting_show_full_path( id: meeting.id ) )
+        / Quick hack to avoid having a useless route helper defined inside Admin app:
+        = link_to( meeting.description, "/meeting/show_full/#{ meeting.id }" )
         = " (#{ meeting.header_year })"

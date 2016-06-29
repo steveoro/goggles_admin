@@ -42,5 +42,12 @@ class DataImportMeetingRelaySwimmer < ActiveRecord::Base
   validates_presence_of     :relay_order
   validates_length_of       :relay_order, within: 1..3, allow_nil: false
   validates_numericality_of :relay_order
+
+  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+                  :user, :user_id,
+                  :reaction_time, :minutes, :seconds, :hundreds, :relay_order,
+                  :data_import_swimmer_id, :data_import_team_id, :data_import_badge_id,
+                  :swimmer_id, :team_id, :badge_id,
+                  :stroke_type_id, :meeting_relay_result_id, :data_import_meeting_relay_result_id
   #-- --------------------------------------------------------------------------
 end

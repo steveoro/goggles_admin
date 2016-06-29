@@ -24,7 +24,14 @@ class DataImportBadge < ActiveRecord::Base
   validates_associated :category_type
   validates_associated :entry_time_type
 
-  validates_presence_of :number, length: { maximum: 40 }, allow_nil: true 
+  validates_presence_of :number, length: { maximum: 40 }, allow_nil: true
+
+  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+                  :user, :user_id,
+                  :data_import_swimmer_id, :data_import_team_id, :data_import_season_id,
+                  :number,
+                  :swimmer_id, :team_id, :season_id, :category_type_id,
+                  :entry_time_type_id, :team_affiliation_id
 
   scope :sort_by_conflicting_rows_id,     ->(dir) { order("conflicting_id #{dir.to_s}") }
   scope :sort_by_user,                    ->(dir) { order("users.name #{dir.to_s}, data_import_badges.number #{dir.to_s}") }

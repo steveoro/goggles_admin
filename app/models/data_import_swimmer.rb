@@ -20,6 +20,11 @@ class DataImportSwimmer < ActiveRecord::Base
   validates_presence_of :year_of_birth
   validates_length_of   :year_of_birth, within: 2..4, allow_nil: false
 
+  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+                  :user, :user_id,
+                  :gender_type, :gender_type_id, :complete_name, :last_name, :first_name,
+                  :year_of_birth
+
   scope :sort_by_conflicting_rows_id,  ->(dir) { order("conflicting_id #{dir.to_s}") }
   scope :sort_by_user,                 ->(dir) { order("users.name #{dir.to_s}, data_import_swimmers.name #{dir.to_s}") }
   scope :sort_by_gender_type,          ->(dir) { order("gender_types.code #{dir.to_s}, data_import_swimmers.name #{dir.to_s}") }

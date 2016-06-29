@@ -7,5 +7,5 @@
 
   %ul
     - @newsfeed_array.each do |feed|
-      %li= render( partial: 'goggles/news_feed_row', locals: { feed: feed } )
+      %li= render( partial: 'news_feed_row', locals: { feed: feed } )
       %br

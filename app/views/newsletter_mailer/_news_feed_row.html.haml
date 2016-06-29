@@ -1,0 +1,16 @@
+%h4.text-info= feed.title
+%p= feed.body.html_safe
+%small= "#{Format.a_datetime( feed.updated_at )}"
+%p
+  %small= "#{t('newsfeed.go_to_friend')} " if feed.is_friend_activity && feed.friend
+  - if feed.is_friend_activity && feed.friend && feed.friend.swimmer_id
+    %small= link_to(                                                            |
+      feed.friend.name,                                                         |
+      url_for(                                                                  |
+        controller: :swimmers,                                                  |
+        action:     :radio,                                                     |
+        id:         feed.friend.swimmer_id,                                     |
+        only_path:  false,                                                      |
+        host:       @host                                                       |
+      )                                                                         |
+    )                                                                           |

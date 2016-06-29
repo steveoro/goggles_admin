@@ -2,7 +2,7 @@
   .navbar-inner#goggles-inner-navbar
     %a.goggles-brand(href="#{admin_v3_maintenance_path()}")
       %span &nbsp;
-      = AGEX_APP_NAME
+      = WEB_APP_NAME
       %small.text-error
         %strong= t('admin_import.title')
     = render_navigation( context: 'admin_v3_data_import', expand_all: true, renderer: :bootstrap )

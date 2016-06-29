@@ -16,6 +16,10 @@ class DataImportCity < ActiveRecord::Base
   validates_presence_of   :area, length: { within: 1..50 }, allow_nil: false
   validates_presence_of   :country, length: { within: 1..50 }, allow_nil: false
   validates_presence_of   :country_code, length: { within: 1..10 }, allow_nil: false
+
+  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+                  :user, :user_id,
+                  :name, :zip, :area, :country, :country_code
   # ----------------------------------------------------------------------------
 
 end

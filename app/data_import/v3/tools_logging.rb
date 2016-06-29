@@ -1,5 +1,6 @@
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
 #require_relative '../../../lib/framework/string_logger'
+require 'framework/string_logger'
 
 
 =begin

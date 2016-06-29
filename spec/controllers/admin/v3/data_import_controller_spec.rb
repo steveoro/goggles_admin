@@ -61,7 +61,7 @@ describe Admin::V3::DataImportController, :type => :controller do
       context "with nil :datafile parameter," do
         it "redirects to #index" do
           post :parse_file
-          expect(response.status).to redirect_to( admin_v3_data_import_index_path(locale: :it) )
+          expect(response.status).to redirect_to( admin_v3_data_import_index_path( locale: nil ) )
         end
       end
 

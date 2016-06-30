@@ -1,12 +1,15 @@
 GogglesAdmin::Application.routes.draw do
-  mount RailsAdmin::Engine => '/dashboard', :as => 'rails_admin'
-
+  # The priority is based upon order of creation:
+  # first created -> highest priority.
   devise_for :admins
 
-  mount RailsAdmin::Engine => '/goggles_dashboard', as: 'rails_admin' # Feel free to change '/admin' to any namespace you need.
-  mount DjMon::Engine => 'goggles_dj_mon'
+  mount RailsAdmin::Engine => '/dashboard', as: 'rails_admin'
+  mount DjMon::Engine      => 'goggles_dj_mon'
 
   netzke                                            # [Steve] Netzke routes are used just by the Goggles-admin sub-app
+
+  # Root's route required by Devise:
+  root to: "admin/v2/data_import#step1_status", locale: /en|it/
 
   # === Admin Interface V2 (deprecated) / Data Import V2 & V3: ===
   namespace :admin do
@@ -79,9 +82,6 @@ GogglesAdmin::Application.routes.draw do
       end
     end
   end
-
-  # The priority is based upon order of creation:
-  # first created -> highest priority.
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

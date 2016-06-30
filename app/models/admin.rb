@@ -7,15 +7,18 @@
 
 =end
 class Admin < ActiveRecord::Base
+
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  # [Steve, 20130716] Registerable module removed as-per-config of rails_admin gem:
-  devise :database_authenticatable, :trackable, :timeoutable, :lockable,
-#         :registerable,
-         :rememberable, :validatable
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+
+  devise :database_authenticatable, :trackable, :timeoutable, :lockable
+#         :recoverable, :rememberable, :validatable
+         # [Steve, 20130716] Registerable module removed as-per-config of rails_admin gem:
+#         :registerable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :description, :password, :password_confirmation, :remember_me
+  attr_accessible :name, :email, :description, :password, :password_confirmation
 
   include Rails.application.routes.url_helpers
 

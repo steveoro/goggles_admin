@@ -12,4 +12,10 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui.min
+//= require jquery.ui.datepicker
+//= require jquery.flot.min
+//= require jquery.colorhelpers.min
+//= require jquery.jqplot.min
+//= require jqplot.meterGaugeRenderer.min
 //= require_tree .

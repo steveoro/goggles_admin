@@ -1,0 +1,95 @@
+/*
+ * This file will be loaded last in CSS application tree.
+ * Add here all the required style overrides.
+ */
+
+/* ----- Bootstrap overrides ----- */
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+    border-radius: 4px;
+    color: #555555;
+    display: inline-block;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    margin-left: 8px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 2px;
+    vertical-align: middle;
+}
+select, input[type="file"] {
+    height: 22px;
+    line-height: 20px;
+}
+
+.hero-unit {
+    height: 100px;
+    padding: 20px 30px;
+    margin-bottom: 15px;
+}
+
+.ui-autocomplete {
+	max-height: 218px;
+	max-width: 400px;
+	overflow-y: auto;
+	/* prevent horizontal scrollbar */
+	overflow-x: hidden;
+    font-size: 11px;
+}
+.ui-state-highlight {
+	height: 28px;
+	line-height: 1.2em;
+}
+.input-micro {
+    width:25px;
+}
+
+.help-block, .help-inline {
+    color: #990000;
+    font-style: italic;
+}
+
+.ui-widget .ui-widget {
+    font-size: 0.75em;
+}
+
+/* ----- jQuery Spinner styles overrides ----- */
+.ui-spinner {
+	height: 24px;
+}
+
+span.ui-spinner  {
+	float: left;
+	margin-left: 1em;
+}
+span.ui-icon-triangle-1-n {
+    background-position: -4px -16px;
+}
+span.ui-spinner .ui-icon-triangle-1-s {
+	background-position: -69px -20px;
+}
+span.ui-spinner .ui-icon {
+    position: absolute;
+    margin-top: 0px;
+    top: 0px;
+    left: 0px;
+}
+
+
+/* ----- WiceGrid styles overrides & additions ----- */
+.wice-grid td {
+    line-height: 10px;
+    font-size: 12px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+
+/* ----- Custom background coloring styles: ----- */
+.goggles-meeting-csi {
+    background: #AAEEAA;
+}
+
+.goggles-meeting-fin {
+    background: #AACCF6;
+}

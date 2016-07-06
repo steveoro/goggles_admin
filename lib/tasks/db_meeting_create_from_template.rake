@@ -140,7 +140,7 @@ DESC
   # Calculate goggle cup for given meeting individual result
   # Verify if goggle cup score already exist and calculate if request
   #
-  def calculate_goggle_cup_for_mir( goggle_cup, meeting_individual_result, recalculate, logger, diff_file )
+  def do_something()
     # Check if calculation is needed
     if not meeting_individual_result.is_disqualified and (recalculate or meeting_individual_result.goggle_cup_points == 0)
       # Calculate goggle cup points

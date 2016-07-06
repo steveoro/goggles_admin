@@ -8,9 +8,6 @@ require 'framework/version'
 require 'framework/application_constants'
 require 'framework/console_logger'
 
-require_relative '../../app/concerns/sql_convertable'
-
-
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
 
 

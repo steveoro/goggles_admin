@@ -75,7 +75,7 @@ end
 
 group :test do
   gem "zeus", require: false
-  # FIXME (Low-pri) This is required by the core engine, probably due to some wrong setting:
+  # FIXME (Low-pri) This is required by Draper inside the core engine, probably due to some wrong setting:
   gem "test-unit"
   gem "capybara"                                    # [Steve, 20140226] Used only in Feature Specs
   # The driver for browser testing may be switched back to the default (:rack_test,

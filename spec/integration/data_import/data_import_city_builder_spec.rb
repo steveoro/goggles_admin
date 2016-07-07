@@ -11,7 +11,7 @@ describe V2::DataImportCityBuilder, type: :integration do
   let(:data_import_session)     { create( :data_import_session ) }
   let(:city)                    { create( :city ) }
   let(:primary_team_name)       { "#{city.name} swimming club ASD" }
-  let(:secondary_city)          { create( :data_import_city, data_import_session: data_import_session ) }
+  let(:secondary_city)          { create( :data_import_city, name: "Fake #{ FFaker::Address.city }-#{ FFaker::Lorem.word } ", data_import_session: data_import_session ) }
   let(:secondary_team_name)     { "#{secondary_city.name} swimming club ASD" }
   let(:non_matching_team_name)  { "#{FFaker::Lorem.word.camelcase}fake#{FFaker::Lorem.word.camelcase} Club ASD" }
   #-- -------------------------------------------------------------------------

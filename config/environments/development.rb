@@ -13,9 +13,6 @@ GogglesAdmin::Application.configure do
   config.consider_all_requests_local       = true
   config.action_controller.perform_caching = false
 
-  # Don't care if the mailer can't send
-  config.action_mailer.raise_delivery_errors = false
-
   # Print deprecation notices to the Rails logger
   config.active_support.deprecation = :log
 
@@ -35,9 +32,21 @@ GogglesAdmin::Application.configure do
   # Expands the lines which load the assets
   config.assets.debug = true
 
-  # Letter opener still unused yet here:
-#  config.action_mailer.delivery_method = :letter_opener
-#  config.action_mailer.delivery_method = :test
+  config.action_mailer.perform_deliveries = true
+  # Use this to disable delivery errors, and bad email addresses will be ignored:
+  config.action_mailer.raise_delivery_errors = false
+
+  # XXX [Steve A.] WARNING: when uncommenting below both ":letter_opener" AND
+  #     ":test" as delivery method, *** KEEP IN MIND THAT EACH NEW USER CREATED
+  #     FROM THE CONSOLE OR BY THE SERVER WILL GENERATE AN OUTGOING NOTIFY EMAIL. ***
+  #
+  #     Thus, it's imperative to use either one of the two "fake" delivery methods
+  #     (by leaving them uncommented) prior of running any rake tasks that may
+  #     create lots of fake users.
+  config.action_mailer.delivery_method = :letter_opener
+  # config.action_mailer.delivery_method = :test
+  # config.action_mailer.asset_host = "http://localhost:3000"
+
 #  config.action_mailer.asset_host = "http://127.0.0.1:3000"
   config.action_mailer.default_url_options = { host: 'localhost' }
 

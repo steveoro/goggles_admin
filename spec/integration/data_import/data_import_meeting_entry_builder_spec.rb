@@ -59,7 +59,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
   # but without any existing MeetingEntries or DataImporMeetingEntries
   #
   let(:rand_meeting)          { Meeting.where( are_results_acquired: true ).sort{ rand - 0.5 }[0] }
-  let(:rand_meeting_csi)      { Meeting.joins(:season_type).where( are_results_acquired: true, 'season_types.id' => 2 ).sort{ rand - 0.5 }[0] }
+  let(:rand_meeting_csi)      { Meeting.joins(:season_type).where( are_results_acquired: true, 'season_types.id' => 2 )[0..9].sort{ rand - 0.5 }[0] }
 
   let(:season)                { rand_meeting.season }
   let(:season_csi)            { rand_meeting_csi.season }

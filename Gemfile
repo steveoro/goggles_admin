@@ -71,6 +71,7 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "ffaker"                                      # Adds dummy names & fixture generator
+  gem "letter_opener"
 end
 
 group :test do

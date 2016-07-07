@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 
 describe Admin::V3::MaintenanceController, :type => :controller do

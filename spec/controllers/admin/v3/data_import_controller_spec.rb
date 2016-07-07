@@ -1,4 +1,4 @@
-require 'spec_helper'
+require 'rails_helper'
 
 require_relative '../../../../app/controllers/admin/v3/data_import_controller'
 require_relative '../../../../app/data_import/v3/dao/parse_result'

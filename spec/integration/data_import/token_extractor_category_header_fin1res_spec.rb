@@ -1,5 +1,5 @@
 # encoding: utf-8
-require 'spec_helper'
+require 'rails_helper'
 
 #require 'framework/console_logger'
 #require_relative '../../../data_import/v2/services/context_detector'

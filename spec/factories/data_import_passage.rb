@@ -1,5 +1,4 @@
 # Read about factories at https://github.com/thoughtbot/factory_girl
-require 'common/validation_error_tools'
 
 
 FactoryGirl.define do

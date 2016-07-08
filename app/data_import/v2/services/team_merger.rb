@@ -33,7 +33,7 @@ module V2
 
 =end
 class TeamMerger
-  include SqlConverter
+  include ::SqlConverter
 
   # Creates a new instance
   #

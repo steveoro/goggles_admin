@@ -44,7 +44,7 @@ gem 'simple-navigation-bootstrap'
 gem 'netzke-core', '~> 0.7.7'           #, :git => "git://github.com/skozlov/netzke-core.git"
 gem 'netzke-basepack', '~> 0.7.7'       #, :git => "git://github.com/skozlov/netzke-basepack.git"
 
-gem "wice_grid", '3.4.8'
+gem "wice_grid"
 gem 'daemons'
 gem 'delayed_job_active_record'
 gem 'dj_mon',  git: 'https://github.com/fasar-sw/dj_mon.git'    # This version has more verbose exception reporting instead of YAML trace

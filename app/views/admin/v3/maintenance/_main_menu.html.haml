@@ -2,7 +2,7 @@
   .navbar-inner#goggles-inner-navbar
     %a.goggles-brand(href="#{admin_v3_maintenance_path()}")
       %span &nbsp;
-      = WEB_APP_NAME
+      = GogglesCore::AppConstants::WEB_APP_NAME
       %small.text-error
         %strong= t('admin_index.title')
     = render_navigation( context: 'admin_v3_maintenance', expand_all: true, renderer: :bootstrap )

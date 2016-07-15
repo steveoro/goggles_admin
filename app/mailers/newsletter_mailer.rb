@@ -30,7 +30,7 @@ class NewsletterMailer < ActionMailer::Base
     @host  = HOSTNAME
     @meeting_array = meeting_array
     mail(
-      subject: "[#{WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.data_updates.generic_title')}",
+      subject: "[#{GogglesCore::AppConstants::WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.data_updates.generic_title')}",
       to:      user.email,
       date:    Time.now
     )
@@ -52,7 +52,7 @@ class NewsletterMailer < ActionMailer::Base
     @host  = HOSTNAME
     @achievements_array = achievements_array
     mail(
-      subject: "[#{WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.achievements.generic_title')}",
+      subject: "[#{GogglesCore::AppConstants::WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.achievements.generic_title')}",
       to:      user.email,
       date:    Time.now
     )
@@ -73,7 +73,7 @@ class NewsletterMailer < ActionMailer::Base
     @host  = HOSTNAME
     @contents = contents
     mail(
-      subject: "[#{WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.application.generic_title')}",
+      subject: "[#{GogglesCore::AppConstants::WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.application.generic_title')}",
       to:      user.email,
       date:    Time.now
     )
@@ -95,7 +95,7 @@ class NewsletterMailer < ActionMailer::Base
     @newsfeed_array = newsfeed_array
     @host  = HOSTNAME
     mail(
-      subject: "[#{WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.community.generic_title')}",
+      subject: "[#{GogglesCore::AppConstants::WEB_APP_NAME}@#{@host}] #{I18n.t('newsletter_mailer.community.generic_title')}",
       to:      user.email,
       date:    Time.now
     )

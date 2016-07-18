@@ -5,8 +5,6 @@ require 'fileutils'
 require 'mechanize'
 
 require 'framework/version'
-require 'framework/application_constants'
-
 require 'common/validation_error_tools'
 
 require_relative '../../app/data_import/v2/services/team_merger'

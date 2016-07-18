@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
@@ -31,8 +30,8 @@ namespace :db do
 Calculate and update DB for meeting standard points.
 Resulting log files are stored into '#{LOG_DIR}'.
 
-Performs a batch, scan of MeetingIndividualResult for given meeting 
-and calculate standard points if missing or if present and choosen 
+Performs a batch, scan of MeetingIndividualResult for given meeting
+and calculate standard points if missing or if present and choosen
 to be forced.
 
 Could force recalculating or calculate only missing scores.
@@ -50,7 +49,7 @@ Options: meeting=<meeting_id> [use_category=<category_code> use_pool=<pool_code>
 
 Examples:
 - To calculate missing FIN standard points (without persisting and without creating rank)
-rake meeting_standard_points meeting=15201 
+rake meeting_standard_points meeting=15201
 
 - To calculate all FIN standard points (recaluculate those already presents without persisting and without creating rank)
 rake meeting_standard_points meeting=15201 recalculate=true
@@ -102,7 +101,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     meeting = Meeting.find( meeting_id )
     unless meeting
@@ -110,7 +109,7 @@ DESC
       exit
     end
     logger.info( "\r\n#{I18n.t('general.meeting')}: #{meeting.get_full_name}" )
-    
+
     # If clear option perform a zero assign to all results
     if clear
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_standard_points_clear_#{meeting_id}.diff"
@@ -118,7 +117,7 @@ DESC
       diff_file.puts "-- Meeting: #{meeting.get_full_name}"
       standard_points = 0
       meeting.meeting_individual_results.is_not_disqualified.each do |meeting_individual_result|
-        meeting_individual_result.standard_points = standard_points 
+        meeting_individual_result.standard_points = standard_points
         meeting_individual_result.save
         diff_file.puts to_sql_update( meeting_individual_result, false, {'standard_points' => standard_points}, "\r\n" )
       end
@@ -130,7 +129,7 @@ DESC
     # Some frequently asked values
     season = meeting.season
     qualified_number = meeting.get_swimming_pool.lanes_number
-    
+
     # Verify if should use forced category
     category_type =  nil
     if category_code
@@ -140,7 +139,7 @@ DESC
         exit
       end
       logger.info( "- Force category: #{category_type.get_full_name}" )
-    end       
+    end
 
     # Verify if should use forced pool_type
     pool_type =  nil
@@ -151,7 +150,7 @@ DESC
         exit
       end
       logger.info( "- Force pool type: #{pool_code}" )
-    end       
+    end
 
     # Check if season standard times are present
     unless season.time_standard.count > 0
@@ -166,38 +165,38 @@ DESC
 
     # Open DB transaction for final roll back if persist is false
     ActiveRecord::Base.transaction do
-      # Scan for meeting individual results (for simmers more than 20 years old) 
+      # Scan for meeting individual results (for simmers more than 20 years old)
       meeting.meeting_individual_results.is_not_disqualified.each do |meeting_individual_result|
-        if (recalculate or meeting_individual_result.standard_points == nil or meeting_individual_result.standard_points == 0) && 
-         meeting_individual_result.category_type.age_end > 20 && 
+        if (recalculate or meeting_individual_result.standard_points == nil or meeting_individual_result.standard_points == 0) &&
+         meeting_individual_result.category_type.age_end > 20 &&
          meeting_individual_result.category_type.is_undivided == false
           # Calculate standard points
           score_calculator = ScoreCalculator.new( season, meeting_individual_result.gender_type, category_type ? category_type : meeting_individual_result.category_type, pool_type ? pool_type : meeting_individual_result.pool_type, meeting_individual_result.event_type )
           if score_calculator.get_time_standard
             standard_points = score_calculator.get_fin_score( meeting_individual_result.get_timing_instance )
-            meeting_individual_result.standard_points = standard_points 
+            meeting_individual_result.standard_points = standard_points
             meeting_individual_result.save
-            
+
             explanation = "#{meeting_individual_result.swimmer.get_full_name} #{meeting_individual_result.event_type.code} #{meeting_individual_result.get_timing}: #{standard_points.to_s} (#{score_calculator.get_time_standard.get_timing})"
             diff_file.puts to_sql_update( meeting_individual_result, false, {'standard_points' => standard_points}, "\r\n", explanation )
             logger.info( "#{meeting_individual_result.swimmer.get_full_name} #{meeting_individual_result.event_type.code} #{meeting_individual_result.get_timing}: #{standard_points.to_s} (#{score_calculator.get_time_standard.get_timing})" )
           end
         end
-      end            
+      end
 
       # Calculate ranking, if needed
       if rank
         # Create csv file for ranking
-        csv_file_header =  [I18n.t('qualified'), 
-                            I18n.t('general.swimmer'), 
-                            I18n.t('general.team'), 
-                            'CAT', 
-                            "#{I18n.t('event')} 1", 
-                            "#{I18n.t('timing')} 1", 
-                            "#{I18n.t('points')} 1", 
-                            "#{I18n.t('event')} 2", 
-                            "#{I18n.t('timing')} 2", 
-                            "#{I18n.t('points')} 2", 
+        csv_file_header =  [I18n.t('qualified'),
+                            I18n.t('general.swimmer'),
+                            I18n.t('general.team'),
+                            'CAT',
+                            "#{I18n.t('event')} 1",
+                            "#{I18n.t('timing')} 1",
+                            "#{I18n.t('points')} 1",
+                            "#{I18n.t('event')} 2",
+                            "#{I18n.t('timing')} 2",
+                            "#{I18n.t('points')} 2",
                             "#{I18n.t('points')} #{I18n.t('max')}"]
         csv_file_name   = "#{DateTime.now().strftime('%Y%m%d%H%M')}_#{meeting.code}_standard_points_calc"
         ranking_male    = []
@@ -215,11 +214,11 @@ DESC
         ranking_to_csv( I18n.t('males'), ranking_male, csv_file_name + '_M.csv', csv_file_header, logger, qualified_number ) if ranking_male.size > 0
         ranking_to_csv( I18n.t('females'), ranking_female, csv_file_name + '_F.csv', csv_file_header, logger, qualified_number ) if ranking_female.size > 0
       end
-      
+
       # Rollback if not persist
       if not persist
         logger.info( "\r\n*** Standard points NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nStandard points persisted." )
       end
@@ -230,7 +229,7 @@ DESC
   end
   #-- -------------------------------------------------------------------------
   #++
-  
+
   # Creates an individual row in ranking
   # each swimmer may have up to 2 results
   # to be collected and the best score should be
@@ -251,7 +250,7 @@ DESC
       ranking_array[first_event][10] = ranking_array[first_event][9] > ranking_array[first_event][6] ? ranking_array[first_event][9] : ranking_array[first_event][6]
     else
       ranking_array << [nil,
-                        swimmer_name, 
+                        swimmer_name,
                         team_name,
                         meeting_individual_result.category_type.code,
                         meeting_individual_result.event_type.code,
@@ -273,10 +272,10 @@ DESC
   # Appena ranking lines
   def ranking_to_csv( description, ranking_array, csv_file_name, csv_file_header, logger, qualified_number )
     teams = []
-    
+
     # Sort ranking by max score
     ranking_array.sort!{ |n,p| p[10] <=> n[10] }
-    
+
     # Create csv file
     csv_file = File.open( LOG_DIR + '/' + csv_file_name, 'w' )
     csv_file.puts( csv_file_header.join(',').upcase )
@@ -287,7 +286,7 @@ DESC
     ranking_array.each do |ranking_el|
       if teams.count < qualified_number && !teams.include?( ranking_el[2] )
         teams << ranking_el[2]
-        ranking_el[0] = 'X' 
+        ranking_el[0] = 'X'
         logger.info( "  #{teams.count}. #{ranking_el[1].ljust(25)} - #{ranking_el[2]}")
       end
       ranking_el << '=SE(VAL.VUOTO(INDIRETTO(INDIRIZZO(RIF.RIGA();1)));"";INDIRETTO(INDIRIZZO(RIF.RIGA();2)))'

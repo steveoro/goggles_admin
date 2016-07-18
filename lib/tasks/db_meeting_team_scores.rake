@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 
@@ -31,7 +30,7 @@ namespace :db do
 Calculate and update DB for meeting team scores scores.
 Resulting log files are stored into '#{LOG_DIR}'.
 
-Performs a batch, scan of MeetingIndividualResult for given Meeting 
+Performs a batch, scan of MeetingIndividualResult for given Meeting
 and calculate team scores with balanced method.
 
 Options: meeting=<meeting_id> [log_dir=#{LOG_DIR}]
@@ -69,7 +68,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     meeting = Meeting.find( meeting_id )
 
@@ -90,8 +89,8 @@ DESC
       case meeting.season.id
       when 141, 151
         # CSI Seasons 2014-2015 and 2015-2016
-        logger.info( "Season #{meeting.season.get_full_name}" ) 
-        logger.info( "Using CSI balanced meeting team scores by Leega" ) 
+        logger.info( "Season #{meeting.season.get_full_name}" )
+        logger.info( "Using CSI balanced meeting team scores by Leega" )
         sql_diff = calculate_balanced_meeting_team_scores( meeting, logger )
       else
         logger.info( "No calculation method for season #{meeting.season.get_full_name}" )
@@ -103,11 +102,11 @@ DESC
         File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts sql_diff }
         logger.info( "\r\nLog file " + file_name + " created" )
       end
-        
+
       # Save new season
       if not persist
         logger.info( "\r\n*** Data not persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nTeam scores persisted." )
       end

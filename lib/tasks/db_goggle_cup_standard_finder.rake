@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 
@@ -21,7 +20,7 @@ LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
 
   Scan given goggle cup involved swimmers
   to find swam times to use as goggle cup
-  standards in goggle cup computation  
+  standards in goggle cup computation
 
   (ASSUMES TO BE rakeD inside Rails.root)
 
@@ -70,11 +69,11 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     goggle_cup = GoggleCup.find( goggle_cup_id )
     logger.info( "Goggle cup to scan for: " + goggle_cup.get_full_name )
-    
+
     # Initialize meeting_date_changer
     goggle_cup_standard_finder = GoggleCupStandardFinder.new( goggle_cup )
     unless goggle_cup_standard_finder
@@ -86,7 +85,7 @@ DESC
     # Scan
     ActiveRecord::Base.transaction do
       goggle_cup_standard_finder.create_goggle_cup_standards
-      
+
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_goggle_cup_standard_finder_#{goggle_cup.id}.diff"
       File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts goggle_cup_standard_finder.sql_diff_text_log }
@@ -95,7 +94,7 @@ DESC
       # Save new season
       if not persist
         logger.info( "\r\n*** Date change NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nDate change persisted." )
       end

@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 
@@ -72,7 +71,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     season = Season.find( season_id )
     logger.info( "Season to scan for: #{season.get_full_name}" )
@@ -84,7 +83,7 @@ DESC
     ActiveRecord::Base.transaction do
       # Find best in previous seasons and store to DB
       spb.to_db
-      
+
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_season_time_standard_finder_#{season_id}.diff"
       File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts spb.sql_diff_text_log }
@@ -93,7 +92,7 @@ DESC
       # Save data or rollback in persist is false
       if not persist
         logger.info( "\r\n*** Data not persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nData persisted." )
       end

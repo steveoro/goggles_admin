@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
@@ -31,8 +30,8 @@ namespace :db do
 Calculate and update DB for Goggle Cup scores.
 Resulting log files are stored into '#{LOG_DIR}'.
 
-Performs a batch, scan of MeetingIndividualResult for given Goggle Cup 
-and calculate goggle cup points if missing or if present and choosen 
+Performs a batch, scan of MeetingIndividualResult for given Goggle Cup
+and calculate goggle cup points if missing or if present and choosen
 to be forced. Should be limitated to a specific meeting.
 
 Could force recalculating or calculate only missing scores.
@@ -74,7 +73,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     goggle_cup = GoggleCup.find( goggle_cup_id )
 
@@ -95,17 +94,17 @@ DESC
     ActiveRecord::Base.transaction do
       meeting = Meeting.find( meeting_id ) if meeting_id
       if meeting
-        # Scan for meeting individual results of goggle cup for give meeting 
+        # Scan for meeting individual results of goggle cup for give meeting
         logger.info( "\r\nMeeting  : " + meeting.get_full_name )
         diff_file.puts "\r\n-- Meeting  : #{meeting.get_full_name}"
 
         goggle_cup.meeting_individual_results.includes(:meeting).where(['meetings.id = ?', meeting_id]).where(["meeting_individual_results.team_id = ?", goggle_cup.team_id]).each do |meeting_individual_result|
           calculate_goggle_cup_for_mir( goggle_cup, meeting_individual_result, recalculate, logger, diff_file )
-        end            
+        end
       else
         goggle_cup.meetings.each do |current_meeting|
           if current_meeting.meeting_individual_results.count > 0
-            # Scan for meeting individual results of goggle cup for give meeting 
+            # Scan for meeting individual results of goggle cup for give meeting
             logger.info( "\r\nMeeting  : " + current_meeting.get_full_name )
             diff_file.puts "\r\n--\r\n-- Meeting  : #{current_meeting.get_full_name}\r\n--"
             goggle_cup.meeting_individual_results.includes(:meeting).where(['meetings.id = ?', current_meeting.id]).where(["meeting_individual_results.team_id = ?", goggle_cup.team_id]).each do |meeting_individual_result|
@@ -119,7 +118,7 @@ DESC
       # Persist data if needed
       if not persist
         logger.info( "\r\n*** Goggle cup points NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nGoggle cup points persisted." )
       end
@@ -141,13 +140,13 @@ DESC
       # Calculate goggle cup points
       score_calculator = GoggleCupScoreCalculator.new( goggle_cup, meeting_individual_result.swimmer, meeting_individual_result.pool_type, meeting_individual_result.event_type )
       goggle_cup_points = score_calculator.get_goggle_cup_score( meeting_individual_result.get_timing_instance )
-      
+
       # Save goggle cup score
-      meeting_individual_result.goggle_cup_points = goggle_cup_points 
+      meeting_individual_result.goggle_cup_points = goggle_cup_points
       meeting_individual_result.save
       explanation = "#{meeting_individual_result.swimmer.get_full_name} #{meeting_individual_result.event_type.code} #{meeting_individual_result.get_timing}: #{goggle_cup_points.to_s} (#{score_calculator.get_goggle_cup_standard.get_timing})"
-      diff_file.puts to_sql_update( meeting_individual_result, false, {'goggle_cup_points' => goggle_cup_points}, "\r\n", explanation ) 
-      
+      diff_file.puts to_sql_update( meeting_individual_result, false, {'goggle_cup_points' => goggle_cup_points}, "\r\n", explanation )
+
       logger.info( "\r\n#{meeting_individual_result.swimmer.get_full_name} #{meeting_individual_result.event_type.code} #{meeting_individual_result.get_timing}: #{goggle_cup_points.to_s} (#{score_calculator.get_goggle_cup_standard.get_timing})" )
     end
   end

@@ -6,7 +6,6 @@ require 'fileutils'
 require 'benchmark'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 
@@ -92,7 +91,7 @@ DESC
     else
       mir_list = MeetingIndividualResult.is_valid.has_time.uniq
     end
-    mir_list = mir_list.where( 'team_id' => team_ids ) if team_ids 
+    mir_list = mir_list.where( 'team_id' => team_ids ) if team_ids
     file_name = File.join(
       log_dir, "#{ DateTime.now.strftime("%Y%m%d%H%M") }prod_update_records_"
     )

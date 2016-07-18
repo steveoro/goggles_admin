@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
@@ -19,9 +18,9 @@ LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
   - Author: Leega
 
   Scan swimmers involved in season of given type
-  to find last best swam times 
-  Last best is the best time swam 
-  in the most recent closed season  
+  to find last best swam times
+  Last best is the best time swam
+  in the most recent closed season
 
   (ASSUMES TO BE rakeD inside Rails.root)
 
@@ -32,8 +31,8 @@ namespace :db do
 
   desc <<-DESC
 Scan swimmers involved in season of given season type
-to find last best swam times 
-Last best is the best time swam 
+to find last best swam times
+Last best is the best time swam
 in the most recent closed season
 Create a csv file with data retreived
 Resulting log files are stored into '#{LOG_DIR}'.
@@ -69,7 +68,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     season = Season.find( season_id )
     season_type = Season.season_type
@@ -90,7 +89,7 @@ DESC
       end
     end
     logger.info( " - Scan for: #{events_to_scan.size} event types" )
-    
+
     # Scan involved swimmers
     csv_rows = []
     csv_rows << headers.join(';')
@@ -101,13 +100,13 @@ DESC
 
       # Initialize best finder
       swimmer_best_finder = SwimmerBestFinder.new( swimmer )
-      involved_seasons    = swimmer_best_finder.get_closed_seasons_involved_into( season_type ) 
+      involved_seasons    = swimmer_best_finder.get_closed_seasons_involved_into( season_type )
       logger.info( " - Seasons considered: #{involved_seasons.count}" )
       logger.info( "   Last season: #{involved_seasons.first.get_full_name}" )
-      
+
       swimmer_row = swimmer.complete_name + ';'
       swimmer_row << swimmer.year_of_birth.to_s + ';'
-      
+
       # Scan events
       logger.info( " - Event bests:" )
       events_to_scan.each do |event_key|
@@ -118,7 +117,7 @@ DESC
       end
       csv_rows << swimmer_row
     end
-    
+
     # Create csv file
     file_name = "season_type_swimmer_last_best_#{season_type.code}"
     File.open( LOG_DIR + '/' + file_name + '.csv', 'w' ) { |f| f.puts csv_rows }
@@ -130,7 +129,7 @@ DESC
   desc <<-DESC
 Scan swimmers involved in meeting to find
 last best swam times in closed seasons of same type
-considering the best time swam 
+considering the best time swam
 in the most recent closed season
 Resulting log files are stored into '#{LOG_DIR}'.
 
@@ -169,7 +168,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     meeting = Meeting.find( meeting_id )
     logger.info( "Meeting to scan for swimmers: " + meeting.get_full_name )
@@ -183,7 +182,7 @@ DESC
     events_to_scan  = []
     events_to_scan = meeting.get_events_by_pool_types.map{ |e| e.get_key }
     logger.info( " - Scan for: #{events_to_scan.size} event types" )
-    
+
     # Scan involved swimmers
     season_personal_standards = []
     csv_rows = []
@@ -195,7 +194,7 @@ DESC
 
       # Initialize best finder
       swimmer_best_finder = SwimmerBestFinder.new( swimmer )
-      involved_seasons    = swimmer_best_finder.get_closed_seasons_involved_into( meeting.season_type ) 
+      involved_seasons    = swimmer_best_finder.get_closed_seasons_involved_into( meeting.season_type )
       logger.info( " - Seasons considered: #{involved_seasons.count}" )
       swimmer_row = swimmer.complete_name + ';'
       swimmer_row << swimmer.year_of_birth.to_s + ';'
@@ -210,17 +209,17 @@ DESC
           best_swam = swimmer_best_finder.get_involved_season_last_best_for_key( involved_seasons, event_key )
           if best_swam
             swimmer_row << best_swam.to_s
-            
+
             # Prepare data for DB storage
             season_personal_standard               = SeasonPersonalStandard.new()
             season_personal_standard.season_id     = meeting.season_id
             season_personal_standard.swimmer_id    = swimmer.id
-            season_personal_standard.event_type_id = event_by_pool_type.event_type.id 
+            season_personal_standard.event_type_id = event_by_pool_type.event_type.id
             season_personal_standard.pool_type_id  = event_by_pool_type.pool_type.id
-            season_personal_standard.minutes       = best_swam.minutes 
-            season_personal_standard.seconds       = best_swam.seconds 
-            season_personal_standard.hundreds      = best_swam.hundreds 
-            season_personal_standards << season_personal_standard 
+            season_personal_standard.minutes       = best_swam.minutes
+            season_personal_standard.seconds       = best_swam.seconds
+            season_personal_standard.hundreds      = best_swam.hundreds
+            season_personal_standards << season_personal_standard
           end
           swimmer_row << ';'
           logger.info( "   #{event_key}: #{best_swam.to_s}" )
@@ -228,13 +227,13 @@ DESC
       end
       csv_rows << swimmer_row
     end
-    
+
     # Create csv file
     file_name = "meeting_swimmer_last_best_#{meeting.id}"
     File.open( LOG_DIR + '/' + file_name + '.csv', 'w' ) { |f| f.puts csv_rows }
     logger.info( "\r\nLog file " + file_name + " created" )
 
-    # Store data n DB and prepare diff file    
+    # Store data n DB and prepare diff file
     diff_file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_#{file_name}.diff"
     ActiveRecord::Base.transaction do
       season_personal_standards_to_db( meeting, season_personal_standards, recalculate )
@@ -242,11 +241,11 @@ DESC
       # Create diff file
       File.open( LOG_DIR + '/' + diff_file_name + '.sql', 'w' ) { |f| f.puts sql_diff_text_log }
       logger.info( "\r\nDiff file " + diff_file_name + " created" )
-      
+
       # Persist data if needed
       if not persist
         logger.info( "\r\n*** Personal standards NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nPersonal standards persisted." )
       end
@@ -279,7 +278,7 @@ DESC
       comment = "#{season_personal_standard.swimmer.get_full_name} #{season_personal_standard.pool_type.code} #{season_personal_standard.event_type.code}: #{season_personal_standard.get_timing}"
       sql_diff_text_log << to_sql_insert( season_personal_standard, false, "\r\n", comment )
     end
-    
+
     # Store collected data into time_standard structure for event already presents
     sql_fields = {}
     to_update.each do |season_personal_standard|
@@ -290,7 +289,7 @@ DESC
       comment = "#{season_personal_standard.swimmer.get_full_name} #{season_personal_standard.pool_type.code} #{season_personal_standard.event_type.code}: #{season_personal_standard.get_timing}"
       sql_diff_text_log << to_sql_update( season_personal_standard, false, sql_fields, "\r\n", comment )
     end
-    
+
     create_sql_diff_footer( "Season personal standards for meeting #{meeting.get_full_name} collected" )
   end
 end

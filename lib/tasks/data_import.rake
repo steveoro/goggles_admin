@@ -5,8 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
-
 require 'framework/console_logger'
 
 require_relative '../../app/data_import/v2/strategies/data_importer'

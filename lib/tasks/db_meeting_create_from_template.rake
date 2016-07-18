@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
@@ -78,7 +77,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find template meeting
     meeting = Meeting.find( meeting_id ) if Meeting.exists?( id: meeting_id )
     unless meeting
@@ -103,15 +102,15 @@ DESC
     new_id = meeting.id + (( season.id - meeting.season_id ) * 100)
     logger.info( "Trying to use id: " + new_id.to_s + "..." )
     while Meeting.exists?( id: new_id ) do new_id = new_id + 1 end
-    
+
     # Calculate (or force) edition
     increment = (( season.id - meeting.season_id ) / 10 ).to_i
-    new_edition = edition ? meeting.edition + edition : meeting.edition + ( increment / 10 ).to_i 
+    new_edition = edition ? meeting.edition + edition : meeting.edition + ( increment / 10 ).to_i
     unless new_edition >= 0
       puts("The calculated edition " + new_edition.to_s + " is not correct")
       exit
     end
-    
+
     logger.info( "Meeting: " + meeting.get_full_name + " will be created in season " + season.get_full_name + " with id " + new_id.to_s + " edition: " + new_edition.to_s + " with increment: " + increment.to_s )
 
     # Create diff file
@@ -120,11 +119,11 @@ DESC
     diff_file.puts "-- Meeting: #{meeting.get_full_name} (#{new_id})"
     diff_file.puts "\r\n-- Season:  #{season.get_full_name} (#{season.id})"
     diff_file.puts "\r\n-- Edition: #{new_edition}"
-  
+
     ActiveRecord::Base.transaction do
       # Creates new meeting
       newer_meeting = Meeting.new( meeting.attributes.reject{ |e| ['id','season_id','edition','lock_version','created_at','updated_at'].include?(e) } )
-      
+
       # Find out data which will be changed from template values:
       # - id (already defined in new_id)
       # - season_id (already defined in season.id parameter)
@@ -134,7 +133,7 @@ DESC
       newer_meeting.id                   = new_id
       newer_meeting.season_id            = season.id
       newer_meeting.edition              = new_edition
-      newer_meeting.header_date          = SeasonCreator.next_year_eq_day( newer_meeting.header_date, increment ) 
+      newer_meeting.header_date          = SeasonCreator.next_year_eq_day( newer_meeting.header_date, increment )
       newer_meeting.entry_deadline       = SeasonCreator.next_year_eq_day( newer_meeting.entry_deadline, increment )
       newer_meeting.header_year          = SeasonCreator.next_header_year( newer_meeting.header_year, increment )
 
@@ -162,7 +161,7 @@ DESC
             newer_session.is_autofilled  = true
             if newer_session.save
               sql_diff_text_log << to_sql_insert( newer_session, false, "\r\n" ) # no additional comment
-               
+
               # Collect meeting events too
               meeting_session.meeting_events.each do |meeting_event|
                 newer_event = MeetingEvent.new( meeting_event.attributes.reject{ |e| ['id','lock_version','created_at','updated_at'].include?(e) } )
@@ -175,13 +174,13 @@ DESC
             end
           end
         end
-  
+
         diff_file.puts sql_diff_text_log
-  
+
         # Persist data if needed
         if not persist
           logger.info( "\r\n*** Meeting NOT persisted! ***" )
-          raise ActiveRecord::Rollback 
+          raise ActiveRecord::Rollback
         else
           logger.info( "\r\nMeeting persisted." )
         end

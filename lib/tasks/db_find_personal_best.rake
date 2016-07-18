@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 
@@ -31,7 +30,7 @@ namespace :db do
 Find personal best swam by swimmers in events.
 Resulting log files are stored into '#{LOG_DIR}'.
 
-Could be used for a particular swimmer event or 
+Could be used for a particular swimmer event or
 massive for all swimmer events swam
 
 Options: persist=false swimmer=<swimmer_id> [[event=<event_code> pool=<pool_code>] log_dir=#{LOG_DIR}]
@@ -56,7 +55,7 @@ DESC
     log_dir         = ENV.include?("log_dir") ? ENV["log_dir"] : LOG_DIR
 
     # Verify parameters
-    unless swimmer_id && Swimmer.exists?( swimmer_id ) 
+    unless swimmer_id && Swimmer.exists?( swimmer_id )
       puts("This needs a valid swimmer to scan for.")
       exit
     end
@@ -71,11 +70,11 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     swimmer = Swimmer.find( swimmer_id )
     logger.info( "Swimmer to scan: #{swimmer.get_full_name}" )
-    
+
     # Initialize swimmer best finder
     swimmer_best_finder = SwimmerBestFinder.new( swimmer )
     unless swimmer_best_finder
@@ -113,7 +112,7 @@ DESC
         logger.info( "\r\nFound #{bests_found.to_s} personal bests\r\n" )
         logger.info( "\r\n<------------------------------------------------------------>\r\n" )
       end
-      
+
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_personal_best_finder_#{swimmer.id}.diff"
       File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts swimmer_best_finder.sql_diff_text_log }
@@ -122,7 +121,7 @@ DESC
       # Save data
       if not persist
         logger.info( "\r\n*** Personal best NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nPersonal best persisted." )
       end
@@ -169,14 +168,14 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     logger.info( "Oh, my God! This is a complete swimmers scan to find out personal bests!" )
     logger.info( "Let's rock!!!" )
     logger.info( "\r\n<------------------------------------------------------------>\r\n" )
 
     # Create diff file (unique if not split or first if split
     if split
-      limit = (start_from + split - 1) > stop_after ? stop_after : (start_from + split - 1)  
+      limit = (start_from + split - 1) > stop_after ? stop_after : (start_from + split - 1)
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_scan_all_swimmer_for_personal_bests_#{start_from}_#{limit}.diff"
       diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
     else
@@ -184,12 +183,12 @@ DESC
       diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
     end
     logger.info( "\r\nCreates log file #{file_name}" )
-    
+
     ActiveRecord::Base.transaction do
       Swimmer.where("id between #{start_from} and #{stop_after}").each do |current_swimmer|
         # Check if new diff file is needed
         if split && current_swimmer.id % split == 1 && start_from != current_swimmer.id
-          limit = (current_swimmer.id + split - 1) > stop_after ? stop_after : (current_swimmer.id + split - 1)  
+          limit = (current_swimmer.id + split - 1) > stop_after ? stop_after : (current_swimmer.id + split - 1)
           file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_scan_all_swimmer_for_personal_bests_#{current_swimmer.id}_#{limit}.diff"
           diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
           logger.info( "\r\n" )
@@ -198,7 +197,7 @@ DESC
           logger.info( "\r\n<------------------------------------------------------------>" )
           logger.info( "\r\n" )
         end
-        
+
         logger.info( "\r\n- Swimmer to scan: #{current_swimmer.get_full_name} [#{current_swimmer.id}]" )
 
         # Initialize swimmer best finder
@@ -218,7 +217,7 @@ DESC
       # Save or roll back data
       if not persist
         logger.info( "\r\n*** Personal best NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nPersonal best persisted." )
       end
@@ -263,7 +262,7 @@ DESC
     logger = ConsoleLogger.new
 
     # Verify parameters
-    unless meeting_id && Meeting.exists?( meeting_id ) 
+    unless meeting_id && Meeting.exists?( meeting_id )
       puts("This needs a valid meeting to scan for.")
       exit
     end
@@ -271,7 +270,7 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     meeting = Meeting.find( meeting_id )
     logger.info( "Meeting to scan: #{meeting.get_full_name}" )
@@ -297,13 +296,13 @@ DESC
             puts("Something wrong with swimmer #{swimmer.get_full_name} to scan for (#{meeting_individual_result.get_team_name}).")
             exit
           end
-  
+
           # Check if result is a new personal best for swimmer
           if swimmer_best_finder.is_personal_best( meeting_individual_result )
             event_by_pool_type = meeting_individual_result.get_event_by_pool_type
             swimmer_best_finder.set_personal_best( event_by_pool_type, true, meeting_individual_result.id )
             personal_bests_found += 1
-  
+
             logger.info( "#{meeting_individual_result.get_team_name} - Found #{swimmer.get_full_name} new personal best for #{event_by_pool_type.get_full_name}: #{meeting_individual_result.get_timing}" )
             diff_file.puts swimmer_best_finder.sql_diff_text_log
           end
@@ -318,18 +317,18 @@ DESC
       else
         File.delete( LOG_DIR + '/' + file_name + '.sql' )
       end
-  
+
       logger.info( "\r\n<------------------------------------------------------------>" )
       logger.info( "\r\nScanned #{results_scanned} results" )
       logger.info( "\r\nFound #{personal_bests_found} new personal bests" )
-      logger.info( "\r\nDiff file #{file_name} created" ) if personal_bests_found > 0 
-      logger.info( "\r\nNo diff file created" ) if personal_bests_found == 0 
+      logger.info( "\r\nDiff file #{file_name} created" ) if personal_bests_found > 0
+      logger.info( "\r\nNo diff file created" ) if personal_bests_found == 0
       logger.info( "\r\n<------------------------------------------------------------>" )
 
       # Save or roll back data
       if not persist
         logger.info( "\r\n*** Personal bests NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nPersonal bests persisted." )
       end

@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 
@@ -73,11 +72,11 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     older_season = Season.find( old_season_id )
     logger.info( "Older season to copy from: " + older_season.get_full_name )
-    
+
     # Initialize season creator
     season_creator = SeasonCreator.new( older_season, description )
     unless season_creator
@@ -96,9 +95,9 @@ DESC
       logger.info( "\r\nMeetings (" + season_creator.meetings.count.to_s + "):" )
       season_creator.meetings.each do |meeting|
         logger.info( "\r\n- " + meeting.description + " - " + meeting.header_date.to_s )
-      end    
+      end
       logger.info( "\r\n<------------------------------------------------------------>\r\n" )
-      
+
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_season_creation_#{season_creator.new_id}.diff"
       File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts season_creator.sql_diff_text_log }
@@ -107,7 +106,7 @@ DESC
       # Save new season
       if not persist
         logger.info( "\r\n*** Data not persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nNew season persisted." )
       end

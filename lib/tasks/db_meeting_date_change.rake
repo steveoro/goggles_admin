@@ -5,7 +5,6 @@ require 'find'
 require 'fileutils'
 
 require 'framework/version'
-require 'framework/application_constants'
 require 'framework/console_logger'
 
 
@@ -73,11 +72,11 @@ DESC
     puts "Requiring Rails environment to allow usage of any Model..."
     require 'rails/all'
     require File.join( Rails.root.to_s, 'config/environment' )
-    
+
     # Find target entities
     meeting = Meeting.find( meeting_id )
     logger.info( "Meeting to move: " + meeting.get_full_name )
-    
+
     # Initialize meeting_date_changer
     meeting_date_changer = MeetingDateChanger.new( meeting, days_to_move_on )
     unless meeting_date_changer
@@ -90,7 +89,7 @@ DESC
       meeting_date_changer.change_dates
       logger.info( "\r\n- " + meeting_date_changer.meeting.description + " - " + meeting_date_changer.meeting.header_date.to_s )
       logger.info( "\r\n<------------------------------------------------------------>\r\n" )
-      
+
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_meeting_date_changer_#{meeting_date_changer.meeting.code}.diff"
       File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts meeting_date_changer.sql_diff_text_log }
@@ -99,7 +98,7 @@ DESC
       # Save new season
       if not persist
         logger.info( "\r\n*** Date change NOT persisted! ***" )
-        raise ActiveRecord::Rollback 
+        raise ActiveRecord::Rollback
       else
         logger.info( "\r\nDate change persisted." )
       end

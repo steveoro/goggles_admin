@@ -12,7 +12,12 @@ FactoryGirl.define do
     data_import_meeting_session_id nil
     meeting_session
     event_type do
-      EventsByPoolType.only_for_meetings.for_pool_type_code( meeting_session.swimming_pool.pool_type.code ).order('RAND()').first.event_type
+      EventsByPoolType.joins(:event_type)
+        .only_for_meetings
+        .for_pool_type_code( meeting_session.swimming_pool.pool_type.code )
+        .where( "event_types.length_in_meters < 3000" )
+        .order('RAND()')
+        .first.event_type
     end
     category_type do                                # Get a coherent category according to the meeting_event:
       event_type.is_a_relay ?
@@ -33,9 +38,13 @@ FactoryGirl.define do
 
     factory :data_import_meeting_program_individual do
       event_type do
-        EventsByPoolType.only_for_meetings
+        EventsByPoolType.joins(:event_type)
+          .only_for_meetings
           .not_relays
-          .for_pool_type_code( meeting_session.swimming_pool.pool_type.code ).order('RAND()').first.event_type
+          .for_pool_type_code( meeting_session.swimming_pool.pool_type.code )
+          .where( "event_types.length_in_meters < 3000" )
+          .order('RAND()')
+          .first.event_type
       end
       category_type do                              # Get a coherent category according to the meeting_event:
         CategoryType.is_valid.are_not_relays.order('RAND()').first
@@ -44,9 +53,13 @@ FactoryGirl.define do
 
     factory :data_import_meeting_program_relay do
       event_type do
-        EventsByPoolType.only_for_meetings
+        EventsByPoolType.joins(:event_type)
+          .only_for_meetings
           .are_relays
-          .for_pool_type_code( meeting_session.swimming_pool.pool_type.code ).order('RAND()').first.event_type
+          .for_pool_type_code( meeting_session.swimming_pool.pool_type.code )
+          .where( "event_types.length_in_meters < 3000" )
+          .order('RAND()')
+          .first.event_type
       end
       category_type do                              # Get a coherent category according to the meeting_event:
         CategoryType.is_valid.only_relays.order('RAND()').first

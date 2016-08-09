@@ -144,6 +144,8 @@ class CsiResultDAO
   # which represents stroke, category and length types all in one string.
   def CsiResultDAO.get_combo_category_code( length_in_meters, stroke_type_code, category_type_code,
                                             is_male = false )
+# DEBUG
+#    puts "\r\n => CsiResultDAO.get_combo_category_code( '#{length_in_meters}', '#{stroke_type_code}', '#{category_type_code}', '#{is_male}' )"
     ( is_male ? '1' : '' ) +
     CsiResultDAO::CATEGORY_TYPE_CODES.key( category_type_code ) +
     CsiResultDAO::STROKE_TYPE_CODES.key( stroke_type_code ) +

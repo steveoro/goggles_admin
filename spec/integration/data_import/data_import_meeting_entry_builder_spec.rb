@@ -230,6 +230,9 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
   let(:di_gender_type_csi)    { di_meeting_program_csi.gender_type }
 
   let(:di_detail_row_csi) do
+# DEBUG
+#    puts "\r\n LET( di_detail_row_csi )"
+#    puts "\r\n- di_meeting_program_csi: #{ di_meeting_program_csi.inspect }"
     CsiResultDAO.new(
       badge_csi.swimmer.complete_name,
       badge_csi.swimmer.year_of_birth,
@@ -558,8 +561,8 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 #        puts " --- Subject MENTRY...: " << di_mentry_csi.inspect
 #        puts " --- Subject swimmer..: " << di_mentry_csi.swimmer.inspect
 #        puts " --- Subject MPRG.....: " << di_mentry_csi.data_import_meeting_program.inspect
-#        possible_swimmers = Swimmer.where( "complete_name LIKE \"%#{di_mentry_csi.swimmer.last_name}%\"" ).reload
-#        possible_swimmers.each{ |row| puts " --- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
+        possible_swimmers = Swimmer.where( "complete_name LIKE \"%#{di_mentry_csi.swimmer.last_name}%\"" ).reload
+        possible_swimmers.each{ |row| puts " --- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
         V2::DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season_csi,

@@ -1,6 +1,8 @@
 GogglesAdmin::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  mount GogglesCore::Engine => "/"
+
   devise_for :admins
 
   mount RailsAdmin::Engine => '/dashboard', as: 'rails_admin'

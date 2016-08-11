@@ -7,6 +7,8 @@ require 'fileutils'
 require 'framework/version'
 require 'framework/console_logger'
 
+require "#{ GogglesCore::Engine.root }/app/concerns/sql_convertable"
+
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
 
 

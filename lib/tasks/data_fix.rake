@@ -7,7 +7,7 @@ require 'mechanize'
 require 'framework/version'
 require 'common/validation_error_tools'
 
-require_relative '../../app/data_import/v2/services/team_merger'
+#require_relative '../../app/data_import/v2/services/team_merger'
 
 
 =begin

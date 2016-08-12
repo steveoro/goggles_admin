@@ -163,14 +163,20 @@ DESC
               sql_diff_text_log << to_sql_insert( newer_session, false, "\r\n" ) # no additional comment
 
               # Collect meeting events too
-              meeting_session.meeting_events.each do |meeting_event|
-                newer_event = MeetingEvent.new( meeting_event.attributes.reject{ |e| ['id','lock_version','created_at','updated_at'].include?(e) } )
-                newer_event.meeting_session_id = newer_session.id
-                newer_event.is_autofilled      = true
-                if newer_event.save
-                  sql_diff_text_log << to_sql_insert( newer_event, false, "\r\n" ) # no additional comment
+              if events
+                meeting_session.meeting_events.each do |meeting_event|
+                  newer_event = MeetingEvent.new( meeting_event.attributes.reject{ |e| ['id','lock_version','created_at','updated_at'].include?(e) } )
+                  newer_event.meeting_session_id = newer_session.id
+                  newer_event.is_autofilled      = true
+                  if newer_event.save
+                    sql_diff_text_log << to_sql_insert( newer_event, false, "\r\n" ) # no additional comment
+                  else
+                    logger.info( "\r\nUnexpected and unpredictable and unusual error during meeting events save." )
+                  end
                 end
               end
+            else
+              logger.info( "\r\nUnexpected and unpredictable and unusual error during meeting session(s) save." )
             end
           end
         end

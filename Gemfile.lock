@@ -44,9 +44,9 @@ GIT
 
 GIT
   remote: git://github.com/steveoro/goggles_core.git
-  revision: eda9dac281ad3804b0468eb7834b6fe19013231f
+  revision: 1641ca64caa83cce5dfe81c6f2436907a03991e6
   specs:
-    goggles_core (1.0.11)
+    goggles_core (1.0.12)
       acts-as-taggable-on (~> 3.4)
       acts_as_votable (~> 0.9.0)
       devise
@@ -447,4 +447,4 @@ DEPENDENCIES
   zeus
 
 BUNDLED WITH
-   1.12.5
+   1.13.5

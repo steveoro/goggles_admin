@@ -23,7 +23,9 @@
 /log/*.log
 /log/*.ok
 /log/*.sql
-/tmp
+/tmp/*
+!/log/.keep
+!/tmp/.keep
 
 # Ignore downloaded gems and packages:
 /vendor/cache/*

@@ -7,6 +7,7 @@ require 'fileutils'
 require 'framework/version'
 require 'framework/console_logger'
 
+require "#{ GogglesCore::Engine.root }/app/strategies/sql_converter"
 require "#{ GogglesCore::Engine.root }/app/concerns/sql_convertable"
 
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
@@ -16,8 +17,8 @@ LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
 
 = GoggleCup score update
 
-  - Goggles framework vers.:  4.00.775.20150415
-  - author: Leega
+  - Goggles framework vers.:  5.006
+  - author: Leega, Stteve A.
 
   DB Updater for batch calculation of Goggle Cup scores
 

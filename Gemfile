@@ -72,7 +72,7 @@ group :development, :test do
 end
 
 group :test do
-  gem "zeus", require: false
+#  gem "zeus", require: false
   # FIXME (Low-pri) This is required by Draper inside the core engine, probably due to some wrong setting:
   gem "test-unit"
   gem "capybara"                                    # [Steve, 20140226] Used only in Feature Specs

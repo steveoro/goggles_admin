@@ -74,7 +74,7 @@ describe V2::DataImportEntityCommitter, type: :service do
 
   describe "#commit" do
     it "raises an error if a block is not given" do
-      expect{ subject.commit }.to raise_error
+      expect{ subject.commit }.to raise_error( ArgumentError )
     end
 
     it "passes the current source_row as a parameter for the block" do

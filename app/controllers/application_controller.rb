@@ -4,13 +4,13 @@
 
 = ApplicationController
 
-  - version:  5.00
+  - version:  6.003
   - author:   Steve A.
 
   Main Application controller.
 =end
 class ApplicationController < ActionController::Base
-  protect_from_forgery
+  protect_from_forgery with: :exception
 
 
   protected

@@ -1,7 +1,7 @@
 require 'data_importable'
 
 
-class DataImportSeason < ActiveRecord::Base
+class DataImportSeason < ApplicationRecord
   include DataImportable
 
   belongs_to :user                                  # [Steve, 20120212] Do not validate associated user!
@@ -27,11 +27,11 @@ class DataImportSeason < ActiveRecord::Base
 
   validates_presence_of :begin_date
 
-  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
-                  :description, :begin_date, :end_date,
-                  :season_type_id, :edition_type_id, :timing_type_id,
-                  :season_type, :edition_type, :timing_type,
-                  :header_year, :edition
+#  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+#                  :description, :begin_date, :end_date,
+#                  :season_type_id, :edition_type_id, :timing_type_id,
+#                  :season_type, :edition_type, :timing_type,
+#                  :header_year, :edition
 
   scope :sort_by_conflicting_rows_id,  ->(dir) { order("conflicting_id #{dir.to_s}") }
   scope :sort_by_user,                 ->(dir) { order("users.name #{dir.to_s}, data_import_seasons.begin_date #{dir.to_s}") }

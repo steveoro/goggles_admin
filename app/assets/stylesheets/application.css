@@ -3,14 +3,20 @@
  * listed below.
  *
  * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
  *
- * You're free to add application-wide styles to this file and they'll appear at the top of the
- * compiled file, but it's generally better to create a new file per style scope.
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
  *
- *= require_self
+ *= require bootstrap.min
+ *= require jasny-bootstrap.min
  *= require_tree .
+ *= require_self
  */
+@import "wice_grid";
+@import "font-awesome";
 
 /* ----- Navbar & Titlebar ----- */
 #goggles-inner-navbar {
@@ -26,7 +32,7 @@
     font-weight: 200;
     margin-left: -10px;
     padding: 3px 10px;
-    text-shadow: 0 1px 0 #FFFFFF;
+    text-shadow: 0px 1px 0px #FFFFFF;
 }
 
 .navbar .goggles-brand img {
@@ -39,11 +45,14 @@
     float: left;
     font-size: 18px;
     font-weight: 200;
-    margin-left: 0;
+    margin-left: 0px;
     padding: 2px 5px;
-    text-shadow: 0 1px 0 #FFFFFF;
+    text-shadow: 0px 1px 0px #FFFFFF;
     line-height: 0px;
 }
+
+/*
+ [Steve WIP styles]
 
 .navbar ul.nav > li > a {
     padding: 3px 10px;
@@ -52,10 +61,15 @@
     padding: 2px 5px;
     line-height: 0px;
 }
+*/
+.nav-pills>li>a.goggles-nav-compact {
+    padding: 5px;
+}
+
 
 .navbar .ghost-divider-vertical {
     height: 20px;
-    margin: 0 9px;
+    margin: 0px 9px;
 }
 
 
@@ -64,7 +78,6 @@
     padding: 26px 10px 0px 0px;
     text-align: right;
 }
-
 .goggles-category-gap{
     padding: 26px 0px 0px 0px;
 }
@@ -77,9 +90,8 @@
 .table td.goggles-td p {
     margin-bottom: 2px;
 }
-
 table.table {
-    margin-bottom: 0;
+    margin-bottom: 0px;
 }
 
 table.table.goggles-meeting-team-results-table {
@@ -154,24 +166,6 @@ ul.sortable li {
     margin-top: 2px;
     margin-bottom: 2px;
 }
-/*
-li.goggles-sortable {
-    cursor: pointer;
-    margin-bottom: 2px;
-    line-height: 1.2em;
-}
-li.goggles-sortable {
-    margin: 0 3px 3px 3px;
-    padding: 0.4em;
-    padding-left: 1.5em;
-    font-size: 1em;
-    height: 18px;
-}
-li.goggles-sortable div {
-    position: absolute;
-    margin-left: -1.3em;
-}
-*/
 
 
 /* Flag classes to signal feature on/off; enable styles to debug */
@@ -200,7 +194,7 @@ li.goggles-sortable div {
 .goggles-training pre {
     font-size: 12px;
     line-height: 14px;
-    margin: 2px 0;
+    margin: 2px 0px;
     padding: 4px;
 }
 
@@ -208,21 +202,21 @@ li.goggles-sortable div {
 /* ----- Custom ComboBox widget styles: ----- */
 .ui-combobox {
     display: inline-block;
-    margin: 0;
+    margin: 0px;
     margin-right: 1em;
     margin-left: 0.5em;
     position: relative;
 }
 .ui-combobox-input {
-    padding: 0.1em; margin: 0;
+    padding: 0.1em; margin: 0px;
 }
 .ui-combobox-button {
     position: absolute;
     width: 0.8em !important;
-    margin: 0;
+    margin: 0px;
     margin-left: -1px;
-    top: 0;
-    bottom: 0;
+    top: 0px;
+    bottom: 0px;
 }
 .ui-combobox-button .ui-button-text {
     padding: 0em;

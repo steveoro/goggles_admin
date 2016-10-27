@@ -1,7 +1,7 @@
 require 'data_importable'
 
 
-class DataImportTeam < ActiveRecord::Base
+class DataImportTeam < ApplicationRecord
   include DataImportable
 
   belongs_to :user                                  # [Steve, 20120212] Do not validate associated user!
@@ -27,8 +27,8 @@ class DataImportTeam < ActiveRecord::Base
 
   delegate :name, to: :user, prefix: true
 
-  attr_accessible :data_import_session_id, :conflicting_id, :import_text,
-                  :name, :badge_number, :data_import_city_id, :city_id, :user_id
+#  attr_accessible :data_import_session_id, :conflicting_id, :import_text,
+#                  :name, :badge_number, :data_import_city_id, :city_id, :user_id
   #-- -------------------------------------------------------------------------
   #++
 

@@ -10,11 +10,11 @@
 class NewsletterMailer < ActionMailer::Base
 
   # Hostname shown as mail sender domain (ENV['HOSTNAME'] is not good, because it uses the local IP)
-  HOSTNAME = ::GogglesAdmin::Application.config.action_mailer.default_url_options[:host]
+  HOSTNAME = Rails.application.config.action_mailer.default_url_options[:host]
 
   # Internal Mailer address for the "From" field of the e-mails. Usually something like "no-reply@fasar.software.it"
-  #
-  default :from => "Goggles Mailer <no-reply@#{ HOSTNAME }>"
+  default from: "Goggles Mailer <no-reply@#{ HOSTNAME }>"
+  layout "mailer"
 
 
   # Generates a mailing message signaling a "data update" to a user.

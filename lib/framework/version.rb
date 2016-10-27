@@ -2,7 +2,7 @@
 
 = Version module
 
-  - version:  5.00
+  - version:  6.004
   - author:   Steve A.
 
   Semantic Versioning implementation.
@@ -19,13 +19,13 @@ module Version
   CORE    = 'C6'
 
   # Major version.
-  MAJOR   = '5'
+  MAJOR   = '6'
 
   # Minor version.
-  MINOR   = '006'
+  MINOR   = '004'
 
   # Current build version.
-  BUILD   = '20161025'
+  BUILD   = '20161027'
 
   # Full versioning for the current release.
   FULL    = "#{MAJOR}.#{MINOR}.#{BUILD} (#{CORE})"

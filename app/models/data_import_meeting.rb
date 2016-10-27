@@ -1,7 +1,7 @@
 require 'data_importable'
 
 
-class DataImportMeeting < ActiveRecord::Base
+class DataImportMeeting < ApplicationRecord
   include DataImportable
 
   belongs_to :user                                  # [Steve, 20120212] Do not validate associated user!
@@ -66,18 +66,18 @@ class DataImportMeeting < ActiveRecord::Base
   validates_length_of :max_individual_events_per_session, maximum: 1
   validates_length_of :edition, maximum: 3, allow_nil: false
 
-  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
-                  :user, :user_id,
-                  :description, :entry_deadline, :has_warm_up_pool, :is_under_25_admitted,
-                  :reference_phone, :reference_e_mail, :reference_name, :notes, :has_invitation,
-                  :has_start_list, :are_results_acquired, :max_individual_events, :configuration_file,
-                  :edition,
-                  :data_import_season_id, :season_id,
-                  :header_date, :code, :header_year,
-                  :max_individual_events_per_session, :is_out_of_season,
-                  :edition_type_id, :timing_type_id, :individual_score_computation_type_id,
-                  :relay_score_computation_type_id, :team_score_computation_type_id,
-                  :meeting_score_computation_type_id
+#  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+#                  :user, :user_id,
+#                  :description, :entry_deadline, :has_warm_up_pool, :is_under_25_admitted,
+#                  :reference_phone, :reference_e_mail, :reference_name, :notes, :has_invitation,
+#                  :has_start_list, :are_results_acquired, :max_individual_events, :configuration_file,
+#                  :edition,
+#                  :data_import_season_id, :season_id,
+#                  :header_date, :code, :header_year,
+#                  :max_individual_events_per_session, :is_out_of_season,
+#                  :edition_type_id, :timing_type_id, :individual_score_computation_type_id,
+#                  :relay_score_computation_type_id, :team_score_computation_type_id,
+#                  :meeting_score_computation_type_id
 
   scope :sort_by_user,    ->(dir) { order("users.name #{dir.to_s}, data_import_meetings.description #{dir.to_s}") }
   scope :sort_by_season,  ->(dir) { order("seasons.begin_date #{dir.to_s}, data_import_meetings.description #{dir.to_s}") }

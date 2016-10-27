@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 
-class DataImportSwimmerAnalysisResult < ActiveRecord::Base
+class DataImportSwimmerAnalysisResult < ApplicationRecord
   belongs_to            :data_import_session
   validates_associated  :data_import_session
 
@@ -9,15 +9,15 @@ class DataImportSwimmerAnalysisResult < ActiveRecord::Base
   belongs_to :gender_type, foreign_key: "desired_gender_type_id"
   belongs_to :category_type
 
-  attr_accessible :analysis_log_text, :sql_text,
-                  :searched_swimmer_name,
-                  :chosen_swimmer_id,
-                  :desired_year_of_birth,
-                  :desired_gender_type_id,
-                  :match_name, :match_score,
-                  :max_year_of_birth,
-                  :category_type_id,
-                  :best_match_name, :best_match_score
+#  attr_accessible :analysis_log_text, :sql_text,
+#                  :searched_swimmer_name,
+#                  :chosen_swimmer_id,
+#                  :desired_year_of_birth,
+#                  :desired_gender_type_id,
+#                  :match_name, :match_score,
+#                  :max_year_of_birth,
+#                  :category_type_id,
+#                  :best_match_name, :best_match_score
 
   validates_length_of :searched_swimmer_name, maximum: 60
   validates_length_of :match_name, maximum: 60

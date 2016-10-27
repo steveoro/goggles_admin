@@ -6,7 +6,7 @@
   - author:   Steve A.
 
 =end
-class Admin < ActiveRecord::Base
+class Admin < ApplicationRecord
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
@@ -18,7 +18,7 @@ class Admin < ActiveRecord::Base
 #         :registerable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :name, :email, :description, :password, :password_confirmation
+#  attr_accessible :name, :email, :description, :password, :password_confirmation
 
   include Rails.application.routes.url_helpers
 

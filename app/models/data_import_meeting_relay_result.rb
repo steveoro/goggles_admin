@@ -4,7 +4,7 @@ require 'timing_validatable'
 require 'data_importable'
 
 
-class DataImportMeetingRelayResult < ActiveRecord::Base
+class DataImportMeetingRelayResult < ApplicationRecord
   include TimingGettable
   include TimingValidatable
   include DataImportable
@@ -45,15 +45,15 @@ class DataImportMeetingRelayResult < ActiveRecord::Base
   validates_presence_of     :reaction_time
   validates_numericality_of :reaction_time
 
-  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
-                  :user, :user_id,
-                  :rank, :is_play_off, :is_out_of_race, :is_disqualified, :standard_points,
-                  :meeting_points, :minutes, :seconds, :hundreds,
-                  :data_import_team_id, :data_import_meeting_program_id,
-                  :meeting_program_id, :team_id,
-                  :disqualification_code_type_id, :relay_header, :reaction_time,
-                  :entry_minutes, :entry_seconds, :entry_hundreds, :team_affiliation_id,
-                  :entry_time_type_id
+#  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+#                  :user, :user_id,
+#                  :rank, :is_play_off, :is_out_of_race, :is_disqualified, :standard_points,
+#                  :meeting_points, :minutes, :seconds, :hundreds,
+#                  :data_import_team_id, :data_import_meeting_program_id,
+#                  :meeting_program_id, :team_id,
+#                  :disqualification_code_type_id, :relay_header, :reaction_time,
+#                  :entry_minutes, :entry_seconds, :entry_hundreds, :team_affiliation_id,
+#                  :entry_time_type_id
 
   scope :is_valid, -> { where(is_out_of_race: false, is_disqualified: false) }
 

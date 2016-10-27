@@ -13,7 +13,7 @@ require 'data_importable'
 # @author   Steve A.
 # @version  4.00.811
 #
-class DataImportPassage < ActiveRecord::Base
+class DataImportPassage < ApplicationRecord
   include SwimmerRelatable
   include TimingGettable
   include TimingValidatable

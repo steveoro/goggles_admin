@@ -1,4 +1,4 @@
-class DataImportSession < ActiveRecord::Base
+class DataImportSession < ApplicationRecord
   has_many :data_import_swimmers
   has_many :data_import_teams
   has_many :data_import_badges
@@ -18,7 +18,7 @@ class DataImportSession < ActiveRecord::Base
 
   belongs_to :admin, foreign_key: 'user_id'
 
-  attr_accessible :phase, :file_format, :file_name, :source_data, :admin,
-                  :total_data_rows, :season_id, :phase_1_log, :phase_2_log, :phase_3_log,
-                  :sql_diff, :user_id
+#  attr_accessible :phase, :file_format, :file_name, :source_data, :admin,
+#                  :total_data_rows, :season_id, :phase_1_log, :phase_2_log, :phase_3_log,
+#                  :sql_diff, :user_id
 end

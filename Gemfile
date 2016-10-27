@@ -1,66 +1,117 @@
 source 'https://rubygems.org'
 
-gem "rails", "3.2.22.2"
 
-gem "mysql2", "~> 0.3.11"
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
+gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 
+gem 'mysql2'
+gem 'activerecord-session_store' # Needed to include a DB-based session store in Rails 4+
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+# Use Puma as the app server
+gem 'puma', '~> 3.0'
+# Use SCSS for stylesheets
+gem 'sass-rails', '~> 5.0'
+# Use Uglifier as compressor for JavaScript assets
+gem 'uglifier', '>= 1.3.0'
+# Use CoffeeScript for .coffee assets and views
+gem 'coffee-rails', '~> 4.2'
+# See https://github.com/rails/execjs#readme for more supported runtimes
+gem 'execjs'
+gem 'therubyracer', platforms: :ruby
 
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+# [Steve, 20161005] Font Awesome is used by WiceGrid instead of the old icons:
+gem 'font-awesome-rails'
 
-  gem 'uglifier', '>= 1.0.3'
-end
-
+# Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'jquery_datepicker'
+
+# Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
+gem 'turbolinks', '~> 5'
+gem 'jquery-turbolinks'
+
+# Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
+gem 'jbuilder', '~> 2.5'
+# Use Redis adapter to run Action Cable in production
+# gem 'redis', '~> 3.0'
+# Use ActiveModel has_secure_password
+# gem 'bcrypt', '~> 3.1.7'
 
 gem "json"
-gem "haml", "~> 4.0.5"
+gem "haml"
 
-gem "goggles_core", git: "git://github.com/steveoro/goggles_core.git"
+# XXX When using ssh key use the protocol below:
+#gem "goggles_core", git: "git@github.com:steveoro/goggles_core", branch: "rails5"
+gem "goggles_core", git: "https://github.com/steveoro/goggles_core", branch: "rails5"
 
-gem 'execjs'
-gem 'therubyracer'
-# gem 'therubyrhino', platforms: :ruby
+# XXX [Steve, 20160920] DO NOT USE SafeYAML. Too many issues w/ ActiveRecord,
+# Guard & DelayedJob (See https://github.com/dtao/safe_yaml#known-issues).
 
-gem "syck"                              # old-skool YAML interpreter used by some of our gems
-gem 'safe_yaml'
-# Main Admin interface:
-gem "rails_admin", git: "git://github.com/sferik/rails_admin.git", branch: "rails-3.x"
                                         # [Steve, 20130801] Navigation gems for rendering menus & breadcrumbs:
 gem "simple-navigation"
 gem 'simple-navigation-bootstrap'
-                                        # [Steve, 20111216] Netzke:
-gem 'netzke-core', '~> 0.7.7'           #, :git => "git://github.com/skozlov/netzke-core.git"
-gem 'netzke-basepack', '~> 0.7.7'       #, :git => "git://github.com/skozlov/netzke-basepack.git"
 
-gem "wice_grid"
+# Main Admin interface:
+gem "rails_admin", git: "https://github.com/sferik/rails_admin.git"
+
+# FIXME Netzke NOT COMPATIBLE WITH Rails5!
+# [Steve, 20111216] Netzke (previously built w/ Netzke 0.7):
+#gem 'netzke-core', '~> 1.0.1'           #, :git => "git://github.com/skozlov/netzke-core.git"
+#gem 'netzke-basepack', '~> 1.0'         #, :git => "git://github.com/skozlov/netzke-basepack.git"
+
+gem "wice_grid", git: "https://github.com/fasar-sw/wice_grid", branch: "rails5"
+# (original master is located at /leikind/wice_grid)
+
+# [Steve] Customized version. For Facebook-like friendship management
+# XXX When using ssh key use the protocol below:
+#gem "amistad", git: "git@github.com:fasar-sw/amistad", branch: "rails5"
+gem "amistad", git: "https://github.com/fasar-sw/amistad", branch: "rails5"
+gem 'acts_as_reportable'
+gem 'prawn', '~> 2.1'
+gem 'prawn-table'
+
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem "dj_mon",  git: "git://github.com/fasar-sw/dj_mon.git"  # This version has more verbose exception reporting instead of YAML trace
-gem "amistad", git: "git://github.com/fasar-sw/amistad.git", branch: "version5"
-gem "ruport",  git: "git://github.com/ruport/ruport.git", branch: "ruby19-compat"
+gem "dj_mon",  git: "https://github.com/fasar-sw/dj_mon.git"  # This version has more verbose exception reporting instead of YAML trace
 
-gem 'country_select'
-gem 'simple_form'
+# [Steve, 20130412] Custom Documatic version (used for Ooo exports):
+# XXX When using ssh key use the protocol below:
+#gem 'documatic', git: "git@github.com:fasar-sw/documatic"
+gem 'documatic', git: "https://github.com/fasar-sw/documatic"
 
 gem "mechanize"                                     # [Steve, 20140306] For web-crawling tasks
 gem "rest-client"
 
+gem 'country_select'
+gem 'simple_form'
+gem "cocoon"
+gem "nokogiri"                                      # Used for HTML DOCModel easy tampering
+gem 'generator'
+gem 'zip'
+gem 'rubyzip', require: 'zip/zip'
+
+gem 'rubocop', require: false                       # [Steve] For style checking
+
+
 group :development do
-  gem "better_errors", '~> 1.1.0'
+  gem "better_errors" #, '~> 1.1.0'
   gem "binding_of_caller"
   gem 'rails_best_practices'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-shell'
+#  gem 'rspec_api_blueprint', require: false
+#  gem "airbrussh", require: false
+
+  # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
+  gem 'web-console'
+  gem 'listen', '~> 3.0.5'
+
+  # [Steve, 20160919] Spring disabled, since we're already using Zeus:
+  # Spring speeds up development by keeping your application running in the background.
+  # Read more: https://github.com/rails/spring
+#  gem 'spring'
+#  gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
 group :development, :test do
@@ -68,11 +119,20 @@ group :development, :test do
   gem "rspec-rails"
   gem "factory_girl_rails"
   gem "ffaker"                                      # Adds dummy names & fixture generator
+  # The driver for browser testing may be switched back to the default (:rack_test,
+  # without Javascript support) with: > Capybara.use_default_driver
+  #gem 'selenium-webdriver'                          # Full browser simulation => Capybara.current_driver = :selenium
+  # FIXME not working on Leega workstation:
+#  gem 'capybara-webkit'                             # Headless browser simulation (faster) => Capybara.current_driver = :webkit
   gem "letter_opener"
-  gem "zeus", require: false
+
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platform: :mri
 end
 
+
 group :test do
+  gem "zeus", require: false
   # FIXME (Low-pri) This is required by Draper inside the core engine, probably due to some wrong setting:
   gem "test-unit"
   gem "capybara"                                    # [Steve, 20140226] Used only in Feature Specs
@@ -84,19 +144,15 @@ group :test do
                                                     # [Steve, 20140312] Added these to build test coverage stats reports (open: /goggles/coverage/index.html)
   gem 'simplecov', require: false
   gem "codeclimate-test-reporter", require: false   # [Steve, 20140321] CI/Test coverage via local test run
+  gem 'coveralls', require: false                   # [Steve, 20140312] Uses simplecov to obtain test-coverage badge
+  gem 'pullreview-coverage', require: false         # [Steve, 20160801] Updated coverage by PullReview
+
+  # FIXME High-priority: remove usage of 'assigns' & 'render_template' in tests
+  gem 'rails-controller-testing'
 end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
-
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
 # To use debugger
-# gem 'debugger'
+# gem 'ruby-debug'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

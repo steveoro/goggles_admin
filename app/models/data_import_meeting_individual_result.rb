@@ -4,7 +4,7 @@ require 'timing_validatable'
 require 'data_importable'
 
 
-class DataImportMeetingIndividualResult < ActiveRecord::Base
+class DataImportMeetingIndividualResult < ApplicationRecord
   include TimingGettable
   include TimingValidatable
   include DataImportable
@@ -55,17 +55,17 @@ class DataImportMeetingIndividualResult < ActiveRecord::Base
   validates_presence_of     :reaction_time
   validates_numericality_of :reaction_time
 
-  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
-                  :user, :user_id,
-                  :athlete_name, :team_name, :athlete_badge_number, :team_badge_number,
-                  :year_of_birth,
-                  :rank, :is_play_off, :is_out_of_race, :is_disqualified, :standard_points,
-                  :data_import_meeting_program_id, :data_import_swimmer_id,
-                  :data_import_team_id, :data_import_badge_id,
-                  :meeting_individual_points, :minutes, :seconds, :hundreds,
-                  :meeting_program_id, :swimmer_id, :team_id, :badge_id,
-                  :disqualification_code_type_id, :goggle_cup_points, :reaction_time,
-                  :team_points, :team_affiliation_id
+#  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+#                  :user, :user_id,
+#                  :athlete_name, :team_name, :athlete_badge_number, :team_badge_number,
+#                  :year_of_birth,
+#                  :rank, :is_play_off, :is_out_of_race, :is_disqualified, :standard_points,
+#                  :data_import_meeting_program_id, :data_import_swimmer_id,
+#                  :data_import_team_id, :data_import_badge_id,
+#                  :meeting_individual_points, :minutes, :seconds, :hundreds,
+#                  :meeting_program_id, :swimmer_id, :team_id, :badge_id,
+#                  :disqualification_code_type_id, :goggle_cup_points, :reaction_time,
+#                  :team_points, :team_affiliation_id
 
   scope :sort_by_user,      ->(dir) { order("users.name #{dir.to_s}, meeting_programs.meeting_session_id #{dir.to_s}, swimmers.last_name #{dir.to_s}, swimmers.first_name #{dir.to_s}") }
   scope :sort_by_meeting,   ->(dir) { order("meeting_programs.meeting_session_id #{dir.to_s}, swimmers.last_name #{dir.to_s}, swimmers.first_name #{dir.to_s}") }

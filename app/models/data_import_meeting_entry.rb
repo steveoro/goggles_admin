@@ -13,7 +13,7 @@ require 'data_importable'
 # @author   Steve A.
 # @version  4.00.811
 #
-class DataImportMeetingEntry < ActiveRecord::Base
+class DataImportMeetingEntry < ApplicationRecord
   include SwimmerRelatable
   include TimingGettable
   include EventTypeRelatable
@@ -48,15 +48,15 @@ class DataImportMeetingEntry < ActiveRecord::Base
   validates_length_of       :year_of_birth, within: 2..4, allow_nil: false
   validates_numericality_of :year_of_birth
 
-  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
-                  :user, :user_id,
-                  :athlete_name, :team_name, :athlete_badge_number, :team_badge_number,
-                  :data_import_meeting_program_id, :data_import_swimmer_id,
-                  :data_import_team_id, :data_import_badge_id,
-                  :year_of_birth, :minutes, :seconds, :hundreds, :is_no_time,
-                  :start_list_number, :lane_number, :heat_number, :heat_arrival_order,
-                  :meeting_program_id, :swimmer_id, :team_id, :team_affiliation_id,
-                  :badge_id, :entry_time_type_id
+#  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+#                  :user, :user_id,
+#                  :athlete_name, :team_name, :athlete_badge_number, :team_badge_number,
+#                  :data_import_meeting_program_id, :data_import_swimmer_id,
+#                  :data_import_team_id, :data_import_badge_id,
+#                  :year_of_birth, :minutes, :seconds, :hundreds, :is_no_time,
+#                  :start_list_number, :lane_number, :heat_number, :heat_arrival_order,
+#                  :meeting_program_id, :swimmer_id, :team_id, :team_affiliation_id,
+#                  :badge_id, :entry_time_type_id
 
   #-- ----------------------------------------------------------------------------
   # Base methods:

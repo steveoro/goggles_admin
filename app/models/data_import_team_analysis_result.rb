@@ -1,17 +1,17 @@
 # encoding: utf-8
 
 
-class DataImportTeamAnalysisResult < ActiveRecord::Base
+class DataImportTeamAnalysisResult < ApplicationRecord
   belongs_to            :data_import_session
   validates_associated  :data_import_session
 
   belongs_to :season, foreign_key: "desired_season_id"
   belongs_to :team,   foreign_key: "chosen_team_id"
 
-  attr_accessible :analysis_log_text, :sql_text, :searched_team_name,
-                  :desired_season_id, :chosen_team_id,
-                  :team_match_name, :team_match_score,
-                  :best_match_name, :best_match_score
+#  attr_accessible :analysis_log_text, :sql_text, :searched_team_name,
+#                  :desired_season_id, :chosen_team_id,
+#                  :team_match_name, :team_match_score,
+#                  :best_match_name, :best_match_score
 
   validates_length_of       :searched_team_name, maximum: 60
   validates_length_of       :team_match_name, maximum: 60

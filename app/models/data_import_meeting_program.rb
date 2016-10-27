@@ -3,7 +3,7 @@ require 'timing_gettable'
 require 'data_importable'
 
 
-class DataImportMeetingProgram < ActiveRecord::Base
+class DataImportMeetingProgram < ApplicationRecord
   include TimingGettable                            # (Base timing may not be available)
   include DataImportable
 
@@ -43,13 +43,13 @@ class DataImportMeetingProgram < ActiveRecord::Base
   validates_presence_of :event_order
   validates_length_of   :event_order, within: 1..3, allow_nil: false
 
-  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
-                  :user, :user_id,
-                  :event_order, :begin_time,
-                  :data_import_meeting_session_id, :meeting_session_id,
-                  :event_type_id, :category_type_id, :gender_type_id,
-                  :minutes, :seconds, :hundreds,
-                  :is_out_of_race, :heat_type_id, :time_standard_id
+#  attr_accessible :data_import_session_id, :import_text, :conflicting_id,
+#                  :user, :user_id,
+#                  :event_order, :begin_time,
+#                  :data_import_meeting_session_id, :meeting_session_id,
+#                  :event_type_id, :category_type_id, :gender_type_id,
+#                  :minutes, :seconds, :hundreds,
+#                  :is_out_of_race, :heat_type_id, :time_standard_id
 
   scope :only_relays,     includes(:event_type).where('event_types.is_a_relay' => true)
   scope :are_not_relays,  includes(:event_type).where('event_types.is_a_relay' => false)

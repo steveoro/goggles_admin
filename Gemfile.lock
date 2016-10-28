@@ -44,7 +44,7 @@ GIT
 
 GIT
   remote: git://github.com/steveoro/goggles_core.git
-  revision: 1641ca64caa83cce5dfe81c6f2436907a03991e6
+  revision: 0bc1fd969aed8abe5d99355ee12b19907d49632f
   specs:
     goggles_core (1.0.12)
       acts-as-taggable-on (~> 3.4)

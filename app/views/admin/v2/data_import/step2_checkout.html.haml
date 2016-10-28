@@ -26,15 +26,15 @@
               = I18n.t(:please_wait)
               \ #{image_tag( 'indicator.gif' )}
             #divProgress.progress.progress-striped.active{:hidden => "true"}
-  = netzke :data_import_checkout_container, {                                   |
-        class_name: "DataImportCheckoutPanel",                                  |
-        width: "100%",                                                          |
-        height: @max_view_height,                                               |
-        border: true,                                                           |
-        data_import_session_id: @data_import_session.id,                        |
-        meeting_id: @meeting ? @meeting.id : 0,                                 |
-        view_config: { force_fit: true }                                        |
-    }                                                                           |
+  -#= netzke :data_import_checkout_container, {                                   |
+  -#      class_name: "DataImportCheckoutPanel",                                  |
+  -#      width: "100%",                                                          |
+  -#      height: @max_view_height,                                               |
+  -#      border: true,                                                           |
+  -#      data_import_session_id: @data_import_session.id,                        |
+  -#      meeting_id: @meeting ? @meeting.id : 0,                                 |
+  -#      view_config: { force_fit: true }                                        |
+  -#  }                                                                           |
 - else
   %div{:align => "center", :style => "padding-top: 2em; padding-bottom: 20em;"}
     %p

@@ -1,0 +1,2 @@
+module DiMeetingSessionsHelper
+end

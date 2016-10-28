@@ -14,7 +14,7 @@ module GogglesAdmin
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/app/strategies)
-    config.autoload_paths += GogglesCore::Engine.config.autoload_paths
+    config.autoload_paths += GogglesCore::Engine.config.eager_load_paths # OR autoload_paths
 
     # [Steve, 20160916] Preserve behaviour for Time fields (which will become
     # time-zone aware in Rails 5.1).

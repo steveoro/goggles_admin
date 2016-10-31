@@ -13,34 +13,34 @@ require 'common/validation_error_tools'
 
 =end
 module V2
-class BadgeDuplicateChecker
-  include Singleton
+  class BadgeDuplicateChecker
+    include Singleton
 
-  # Checks if the specified instance of Swimmer has more than 1 badge per Team/Season.
-  # Checks also if the Swimmer and Season instances are valid.
-  #
-  # Returns +true+ if no problems are found, +false+ otherwise.
-  #
-  def self.is_ok?( swimmer, season )
-    raise ArgumentError.new(
-      "swimmer must be an instance of Swimmer!"
-    ) unless swimmer.instance_of?( Swimmer )
+    # Checks if the specified instance of Swimmer has more than 1 badge per Team/Season.
+    # Checks also if the Swimmer and Season instances are valid.
+    #
+    # Returns +true+ if no problems are found, +false+ otherwise.
+    #
+    def self.is_ok?( swimmer, season )
+      raise ArgumentError.new(
+        "swimmer must be an instance of Swimmer!"
+      ) unless swimmer.instance_of?( Swimmer )
 
-    Swimmer.joins(:badges).where(
-      'badges.season_id'  => season.id,
-      'badges.swimmer_id' => swimmer.id
-    ).group('swimmers.id').having('COUNT(badges.id) > 1').first.nil?
-  end
-  #-- -------------------------------------------------------------------------
-  #++
+      Swimmer.joins(:badges).where(
+        'badges.season_id'  => season.id,
+        'badges.swimmer_id' => swimmer.id
+      ).group('swimmers.id').having('COUNT(badges.id) > 1').first.nil?
+    end
+    #-- -------------------------------------------------------------------------
+    #++
 
 
-  # Returns the list of Swimmer rows that have duplicate badges for the specified
-  # +season+. (An empty list when none are found.)
-  #
-  # (Remember to use Swimmer#get_badges_array(season) to retrieve the badges.)
-  #
-  def self.get_swimmers_with_duplicates( season )
+    # Returns the list of Swimmer rows that have duplicate badges for the specified
+    # +season+. (An empty list when none are found.)
+    #
+    # (Remember to use Swimmer#get_badges_array(season) to retrieve the badges.)
+    #
+    def self.get_swimmers_with_duplicates( season )
 =begin
     Equivalent SQL check:
 
@@ -49,10 +49,10 @@ class BadgeDuplicateChecker
     group by swimmers.id
     having count(badges.id) > 1
 =end
-    Swimmer.joins(:badges).where( 'badges.season_id' => season.id )
-      .group('swimmers.id').having('COUNT(badges.id) > 1').to_a
+      Swimmer.joins(:badges).where( 'badges.season_id' => season.id )
+        .group('swimmers.id').having('COUNT(badges.id) > 1').to_a
+    end
+    #-- -------------------------------------------------------------------------
+    #++
   end
-  #-- -------------------------------------------------------------------------
-  #++
-end
 end

@@ -44,9 +44,9 @@ GIT
 
 GIT
   remote: git://github.com/steveoro/goggles_core.git
-  revision: 0bc1fd969aed8abe5d99355ee12b19907d49632f
+  revision: 9cce7826ce63d72826982208082f47eabf92c1b7
   specs:
-    goggles_core (1.0.12)
+    goggles_core (1.0.18)
       acts-as-taggable-on (~> 3.4)
       acts_as_votable (~> 0.9.0)
       devise
@@ -146,7 +146,7 @@ GEM
       responders
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
-    devise-i18n (1.1.0)
+    devise-i18n (1.1.1)
     diff-lcs (1.2.5)
     docile (1.1.5)
     domain_name (0.5.20160615)
@@ -376,7 +376,7 @@ GEM
     treetop (1.4.15)
       polyglot
       polyglot (>= 0.3.1)
-    tzinfo (0.3.51)
+    tzinfo (0.3.52)
     uglifier (3.0.0)
       execjs (>= 0.3.0, < 3)
     unf (0.1.4)

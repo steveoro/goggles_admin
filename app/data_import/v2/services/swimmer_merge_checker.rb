@@ -6,7 +6,7 @@
 
 =begin
 
-= V2::SwimmerMergeChecker
+= SwimmerMergeChecker
 
   - Goggles framework vers.:  4.00.733
   - author: Steve A.
@@ -15,7 +15,7 @@
   Swimmer instances: a source/slave row into a destination/master one.
 
   If the analysis reports that the merge is indeed feasable, the merge itself can
-  be carried out by the specific V2::SwimmerMerger class.
+  be carried out by the specific SwimmerMerger class.
 
   ==== The merge operation MUST NOT BE done (and the analysis will fail) if:
   SAME SEASON, DIFFERENT AFFILIATION:
@@ -39,7 +39,7 @@
     are overlapping rows, these are indeed equalities, thus deletable duplicates).
 
 =end
-class V2::SwimmerMergeChecker
+class SwimmerMergeChecker
 
   # Creates a new instance
   #

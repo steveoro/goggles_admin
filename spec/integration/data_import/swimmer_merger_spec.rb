@@ -5,7 +5,7 @@ require 'rails_helper'
 require_relative '../../../app/data_import/v2/services/swimmer_merger'
 
 
-describe V2::SwimmerMerger, type: :integration do
+describe SwimmerMerger, type: :integration do
 
   describe "when merging swimmers having NO badge duplicates, NO dup affiliation (but randomly chosen)," do
     # TODO

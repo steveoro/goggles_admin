@@ -10,10 +10,10 @@ require 'rails_helper'
 describe "FinResultParser parsing FIN Result file type 2,", type: :integration do
   # We need to parse the fixture file just once to speed-up tests:
   before( :all ) do
-    @result_hash = V2::FinResultParser.parse_txt_file(
+    @result_hash = FinResultParser.parse_txt_file(
       File.join(Rails.root, 'spec/fixtures/ris/ris20081221mussi-sample.txt'),
       nil,                                          # We don't care for logging, here
-      V2::Fin2ResultDefs.new                            # This will forcibly plug-in the correct parsing engine
+      Fin2ResultDefs.new                            # This will forcibly plug-in the correct parsing engine
     )
 # DEBUG
 #    [

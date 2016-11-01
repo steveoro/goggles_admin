@@ -8,7 +8,7 @@ require_relative '../../../data_import/v2/services/data_import_team_affiliation_
 
 =begin
 
-= V2::DataImportTeamBuilder
+= DataImportTeamBuilder
 
   - Goggles framework vers.:  4.00.709
   - author: Steve A.
@@ -50,7 +50,7 @@ require_relative '../../../data_import/v2/services/data_import_team_affiliation_
      a manual review/selection of the candidates found.
 
 =end
-class V2::DataImportTeamBuilder < V2::DataImportEntityBuilder
+class DataImportTeamBuilder < DataImportEntityBuilder
 
   # Searches for an existing Team given the parameters, or it adds a new one,
   # if not found.
@@ -114,7 +114,7 @@ class V2::DataImportTeamBuilder < V2::DataImportEntityBuilder
           # at the beginning of a new season). Since we do not actually need the
           # affiliation at this stage, we just search for it and create it if missing,
           # without storing the result:
-          V2::DataImportTeamAffiliationBuilder.build_from_parameters(
+          DataImportTeamAffiliationBuilder.build_from_parameters(
             data_import_session,
             @result_row,
             season
@@ -133,7 +133,7 @@ class V2::DataImportTeamBuilder < V2::DataImportEntityBuilder
 
       if_not_found do
         if force_team_or_swimmer_creation              # Guess city name & setup fields:
-          city_builder = V2::DataImportCityBuilder.build_from_parameters( data_import_session, team_name )
+          city_builder = DataImportCityBuilder.build_from_parameters( data_import_session, team_name )
           entity_for_creation DataImportTeam
           attributes_for_creation(
             data_import_session_id: data_import_session.id,
@@ -150,7 +150,7 @@ class V2::DataImportTeamBuilder < V2::DataImportEntityBuilder
           # instance:
           analysis_log = ''
           sql_executable_log = ''
-          result = V2::TeamNameAnalyzer.new.analyze(
+          result = TeamNameAnalyzer.new.analyze(
               team_name,
               season.id,
               analysis_log,                         # The method will update these 2 variables in place

@@ -7,7 +7,7 @@ require_relative '../../../data_import/v2/dao/team_analysis_report_dao'
 
 =begin
 
-= V2::TeamNameAnalyzer
+= TeamNameAnalyzer
 
   - Goggles framework vers.:  4.00.709
   - author: Steve A.
@@ -31,7 +31,7 @@ require_relative '../../../data_import/v2/dao/team_analysis_report_dao'
    by calling the dedicated getter methods.
 
 =end
-class V2::TeamNameAnalyzer
+class TeamNameAnalyzer
 
   # Memoized getter for all the Team instances.
   #

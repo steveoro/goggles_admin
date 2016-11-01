@@ -7,7 +7,7 @@ require_relative '../../../data_import/v2/dao/swimmer_analysis_report_dao'
 
 =begin
 
-= V2::SwimmerNameAnalyzer
+= SwimmerNameAnalyzer
 
   - Goggles framework vers.:  4.00.717
   - author: Steve A.
@@ -31,7 +31,7 @@ require_relative '../../../data_import/v2/dao/swimmer_analysis_report_dao'
    by calling the dedicated getter methods.
 
 =end
-class V2::SwimmerNameAnalyzer
+class SwimmerNameAnalyzer
 
   # This allows the override of the #all_swimmer getter for the internal matcher
   attr_accessor :swimmers

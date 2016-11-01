@@ -5,7 +5,7 @@
 
 =begin
 
-= V2::DataImportEntityCommitter
+= DataImportEntityCommitter
 
   - Goggles framework vers.:  4.00.683
   - author: Steve A.
@@ -16,7 +16,7 @@
 
 === Example (for DataImportSwimmer commit):
 
-  swimmer_committer = V2::DataImportEntityCommitter.new( data_import_session, DataImportSwimmer, 6 )
+  swimmer_committer = DataImportEntityCommitter.new( data_import_session, DataImportSwimmer, 6 )
   swimmer_committer.commit do |source_row|
     Swimmer.transaction do
       committed_row = Swimmer.new(
@@ -40,7 +40,7 @@
   end
 
 =end
-class V2::DataImportEntityCommitter
+class DataImportEntityCommitter
   include SqlConverter
 
   attr_reader :data_import_session, :committed_data_rows, :last_error

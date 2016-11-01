@@ -6,11 +6,11 @@ require_relative '../../../app/data_import/v2/fin_result_defs'
 #require_relative '../../../lib/framework/console_logger'
 
 
-describe V2::FinResultDefs, type: :model do
+describe FinResultDefs, type: :model do
 
   context "for a well-defined instance," do
 
-    subject { V2::FinResultDefs.new( ConsoleLogger.new ) }
+    subject { FinResultDefs.new( ConsoleLogger.new ) }
 
     it_behaves_like( "(the existance of a method)", [
       :logger,

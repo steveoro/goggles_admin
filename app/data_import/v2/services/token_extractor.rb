@@ -2,7 +2,7 @@
 
 =begin
 
-= V2::TokenExtractor
+= TokenExtractor
 
   - Goggles framework vers.:  4.00.469
   - author: Steve A.
@@ -22,7 +22,7 @@
    if the additional parameter current_line_number is also used.
 
 =end
-class V2::TokenExtractor
+class TokenExtractor
 
   attr_accessor :field_name, :starting_with, :ending_with, :line_timeout
 
@@ -38,7 +38,7 @@ class V2::TokenExtractor
   #-- -------------------------------------------------------------------------
   #++
 
-  # Clears the cached results. This method is useful only if the same V2::TokenExtractor
+  # Clears the cached results. This method is useful only if the same TokenExtractor
   # instance is used to tokenize different source texts.
   #
   def clear()
@@ -101,7 +101,7 @@ class V2::TokenExtractor
 
   # Converts the current instance to a readable string
   def to_s
-    "[V2::TokenExtractor: #{@field_name}, start=#{@starting_with}, end=#{@ending_with}, timeout:#{@line_timeout}]" +
+    "[TokenExtractor: #{@field_name}, start=#{@starting_with}, end=#{@ending_with}, timeout:#{@line_timeout}]" +
     (@computed_start ? " cached: (#{@computed_start}.." : ' cached: (nil..') +
     (@computed_end ? "#{@computed_end})" : 'nil)')
   end

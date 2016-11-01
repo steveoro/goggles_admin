@@ -113,7 +113,7 @@ class Admin::V2::DataImportController < ApplicationController
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
     importer            = DataImporter.new( logger, flash, data_import_session )
-    result_processor    = V2::TeamAnalysisResultProcessor.new( logger, flash )
+    result_processor    = TeamAnalysisResultProcessor.new( logger, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportTeamAnalysisResult.where( data_import_session_id: data_import_session_id )
 
@@ -177,7 +177,7 @@ class Admin::V2::DataImportController < ApplicationController
           ) and return
         else
           redirect_to(
-            admin_v2_di_step2_checkout_path(
+            admin_v2_di_step2_checkout_redirect_path(
               id: data_import_session_id,
               force_meeting_creation: force_missing_meeting_creation ? '1' : '0',
               force_team_or_swimmer_creation: '1' # After the Team analysis, we can serialize the missing teams (WAS: force_team_or_swimmer_creation     ? '1' : '0' )
@@ -255,7 +255,7 @@ class Admin::V2::DataImportController < ApplicationController
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
     importer            = DataImporter.new( logger, flash, data_import_session )
-    result_processor    = V2::SwimmerAnalysisResultProcessor.new( logger, flash )
+    result_processor    = SwimmerAnalysisResultProcessor.new( logger, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id )
 
@@ -309,7 +309,7 @@ class Admin::V2::DataImportController < ApplicationController
         data_import_session.save!
         DataImportSwimmerAnalysisResult.delete_all( data_import_session_id: data_import_session_id )
         redirect_to(
-          admin_v2_di_step2_checkout_path(
+          admin_v2_di_step2_checkout_redirect_path(
             id: data_import_session_id,
             force_meeting_creation: force_missing_meeting_creation ? '1' : '0',
             force_team_or_swimmer_creation: '1' # After all the analysis phases, we can serialize any missing team (WAS: force_team_or_swimmer_creation ? '1' : '0' )

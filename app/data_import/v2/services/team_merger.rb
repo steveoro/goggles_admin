@@ -10,7 +10,7 @@
 
 =begin
 
-= V2::TeamMerger
+= TeamMerger
 
   - Goggles framework vers.:  4.00.733
   - author: Steve A.
@@ -33,7 +33,7 @@
  - retrieve the logs using the member variables.
 
 =end
-class V2::TeamMerger
+class TeamMerger
   include SqlConverter
 
   # Creates a new instance

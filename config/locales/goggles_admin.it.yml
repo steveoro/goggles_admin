@@ -95,6 +95,15 @@ it:
     team_analysis_completed: "Analisi dei Team completata."
     parsing_error_nil_result: "Errore nel parsing: risultato nil da parsing quando era atteso un V3::ParseResult."
 
+    upload: "Carica"
+    session_deleted: "Session deleted."
+    unable_to_delete_session: "Unable to delete this Session."
+    upload_failed: "Upload failed!"
+    upload: "Upload"
+    keep_offline: "Keep off-line"
+    warning_no_import_data_session_found: "No import data session was found."
+    uploaded_files_still_present: "Uploaded Files still present"
+
     continue_with_swimmer_analysis: "Continua Analisi nomi Nuotatori"
     continue_with_swimmer_analysis_tooltip: "(Questo rilancera' la fase 1.1 col flag DISABILITATO per la creazione forzata di Nuotatori mancanti, in modo da fare sempre l'analisi manuale dei risultati esistenti)"
     swimmer_analysis_results: "Analisi dei nomi Nuotatori (non riconosciuti)"

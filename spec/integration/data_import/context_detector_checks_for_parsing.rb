@@ -2,13 +2,13 @@
 
 # Wrapper module for shared check methods for a subject defined such as this:
 #
-#    subject { V2::ContextDetector.new( dummy_wrapper.context_type_meeting_header, nil ) }
+#    subject { ContextDetector.new( dummy_wrapper.context_type_meeting_header, nil ) }
 #
-module V2::ContextDetectorChecksForParsing
+module ContextDetectorChecksForParsing
 
   # Checks if the specified feed is successfully recognized after all rows have
   # been checked.
-  # Assumes +subject+ is an instance of V2::ContextDetector. Raises an error otherwise.
+  # Assumes +subject+ is an instance of ContextDetector. Raises an error otherwise.
   #
   # === Params:
   # - feed_array:
@@ -23,7 +23,7 @@ module V2::ContextDetectorChecksForParsing
 
   # Checks if the specified feed fails to be recognized after all rows have
   # been checked.
-  # Assumes +subject+ is an instance of V2::ContextDetector. Raises an error otherwise.
+  # Assumes +subject+ is an instance of ContextDetector. Raises an error otherwise.
   #
   # === Params:
   # - feed_array:
@@ -49,7 +49,7 @@ module V2::ContextDetectorChecksForParsing
   # That is, the recognition loop will stop after the minimum required number of lines
   # has been fed-in, even though the actual feed is several lines longer.
   #
-  # Assumes +subject+ is an instance of V2::ContextDetector. Raises an error otherwise.
+  # Assumes +subject+ is an instance of ContextDetector. Raises an error otherwise.
   #
   # === Params:
   # - is_ok:
@@ -65,7 +65,7 @@ module V2::ContextDetectorChecksForParsing
   #   name of the previously recognized contex. Defaults to +nil+.
   #
   def check_for_parsing( is_ok, feed_array, fake_offset_index = 0, prev_context_name = nil )
-    raise ArgumentError.new("subject must be an instance of V2::ContextDetector!") unless subject.instance_of?( V2::ContextDetector )
+    raise ArgumentError.new("subject must be an instance of ContextDetector!") unless subject.instance_of?( ContextDetector )
     subject.clear
     is_recognized = is_ok
     # Retrieve the total minimum number of conditions to be checked before the result can

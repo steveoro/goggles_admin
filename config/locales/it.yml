@@ -3,3 +3,9 @@
 
 it:
   hello: "Ciao!"
+  edit_inline: Modifica su griglia
+  edit_in_form: Modifica in finestra
+  show_details: Mostra dettagli
+  details: Dettagli di riga
+  search: Cerca
+  index: Indice

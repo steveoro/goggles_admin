@@ -6,7 +6,7 @@ require_relative '../../../data_import/v2/services/data_import_entity_builder'
 
 =begin
 
-= V2::DataImportTimeStandardBuilder
+= DataImportTimeStandardBuilder
 
   - Goggles framework vers.:  4.00.671
   - author: Steve A.
@@ -15,7 +15,7 @@ require_relative '../../../data_import/v2/services/data_import_entity_builder'
  TimeStandard entity rows.
 
 =end
-class V2::DataImportTimeStandardBuilder < V2::DataImportEntityBuilder
+class DataImportTimeStandardBuilder < DataImportEntityBuilder
 
   # Searches for an existing TimeStandard given the parameters, or it adds a new one, if not found.
   #

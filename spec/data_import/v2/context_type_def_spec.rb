@@ -4,7 +4,7 @@ require 'rails_helper'
 require_relative '../../../app/data_import/v2/context_type_def'
 
 
-describe V2::ContextTypeDef, type: :model do
+describe ContextTypeDef, type: :model do
   let( :fix_conditions ) do
     [
       /(\s*(Distanze speciali|((\d{1,3}\D{1,2}|[IXVMCDL]{1,8})\s(\S+|Trof|Region))))|(\d{1,2}((\/|-|\,)\d{1,2})*\s(gen|feb|mar|apr|mag|giu|lug|ago|set|ott|nov|dic).*\s\d{4})/ui,
@@ -14,7 +14,7 @@ describe V2::ContextTypeDef, type: :model do
 
 
   context "for a well-defined instance," do
-    subject { V2::ContextTypeDef.new( :fixture_context, fix_conditions ) }
+    subject { ContextTypeDef.new( :fixture_context, fix_conditions ) }
 
 
     it_behaves_like( "(the existance of a method)", [
@@ -73,12 +73,12 @@ describe V2::ContextTypeDef, type: :model do
       end
       it "returns false for a different object with the same name" do
         expect(
-          subject == V2::ContextTypeDef.new( :fixture_context, [/(\s*(dummytest))/ui] )
+          subject == ContextTypeDef.new( :fixture_context, [/(\s*(dummytest))/ui] )
         ).to be false
       end
       it "returns true for another object with the same values" do
         expect(
-          subject == V2::ContextTypeDef.new( :fixture_context, fix_conditions )
+          subject == ContextTypeDef.new( :fixture_context, fix_conditions )
         ).to be true
       end
     end
@@ -87,7 +87,7 @@ describe V2::ContextTypeDef, type: :model do
 
 
     context "with a parent context specified," do
-      subject { V2::ContextTypeDef.new( :whatever, [ /(\s*(dummytest))/ui ], :dummy_parent ) }
+      subject { ContextTypeDef.new( :whatever, [ /(\s*(dummytest))/ui ], :dummy_parent ) }
 
       it "has the specified parent context name" do
         expect( subject.parent_context_name ).to eq( :dummy_parent )
@@ -96,7 +96,7 @@ describe V2::ContextTypeDef, type: :model do
 
 
     context "with a line timeout specified," do
-      subject { V2::ContextTypeDef.new( :whatever, [ /(\s*(dummytest))/ui ], nil, 3 ) }
+      subject { ContextTypeDef.new( :whatever, [ /(\s*(dummytest))/ui ], nil, 3 ) }
 
       it "has line timeout value" do
         expect( subject.line_timeout ).to be 3

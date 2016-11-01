@@ -7,7 +7,7 @@
 
 =begin
 
-= V2::SwimmerMerger
+= SwimmerMerger
 
   - Goggles framework vers.:  4.00.777
   - author: Steve A.
@@ -30,7 +30,7 @@
  - retrieve the logs using the member variables.
 
 =end
-class V2::SwimmerMerger
+class SwimmerMerger
   include SqlConverter
 
   # Creates a new instance

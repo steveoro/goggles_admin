@@ -5,7 +5,7 @@
 
 =begin
 
-= V2::CityComparator
+= CityComparator
 
   - Goggles framework vers.:  4.00.558
   - author: Steve A.
@@ -14,7 +14,7 @@
  into account possible abbreviations and naming variations.
 
 =end
-class V2::CityComparator
+class CityComparator
 
   # Searches for existing matching city names, assuming the
   # specified "composed" name contains the name of target city.

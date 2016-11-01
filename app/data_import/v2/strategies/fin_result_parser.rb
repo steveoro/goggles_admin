@@ -19,7 +19,7 @@ require 'iconv' unless String.method_defined?( :encode )
 
 =begin
 
-= V2::FinResultParser
+= FinResultParser
 
   - Goggles framework vers.:  4.00.749
   - author: Steve A.
@@ -32,7 +32,7 @@ require 'iconv' unless String.method_defined?( :encode )
  with the format used in these kind of files.
 
 =end
-class V2::FinResultParser
+class FinResultParser
 
   # Set this to true or false to enable or disable debugging output, L1.
   #
@@ -100,11 +100,11 @@ class V2::FinResultParser
   #   possible value found of the above fields.
   #
   def self.parse_txt_file( full_pathname, logger = nil, parsing_defs = nil )
-    parsing_defs = parsing_defs || V2::FileFormatParser.new( full_pathname ).parse( logger )
+    parsing_defs = parsing_defs || FileFormatParser.new( full_pathname ).parse( logger )
     raise ArgumentError.new("File format for '#{full_pathname}' NOT recognized!") if parsing_defs.nil?
 
-    service = V2::TxtParseService.new( parsing_defs )
-    service.log_somehow( logger, "\r\n-- V2::FinResultParser::parse_txt_file(#{ full_pathname }):", true, :info )
+    service = TxtParseService.new( parsing_defs )
+    service.log_somehow( logger, "\r\n-- FinResultParser::parse_txt_file(#{ full_pathname }):", true, :info )
     full_text_file_contents = ""
                                                     # Scan each line of the file until gets reaches EOF:
     File.open( full_pathname ) do |f|

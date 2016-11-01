@@ -7,7 +7,7 @@ require_relative '../../../data_import/v2/dao/csi_result_dao'
 
 =begin
 
-= V2::ResultTimeParser
+= ResultTimeParser
 
   - Goggles framework vers.:  4.00.793
   - author: Steve A.
@@ -16,7 +16,7 @@ require_relative '../../../data_import/v2/dao/csi_result_dao'
  from single text tokens extracted from meeting result files.
 
 =end
-class V2::ResultTimeParser
+class ResultTimeParser
 
   attr_reader :disqualification_code_type_id, :mins_secs_hds_array
   #-- -------------------------------------------------------------------------

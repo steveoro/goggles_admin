@@ -95,6 +95,15 @@ en:
     team_analysis_completed: "Team Analysis completed."
     parsing_error_nil_result: "Parsing error: unexpected nil result from the parser procedure! (A V3::ParseResult was expected.)"
 
+    upload: "Upload"
+    session_deleted: "Sessione eliminata."
+    unable_to_delete_session: "Impossibile eliminare la sessione."
+    upload_failed: "Upload fallito!"
+    upload: "Upload"
+    keep_offline: "Mantieni off-line"
+    warning_no_import_data_session_found: "Non e' stata trovata nessuna sessione di importazione dati."
+    uploaded_files_still_present: "Files caricati e ancora presenti"
+
     continue_with_swimmer_analysis: "Continue Swimmer names Analysis"
     continue_with_swimmer_analysis_tooltip: "(This will re-launch Phase 1.1 with a DISABLED global flag for forced creation of missing Swimmers, in order to perform the manual analysis of the existing results.)"
     swimmer_analysis_results: "New Swimmer names Analysis"

@@ -1,0 +1,31 @@
+%br/
+%hr/
+
+%section
+  .row.offset3.span8
+    %h2= "Log in"
+  .row.offset2.span8
+    = simple_form_for( resource, as: resource_name, url: session_path(resource_name), html: { class: 'form-horizontal' }, defaults: {input_html: { class: 'form-control' }} ) do |f|
+      - unless f.error_notification.nil?
+        .form-group
+          .row.span12
+            .alert.alert-danger
+              %i= devise_error_messages!
+          -#= f.error_notification
+      .form-group
+        .row.span8
+          = f.input( :email, required: true, autofocus: true, placeholder: I18n.t("devise.email_placeholder"), label: I18n.t("devise.email_label") )
+        .row.span8
+          = f.input( :password, required: true )
+      .form-group
+        .row.span12
+          - if devise_mapping.rememberable?
+            = f.label( t(:remember_me), for: :user_remember_me )
+            = f.check_box( :remember_me )
+      .form-group
+        .row.span12
+          = f.button( :submit, "Log in" )
+  %br/
+  = render( "devise/shared/links" )
+
+%br/

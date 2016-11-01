@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello!"
+  edit_inline: Edit in-line
+  edit_in_form: Edit in form
+  show_details: Show details
+  details: Row details
+  search: Search
+  index: Index

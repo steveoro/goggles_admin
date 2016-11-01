@@ -102,17 +102,17 @@
 - if @uploaded_files.size > 0
   %div
     %p.text-left.lead
-      = I18n.t(:uploaded_files_still_present) + ':'
+      = I18n.t('admin_import.uploaded_files_still_present') + ':'
     %ul
       - @uploaded_files.each do |fn|
         %li
           \-  #{h(fn)}
 %br/
 .row-fluid
-  = form_tag( 'step2_checkout',                                                                                   |
-        :multipart => true, class: 'form-horizontal',                                                             |
-        :onsubmit => "$('#loadingIndicator').show(); "                                                            |
-    ) do                                                                                                          |
+  = form_tag( "step2_checkout",                           |
+        multipart: true, class: 'form-horizontal', method: :post, |
+        onsubmit: "$('#loadingIndicator').show(); "    |
+    ) do                                                  |
     .row-fluid.control-group
       %label.control-label{:for => "season[season_id]"}
         = I18n.t(:season, { scope: [:activerecord, :models] }) + ':'
@@ -138,6 +138,6 @@
         = check_box_tag( :force_team_or_swimmer_creation )
     .control-group
       .controls
-        = submit_tag( I18n.t(:upload), data: {:disable_with => I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn' )
+        = submit_tag( I18n.t('admin_import.upload'), data: {:disable_with => I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn' )
         %span#loadingIndicator{:hidden => "true"}= image_tag( 'indicator.gif' )
         #divProgress.progress.progress-striped.active{:hidden => "true"}

@@ -10,10 +10,10 @@ require 'rails_helper'
 describe "FinResultParser parsing FIN Relay Result file type 1 (extended),", type: :integration do
   # We need to parse the fixture file just once to speed-up tests:
   before( :all ) do
-    @result_hash = V2::FinResultParser.parse_txt_file(
+    @result_hash = FinResultParser.parse_txt_file(
       File.join(Rails.root, 'spec/fixtures/ris/ris20150112gussago_1.txt'),
       nil,                                          # We don't care for logging, here
-      V2::FinResultDefs.new                             # This will forcibly plug-in the correct parsing engine
+      FinResultDefs.new                             # This will forcibly plug-in the correct parsing engine
     )
 # DEBUG
 #    @result_hash[:parse_result].keys.each do |key|

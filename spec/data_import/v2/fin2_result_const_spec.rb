@@ -6,17 +6,17 @@ require_relative '../../../app/data_import/v2/context_type_def'
 require_relative '../../../app/data_import/v2/services/token_extractor'
 
 
-describe V2::Fin2ResultConsts, type: :model do
+describe Fin2ResultConsts, type: :model do
 
   context "as an included module," do
-    subject { class V2::Fin2ResultConsts::DummyWrapper; include V2::Fin2ResultConsts; end.new }
+    subject { class Fin2ResultConsts::DummyWrapper; include Fin2ResultConsts; end.new }
 
-    it "defines a list of constant V2::ContextTypeDef(s)" do
-      expect( subject.get_context_types_list ).to all be_an_instance_of( V2::ContextTypeDef )
+    it "defines a list of constant ContextTypeDef(s)" do
+      expect( subject.get_context_types_list ).to all be_an_instance_of( ContextTypeDef )
     end
 
-    it "defines a list of constant V2::TokenExtractor(s)" do
-      expect( subject.get_tokenizers_list ).to all be_an_instance_of( V2::TokenExtractor )
+    it "defines a list of constant TokenExtractor(s)" do
+      expect( subject.get_tokenizers_list ).to all be_an_instance_of( TokenExtractor )
     end
   end
   #-- -------------------------------------------------------------------------

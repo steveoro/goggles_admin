@@ -92,7 +92,7 @@ describe DataImporter, type: :strategy do
         it "raises an error for any other unknown symbol" do
           expect{
             subject.set_up( FFaker::Lorem.word.to_sym => FFaker::Lorem.word )
-          }.to raise_error
+          }.to raise_error( NoMethodError )
         end
       end
       context "when specifying a :full_pathname," do

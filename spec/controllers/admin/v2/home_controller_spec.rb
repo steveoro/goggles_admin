@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 
-describe Admin::V3::MaintenanceController, :type => :controller do
+describe Admin::V2::MaintenanceController, type: :controller do
   before :each do
     @request.env["devise.mapping"] = Devise.mappings[:user]
     @user = create( :user )

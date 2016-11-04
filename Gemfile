@@ -24,7 +24,7 @@ gem 'jquery_datepicker'
 gem "json"
 gem "haml", "~> 4.0.5"
 
-gem "goggles_core", git: "git://github.com/steveoro/goggles_core.git"
+gem "goggles_core", git: "https://github.com/steveoro/goggles_core"
 
 gem 'execjs'
 gem 'therubyracer'
@@ -33,7 +33,7 @@ gem 'therubyracer'
 gem "syck"                              # old-skool YAML interpreter used by some of our gems
 gem 'safe_yaml'
 # Main Admin interface:
-gem "rails_admin", git: "git://github.com/sferik/rails_admin.git", branch: "rails-3.x"
+gem "rails_admin", git: "https://github.com/sferik/rails_admin", branch: "rails-3.x"
                                         # [Steve, 20130801] Navigation gems for rendering menus & breadcrumbs:
 gem "simple-navigation"
 gem 'simple-navigation-bootstrap'
@@ -44,9 +44,9 @@ gem 'netzke-basepack', '~> 0.7.7'       #, :git => "git://github.com/skozlov/net
 gem "wice_grid"
 gem 'daemons'
 gem 'delayed_job_active_record'
-gem "dj_mon",  git: "git://github.com/fasar-sw/dj_mon.git"  # This version has more verbose exception reporting instead of YAML trace
-gem "amistad", git: "git://github.com/fasar-sw/amistad.git", branch: "version5"
-gem "ruport",  git: "git://github.com/ruport/ruport.git", branch: "ruby19-compat"
+gem "dj_mon",  git: "https://github.com/fasar-sw/dj_mon"  # This version has more verbose exception reporting instead of YAML trace
+gem "amistad", git: "https://github.com/fasar-sw/amistad", branch: "version5"
+gem "ruport",  git: "https://github.com/ruport/ruport", branch: "ruby19-compat"
 
 gem 'country_select'
 gem 'simple_form'

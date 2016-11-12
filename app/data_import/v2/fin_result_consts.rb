@@ -350,7 +350,7 @@ module FinResultConsts                              # == HEADER CONTEXT TYPES de
   def tokenizer_relay_header_category_group
     TokenExtractor.new(
       :category_group,
-      /M\d\d0\-\d\d\d/i,
+      /(\s+|M)\d\d0(\-\d\d\d)*/i,
       7                                             # (max size)
       # Alt. vers. (instead of '7'): /\s*tempo base\s*/ui
     )
@@ -476,6 +476,8 @@ module FinResultConsts                              # == HEADER CONTEXT TYPES de
       :team_name,
       /
         (
+          (?<=\s((\d|\s)\d|fg)\s{2})\s{0,3}((?<t0>\w(\w|\s|\.|-|'){3}.{5,50}))|
+
           (?<=\d\s{4})(\s+(?<t1>[a-z]+.{24,29}))|
           (?<=^\s\s)(\s+(?!fuori\sgara)(?<t2>[a-z]+.{24,29}))|
           (?<=\d{6}\s{3})((?<t3>[a-z]+.{24,29}))|
@@ -485,12 +487,12 @@ module FinResultConsts                              # == HEADER CONTEXT TYPES de
           (?<=\sfg)(\s+(?<t6>[a-z]+.{24,29}))
         )
         \s{4,20}
-        (?=(?<timing>Ritir|Squal|\d{1,2}'\d{2}"\d{2}))
+        (?=(?<timing>Ritir|Squal|\d{1,2}'\d{2}"\d{2}|\d{1,2}\.\d{2}\.\d{2}))
       /uix,
 #      /(?<=\s{3})(.{25,29}\s{6,12})(?=Ritir|Squal|\d{1,2}'\d{2}"\d{2})/i,
       /
         (?<=\S)(\s{6,65})
-        (?=(?<timing>Ritir|Squal|\d{1,2}'\d{2}"\d{2}))
+        (?=(?<timing>Ritir|Squal|\d{1,2}'\d{2}"\d{2}|\d{1,2}\.\d{2}\.\d{2}))
       /uix
 #      25                                            # (max size)
     )

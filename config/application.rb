@@ -17,7 +17,7 @@ module GogglesAdmin
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/app/strategies #{config.root}/app/concerns #{config.root}/app/data_import)
-    config.autoload_paths += %W(#{config.root}/app/data_import/v2 #{config.root}/app/data_import/v2/daoc#{config.root}/app/data_import/v2/services #{config.root}/app/data_import/v2/strategies)
+    config.autoload_paths += %W(#{config.root}/app/data_import/v2 #{config.root}/app/data_import/v2/dao #{config.root}/app/data_import/v2/services #{config.root}/app/data_import/v2/strategies)
     config.autoload_paths += GogglesCore::Engine.config.autoload_paths
 
     # Only load the plugins named here, in the order given (default is alphabetical).

@@ -1,6 +1,6 @@
 require 'wrappers/timing'
 require 'timing_gettable'
-require 'data_importable'
+#require 'data_importable'
 
 
 class DataImportMeetingProgram < ApplicationRecord
@@ -51,8 +51,8 @@ class DataImportMeetingProgram < ApplicationRecord
 #                  :minutes, :seconds, :hundreds,
 #                  :is_out_of_race, :heat_type_id, :time_standard_id
 
-  scope :only_relays,     includes(:event_type).where('event_types.is_a_relay' => true)
-  scope :are_not_relays,  includes(:event_type).where('event_types.is_a_relay' => false)
+  scope :only_relays,             -> { includes(:event_type).where('event_types.is_a_relay' => true) }
+  scope :are_not_relays,          -> { includes(:event_type).where('event_types.is_a_relay' => false) }
 
   scope :sort_by_user,            ->(dir) { order("users.name #{dir.to_s}") }
   scope :sort_by_event_type,      ->(dir) { order("event_types.code #{dir.to_s}") }

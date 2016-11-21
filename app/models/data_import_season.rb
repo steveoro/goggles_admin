@@ -1,4 +1,4 @@
-require 'data_importable'
+#require 'data_importable'
 
 
 class DataImportSeason < ApplicationRecord

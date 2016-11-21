@@ -58,7 +58,7 @@ class DataImportSwimmerAnalysisResult < ApplicationRecord
   # The updated (and current) values of sql_text.
   #
   def rebuild_sql_text()
-    con = self.connection
+    con = self.class.connection
     self.sql_text = "\r\n"
     if can_insert_swimmer
       self.analysis_log_text << "\r\n*** WARNING! 'desired_year_of_birth' is not correctly set! ***" unless self.desired_year_of_birth.to_i > 1900

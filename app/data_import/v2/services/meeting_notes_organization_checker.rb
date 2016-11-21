@@ -56,7 +56,7 @@ class V2::MeetingNotesOrganizationChecker
   # Re-creates an SQL UPDATE statement just for the notes field.
   #
   def self.build_sql_update( meeting )
-    con = meeting.connection
+    con = meeting.class.connection
     sql_text = "UPDATE #{ con.quote_column_name( meeting.class.table_name ) }"
     sql_text << " SET #{ con.quote_column_name('notes') }=#{ con.quote(meeting.notes.to_s) }"
     sql_text << " WHERE (#{ con.quote_column_name('id') }=#{ meeting.id });\r\n\r\n"

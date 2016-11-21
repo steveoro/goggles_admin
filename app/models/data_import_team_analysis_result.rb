@@ -62,7 +62,7 @@ class DataImportTeamAnalysisResult < ApplicationRecord
   # The updated (and current) values of sql_text.
   #
   def rebuild_sql_text()
-    con = self.connection
+    con = self.class.connection
     self.sql_text = "\r\n"
     if can_insert_team
       self.sql_text << "INSERT INTO teams (name,editable_name,address,e_mail,contact_name,user_id,created_at,updated_at) VALUES\r\n" <<

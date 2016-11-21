@@ -165,7 +165,7 @@ class Admin::V2::DataImportController < ApplicationController
         data_import_session.sql_diff    << result_processor.sql_executable_log
         data_import_session.phase = 11              # Update "last completed phase" indicator in session (11 = 1.1)
         data_import_session.save!
-        DataImportTeamAnalysisResult.delete_all( data_import_session_id: data_import_session_id )
+        DataImportTeamAnalysisResult.where( data_import_session_id: data_import_session_id ).delete_all
                                                     # Go directly to Swimmer name analysis results, if possible:
         if data_import_session.data_import_swimmer_analysis_results.any?
           flash[:info] = I18n.t( 'admin_import.swimmer_analysis_needed' )
@@ -307,7 +307,7 @@ class Admin::V2::DataImportController < ApplicationController
         data_import_session.sql_diff    << result_processor.sql_executable_log
         data_import_session.phase = 11              # Update "last completed phase" indicator in session (11 = 1.1)
         data_import_session.save!
-        DataImportSwimmerAnalysisResult.delete_all( data_import_session_id: data_import_session_id )
+        DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id ).delete_all
         redirect_to(
           admin_v2_di_step2_checkout_path(
             id: data_import_session_id,

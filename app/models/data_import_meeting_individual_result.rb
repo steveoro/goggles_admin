@@ -1,7 +1,7 @@
 require 'wrappers/timing'
 require 'timing_gettable'
-require 'timing_validatable'
-require 'data_importable'
+#require 'timing_validatable'
+#require 'data_importable'
 
 
 class DataImportMeetingIndividualResult < ApplicationRecord

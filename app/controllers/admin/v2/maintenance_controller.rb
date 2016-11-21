@@ -331,15 +331,15 @@ class Admin::V2::MaintenanceController < ApplicationController
     deleted_rel_res = rows.size
     rows = MeetingRelaySwimmer.joins(:meeting).where(['meetings.id = ?', meeting_id]).destroy_all
     deleted_rel_swi = rows.size
-    MeetingTeamScore.delete_all( meeting_id: meeting_id )
+    MeetingTeamScore.where( meeting_id: meeting_id ).delete_all
     rows = Passage.joins(:meeting).where(['meetings.id = ?', meeting_id]).destroy_all
     deleted_pass = rows.size
     rows = MeetingProgram.joins(:meeting).where(['meetings.id = ?', meeting_id]).destroy_all
     deleted_progs = rows.size
     rows = MeetingEvent.joins(:meeting).where(['meetings.id = ?', meeting_id]).destroy_all
     deleted_events = rows.size
-    MeetingSession.delete_all( meeting_id: meeting_id )
-    Meeting.delete_all( id: meeting_id )
+    MeetingSession.where( meeting_id: meeting_id ).delete_all
+    Meeting.where( id: meeting_id ).delete_all
 
     output = "Full Meeting delete, ID #{meeting_id}:" <<
              "MeetingIndividualResult rows deleted: #{deleted_ind_res}\r\n" <<

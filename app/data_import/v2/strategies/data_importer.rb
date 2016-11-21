@@ -122,20 +122,20 @@ class DataImporter
         end
       end
                                                     # For all data_import_... tables, delete rows for the corresponding data_import_session.id
-      DataImportMeetingIndividualResult.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportMeetingEntry.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportMeetingProgram.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportMeetingRelayResult.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportMeetingSession.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportMeetingTeamScore.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportMeeting.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportSeason.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportSwimmer.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportTeam.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportBadge.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportCity.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportTeamAnalysisResult.delete_all( data_import_session_id: @data_import_session.id )
-      DataImportSwimmerAnalysisResult.delete_all( data_import_session_id: @data_import_session.id )
+      DataImportMeetingIndividualResult.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportMeetingEntry.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportMeetingProgram.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportMeetingRelayResult.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportMeetingSession.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportMeetingTeamScore.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportMeeting.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportSeason.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportSwimmer.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportTeam.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportBadge.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportCity.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportTeamAnalysisResult.where( data_import_session_id: @data_import_session.id ).delete_all
+      DataImportSwimmerAnalysisResult.where( data_import_session_id: @data_import_session.id ).delete_all
       DataImportSession.delete( @data_import_session.id )
       @logger.info(  ) if @logger
       update_logs( "-- destroy_data_import_session(#{ @data_import_session.id }): data-import session clean-up done.\r\n" )

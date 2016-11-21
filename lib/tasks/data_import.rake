@@ -79,7 +79,7 @@ DESC
       puts article_html
       puts "---8<---"
 
-      con = meeting_array.first.connection
+      con = meeting_array.first.class.connection
       sql_text = "-- Post Data-import clean-up & news log update for meetings: #{meeting_ids.inspect}\r\n" <<
                  "UPDATE app_parameters SET a_bool='0', a_name='#{Version::FULL}', updated_at=NOW() WHERE id = 1;\r\n" <<
                  "TRUNCATE sessions;\r\n" <<

@@ -20,7 +20,7 @@ class Admin::V2::DataImportController < ApplicationController
   layout 'admin_v2_data_import'
 
   # Require authorization before invoking any of this controller's actions:
-  before_filter :authenticate_admin!
+  before_action :authenticate_admin!
   #-- -------------------------------------------------------------------------
   #++
 

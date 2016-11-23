@@ -351,7 +351,7 @@ describe V2::DataImportMeetingTeamScoreBuilder, type: :integration do
       expect( subject ).to all( be_an_instance_of(MeetingRelayResult) )
     end
     it "returns the items relative to a specific (team, meeting) tuple" do
-      expected_count = MeetingRelayResult.includes(:meeting).where(
+      expected_count = MeetingRelayResult.joins(:meeting).includes(:meeting).where(
         team_id:          primary_ts_with_mrrs.team_id,
         :"meetings.id" => primary_ts_with_mrrs.meeting_id,
         is_out_of_race:   false,
@@ -379,7 +379,7 @@ describe V2::DataImportMeetingTeamScoreBuilder, type: :integration do
       expect( subject ).to all( be_an_instance_of(DataImportMeetingRelayResult) )
     end
     it "returns the items relative to a specific (team, meeting) tuple" do
-      expected_count = DataImportMeetingRelayResult.includes(:meeting).where(
+      expected_count = DataImportMeetingRelayResult.joins(:meeting).includes(:meeting).where(
         team_id:          secondary_ts_with_mrrs.team_id,
         :"meetings.id" => secondary_ts_with_mrrs.meeting_id,
         is_out_of_race:   false,

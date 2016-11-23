@@ -1,5 +1,16 @@
+# encoding: utf-8
+
+=begin
+
+= DiSeasonsController
+
+  - version:  6.015
+  - author:   Steve A.
+
+  RESTful controller for renewed V3 data-import UI.
+=end
 class DiSeasonsController < ApplicationController
-  def index
+  def show
   end
 
   def new

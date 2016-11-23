@@ -40,7 +40,7 @@ Rails.application.routes.draw do
   get 'di_meeting_sessions/next_step'
 
   resource :di_meetings
-#  get 'di_meetings/index'
+#  get 'di_meetings/show'
 #  get 'di_meetings/new'
 #  get 'di_meetings/create'
 #  get 'di_meetings/edit'

@@ -65,6 +65,7 @@ class CsiResultParser
   #
   def initialize( full_pathname, data_import_session = nil )
     @full_pathname = full_pathname
+    @process_text_log = process_text_log
     @logger = nil
     @flash  = {}
     tot_rows = 0
@@ -123,7 +124,7 @@ class CsiResultParser
   # It is never +nil+, empty at first.
   #
   def process_text_log
-    @process_text_log ||= "\t*****************************\r\n\t   CSI Result parsing:\r\n\t*****************************\r\n"
+    @process_text_log ? @process_text_log : String.new("\t*****************************\r\n\t   CSI Result parsing:\r\n\t*****************************\r\n")
   end
 
   # Returns the overall SQL diff/log for all the SQL operations that should
@@ -133,7 +134,7 @@ class CsiResultParser
   # It is never +nil+, empty at first.
   #
   def sql_diff_text_log
-    @sql_diff_text_log ||= "-- ** CSI Result parsing: #{@full_pathname} **"
+    @sql_diff_text_log ? @sql_diff_text_log : String.new("-- ** CSI Result parsing: #{@full_pathname} **")
   end
   # ----------------------------------------------------------------------------
   #++
@@ -334,7 +335,10 @@ class CsiResultParser
 #      end
     end
 
-    process_text_log << "#{msg}\r\n"
+    # [Steve, 20161123] The following apparently has to do with default frozen string literals (since Ruby 2.3).
+    # Although the magic comment to enable it is missing from the sources, we can't use
+    # a simple append operator here (<<) because the string results to be frozen.
+    @process_text_log = @process_text_log + "#{msg}\r\n"
   end
   #-- -------------------------------------------------------------------------
   #++

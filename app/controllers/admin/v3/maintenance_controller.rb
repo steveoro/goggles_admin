@@ -18,7 +18,7 @@ class Admin::V3::MaintenanceController < ApplicationController
   layout 'admin_v3_maintenance'
 
   # Require authorization before invoking any of this controller's actions:
-  before_filter :authenticate_admin!
+  before_action :authenticate_admin!
   #-- -------------------------------------------------------------------------
   #++
 

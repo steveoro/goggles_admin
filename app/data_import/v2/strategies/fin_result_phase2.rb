@@ -233,7 +233,7 @@ module V2::FinResultPhase2
       if meeting_program                            # Update prev. begin & duration times:
         begin_time = meeting_program.begin_time ? meeting_program.begin_time :
                                                   scheduled_date.to_time + (8 * 3600)
-        previous_duration_in_secs = previous_begin_time ? (begin_time - previous_begin_time).abs : 120
+        previous_duration_in_secs = previous_begin_time ? (begin_time.to_time - previous_begin_time.to_time).abs : 120
 # DEBUG
 #        puts "\r\nBEGIN TIME DELTA for M.PRGs(MIR): order:#{meeting_program.event_order} " <<
 #             "- meeting_program.begin_time: #{meeting_program.begin_time}\r\n" <<
@@ -331,7 +331,7 @@ module V2::FinResultPhase2
       if meeting_program                            # Update prev. begin & duration times:
         begin_time = meeting_program.begin_time ? meeting_program.begin_time :
                                                   scheduled_date.to_time + (8 * 3600)
-        previous_duration_in_secs = previous_begin_time ? (begin_time - previous_begin_time).abs : 120
+        previous_duration_in_secs = previous_begin_time ? (begin_time.to_time - previous_begin_time.to_time).abs : 120
 # DEBUG
 #        puts "\r\nBEGIN TIME DELTA for M.PRGs(Rel.): order:#{meeting_program.event_order} " <<
 #             "- meeting_program.begin_time: #{meeting_program.begin_time}\r\n" <<

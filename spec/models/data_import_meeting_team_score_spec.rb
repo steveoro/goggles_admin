@@ -39,22 +39,22 @@ describe DataImportMeetingTeamScore, :type => :model do
     end
 
     it "creates at least 1 DataImportMeetingProgram" do
-      di_mprgs = DataImportMeetingProgram.includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
+      di_mprgs = DataImportMeetingProgram.joins(:meeting).includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
       expect( di_mprgs.count ).to be >= 1
     end
     it "creates only valid DataImportMeetingPrograms" do
-      di_mprgs = DataImportMeetingProgram.includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
+      di_mprgs = DataImportMeetingProgram.joins(:meeting).includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
       di_mprgs.each do |di_mprg|
         expect( di_mprg ).to be_valid
       end
     end
 
     it "creates at least 1 DataImportMeetingRelayResult" do
-      di_mprgs = DataImportMeetingRelayResult.includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
+      di_mprgs = DataImportMeetingRelayResult.joins(:meeting).includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
       expect( di_mprgs.count ).to be >= 1
     end
     it "creates only valid DataImportMeetingRelayResult" do
-      di_mprgs = DataImportMeetingRelayResult.includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
+      di_mprgs = DataImportMeetingRelayResult.joins(:meeting).includes(:meeting).where( "meetings.id = ?", subject.meeting_id )
       di_mprgs.each do |di_mprg|
         expect( di_mprg ).to be_valid
       end

@@ -43,14 +43,20 @@ FactoryGirl.reload
 Dir[GogglesCore::Engine.root.join("spec/support/**/*.rb")].each { |f| require f }
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
+Rails.backtrace_cleaner.remove_silencers!
+
+# Checks for pending migration and applies them before tests are run.
+# If you are not using ActiveRecord, you can remove this line.
+ActiveRecord::Migration.maintain_test_schema!
+
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
-  config.include( Devise::TestHelpers, type: :controller )
-  config.include( Devise::TestHelpers, type: :features )
-  config.include( Devise::TestHelpers, type: :view )
+  config.include( Devise::Test::ControllerHelpers, type: :controller )
+  config.include( Devise::Test::ControllerHelpers, type: :view )
+  config.include( Devise::Test::ControllerHelpers, type: :features )
   # [Steve, 20140226] Add other custom helpers.
   # (Use #include to access the methods at the instance level: inside examples.)
   # (Use #extend to access them at the class level: outside examples, as in "#before".)

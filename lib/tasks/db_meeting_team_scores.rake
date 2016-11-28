@@ -87,8 +87,8 @@ DESC
     # Select appropriate calculation method
     ActiveRecord::Base.transaction do
       case meeting.season.id
-      when 141, 151
-        # CSI Seasons 2014-2015 and 2015-2016
+      when 141, 151, 161
+        # CSI Seasons 2014-2015, 2015-2016 and 2016-2017
         logger.info( "Season #{meeting.season.get_full_name}" )
         logger.info( "Using CSI balanced meeting team scores by Leega" )
         sql_diff = calculate_balanced_meeting_team_scores( meeting, logger )

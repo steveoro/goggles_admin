@@ -89,6 +89,9 @@ DESC
       File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts spb.sql_diff_text_log }
       logger.info( "\r\nLog file " + file_name + " created" )
 
+      spb.to_csv(LOG_DIR + '/' + 'ponderated_season_' + season_id.to_s )
+      logger.info( "\r\nCSV file ponderated_season_#{season_id} created" )
+
       # Save data or rollback in persist is false
       if not persist
         logger.info( "\r\n*** Data not persisted! ***" )

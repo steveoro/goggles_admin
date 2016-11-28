@@ -71,7 +71,7 @@ DESC
 
     # Find target entities
     season = Season.find( season_id )
-    season_type = Season.season_type
+    season_type = season.season_type
     logger.info( "Season to scan for: " + season.get_full_name )
 
     # Define header
@@ -95,31 +95,33 @@ DESC
     csv_rows << headers.join(';')
     involved_swimmers = 0
     season_type.swimmers.has_results.uniq.sort_by_gender_type( 'ASC' ).each do |swimmer|
-      logger.info( "Swimmer #{swimmer.get_full_name}" )
-      involved_swimmers = involved_swimmers + 1
-
       # Initialize best finder
       swimmer_best_finder = SwimmerBestFinder.new( swimmer )
       involved_seasons    = swimmer_best_finder.get_closed_seasons_involved_into( season_type )
-      logger.info( " - Seasons considered: #{involved_seasons.count}" )
-      logger.info( "   Last season: #{involved_seasons.first.get_full_name}" )
-
-      swimmer_row = swimmer.complete_name + ';'
-      swimmer_row << swimmer.year_of_birth.to_s + ';'
-
-      # Scan events
-      logger.info( " - Event bests:" )
-      events_to_scan.each do |event_key|
-        best_swam = swimmer_best_finder.get_involved_season_last_best_for_key( involved_seasons, event_key )
-        swimmer_row << best_swam.to_s if best_swam
-        swimmer_row << ';'
-        logger.info( "   #{event_key}: #{best_swam.to_s}" )
+      if involved_seasons.count > 0
+        logger.info( "Swimmer #{swimmer.get_full_name}" )
+        involved_swimmers = involved_swimmers + 1
+  
+        logger.info( " - Seasons considered: #{involved_seasons.count}" )
+        logger.info( "   Last season: #{involved_seasons.first.get_full_name}" )
+  
+        swimmer_row = swimmer.complete_name + ';'
+        swimmer_row << swimmer.year_of_birth.to_s + ';'
+  
+        # Scan events
+        logger.info( " - Event bests:" )
+        events_to_scan.each do |event_key|
+          best_swam = swimmer_best_finder.get_involved_season_last_best_for_key( involved_seasons, event_key )
+          swimmer_row << best_swam.to_s if best_swam
+          swimmer_row << ';'
+          logger.info( "   #{event_key}: #{best_swam.to_s}" )
+        end
+        csv_rows << swimmer_row
       end
-      csv_rows << swimmer_row
     end
 
     # Create csv file
-    file_name = "season_type_swimmer_last_best_#{season_type.code}"
+    file_name = "season_type_swimmer_last_best_#{season_type.code}_#{season_id}"
     File.open( LOG_DIR + '/' + file_name + '.csv', 'w' ) { |f| f.puts csv_rows }
     logger.info( "\r\nLog file " + file_name + " created" )
   end

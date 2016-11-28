@@ -40,12 +40,16 @@ Resulting log files are stored into '#{LOG_DIR}'.
 Options: season=<season_id> [log_dir=#{LOG_DIR}]
 
 - 'season'      season type to scan for
+- 'persist'     force to persist the created season.
+- 'recalculate' force to override the stored scores with new values.
 - 'log_dir'     allows to override the default log dir destination.
 
 DESC
   task :season_swimmer_last_best do |t|
     puts "*** db:season_swimmer_last_best ***"
-    season_id        = ENV.include?("season") ? ENV["season"] : nil
+    season_id        = ENV.include?("season")      ? ENV["season"] : nil
+    persist          = ENV.include?("persist")     ? ENV["persist"] == 'true' : false
+    recalculate      = ENV.include?("recalculate") ? ENV["recalculate"] == 'true' : false
     rails_config     = Rails.configuration             # Prepare & check configuration:
     db_name          = rails_config.database_configuration[Rails.env]['database']
     db_user          = rails_config.database_configuration[Rails.env]['username']
@@ -91,6 +95,7 @@ DESC
     logger.info( " - Scan for: #{events_to_scan.size} event types" )
 
     # Scan involved swimmers
+    season_personal_standards = []
     csv_rows = []
     csv_rows << headers.join(';')
     involved_swimmers = 0
@@ -111,9 +116,24 @@ DESC
         # Scan events
         logger.info( " - Event bests:" )
         events_to_scan.each do |event_key|
+          event_by_pool_type = EventsByPoolType.find_by_key( event_key )
           best_swam = swimmer_best_finder.get_involved_season_last_best_for_key( involved_seasons, event_key )
-          swimmer_row << best_swam.to_s if best_swam
-          swimmer_row << ';'
+          if best_swam
+            swimmer_row << best_swam.to_s
+            swimmer_row << ';'
+
+            # Prepare data for DB storage
+            season_personal_standard               = SeasonPersonalStandard.new()
+            season_personal_standard.season_id     = season_id
+            season_personal_standard.swimmer_id    = swimmer.id
+            season_personal_standard.event_type_id = event_by_pool_type.event_type.id
+            season_personal_standard.pool_type_id  = event_by_pool_type.pool_type.id
+            season_personal_standard.minutes       = best_swam.minutes
+            season_personal_standard.seconds       = best_swam.seconds
+            season_personal_standard.hundreds      = best_swam.hundreds
+            season_personal_standards << season_personal_standard
+          end
+          
           logger.info( "   #{event_key}: #{best_swam.to_s}" )
         end
         csv_rows << swimmer_row
@@ -124,6 +144,24 @@ DESC
     file_name = "season_type_swimmer_last_best_#{season_type.code}_#{season_id}"
     File.open( LOG_DIR + '/' + file_name + '.csv', 'w' ) { |f| f.puts csv_rows }
     logger.info( "\r\nLog file " + file_name + " created" )
+
+    # Store data n DB and prepare diff file
+    diff_file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_#{file_name}.diff"
+    ActiveRecord::Base.transaction do
+      season_personal_standards_to_db( season, season_personal_standards, recalculate )
+
+      # Create diff file
+      File.open( LOG_DIR + '/' + diff_file_name + '.sql', 'w' ) { |f| f.puts sql_diff_text_log }
+      logger.info( "\r\nDiff file " + diff_file_name + " created" )
+
+      # Persist data if needed
+      if not persist
+        logger.info( "\r\n*** Personal standards NOT persisted! ***" )
+        raise ActiveRecord::Rollback
+      else
+        logger.info( "\r\nPersonal standards persisted." )
+      end
+    end
   end
   #-- -------------------------------------------------------------------------
   #++
@@ -238,7 +276,7 @@ DESC
     # Store data n DB and prepare diff file
     diff_file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_#{file_name}.diff"
     ActiveRecord::Base.transaction do
-      season_personal_standards_to_db( meeting, season_personal_standards, recalculate )
+      season_personal_standards_to_db( meeting.season, season_personal_standards, recalculate )
 
       # Create diff file
       File.open( LOG_DIR + '/' + diff_file_name + '.sql', 'w' ) { |f| f.puts sql_diff_text_log }
@@ -256,13 +294,13 @@ DESC
   #-- -------------------------------------------------------------------------
   #++
 
-  def season_personal_standards_to_db( meeting, season_personal_standards, recalculate )
+  def season_personal_standards_to_db( season, season_personal_standards, recalculate )
     # Split inserts and updates
     to_insert = []
     to_update = []
     season_personal_standards.each do |season_personal_standard|
       # Check if personal standard already exists
-      if SeasonPersonalStandard.exists?( :season => season_personal_standard.season, :swimmer => season_personal_standard.swimmer, :pool_type => season_personal_standard.pool_type, :event_type => season_personal_standard.event_type )
+      if SeasonPersonalStandard.exists?( :season_id => season_personal_standard.season_id, :swimmer_id => season_personal_standard.swimmer_id, :pool_type_id => season_personal_standard.pool_type_id, :event_type_id => season_personal_standard.event_type_id )
         # Exists. Assumes that no update needed if not recalculate forced
         to_update << season_personal_standard if recalculate
       else
@@ -271,7 +309,7 @@ DESC
       end
     end
 
-    create_sql_diff_header( "Season personal standards for meeting #{meeting.get_full_name}" )
+    create_sql_diff_header( "Season personal standards for season #{season.get_full_name}" )
 
     # Store collected data into time_standard structure for event not already presents
     to_insert.each do |season_personal_standard|
@@ -292,7 +330,7 @@ DESC
       sql_diff_text_log << to_sql_update( season_personal_standard, false, sql_fields, "\r\n", comment )
     end
 
-    create_sql_diff_footer( "Season personal standards for meeting #{meeting.get_full_name} collected" )
+    create_sql_diff_footer( "Season personal standards for season #{season.get_full_name} collected" )
   end
 end
 # =============================================================================

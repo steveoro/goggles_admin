@@ -77,34 +77,47 @@ parameters ('RAILS_ENV=production') not before having issued also a:
     puts "Server user e-mail: #{user_email}"
     puts "Server pwd........: #{user_pwd}"
 
+    # Gogglers teams & swimmers:
     swimmers = Swimmer.where( 'associated_user_id IS NOT NULL' )
     teams    = swimmers.map{ |swimmer| swimmer.get_badges_array.map{ |badge| badge.team } }.flatten.compact.uniq
     swimmer_count = swimmers.count
     teams_count   = teams.count
     last_season   = Season.get_last_season_by_type('MASCSI')
-    public_teams  = last_season.teams.reject{ |team| teams.include?( team ) }.uniq
+
+    # Set of teams that are in the most recent seasons (but excluding the above):
+    public_teams  = ( last_season.teams.reject{ |team| teams.include?( team ) }.uniq ) +
+                    ( Season.get_last_season_by_type('MASFIN').teams.reject{ |team| teams.include?( team ) }.uniq )
     public_swimmers  = public_teams.map do |team|
       team.badges.where( season_id: last_season.id ).map{ |badge| badge.swimmer }
     end.flatten.uniq.reject{ |swimmer| swimmers.include?( swimmer ) }
+
     # For each one of the Gogglers'teams, prepare the list of all their team mates, excluding
     # the gogglers, so that we'll request just the public radio page for them:
     swimming_buddies = teams.map do |team|
       team.badges.where( season_id: last_season.id ).map{ |badge| badge.swimmer }
     end.flatten.uniq.reject{ |swimmer| swimmers.include?( swimmer ) }
 
-    champ_season_ids = [
-      # TODO Championship history? (Seasons: 131, 121, 111, 101, 91, 14, 12, 10, 8, 6, 4, 3, 2, 1)
-      151, 141
-    ]
-    recent_meeting_ids = champ_season_ids.map { |id| Season.find(id).meetings.map{|meeting| meeting.id} }.flatten
+    # For CSI seasons, we process only the last 2 to cache the championship meetings:
+    champ_season_ids = Season.joins(:season_type)
+        .where("season_types.code = 'MASCSI'")
+        .select('seasons.id').order('seasons.id desc')
+        .limit(2).map{|s| s.id }
+    # For FIN seasons, we process just the latest one for the cache (since there are a lot more meetings):
+    fin_season_ids = Season.joins(:season_type)
+        .where("season_types.code = 'MASFIN'")
+        .select('seasons.id').order('seasons.id desc')
+        .limit(1).map{|s| s.id }
+    # Build up a list of all the meetings that we'll process for caching:
+    recent_meeting_ids = ( fin_season_ids + champ_season_ids )
+        .map { |id| Season.find(id).meetings.map{|meeting| meeting.id} }.flatten
 
     puts "\r\nTotals:"
     puts "======="
     puts "- Users: #{User.count}"
     puts "- Swimmers w/ associated users : #{swimmer_count}"
     puts "- Teams from the above swimmers: #{teams_count}"
-    puts "- Teams from curr. season championship (excluding above):    #{public_teams.count}"
-    puts "- Swimmers from curr. season championship (excluding above): #{public_swimmers.count}"
+    puts "- Teams from latest CSI season championship (excluding above):    #{public_teams.count}"
+    puts "- Swimmers from latest FIN season championship (excluding above): #{public_swimmers.count}"
     puts "- Minimum possible Swimming Buddies for for the gogglers:    #{swimming_buddies.count}"
     puts "\r\nCache rebuild script start...\r\nExecution time:\r\n"
 
@@ -197,20 +210,27 @@ parameters ('RAILS_ENV=production') not before having issued also a:
           ].each do |request_url|
             get_request( server_url, request_url, user_name, user_token )
           end
-          public_teams.each_with_index do |team, team_index|
-            puts "Team results for: #{team.get_full_name}, #{team_index+1}/#{public_teams.count}"
+          # Select only the partecipating teams for this meeting that also have an associated goggler:
+          # ('teams' is the array of gogglers' teams)
+          partecipating_teams = Meeting.find( meeting_id ).teams
+          gogglers_teams = teams.select{|team| partecipating_teams.any?{|t| t.id == team.id } }.sort
+
+          puts "Processing gogglers'teams vs partecipating teams: #{gogglers_teams.count} over #{partecipating_teams.count} tot."
+          gogglers_teams.each_with_index do |team, team_index|
+            puts "Team results for: #{team.get_full_name}, #{team_index+1}/#{gogglers_teams.count}"
             get_request( server_url, "/it/meeting/show_team_results/{meeting_id}?team_id=#{team.id}", user_name, user_token )
           end
         end
       end
 
+      # FIXME The following should be somehow updated and automated in composition, as the steps above:
+      # (Either use Analytics API to retrieve a report or else we should compile our own stats)
       exec.report("\r\n-------------[ 9/10 - hand-picked pages (from Analytics) ]--------------\r\n") do
         puts "- Goggle Cup:"
         get_request( server_url, "/it/teams/goggle_cup/1", user_name, user_token )
         puts "- Most searched Teams' & Swimmers radio:"
         [
           "/it/teams/radio/233",
-
           "/it/swimmer/radio/12",
           "/it/swimmer/radio/14",
           "/it/swimmer/radio/40",

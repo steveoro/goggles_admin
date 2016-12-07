@@ -12,7 +12,8 @@ require 'common/validation_error_tools'
   Checker service class for Swimmers/Badges duplicates.
 
 =end
-class V2::BadgeDuplicateChecker
+module V2
+class BadgeDuplicateChecker
   include Singleton
 
   # Checks if the specified instance of Swimmer has more than 1 badge per Team/Season.
@@ -53,4 +54,5 @@ class V2::BadgeDuplicateChecker
   end
   #-- -------------------------------------------------------------------------
   #++
+end
 end

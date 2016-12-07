@@ -7,10 +7,10 @@ require 'fileutils'
 require 'framework/version'
 require 'framework/console_logger'
 
-require 'sql_converter'
-require 'sql_convertable'
+#require 'sql_converter'
+#require 'sql_convertable'
 #require "#{ GogglesCore::Engine.root }/app/strategies/sql_converter"
-#require "#{ GogglesCore::Engine.root }/app/concerns/sql_convertable"
+require "#{ GogglesCore::Engine.root }/app/concerns/sql_convertable"
 
 LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
 

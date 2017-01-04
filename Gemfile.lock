@@ -44,9 +44,9 @@ GIT
 
 GIT
   remote: https://github.com/steveoro/goggles_core
-  revision: 1086877fc921c4f8424f6fe65112d4bb02c75d1e
+  revision: c727c5979cf53709faa1daa22b4f53a61a8c5740
   specs:
-    goggles_core (1.0.19)
+    goggles_core (1.0.20)
       acts-as-taggable-on (~> 3.4)
       acts_as_votable (~> 0.9.0)
       devise
@@ -289,7 +289,7 @@ GEM
       rake (>= 0.8.7)
       rdoc (~> 3.4)
       thor (>= 0.14.6, < 2.0)
-    rake (11.3.0)
+    rake (12.0.0)
     rb-fsevent (0.9.7)
     rb-inotify (0.9.7)
       ffi (>= 0.5.0)

@@ -7,6 +7,7 @@ require 'common/encoding_tools'
 require_relative '../../../data_import/v2/context_type_def'
 require_relative '../../../data_import/v2/fin_result_defs'
 require_relative '../../../data_import/v2/fin2_result_defs'
+require_relative '../../../data_import/v2/fin3_result_defs'
 require_relative '../../../data_import/v2/fin_startlist_defs'
 
 
@@ -14,7 +15,7 @@ require_relative '../../../data_import/v2/fin_startlist_defs'
 
 = FileFormatParser
 
-  - Goggles framework vers.:  4.00.749
+  - Goggles framework vers.:  5.010
   - author: Steve A.
 
  Strategy class dedicated to detect which format a data-import text file
@@ -49,6 +50,17 @@ class FileFormatParser
       /\d{1,2}\s{2,3}\w\w|\s{2,4}Atleta\s{20,24}Cat|-{80}|^\s*|^\r\n|^\n|$|^\Z/i,
       /\d{1,2}\s{2,3}\w\w|-{80}|^\s*|^\r\n|^\n|$|^\Z/i,
       /\d{1,2}\s{2,3}\w\w|^\s*|^\r\n|^\n|$|^\Z/i
+    ]
+  )
+
+  # ContextTypeDef definition for detecting "FIN result"-type files.
+  FIN3_RESULT_TYPEDEF = ContextTypeDef.new(
+    :fin3_result,
+    [
+      /^\s*|\r\n|\n|$|\Z/i,
+      /(50\s|100\s|200\s|400\s|800\s|1500\s) *(stile|misti|dorso|rana|farf|SL|DO|RA|FA|MI|MX|DF|DS|RN).*(maschi|femmi)/i,
+      /-{80}/,
+      /(\d{1,2}'\d\d"\d\d) +\d{1,4}[\,|\.]\d\d(\r\n|\n|$|\Z)/i
     ]
   )
 
@@ -92,6 +104,7 @@ class FileFormatParser
     line_count = 0
     detector_fin1_res = ContextDetector.new( FIN1_RESULT_TYPEDEF, logger )
     detector_fin2_res = ContextDetector.new( FIN2_RESULT_TYPEDEF, logger )
+    detector_fin3_res = ContextDetector.new( FIN3_RESULT_TYPEDEF, logger )
     detector_fin1_sta = ContextDetector.new( FIN1_STARTLIST_TYPEDEF, logger )
 
     File.open( @full_pathname ) do |f|
@@ -100,14 +113,22 @@ class FileFormatParser
         line_count += 1
                                                     # While reading the file line by line, detect the type:
         if detector_fin1_res.feed_and_detect( curr_line, line_count, nil )
+          logger.info( "FIN1 RESULT-type file detected!" ) if logger
           result = FinResultDefs.new( logger )
           break                                     # Break as soon as we have a match (FIFO wins)
 
         elsif detector_fin2_res.feed_and_detect( curr_line, line_count, nil )
+          logger.info( "FIN2 RESULT-type file detected!" ) if logger
           result = Fin2ResultDefs.new( logger )
           break
 
+        elsif detector_fin3_res.feed_and_detect( curr_line, line_count, nil )
+          logger.info( "FIN3 RESULT-type file detected!" ) if logger
+          result = Fin3ResultDefs.new( logger )
+          break
+
         elsif detector_fin1_sta.feed_and_detect( curr_line, line_count, nil )
+          logger.info( "FIN1 STARTLIST-type file detected!" ) if logger
           result = FinStartListDefs.new( logger )
           break
 

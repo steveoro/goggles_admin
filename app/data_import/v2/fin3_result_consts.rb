@@ -43,9 +43,9 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
     ContextTypeDef.new(
       :category_header,
       [
-        /^\s*(\r\n|\n|$|\Z)/i,  # matches any kind of newline, an empty line or a line with only invisible chars
+        /^\s*(\r\n|\n|$|\Z|Torna a inizio pagina)/i,  # matches any kind of newline, an empty line or a line with only invisible chars
         /(?<!\dx)(50\s|100\s|200\s|400\s|800\s|1500\s) *(stile|misti|dorso|rana|farf|SL|DO|RA|FA|MI|MX|DF|DS|RN).*(maschi|femmi)/i,
-        /^-{25}/
+        /\s*-{10}-*/
       ]
     )
   end
@@ -56,9 +56,9 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
     ContextTypeDef.new(
       :relay_header,
       [
-        /^\s*(\r\n|\n|$|\Z)/i,
+        /^\s*(\r\n|\n|$|\Z|Torna a inizio pagina)/i,
         /(mistaff|staff).*\s+\d{1,2}x\d{2,3}\s+(stile|mi|sl|mx).*\s+-\s+cat/i,
-        /^-{25}/
+        /\s*-{10}-*/
       ]
     )
   end
@@ -108,7 +108,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
     ContextTypeDef.new(
       :result_row,
       [
-        /(Ritir.*|Squal.*|\d{1,2}'\d\d"\d\d) +\d{1,4}[\,|\.]\d\d(\r\n|\n|$|\Z)/i
+        /(Ritir.*|Squal.*|\d{1,2}'\d\d"\d\d)( {1,6})+\d{1,4}[\,|\.]\d\d(\r\n|\n|$|\Z)/i
       ],
       :category_header                              # parent context
     )
@@ -393,6 +393,16 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
   def tokenizer_result_row_team_code
     TokenExtractor.new(
       :team_code,
+      /(\w\w\w-\d{6})/i,
+      10                                            # (max size)
+    )
+  end
+
+  # "result_row.team_code" token extractor definition
+  #
+  def tokenizer_result_row_swimmer_code
+    TokenExtractor.new(
+      :swimmer_code,
       /(\w\w\w-\d{6})/i,
       10                                            # (max size)
     )

@@ -240,16 +240,16 @@ class Fin3ResultDefs < TxtResultDefs
       result_row: [                                 # 1 condition => 1 cached row => the tokenizer list must have 1 element (which is 1 array)
         [
           :result_position,
-          :team_code,
-          :swimmer_name,
+          :swimmer_code,
           :swimmer_year,
+          :swimmer_name,
           :team_name,
           :result_time,
           :result_score
         ]
       ],
       relay_row: [
-        [ :result_position, :team_name, :result_time, :result_score ]
+        [ :result_position, :team_code, :team_name, :result_time, :result_score ]
       ],
 
       team_ranking: [                               # 1 row-type conditions => 1 cached rows => the tokenizer list must have 1 element

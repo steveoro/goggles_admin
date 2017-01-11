@@ -437,7 +437,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
     TokenExtractor.new(
       :team_name,
       # Leega... let's try
-      /(?<=[\s\?a-z0-9-]{10})\s{1,5}(?<=\d{4}\s[a-z]\D{28})\s+(.{3,30}\s{2,25})/i,                   
+      /(?<=[\s\?a-z0-9-]{10})\s{1,5}(?<=\d{4}\s[a-z]\D{27})\s+(.{3,30}\s{2,25})/i,                   
       30                                            # (max size)
     )
   end

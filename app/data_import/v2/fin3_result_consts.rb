@@ -438,7 +438,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
       :team_name,
       # Leega... let's try
       /(?<=[\s\?a-z0-9-]{10}\s\d{4}\s[a-z]\D{24}\s)\s*(.{3,30}\s{2,25})/i,                   
-      26                                            # (max size)
+      30                                            # (max size)
     )
   end
 

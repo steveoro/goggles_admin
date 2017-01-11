@@ -381,7 +381,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
         (?<swimmer_name>
           (
             (?<=[\s\?a-z0-9-]{10}\s\d{4})
-          )\s{1,3}([a-z]\D{4,25}\s{2,5})
+          )\s{1,3}([a-z]\D{4,26}\s{2,5})
         )
       /uix
     )
@@ -415,7 +415,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
       /
         (
           (?<=[\s\?a-z0-9-]{10}\s\d{4})
-        )\s{1,3}([a-z]\D{4,25}\s{2,5})
+        )\s{1,3}([a-z]\D{4,26}\s{2,5})
       /uix,
       29                                            # (max size)
     )
@@ -437,7 +437,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
     TokenExtractor.new(
       :team_name,
       # Leega... let's try
-      /(?<=[\s\?a-z0-9-]{10}\s\d{4}\s[a-z]\D{24}\s)\s*(.{3,30}\s{2,25})/i,                   
+      /(?<=[\s\?a-z0-9-]{10})\s{1,5}(?<=\d{4}\s[a-z]\D{28})\s+(.{3,30}\s{2,25})/i,                   
       30                                            # (max size)
     )
   end

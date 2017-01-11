@@ -75,7 +75,7 @@ DESC
 
     # Log swimmers found and some badge datas
     swimmers_found.sort{ |a,b| a.complete_name <=> b.complete_name }.each do |swimmer|
-      logger.info( "\r\n#{swimmer.id} - #{swimmer.complete_name} (#{swimmer.last_name} #{swimmer.first_name}) - #{swimmer.year_of_birth} #{'guessed!' if swimmer.is_year_guessed}" )
+      logger.info( "\r\n#{swimmer.id} - #{swimmer.complete_name} (#{swimmer.last_name} #{swimmer.first_name}) - #{swimmer.gender_type.code} - #{swimmer.year_of_birth} #{'guessed!' if swimmer.is_year_guessed}" )
       logger.info( "<------------------------------------------------------------>" )
       swimmer.badges.sort_by_season('ASC').each do |badge|
         logger.info( " - #{badge.season_id} #{badge.team.name} (#{badge.meeting_individual_results.count})" )

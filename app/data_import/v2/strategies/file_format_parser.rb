@@ -35,9 +35,11 @@ class FileFormatParser
       /^\s*|\r\n|\n|$|\Z/i,
       /(50\s|100\s|200\s|400\s|800\s|1500\s) *(stile|misti|dorso|rana|farf|SL|DO|RA|FA|MI|MX|DF|DS|RN).*(maschi|femmi)/i,
       /-{80}/,
-      /(\d{1,2}'\d\d"\d\d) +\d{1,4}[\,|\.]\d\d(\r\n|\n|$|\Z)/i
+      /(?<!\s[a-z?]{3}-\d{6}\s\d{4}\s[a-z])\d\s{1,3}\D{20,30}\s\d{4}\s\D{20,30}/i
     ]
   )
+  # Leega. Try with different format recognizer to use fin3 for caveman results. Previous forth row:
+  # /(\d{1,2}'\d\d"\d\d) +\d{1,4}[\,|\.]\d\d(\r\n|\n|$|\Z)/i
 
   # ContextTypeDef definition for detecting "FIN2 result"-type files.
   FIN2_RESULT_TYPEDEF = ContextTypeDef.new(
@@ -59,7 +61,8 @@ class FileFormatParser
     [
       /^\s*|\r\n|\n|$|\Z/i,
       /(50\s|100\s|200\s|400\s|800\s|1500\s) *(stile|misti|dorso|rana|farf|SL|DO|RA|FA|MI|MX|DF|DS|RN).*(maschi|femmi)/i,
-      /-{80}/,
+      /-{70}/,
+      /(\s[a-z?]{3}-\d{6}\s{1,2}\d{4}\s{1,2}[a-z])/i,
       /(\d{1,2}'\d\d"\d\d) +\d{1,4}[\,|\.]\d\d(\r\n|\n|$|\Z)/i
     ]
   )

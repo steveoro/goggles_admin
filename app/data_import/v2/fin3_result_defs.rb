@@ -150,9 +150,9 @@ class Fin3ResultDefs < TxtResultDefs
       result_row: [                                 # 1 condition => 1 cached row
         [                                           # => the tokenizer list must have 1 element (which is 1 array of 2-item arrays)
           tokenizer_result_row_result_position,
-          tokenizer_result_row_team_code,
-          tokenizer_result_row_swimmer_name,
+          tokenizer_result_row_swimmer_code,
           tokenizer_result_row_swimmer_year,
+          tokenizer_result_row_swimmer_name,
           tokenizer_result_row_team_name,
           tokenizer_result_row_result_time,
           tokenizer_result_row_result_score
@@ -163,6 +163,7 @@ class Fin3ResultDefs < TxtResultDefs
       relay_row: [
         [                                             # => the tokenizer list must have 1 element (which is 1 array of 2-item arrays)
           tokenizer_relay_row_result_position,
+          tokenizer_relay_row_team_code,
           tokenizer_relay_row_team_name,
           tokenizer_relay_row_result_time,
           tokenizer_relay_row_result_score

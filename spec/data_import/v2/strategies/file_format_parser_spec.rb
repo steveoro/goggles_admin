@@ -7,6 +7,7 @@ require 'ffaker'
 require_relative '../../../../app/data_import/v2/strategies/file_format_parser'
 require_relative '../../../../app/data_import/v2/fin_result_defs'
 require_relative '../../../../app/data_import/v2/fin2_result_defs'
+require_relative '../../../../app/data_import/v2/fin3_result_defs'
 
 
 describe FileFormatParser, type: :strategy do
@@ -14,10 +15,8 @@ describe FileFormatParser, type: :strategy do
   context "with a FIN(1) result file type," do
     [
       File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-fake.txt'),
-      File.join(Rails.root, 'spec/fixtures/samples/fixture1-ris20120414molinella-sample.txt'),
-      File.join(Rails.root, 'spec/fixtures/samples/fixture2-ris20111203riccione-sample.txt'),
-      File.join(Rails.root, 'spec/fixtures/samples/fixture3-ris20120114ravenna-sample.txt'),
       File.join(Rails.root, 'spec/fixtures/samples/fixture4-ris20121112bologna-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/samples/fixture5-ris20161029verolanuova-sample.txt'),
       File.join(Rails.root, 'spec/fixtures/ris/ris20131110bologna-sample.txt')
     ].each do |filename|
       describe "#parse" do
@@ -46,6 +45,26 @@ describe FileFormatParser, type: :strategy do
         it "returns the correct constant associated with the file type for #{File.basename(filename)}" do
           format_parser = FileFormatParser.new( filename )
           expect( format_parser.parse ).to be_an_instance_of( Fin2ResultDefs )
+        end
+      end
+    end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  context "with a FIN3 result file type," do
+    [
+      File.join(Rails.root, 'spec/fixtures/samples/fixture1-ris20120414molinella-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/samples/fixture2-ris20111203riccione-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/samples/fixture3-ris20120114ravenna-sample.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20120527taranto.txt'),
+      File.join(Rails.root, 'spec/fixtures/ris/ris20120519putignanospeedonadir.txt')
+    ].each do |filename|
+      describe "#parse" do
+        it "returns the correct constant associated with the file type for #{File.basename(filename)}" do
+          format_parser = FileFormatParser.new( filename )
+          expect( format_parser.parse ).to be_an_instance_of( Fin3ResultDefs )
         end
       end
     end

@@ -375,14 +375,13 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
       :result_position,
       0,
       /
-        (?<team_code>
-          \s(\w\w\w-\d{6})
+        (?<swimmer_code>
+          \s([a-z?]{3}-\d{6})
         )|
         (?<swimmer_name>
           (
-            (?<=[\sa-z0-9-]{10})|
-            (?<=[\sa-z0-9-]{18})
-          )\s(\D{25})
+            (?<=[\s\?a-z0-9-]{10}\s\d{4})
+          )\s{1,3}([a-z]\D{4,25}\s{2,5})
         )
       /uix
     )
@@ -393,7 +392,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
   def tokenizer_result_row_team_code
     TokenExtractor.new(
       :team_code,
-      /(\w\w\w-\d{6})/i,
+      /([a-z?]{3}-\d{6})/i,
       10                                            # (max size)
     )
   end
@@ -403,7 +402,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
   def tokenizer_result_row_swimmer_code
     TokenExtractor.new(
       :swimmer_code,
-      /(\w\w\w-\d{6})/i,
+      /([a-z?]{3}-\d{6})/i,
       10                                            # (max size)
     )
   end
@@ -415,9 +414,8 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
       :swimmer_name,
       /
         (
-          (?<=[\sa-z0-9-]{10})|
-          (?<=[\sa-z0-9-]{18})
-        )\s(\D{25})
+          (?<=[\s\?a-z0-9-]{10}\s\d{4})
+        )\s{1,3}([a-z]\D{4,25}\s{2,5})
       /uix,
       29                                            # (max size)
     )
@@ -438,8 +436,8 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
   def tokenizer_result_row_team_name
     TokenExtractor.new(
       :team_name,
-      # [Steve, 20130809] Regexp is too slow!! (And doesn't work for team names with numbers in it.) Using Fixnum absolute index instead:
-      49,                                           # (starting idx)
+      # Leega... let's try
+      /(?<=[\s\?a-z0-9-]{10}\s\d{4}\s[a-z]\D{24}\s)\s*(.{3,30}\s{2,25})/i,                   
       26                                            # (max size)
     )
   end
@@ -476,6 +474,16 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
 #      8,                                            # (starting idx)
       /(?<=\d\s)\s|(?<=fuori gara)\s|(?<=f\.g\.)\s|(?<=fg)\s/i
 #      10                                            # (max size)
+    )
+  end
+
+  # "result_row.team_code" token extractor definition
+  #
+  def tokenizer_relay_row_team_code
+    TokenExtractor.new(
+      :team_code,
+      /([a-z?]{3}-\d{6})/i,
+      10                                            # (max size)
     )
   end
 

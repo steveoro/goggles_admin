@@ -8,8 +8,8 @@ require_relative '../../../app/data_import/v2/fin_startlist_consts'
 describe "ContextDetector set for 'FIN(1)sta' file types,", type: :integration do
   include ContextDetectorChecksForParsing
 
-  class DummyWrapper; include FinStartListConsts; end
-  let( :dummy_wrapper ) { DummyWrapper.new }
+  class DummyWrapperFIN1CTSta; include FinStartListConsts; end
+  let( :dummy_wrapper ) { DummyWrapperFIN1CTSta.new }
   #-- -------------------------------------------------------------------------
   #++
 

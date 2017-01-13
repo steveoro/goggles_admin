@@ -1,6 +1,8 @@
 require 'date'
 require 'ffaker'
 
+require 'common/validation_error_tools'
+
 
 FactoryGirl.define do
 
@@ -16,7 +18,15 @@ FactoryGirl.define do
     data_import_meeting_id    nil
     common_meeting_team_score_fields
 
+
     factory :data_import_meeting_team_score_with_relay_results do
+      before(:create) do |built_instance|
+        if built_instance.invalid?
+          puts "\r\nFactory def. error => " << ValidationErrorTools.recursive_error_for( built_instance )
+          puts built_instance.inspect
+        end
+      end
+
       after(:create) do |created_instance, evaluator|
         ms  = create( :meeting_session, meeting: created_instance.meeting )
         me  = create( :meeting_event_relay, meeting_session: ms )

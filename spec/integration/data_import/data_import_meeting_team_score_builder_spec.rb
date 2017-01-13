@@ -68,6 +68,7 @@ describe DataImportMeetingTeamScoreBuilder, type: :integration do
     it "doesn't create any primary entity row" do
       expect{ subject }.not_to change{ MeetingTeamScore.count }
     end
+    # FIXME Sometimes this yields random failure, depending on how the specs are executed:
     it "creates a new DataImportTeam row" do
       expect{ subject }.to change{ DataImportTeam.count }.by(1)
     end
@@ -157,6 +158,7 @@ describe DataImportMeetingTeamScoreBuilder, type: :integration do
 
   # Non-existing (totally random) fixture params.:
   let(:di_mrr) do
+    # FIXME Possible random factory validation error:
     create( :data_import_meeting_relay_result, data_import_session: data_import_session )
   end
   let(:di_mrr_detail_row) do
@@ -189,8 +191,27 @@ describe DataImportMeetingTeamScoreBuilder, type: :integration do
 
   # Existing or matching entities:
   let(:primary_ts_with_mrrs) do
-    create( :meeting_team_score_with_relay_results )
+    # [20170113, Steve] Old method raised sometimes some random failures:
+    # create( :meeting_team_score_with_relay_results )
+
+    # [20170113, Steve] New method uses existing data:
+    # Select an existing Meeting w/ relay results from the existing fixture data:
+    random_existing_meeting = MeetingRelayResult.includes(:meeting).joins(:meeting)
+      .select('meeting_id')
+      .map{|mrr| mrr.meeting }.uniq
+      .select{|m| m.meeting_team_scores.count > 0 }
+      .sort{ rand - 0.5 }.first
+
+    expect( random_existing_meeting ).to be_a( Meeting )
+    expect( random_existing_meeting.meeting_relay_results.count ).to be > 0
+    expect( random_existing_meeting.meeting_team_scores.count ).to be > 0
+
+    # Return a random team score from the above meeting:
+    mts = random_existing_meeting.meeting_team_scores.sort{ rand - 0.5 }.first
+    expect( mts ).to be_a( MeetingTeamScore )
+    mts
   end
+
   let(:primary_detail_row) do
     {
       import_text: FFaker::Lorem.paragraph[0..250],
@@ -219,15 +240,13 @@ describe DataImportMeetingTeamScoreBuilder, type: :integration do
     it_behaves_like( "(build process successfull)" )
 
     it "doesn't create any additional primary entity row" do
-      # (+1 only from the factory creation in the subject)
-      expect{ subject }.to change{ MeetingTeamScore.count }.by(1)
+      expect{ subject }.to change{ MeetingTeamScore.count }.by(0)
     end
     it "doesn't create any secondary entity row" do
       expect{ subject }.not_to change{ DataImportMeetingTeamScore.count }
     end
     it "doesn't create any additional Team row" do
-      # (+1 only from the factory creation in the subject)
-      expect{ subject }.to change{ Team.count }.by(1)
+      expect{ subject }.to change{ Team.count }.by(0)
     end
     it "doesn't create any DataImportTeam row" do
       expect{ subject }.not_to change{ DataImportTeam.count }

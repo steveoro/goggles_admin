@@ -16,8 +16,14 @@ FactoryGirl.define do
 
     # Make the circular reference between the session and the
     # season valid:
-    after(:create) do |created_instance, evaluator|
-      created_instance.data_import_session.season = created_instance.data_import_meeting_program.meeting_session.season
+#    after(:create) do |created_instance, evaluator|
+#    end
+    before(:create) do |built_instance|
+      built_instance.data_import_session.season = built_instance.data_import_meeting_program.meeting_session.season
+      if built_instance.invalid?
+        puts "\r\nFactory def. error => " << ValidationErrorTools.recursive_error_for( built_instance )
+        puts built_instance.inspect
+      end
     end
   end
   #-- -------------------------------------------------------------------------

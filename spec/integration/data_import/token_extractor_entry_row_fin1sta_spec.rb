@@ -5,8 +5,8 @@ require_relative '../../../app/data_import/v2/fin_startlist_consts'
 
 
 describe "TokenExtractor for RESULT_ROW-type buffers,", type: :integration do
-  class DummyWrapper; include FinStartListConsts; end
-  let( :dummy_wrapper ) { DummyWrapper.new }
+  class DummyWrapperFin1StaTEResRow; include FinStartListConsts; end
+  let( :dummy_wrapper ) { DummyWrapperFin1StaTEResRow.new }
 
   let(:feed) do
     [

@@ -8,8 +8,8 @@ require 'rails_helper'
 
 
 describe "TokenExtractor for CATEGORY_HEADER-type buffers,", type: :integration do
-  class DummyWrapper; include FinResultConsts; end
-  let( :dummy_wrapper ) { DummyWrapper.new }
+  class DummyWrapperFin1ResTECatHdr; include FinResultConsts; end
+  let( :dummy_wrapper ) { DummyWrapperFin1ResTECatHdr.new }
 
   let(:feed) do
     [

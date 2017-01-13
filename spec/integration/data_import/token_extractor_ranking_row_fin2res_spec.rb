@@ -8,8 +8,8 @@ require 'rails_helper'
 
 
 describe "TokenExtractor for RANKING_ROW-type buffers,", type: :integration do
-  class DummyWrapper2; include Fin2ResultConsts; end
-  let( :dummy_wrapper2 ) { DummyWrapper2.new }
+  class DummyWrapperFin2ResTERnkRow; include Fin2ResultConsts; end
+  let( :dummy_wrapper2 ) { DummyWrapperFin2ResTERnkRow.new }
 
   let(:feed) do
     [

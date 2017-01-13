@@ -8,8 +8,8 @@ require 'rails_helper'
 
 
 describe "TokenExtractor for RESULT_ROW-type buffers,", type: :integration do
-  class DummyWrapper2; include Fin3ResultConsts; end
-  let( :dummy_wrapper2 ) { DummyWrapper2.new }
+  class DummyWrapperFin3ResTEResRow; include Fin3ResultConsts; end
+  let( :dummy_wrapper2 ) { DummyWrapperFin3ResTEResRow.new }
 
   let(:feed) do
     [
@@ -246,7 +246,7 @@ describe "TokenExtractor for RESULT_ROW-type buffers,", type: :integration do
     "2'55\"15",
     "3'49\"52",
     "",
-    "0'37\"95",    
+    "0'37\"95",
     "2'56\"70",
     "3'33\"85",
     "0'59\"75",

@@ -7,8 +7,8 @@ require_relative './context_detector_checks_for_parsing'
 describe "ContextDetector set for 'FIN(1)res' file types,", type: :integration do
   include ContextDetectorChecksForParsing
 
-  class DummyWrapper; include FinResultConsts; end
-  let( :dummy_wrapper ) { DummyWrapper.new }
+  class DummyWrapperFIN1CTRes; include FinResultConsts; end
+  let( :dummy_wrapper ) { DummyWrapperFIN1CTRes.new }
   #-- -------------------------------------------------------------------------
   #++
 

@@ -8,8 +8,8 @@ require 'rails_helper'
 
 
 describe "TokenExtractor for STATS_DETAILS-type buffers,", type: :integration do
-  class DummyWrapper2; include Fin2ResultConsts; end
-  let( :dummy_wrapper2 ) { DummyWrapper2.new }
+  class DummyWrapperFin2ResTEStatsDtl; include Fin2ResultConsts; end
+  let( :dummy_wrapper2 ) { DummyWrapperFin2ResTEStatsDtl.new }
 
   # [Steve, 20141203]
   # Since all tokenizer have the same formula, we can test a single Tokenizer instance

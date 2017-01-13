@@ -8,8 +8,8 @@ require 'rails_helper'
 
 
 describe "TokenExtractor for RELAY_ROW-type buffers,", type: :integration do
-  class DummyWrapper2; include Fin2ResultConsts; end
-  let( :dummy_wrapper2 ) { DummyWrapper2.new }
+  class DummyWrapperFin2ResTERelRow; include Fin2ResultConsts; end
+  let( :dummy_wrapper2 ) { DummyWrapperFin2ResTERelRow.new }
 
   let(:feed) do
     [

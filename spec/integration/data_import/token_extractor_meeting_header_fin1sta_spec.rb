@@ -5,8 +5,8 @@ require_relative '../../../app/data_import/v2/fin_startlist_consts'
 
 
 describe "TokenExtractor for MEETING_HEADER-type buffers,", type: :integration do
-  class DummyWrapper; include FinStartListConsts; end
-  let( :dummy_wrapper ) { DummyWrapper.new }
+  class DummyWrapperFin1StaTEMtngHdr; include FinStartListConsts; end
+  let( :dummy_wrapper ) { DummyWrapperFin1StaTEMtngHdr.new }
 
   let(:feed) do
     [

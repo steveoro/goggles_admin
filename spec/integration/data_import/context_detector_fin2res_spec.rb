@@ -157,8 +157,8 @@ end
 describe "ContextDetector set for 'FIN2res' file types,", type: :integration do
   include ContextDetectorChecksForParsing
 
-  class DummyWrapper2; include Fin2ResultConsts; end
-  let( :dummy_wrapper2 ) { DummyWrapper2.new }
+  class DummyWrapperFIN2CTRes; include Fin2ResultConsts; end
+  let( :dummy_wrapper2 ) { DummyWrapperFIN2CTRes.new }
   #-- -------------------------------------------------------------------------
   #++
 

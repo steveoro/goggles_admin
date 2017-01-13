@@ -9,7 +9,7 @@ require_relative '../../../app/data_import/v2/services/token_extractor'
 describe Fin3ResultConsts, type: :model do
 
   context "as an included module," do
-    subject { class FinResultConsts::DummyWrapper; include Fin3ResultConsts; end }
+    subject { class Fin3ResultConsts::DummyWrapper; include Fin3ResultConsts; end }
 
     it "defines a list of constant ContextTypeDef(s)" do
       expect( subject.new.get_context_types_list ).to all be_an_instance_of( ContextTypeDef )

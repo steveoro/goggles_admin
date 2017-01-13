@@ -8,8 +8,8 @@ require 'rails_helper'
 
 
 describe "TokenExtractor for EVENT INDIVIDUAL-type buffers,", type: :integration do
-  class DummyWrapper2; include Fin2ResultConsts; end
-  let( :dummy_wrapper2 ) { DummyWrapper2.new }
+  class DummyWrapperFin2ResTEEvntInd; include Fin2ResultConsts; end
+  let( :dummy_wrapper2 ) { DummyWrapperFin2ResTEEvntInd.new }
 
   let(:feed) do
     [

@@ -1,0 +1,798 @@
+--
+-- MeetingEventReservationMatrixCreator recorded from actions by [User: leega (Marco Ligabue) ID: 2]
+-- 18 January 2017 16:54:49
+-- Begin script
+--
+
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (95, 16205, 2, 1, 142, 55640, NULL, 0, 0, '2017-01-18 15:54:49', '2017-01-18 15:54:49');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (839, 16205, 1, 142, 55640, 9965, 2, 1, 18, 40, '2017-01-18 15:54:49', '2017-01-18 15:54:49', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (840, 16205, 1, 142, 55640, 9970, 2, 0, 0, 0, '2017-01-18 15:54:49', '2017-01-18 15:54:49', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (841, 16205, 1, 142, 55640, 9971, 2, 0, 29, 60, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (842, 16205, 1, 142, 55640, 9972, 2, 0, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (843, 16205, 1, 142, 55640, 9973, 2, 1, 13, 31, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (844, 16205, 1, 142, 55640, 9963, 2, 0, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (845, 16205, 1, 142, 55640, 9974, 2, 2, 55, 8, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (846, 16205, 1, 142, 55640, 9975, 2, 0, 37, 10, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (847, 16205, 1, 142, 55640, 9976, 2, 0, 30, 80, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (848, 16205, 1, 142, 55640, 9977, 2, 1, 5, 60, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (849, 16205, 1, 142, 55640, 9964, 2, 2, 37, 30, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (96, 16205, 2, 1, 258, 55641, NULL, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (850, 16205, 1, 258, 55641, 9965, 2, 0, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (851, 16205, 1, 258, 55641, 9970, 2, 1, 36, 80, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (852, 16205, 1, 258, 55641, 9971, 2, 0, 33, 10, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (853, 16205, 1, 258, 55641, 9972, 2, 0, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (854, 16205, 1, 258, 55641, 9973, 2, 1, 26, 50, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (855, 16205, 1, 258, 55641, 9963, 2, 0, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (856, 16205, 1, 258, 55641, 9974, 2, 0, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (857, 16205, 1, 258, 55641, 9975, 2, 0, 41, 40, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (858, 16205, 1, 258, 55641, 9976, 2, 0, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (859, 16205, 1, 258, 55641, 9977, 2, 1, 16, 38, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (860, 16205, 1, 258, 55641, 9964, 2, 2, 51, 88, '2017-01-18 15:54:50', '2017-01-18 15:54:50', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (97, 16205, 2, 1, 1537, 55642, NULL, 0, 0, '2017-01-18 15:54:50', '2017-01-18 15:54:50');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (861, 16205, 1, 1537, 55642, 9965, 2, 1, 44, 60, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (862, 16205, 1, 1537, 55642, 9970, 2, 1, 30, 20, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (863, 16205, 1, 1537, 55642, 9971, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (864, 16205, 1, 1537, 55642, 9972, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (865, 16205, 1, 1537, 55642, 9973, 2, 1, 31, 5, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (866, 16205, 1, 1537, 55642, 9963, 2, 3, 18, 50, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (867, 16205, 1, 1537, 55642, 9974, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (868, 16205, 1, 1537, 55642, 9975, 2, 0, 42, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (869, 16205, 1, 1537, 55642, 9976, 2, 0, 40, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (870, 16205, 1, 1537, 55642, 9977, 2, 1, 21, 58, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (871, 16205, 1, 1537, 55642, 9964, 2, 2, 58, 60, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (98, 16205, 2, 1, 1227, 55643, NULL, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (872, 16205, 1, 1227, 55643, 9965, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (873, 16205, 1, 1227, 55643, 9970, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (874, 16205, 1, 1227, 55643, 9971, 2, 0, 28, 10, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (875, 16205, 1, 1227, 55643, 9972, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (876, 16205, 1, 1227, 55643, 9973, 2, 1, 15, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (877, 16205, 1, 1227, 55643, 9963, 2, 2, 55, 10, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (878, 16205, 1, 1227, 55643, 9974, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (879, 16205, 1, 1227, 55643, 9975, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (880, 16205, 1, 1227, 55643, 9976, 2, 0, 33, 40, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (881, 16205, 1, 1227, 55643, 9977, 2, 1, 2, 10, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (882, 16205, 1, 1227, 55643, 9964, 2, 2, 17, 50, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (99, 16205, 2, 1, 192, 55644, NULL, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (883, 16205, 1, 192, 55644, 9965, 2, 1, 34, 30, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (884, 16205, 1, 192, 55644, 9970, 2, 0, 0, 0, '2017-01-18 15:54:51', '2017-01-18 15:54:51', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (885, 16205, 1, 192, 55644, 9971, 2, 0, 39, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (886, 16205, 1, 192, 55644, 9972, 2, 0, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (887, 16205, 1, 192, 55644, 9973, 2, 0, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (888, 16205, 1, 192, 55644, 9963, 2, 0, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (889, 16205, 1, 192, 55644, 9974, 2, 3, 21, 10, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (890, 16205, 1, 192, 55644, 9975, 2, 0, 46, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (891, 16205, 1, 192, 55644, 9976, 2, 0, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (892, 16205, 1, 192, 55644, 9977, 2, 1, 28, 50, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (893, 16205, 1, 192, 55644, 9964, 2, 3, 15, 70, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (100, 16205, 2, 1, 138, 55645, NULL, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (894, 16205, 1, 138, 55645, 9965, 2, 1, 37, 30, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (895, 16205, 1, 138, 55645, 9970, 2, 0, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (896, 16205, 1, 138, 55645, 9971, 2, 0, 35, 30, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (897, 16205, 1, 138, 55645, 9972, 2, 0, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (898, 16205, 1, 138, 55645, 9973, 2, 1, 30, 40, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (899, 16205, 1, 138, 55645, 9963, 2, 0, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (900, 16205, 1, 138, 55645, 9974, 2, 3, 44, 90, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (901, 16205, 1, 138, 55645, 9975, 2, 0, 44, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (902, 16205, 1, 138, 55645, 9976, 2, 0, 41, 10, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (903, 16205, 1, 138, 55645, 9977, 2, 1, 18, 60, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (904, 16205, 1, 138, 55645, 9964, 2, 2, 51, 52, '2017-01-18 15:54:52', '2017-01-18 15:54:52', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (101, 16205, 2, 1, 1805, 55646, NULL, 0, 0, '2017-01-18 15:54:52', '2017-01-18 15:54:52');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (905, 16205, 1, 1805, 55646, 9965, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (906, 16205, 1, 1805, 55646, 9970, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (907, 16205, 1, 1805, 55646, 9971, 2, 0, 31, 51, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (908, 16205, 1, 1805, 55646, 9972, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (909, 16205, 1, 1805, 55646, 9973, 2, 1, 23, 40, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (910, 16205, 1, 1805, 55646, 9963, 2, 3, 5, 37, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (911, 16205, 1, 1805, 55646, 9974, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (912, 16205, 1, 1805, 55646, 9975, 2, 0, 40, 54, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (913, 16205, 1, 1805, 55646, 9976, 2, 0, 35, 80, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (914, 16205, 1, 1805, 55646, 9977, 2, 1, 13, 95, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (915, 16205, 1, 1805, 55646, 9964, 2, 2, 41, 80, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (102, 16205, 2, 1, 1843, 55647, NULL, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (916, 16205, 1, 1843, 55647, 9965, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (917, 16205, 1, 1843, 55647, 9970, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (918, 16205, 1, 1843, 55647, 9971, 2, 0, 33, 19, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (919, 16205, 1, 1843, 55647, 9972, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (920, 16205, 1, 1843, 55647, 9973, 2, 1, 25, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (921, 16205, 1, 1843, 55647, 9963, 2, 3, 3, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (922, 16205, 1, 1843, 55647, 9974, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (923, 16205, 1, 1843, 55647, 9975, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (924, 16205, 1, 1843, 55647, 9976, 2, 0, 38, 20, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (925, 16205, 1, 1843, 55647, 9977, 2, 1, 10, 40, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (926, 16205, 1, 1843, 55647, 9964, 2, 2, 29, 90, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (103, 16205, 2, 1, 1463, 55648, NULL, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (927, 16205, 1, 1463, 55648, 9965, 2, 1, 38, 90, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (928, 16205, 1, 1463, 55648, 9970, 2, 0, 0, 0, '2017-01-18 15:54:53', '2017-01-18 15:54:53', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (929, 16205, 1, 1463, 55648, 9971, 2, 0, 32, 62, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (930, 16205, 1, 1463, 55648, 9972, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (931, 16205, 1, 1463, 55648, 9973, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (932, 16205, 1, 1463, 55648, 9963, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (933, 16205, 1, 1463, 55648, 9974, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (934, 16205, 1, 1463, 55648, 9975, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (935, 16205, 1, 1463, 55648, 9976, 2, 0, 39, 30, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (936, 16205, 1, 1463, 55648, 9977, 2, 1, 11, 90, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (937, 16205, 1, 1463, 55648, 9964, 2, 2, 43, 70, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (104, 16205, 2, 1, 11732, 55649, NULL, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (938, 16205, 1, 11732, 55649, 9965, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (939, 16205, 1, 11732, 55649, 9970, 2, 1, 54, 50, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (940, 16205, 1, 11732, 55649, 9971, 2, 0, 35, 70, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (941, 16205, 1, 11732, 55649, 9972, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (942, 16205, 1, 11732, 55649, 9973, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (943, 16205, 1, 11732, 55649, 9963, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (944, 16205, 1, 11732, 55649, 9974, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (945, 16205, 1, 11732, 55649, 9975, 2, 0, 51, 60, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (946, 16205, 1, 11732, 55649, 9976, 2, 0, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (947, 16205, 1, 11732, 55649, 9977, 2, 1, 21, 9, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (948, 16205, 1, 11732, 55649, 9964, 2, 2, 59, 15, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (105, 16205, 2, 1, 1409, 55650, NULL, 0, 0, '2017-01-18 15:54:54', '2017-01-18 15:54:54');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (949, 16205, 1, 1409, 55650, 9965, 2, 1, 22, 90, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (950, 16205, 1, 1409, 55650, 9970, 2, 1, 24, 66, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (951, 16205, 1, 1409, 55650, 9971, 2, 0, 30, 20, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (952, 16205, 1, 1409, 55650, 9972, 2, 3, 24, 17, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (953, 16205, 1, 1409, 55650, 9973, 2, 1, 18, 50, '2017-01-18 15:54:54', '2017-01-18 15:54:54', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (954, 16205, 1, 1409, 55650, 9963, 2, 2, 50, 60, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (955, 16205, 1, 1409, 55650, 9974, 2, 3, 6, 44, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (956, 16205, 1, 1409, 55650, 9975, 2, 0, 38, 14, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (957, 16205, 1, 1409, 55650, 9976, 2, 0, 34, 60, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (958, 16205, 1, 1409, 55650, 9977, 2, 1, 9, 80, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (959, 16205, 1, 1409, 55650, 9964, 2, 2, 35, 58, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (106, 16205, 2, 1, 550, 55651, NULL, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (960, 16205, 1, 550, 55651, 9965, 2, 1, 38, 80, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (961, 16205, 1, 550, 55651, 9970, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (962, 16205, 1, 550, 55651, 9971, 2, 0, 39, 80, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (963, 16205, 1, 550, 55651, 9972, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (964, 16205, 1, 550, 55651, 9973, 2, 1, 35, 99, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (965, 16205, 1, 550, 55651, 9963, 2, 3, 30, 40, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (966, 16205, 1, 550, 55651, 9974, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (967, 16205, 1, 550, 55651, 9975, 2, 0, 49, 50, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (968, 16205, 1, 550, 55651, 9976, 2, 0, 44, 5, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (969, 16205, 1, 550, 55651, 9977, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (970, 16205, 1, 550, 55651, 9964, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (107, 16205, 2, 1, 21214, 55652, NULL, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (971, 16205, 1, 21214, 55652, 9965, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (972, 16205, 1, 21214, 55652, 9970, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (973, 16205, 1, 21214, 55652, 9971, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (974, 16205, 1, 21214, 55652, 9972, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (975, 16205, 1, 21214, 55652, 9973, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (976, 16205, 1, 21214, 55652, 9963, 2, 0, 0, 0, '2017-01-18 15:54:55', '2017-01-18 15:54:55', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (977, 16205, 1, 21214, 55652, 9974, 2, 0, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (978, 16205, 1, 21214, 55652, 9975, 2, 0, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (979, 16205, 1, 21214, 55652, 9976, 2, 0, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (980, 16205, 1, 21214, 55652, 9977, 2, 0, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (981, 16205, 1, 21214, 55652, 9964, 2, 0, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (108, 16205, 2, 1, 785, 55653, NULL, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (982, 16205, 1, 785, 55653, 9965, 2, 1, 25, 17, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (983, 16205, 1, 785, 55653, 9970, 2, 0, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (984, 16205, 1, 785, 55653, 9971, 2, 0, 30, 4, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (985, 16205, 1, 785, 55653, 9972, 2, 0, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (986, 16205, 1, 785, 55653, 9973, 2, 1, 20, 61, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (987, 16205, 1, 785, 55653, 9963, 2, 2, 54, 40, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (988, 16205, 1, 785, 55653, 9974, 2, 3, 13, 29, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (989, 16205, 1, 785, 55653, 9975, 2, 0, 39, 10, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (990, 16205, 1, 785, 55653, 9976, 2, 0, 39, 30, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (991, 16205, 1, 785, 55653, 9977, 2, 1, 7, 20, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (992, 16205, 1, 785, 55653, 9964, 2, 2, 35, 40, '2017-01-18 15:54:56', '2017-01-18 15:54:56', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (109, 16205, 2, 1, 1016, 55654, NULL, 0, 0, '2017-01-18 15:54:56', '2017-01-18 15:54:56');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (993, 16205, 1, 1016, 55654, 9965, 2, 1, 30, 58, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (994, 16205, 1, 1016, 55654, 9970, 2, 0, 0, 0, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (995, 16205, 1, 1016, 55654, 9971, 2, 0, 32, 89, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (996, 16205, 1, 1016, 55654, 9972, 2, 0, 0, 0, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (997, 16205, 1, 1016, 55654, 9973, 2, 1, 28, 77, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (998, 16205, 1, 1016, 55654, 9963, 2, 0, 0, 0, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (999, 16205, 1, 1016, 55654, 9974, 2, 3, 27, 61, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1000, 16205, 1, 1016, 55654, 9975, 2, 0, 0, 0, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1001, 16205, 1, 1016, 55654, 9976, 2, 0, 38, 20, '2017-01-18 15:54:57', '2017-01-18 15:54:57', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1002, 16205, 1, 1016, 55654, 9977, 2, 1, 12, 80, '2017-01-18 15:54:58', '2017-01-18 15:54:58', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1003, 16205, 1, 1016, 55654, 9964, 2, 2, 39, 80, '2017-01-18 15:54:58', '2017-01-18 15:54:58', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (110, 16205, 2, 1, 1452, 55655, NULL, 0, 0, '2017-01-18 15:54:58', '2017-01-18 15:54:58');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1004, 16205, 1, 1452, 55655, 9965, 2, 0, 0, 0, '2017-01-18 15:54:58', '2017-01-18 15:54:58', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1005, 16205, 1, 1452, 55655, 9970, 2, 1, 10, 31, '2017-01-18 15:54:58', '2017-01-18 15:54:58', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1006, 16205, 1, 1452, 55655, 9971, 2, 0, 27, 80, '2017-01-18 15:54:58', '2017-01-18 15:54:58', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1007, 16205, 1, 1452, 55655, 9972, 2, 0, 0, 0, '2017-01-18 15:54:58', '2017-01-18 15:54:58', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1008, 16205, 1, 1452, 55655, 9973, 2, 1, 10, 90, '2017-01-18 15:54:58', '2017-01-18 15:54:58', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1009, 16205, 1, 1452, 55655, 9963, 2, 0, 0, 0, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1010, 16205, 1, 1452, 55655, 9974, 2, 0, 0, 0, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1011, 16205, 1, 1452, 55655, 9975, 2, 0, 32, 0, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1012, 16205, 1, 1452, 55655, 9976, 2, 0, 30, 53, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1013, 16205, 1, 1452, 55655, 9977, 2, 0, 58, 53, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1014, 16205, 1, 1452, 55655, 9964, 2, 2, 13, 82, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (111, 16205, 2, 1, 468, 55656, NULL, 0, 0, '2017-01-18 15:54:59', '2017-01-18 15:54:59');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1015, 16205, 1, 468, 55656, 9965, 2, 0, 0, 0, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1016, 16205, 1, 468, 55656, 9970, 2, 0, 0, 0, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1017, 16205, 1, 468, 55656, 9971, 2, 0, 36, 50, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1018, 16205, 1, 468, 55656, 9972, 2, 0, 0, 0, '2017-01-18 15:54:59', '2017-01-18 15:54:59', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1019, 16205, 1, 468, 55656, 9973, 2, 1, 39, 44, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1020, 16205, 1, 468, 55656, 9963, 2, 3, 28, 10, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1021, 16205, 1, 468, 55656, 9974, 2, 0, 0, 0, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1022, 16205, 1, 468, 55656, 9975, 2, 0, 48, 60, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1023, 16205, 1, 468, 55656, 9976, 2, 0, 46, 30, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1024, 16205, 1, 468, 55656, 9977, 2, 1, 23, 50, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1025, 16205, 1, 468, 55656, 9964, 2, 3, 2, 20, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (112, 16205, 2, 1, 728, 55657, NULL, 0, 0, '2017-01-18 15:55:00', '2017-01-18 15:55:00');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1026, 16205, 1, 728, 55657, 9965, 2, 1, 41, 70, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1027, 16205, 1, 728, 55657, 9970, 2, 0, 0, 0, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1028, 16205, 1, 728, 55657, 9971, 2, 0, 35, 80, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1029, 16205, 1, 728, 55657, 9972, 2, 0, 0, 0, '2017-01-18 15:55:00', '2017-01-18 15:55:00', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1030, 16205, 1, 728, 55657, 9973, 2, 1, 37, 80, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1031, 16205, 1, 728, 55657, 9963, 2, 0, 0, 0, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1032, 16205, 1, 728, 55657, 9974, 2, 0, 0, 0, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1033, 16205, 1, 728, 55657, 9975, 2, 0, 48, 10, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1034, 16205, 1, 728, 55657, 9976, 2, 0, 45, 10, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1035, 16205, 1, 728, 55657, 9977, 2, 1, 20, 90, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1036, 16205, 1, 728, 55657, 9964, 2, 3, 6, 89, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (113, 16205, 2, 1, 23, 55658, NULL, 0, 0, '2017-01-18 15:55:01', '2017-01-18 15:55:01');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1037, 16205, 1, 23, 55658, 9965, 2, 1, 24, 90, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1038, 16205, 1, 23, 55658, 9970, 2, 1, 23, 98, '2017-01-18 15:55:01', '2017-01-18 15:55:01', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1039, 16205, 1, 23, 55658, 9971, 2, 0, 29, 50, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1040, 16205, 1, 23, 55658, 9972, 2, 2, 47, 1, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1041, 16205, 1, 23, 55658, 9973, 2, 1, 14, 30, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1042, 16205, 1, 23, 55658, 9963, 2, 2, 40, 47, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1043, 16205, 1, 23, 55658, 9974, 2, 2, 57, 78, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1044, 16205, 1, 23, 55658, 9975, 2, 0, 43, 9, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1045, 16205, 1, 23, 55658, 9976, 2, 0, 31, 60, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1046, 16205, 1, 23, 55658, 9977, 2, 1, 3, 49, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1047, 16205, 1, 23, 55658, 9964, 2, 2, 19, 19, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (114, 16205, 2, 1, 1514, 55659, NULL, 0, 0, '2017-01-18 15:55:02', '2017-01-18 15:55:02');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1048, 16205, 1, 1514, 55659, 9965, 2, 0, 0, 0, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1049, 16205, 1, 1514, 55659, 9970, 2, 0, 0, 0, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1050, 16205, 1, 1514, 55659, 9971, 2, 0, 0, 0, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1051, 16205, 1, 1514, 55659, 9972, 2, 0, 0, 0, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1052, 16205, 1, 1514, 55659, 9973, 2, 0, 0, 0, '2017-01-18 15:55:02', '2017-01-18 15:55:02', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1053, 16205, 1, 1514, 55659, 9963, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1054, 16205, 1, 1514, 55659, 9974, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1055, 16205, 1, 1514, 55659, 9975, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1056, 16205, 1, 1514, 55659, 9976, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1057, 16205, 1, 1514, 55659, 9977, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1058, 16205, 1, 1514, 55659, 9964, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (115, 16205, 2, 1, 27445, 55660, NULL, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1059, 16205, 1, 27445, 55660, 9965, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1060, 16205, 1, 27445, 55660, 9970, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1061, 16205, 1, 27445, 55660, 9971, 2, 0, 39, 10, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1062, 16205, 1, 27445, 55660, 9972, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1063, 16205, 1, 27445, 55660, 9973, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1064, 16205, 1, 27445, 55660, 9963, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1065, 16205, 1, 27445, 55660, 9974, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1066, 16205, 1, 27445, 55660, 9975, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1067, 16205, 1, 27445, 55660, 9976, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1068, 16205, 1, 27445, 55660, 9977, 2, 1, 26, 40, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1069, 16205, 1, 27445, 55660, 9964, 2, 3, 7, 80, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (116, 16205, 2, 1, 64, 55661, NULL, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1070, 16205, 1, 64, 55661, 9965, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1071, 16205, 1, 64, 55661, 9970, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1072, 16205, 1, 64, 55661, 9971, 2, 0, 31, 10, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1073, 16205, 1, 64, 55661, 9972, 2, 0, 0, 0, '2017-01-18 15:55:03', '2017-01-18 15:55:03', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1074, 16205, 1, 64, 55661, 9973, 2, 1, 20, 70, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1075, 16205, 1, 64, 55661, 9963, 2, 3, 3, 80, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1076, 16205, 1, 64, 55661, 9974, 2, 0, 0, 0, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1077, 16205, 1, 64, 55661, 9975, 2, 0, 38, 80, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1078, 16205, 1, 64, 55661, 9976, 2, 0, 34, 20, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1079, 16205, 1, 64, 55661, 9977, 2, 1, 7, 70, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1080, 16205, 1, 64, 55661, 9964, 2, 2, 31, 70, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (117, 16205, 2, 1, 1788, 55662, NULL, 0, 0, '2017-01-18 15:55:04', '2017-01-18 15:55:04');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1081, 16205, 1, 1788, 55662, 9965, 2, 1, 34, 10, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1082, 16205, 1, 1788, 55662, 9970, 2, 0, 0, 0, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1083, 16205, 1, 1788, 55662, 9971, 2, 0, 30, 40, '2017-01-18 15:55:04', '2017-01-18 15:55:04', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1084, 16205, 1, 1788, 55662, 9972, 2, 0, 0, 0, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1085, 16205, 1, 1788, 55662, 9973, 2, 1, 15, 50, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1086, 16205, 1, 1788, 55662, 9963, 2, 2, 46, 50, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1087, 16205, 1, 1788, 55662, 9974, 2, 0, 0, 0, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1088, 16205, 1, 1788, 55662, 9975, 2, 0, 0, 0, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1089, 16205, 1, 1788, 55662, 9976, 2, 0, 32, 94, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1090, 16205, 1, 1788, 55662, 9977, 2, 1, 7, 60, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1091, 16205, 1, 1788, 55662, 9964, 2, 2, 31, 50, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (118, 16205, 2, 1, 1541, 55663, NULL, 0, 0, '2017-01-18 15:55:05', '2017-01-18 15:55:05');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1092, 16205, 1, 1541, 55663, 9965, 2, 1, 16, 59, '2017-01-18 15:55:05', '2017-01-18 15:55:05', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1093, 16205, 1, 1541, 55663, 9970, 2, 0, 0, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1094, 16205, 1, 1541, 55663, 9971, 2, 0, 26, 65, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1095, 16205, 1, 1541, 55663, 9972, 2, 2, 31, 26, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1096, 16205, 1, 1541, 55663, 9973, 2, 1, 6, 93, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1097, 16205, 1, 1541, 55663, 9963, 2, 2, 25, 1, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1098, 16205, 1, 1541, 55663, 9974, 2, 2, 49, 20, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1099, 16205, 1, 1541, 55663, 9975, 2, 0, 32, 15, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1100, 16205, 1, 1541, 55663, 9976, 2, 0, 28, 60, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1101, 16205, 1, 1541, 55663, 9977, 2, 0, 58, 74, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1102, 16205, 1, 1541, 55663, 9964, 2, 2, 9, 68, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (119, 16205, 2, 1, 98, 55664, NULL, 0, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1103, 16205, 1, 98, 55664, 9965, 2, 0, 0, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1104, 16205, 1, 98, 55664, 9970, 2, 1, 28, 20, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1105, 16205, 1, 98, 55664, 9971, 2, 0, 35, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1106, 16205, 1, 98, 55664, 9972, 2, 0, 0, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1107, 16205, 1, 98, 55664, 9973, 2, 1, 29, 24, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1108, 16205, 1, 98, 55664, 9963, 2, 0, 0, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1109, 16205, 1, 98, 55664, 9974, 2, 0, 0, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1110, 16205, 1, 98, 55664, 9975, 2, 0, 40, 31, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1111, 16205, 1, 98, 55664, 9976, 2, 0, 42, 0, '2017-01-18 15:55:06', '2017-01-18 15:55:06', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1112, 16205, 1, 98, 55664, 9977, 2, 1, 18, 60, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1113, 16205, 1, 98, 55664, 9964, 2, 2, 52, 17, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (120, 16205, 2, 1, 1160, 55665, NULL, 0, 0, '2017-01-18 15:55:07', '2017-01-18 15:55:07');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1114, 16205, 1, 1160, 55665, 9965, 2, 1, 21, 90, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1115, 16205, 1, 1160, 55665, 9970, 2, 0, 0, 0, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1116, 16205, 1, 1160, 55665, 9971, 2, 0, 29, 80, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1117, 16205, 1, 1160, 55665, 9972, 2, 0, 0, 0, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1118, 16205, 1, 1160, 55665, 9973, 2, 1, 16, 90, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1119, 16205, 1, 1160, 55665, 9963, 2, 3, 3, 60, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1120, 16205, 1, 1160, 55665, 9974, 2, 0, 0, 0, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1121, 16205, 1, 1160, 55665, 9975, 2, 0, 38, 0, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1122, 16205, 1, 1160, 55665, 9976, 2, 0, 32, 80, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1123, 16205, 1, 1160, 55665, 9977, 2, 1, 7, 70, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1124, 16205, 1, 1160, 55665, 9964, 2, 0, 0, 0, '2017-01-18 15:55:07', '2017-01-18 15:55:07', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (121, 16205, 2, 1, 503, 55666, NULL, 0, 0, '2017-01-18 15:55:07', '2017-01-18 15:55:07');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1125, 16205, 1, 503, 55666, 9965, 2, 1, 54, 65, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1126, 16205, 1, 503, 55666, 9970, 2, 2, 2, 20, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1127, 16205, 1, 503, 55666, 9971, 2, 0, 38, 89, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1128, 16205, 1, 503, 55666, 9972, 2, 0, 0, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1129, 16205, 1, 503, 55666, 9973, 2, 1, 40, 78, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1130, 16205, 1, 503, 55666, 9963, 2, 3, 49, 60, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1131, 16205, 1, 503, 55666, 9974, 2, 3, 57, 20, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1132, 16205, 1, 503, 55666, 9975, 2, 0, 52, 60, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1133, 16205, 1, 503, 55666, 9976, 2, 0, 0, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1134, 16205, 1, 503, 55666, 9977, 2, 1, 23, 28, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1135, 16205, 1, 503, 55666, 9964, 2, 3, 10, 11, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (122, 16205, 2, 1, 1532, 55667, NULL, 0, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1136, 16205, 1, 1532, 55667, 9965, 2, 0, 0, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1137, 16205, 1, 1532, 55667, 9970, 2, 1, 21, 90, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1138, 16205, 1, 1532, 55667, 9971, 2, 0, 31, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1139, 16205, 1, 1532, 55667, 9972, 2, 0, 0, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1140, 16205, 1, 1532, 55667, 9973, 2, 1, 20, 40, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1141, 16205, 1, 1532, 55667, 9963, 2, 3, 1, 70, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1142, 16205, 1, 1532, 55667, 9974, 2, 0, 0, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1143, 16205, 1, 1532, 55667, 9975, 2, 0, 0, 0, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1144, 16205, 1, 1532, 55667, 9976, 2, 0, 36, 76, '2017-01-18 15:55:08', '2017-01-18 15:55:08', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1145, 16205, 1, 1532, 55667, 9977, 2, 1, 10, 50, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1146, 16205, 1, 1532, 55667, 9964, 2, 2, 35, 48, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (123, 16205, 2, 1, 1025, 55668, NULL, 0, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1147, 16205, 1, 1025, 55668, 9965, 2, 1, 18, 90, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1148, 16205, 1, 1025, 55668, 9970, 2, 1, 11, 60, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1149, 16205, 1, 1025, 55668, 9971, 2, 0, 27, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1150, 16205, 1, 1025, 55668, 9972, 2, 2, 23, 43, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1151, 16205, 1, 1025, 55668, 9973, 2, 1, 8, 20, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1152, 16205, 1, 1025, 55668, 9963, 2, 2, 26, 68, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1153, 16205, 1, 1025, 55668, 9974, 2, 2, 55, 3, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1154, 16205, 1, 1025, 55668, 9975, 2, 0, 32, 80, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1155, 16205, 1, 1025, 55668, 9976, 2, 0, 29, 8, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1156, 16205, 1, 1025, 55668, 9977, 2, 0, 58, 70, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1157, 16205, 1, 1025, 55668, 9964, 2, 2, 9, 50, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (124, 16205, 2, 1, 1777, 55669, NULL, 0, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1158, 16205, 1, 1777, 55669, 9965, 2, 0, 0, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1159, 16205, 1, 1777, 55669, 9970, 2, 1, 25, 72, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1160, 16205, 1, 1777, 55669, 9971, 2, 0, 32, 96, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1161, 16205, 1, 1777, 55669, 9972, 2, 0, 0, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1162, 16205, 1, 1777, 55669, 9973, 2, 1, 21, 90, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1163, 16205, 1, 1777, 55669, 9963, 2, 0, 0, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1164, 16205, 1, 1777, 55669, 9974, 2, 0, 0, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1165, 16205, 1, 1777, 55669, 9975, 2, 0, 40, 50, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1166, 16205, 1, 1777, 55669, 9976, 2, 0, 0, 0, '2017-01-18 15:55:09', '2017-01-18 15:55:09', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1167, 16205, 1, 1777, 55669, 9977, 2, 1, 12, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1168, 16205, 1, 1777, 55669, 9964, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (125, 16205, 2, 1, 1496, 55670, NULL, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1169, 16205, 1, 1496, 55670, 9965, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1170, 16205, 1, 1496, 55670, 9970, 2, 1, 4, 66, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1171, 16205, 1, 1496, 55670, 9971, 2, 0, 26, 60, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1172, 16205, 1, 1496, 55670, 9972, 2, 2, 13, 26, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1173, 16205, 1, 1496, 55670, 9973, 2, 1, 7, 40, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1174, 16205, 1, 1496, 55670, 9963, 2, 2, 24, 50, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1175, 16205, 1, 1496, 55670, 9974, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1176, 16205, 1, 1496, 55670, 9975, 2, 0, 30, 10, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1177, 16205, 1, 1496, 55670, 9976, 2, 0, 27, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1178, 16205, 1, 1496, 55670, 9977, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1179, 16205, 1, 1496, 55670, 9964, 2, 2, 11, 40, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (126, 16205, 2, 1, 1461, 56920, NULL, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1180, 16205, 1, 1461, 56920, 9965, 2, 1, 31, 38, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1181, 16205, 1, 1461, 56920, 9970, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1182, 16205, 1, 1461, 56920, 9971, 2, 0, 31, 73, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1183, 16205, 1, 1461, 56920, 9972, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1184, 16205, 1, 1461, 56920, 9973, 2, 1, 25, 90, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1185, 16205, 1, 1461, 56920, 9963, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1186, 16205, 1, 1461, 56920, 9974, 2, 0, 0, 0, '2017-01-18 15:55:10', '2017-01-18 15:55:10', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1187, 16205, 1, 1461, 56920, 9975, 2, 0, 41, 20, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1188, 16205, 1, 1461, 56920, 9976, 2, 0, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1189, 16205, 1, 1461, 56920, 9977, 2, 1, 10, 50, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1190, 16205, 1, 1461, 56920, 9964, 2, 2, 55, 74, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (127, 16205, 2, 1, 27570, 56921, NULL, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1191, 16205, 1, 27570, 56921, 9965, 2, 0, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1192, 16205, 1, 27570, 56921, 9970, 2, 0, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1193, 16205, 1, 27570, 56921, 9971, 2, 0, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1194, 16205, 1, 27570, 56921, 9972, 2, 0, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1195, 16205, 1, 27570, 56921, 9973, 2, 0, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1196, 16205, 1, 27570, 56921, 9963, 2, 0, 0, 0, '2017-01-18 15:55:11', '2017-01-18 15:55:11', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1197, 16205, 1, 27570, 56921, 9974, 2, 0, 0, 0, '2017-01-18 15:55:12', '2017-01-18 15:55:12', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1198, 16205, 1, 27570, 56921, 9975, 2, 0, 0, 0, '2017-01-18 15:55:12', '2017-01-18 15:55:12', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1199, 16205, 1, 27570, 56921, 9976, 2, 0, 0, 0, '2017-01-18 15:55:12', '2017-01-18 15:55:12', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1200, 16205, 1, 27570, 56921, 9977, 2, 0, 0, 0, '2017-01-18 15:55:12', '2017-01-18 15:55:12', 0);
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (1201, 16205, 1, 27570, 56921, 9964, 2, 0, 0, 0, '2017-01-18 15:55:12', '2017-01-18 15:55:12', 0);

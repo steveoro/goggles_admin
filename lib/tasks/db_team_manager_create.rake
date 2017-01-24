@@ -178,7 +178,7 @@ DESC
 
     if users.nil?
       logger.info( "Unable to find any User given the parameters. Trying with Swimmer..." )
-      swimmers = find_possible_entity_rows( Swimmer, email, first_name, last_name, year_of_birth )
+      swimmers = find_possible_entity_rows( Swimmer, nil, first_name, last_name, year_of_birth )
       # No Swimmer found?
       if swimmers.nil?
         logger.error( "Unable to find both any User nor any Swimmer given the parameters. Aborting..." )

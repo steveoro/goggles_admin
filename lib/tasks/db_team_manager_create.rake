@@ -173,19 +173,19 @@ DESC
     users = if id
       User.where( id: id )
     else
-      find_possible_entity_rows( User, email, first_name, last_name, year_of_birth )
+      find_possible_entity_rows( User, email, first_name, last_name, year_of_birth, logger )
     end
 
     if users.nil?
       logger.info( "Unable to find any User given the parameters. Trying with Swimmer..." )
-      swimmers = find_possible_entity_rows( Swimmer, email, first_name, last_name, year_of_birth )
+      swimmers = find_possible_entity_rows( Swimmer, nil, first_name, last_name, year_of_birth, logger )
       # No Swimmer found?
       if swimmers.nil?
         logger.error( "Unable to find both any User nor any Swimmer given the parameters. Aborting..." )
         return nil
       # Too many swimmers?
       elsif swimmers.count != 1
-        logger.error( "You need to be more specific! Results found:" )
+        logger.error( "You need to be more specific! Results found: #{ swimmers.count }" )
         swimmers.each { |s| logger.error( s.get_verbose_name ) }
         logger.error( "Aborting..." )
         return nil
@@ -203,7 +203,7 @@ DESC
     end
 
     if users.count != 1
-      logger.error( "You need to be more specific! Results found:" )
+      logger.error( "You need to be more specific! Results found: #{ users.count }" )
       users.each { |user| logger.error( user ) }
       logger.error( "Aborting..." )
       return nil
@@ -216,7 +216,7 @@ DESC
   # have valid values to perform a WHERE query search.
   # Returns nil in case none of the parameters where useful.
   #
-  def find_possible_entity_rows( entity, email, first_name, last_name, year_of_birth )
+  def find_possible_entity_rows( entity, email, first_name, last_name, year_of_birth, logger )
     if email && entity.where( email: email ).count > 0
       entity.where( email: email )
 
@@ -228,7 +228,23 @@ DESC
       if entity.where( complete_name: "#{last_name} #{first_name}" ).count > 0
         entity.where( complete_name: "#{last_name} #{first_name}" )
       else
-        entity.where( complete_name: "#{first_name} #{last_name}" )
+        entity.where( complete_name: "#{first_name} #{last_name}" ) if entity.where( complete_name: "#{first_name} #{last_name}" ).count > 0
+      end
+
+    elsif (entity == User) && last_name
+      if entity.where( last_name: "#{last_name}" ).count > 0
+        entity.where( last_name: "#{last_name}" )
+      else
+        logger.info( "Searching users descriptions..." )
+        entity.where( "description LIKE ?", "%#{ last_name }%" ) if entity.where( "description LIKE ?", "%#{ last_name }%" ).count > 0
+      end
+
+    elsif (entity == Swimmer) && last_name
+      if entity.where( last_name: last_name ).count > 0
+        entity.where( last_name: last_name )
+      else
+        logger.info( "Searching swimmers complete_name..." )
+        entity.where( "complete_name LIKE ?", "%#{ last_name }%" ) if entity.where( "complete_name LIKE ?", "%#{ last_name }%" ).count > 0
       end
 
     elsif first_name && last_name &&

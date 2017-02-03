@@ -8,7 +8,7 @@
 </head>
 <body>
     <!-- Main menu section: -->
-    <%= render( partial: 'admin/v2/maintenance/main_menu' ) %>
+    <%= render( partial: 'maintenance/main_menu' ) %>
 
     <!-- Body canvas: -->
     <div id="intenal-canvas" class="canvas">
@@ -27,7 +27,7 @@
         <div class="container">
             <div class="col-xs-12">
                 <div class="col-xs-offset-6 col-xs-6 text-center">
-                    <%= render_navigation( renderer: :breadcrumbs, prefix: I18n.t(:you_are_here) +'&nbsp;', join_with: " &gt; " ) %>
+                    <%= render_navigation( ontext: 'admin_v2_maintenance', renderer: :breadcrumbs, prefix: I18n.t(:you_are_here) +'&nbsp;', join_with: " &gt; " ) %>
                 </div>
             </div>
 

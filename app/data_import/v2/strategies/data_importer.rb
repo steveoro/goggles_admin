@@ -2,22 +2,22 @@
 require 'fileutils'                                 # Used to process filenames
 require 'common/format'
 
-require_relative '../../../data_import/v2/dao/header_fields_dao'
-require_relative '../../../data_import/v2/services/team_name_analyzer'
-require_relative '../../../data_import/v2/services/swimmer_name_analyzer'
+require_relative '../dao/header_fields_dao'
+require_relative '../services/team_name_analyzer'
+require_relative '../services/swimmer_name_analyzer'
 
-require_relative '../../../data_import/v2/strategies/filename_parser'
-require_relative '../../../data_import/v2/strategies/meeting_date_parser'
-require_relative '../../../data_import/v2/strategies/fin_result_parser'
-require_relative '../../../data_import/v2/strategies/fin_result_phase2'
-require_relative '../../../data_import/v2/strategies/fin_result_phase3'
-require_relative '../../../data_import/v2/strategies/parse_result_converter'
-require_relative '../../../data_import/v2/strategies/season_detect_utils'
+require_relative './filename_parser'
+require_relative './meeting_date_parser'
+require_relative './fin_result_parser'
+require_relative './fin_result_phase2'
+require_relative './fin_result_phase3'
+require_relative './parse_result_converter'
+require_relative './season_detect_utils'
 
-require_relative '../../../data_import/v2/services/meeting_header_year_checker'
-require_relative '../../../data_import/v2/services/meeting_notes_organization_checker'
-require_relative '../../../data_import/v2/services/data_import_meeting_builder'
-require_relative '../../../data_import/v2/services/data_import_meeting_session_builder'
+require_relative '../services/meeting_header_year_checker'
+require_relative '../services/meeting_notes_organization_checker'
+require_relative '../services/data_import_meeting_builder'
+require_relative '../services/data_import_meeting_session_builder'
 
 
 =begin
@@ -611,11 +611,11 @@ class DataImporter
   # true on success; false on error.
   #
   def phase_3_commit()
-    @flash[:info] = I18n.t(:missing_session_parameter, { scope: [:admin_import] }) if @data_import_session.nil?
+    @flash[:info] = I18n.t('admin_import.missing_session_parameter') if @data_import_session.nil?
     return false unless @data_import_session.instance_of?( DataImportSession ) &&
                         ( @data_import_session.phase == 12 )
                                                     # Check season integrity
-    @flash[:info] = I18n.t(:season_not_saved_in_session, { scope: [:admin_import] }) and return false unless @season
+    @flash[:info] = I18n.t('admin_import.season_not_saved_in_session') and return false unless @season
 
     update_logs( "\r\n\r\n--------------------[Phase #3 - COMMIT]--------------------" )
     update_logs( "\r\n-- phase_3_commit: session ID:#{ @data_import_session.id }, season ID: #{ @season.id }..." )

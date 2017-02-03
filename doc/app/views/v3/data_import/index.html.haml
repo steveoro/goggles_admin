@@ -1,5 +1,5 @@
 %ul.nav.nav-tabs
-  = content_tag( :li, link_to(t('admin_import.step_1'), admin_v2_di_step1_status_path()), class: 'active' )
+  = content_tag( :li, link_to(t('admin_import.step_1'), di_step1_status_path()), class: 'active' )
   = content_tag( :li, link_to(t('admin_import.step_2'), '#'), class: 'disabled' )
   = content_tag( :li, link_to(t('admin_import.step_3'), '#'), class: 'disabled' )
 %p.text-center.lead
@@ -79,7 +79,7 @@
           - if (s.phase.to_i > 0)
             = link_to(                                       |
                  I18n.t(:continue_on_phase2),                |
-                 admin_v2_di_step2_checkout_path( id: s.id ), |
+                 di_step2_checkout_path( id: s.id ), |
                  method: :post,                              |
                  class: 'btn'                                |
               )                                              |
@@ -92,10 +92,10 @@
           \
           \
           = link_to(                                                                  |
-              I18n.t(:del, scope: [:netzke,:basepack,:grid_panel,:actions]),          |
-              admin_v2_di_kill_import_session_path( id: s.id ),                        |
+              I18n.t('admin_import.del'),          |
+              di_kill_import_session_path( id: s.id ),                        |
               method: :post,                                                          |
-              confirm: I18n.t(:are_you_sure, scope: [:netzke,:basepack,:grid_panel]), |
+              confirm: I18n.t('admin_import.are_you_sure'), |
               class: 'btn'                                                            |
             )                                                                         |
 - @uploaded_files = Dir.glob( File.join(Dir.pwd, 'public/uploads/*.*') )

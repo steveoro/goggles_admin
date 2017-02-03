@@ -1,5 +1,5 @@
 %ul.nav.nav-tabs
-  = content_tag( :li, link_to(t('admin_import.step_1'), admin_v2_di_step1_status_path()), class: 'active' )
+  = content_tag( :li, link_to(t('admin_import.step_1'), di_step1_status_path()), class: 'active' )
   = content_tag( :li, link_to(t('admin_import.step_1_1'), '#'), class: 'active' )
   = content_tag( :li, link_to(t('admin_import.step_2'), '#'),   class: 'disabled' )
   = content_tag( :li, link_to(t('admin_import.step_3'), '#'),   class: 'disabled' )
@@ -65,7 +65,7 @@
         .span1
           = check_box_tag( "must_go_back" )
         .span1
-          = submit_tag( I18n.t('admin_import.confirm'), data: {:disable_with => I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn' )
+          = submit_tag( I18n.t('admin_import.confirm'), data: {:disable_with => I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn btn-primary' )
     .row.span11
       %span#loadingIndicator{:hidden => "true"}
         = image_tag( 'indicator.gif' )

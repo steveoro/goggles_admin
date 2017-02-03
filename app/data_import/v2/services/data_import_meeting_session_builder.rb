@@ -61,7 +61,7 @@ class V2::DataImportMeetingSessionBuilder < V2::DataImportEntityBuilder
             force_missing_meeting_creation
           ).result_row
         end
-        @description = "#{I18n.t(:meeting_session, { scope: [:activerecord, :models] })} #1"
+        @description = "#{ I18n.t('activerecord.models.meeting_session') } #1"
         @warm_up_time  = Time.utc(
           scheduled_date.year, scheduled_date.month, scheduled_date.day,
           7, 30                                         # (UTC time)

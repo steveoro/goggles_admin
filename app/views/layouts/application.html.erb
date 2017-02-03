@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head name="viewport" content="width=device-width, initial-scale=1">
+    <title><%= GogglesCore::AppConstants::WEB_APP_NAME %> -- <%= t('admin_import.admin') %></title>
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+<body>
+    <!-- Main menu section: -->
+    <%= render( partial: 'data_import/home/main_menu' ) %>
+
+    <!-- Body canvas: -->
+    <div id="internal-canvas" class="canvas">
+        <div class="navbar navbar-default navbar-fixed-top col-xs-12 goggles-background goggles-line-height">
+            <!-- Clickable menu toggle button: -->
+            <button type="button" id="nav-trigger" class="navbar-toggle" data-toggle="offcanvas" data-recalc="false" data-target=".navmenu" data-canvas=".canvas">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+
+        <!-- Main Container: -->
+        <div class="container goggles-margin-top">
+            <!-- Alerts & error messages -->
+            <div class="col-xs-12">
+                <% if notice || flash[:info] %>
+                    <div id="notice" class="modal fade" tabindex="-1" role="dialog">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-body alert-info text-center">
+                                    <%= notice || flash[:info] %>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+                <% if flash[:warning] %>
+                    <div class="alert alert-warning" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <%= flash[:warning] %>
+                    </div>
+                <% end %>
+                <% if alert %>
+                    <div class="media alert alert-warning">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <div class="media-left">
+                            <%= image_tag( "mmh.jpg", size: '180x135' ) %>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Mmmh...</h4>
+                            <%= alert %>
+                        </div>
+                    </div>
+                <% end %>
+                <% if flash[:error] %>
+                    <div class="alert alert-danger" role="alert">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <h4>Oh no!</h4>
+                        <%= flash[:error] %>
+                    </div>
+                <% end %>
+            </div>
+
+            <!-- Actual body content -->
+            <div class="col-xs-12 goggles-category-gap">
+                <%= yield %>
+            </div>
+
+            <!-- After the content has been yield, toggle the script: -->
+            <script>
+                // (Wait for the page to be ready)
+                $( function() {
+                    // Briefly show the flash notice if it is defined, and then hide it away:
+                    $("#notice").fadeTo(3000, 500).slideUp(500, function(){
+                        $("#notice").modal('close');
+                    });
+                    // XXX [Steve, 20170113] DO NOT ENABLE GLOBALLY VIA JS THE TOOLTIP PLUGIN OF JQUERY WITH THE LINE BELOW!
+                    // It messes up with the table layouts and grid system currently used!
+                    // ----8<----
+                    // Enable all tooltip on the page, even those added via JS later on:
+                    //$('[data-toggle="tooltip"]').tooltip();
+                    // ----8<----
+                });
+            </script>
+        </div>
+    </div>
+
+</body>
+</html>

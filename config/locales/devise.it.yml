@@ -1,0 +1,135 @@
+it:
+  devise:
+    resend_confirm_email_title: "Istruzioni di conferma Account"
+    resend_confirm_email_submit: "Rispedisci le istruzioni di conferma"
+
+    confirm_email_greetings: "Heila' %{email}! Benvenuto in Goggles!"
+    confirm_email_text: "Puoi confermare il tuo account di e-mail cliccando sul link qui sotto:"
+    confirm_email_submit: "Conferma il mio account"
+
+    reset_password_greetings: "Ciao %{email}!"
+    reset_password_text: "Qualcuno ha richiesto un link per resettare la tua password. Puoi fare questo cliccando sul link qui sotto."
+    reset_password_submit: "Cambia la mia password"
+    reset_password_footnote1: "Se non l'hai richiesto tu, per favore ignora questa email."
+    reset_password_footnote2: "Tieni presente che la tua password non cambiera' sintanto che tu non cliccherai sul link qui sopra e ne creerai una nuova."
+
+    unlock_password_greetings: "Ciao %{email}!"
+    unlock_password_info: "Il tuo account e' stato bloccato a causa di un numero eccessivo di accessi sbagliati."
+    unlock_password_text: "Clicca sul link qui sotto per sbloccare il tuo account:"
+    unlock_password_submit: "Sblocca il mio account"
+
+    edit_password_title: "Cambia la mia password"
+    edit_password_new_password: "Nuova password"
+    edit_password_confirm: "Conferma nuova password"
+    edit_password_submit: "Cambia la mia password"
+
+    new_password_title: "Hai dimenticato la tua password?"
+    new_password_submit: "Inviami il link per il reset della password"
+
+    edit_user_title: "Modifica"
+    edit_user_waiting_confirm_info: "Attualmente in attesa di conferma per:"
+    edit_user_leave_blank_info: "(lascia in bianco se non vuoi cambiare)"
+    edit_user_need_password_info: "(abbiamo bisogno della tua password corrente per confermare i cambiamenti)"
+    edit_user_submit: "Aggiorna"
+    edit_user_cancel_account_title: "Elimina il mio account"
+    edit_user_unregister_title: "Insoddisfatto?"
+    edit_user_unregister_submit: "Elimina il mio account"
+    edit_user_unregister_confirmation: "Siamo sicuri di voler continuare?"
+    edit_user_link_to_back_title: "Indietro"
+    use_email_data_updates_notify_info: "(Permette a Goggles di inviarti una mail ogni volta che ci sono risultati gare o record nuovi.)"
+    use_email_achievements_notify_info: "(Goggles ti avvisera' ogni volta che tu o un tuo amico batte un record o ottiene un risultato 'notevole'.)"
+    use_email_newsletter_notify_info: "(Goggles ti inviera' una mail ogni volta che il sito subisce modifiche o aggiornamenti sostanziali -- di solito, meno che mensilmente.)"
+    use_email_community_notify_info: "(Goggles ti avvisera' per novita' riguardanti i tuoi compagni di squadra o i tuoi 'swimming buddies'.)"
+
+    new_user_title: "Registrati"
+    new_user_submit: "Registrati"
+
+    new_session_title: "Accedi"
+    new_session_submit: "Accedi"
+
+    link_log_in: "Accedi"
+    link_register: "Registrati"
+    link_forgot_password: "Password dimenticata?"
+    link_resend_confirm_email: "Non hai ricevuto il link per confermare l'account?"
+    link_resend_unlock_email: "Non hai ricevuto il link per sbloccare l'account?"
+    link_log_in_with: "Accedi con"
+
+    unlock_user_title: "Rispedisci il link di sblocco"
+    unlock_user_submit: "Rispedisci il link di sblocco"
+
+    email_label: "E-Mail"
+    email_placeholder: "E-MAIL"
+    password_label: "Password"
+    password_placeholder: "PASSWORD"
+    retype_password_label: "Conferma password"
+    retype_password_placeholder: "RIDIGITA PASSWORD"
+    shared_links:
+      log_in: "Hai già un account? Accedi qui"
+      sign_up: "Registrati"
+      forgot_password: "Password dimenticata?"
+      resend_confirmation: "Non hai ricevuto le istruzioni di conferma?"
+      resend_unlock: "Non hai ricevuto le istruzioni di sblocco?"
+      sign_in_with: "Accedi tramite"
+    confirmations:
+      confirmed: "Il tuo account è stato correttamente confermato."
+      send_instructions: "Entro qualche minuto riceverai un messaggio email con le istruzioni per confermare il tuo account."
+      send_paranoid_instructions: "Se il tuo indirizzo email esiste nel nostro database, entro qualche minuto riceverai un messaggio email con le istruzioni per confermare il tuo account."
+      resend_confirmation_label: "Re-invia le istruzioni di conferma"
+    failure:
+      already_authenticated: "Hai già effettuato l'accesso."
+      inactive: "Il tuo account non è ancora stato attivato."
+      invalid: "%{authentication_keys} o password non validi."
+      locked: "Il tuo account è bloccato."
+      last_attempt: "Hai un altro tentativo prima che il tuo account venga bloccato."
+      not_found_in_database: "%{authentication_keys} o password non validi."
+      timeout: "La tua sessione è scaduta, accedi nuovamente per continuare."
+      unauthenticated: "Devi accedere o registrarti per continuare."
+      unconfirmed: "Devi confermare il tuo indirizzo email per continuare cliccando sul link ricevuto via e-mail."
+    mailer:
+      confirmation_instructions:
+        subject: "Istruzioni per la conferma"
+      reset_password_instructions:
+        subject: "Istruzioni per reimpostare la password"
+      unlock_instructions:
+        subject: "Istruzioni per sbloccare l'account"
+    omniauth_callbacks:
+      failure: 'Non è stato possibile autenticarti come %{kind} perché "%{reason}".'
+      success: "Autenticato con successo dall'account %{kind}."
+    passwords:
+      change_password: "Cambia la tua Password"
+      forgot_password: "Password dimenticata?"
+      no_token: "Non è possibile accedere a questa pagina se non provieni da una e-mail di ripristino della password. Se provieni da una e-mail di ripristino della password, assicurarti di utilizzare l'URL completo."
+      send_instructions: "Entro qualche minuto riceverai un messaggio email con le istruzioni per reimpostare la tua password."
+      send_paranoid_instructions: "Se il tuo indirizzo email esiste nel nostro database, entro qualche minuto riceverai un messaggio email con le istruzioni per ripristinare la password."
+      updated: "La tua password è stata cambiata correttamente. Ora sei collegato."
+      updated_not_active: "La tua password è stata cambiata correttamente."
+      submit_change_label: "Cambia la mia password"
+      send_reset_label: "Invia le istruzioni di reset password"
+    registrations:
+      destroyed: "Arrivederci! Il tuo account è stato cancellato. Speriamo di rivederti presto."
+      signed_up: "Benvenuto! Ti sei registrato correttamente."
+      signed_up_but_inactive: "Ti sei registrato correttamente. Tuttavia non puoi effettuare l'accesso perché il tuo account non è stato ancora attivato."
+      signed_up_but_locked: "Ti sei registrato correttamente. Tuttavia non puoi effettuare l'accesso perché il tuo account è bloccato."
+      signed_up_but_unconfirmed: "Ti sei registrato correttamente. Un messaggio con il link per confermare il tuo account è stato inviato al tuo indirizzo email."
+      update_needs_confirmation: "Il tuo account è stato aggiornato, tuttavia è necessario verificare il tuo nuovo indirizzo email. Entro qualche minuto riceverai un messaggio email con le istruzioni per confermare il tuo nuovo indirizzo email."
+      updated: "Il tuo account è stato aggiornato."
+    sessions:
+      signed_in: "Accesso effettuato con successo."
+      signed_out: "Sei uscito correttamente."
+      already_signed_out: "Sei uscito correttamente."
+    unlocks:
+      send_instructions: "Entro qualche minuto riceverai un messaggio email con le istruzioni per sbloccare il tuo account."
+      send_paranoid_instructions: "Se il tuo indirizzo email esiste nel nostro database, entro qualche minuto riceverai un messaggio email con le istruzioni per sbloccare il tuo account."
+      unlocked: "Il tuo account è stato correttamente sbloccato. Accedi per continuare."
+      resend_unlock_label: "Re-invia le istruzioni di sblocco"
+  errors:
+    messages:
+      account_already_registered: "Questo account esiste gia'. Per cortesia, accedi anziche' provare a registrarti di nuovo!"
+      already_confirmed: "è stato già confermato, prova ad effettuare un nuovo accesso"
+      confirmation_period_expired: "deve essere confermato entro %{period}, si prega di richiederne uno nuovo"
+      expired: "è scaduto, si prega di richiederne uno nuovo"
+      not_found: "non trovato"
+      not_locked: "non era bloccato"
+      not_saved:
+        one: "Un errore ha impedito di completare l'operazione:"
+        other: "%{count} errori hanno impedito di completare l'operazione:"

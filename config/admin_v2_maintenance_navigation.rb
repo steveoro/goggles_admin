@@ -52,10 +52,10 @@ SimpleNavigation::Configuration.run do |navigation|
     primary.item :key_separator1,             '&nbsp;', '#', class: 'disabled', if: Proc.new { admin_signed_in? }
     primary.item( :key_sections,              content_tag(:span, t('admin_index.sections') ), '#', if: Proc.new { admin_signed_in? }
     ) do |lev2_nav|
-      lev2_nav.item :key_admin_index,         content_tag(:span, t('admin_index.title') ), admin_v2_maintenance_path()
+      lev2_nav.item :key_admin_index,         content_tag(:span, t('admin_index.title') ), maintenance_path()
       lev2_nav.item :key_separator21,         content_tag(:span, '' ), class: 'divider'
       lev2_nav.item :key_admin_dashboard,     content_tag(:span, t('admin.actions.dashboard.menu') ), rails_admin_path()
-      lev2_nav.item :key_admin_data_import,   content_tag(:span, t('admin_import.menu') ), admin_v2_di_step1_status_path()
+      lev2_nav.item :key_admin_data_import,   content_tag(:span, t('admin_import.menu') ), di_step1_status_path()
       lev2_nav.item :key_admin_dj_mon,        content_tag(:span, 'DJ Monitor' ), dj_mon_path()
     end
 

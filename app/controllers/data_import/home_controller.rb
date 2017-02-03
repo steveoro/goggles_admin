@@ -1,23 +1,23 @@
 # encoding: utf-8
 require 'fileutils'                                 # Used to process filenames
 require 'common/format'
-require_relative '../../../data_import/v2/strategies/data_importer'
-require_relative '../../../data_import/v2/strategies/csi_result_parser'
-require_relative '../../../data_import/v2/strategies/team_analysis_result_processor'
-require_relative '../../../data_import/v2/strategies/swimmer_analysis_result_processor'
+require_relative '../../data_import/v2/strategies/data_importer'
+require_relative '../../data_import/v2/strategies/csi_result_parser'
+require_relative '../../data_import/v2/strategies/team_analysis_result_processor'
+require_relative '../../data_import/v2/strategies/swimmer_analysis_result_processor'
 
 
 =begin
 
-= AdminImportController
+= DataImport::HomeController
 
   - version:  4.00.741
   - author:   Steve A.
 
 =end
-class Admin::V2::DataImportController < ApplicationController
+class DataImport::HomeController < ApplicationController
 
-  layout 'admin_v2_data_import'
+  layout 'application'
 
   # Require authorization before invoking any of this controller's actions:
   before_action :authenticate_admin!
@@ -32,7 +32,7 @@ class Admin::V2::DataImportController < ApplicationController
     if data_import_session
       DataImporter.new( logger, flash, data_import_session ).destroy_data_import_session
     end
-    redirect_to( admin_v2_di_step1_status_path() )
+    redirect_to( di_step1_status_path() )
   end
   #-- -------------------------------------------------------------------------
   #++
@@ -43,8 +43,8 @@ class Admin::V2::DataImportController < ApplicationController
   #
   def step1_status                                   # Retrieve current sessions for the current user and list them:
 # DEBUG
-#    logger.debug "\r\n\r\n!! ------ admin_import::step1_status -----"
-#    logger.debug "current_admin: #{current_admin.inspect}"
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} -----" )
+#    logger.debug( "> #{params.inspect}" )
     @existing_import_sessions = DataImportSession.where( user_id: current_admin.id )
   end
   #-- -------------------------------------------------------------------------
@@ -56,8 +56,8 @@ class Admin::V2::DataImportController < ApplicationController
   #
   def step1_1_team_analysis
 # DEBUG
-#    logger.debug "\r\n\r\n!! ------ admin_import::step1_1_team_analysis -----"
-#    logger.debug "PARAMS: #{params.inspect}"
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} - team_analysis -----" )
+#    logger.debug( "> #{params.inspect}" )
                                                     # Propagate forward (phase-3) the parameters from Phase-1, if any:
     @force_missing_meeting_creation = (params[:force_meeting_creation] == 'true') ||
                                       (params[:force_meeting_creation].to_i > 0)
@@ -80,8 +80,8 @@ class Admin::V2::DataImportController < ApplicationController
   #
   def step1_1_team_analysis_commit
 # DEBUG
-    logger.debug "\r\n\r\n!! ------ admin_import::step1_1_team_analysis_commit -----"
-    logger.debug "PARAMS: #{params.inspect}"
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} - team_analysis_commit -----" )
+#    logger.debug( "> #{params.inspect}" )
     overridden_alias_actions = {}
     confirmed_actions_ids    = []
     data_import_session_id   = 0
@@ -170,14 +170,14 @@ class Admin::V2::DataImportController < ApplicationController
         if data_import_session.data_import_swimmer_analysis_results.any?
           flash[:info] = I18n.t( 'admin_import.swimmer_analysis_needed' )
           redirect_to(
-              admin_v2_di_step1_1_swimmer_analysis_path(
+              di_step1_1_swimmer_analysis_path(
                   id: importer.data_import_session.id,
                   force_meeting_creation: force_missing_meeting_creation ? '1' : nil
               )
           ) and return
         else
           redirect_to(
-            admin_v2_di_step2_checkout_path(
+            di_step2_checkout_path(
               id: data_import_session_id,
               force_meeting_creation: force_missing_meeting_creation ? '1' : '0',
               force_team_or_swimmer_creation: '1' # After the Team analysis, we can serialize the missing teams (WAS: force_team_or_swimmer_creation     ? '1' : '0' )
@@ -186,7 +186,7 @@ class Admin::V2::DataImportController < ApplicationController
         end
       end
     else
-      redirect_to( admin_v2_di_step1_status_path() ) and return
+      redirect_to( di_step1_status_path() ) and return
     end
   end
   #-- -------------------------------------------------------------------------
@@ -198,8 +198,8 @@ class Admin::V2::DataImportController < ApplicationController
   #
   def step1_1_swimmer_analysis
 # DEBUG
-#    logger.debug "\r\n\r\n!! ------ admin_import::step1_1_swimmer_analysis -----"
-#    logger.debug "PARAMS: #{params.inspect}"
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} - swimmer_analysis -----" )
+#    logger.debug( "> #{params.inspect}" )
                                                     # Propagate forward (phase-3) the parameters from Phase-1, if any:
     @force_missing_meeting_creation = (params[:force_meeting_creation] == 'true') ||
                                       (params[:force_meeting_creation].to_i > 0)
@@ -222,8 +222,8 @@ class Admin::V2::DataImportController < ApplicationController
   #
   def step1_1_swimmer_analysis_commit
 # DEBUG
-    logger.debug "\r\n\r\n!! ------ admin_import::step1_1_swimmer_analysis_commit -----"
-    logger.debug "PARAMS: #{params.inspect}"
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} - swimmer_analysis_commit -----" )
+#    logger.debug( "> #{params.inspect}" )
     overridden_alias_actions = {}
     confirmed_actions_ids    = []
     data_import_session_id   = 0
@@ -309,7 +309,7 @@ class Admin::V2::DataImportController < ApplicationController
         data_import_session.save!
         DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id ).delete_all
         redirect_to(
-          admin_v2_di_step2_checkout_path(
+          di_step2_checkout_path(
             id: data_import_session_id,
             force_meeting_creation: force_missing_meeting_creation ? '1' : '0',
             force_team_or_swimmer_creation: '1' # After all the analysis phases, we can serialize any missing team (WAS: force_team_or_swimmer_creation ? '1' : '0' )
@@ -317,7 +317,7 @@ class Admin::V2::DataImportController < ApplicationController
         ) and return
       end
     else
-      redirect_to( admin_v2_di_step1_status_path() ) and return
+      redirect_to( di_step1_status_path() ) and return
     end
   end
   #-- -------------------------------------------------------------------------
@@ -359,8 +359,8 @@ class Admin::V2::DataImportController < ApplicationController
   #
   def step2_checkout
 # DEBUG
-    logger.debug "\r\n\r\n!! ------ admin_import::step2_checkout -----"
-    logger.debug "PARAMS: #{params.inspect}"
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} - checkout -----" )
+#    logger.debug( "> #{params.inspect}" )
 #    logger.debug "FILENAME...: #{params[:datafile].original_filename if params[:datafile] }"
     filename_to_be_parsed = nil
     @data_import_session  = nil
@@ -372,7 +372,7 @@ class Admin::V2::DataImportController < ApplicationController
       season_id = @data_import_session.season_id if @data_import_session.instance_of?( DataImportSession )
       if ( season_id.to_i < 1 )
         flash[:info] = I18n.t( 'admin_import.season_not_saved_in_session' )
-        redirect_to( admin_v2_di_step1_status_path() ) and return
+        redirect_to( di_step1_status_path() ) and return
       end
                                                     # === CASE 2: STARTING SESSION. Datafile parameter present? Copy the file to its destination.
     elsif params[:datafile]                         # Get season from form parameters:
@@ -383,7 +383,7 @@ class Admin::V2::DataImportController < ApplicationController
                                                     # === CASE ELSE: Error. Form not-fully completed.
     else
       flash[:info] = I18n.t( 'admin_import.nothing_to_do_upload_something' )
-      redirect_to( admin_v2_di_step1_status_path() ) and return
+      redirect_to( di_step1_status_path() ) and return
     end
 
                                                     # === (Re-)Launch phase_1_parse if we can/must do it:
@@ -421,7 +421,7 @@ class Admin::V2::DataImportController < ApplicationController
       if importer.data_import_session.data_import_team_analysis_results.any?
         flash[:info] = I18n.t( 'admin_import.team_analysis_needed' )
         redirect_to(
-            admin_v2_di_step1_1_team_analysis_path(
+            di_step1_1_team_analysis_path(
               id:                             importer.data_import_session.id,
               force_meeting_creation:         force_missing_meeting_creation ? '1' : nil,
               force_team_or_swimmer_creation: force_team_or_swimmer_creation ? '1' : nil
@@ -431,7 +431,7 @@ class Admin::V2::DataImportController < ApplicationController
       if importer.data_import_session.data_import_swimmer_analysis_results.any?
         flash[:info] = I18n.t( 'admin_import.swimmer_analysis_needed' )
         redirect_to(
-            admin_v2_di_step1_1_swimmer_analysis_path(
+            di_step1_1_swimmer_analysis_path(
               id:                             importer.data_import_session.id,
               force_meeting_creation:         force_missing_meeting_creation ? '1' : nil,
               force_team_or_swimmer_creation: force_team_or_swimmer_creation ? '1' : nil
@@ -442,7 +442,7 @@ class Admin::V2::DataImportController < ApplicationController
                                                     # -- REDIRECT ON ERROR:
     if @data_import_session.nil?
       flash[:error] = importer.flash[:error] if importer && importer.flash.instance_of?(Hash)
-      redirect_to( admin_v2_di_step1_status_path() ) and return
+      redirect_to( di_step1_status_path() ) and return
     end
                                                     # -- PHASE 2.0 (MANUAL REVIEW) BEGIN:
                                                     # Compute the filtering parameters:
@@ -477,20 +477,20 @@ class Admin::V2::DataImportController < ApplicationController
   #
   def step3_commit
 # DEBUG
-    logger.debug "\r\n\r\n!! ----- admin_import::step3_commit -----"
-    logger.debug "PARAMS: #{params.inspect}"
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} - commit -----" )
+#    logger.debug( "> #{params.inspect}" )
                                                     # Retrieve data_import_session ID from parameters
     data_import_session_id = params[:data_import_session_id]
     unless ( data_import_session_id.to_i > 0 )
       flash[:info] = I18n.t( 'admin_import.missing_session_parameter' )
-      redirect_to( admin_v2_di_step1_status_path() ) and return
+      redirect_to( di_step1_status_path() ) and return
     end
 
     data_import_session = DataImportSession.find_by_id( data_import_session_id )
     season_id = data_import_session.season_id if data_import_session.instance_of?( DataImportSession )
     if ( season_id.to_i < 1 )
       flash[:info] = I18n.t( 'admin_import.season_not_saved_in_session' )
-      redirect_to( admin_v2_di_step1_status_path() ) and return
+      redirect_to( di_step1_status_path() ) and return
     end
 # DEBUG
     logger.debug("\r\n- data_import_session: #{data_import_session.inspect}")
@@ -499,7 +499,7 @@ class Admin::V2::DataImportController < ApplicationController
                                                     # -- PHASE 3.0:
     is_ok = importer.phase_3_commit()
 
-    redirect_to( admin_v2_di_step1_status_path() ) and return unless is_ok
+    redirect_to( di_step1_status_path() ) and return unless is_ok
     @import_log = importer.import_log          # (get combined import log)
   end
   #-- -------------------------------------------------------------------------

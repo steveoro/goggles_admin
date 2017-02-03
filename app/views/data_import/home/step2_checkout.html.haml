@@ -1,5 +1,5 @@
 %ul.nav.nav-tabs
-  = content_tag( :li, link_to(t('admin_import.step_1'), admin_v2_di_step1_status_path()), class: 'active' )
+  = content_tag( :li, link_to(t('admin_import.step_1'), di_step1_status_path()), class: 'active' )
   = content_tag( :li, link_to(t('admin_import.step_2'), '#'), class: 'active' )
   = content_tag( :li, link_to(t('admin_import.step_3'), '#'), class: 'disabled' )
 - if @data_import_session
@@ -13,7 +13,7 @@
             :onsubmit => "$('#btnSubmit').hide(); $('#loadingIndicator').show();"                                             |
         ) do                                                                                                                  |
         .control-group
-          %label.control-label{:for => "data_import_session_id"}= I18n.t(:session, scope: [:admin_import])
+          %label.control-label{:for => "data_import_session_id"}= I18n.t('admin_import.session')
           .controls
             = text_field_tag( :data_import_session_id, @data_import_session.id, disabled: true, class: "span1" )
             = hidden_field_tag( :data_import_session_id, @data_import_session.id )
@@ -21,7 +21,7 @@
               %span.help-inline.strong= "#{@meeting.class.name} ID: #{@meeting.id} (#{@meeting.code}) - "
             %span.help-inline.strong= @season_description
             \
-            \#{submit_tag( I18n.t(:commit_rows), id: "btnSubmit", class: 'btn' )}
+            \#{submit_tag( I18n.t(:commit_rows), id: "btnSubmit", class: 'btn btn-primary' )}
             %span#loadingIndicator{:hidden => "true"}
               = I18n.t(:please_wait)
               \ #{image_tag( 'indicator.gif' )}

@@ -3,7 +3,7 @@ require 'fileutils'                                 # Used to process filenames
 require 'open3'                                     # Used to capture & send STDIN/STDOUT
 require 'common/format'
 
-require_relative '../../../data_import/v2/services/team_merger'
+require_relative '../data_import/v2/services/team_merger'
 
 
 =begin
@@ -14,9 +14,9 @@ require_relative '../../../data_import/v2/services/team_merger'
   - author:   Steve A.
 
 =end
-class Admin::V2::MaintenanceController < ApplicationController
+class MaintenanceController < ApplicationController
 
-  layout 'admin_v2_maintenance'
+  layout 'maintenance'
 
   # Require authorization before invoking any of this controller's actions:
   before_action :authenticate_admin!
@@ -71,8 +71,8 @@ class Admin::V2::MaintenanceController < ApplicationController
         when '.sql'
           zip_pipe = nil
         else
-          flash[:info] = I18n.t(:unsupported_file_format, { scope: [:admin_index] })
-          redirect_to( admin_v2_maintenance_path() ) and return
+          flash[:info] = I18n.t('admin_index.unsupported_file_format')
+          redirect_to( maintenance_path() ) and return
         end
 
         if zip_pipe
@@ -101,8 +101,8 @@ class Admin::V2::MaintenanceController < ApplicationController
         logger.info( "Deleting '#{@filename_to_be_run}'...\r\n" )
         FileUtils.rm( @filename_to_be_run ) if File.exists?( @filename_to_be_run )
       else
-        flash[:info] = I18n.t(:nothing_to_do_upload_something, { scope: [:admin_import] })
-        redirect_to( admin_v2_maintenance_path() ) and return
+        flash[:info] = I18n.t('admin_import.nothing_to_do_upload_something')
+        redirect_to( maintenance_path() ) and return
       end
     end
   end
@@ -143,8 +143,8 @@ class Admin::V2::MaintenanceController < ApplicationController
         when '.sql'
           zip_pipe = nil
         else
-          flash[:info] = I18n.t(:unsupported_file_format, { scope: [:admin_index] })
-          redirect_to( admin_v2_maintenance_path() ) and return
+          flash[:info] = I18n.t('admin_index.unsupported_file_format')
+          redirect_to( maintenance_path() ) and return
         end
 
         if zip_pipe
@@ -178,8 +178,8 @@ class Admin::V2::MaintenanceController < ApplicationController
           FileUtils.rm( @filename_to_be_run ) if File.exists?( @filename_to_be_run )
         end
       else
-        flash[:info] = I18n.t(:nothing_to_do_upload_something, { scope: [:admin_import] })
-        redirect_to( admin_v2_maintenance_path() ) and return
+        flash[:info] = I18n.t('admin_import.nothing_to_do_upload_something')
+        redirect_to( maintenance_path() ) and return
       end
     end
   end
@@ -208,7 +208,7 @@ class Admin::V2::MaintenanceController < ApplicationController
   def cleanup_output_dir
     output_folder = File.join( File.join(Rails.root, 'public'), 'output' )
     FileUtils.rm( Dir.glob(File.join(output_folder,'*')) )
-    redirect_to admin_v2_maintenance_path()
+    redirect_to maintenance_path()
   end
   # ---------------------------------------------------------------------------
   # ---------------------------------------------------------------------------
@@ -322,7 +322,7 @@ class Admin::V2::MaintenanceController < ApplicationController
     meeting_id = params[:commit].to_i
     unless ( request.post? && meeting_id > 0 )
       flash[:error] = I18n.t(:invalid_action_request)
-      redirect_to admin_v2_maintenance_path()
+      redirect_to maintenance_path()
     end
 
     rows = MeetingIndividualResult.joins(:meeting).where(['meetings.id = ?', meeting_id]).destroy_all
@@ -349,7 +349,7 @@ class Admin::V2::MaintenanceController < ApplicationController
              "MeetingProgram rows deleted: #{deleted_progs}\r\n" <<
              "MeetingEvent rows deleted: #{deleted_events}\r\n" <<
              "+ all associated MeetingTeamScore & MeetingSession rows.\r\n"
-    redirect_to admin_v2_maintenance_path( console_output: output )
+    redirect_to maintenance_path( console_output: output )
   end
   # ---------------------------------------------------------------------------
 
@@ -532,7 +532,7 @@ class Admin::V2::MaintenanceController < ApplicationController
       send_file( file_name )
     else
       flash[:error] = I18n.t(:file_not_created_for_some_reason)
-      redirect_to admin_v2_maintenance_path( console_output: output )
+      redirect_to maintenance_path( console_output: output )
     end
     is_ok
   end

@@ -12,8 +12,8 @@ class Admin < ApplicationRecord
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
 
-  devise :database_authenticatable, :trackable, :timeoutable, :lockable
-#         :recoverable, :rememberable, :validatable
+  devise :database_authenticatable, :trackable, :lockable
+#         :recoverable, :rememberable, :validatable, :timeoutable
          # [Steve, 20130716] Registerable module removed as-per-config of rails_admin gem:
 #         :registerable
 

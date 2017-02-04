@@ -437,7 +437,7 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
     TokenExtractor.new(
       :team_name,
       # Leega... let's try
-      /(?<=[\s\?a-z0-9-]{10}\s\d{4}\s[a-z]\D{28})\s+(.{3,27}\s{2,25})/i,                   
+      /(?<=[\s\?a-z0-9-]{10}\s\d{4}\s[a-z]\D{28})\s+(.{3,26}\s*)/i,                   
       26                                            # (max size)
     )
   end
@@ -492,27 +492,23 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
   def tokenizer_relay_row_team_name
     TokenExtractor.new(
       :team_name,
-      /
-        (
-          (?<=\s((\d|\s)\d|fg)\s{2})\s{0,3}((?<t0>\w(\w|\s|\.|-|'){3}.{5,50}))|
-
-          (?<=\d\s{4})(\s+(?<t1>[a-z]+.{24,29}))|
-          (?<=^\s\s)(\s+(?!fuori\sgara)(?<t2>[a-z]+.{24,29}))|
-          (?<=\d{6}\s{3})((?<t3>[a-z]+.{24,29}))|
-
-          (?<=Fuori\sgara\s\s)(\s+(?<t4>[a-z]+.{24,29}))|
-          (?<=\sf\.g\.)(\s+(?<t5>[a-z]+.{24,29})})|
-          (?<=\sfg)(\s+(?<t6>[a-z]+.{24,29}))
-        )
-        \s{4,20}
+#      /
+#        (
+#          (?<=\s((\d|\s)\d|fg|fuori gara)\s{2})\s{0,3}((?<t0>\w(\w|\s|\.|-|'){3}.{5,50}))|
+#
+#          (?<=\d\s{4})(\s+(?<t1>[a-z]+.{24,29}))|
+#          (?<=^\s\s)(\s+(?!fuori\sgara)(?<t2>[a-z]+.{24,29}))|
+#          (?<=\d{6}\s{3})((?<t3>[a-z]+.{24,29}))|
+#
+#          (?<=Fuori\sgara\s\s)(\s+(?<t4>[a-z]+.{24,29}))|
+#          (?<=\sf\.g\.)(\s+(?<t5>[a-z]+.{24,29})})|
+#          (?<=\sfg)(\s+(?<t6>[a-z]+.{24,29}))
+#        )
+      /(?<=([a-z?]{3}-\d{6}))\s*.{3,30}\s{2,}
         (?=(?<timing>Ritir|Squal|\d{1,2}'\d{2}"\d{2}|\d{1,2}\.\d{2}\.\d{2}))
       /uix,
 #      /(?<=\s{3})(.{25,29}\s{6,12})(?=Ritir|Squal|\d{1,2}'\d{2}"\d{2})/i,
-      /
-        (?<=\S)(\s{6,65})
-        (?=(?<timing>Ritir|Squal|\d{1,2}'\d{2}"\d{2}|\d{1,2}\.\d{2}\.\d{2}))
-      /uix
-#      25                                            # (max size)
+      30                                            # (max size)
     )
   end
 

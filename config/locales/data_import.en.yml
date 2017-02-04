@@ -12,6 +12,7 @@ en:
     fin_starting_list: "FIN Starting-list"
     csi_starting_list: "CSI Starting-list"
     admin: "Goggles/Admin"
+    last_log_is_empty: "(Log for last phase on DB data-import session table is empty)"
 
     are_you_sure: "Are you sure you want to proceed?"
     del: "Delete"

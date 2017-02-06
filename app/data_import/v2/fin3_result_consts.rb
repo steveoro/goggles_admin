@@ -569,43 +569,9 @@ module Fin3ResultConsts                             # == HEADER CONTEXT TYPES de
     TokenExtractor.new(
       :team_name,
       /
-        (?!\w{3}-\d{6}\s\s)
-        (
-          (?<=\w{3}-\d{6}\s\s)\w|
-          (?<=\w{3}-\d{6}\s-\s)\w|
-          (?<=\d°\s)\w|
-          (?<=\d°\s\s)\w|
-          (?<=\s{19})\w|
-          (?<=\d\s{3})\w|
-          (?<=\d\s{4})\w|
-          (?<=\d\s{5})\w|
-          (?<=\d\s{6})\w|
-          (?<=\d\s{7})\w|
-          (?<=\d\s{8})\w|
-          (?<=\d\)\s{3})\w
-        )
+        (?<=(\w|\?){3}-(\d|\?){6})\s*.{3,30}\s*
       /uix,
-      /
-        (?<=\s)
-        (?<decimal_score>
-          (?<thousand>\d{1,3}\.)*\d{1,3}
-          (?<decimals>[\,|\.]\d\d)
-          (?<endline>\s+|\r\n|\n|$|\Z)
-          (?!\D+)
-        )|
-        (?<score_comma>
-          \s+\d+[\,|\.]\d\d
-          (?!\s\s\d\d\s\s)
-        )|
-        (?<score_stats>
-          \s+\d+[\,|\.]\d\d
-          (?=\s\s\d\d\s\s)
-        )|
-        (?<=\s\s\s\s)(?<integer_score>
-          \s+\d+(?=\r|\n|$|\Z)
-        )|
-        (Squalif.)
-     /iux
+      30
 #      /\s+(((\d{1,3}\.)*\d{1,3}|\d{1,})[\,|\.]\d\d)(\s+|\r\n|\n|$|\Z)/i
     )
   end

@@ -4,14 +4,14 @@ require 'fileutils'
 require 'common/format'
 require 'common/encoding_tools'
 
-require_relative '../../../data_import/v2/services/context_detector'
-require_relative '../../../data_import/v2/services/token_extractor'
-require_relative '../../../data_import/v2/strategies/file_format_parser'
-require_relative '../../../data_import/v2/txt_result_defs'
-require_relative '../../../data_import/v2/fin_result_defs'
-require_relative '../../../data_import/v2/fin2_result_defs'
-require_relative '../../../data_import/v2/fin_startlist_defs'
-require_relative '../../../data_import/v2/services/txt_parse_service'
+require_relative '../services/context_detector'
+require_relative '../services/token_extractor'
+require_relative '../strategies/file_format_parser'
+require_relative '../txt_result_defs'
+require_relative '../fin_result_defs'
+require_relative '../fin2_result_defs'
+require_relative '../fin_startlist_defs'
+require_relative '../services/txt_parse_service'
                                                     # The following applies only to Ruby <= 1.9.2
 require 'iconv' unless String.method_defined?( :encode )
 
@@ -19,9 +19,9 @@ require 'iconv' unless String.method_defined?( :encode )
 
 =begin
 
-= V2::FinResultParser
+= FinResultParser
 
-  - Goggles framework vers.:  4.00.749
+  - Goggles framework vers.:  6.075
   - author: Steve A.
 
  Dedicated parser for FIN Results.
@@ -32,7 +32,7 @@ require 'iconv' unless String.method_defined?( :encode )
  with the format used in these kind of files.
 
 =end
-class V2::FinResultParser
+class FinResultParser
 
   # Set this to true or false to enable or disable debugging output, L1.
   #
@@ -100,11 +100,11 @@ class V2::FinResultParser
   #   possible value found of the above fields.
   #
   def self.parse_txt_file( full_pathname, logger = nil, parsing_defs = nil )
-    parsing_defs = parsing_defs || V2::FileFormatParser.new( full_pathname ).parse( logger )
+    parsing_defs = parsing_defs || FileFormatParser.new( full_pathname ).parse( logger )
     raise ArgumentError.new("File format for '#{full_pathname}' NOT recognized!") if parsing_defs.nil?
 
-    service = V2::TxtParseService.new( parsing_defs )
-    service.log_somehow( logger, "\r\n-- V2::FinResultParser::parse_txt_file(#{ full_pathname }):", true, :info )
+    service = TxtParseService.new( parsing_defs )
+    service.log_somehow( logger, "\r\n-- FinResultParser::parse_txt_file(#{ full_pathname }):", true, :info )
     full_text_file_contents = ""
                                                     # Scan each line of the file until gets reaches EOF:
     File.open( full_pathname ) do |f|

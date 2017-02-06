@@ -4,15 +4,14 @@ require 'common/validation_error_tools'
 
 =begin
 
-= V2::BadgeDuplicateChecker
+= BadgeDuplicateChecker
 
-  - Goggles framework vers.:  4.00.725
+  - Goggles framework vers.:  6.075
   - author: Steve A.
 
   Checker service class for Swimmers/Badges duplicates.
 
 =end
-module V2
 class BadgeDuplicateChecker
   include Singleton
 
@@ -54,5 +53,4 @@ class BadgeDuplicateChecker
   end
   #-- -------------------------------------------------------------------------
   #++
-end
 end

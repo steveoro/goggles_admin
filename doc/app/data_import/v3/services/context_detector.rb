@@ -1,11 +1,11 @@
 # encoding: utf-8
-require_relative '../../../data_import/v3/tools_logging'
-require_relative '../../../data_import/v3/dao/context_type'
+require_relative '../../data_import/v3/tools_logging'
+require_relative '../../data_import/v3/dao/context_type'
 
 
 =begin
 
-= V2::ContextDetector
+= ContextDetector
 
   - Goggles framework vers.:  4.00.819
   - author: Steve A.

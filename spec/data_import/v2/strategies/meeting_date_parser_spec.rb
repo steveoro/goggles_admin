@@ -4,10 +4,10 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/strategies/meeting_date_parser'
+require_relative '../../../../app/data_import/strategies/meeting_date_parser'
 
 
-describe V2::MeetingDateParser, type: :strategy do
+describe MeetingDateParser, type: :strategy do
 
   context "as a valid instance," do
     let(:day_1)        { ((rand * 100) % 28).to_i+1 }
@@ -23,7 +23,7 @@ describe V2::MeetingDateParser, type: :strategy do
     let(:valid_3_dates)       { "#{day_1}-#{day_2},#{day_3} #{month} #{year}" }
     let(:invalid_single_date) { "#{31 + day_1} #{month} #{year}" }
 
-    subject { V2::MeetingDateParser.new() }
+    subject { MeetingDateParser.new() }
 
     it_behaves_like( "(the existance of a method)", [ :parse ] )
 

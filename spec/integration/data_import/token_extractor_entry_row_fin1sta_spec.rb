@@ -1,11 +1,11 @@
 # encoding: utf-8
 require 'rails_helper'
 
-require_relative '../../../app/data_import/v2/fin_startlist_consts'
+require_relative '../../../app/data_import/fin_startlist_consts'
 
 
 describe "TokenExtractor for RESULT_ROW-type buffers,", type: :integration do
-  class DummyWrapper; include V2::FinStartListConsts; end
+  class DummyWrapper; include FinStartListConsts; end
   let( :dummy_wrapper ) { DummyWrapper.new }
 
   let(:feed) do

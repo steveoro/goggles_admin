@@ -4,10 +4,10 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/strategies/city_comparator'
+require_relative '../../../../app/data_import/strategies/city_comparator'
 
 
-describe V2::CityComparator, type: :strategy do
+describe CityComparator, type: :strategy do
 
   let(:composed_city_names) do
     [
@@ -46,7 +46,7 @@ describe V2::CityComparator, type: :strategy do
   end
 
   context "as a stand-alone class," do
-    subject { V2::CityComparator }
+    subject { CityComparator }
 
     # Since subject is already a class, we just need to use this shared existance example
     # instead of the "(the existance of a class method)":
@@ -58,7 +58,7 @@ describe V2::CityComparator, type: :strategy do
     #++
 
     context "instance methods" do
-      subject { V2::CityComparator.new }
+      subject { CityComparator.new }
 
       describe "#search_composed_name" do
         it "returns a City instance when a match is found" do

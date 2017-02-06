@@ -1,17 +1,17 @@
 # encoding: utf-8
 require 'fileutils'                                 # Used to process filenames
 require 'common/format'
-require_relative '../../data_import/v2/strategies/data_importer'
-require_relative '../../data_import/v2/strategies/csi_result_parser'
-require_relative '../../data_import/v2/strategies/team_analysis_result_processor'
-require_relative '../../data_import/v2/strategies/swimmer_analysis_result_processor'
+require_relative '../../data_import/strategies/data_importer'
+require_relative '../../data_import/strategies/csi_result_parser'
+require_relative '../../data_import/strategies/team_analysis_result_processor'
+require_relative '../../data_import/strategies/swimmer_analysis_result_processor'
 
 
 =begin
 
 = DataImport::HomeController
 
-  - version:  4.00.741
+  - version:  6.075
   - author:   Steve A.
 
 =end
@@ -113,7 +113,7 @@ class DataImport::HomeController < ApplicationController
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
     importer            = DataImporter.new( logger, flash, data_import_session )
-    result_processor    = V2::TeamAnalysisResultProcessor.new( logger, flash )
+    result_processor    = TeamAnalysisResultProcessor.new( logger, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportTeamAnalysisResult.where( data_import_session_id: data_import_session_id )
 
@@ -255,7 +255,7 @@ class DataImport::HomeController < ApplicationController
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
     importer            = DataImporter.new( logger, flash, data_import_session )
-    result_processor    = V2::SwimmerAnalysisResultProcessor.new( logger, flash )
+    result_processor    = SwimmerAnalysisResultProcessor.new( logger, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id )
 

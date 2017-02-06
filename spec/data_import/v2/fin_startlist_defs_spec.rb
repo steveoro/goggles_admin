@@ -2,15 +2,15 @@
 require 'rails_helper'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../app/data_import/v2/fin_startlist_defs'
+require_relative '../../../app/data_import/fin_startlist_defs'
 #require_relative '../../../lib/framework/console_logger'
 
 
-describe V2::FinStartListDefs, type: :model do
+describe FinStartListDefs, type: :model do
 
   context "for a well-defined instance," do
 
-    subject { V2::FinStartListDefs.new( ConsoleLogger.new ) }
+    subject { FinStartListDefs.new( ConsoleLogger.new ) }
 
     it_behaves_like( "(the existance of a method)", [
       :logger,

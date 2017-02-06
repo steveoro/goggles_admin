@@ -2,13 +2,13 @@
 require 'rails_helper'
 
 #require 'framework/console_logger'
-#require_relative '../../../data_import/v2/services/context_detector'
-#require_relative '../../../data_import/v2/services/token_extractor'
-#require_relative '../../../data_import/v2/fin2_result_consts'
+#require_relative '../../data_import/services/context_detector'
+#require_relative '../../data_import/services/token_extractor'
+#require_relative '../../data_import/fin2_result_consts'
 
 
 describe "TokenExtractor for RELAY_HEADER-type buffers,", type: :integration do
-  class DummyWrapper2; include V2::Fin2ResultConsts; end
+  class DummyWrapper2; include Fin2ResultConsts; end
   let( :dummy_wrapper2 ) { DummyWrapper2.new }
 
   let(:feed) do

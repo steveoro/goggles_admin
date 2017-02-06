@@ -1,5 +1,5 @@
 # encoding: utf-8
-require_relative '../../../data_import/v3/strategies/dao_factory'
+require_relative '../../data_import/v3/strategies/dao_factory'
 
 =begin
 

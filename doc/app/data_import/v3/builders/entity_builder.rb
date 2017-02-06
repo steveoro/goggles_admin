@@ -365,7 +365,7 @@ class V3::EntityBuilder
         # Also, TeamAffiliation SQL diff creation is skipped during pre-commit phase
         # (which corresponds to last completed phase == 12), because we need to
         # store the SQL diff *after* the Team creation using the @additional_row
-        # feature of the V2::DataImportEntityCommitter, which allows to specify which
+        # feature of the DataImportEntityCommitter, which allows to specify which
         # additional row should be processed as an additional SQL-diff creation parameter.
         #
         # [Convoluted explanation of the reason why:]

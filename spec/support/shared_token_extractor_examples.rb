@@ -2,9 +2,9 @@
 require 'rails_helper'
 
 require 'framework/console_logger'
-require_relative '../../app/data_import/v2/services/context_detector'
-require_relative '../../app/data_import/v2/services/token_extractor'
-require_relative '../../app/data_import/v2/fin_result_consts'
+require_relative '../../app/data_import/services/context_detector'
+require_relative '../../app/data_import/services/token_extractor'
+require_relative '../../app/data_import/fin_result_consts'
 
 
 shared_examples_for "(extracting tokens only for the matching feed lines)" do

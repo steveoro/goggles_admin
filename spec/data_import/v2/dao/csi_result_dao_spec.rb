@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/dao/csi_result_dao'
+require_relative '../../../../app/data_import/dao/csi_result_dao'
 
 
 describe CsiResultDAO, type: :model do

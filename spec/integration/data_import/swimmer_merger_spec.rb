@@ -2,10 +2,10 @@
 require 'rails_helper'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../app/data_import/v2/services/swimmer_merger'
+require_relative '../../../app/data_import/services/swimmer_merger'
 
 
-describe V2::SwimmerMerger, type: :integration do
+describe SwimmerMerger, type: :integration do
 
   describe "when merging swimmers having NO badge duplicates, NO dup affiliation (but randomly chosen)," do
     # TODO

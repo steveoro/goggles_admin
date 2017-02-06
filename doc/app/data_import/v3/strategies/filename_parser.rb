@@ -3,7 +3,7 @@
 require 'fileutils'
 require 'common/format'
 
-require_relative '../../../data_import/v3/dao/header_fields_dao'
+require_relative '../../data_import/v3/dao/header_fields_dao'
 
 
 =begin
@@ -28,7 +28,7 @@ require_relative '../../../data_import/v3/dao/header_fields_dao'
 
 === Typical usage:
 
-    header_fields_dao = V2::FilenameParser.new( full_pathname ).parse
+    header_fields_dao = FilenameParser.new( full_pathname ).parse
 
 =end
 class V3::FilenameParser

@@ -7,7 +7,7 @@ require 'framework/string_logger'
 
 = Tools/Utilities module
 
-  - version:  4.00.825
+  - version:  6.075.825
   - author:   Steve A.
 
   Generic collection of utilities for the data-import section.

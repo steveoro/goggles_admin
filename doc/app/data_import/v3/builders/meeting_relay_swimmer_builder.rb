@@ -1,6 +1,6 @@
 # encoding: utf-8
 
-require_relative '../../../data_import/v3/builders/entity_builder'
+require_relative '../../data_import/v3/builders/entity_builder'
 
 
 =begin

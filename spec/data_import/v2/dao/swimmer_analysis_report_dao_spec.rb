@@ -4,7 +4,7 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/dao/swimmer_analysis_report_dao'
+require_relative '../../../../app/data_import/dao/swimmer_analysis_report_dao'
 #require_relative '../../../../app/strategies/fuzzy_string_matcher'
 
 

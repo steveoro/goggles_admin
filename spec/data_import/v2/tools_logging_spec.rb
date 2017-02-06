@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../app/data_import/v2/tools_logging'
+require_relative '../../../app/data_import/tools_logging'
 
 
 describe Tools::Logging, type: :model do

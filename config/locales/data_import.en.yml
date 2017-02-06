@@ -13,6 +13,9 @@ en:
     csi_starting_list: "CSI Starting-list"
     admin: "Goggles/Admin"
     last_log_is_empty: "(Log for last phase on DB data-import session table is empty)"
+    uploaded_files_still_present: "Uploaded and still present files"
+    click_to_show_log_details_tooltip: "Click to show log details"
+    create_new_session: "Create a new data-import session"
 
     are_you_sure: "Are you sure you want to proceed?"
     del: "Delete"

@@ -2,7 +2,7 @@
 
 =begin
 
-= V2::TokenExtractor
+= TokenExtractor
 
   - Goggles framework vers.:  4.00.815
   - author: Steve A.
@@ -38,7 +38,7 @@ class V3::TokenExtractor
   #-- -------------------------------------------------------------------------
   #++
 
-  # Clears the cached results. This method is useful only if the same V2::TokenExtractor
+  # Clears the cached results. This method is useful only if the same TokenExtractor
   # instance is used to tokenize different source texts.
   #
   def clear()

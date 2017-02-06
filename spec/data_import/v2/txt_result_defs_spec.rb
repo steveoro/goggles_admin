@@ -1,13 +1,13 @@
 require 'rails_helper'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../app/data_import/v2/txt_result_defs'
+require_relative '../../../app/data_import/txt_result_defs'
 
 
-describe V2::TxtResultDefs, type: :model do
+describe TxtResultDefs, type: :model do
 
   context "for a well-defined instance," do
-    subject { V2::TxtResultDefs.new() }
+    subject { TxtResultDefs.new() }
 
     it_behaves_like( "(the existance of a method)", [
       :context_types, :defined_keys, :required_keys,

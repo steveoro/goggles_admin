@@ -4,13 +4,13 @@ require 'fileutils'
 require 'common/format'
 require 'common/encoding_tools'
 
-require_relative '../../../data_import/v3/dao/context_type'
-require_relative '../../../data_import/v3/fin_result_defs'
-require_relative '../../../data_import/v3/fin2_result_defs'
-require_relative '../../../data_import/v3/fin_startlist_defs'
+require_relative '../../data_import/v3/dao/context_type'
+require_relative '../../data_import/v3/fin_result_defs'
+require_relative '../../data_import/v3/fin2_result_defs'
+require_relative '../../data_import/v3/fin_startlist_defs'
 
-require_relative '../../../data_import/v3/strategies/fin_result_parser'
-# require_relative '../../../data_import/v3/strategies/csi_result_parser'
+require_relative '../../data_import/v3/strategies/fin_result_parser'
+# require_relative '../../data_import/v3/strategies/csi_result_parser'
 
 
 =begin

@@ -4,14 +4,14 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/strategies/fin_result_parser'
-require_relative '../../../../app/data_import/v2/strategies/filename_parser'
-require_relative '../../../../app/data_import/v2/strategies/parse_result_converter'
-require_relative '../../../../app/data_import/v2/fin_result_defs'
-require_relative '../../../../app/data_import/v2/fin2_result_defs'
+require_relative '../../../../app/data_import/strategies/fin_result_parser'
+require_relative '../../../../app/data_import/strategies/filename_parser'
+require_relative '../../../../app/data_import/strategies/parse_result_converter'
+require_relative '../../../../app/data_import/fin_result_defs'
+require_relative '../../../../app/data_import/fin2_result_defs'
 
 
-describe V2::ParseResultConverter, type: :strategy do
+describe ParseResultConverter, type: :strategy do
 
   before(:all) do
     # Since parsing takes some time, a single random sample will suffice:
@@ -33,19 +33,19 @@ describe V2::ParseResultConverter, type: :strategy do
       File.join(Rails.root, 'spec/fixtures/sta/sta20140216regabruzzo.txt'),
       File.join(Rails.root, 'spec/fixtures/sta/sta20140308firenze-sample.txt')
     ].sort{ rand - 0.5 }[0]
-    source_parsing_defs = V2::Fin2ResultDefs.new
-    result_hash = V2::FinResultParser.parse_txt_file(
+    source_parsing_defs = Fin2ResultDefs.new
+    result_hash = FinResultParser.parse_txt_file(
       random_sample_filename,
       nil,                                          # We don't care for logging, here
       source_parsing_defs                           # This will forcibly plug-in the correct parsing engine
     )
-    header_fields_dao = V2::FilenameParser.new( random_sample_filename ).parse
+    header_fields_dao = FilenameParser.new( random_sample_filename ).parse
     season = Season.where(
       season_type_id: 1, # SeasonType.find_by_code('MASFIN').id
       header_year:    header_fields_dao.header_year
     ).first
 
-    @converted_result_hash = V2::ParseResultConverter.new.to_parse_result(
+    @converted_result_hash = ParseResultConverter.new.to_parse_result(
       result_hash[:parse_result],
       source_parsing_defs,
       season

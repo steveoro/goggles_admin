@@ -3,14 +3,14 @@ require 'fileutils'                                 # Used to process filenames
 require 'open3'                                     # Used to capture & send STDIN/STDOUT
 require 'common/format'
 
-require_relative '../data_import/v2/services/team_merger'
+require_relative '../data_import/services/team_merger'
 
 
 =begin
 
 = MaintenanceController (previously: AdminIndexController)
 
-  - version:  4.00.815
+  - version:  6.075
   - author:   Steve A.
 
 =end
@@ -564,7 +564,7 @@ class MaintenanceController < ApplicationController
     src_team  = Team.find_by_id( src_id )
     dest_team = Team.find_by_id( dest_id )
 
-    merger = V2::TeamMerger.new( src_team, dest_team )
+    merger = TeamMerger.new( src_team, dest_team )
     is_ok = merger.process
 
     if is_ok

@@ -2,17 +2,17 @@
 require 'rails_helper'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/services/token_extractor'
+require_relative '../../../../app/data_import/services/token_extractor'
 #require_relative '../../../../lib/framework/console_logger'
-require_relative '../../../../app/data_import/v2/fin_result_consts'
+require_relative '../../../../app/data_import/fin_result_consts'
 
 
-describe V2::TokenExtractor, type: :service do
+describe TokenExtractor, type: :service do
 
   context "for a well-defined instance," do
     let( :dummy_wrapper ) do
-      class V2::TokenExtractor::DummyWrapper; include V2::FinResultConsts; end
-      V2::TokenExtractor::DummyWrapper.new
+      class TokenExtractor::DummyWrapper; include FinResultConsts; end
+      TokenExtractor::DummyWrapper.new
     end
     let( :tokenizers_array ) { dummy_wrapper.get_tokenizers_list() }
 
@@ -28,8 +28,8 @@ describe V2::TokenExtractor, type: :service do
 
 
     describe "#initialize" do
-      it "returns a V2::TokenExtractor instance" do
-        expect( subject ).to be_an_instance_of( V2::TokenExtractor )
+      it "returns a TokenExtractor instance" do
+        expect( subject ).to be_an_instance_of( TokenExtractor )
       end
       it "has a #field_name Symbol" do
         expect( subject.field_name ).to be_an_instance_of( Symbol )

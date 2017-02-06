@@ -3,19 +3,19 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../app/data_import/v2/services/data_import_entity_builder'
-require_relative '../../../app/data_import/v2/services/data_import_meeting_entry_builder'
+require_relative '../../../app/data_import/services/data_import_entity_builder'
+require_relative '../../../app/data_import/services/data_import_meeting_entry_builder'
 
-require_relative '../../../app/data_import/v2/services/data_import_team_builder'
-require_relative '../../../app/data_import/v2/services/data_import_swimmer_builder'
-require_relative '../../../app/data_import/v2/services/data_import_badge_builder'
+require_relative '../../../app/data_import/services/data_import_team_builder'
+require_relative '../../../app/data_import/services/data_import_swimmer_builder'
+require_relative '../../../app/data_import/services/data_import_badge_builder'
 
 
-describe V2::DataImportMeetingEntryBuilder, type: :integration do
+describe DataImportMeetingEntryBuilder, type: :integration do
 
   shared_examples_for "[NO matching MeetingEntry (but existing MeetingProgram)]" do
-    it "returns a V2::DataImportEntityBuilder instance" do
-      expect( subject ).to be_an_instance_of( V2::DataImportEntityBuilder )
+    it "returns a DataImportEntityBuilder instance" do
+      expect( subject ).to be_an_instance_of( DataImportEntityBuilder )
     end
     describe "#data_import_session" do
       it "is the DataImportSession specified for the build" do
@@ -136,7 +136,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
   context "after a self.build() with NO matching primary entity (but existing MeetingProgram)," do
     context "with a FIN startlist," do
       subject do
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season,
           meeting_program,
@@ -150,7 +150,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 
     context "with a CSI startlist," do
       subject do
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season_csi,
           meeting_program_csi,
@@ -167,8 +167,8 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 
 
   shared_examples_for "[NO matching MeetingEntry (but existing DataImportMeetingProgram)]" do
-    it "returns a V2::DataImportEntityBuilder instance" do
-      expect( subject ).to be_an_instance_of( V2::DataImportEntityBuilder )
+    it "returns a DataImportEntityBuilder instance" do
+      expect( subject ).to be_an_instance_of( DataImportEntityBuilder )
     end
     describe "#data_import_session" do
       it "is the DataImportSession specified for the build" do
@@ -257,7 +257,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
   context "after a self.build() with NO matching primary entity (but existing DataImportMeetingProgram)," do
     context "with a FIN startlist," do
       subject do
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season,
           di_meeting_program,
@@ -271,7 +271,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 
     context "with a CSI startlist," do
       subject do
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season_csi,
           di_meeting_program_csi,
@@ -288,8 +288,8 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 
 
   shared_examples_for "[matching MeetingEntry (and its MeetingProgram)]" do
-    it "returns a V2::DataImportEntityBuilder instance" do
-      expect( subject ).to be_an_instance_of( V2::DataImportEntityBuilder )
+    it "returns a DataImportEntityBuilder instance" do
+      expect( subject ).to be_an_instance_of( DataImportEntityBuilder )
     end
     describe "#data_import_session" do
       it "is the DataImportSession specified for the build" do
@@ -387,7 +387,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 #        puts " --- Subject MPRG.....: " << mentry.meeting_program.inspect
 #        possible_swimmers = Swimmer.where( "complete_name LIKE \"%#{mentry.swimmer.last_name}%\"" ).reload
 #        possible_swimmers.each{ |row| puts " --- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season,
           mentry.meeting_program,
@@ -413,7 +413,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 #        puts " --- Subject MPRG.....: " << mentry_csi.meeting_program.inspect
 #        possible_swimmers = Swimmer.where( "complete_name LIKE \"%#{mentry_csi.swimmer.last_name}%\"" ).reload
 #        possible_swimmers.each{ |row| puts " --- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season_csi,
           mentry_csi.meeting_program,
@@ -435,8 +435,8 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 
 
   shared_examples_for "[matching DataImportMeetingEntry (and its DataImportMeetingProgram)]" do
-    it "returns a V2::DataImportEntityBuilder instance" do
-      expect( subject ).to be_an_instance_of( V2::DataImportEntityBuilder )
+    it "returns a DataImportEntityBuilder instance" do
+      expect( subject ).to be_an_instance_of( DataImportEntityBuilder )
     end
     describe "#data_import_session" do
       it "is the DataImportSession specified for the build" do
@@ -537,7 +537,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 #        puts " --- Subject MPRG.....: " << di_mentry.data_import_meeting_program.inspect
 #        possible_swimmers = Swimmer.where( "complete_name LIKE \"%#{di_mentry.swimmer.last_name}%\"" ).reload
 #        possible_swimmers.each{ |row| puts " --- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season,
           di_mentry.data_import_meeting_program,
@@ -563,7 +563,7 @@ describe V2::DataImportMeetingEntryBuilder, type: :integration do
 #        puts " --- Subject MPRG.....: " << di_mentry_csi.data_import_meeting_program.inspect
         possible_swimmers = Swimmer.where( "complete_name LIKE \"%#{di_mentry_csi.swimmer.last_name}%\"" ).reload
         possible_swimmers.each{ |row| puts " --- id: #{row.id}, #{row.complete_name}, gender: #{row.gender_type_id}, #{row.year_of_birth}"}
-        V2::DataImportMeetingEntryBuilder.build_from_parameters(
+        DataImportMeetingEntryBuilder.build_from_parameters(
           data_import_session,
           season_csi,
           di_mentry_csi.data_import_meeting_program,

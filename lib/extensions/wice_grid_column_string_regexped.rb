@@ -5,7 +5,7 @@
 
 = ViewColumnStringRegexped
 
-  - version:  4.00.665
+  - version:  6.075.665
   - author:   Steve A.
 
   Customized ViewColumn extension class for WiceGrid.
@@ -88,7 +88,7 @@ end
 
 = ConditionsGeneratorColumnStringRegexped
 
-  - version:  4.00.665
+  - version:  6.075.665
   - author:   Steve A.
 
   Customized ConditionsGeneratorColumn extension class for WiceGrid.

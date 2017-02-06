@@ -4,14 +4,14 @@ require 'fileutils'
 require 'common/format'
 require 'common/encoding_tools'
 
-require_relative '../../../data_import/v3/services/context_detector'
-require_relative '../../../data_import/v3/services/token_extractor'
-require_relative '../../../data_import/v3/strategies/file_format_parser'
-require_relative '../../../data_import/v3/txt_result_defs'
-require_relative '../../../data_import/v3/fin_result_defs'
-require_relative '../../../data_import/v3/fin2_result_defs'
-require_relative '../../../data_import/v3/fin_startlist_defs'
-require_relative '../../../data_import/v3/services/txt_parse_service'
+require_relative '../../data_import/v3/services/context_detector'
+require_relative '../../data_import/v3/services/token_extractor'
+require_relative '../../data_import/v3/strategies/file_format_parser'
+require_relative '../../data_import/v3/txt_result_defs'
+require_relative '../../data_import/v3/fin_result_defs'
+require_relative '../../data_import/v3/fin2_result_defs'
+require_relative '../../data_import/v3/fin_startlist_defs'
+require_relative '../../data_import/v3/services/txt_parse_service'
                                                     # The following applies only to Ruby <= 1.9.2
 require 'iconv' unless String.method_defined?( :encode )
 

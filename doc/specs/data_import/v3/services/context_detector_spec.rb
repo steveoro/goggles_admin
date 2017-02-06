@@ -44,7 +44,7 @@ describe V3::ContextDetector, type: :service do
       it "is the same context specified in the constructor" do
         expect( subject.context_type ).to be == fix_context_type
       end
-      it "has the expected V2::ContextTypeDef name" do
+      it "has the expected ContextTypeDef name" do
         expect( subject.context_type.context_name ).to eq( fix_context_type.context_name )
       end
     end

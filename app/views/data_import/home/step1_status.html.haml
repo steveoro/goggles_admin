@@ -6,122 +6,131 @@
 .col-xs-12.goggles-category-gap
 
 %p.text-center.lead
-  = "#{I18n.t('admin_import.import_event_results_title')}"
+  = I18n.t('admin_import.import_event_results_title')
   \: (1/3) #{"#{I18n.t(:select_create_session)}"}
 - if @existing_import_sessions.size > 0
   %div
     %p.text-left.lead
       = "#{ I18n.t(:existing_data_import_sessions) }:"
-    %ul
-      - @existing_import_sessions.each do |s|
-        %li
-          %p
-            %i
-              = "(ID: #{s.id})"
-            \ -
-            = succeed ",\u{a0}" do
-              %b= h( File.basename( s.file_name ) ) if s.file_name
-            = succeed ")\u{a0}" do
+    .row.col-xs-12
+      %table.table.table-striped.table-bordered.table-hover.table-condensed#history
+        %tbody
+        - @existing_import_sessions.each do |s|
+          %tr
+            %td
               %i
-                \#{I18n.t(:last_phase)}: #{s.phase} (#{I18n.t(:data_rows)}: #{s.total_data_rows},
-                \#{I18n.t(:data_format)}: #{s.file_format}
-            - if s.data_import_team_analysis_results.any?
-              = link_to(                                               |
-                   I18n.t('admin_import.continue_with_team_analysis'), |
-                   di_step1_1_team_analysis_path( id: s.id ),          |
-                   class: 'btn btn-default'                            |
-                )                                                      |
-              &nbsp;
-            - if s.data_import_swimmer_analysis_results.any?
-              = link_to(                                                  |
-                   I18n.t('admin_import.continue_with_swimmer_analysis'), |
-                   di_step1_1_swimmer_analysis_path( id: s.id ),          |
-                   class: 'btn btn-default'                               |
-                )                                                         |
-              &nbsp;
-            - if (s.phase.to_i > 0)
-              = link_to(                                       |
-                   I18n.t(:continue_on_phase2),                |
-                   di_step2_checkout_path( id: s.id ),         |
-                   method: :post,                              |
-                   class: 'btn btn-default'                    |
-                )                                              |
-              &nbsp;
-            &nbsp;
-            = link_to(                                        |
-                I18n.t('admin_import.del'),                   |
-                di_kill_import_session_path( id: s.id ),      |
-                method: :post,                                |
-                confirm: I18n.t('admin_import.are_you_sure'), |
-                class: 'btn btn-danger'                       |
-              )                                               |
-          %p.accordion{ id: "accordionLog#{ s.id }" }
-            .accordion-group
-              .accordion-heading
-                %a.accordion-toggle{'data-toggle' => 'collapse', 'data-parent' => "#accordionLog#{ s.id }", href: "#collapseLog#{ s.id }"}
-                  .btn{'data-toggle' => 'tooltip', 'title' => I18n.t(:detail_show_tooltip) }= "#{ I18n.t(:result_log) } #{ s.id }"
-                .br/
-            .accordion-body.collapse{ id: "collapseLog#{s.id}" }
-              .accordion-inner
-                .col-xs-12
-                  - if s.phase_3_log.to_s.size > 0
-                    = "Last status: #{ s.phase_3_log }"
-                  - else
-                    %i= I18n.t('admin_import.last_log_is_empty')
-                - if s.phase_1_log.to_s.size > 0
-                  .col-xs-12.text-center
-                    \--- *** ---
-                  .col-xs-12
-                    \#{"#{ s.phase_1_log }"}
-                - if s.phase_2_log.to_s.size > 0
-                  .col-xs-12.text-center
-                    \--- *** ---
-                  .col-xs-12
-                    \#{"#{ s.phase_2_log }"}
-                .col-xs-12
-                  %p
-                    &nbsp;
+                = "(ID: #{s.id})"
+              %br/
+              %b= h( File.basename( s.file_name ) ) if s.file_name
+            %td
+              %i= "#{I18n.t(:last_phase)}: #{s.phase}"
+              %br/
+              %i= "#{I18n.t(:data_rows)}: #{s.total_data_rows} #{I18n.t(:data_format)}: #{s.file_format}"
+            %td{ colspan: 2 }
+              - if s.data_import_team_analysis_results.any?
+                = link_to(                                               |
+                     I18n.t('admin_import.continue_with_team_analysis'), |
+                     di_step1_1_team_analysis_path( id: s.id ),          |
+                     class: 'btn btn-default'                            |
+                  )                                                      |
+                &nbsp;
+              - if s.data_import_swimmer_analysis_results.any?
+                = link_to(                                                  |
+                     I18n.t('admin_import.continue_with_swimmer_analysis'), |
+                     di_step1_1_swimmer_analysis_path( id: s.id ),          |
+                     class: 'btn btn-default'                               |
+                  )                                                         |
+                &nbsp;
+              - if (s.phase.to_i > 0)
+                = link_to(                                       |
+                     I18n.t(:continue_on_phase2),                |
+                     di_step2_checkout_path( id: s.id ),         |
+                     method: :post,                              |
+                     class: 'btn btn-default'                    |
+                  )                                              |
+                &nbsp;
+            %td
+              = link_to(                                                      |
+                  I18n.t('admin_import.del'),                                 |
+                  di_kill_import_session_path( id: s.id ),                    |
+                  method: :post,                                              |
+                  data: { confirm: I18n.t('admin_import.are_you_sure') },     |
+                  class: 'btn btn-danger'                                     |
+                )                                                             |
+          %tr
+            %td{ colspan: 5 }
+              %p.accordion{ id: "accordionLog#{ s.id }" }
+                .accordion-group
+                  .accordion-heading
+                    %a.accordion-toggle{'data-toggle' => 'collapse', 'data-parent' => "#accordionLog#{ s.id }", href: "#collapseLog#{ s.id }"}
+                      .btn{'data-toggle' => 'tooltip', 'title' => I18n.t('admin_import.click_to_show_log_details_tooltip') }= "#{ I18n.t(:result_log) } #{ s.id }"
+                    .br/
+                .accordion-body.collapse{ id: "collapseLog#{s.id}" }
+                  .accordion-inner
+                    .col-xs-12
+                      - if s.phase_3_log.to_s.size > 0
+                        = "Last status: #{ s.phase_3_log }"
+                      - else
+                        %i= I18n.t('admin_import.last_log_is_empty')
+                    - if s.phase_1_log.to_s.size > 0
+                      .col-xs-12.text-center
+                        \--- *** ---
+                      .col-xs-12
+                        \#{"#{ s.phase_1_log }"}
+                    - if s.phase_2_log.to_s.size > 0
+                      .col-xs-12.text-center
+                        \--- *** ---
+                      .col-xs-12
+                        \#{"#{ s.phase_2_log }"}
+                    .col-xs-12
+                      %p
+                        &nbsp;
+
+.col-xs-12.goggles-category-gap
 
 - @uploaded_files = Dir.glob( File.join(Dir.pwd, 'public/uploads/*.*') )
 - if @uploaded_files.size > 0
   %div
     %p.text-left.lead
-      = I18n.t(:uploaded_files_still_present) + ':'
+      = I18n.t('admin_import.uploaded_files_still_present') + ':'
     %ul
       - @uploaded_files.each do |fn|
         %li
           \-  #{h(fn)}
 %br/
+%hr/
+.col-xs-12.goggles-category-gap
+
+%p.text-center.lead
+  = I18n.t('admin_import.create_new_session')
+
 .row
-  = form_tag( 'step2_checkout',                                                                                   |
-        :multipart => true, class: 'form-horizontal',                                                             |
-        :onsubmit => "$('#loadingIndicator').show(); "                                                            |
-    ) do                                                                                                          |
-    .row.control-group
-      %label.control-label{:for => "season[season_id]"}
-        = I18n.t(:season, { scope: [:activerecord, :models] }) + ':'
-      .controls
-        = select( :season, :season_id,                                                          |
-          Season.sort_season_by_begin_date('DESC').all.collect { |s| [s.get_full_name, s.id] }, |
-          { :prompt => I18n.t(:please_select) },                                                |
-          { class: 'input-xxlarge' } )                                                          |
-    .row.control-group
-      %label.control-label{:for => "datafile"}
-        = I18n.t(:select_file) + ':'
-      .controls
-        = file_field_tag( :datafile )
-    .row.control-group
-      %label.control-label{:for => "force_meeting_creation"}
-        = I18n.t('admin_import.force_meeting_creation') + ':'
-      .controls
-        = check_box_tag( :force_meeting_creation )
-    .row.control-group
-      %label.control-label{:for => "force_team_or_swimmer_creation"}
-        = I18n.t('admin_import.force_team_or_swimmer_creation') + ':'
-      .controls
-        = check_box_tag( :force_team_or_swimmer_creation )
-    .control-group
-      .controls
-        = submit_tag( I18n.t(:upload), data: {:disable_with => I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn btn-primary' )
-        %span#loadingIndicator{:hidden => "true"}= image_tag( 'indicator.gif' )
-        #divProgress.progress.progress-striped.active{:hidden => "true"}
+  = form_tag( 'step2_checkout', multipart: true,                                     |
+        class: 'form-horizontal', onsubmit: "$('#loadingIndicator').show(); "        |
+    ) do                                                                             |
+    .col-xs-12.form-group
+      = label_tag( :season_label, "#{ I18n.t('activerecord.models.season') }:", for: "season[season_id]", class: 'control-label' )
+      = select( :season, :season_id,                                                          |
+        Season.sort_season_by_begin_date('DESC').all.collect { |s| [s.get_full_name, s.id] }, |
+        { prompt: I18n.t(:please_select) }, { class: 'input-xxlarge' } )                      |
+    .col-xs-12.form-group
+      = check_box_tag( :force_meeting_creation )
+      = label_tag( :force_meeting_creation_label, I18n.t('admin_import.force_meeting_creation'), for: :force_meeting_creation, class: 'control-label' )
+    .col-xs-12.form-group
+      = check_box_tag( :force_team_or_swimmer_creation )
+      = label_tag( :force_team_or_swimmer_creation_label, I18n.t('admin_import.force_team_or_swimmer_creation'), for: :force_team_or_swimmer_creation, class: 'control-label' )
+    .col-xs-12.form-group
+      &nbsp;
+
+
+    .col-xs-12
+      .form-group.well
+        .col-xs-12
+          = label_tag( :select_file_label, "#{ I18n.t(:select_file) }:", for: "datafile", class: 'control-label' )
+          = file_field_tag( :datafile )
+        .col-xs-12
+          %br/
+        .col-xs-12
+          = submit_tag( I18n.t(:upload), data: { disable_with: I18n.t(:please_wait), class: 'btn disabled' }, class: 'btn btn-primary' )
+          %span#loadingIndicator{hidden: "true"}= image_tag( 'indicator.gif' )
+          #divProgress.progress.progress-striped.active{hidden: "true"}

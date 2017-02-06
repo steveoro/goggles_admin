@@ -4,12 +4,12 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/strategies/file_format_parser'
-require_relative '../../../../app/data_import/v2/fin_result_defs'
-require_relative '../../../../app/data_import/v2/fin2_result_defs'
+require_relative '../../../../app/data_import/strategies/file_format_parser'
+require_relative '../../../../app/data_import/fin_result_defs'
+require_relative '../../../../app/data_import/fin2_result_defs'
 
 
-describe V2::FileFormatParser, type: :strategy do
+describe FileFormatParser, type: :strategy do
 
   context "with a FIN(1) result file type," do
     [
@@ -22,8 +22,8 @@ describe V2::FileFormatParser, type: :strategy do
     ].each do |filename|
       describe "#parse" do
         it "returns the correct constant associated with the file type for #{File.basename(filename)}" do
-          format_parser = V2::FileFormatParser.new( filename )
-          expect( format_parser.parse ).to be_an_instance_of( V2::FinResultDefs )
+          format_parser = FileFormatParser.new( filename )
+          expect( format_parser.parse ).to be_an_instance_of( FinResultDefs )
         end
       end
     end
@@ -44,8 +44,8 @@ describe V2::FileFormatParser, type: :strategy do
     ].each do |filename|
       describe "#parse" do
         it "returns the correct constant associated with the file type for #{File.basename(filename)}" do
-          format_parser = V2::FileFormatParser.new( filename )
-          expect( format_parser.parse ).to be_an_instance_of( V2::Fin2ResultDefs )
+          format_parser = FileFormatParser.new( filename )
+          expect( format_parser.parse ).to be_an_instance_of( Fin2ResultDefs )
         end
       end
     end
@@ -67,8 +67,8 @@ describe V2::FileFormatParser, type: :strategy do
     ].each do |filename|
       describe "#parse" do
         it "returns the correct constant associated with the file type for #{File.basename(filename)}" do
-          format_parser = V2::FileFormatParser.new( filename )
-          expect( format_parser.parse ).to be_an_instance_of( V2::FinStartListDefs )
+          format_parser = FileFormatParser.new( filename )
+          expect( format_parser.parse ).to be_an_instance_of( FinStartListDefs )
         end
       end
     end

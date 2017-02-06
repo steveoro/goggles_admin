@@ -1,7 +1,7 @@
 # encoding: utf-8
-require_relative '../../../data_import/v3/dao/context_dao'
-require_relative '../../../data_import/v3/dao/entity_dao'
-require_relative '../../../data_import/v3/dao/parse_result'
+require_relative '../../data_import/v3/dao/context_dao'
+require_relative '../../data_import/v3/dao/entity_dao'
+require_relative '../../data_import/v3/dao/parse_result'
 
 
 =begin

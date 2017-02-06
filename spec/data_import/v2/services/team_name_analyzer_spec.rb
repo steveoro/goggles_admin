@@ -2,13 +2,13 @@
 require 'rails_helper'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/services/team_name_analyzer'
+require_relative '../../../../app/data_import/services/team_name_analyzer'
 
 
-describe V2::TeamNameAnalyzer, type: :service, data_import: true do
+describe TeamNameAnalyzer, type: :service, data_import: true do
 
   context "for a well-defined instance," do
-    subject { V2::TeamNameAnalyzer.new() }
+    subject { TeamNameAnalyzer.new() }
 
     it_behaves_like( "(the existance of a method)", [
       :all_teams, :all_affiliations,
@@ -21,8 +21,8 @@ describe V2::TeamNameAnalyzer, type: :service, data_import: true do
 
 
     describe "#initialize" do
-      it "returns a V2::TeamNameAnalyzer instance" do
-        expect( subject ).to be_an_instance_of( V2::TeamNameAnalyzer )
+      it "returns a TeamNameAnalyzer instance" do
+        expect( subject ).to be_an_instance_of( TeamNameAnalyzer )
       end
     end
 

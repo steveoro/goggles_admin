@@ -1,10 +1,10 @@
 # encoding: utf-8
-require_relative '../../../data_import/v3/tools_logging'
-require_relative '../../../data_import/v3/services/context_detector'
-require_relative '../../../data_import/v3/dao/parse_result'
-require_relative '../../../data_import/v3/dao/entity_dao'
-require_relative '../../../data_import/v3/dao/context_dao'
-require_relative '../../../data_import/v3/strategies/dao_factory'
+require_relative '../../data_import/v3/tools_logging'
+require_relative '../../data_import/v3/services/context_detector'
+require_relative '../../data_import/v3/dao/parse_result'
+require_relative '../../data_import/v3/dao/entity_dao'
+require_relative '../../data_import/v3/dao/context_dao'
+require_relative '../../data_import/v3/strategies/dao_factory'
 
 
 =begin
@@ -55,7 +55,7 @@ class V3::TxtParseService
   #++
 
 
-  # Creates a new instance, given a <tt>parsing_definitions</tt> V2::TxtResultDefs
+  # Creates a new instance, given a <tt>parsing_definitions</tt> TxtResultDefs
   # kind of object.
   #
   # === Options:
@@ -94,7 +94,7 @@ class V3::TxtParseService
   # Increases the overall counter of the all the different lines of text parsed.
   #
   # It should be called only when the processing of a single line has been completed
-  # by all of the available V2::ContextDetector objects.
+  # by all of the available ContextDetector objects.
   def increase_line_count
     @line_count += 1
   end

@@ -6,7 +6,7 @@ require_relative '../../data_import/v3/services/token_extractor'
 
 =begin
 
-= V2::FinResultConsts
+= FinResultConsts
 
   - Goggles framework vers.:  4.00.819
   - author: Steve A.

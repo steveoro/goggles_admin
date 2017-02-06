@@ -2,7 +2,7 @@
 
 = AgexMailer
 
-  - version:  4.00.541
+  - version:  6.075.541
   - author:   Steve A.
 
   Custom mailer for all the Goggles newsletter types.

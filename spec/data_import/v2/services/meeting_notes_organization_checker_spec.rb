@@ -3,7 +3,7 @@ require 'rails_helper'
 require 'ffaker'
 
 # [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v2/services/meeting_notes_organization_checker'
+require_relative '../../../../app/data_import/services/meeting_notes_organization_checker'
 
 
 shared_examples_for "[a successful #notes correction]" do
@@ -28,7 +28,7 @@ end
 #++
 
 
-describe V2::MeetingNotesOrganizationChecker, type: :service do
+describe MeetingNotesOrganizationChecker, type: :service do
   let(:organization)        { "#{FFaker::Address.city} Swimming Team" }
   let(:year)                { ((rand * 100) % 50).to_i + 1945 }
   let(:month)               { ((rand * 100) % 12).to_i + 1 }
@@ -42,18 +42,18 @@ describe V2::MeetingNotesOrganizationChecker, type: :service do
 
   describe "self.check_and_fix()" do
     it "responds to self.check_and_fix()" do
-      expect( V2::MeetingNotesOrganizationChecker ).to respond_to( :check_and_fix )
+      expect( MeetingNotesOrganizationChecker ).to respond_to( :check_and_fix )
     end
 
     context "for a valid Meeting instance," do
       it "returns an empty string" do
-        expect( V2::MeetingNotesOrganizationChecker.check_and_fix(meeting, meeting_dates_text, organization) ).to eq( '' )
+        expect( MeetingNotesOrganizationChecker.check_and_fix(meeting, meeting_dates_text, organization) ).to eq( '' )
       end
     end
 
     context "for a valid DataImportMeeting instance," do
       it "returns an empty string" do
-        expect( V2::MeetingNotesOrganizationChecker.check_and_fix(di_meeting, meeting_dates_text, organization) ).to eq( '' )
+        expect( MeetingNotesOrganizationChecker.check_and_fix(di_meeting, meeting_dates_text, organization) ).to eq( '' )
       end
     end
     #-- -----------------------------------------------------------------------
@@ -68,7 +68,7 @@ describe V2::MeetingNotesOrganizationChecker, type: :service do
         day            = ((rand * 100) % 28).to_i + 1
         @meeting_dates = "%04d-%02d-%02d" % [year, month, day]
         @organization  = "#{FFaker::Address.city} Swimming Team"
-        @result = V2::MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
+        @result = MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
 # DEBUG
 #        puts "\r\n- Checking @fixture: #{@fixture.inspect}"
 #        puts "- @result: '#{@result}'"
@@ -85,7 +85,7 @@ describe V2::MeetingNotesOrganizationChecker, type: :service do
         day            = ((rand * 100) % 28).to_i + 1
         @meeting_dates = "%04d-%02d-%02d" % [year, month, day]
         @organization  = "#{FFaker::Address.city} Swimming Team"
-        @result = V2::MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
+        @result = MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
 # DEBUG
 #        puts "\r\n- Checking @fixture: #{@fixture.inspect}"
 #        puts "- @result: '#{@result}'"
@@ -102,7 +102,7 @@ describe V2::MeetingNotesOrganizationChecker, type: :service do
         day            = ((rand * 100) % 28).to_i + 1
         @meeting_dates = "%04d-%02d-%02d" % [year, month, day]
         @organization  = "#{FFaker::Address.city} Swimming Team"
-        @result = V2::MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
+        @result = MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
       end
       it_behaves_like( "[a successful #notes correction]" )
     end
@@ -116,7 +116,7 @@ describe V2::MeetingNotesOrganizationChecker, type: :service do
         day            = ((rand * 100) % 28).to_i + 1
         @meeting_dates = "%04d-%02d-%02d" % [year, month, day]
         @organization  = "#{FFaker::Address.city} Swimming Team"
-        @result = V2::MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
+        @result = MeetingNotesOrganizationChecker.check_and_fix(@fixture, @meeting_dates, @organization)
       end
       it_behaves_like( "[a successful #notes correction]" )
     end

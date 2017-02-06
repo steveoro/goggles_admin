@@ -2,18 +2,18 @@
 require 'rails_helper'
 
 #require 'framework/console_logger'
-#require_relative '../../../data_import/v2/services/context_detector'
-#require_relative '../../../data_import/v2/services/token_extractor'
-#require_relative '../../../data_import/v2/fin_result_consts'
+#require_relative '../../data_import/services/context_detector'
+#require_relative '../../data_import/services/token_extractor'
+#require_relative '../../data_import/fin_result_consts'
 
 
 describe "FinResultParser parsing FIN Relay Result file type 1 (extended),", type: :integration do
   # We need to parse the fixture file just once to speed-up tests:
   before( :all ) do
-    @result_hash = V2::FinResultParser.parse_txt_file(
+    @result_hash = FinResultParser.parse_txt_file(
       File.join(Rails.root, 'spec/fixtures/ris/ris20150112gussago_1.txt'),
       nil,                                          # We don't care for logging, here
-      V2::FinResultDefs.new                             # This will forcibly plug-in the correct parsing engine
+      FinResultDefs.new                             # This will forcibly plug-in the correct parsing engine
     )
 # DEBUG
 #    @result_hash[:parse_result].keys.each do |key|

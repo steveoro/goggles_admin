@@ -45,7 +45,7 @@ Rails.application.routes.draw do
     post "data_import/home/step1_1_team_analysis_commit",     as: :di_step1_1_team_analysis_commit
     get  "data_import/home/step1_1_swimmer_analysis",         as: :di_step1_1_swimmer_analysis
     post "data_import/home/step1_1_swimmer_analysis_commit",  as: :di_step1_1_swimmer_analysis_commit
-    get  "data_import/home/step2_checkout",                   as: :di_step2_checkout
+    post "data_import/home/step2_checkout",                   as: :di_step2_checkout
     get  "data_import/home/step3_commit",                     as: :di_step3_commit
     post "data_import/home/kill_import_session",              as: :di_kill_import_session
   end

@@ -1,0 +1,1961 @@
+200DO
+
+        200 dorso  femminile  -  Categoria  Under 25               
+----------------------------------------------------------------------------------------------
+  1 VEN-018068 1991 BENAZZI  GIULIA               ADRIA NUOTO SSD  AR         3'12"46  0,00
+
+        200 dorso  femminile  -  Categoria  Master 25             Tempo Base   :  2'18"42
+----------------------------------------------------------------------------------------------
+  1 PIE-004617 1984 LUGANO  DILETTA               DERTHONA NUOTO              2'24"17  960,12
+  2 EMI-027292 1986 MALANCHIN  DORALICE           ESTENSE NUOTO CSI           2'50"95  809,71
+  3 VEN-025892 1984 MARCHESINI  ELENA             ADRIA NUOTO SSD  AR         3'06"38  742,68
+  4 TOS-036607 1986 TESI  GIULIA                  C.S.I. NUOTO PRATO          3'17"52  700,79
+  5 VEN-002620 1987 FERRARI  ELEONORA             ASD ARCA CASTELMASS         3'20"08  691,82
+    EMI-005326 1987 MATERAZZO  GIULIA             ESTENSE NUOTO CSI           3'20"08  691,82
+  7 TOS-034087 1984 OLIVIERI  ELISA               C.S.I. NUOTO PRATO          3'41"34  625,37
+
+        200 dorso  femminile  -  Categoria  Master 30             Tempo Base   :  2'18"39
+----------------------------------------------------------------------------------------------
+  1 EMI-002318 1981 LASAGNA  LISA                 MASTER AICS BRESCIA         2'36"95  881,75
+  2 EMI-024761 1982 GAMBETTI  FRANCESCA           ESTENSE NUOTO CSI           3'30"01  658,97
+
+        200 dorso  femminile  -  Categoria  Master 35             Tempo Base   :  2'21"79
+----------------------------------------------------------------------------------------------
+  1 EMI-015156 1975 BONVICINI  CARLA              RINASCITA TEAM ROMA         3'11"64  739,88
+  2 EMI-028020 1977 BONORA  MARIA ELENA           ESTENSE NUOTO CSI           4'00"49  589,59
+    TOS-029836 1974 RAGGIANTE  CRISTINA           C.S.I. NUOTO PRATO         Squalif.    0,00
+
+        200 dorso  femminile  -  Categoria  Master 40             Tempo Base   :  2'24"69
+----------------------------------------------------------------------------------------------
+  1 EMI-005815 1969 GERARDI  SUSANNA              FANATIK TEAM FORLI          2'57"23  816,40
+  2 VEN-026812 1971 FORESTALI  LUISA              SIS NUOTO VERONA AS         3'03"85  787,00
+  3 EMI-000839 1970 GRAZIANO  LUISA               ESTENSE NUOTO CSI           4'12"74  572,49
+  4 EMI-027195 1972 FRANCHINI  GLORIA             ESTENSE NUOTO CSI           4'19"31  557,98
+
+        200 dorso  femminile  -  Categoria  Master 45             Tempo Base   :  2'31"47
+----------------------------------------------------------------------------------------------
+  1 EMI-000688 1967 FILANGIERI  LOREDANA          CN UISP BOLOGNA             2'39"19  951,50
+  2 TOS-039189 1963 MARIOTTI  MONICA              AMICI DEL NUOTO FIR         3'12"39  787,31
+  3 VEN-023717 1966 GUERZONI  BEATRICE            ADRIA NUOTO SSD  AR         3'37"62  696,03
+  4 VEN-026061 1967 GELATI  ALESSANDRA            ABANO NUOTO                 3'39"87  688,91
+  5 EMI-025845 1963 PELLONI  MARIA TERESA         N MODENESI                  3'45"71  671,08
+
+        200 dorso  femminile  -  Categoria  Master 55             Tempo Base   :  2'49"00
+----------------------------------------------------------------------------------------------
+  1 VEN-006595 1954 GUERRINI  PAOLA               ADRIA NUOTO SSD  AR         5'08"31  548,15
+
+        200 dorso  maschile   -  Categoria  Under 25               
+----------------------------------------------------------------------------------------------
+  1 EMI-003617 1988 PATRICIELLO  NATALE           N MODENESI                  2'28"60  0,00
+
+        200 dorso  maschile   -  Categoria  Master 25             Tempo Base   :  2'03"00
+----------------------------------------------------------------------------------------------
+  1 EMI-024960 1983 BERARDI  LUCA                 NUOTO CENTER FORLI`         2'50"60  720,98
+
+        200 dorso  maschile   -  Categoria  Master 30             Tempo Base   :  2'02"54
+----------------------------------------------------------------------------------------------
+  1 VEN-028702 1981 BULGARELLI  LUCA              ADRIA NUOTO SSD  AR         3'03"80  666,70
+  2 VEN-013923 1978 BENEVENTI  ALESSANDRO         ADRIA NUOTO SSD  AR         3'13"83  632,20
+
+        200 dorso  maschile   -  Categoria  Master 35             Tempo Base   :  2'06"28
+----------------------------------------------------------------------------------------------
+  1 EMI-017507 1973 ROSSI  PIERGIORGIO            POL COMUNALE RICCIO         2'25"40  868,50
+  2 TOS-003954 1977 GERI  MATTEO                  AMICI DEL NUOTO FIR         2'28"69  849,28
+  3 EMI-021934 1974 PINI  MARCELLO                NUOTO CLUB 2000             2'32"99  825,41
+  4 TOS-029826 1975 MAFFII  ALESSIO               C.S.I. NUOTO PRATO          2'41"35  782,65
+  5 EMI-009840 1974 PICCININI  ENRICO             ACQUA TIME                  2'43"94  770,28
+    EMI-017464 1973 CORRIDONI  ANDREA             NUOVO NUOTO                Squalif.    0,00
+
+        200 dorso  maschile   -  Categoria  Master 40             Tempo Base   :  2'08"13
+----------------------------------------------------------------------------------------------
+  1 TOS-001741 1972 BIANUCCI  DAVID               C.S.I. NUOTO PRATO          3'04"39  694,89
+  2 VEN-023719 1971 ZANELLA  GIOVANNI             ADRIA NUOTO SSD  AR         3'18"78  644,58
+  3 EMI-005273 1972 TIEGHI  RICCARDO              ESTENSE NUOTO CSI           3'37"43  589,29
+  4 EMI-027293 1969 SAVONUZZI  TIBERIO            ESTENSE NUOTO CSI           4'26"90  480,07
+
+        200 dorso  maschile   -  Categoria  Master 45             Tempo Base   :  2'12"99
+----------------------------------------------------------------------------------------------
+  1 EMI-001308 1966 PIOLA  PAOLO                  AS MOLINELLA NUOTO          2'31"79  876,14
+  2 EMI-019837 1963 GIBELLINI  ANDREA             N MODENESI                  2'37"12  846,42
+  3 EMI-000388 1963 CAPRINI  LUCA                 ESTENSE NUOTO CSI           2'53"44  766,78
+  4 EMI-005527 1966 TONI  MARCO                   CIVATURS DE AKKER           2'54"83  760,68
+  5 EMI-005267 1964 RANERI  ROBERTO               ESTENSE NUOTO CSI           3'01"78  731,60
+  6 EMI-004840 1963 BIANCANI  GIANFRANCO          ESTENSE NUOTO CSI           3'02"93  727,00
+  7 LAZ-023791 1963 NASCI  ALBERTO                RARI NANTES APRILIA         3'17"19  674,43
+  8 EMI-005126 1967 BARALDI  MASSIMO              ESTENSE NUOTO CSI           3'24"29  650,99
+  9 VEN-006491 1966 GARBO  ALBERTO                S.S. ROVIGO NUOTO           3'25"46  647,28
+ 10 EMI-005249 1967 CIRIAGO  GIACOMO              ESTENSE NUOTO CSI           3'42"09  598,81
+
+        200 dorso  maschile   -  Categoria  Master 50             Tempo Base   :  2'18"27
+----------------------------------------------------------------------------------------------
+  1 EMI-012351 1960 SCHIUMARINI  STEFANO          NUOTO CLUB 2000             2'48"49  820,64
+  2 TOS-000942 1960 SANTONI  GIAMPIERO            FIRENZE NUOTA MASTE         2'58"18  776,01
+  3 EMI-012349 1962 SCHIUMARINI  SEBASTIANO       NUOTO CLUB 2000             3'01"79  760,60
+  4 EMI-014484 1958 GHERERDINI  FRANCO            NUOVO NUOTO                 3'27"41  666,65
+
+        200 dorso  maschile   -  Categoria  Master 55             Tempo Base   :  2'24"89
+----------------------------------------------------------------------------------------------
+  1 TOS-006304 1956 BRAVI  MARCO ALESSANDRO       FIRENZE NUOTA MASTE         2'31"11  958,84
+  2 EMI-019834 1953 BATTILANI  GIORGIO            N MODENESI                  2'58"94  809,71
+  3 VEN-005326 1955 ROCCATO  BRUNO                ADRIA NUOTO SSD  AR         3'49"25  632,02
+
+        200 dorso  maschile   -  Categoria  Master 60             Tempo Base   :  2'35"55
+----------------------------------------------------------------------------------------------
+    VEN-006620 1948 SALMASO  ENZO                 ADRIA NUOTO SSD  AR        Squalif.    0,00
+
+        200 dorso  maschile   -  Categoria  Master 70             Tempo Base   :  2'56"04
+----------------------------------------------------------------------------------------------
+  1 EMI-006805 1938 NAVARRA  ARIANO               RINASCITA TEAM ROMA         4'58"16  590,42
+Torna a inizio pagina
+ 
+
+50RA
+
+        50 rana  femminile  -  Categoria  Under 25                 
+----------------------------------------------------------------------------------------------
+  1 VEN-018068 1991 BENAZZI  GIULIA               ADRIA NUOTO SSD  AR         0'49"21  0,00
+    LOM-012580 1991 CARDARELLI  MARIA             OSTIGLIA NUOTO ASD         Squalif.    0,00
+
+        50 rana  femminile  -  Categoria  Master 25               Tempo Base   :  0'32"78
+----------------------------------------------------------------------------------------------
+  1 EMI-001857 1983 BRANDI  VALENTINA             POL COMUNALE RICCIO         0'38"35  854,76
+  2 EMI-001642 1985 BALBONI  FEDERICA             ACQUA TIME                  0'38"37  854,31
+  3 VEN-026068 1983 ZACCARIA  MARTINA             ABANO NUOTO                 0'43"45  754,43
+  4 ???-000000 1987 ZWANKHUIZEN GINA ELEONORA     CIVATURS DE AKKER           0'46"64  702,83
+  5 TOS-044172 1983 KILBOURN MEGAN                AMICI DEL NUOTO FIR         0'48"92  670,07
+  6 TOS-034087 1984 OLIVIERI  ELISA               C.S.I. NUOTO PRATO          0'51"31  638,86
+
+        50 rana  femminile  -  Categoria  Master 30               Tempo Base   :  0'33"18
+----------------------------------------------------------------------------------------------
+  1 LAZ-000089 1981 EMANUELA DONATI               POL COMUNALE RICCIO         0'37"35  888,35
+  2 EMI-020270 1979 CHIEREGATO  SARA              NUOTO OTELLO PUTINA         0'41"02  808,87
+  3 EMI-002100 1981 DREI  RAFFAELLA               NUOTO CLUB 2000             0'42"15  787,19
+  4 EMI-017082 1981 GELSOMINI  LETIZIA            CIVATURS DE AKKER           0'46"97  706,41
+  5 EMI-013146 1980 BORGHI  SIMONA                ABANO NUOTO                 0'48"42  685,25
+  6 VEN-016659 1980 ANDREOLI  LUCIA               ASD ARCA CASTELMASS         0'49"62  668,68
+    VEN-012989 1978 CUSIN  EVELYN                 TEAM EUGANEO               Squalif.    0,00
+
+        50 rana  femminile  -  Categoria  Master 35               Tempo Base   :  0'33"95
+----------------------------------------------------------------------------------------------
+  1 EMI-024675 1977 ARGINELLI  VALENTINA          NUOTO CLUB 2000             0'48"44  700,87
+  2 EMI-024612 1976 FIORI  SILVIA                 SAVENA NUOTO TEAM A         0'50"44  673,08
+  3 EMI-020568 1973 CENNI  ERIKA                  NUOTO CLUB 2000             0'51"84  654,90
+    EMI-028020 1977 BONORA  MARIA ELENA           ESTENSE NUOTO CSI          Squalif.    0,00
+
+        50 rana  femminile  -  Categoria  Master 40               Tempo Base   :  0'34"27
+----------------------------------------------------------------------------------------------
+  1 EMI-024758 1971 CAMILOTTO  MONICA             ESTENSE NUOTO CSI           0'44"12  776,75
+  2 LOM-018652 1969 GOTTI  ALESSANDRA             NUOTO CLUB LUGO             0'48"52  706,31
+  3 EMI-024940 1968 CHELOTTI  SILVIA              CN UISP BOLOGNA             0'52"74  649,79
+  4 EMI-000839 1970 GRAZIANO  LUISA               ESTENSE NUOTO CSI           0'54"26  631,59
+  5 EMI-027195 1972 FRANCHINI  GLORIA             ESTENSE NUOTO CSI           0'56"06  611,31
+
+        50 rana  femminile  -  Categoria  Master 45               Tempo Base   :  0'34"56
+----------------------------------------------------------------------------------------------
+  1 EMI-005425 1967 BORDIGA  PAOLA                CIVATURS DE AKKER           0'47"70  724,53
+  2 VEN-023717 1966 GUERZONI  BEATRICE            ADRIA NUOTO SSD  AR         0'49"08  704,16
+  3 TOS-036606 1967 BESSI  VERONICA               C.S.I. NUOTO PRATO          0'51"02  677,38
+  4 VEN-017090 1964 OTTOMANELLI  FEDERICA         ADRIA NUOTO SSD  AR         0'53"28  648,65
+  5 VEN-028519 1966 PREARO  ROSSELLA              ABANO NUOTO                 0'54"83  630,31
+  6 EMI-001472 1967 DAVI'  ELISABETTA             AS MOLINELLA NUOTO          1'11"79  481,40
+
+        50 rana  femminile  -  Categoria  Master 50               Tempo Base   :  0'36"96
+----------------------------------------------------------------------------------------------
+  1 EMI-016644 1962 TARTARINI  ILVA               NUOVO NUOTO                 0'41"65  887,39
+  2 TOS-034408 1961 ELMROTH  CHARLOTTE            FIRENZE NUOTA MASTE         0'45"82  806,63
+  3 EMI-015860 1962 CASAROSA  PAOLA               SAVENA NUOTO TEAM A         0'49"49  746,82
+  4 EMI-016048 1960 ZOCCA  MANUELA                CN UISP BOLOGNA             0'51"39  719,21
+    VEN-006213 1962 ZAGO  SONIA                   TEAM EUGANEO               Squalif.    0,00
+
+        50 rana  femminile  -  Categoria  Master 55               Tempo Base   :  0'39"04
+----------------------------------------------------------------------------------------------
+  1 VEN-006595 1954 GUERRINI  PAOLA               ADRIA NUOTO SSD  AR         1'08"63  568,85
+
+        50 rana  femminile  -  Categoria  Master 60               Tempo Base   :  0'40"64
+----------------------------------------------------------------------------------------------
+  1 EMI-022908 1948 SAVIGNI  FRANCA               N MODENESI                  1'13"78  550,83
+
+        50 rana  maschile   -  Categoria  Under 25                 
+----------------------------------------------------------------------------------------------
+  1 EMI-003617 1988 PATRICIELLO  NATALE           N MODENESI                  0'34"82  0,00
+  2 EMI-026316 1988 LANZONI  GIOVANNI             CIVATURS DE AKKER           0'37"89  0,00
+  3 VEN-035362 1988 TREVISAN  LUCA                ACQUAMBIENTE SSD -          0'38"93  0,00
+  4 FIN-043024 1988 BIANCHI  RICCARDO             FERRARANUOTO ASD            0'43"33  0,00
+    VEN-026069 1988 ZAMPINI  GIULIO               ABANO NUOTO                Squalif.    0,00
+
+        50 rana  maschile   -  Categoria  Master 25               Tempo Base   :  0'28"21
+----------------------------------------------------------------------------------------------
+  1 LOM-002072 1984 RIGHETTI  MARCELLO            POL COMUNALE RICCIO         0'30"72  918,29
+  2 EMI-001871 1983 BUCCHI  GIACOMO               NUOTO CLUB 2000             0'32"05  880,19
+  3 TOS-000981 1985 ALBANO  CHRISTIAN             ZEROUNO SSD ARL             0'36"54  772,03
+  4 EMI-004320 1987 DRAICCHIO  ANGELO             NUOVO NUOTO                 0'36"67  769,29
+  5 TOS-000982 1986 ASTOLFI  ALESSANDRO           ZEROUNO SSD ARL             0'37"45  753,27
+  6 EMI-025034 1983 GRILLO  MARCO                 CN UISP BOLOGNA             0'37"54  751,47
+  7 EMI-026107 1985 REGOLI  ANDREA                NUOTO CLUB 2000             0'38"16  739,26
+  8 TOS-032101 1983 BONACCHI  ANDREA              C.S.I. NUOTO PRATO          0'48"44  582,37
+
+        50 rana  maschile   -  Categoria  Master 30               Tempo Base   :  0'28"05
+----------------------------------------------------------------------------------------------
+  1 EMI-001084 1978 MIGLIOLI  STEFANO             NUOTO OTELLO PUTINA         0'33"93  826,70
+  2 PUG-001006 1979 MAZZEI  LUIGI                 ESTENSE NUOTO CSI           0'38"72  724,43
+  3 EMI-026792 1979 CUCCHI  RICCARDO              NUOVO NUOTO                 0'40"44  693,62
+  4 EMI-019514 1981 BORGHI  ALBERTO               CN UISP BOLOGNA             0'40"97  684,65
+  5 EMI-022976 1982 BARAVELLI  DAVIDE             NUOVO NUOTO                 0'43"01  652,17
+  6 VEN-028702 1981 BULGARELLI  LUCA              ADRIA NUOTO SSD  AR         0'43"44  645,72
+  7 VEN-013923 1978 BENEVENTI  ALESSANDRO         ADRIA NUOTO SSD  AR         0'45"78  612,71
+  8 EMI-027977 1978 SALOMONI  SEBASTIANO          CIVATURS DE AKKER           0'49"83  562,91
+
+        50 rana  maschile   -  Categoria  Master 35               Tempo Base   :  0'28"81
+----------------------------------------------------------------------------------------------
+  1 TOS-003954 1977 GERI  MATTEO                  AMICI DEL NUOTO FIR         0'35"10  820,80
+  2 EMI-024397 1974 PARISI  SALVATORE             NUOTO CLUB 2000             0'36"16  796,74
+  3 EMI-007621 1974 GHIDONI  FABIO                ACQUA TIME                  0'37"73  763,58
+  4 TOS-030598 1973 VIRGILIO  ANDREA              C.S.I. NUOTO PRATO          0'37"80  762,17
+  5 EMI-020520 1974 LORITO  GUISCARDO             ESTENSE NUOTO CSI           0'38"12  755,77
+  6 EMI-021546 1973 CASADIO  MARCO                AQUATIC TEAM RAVENN         0'38"51  748,12
+  7 EMI-012329 1975 VEZZANI  VALERIO              CN UISP BOLOGNA             0'39"54  728,63
+  8 VEN-031759 1976 BONFIGLIO  PAOLO              ABANO NUOTO                 0'40"21  716,49
+    EMI-017464 1973 CORRIDONI  ANDREA             NUOVO NUOTO                Squalif.    0,00
+
+        50 rana  maschile   -  Categoria  Master 40               Tempo Base   :  0'29"15
+----------------------------------------------------------------------------------------------
+  1 LOM-019717 1968 MONTINI  ALBERTO              TIBIDABO SSD                0'30"61  952,30
+  2 EMI-005261 1970 MARI  DAVIDE                  ESTENSE NUOTO CSI           0'35"15  829,30
+  3 EMI-024145 1972 PELACANI  ROBERTO             CN UISP BOLOGNA             0'35"66  817,44
+  4 EMI-018641 1968 BERTONI  PAOLO                NUOTO CLUB 2000             0'36"33  802,37
+  5 EMI-021826 1971 CAPACCI  MARCO                FANATIK TEAM FORLI          0'38"55  756,16
+  6 EMI-006976 1968 SECCHI  MASSIMO               N MODENESI                  0'40"01  728,57
+  7 TOS-001741 1972 BIANUCCI  DAVID               C.S.I. NUOTO PRATO          0'41"63  700,22
+  8 EMI-005161 1968 POLESINANTI  MARCO            ESTENSE NUOTO CSI           0'41"71  698,87
+  9 EMI-005268 1970 RIVELLI  RICCARDO             ESTENSE NUOTO CSI           0'42"98  678,22
+ 10 VEN-023719 1971 ZANELLA  GIOVANNI             ADRIA NUOTO SSD  AR         0'44"67  652,56
+ 11 TOS-029616 1968 LUCIANO`  ANGELO              C.S.I. NUOTO PRATO          0'46"95  620,87
+ 12 EMI-027293 1969 SAVONUZZI  TIBERIO            ESTENSE NUOTO CSI           0'50"70  574,95
+ 13 EMI-027400 1970 MONTANARI  DARIO              NUOTO CLUB 2000             0'51"28  568,45
+
+        50 rana  maschile   -  Categoria  Master 45               Tempo Base   :  0'30"23
+----------------------------------------------------------------------------------------------
+  1 EMI-024902 1966 PEZZETTA  GIORDANO            ACQUA TIME                  0'33"82  893,85
+  2 EMI-026795 1967 PUGGIOLI  ENRICO              ESTENSE NUOTO CSI           0'35"85  843,24
+  3 EMI-005527 1966 TONI  MARCO                   CIVATURS DE AKKER           0'37"78  800,16
+  4 VEN-014090 1965 PIANCA  CARLO                 NATATORIUM TREVISO          0'38"68  781,54
+  5 VEN-009782 1966 CANESSA  ALESSIO              FERRARANUOTO ASD            0'39"31  769,02
+  6 EMI-011132 1966 VASUMINI  ALESSANDRO          FANATIK TEAM FORLI          0'40"89  739,30
+  7 EMI-005421 1963 ANDERLINI  ALESSANDRO         CIVATURS DE AKKER           0'42"06  718,74
+  8 VEN-015396 1966 LAMONACA  SALVATORE           TEAM EUGANEO                0'44"24  683,32
+  9 EMI-006878 1963 TUGNOLI  GIAMPAOLO            RINASCITA TEAM ROMA         0'50"70  596,25
+
+        50 rana  maschile   -  Categoria  Master 50               Tempo Base   :  0'31"20
+----------------------------------------------------------------------------------------------
+  1 VEN-001266 1961 DELLI GUANTI  GAETANO         NATATORIUM TREVISO          0'35"55  877,64
+  2 EMI-004844 1962 SCALAMBRA  ALESSANDRO         ESTENSE NUOTO CSI           0'36"80  847,83
+  3 EMI-012351 1960 SCHIUMARINI  STEFANO          NUOTO CLUB 2000             0'37"51  831,78
+  4 TOS-019737 1958 GIANNINI  STEFANO             FIRENZE NUOTA MASTE         0'40"30  774,19
+  5 EMI-019873 1960 CAVALLARI  DAVIDE             POLIVALENTE FUTURA          0'52"04  599,54
+
+        50 rana  maschile   -  Categoria  Master 55               Tempo Base   :  0'32"62
+----------------------------------------------------------------------------------------------
+  1 TOS-015976 1954 NESI  PAOLO                   C.N. MONTECATINI            0'43"97  741,87
+  2 EMI-018822 1956 KOHLER  CHRISTIAN             SAVENA NUOTO TEAM A         0'44"26  737,01
+  3 VEN-005326 1955 ROCCATO  BRUNO                ADRIA NUOTO SSD  AR         0'50"89  640,99
+  4 TOS-036615 1954 STEFANELLI  UMBERTO CESARE    C.S.I. NUOTO PRATO          0'57"33  568,99
+
+        50 rana  maschile   -  Categoria  Master 60               Tempo Base   :  0'34"13
+----------------------------------------------------------------------------------------------
+  1 TOS-006319 1949 PUGGELLI  SERGIO              C.S.I. NUOTO PRATO          0'44"92  759,80
+  2 EMI-016422 1950 XELLA  LUIGI                  NUOTO CLUB 2000             0'46"72  730,52
+  3 VEN-006620 1948 SALMASO  ENZO                 ADRIA NUOTO SSD  AR         1'03"91  534,03
+
+        50 rana  maschile   -  Categoria  Master 65               Tempo Base   :  0'35"33
+----------------------------------------------------------------------------------------------
+  1 EMI-004138 1946 BELLINAZZO  MARCO             MASTER AICS BRESCIA         0'49"11  719,41
+
+        50 rana  maschile   -  Categoria  Master 70               Tempo Base   :  0'37"75
+----------------------------------------------------------------------------------------------
+  1 EMI-013624 1938 BUONO  CARLO                  NUOTO CLUB 2000             0'49"43  763,71
+    EMI-006805 1938 NAVARRA  ARIANO               RINASCITA TEAM ROMA        Squalif.    0,00
+Torna a inizio pagina
+ 
+
+200SL
+
+        200 stile libero  femminile  -  Categoria  Under 25        
+----------------------------------------------------------------------------------------------
+  1 FIN-019750 1988 GANDOLFI  ANNA                COOPERNUOTO                 2'54"30  0,00
+
+        200 stile libero  femminile  -  Categoria  Master 25      Tempo Base   :  2'05"46
+----------------------------------------------------------------------------------------------
+  1 VEN-004898 1986 BENETTON  MARTINA             NATATORIUM TREVISO          2'12"98  943,45
+  2 UMB-000832 1984 GIULIACCI  FEDERICA           FANATIK TEAM FORLI          2'14"84  930,44
+  3 EMI-001857 1983 BRANDI  VALENTINA             POL COMUNALE RICCIO         2'23"14  876,48
+  4 VEN-026068 1983 ZACCARIA  MARTINA             ABANO NUOTO                 2'32"17  824,47
+  5 EMI-027292 1986 MALANCHIN  DORALICE           ESTENSE NUOTO CSI           2'42"32  772,92
+  6 VEN-025892 1984 MARCHESINI  ELENA             ADRIA NUOTO SSD  AR         2'46"92  751,62
+  7 EMI-019868 1984 PANZACCHI  FEDERICA           NUOTO CLUB 2000             2'55"09  716,55
+  8 EMI-005326 1987 MATERAZZO  GIULIA             ESTENSE NUOTO CSI           2'59"82  697,70
+  9 VEN-002620 1987 FERRARI  ELEONORA             ASD ARCA CASTELMASS         3'02"36  687,98
+ 10 TOS-036607 1986 TESI  GIULIA                  C.S.I. NUOTO PRATO          3'02"50  687,45
+ 11 TOS-044172 1983 KILBOURN MEGAN                AMICI DEL NUOTO FIR         3'04"52  679,93
+
+        200 stile libero  femminile  -  Categoria  Master 30      Tempo Base   :  2'06"21
+----------------------------------------------------------------------------------------------
+  1 EMI-025288 1981 ELMI  ELISA                   PRESIDENT BOLOGNA           2'14"85  935,93
+  2 EMI-017082 1981 GELSOMINI  LETIZIA            CIVATURS DE AKKER           2'23"54  879,27
+  3 MAR-009064 1979 CAIONI  GLORIA                POOL N SAMBENEDETTE         2'28"50  849,90
+  4 EMI-002100 1981 DREI  RAFFAELLA               NUOTO CLUB 2000             2'38"84  794,57
+  5 TOS-012212 1978 MANZO  ANNA                   C.S.I. NUOTO PRATO          2'40"27  787,48
+  6 EMI-020270 1979 CHIEREGATO  SARA              NUOTO OTELLO PUTINA         2'52"72  730,72
+  7 EMI-020065 1978 MAZZACURATI  MARZIA           NUOVO NUOTO                 2'56"48  715,15
+  8 EMI-013146 1980 BORGHI  SIMONA                ABANO NUOTO                 2'57"00  713,05
+  9 EMI-019975 1980 ZAMA  VALENTINA               RINASCITA TEAM ROMA         2'57"75  710,04
+ 10 VEN-028755 1982 VECCHIATTINI  FEDERICA        ADRIA NUOTO SSD  AR         3'00"53  699,11
+ 11 EMI-024008 1982 BALLARIN  ILARIA              NUOVO NUOTO                 3'02"47  691,68
+ 12 VEN-012989 1978 CUSIN  EVELYN                 TEAM EUGANEO                3'02"64  691,03
+ 13 SAR-003750 1982 MURGIONI  MARTINA             NUOVO NUOTO                 3'21"19  627,32
+
+        200 stile libero  femminile  -  Categoria  Master 35      Tempo Base   :  2'07"01
+----------------------------------------------------------------------------------------------
+  1 EMI-012298 1976 BERTONI  SILVIA               NUOTO CLUB 2000             2'25"72  871,60
+  2 EMI-024612 1976 FIORI  SILVIA                 SAVENA NUOTO TEAM A         2'53"34  732,72
+  3 EMI-020568 1973 CENNI  ERIKA                  NUOTO CLUB 2000             3'43"32  568,74
+
+        200 stile libero  femminile  -  Categoria  Master 40      Tempo Base   :  2'09"36
+----------------------------------------------------------------------------------------------
+  1 EMI-005276 1968 TORBOLI  LORENA               ESTENSE NUOTO CSI           2'29"27  866,62
+  2 EMI-026786 1972 LAGRAVINESE  STEFANIA         NUOVO NUOTO                 2'45"10  783,53
+  3 TOS-029617 1969 CANDI  SIMONA                 C.S.I. NUOTO PRATO          3'06"97  691,88
+  4 EMI-024758 1971 CAMILOTTO  MONICA             ESTENSE NUOTO CSI           3'07"55  689,74
+
+        200 stile libero  femminile  -  Categoria  Master 45      Tempo Base   :  2'13"01
+----------------------------------------------------------------------------------------------
+  1 EMI-006772 1966 FERRONI  STEFANIA             RINASCITA TEAM ROMA         2'31"98  875,18
+  2 VEN-013329 1964 KLIMOVA  LARISSA              ADRIA NUOTO SSD  AR         2'54"70  761,36
+  3 EMI-005425 1967 BORDIGA  PAOLA                CIVATURS DE AKKER           3'17"39  673,84
+  4 VEN-026061 1967 GELATI  ALESSANDRA            ABANO NUOTO                 3'19"39  667,08
+  5 TOS-036958 1965 DEL BINO  MANUELA             VERSILIANUOTO               4'16"76  518,03
+
+        200 stile libero  femminile  -  Categoria  Master 50      Tempo Base   :  2'18"57
+----------------------------------------------------------------------------------------------
+  1 VEN-006213 1962 ZAGO  SONIA                   TEAM EUGANEO                3'19"91  693,16
+
+        200 stile libero  femminile  -  Categoria  Master 65      Tempo Base   :  2'46"54
+----------------------------------------------------------------------------------------------
+  1 EMI-019835 1947 CARLINI  MARIANNA             N MODENESI                  4'08"27  670,80
+
+        200 stile libero  maschile   -  Categoria  Under 25        
+----------------------------------------------------------------------------------------------
+  1 FIN-055696 1988 VALCAVI  LUCA                 CSI NUOTO OBER FERR         2'15"66  0,00
+  2 EMI-024471 1989 CASTAGNETTI  MATTEO           MASTER AICS BRESCIA         2'23"32  0,00
+  3 VEN-026069 1988 ZAMPINI  GIULIO               ABANO NUOTO                 2'35"50  0,00
+  4 FIN-043024 1988 BIANCHI  RICCARDO             FERRARANUOTO ASD            2'59"02  0,00
+
+        200 stile libero  maschile   -  Categoria  Master 25      Tempo Base   :  1'51"16
+----------------------------------------------------------------------------------------------
+  1 EMI-006567 1985 PIATESI  RICCARDO             NUOTO CLUB LUGO             2'09"46  858,64
+  2 TOS-005264 1983 MALPAGANTI  MATTEO            C.S.I. NUOTO PRATO          2'14"19  828,38
+  3 TOS-000982 1986 ASTOLFI  ALESSANDRO           ZEROUNO SSD ARL             2'14"90  824,02
+  4 EMI-001871 1983 BUCCHI  GIACOMO               NUOTO CLUB 2000             2'20"68  790,16
+  5 CAM-017580 1984 SERENA  ALESSANDRO            NC MILANO                   2'21"56  785,25
+  6 EMI-024876 1984 CAPPELLO  TOMMASO             C.U.S. BOLOGNA              2'21"84  783,70
+  7 LOM-053581 1983 MORANDI  STEFANO              DDS                         2'23"48  774,74
+  8 EMI-025034 1983 GRILLO  MARCO                 CN UISP BOLOGNA             2'31"07  735,82
+  9 EMI-026107 1985 REGOLI  ANDREA                NUOTO CLUB 2000             2'33"97  721,96
+ 10 TOS-032101 1983 BONACCHI  ANDREA              C.S.I. NUOTO PRATO          2'56"03  631,48
+ 11 TOS-036609 1983 BERTINI  FEDERICO             C.S.I. NUOTO PRATO          3'17"96  561,53
+
+        200 stile libero  maschile   -  Categoria  Master 30      Tempo Base   :  1'51"72
+----------------------------------------------------------------------------------------------
+  1 VEN-004306 1982 ERMETI  GIANLUCA              DUEMILA SSD A RL            1'58"31  944,30
+  2 EMI-019399 1978 PICCARI  MIRCO                POL COMUNALE RICCIO         2'06"47  883,37
+  3 EMI-025564 1979 ZATTI  ROBERTO                MASTER AICS BRESCIA         2'11"26  851,14
+  4 TOS-001785 1979 BIANCHI  MIRKO                C.S.I. NUOTO PRATO          2'14"58  830,14
+  5 EMI-001084 1978 MIGLIOLI  STEFANO             NUOTO OTELLO PUTINA         2'15"88  822,20
+  6 EMI-021360 1982 EVANGELISTI  MATTEO           NUOTO OTELLO PUTINA         2'16"48  818,58
+  7 EMI-018735 1980 BIANCHI  MANUEL               NUOTO VICENZA LIB A         2'16"98  815,59
+  8 EMI-022976 1982 BARAVELLI  DAVIDE             NUOVO NUOTO                 2'46"60  670,59
+  9 MAR-019512 1978 PULCINI  ROBERTO              POOL N SAMBENEDETTE         2'47"35  667,58
+ 10 EMI-027977 1978 SALOMONI  SEBASTIANO          CIVATURS DE AKKER           3'12"29  581,00
+    EMI-026792 1979 CUCCHI  RICCARDO              NUOVO NUOTO                Ritirato    0,00
+
+        200 stile libero  maschile   -  Categoria  Master 35      Tempo Base   :  1'53"52
+----------------------------------------------------------------------------------------------
+  1 LOM-061029 1974 PEDRAZZOLI  ANDREA            SPORT MANAGEMENT SR         2'09"79  874,64
+  2 FIN-054100 1974 ROSCA  IOAN STELIAN           CSI NUOTO OBER FERR         2'13"71  849,00
+  3 EMI-008191 1973 VACCHI  ALESSIO               RINASCITA TEAM ROMA         2'18"10  822,01
+  4 LOM-009246 1974 BALDRIGHI  STEFANO            NC MILANO                   2'18"57  819,22
+  5 FIN-014117 1976 CECCHI  LORENZO               C.S.I. NUOTO PRATO          2'32"85  742,69
+  6 EMI-015171 1975 RILEI  ANDREA                 N MODENESI                  2'39"96  709,68
+  7 EMI-020520 1974 LORITO  GUISCARDO             ESTENSE NUOTO CSI           2'43"12  695,93
+  8 VEN-012993 1973 VANZETTO  ADRIANO             TEAM EUGANEO                2'51"34  662,54
+  9 LAZ-026324 1975 MAIORANA  ROBERTO             C.S.I. NUOTO PRATO          2'53"25  655,24
+ 10 EMI-020326 1977 GIROTTI  LUCA                 CN UISP BOLOGNA             3'01"69  624,80
+
+        200 stile libero  maschile   -  Categoria  Master 40      Tempo Base   :  1'55"00
+----------------------------------------------------------------------------------------------
+  1 EMI-000127 1968 BALDINI  CRISTIANO            AQUATIC TEAM RAVENN         2'04"26  925,48
+  2 EMI-005050 1971 DI MARTINO  MARCO             AQUATIC TEAM RAVENN         2'08"23  896,83
+  3 EMI-024726 1971 GIANNINI  MIRKO               ASD ALDEBARAN               2'22"73  805,72
+  4 EMI-014278 1971 LIGABUE  MARCO                CSI NUOTO OBER FERR         2'29"49  769,28
+  5 VEN-017036 1971 MAGGIA  ANDREA                CITTÀ SPORT VICENZA         2'33"71  748,16
+  6 EMI-018641 1968 BERTONI  PAOLO                NUOTO CLUB 2000             2'34"28  745,40
+  7 VEN-014780 1971 SOGGIORNI  FABRIZIO           ASD ARCA CASTELMASS         2'36"71  733,84
+  8 EMI-015541 1968 BOCCHI  ALESSANDRO            ESTENSE NUOTO CSI           2'52"61  666,24
+  9 EMI-005268 1970 RIVELLI  RICCARDO             ESTENSE NUOTO CSI           2'55"62  654,82
+ 10 EMI-005161 1968 POLESINANTI  MARCO            ESTENSE NUOTO CSI           3'03"26  627,52
+ 11 FIN-053357 1969 CANGEMI  GIUSEPPE ALESSANDRO  NUOVO NUOTO                 3'04"75  622,46
+ 12 EMI-027400 1970 MONTANARI  DARIO              NUOTO CLUB 2000             3'27"96  552,99
+
+        200 stile libero  maschile   -  Categoria  Master 45      Tempo Base   :  1'57"93
+----------------------------------------------------------------------------------------------
+  1 EMI-005441 1967 MASSA  MASSIMILIANO           NUOTO AICS BOLOGNA          2'24"40  816,69
+  2 VEN-014090 1965 PIANCA  CARLO                 NATATORIUM TREVISO          2'25"46  810,74
+  3 EMI-005267 1964 RANERI  ROBERTO               ESTENSE NUOTO CSI           2'29"98  786,30
+  4 LAZ-007522 1967 CURIONE  VITTORIO             RARI NANTES APRILIA         2'32"69  772,35
+  5 EMI-005126 1967 BARALDI  MASSIMO              ESTENSE NUOTO CSI           2'40"70  733,85
+  6 VEN-009782 1966 CANESSA  ALESSIO              FERRARANUOTO ASD            2'41"55  729,99
+  7 VEN-012320 1965 BARILLARI  CAMILLO            ADRIA NUOTO SSD  AR         2'42"17  727,20
+  8 EMI-015543 1966 CARION  MICHELE               ESTENSE NUOTO CSI           2'46"40  708,71
+  9 EMI-006978 1965 VASUMINI  IVAN                N MODENESI                  2'47"43  704,35
+ 10 VEN-015396 1966 LAMONACA  SALVATORE           TEAM EUGANEO                2'49"60  695,34
+ 11 LAZ-023791 1963 NASCI  ALBERTO                RARI NANTES APRILIA         2'55"54  671,81
+ 12 VEN-006491 1966 GARBO  ALBERTO                S.S. ROVIGO NUOTO           2'55"80  670,82
+ 13 EMI-004841 1963 FORTI  GIORGIO                ESTENSE NUOTO CSI           3'02"11  647,58
+ 14 TOS-010886 1964 TABUCCHI  MASSIMO             VERSILIANUOTO               3'06"02  633,96
+ 15 EMI-005058 1965 MARALDI  PAOLO                AQUATIC TEAM RAVENN         3'06"46  632,47
+ 16 VEN-010365 1964 MARCHETTO  ALESSANDRO         TEAM EUGANEO                3'11"66  615,31
+ 17 EMI-028056 1964 CORSI  MASSIMILIANO           NUOVO NUOTO                 3'24"89  575,58
+
+        200 stile libero  maschile   -  Categoria  Master 50      Tempo Base   :  2'02"71
+----------------------------------------------------------------------------------------------
+  1 VEN-001266 1961 DELLI GUANTI  GAETANO         NATATORIUM TREVISO          2'14"52  912,21
+  2 VEN-033605 1959 ZANETTI  ANDREA               NUOTATORI VENEZIANI         2'48"46  728,42
+  3 EMI-005265 1960 PRENCIPE  MATTEO              ESTENSE NUOTO CSI           3'02"99  670,58
+  4 EMI-019873 1960 CAVALLARI  DAVIDE             POLIVALENTE FUTURA          3'03"98  666,97
+  5 EMI-022979 1959 SIMONE  MAURIZIO              ESTENSE NUOTO CSI           3'06"23  658,92
+
+        200 stile libero  maschile   -  Categoria  Master 55      Tempo Base   :  2'06"09
+----------------------------------------------------------------------------------------------
+  1 EMI-001246 1954 PASCOTTO  PAOLO               N MODENESI                  2'53"77  725,61
+  2 EMI-018822 1956 KOHLER  CHRISTIAN             SAVENA NUOTO TEAM A         2'58"21  707,54
+  3 EMI-013849 1956 MORINI  DANIELE               NUOTO CLUB 2000             3'14"51  648,24
+  4 MAR-002213 1957 DI FEO  GIOVANNI              POOL N SAMBENEDETTE         3'27"50  607,66
+
+        200 stile libero  maschile   -  Categoria  Master 60      Tempo Base   :  2'13"27
+----------------------------------------------------------------------------------------------
+  1 EMI-004843 1949 MANSERVIGI  DANIELE           ESTENSE NUOTO CSI           3'33"55  624,07
+
+        200 stile libero  maschile   -  Categoria  Master 65      Tempo Base   :  2'19"73
+----------------------------------------------------------------------------------------------
+  1 EMI-004138 1946 BELLINAZZO  MARCO             MASTER AICS BRESCIA         3'24"87  682,04
+Torna a inizio pagina
+
+ 
+
+50DO
+
+        50 dorso  femminile  -  Categoria  Under 25                
+----------------------------------------------------------------------------------------------
+  1 EMI-001994 1988 COCCHI VERONICA               AS MOLINELLA NUOTO          0'37"51  0,00
+  2 VEN-026930 1989 CUOGHI  ELISA                 ASD ARCA CASTELMASS         0'42"77  0,00
+
+        50 dorso  femminile  -  Categoria  Master 25              Tempo Base   :  0'29"94
+----------------------------------------------------------------------------------------------
+  1 MAR-022139 1983 IAVARONE  ELEONORA            POOL N SAMBENEDETTE         0'36"13  828,67
+  2 EMI-019868 1984 PANZACCHI  FEDERICA           NUOTO CLUB 2000             0'45"63  656,15
+
+        50 dorso  femminile  -  Categoria  Master 30              Tempo Base   :  0'29"61
+----------------------------------------------------------------------------------------------
+  1 EMI-002318 1981 LASAGNA  LISA                 MASTER AICS BRESCIA         0'32"79  903,02
+  2 LAZ-000089 1981 EMANUELA DONATI               POL COMUNALE RICCIO         0'35"63  831,04
+  3 MAR-009064 1979 CAIONI  GLORIA                POOL N SAMBENEDETTE         0'36"97  800,92
+  4 TOS-000790 1981 FANTECHI  CLAUDIA             AMICI DEL NUOTO FIR         0'38"90  761,18
+  5 EMI-005981 1980 LANZONI  GESSICA              ACQUA TIME                  0'45"06  657,12
+  6 TOS-038859 1981 MANNORI  SUELLEN              C.S.I. NUOTO PRATO          0'45"35  652,92
+  7 EMI-024761 1982 GAMBETTI  FRANCESCA           ESTENSE NUOTO CSI           0'46"20  640,91
+  8 ???-000000 1979 CANARGIU ELISA                CIVATURS DE AKKER           0'46"48  637,05
+  9 SAR-003750 1982 MURGIONI  MARTINA             NUOVO NUOTO                 0'52"21  567,13
+ 10 TOS-034982 1980 SANESI  CLAUDIA               C.S.I. NUOTO PRATO          0'53"13  557,31
+
+        50 dorso  femminile  -  Categoria  Master 35              Tempo Base   :  0'30"45
+----------------------------------------------------------------------------------------------
+  1 EMI-015156 1975 BONVICINI  CARLA              RINASCITA TEAM ROMA         0'40"30  755,58
+  2 TOS-029836 1974 RAGGIANTE  CRISTINA           C.S.I. NUOTO PRATO          0'42"55  715,63
+  3 EMI-024675 1977 ARGINELLI  VALENTINA          NUOTO CLUB 2000             0'50"41  604,05
+
+        50 dorso  femminile  -  Categoria  Master 40              Tempo Base   :  0'31"16
+----------------------------------------------------------------------------------------------
+  1 EMI-005815 1969 GERARDI  SUSANNA              FANATIK TEAM FORLI          0'38"19  815,92
+  2 EMI-014276 1971 SESENA  BARBARA               CSI NUOTO OBER FERR         0'42"39  735,08
+  3 EMI-024940 1968 CHELOTTI  SILVIA              CN UISP BOLOGNA             0'48"40  643,80
+
+        50 dorso  femminile  -  Categoria  Master 45              Tempo Base   :  0'32"13
+----------------------------------------------------------------------------------------------
+  1 TOS-039189 1963 MARIOTTI  MONICA              AMICI DEL NUOTO FIR         0'41"54  773,47
+  2 VEN-028519 1966 PREARO  ROSSELLA              ABANO NUOTO                 0'47"50  676,42
+  3 EMI-001472 1967 DAVI'  ELISABETTA             AS MOLINELLA NUOTO          1'12"56  442,81
+
+        50 dorso  femminile  -  Categoria  Master 50              Tempo Base   :  0'33"21
+----------------------------------------------------------------------------------------------
+  1 EMI-015860 1962 CASAROSA  PAOLA               SAVENA NUOTO TEAM A         0'44"29  749,83
+  2 EMI-016644 1962 TARTARINI  ILVA               NUOVO NUOTO                 0'45"46  730,53
+  3 EMI-016048 1960 ZOCCA  MANUELA                CN UISP BOLOGNA             0'50"71  654,90
+
+        50 dorso  femminile  -  Categoria  Master 55              Tempo Base   :  0'35"62
+----------------------------------------------------------------------------------------------
+  1 EMI-005254 1955 GIACOMETTI  ANGELA            ESTENSE NUOTO CSI           0'54"40  654,78
+
+        50 dorso  femminile  -  Categoria  Master 60              Tempo Base   :  0'36"81
+----------------------------------------------------------------------------------------------
+  1 TOS-040579 1950 COLZI  NICOLETTA              FIRENZE NUOTA MASTE         1'04"91  567,09
+  2 EMI-022908 1948 SAVIGNI  FRANCA               N MODENESI                  1'05"10  565,44
+
+        50 dorso  femminile  -  Categoria  Master 65              Tempo Base   :  0'38"73
+----------------------------------------------------------------------------------------------
+  1 EMI-019835 1947 CARLINI  MARIANNA             N MODENESI                  1'00"80  637,01
+
+        50 dorso  maschile   -  Categoria  Under 25                
+----------------------------------------------------------------------------------------------
+  1 EMI-024471 1989 CASTAGNETTI  MATTEO           MASTER AICS BRESCIA         0'34"82  0,00
+
+        50 dorso  maschile   -  Categoria  Master 25              Tempo Base   :  0'25"47
+----------------------------------------------------------------------------------------------
+  1 EMI-004795 1986 CANTELLO  ENTONI              MASTER AICS BRESCIA         0'27"00  943,33
+  2 TOS-005264 1983 MALPAGANTI  MATTEO            C.S.I. NUOTO PRATO          0'33"68  756,24
+  3 EMI-025577 1984 DI GIACOMO  SIMONE            CIVATURS DE AKKER           0'41"71  610,64
+
+        50 dorso  maschile   -  Categoria  Master 30              Tempo Base   :  0'25"83
+----------------------------------------------------------------------------------------------
+  1 EMI-025564 1979 ZATTI  ROBERTO                MASTER AICS BRESCIA         0'32"83  786,78
+  2 EMI-019399 1978 PICCARI  MIRCO                POL COMUNALE RICCIO         0'34"97  738,63
+  3 EMI-021360 1982 EVANGELISTI  MATTEO           NUOTO OTELLO PUTINA         0'37"10  696,23
+
+        50 dorso  maschile   -  Categoria  Master 35              Tempo Base   :  0'26"56
+----------------------------------------------------------------------------------------------
+  1 EMI-017507 1973 ROSSI  PIERGIORGIO            POL COMUNALE RICCIO         0'30"58  868,54
+  2 TOS-029826 1975 MAFFII  ALESSIO               C.S.I. NUOTO PRATO          0'33"57  791,18
+  3 LOM-009246 1974 BALDRIGHI  STEFANO            NC MILANO                   0'33"64  789,54
+  4 PUG-000522 1975 COLAFEMMINA  DONATELLO        CN UISP BOLOGNA             0'34"16  777,52
+  5 FIN-014117 1976 CECCHI  LORENZO               C.S.I. NUOTO PRATO          0'34"65  766,52
+  6 TOS-030598 1973 VIRGILIO  ANDREA              C.S.I. NUOTO PRATO          0'34"95  759,94
+  7 EMI-015171 1975 RILEI  ANDREA                 N MODENESI                  0'37"09  716,10
+  8 EMI-007621 1974 GHIDONI  FABIO                ACQUA TIME                  0'38"73  685,77
+  9 VEN-031759 1976 BONFIGLIO  PAOLO              ABANO NUOTO                 0'44"13  601,86
+
+        50 dorso  maschile   -  Categoria  Master 40              Tempo Base   :  0'27"11
+----------------------------------------------------------------------------------------------
+  1 EMI-000066 1970 BALBONI  LUCA                 POLIVALENTE FUTURA          0'32"27  840,10
+  2 EMI-005261 1970 MARI  DAVIDE                  ESTENSE NUOTO CSI           0'32"75  827,79
+  3 EMI-026027 1970 AMORESE  FRANCESCO            CN UISP BOLOGNA             0'34"65  782,40
+  4 EMI-024726 1971 GIANNINI  MIRKO               ASD ALDEBARAN               0'38"33  707,28
+  5 EMI-021826 1971 CAPACCI  MARCO                FANATIK TEAM FORLI          0'38"37  706,54
+  6 EMI-005213 1972 MAROZZI  LORENZO              AS MOLINELLA NUOTO          0'39"46  687,02
+  7 EMI-006976 1968 SECCHI  MASSIMO               N MODENESI                  0'41"70  650,12
+  8 TOS-016300 1970 ALTARE  MASSIMO               MASTER AICS BRESCIA         0'42"15  643,18
+  9 TOS-029616 1968 LUCIANO`  ANGELO              C.S.I. NUOTO PRATO          0'42"31  640,75
+ 10 EMI-005273 1972 TIEGHI  RICCARDO              ESTENSE NUOTO CSI           0'46"59  581,88
+
+        50 dorso  maschile   -  Categoria  Master 45              Tempo Base   :  0'27"64
+----------------------------------------------------------------------------------------------
+  1 EMI-026795 1967 PUGGIOLI  ENRICO              ESTENSE NUOTO CSI           0'35"30  783,00
+  2 EMI-025679 1963 CANDITO  ALESSANDRO           MODENA NUOTO                0'36"22  763,11
+  3 EMI-004840 1963 BIANCANI  GIANFRANCO          ESTENSE NUOTO CSI           0'38"06  726,22
+  4 EMI-018871 1966 PIZZIRANI  LUCA               CN UISP BOLOGNA             0'42"07  657,00
+  5 EMI-020817 1963 LODI  STEFANO                 CIVATURS DE AKKER           0'43"42  636,57
+  6 EMI-009490 1966 LABANTI  MARCO                CN UISP BOLOGNA             0'43"67  632,93
+  7 EMI-006878 1963 TUGNOLI  GIAMPAOLO            RINASCITA TEAM ROMA         0'43"77  631,48
+  8 EMI-006978 1965 VASUMINI  IVAN                N MODENESI                  0'43"99  628,32
+  9 EMI-015543 1966 CARION  MICHELE               ESTENSE NUOTO CSI           0'44"33  623,51
+ 10 EMI-005421 1963 ANDERLINI  ALESSANDRO         CIVATURS DE AKKER           0'45"01  614,09
+ 11 EMI-005249 1967 CIRIAGO  GIACOMO              ESTENSE NUOTO CSI           0'46"99  588,21
+ 12 EMI-000890 1966 LANZONI  MARCO                NUOTO CLUB LUGO             0'50"27  549,83
+    EMI-000388 1963 CAPRINI  LUCA                 ESTENSE NUOTO CSI          Squalif.    0,00
+
+        50 dorso  maschile   -  Categoria  Master 50              Tempo Base   :  0'28"91
+----------------------------------------------------------------------------------------------
+  1 EMI-006312 1961 ORLANDINI  EDO                MASTER AICS BRESCIA         0'33"53  862,21
+  2 EMI-027193 1961 CEDRINI  MASSIMO              ESTENSE NUOTO CSI           0'39"97  723,29
+  3 EMI-014484 1958 GHERERDINI  FRANCO            NUOVO NUOTO                 0'43"06  671,39
+  4 EMI-005265 1960 PRENCIPE  MATTEO              ESTENSE NUOTO CSI           0'57"42  503,48
+
+        50 dorso  maschile   -  Categoria  Master 55              Tempo Base   :  0'30"24
+----------------------------------------------------------------------------------------------
+  1 EMI-019834 1953 BATTILANI  GIORGIO            N MODENESI                  0'38"25  790,59
+  2 EMI-013849 1956 MORINI  DANIELE               NUOTO CLUB 2000             0'50"96  593,41
+  3 MAR-002213 1957 DI FEO  GIOVANNI              POOL N SAMBENEDETTE         0'56"01  539,90
+
+        50 dorso  maschile   -  Categoria  Master 60              Tempo Base   :  0'31"68
+----------------------------------------------------------------------------------------------
+  1 VEN-000922 1951 CHIMISSO  ROBERTO             RARI NANTES VENEZIA         0'33"66  941,18
+  2 EMI-004843 1949 MANSERVIGI  DANIELE           ESTENSE NUOTO CSI           0'59"92  528,70
+
+        50 dorso  maschile   -  Categoria  Master 70              Tempo Base   :  0'36"09
+----------------------------------------------------------------------------------------------
+  1 TOS-032694 1939 VISANI  ALFIO                 FIRENZE NUOTA MASTE         0'44"96  802,71
+  2 EMI-027553 1938 VANNINI VALERIO               CIVATURS DE AKKER           1'37"54  370,00
+Torna a inizio pagina
+
+ 
+
+800SL
+
+        800 stile libero  femminile  -  Categoria  Under 25        
+----------------------------------------------------------------------------------------------
+  1 FIN-084675 1990 DALLA ROSA  VALENTINA         ZEROUNO SSD ARL            12'01"94  0,00
+  2 VEN-006960 1991 FRASSANI  MARTINA             C.U.S. BOLOGNA             13'23"79  0,00
+
+        800 stile libero  femminile  -  Categoria  Master 25      Tempo Base   :  9'08"61
+----------------------------------------------------------------------------------------------
+  1 VEN-004898 1986 BENETTON  MARTINA             NATATORIUM TREVISO          9'44"15  939,16
+  2 EMI-001819 1985 BONETTI  VALERIA              COOPERNUOTO                11'15"53  812,12
+  3 MAR-001308 1987 IPPOLITI  LUCIA               OSIMO NUOTO                11'21"96  804,46
+  4 TOS-034651 1986 INGLETTO  CHIARA              FIRENZE NUOTA MASTE        11'23"61  802,52
+  5 EMI-006898 1985 CANNOLETTA  CARLOTTA          CN UISP BOLOGNA            12'18"48  742,89
+  6 EMI-027399 1983 DE PASQUALE  ELENA            NUOTO CLUB 2000            13'07"71  696,46
+
+        800 stile libero  femminile  -  Categoria  Master 30      Tempo Base   :  9'10"59
+----------------------------------------------------------------------------------------------
+  1 EMI-002868 1981 TAGLIAVENTI  ELEONORA         FANUM FORTUNAE ASD          9'58"82  919,46
+  2 LOM-017916 1981 SILVESTRI  LARA               MILANO NUOTO MASTER        11'46"29  779,55
+  3 EMI-023214 1979 RAVELLI  FRANCESCA            NUOVO NUOTO                12'14"27  749,85
+  4 VEN-028755 1982 VECCHIATTINI  FEDERICA        ADRIA NUOTO SSD  AR        12'38"92  725,49
+
+        800 stile libero  femminile  -  Categoria  Master 35      Tempo Base   :  9'16"95
+----------------------------------------------------------------------------------------------
+  1 TOS-000481 1977 BENVENUTI  CHIARA             FIRENZE NUOTA MASTE         9'58"31  930,87
+  2 VEN-013282 1975 MASCAGNA  VANIA               CN UISP BOLOGNA            11'00"57  843,14
+  3 EMI-025037 1976 BORGHI  GIULIA                CN UISP BOLOGNA            12'10"61  762,31
+  4 EMI-021942 1976 CAPPELLI  CINZIA              ESTENSE NUOTO CSI          12'18"27  754,40
+  5 EMI-017999 1975 MAZZIERI  VITTORIA            COOPERNUOTO                12'34"48  738,19
+  6 EMI-025887 1974 MOLINARICH  NORMA             COOPERNUOTO                14'03"26  660,47
+
+        800 stile libero  femminile  -  Categoria  Master 40      Tempo Base   :  9'29"81
+----------------------------------------------------------------------------------------------
+  1 EMI-005276 1968 TORBOLI  LORENA               ESTENSE NUOTO CSI          11'01"53  861,35
+  2 VEN-026812 1971 FORESTALI  LUISA              SIS NUOTO VERONA AS        11'04"66  857,30
+  3 TOS-004861 1969 DESIDERI  ELENA               NUOTO LIVORNO SSD          11'25"60  831,11
+  4 VEN-001596 1969 VIANELLO  ELENA               NATATORIUM TREVISO         12'06"66  784,15
+  5 TOS-033750 1968 MANCINI  LUCILLA              ASS.NUOTO LUCCA CAP        12'37"60  752,13
+  6 EMI-014276 1971 SESENA  BARBARA               CSI NUOTO OBER FERR        13'01"54  729,09
+  7 TOS-035483 1968 BOTTAINI  FRANCA              NUOTO LIVORNO SSD          13'11"84  719,60
+  8 EMI-005246 1968 CAMPIONE  MARIA RITA          NUOVO NUOTO                14'11"51  669,18
+  9 EMI-025576 1968 DINELLI  ISABELLA             CIVATURS DE AKKER          15'05"41  629,34
+
+        800 stile libero  femminile  -  Categoria  Master 45      Tempo Base   :  9'36"15
+----------------------------------------------------------------------------------------------
+  1 EMI-000688 1967 FILANGIERI  LOREDANA          CN UISP BOLOGNA            10'39"67  900,70
+  2 TOS-030616 1966 POPONCINI  SILVIA             FIRENZE NUOTA MASTE        12'24"72  773,65
+  3 TOS-034951 1964 GUASTAPAGLIA  LUCIA           NUOTO LIVORNO SSD          12'26"37  771,94
+  4 EMI-025845 1963 PELLONI  MARIA TERESA         N MODENESI                 14'23"73  667,05
+  5 TOS-036958 1965 DEL BINO  MANUELA             VERSILIANUOTO              17'29"63  548,91
+
+        800 stile libero  femminile  -  Categoria  Master 50      Tempo Base   : 10'05"04
+----------------------------------------------------------------------------------------------
+  1 TOS-034408 1961 ELMROTH  CHARLOTTE            FIRENZE NUOTA MASTE        12'36"80  799,47
+  2 VEN-005551 1962 SCARSI  SILVIA                NUOTATORI VENEZIANI        13'32"14  744,99
+  3 VEN-023663 1960 MARINELLO  MARIA GIOVANNA     NUOTATORI VENEZIANI        13'38"69  739,03
+
+        800 stile libero  femminile  -  Categoria  Master 70      Tempo Base   : 13'24"27
+----------------------------------------------------------------------------------------------
+  1 EMI-005189 1939 ANGELINI  GEMMA               AS MOLINELLA NUOTO         20'34"84  651,32
+
+        800 stile libero  maschile   -  Categoria  Under 25        
+----------------------------------------------------------------------------------------------
+  1 VEN-004854 1990 FAVA  SIMONE                  NATATORIUM TREVISO          9'39"27  0,00
+  2 FIN-055696 1988 VALCAVI  LUCA                 CSI NUOTO OBER FERR        10'09"23  0,00
+
+        800 stile libero  maschile   -  Categoria  Master 25      Tempo Base   :  8'23"06
+----------------------------------------------------------------------------------------------
+  1 TOS-002718 1986 GIOVANNINI  LORENZO           ZEROUNO SSD ARL             9'34"34  875,89
+  2 EMI-024480 1983 TRINCA  GIULIO                MASTER AICS BRESCIA         9'37"91  870,48
+  3 LIG-001493 1985 OTTAVIANI  ANDREA             CROCERANUOTO ASD            9'39"12  868,66
+  4 EMI-001945 1983 CATELLANI  LUCA               COOPERNUOTO                10'30"01  798,50
+  5 EMI-024960 1983 BERARDI  LUCA                 NUOTO CENTER FORLI`        10'57"77  764,80
+  6 EMI-027025 1985 BETTATI  MATTEO               COOPERNUOTO                11'58"03  700,61
+  7 TOS-028459 1986 INDACO  MAURIZIO              ZEROUNO SSD ARL            12'00"16  698,54
+
+        800 stile libero  maschile   -  Categoria  Master 30      Tempo Base   :  8'28"32
+----------------------------------------------------------------------------------------------
+  1 EMI-001741 1981 BENEVENTI  MARCO              NUOTATORI RAVENNATI        10'28"92  808,24
+  2 TOS-034577 1978 IULIANO  CRISTIANO            FIRENZE NUOTA MASTE        10'43"77  789,60
+  3 EMI-009381 1982 BALLESTRI  LUCA               CN UISP BOLOGNA            10'46"89  785,79
+  4 EMI-012076 1979 BASSI  NICOLA                 AS MOLINELLA NUOTO         11'01"19  768,80
+  5 EMI-010056 1978 FERRARI  MATTEO               COOPERNUOTO                11'44"09  721,95
+  6 EMI-013189 1979 MORI  ALESSANDRO              COOPERNUOTO                11'47"08  718,90
+  7 EMI-026785 1979 DALL`OLIO  CHRISTIAN          NUOVO NUOTO                12'53"68  657,02
+
+        800 stile libero  maschile   -  Categoria  Master 35      Tempo Base   :  8'29"23
+----------------------------------------------------------------------------------------------
+  1 VEN-028787 1973 PESCATORI  FABRIZIO           RARI NANTES VENEZIA         9'33"56  887,84
+  2 LAZ-010804 1976 TRABALZI  RICCARDO            DDS                        10'07"25  838,58
+  3 FIN-054100 1974 ROSCA  IOAN STELIAN           CSI NUOTO OBER FERR        10'08"21  837,26
+  4 EMI-026911 1974 SIMONELLI  DAVIDE             COOPERNUOTO                11'11"34  758,53
+  5 PUG-000522 1975 COLAFEMMINA  DONATELLO        CN UISP BOLOGNA            11'20"09  748,77
+  6 EMI-012329 1975 VEZZANI  VALERIO              CN UISP BOLOGNA            11'44"75  722,57
+  7 EMI-019310 1976 GAMBERINI  ANDREA             ACQUA TIME                 11'53"60  713,61
+  8 VEN-031866 1976 LOCAS  DAVIDE                 NATATORIUM TREVISO         11'59"74  707,52
+  9 VEN-031805 1973 BULLO  ANDREA                 RIVIERA NUOTO VENET        12'39"47  670,51
+ 10 EMI-028148 1976 GIORDANI  ALESSIO             NUOVO NUOTO                15'09"07  560,17
+
+        800 stile libero  maschile   -  Categoria  Master 40      Tempo Base   :  8'33"12
+----------------------------------------------------------------------------------------------
+  1 LOM-019717 1968 MONTINI  ALBERTO              TIBIDABO SSD                8'53"05  962,61
+  2 VEN-011929 1972 CECCHINATO  LORENZO           NUOTATORI VENEZIANI         9'58"35  857,56
+  3 TOS-005073 1969 GALLO  ALESSANDRO             SPORTIVA NUOTO GROS        10'23"31  823,22
+  4 EMI-013599 1971 RIZZATI  ROBERTO              ESTENSE NUOTO CSI          10'37"03  805,49
+  5 EMI-024145 1972 PELACANI  ROBERTO             CN UISP BOLOGNA            10'38"78  803,28
+  6 EMI-014278 1971 LIGABUE  MARCO                CSI NUOTO OBER FERR        11'06"76  769,57
+  7 VEN-017036 1971 MAGGIA  ANDREA                CITTÀ SPORT VICENZA        11'29"20  744,52
+  8 EMI-026027 1970 AMORESE  FRANCESCO            CN UISP BOLOGNA            12'19"07  694,28
+  9 EMI-020502 1971 LEONE  ALBERTO                ACQUA TIME                 12'42"42  673,01
+ 10 EMI-028083 1968 COMELLINI  FEDERICO           NUOVO NUOTO                12'43"53  672,04
+ 11 EMI-015541 1968 BOCCHI  ALESSANDRO            ESTENSE NUOTO CSI          13'37"38  627,76
+    TOS-016300 1970 ALTARE  MASSIMO               MASTER AICS BRESCIA        Ritirato    0,00
+
+        800 stile libero  maschile   -  Categoria  Master 45      Tempo Base   :  8'48"12
+----------------------------------------------------------------------------------------------
+  1 TOS-039686 1965 FATTORINI  MARIO              NUOTO LIVORNO SSD          10'13"53  860,79
+  2 VEN-006446 1963 PECCARISI  FABRIZIO           S.S. ROVIGO NUOTO          10'15"97  857,38
+  3 TOS-003724 1967 CORRIAS  MARIO                ASS.NUOTO LUCCA CAP        10'50"25  812,18
+  4 EMI-028105 1967 ANTONANGELI MARCO             CN UISP BOLOGNA            11'12"76  785,01
+  5 TOS-033164 1963 SODINI  ANDREA                NUOTO LIVORNO SSD          11'33"87  761,12
+  6 LAZ-007522 1967 CURIONE  VITTORIO             RARI NANTES APRILIA        11'43"15  751,08
+  7 VEN-012320 1965 BARILLARI  CAMILLO            ADRIA NUOTO SSD  AR        11'55"49  738,12
+  8 EMI-020779 1966 BONTADINI  SANDRO             CN UISP BOLOGNA            12'13"78  719,73
+  9 EMI-023244 1967 CAVINA  STEFANO               NUOTO CLUB 2000            12'33"49  700,90
+ 10 EMI-009490 1966 LABANTI  MARCO                CN UISP BOLOGNA            12'37"64  697,06
+ 11 EMI-018871 1966 PIZZIRANI  LUCA               CN UISP BOLOGNA            12'37"94  696,78
+ 12 EMI-009399 1963 GOTTARDI  LORENZO             CN UISP BOLOGNA            12'49"39  686,41
+ 13 EMI-004841 1963 FORTI  GIORGIO                ESTENSE NUOTO CSI          13'31"60  650,71
+ 14 EMI-006623 1964 ZONI  MAURIZIO                AS MOLINELLA NUOTO         13'38"63  645,13
+ 15 TOS-010886 1964 TABUCCHI  MASSIMO             VERSILIANUOTO              14'25"34  610,30
+
+        800 stile libero  maschile   -  Categoria  Master 50      Tempo Base   :  9'11"85
+----------------------------------------------------------------------------------------------
+  1 EMI-006312 1961 ORLANDINI  EDO                MASTER AICS BRESCIA        10'36"73  866,69
+  2 EMI-004844 1962 SCALAMBRA  ALESSANDRO         ESTENSE NUOTO CSI          10'44"42  856,35
+  3 LOM-100461 1960 FORSCH  FREDRICK FRANCIS      SPORT MANAGEMENT           11'16"31  815,97
+  4 VEN-006621 1961 GUERRINI  ALBERTO             RHODIGIUM NUOTO 200        11'46"98  780,57
+  5 TOS-002805 1960 LIBRALATO  RICCARDO           D.L.F. LIVORNO             11'50"22  777,01
+  6 TOS-019737 1958 GIANNINI  STEFANO             FIRENZE NUOTA MASTE        12'04"09  762,13
+  7 CAL-009125 1960 TALLANDINI  MARIO             CN SUB VILLA ASD           12'25"89  739,85
+  8 EMI-014216 1960 RANDI  STEFANO                NUOTO CLUB 2000            12'33"78  732,11
+  9 EMI-027193 1961 CEDRINI  MASSIMO              ESTENSE NUOTO CSI          12'39"11  726,97
+ 10 VEN-033605 1959 ZANETTI  ANDREA               NUOTATORI VENEZIANI        12'46"54  719,92
+ 11 EMI-023249 1962 MAGLIOLA  CLAUDIO             NUOTO CLUB 2000            12'50"12  716,58
+ 12 EMI-022901 1960 SASSI  FERNANDO               N MODENESI                 13'32"06  679,57
+ 13 EMI-008011 1961 BORDIGONI  ALBERTO            CN UISP BOLOGNA            13'44"08  669,66
+ 14 EMI-023034 1958 DE BELLIS  GIULIO             CN UISP BOLOGNA            13'45"67  668,37
+ 15 EMI-017635 1961 GALEOTTI  MASSIMO             NUOVO NUOTO                14'06"02  652,29
+ 16 VEN-001766 1960 GARBELLINI  DANILO            ADRIA NUOTO SSD  AR        15'16"57  602,08
+
+        800 stile libero  maschile   -  Categoria  Master 55      Tempo Base   :  9'22"80
+----------------------------------------------------------------------------------------------
+  1 TOS-006304 1956 BRAVI  MARCO ALESSANDRO       FIRENZE NUOTA MASTE         9'38"14  973,47
+  2 TOS-015976 1954 NESI  PAOLO                   C.N. MONTECATINI           12'53"60  727,51
+  3 VEN-013942 1957 CAPRARI  STEFANO              NUOTATORI VENEZIANI        13'32"33  692,82
+
+        800 stile libero  maschile   -  Categoria  Master 60      Tempo Base   :  9'55"17
+----------------------------------------------------------------------------------------------
+  1 VEN-006589 1952 GIACCHETTO  ROBERTO           CENTRO NUOTO JESOLO        15'22"33  645,29
+
+        800 stile libero  maschile   -  Categoria  Master 80      Tempo Base   : 14'13"84
+----------------------------------------------------------------------------------------------
+  1 EMI-022027 1931 GAUDIOSO  CAMILLO             CN UISP BOLOGNA            17'27"19  815,36
+Torna a inizio pagina
+
+ 
+
+200FA
+
+        200 farfalla  femminile  -  Categoria  Master 40          Tempo Base   :  2'26"24
+----------------------------------------------------------------------------------------------
+  1 EMI-005246 1968 CAMPIONE  MARIA RITA          NUOVO NUOTO                 4'22"71  556,66
+
+        200 farfalla  femminile  -  Categoria  Master 45          Tempo Base   :  2'30"10
+----------------------------------------------------------------------------------------------
+  1 EMI-009208 1964 BACCIGLIERI  ROBERTA          NUOVO NUOTO                 3'38"50  686,96
+
+        200 farfalla  femminile  -  Categoria  Master 50          Tempo Base   :  2'39"99
+----------------------------------------------------------------------------------------------
+  1 EMI-005361 1960 GIACOMETTI  ELISABETTA        NUOVO NUOTO                 3'23"51  786,15
+
+        200 farfalla  maschile   -  Categoria  Master 25          Tempo Base   :  2'02"37
+----------------------------------------------------------------------------------------------
+  1 EMI-025730 1983 DEL RIO  SIMONE               CSI NUOTO OBER FERR         3'27"35  590,16
+  2 TOS-038263 1983 CASAGLI  ALESSIO              AREZZO NUOTO ASD            3'37"54  562,52
+
+        200 farfalla  maschile   -  Categoria  Master 30          Tempo Base   :  2'04"04
+----------------------------------------------------------------------------------------------
+  1 EMI-021391 1982 FORNI  ANDREA                 NUOTO CLUB LUGO             2'59"53  690,92
+  2 PUG-001006 1979 MAZZEI  LUIGI                 ESTENSE NUOTO CSI           3'36"62  572,62
+
+        200 farfalla  maschile   -  Categoria  Master 40          Tempo Base   :  2'08"22
+----------------------------------------------------------------------------------------------
+  1 EMI-023960 1969 CORRIDONI  LUIGI              C.U.S. BOLOGNA              4'05"69  521,88
+
+        200 farfalla  maschile   -  Categoria  Master 45          Tempo Base   :  2'12"38
+----------------------------------------------------------------------------------------------
+  1 EMI-021851 1967 PIVETTI MARCO                 MODENA NUOTO                3'12"87  686,37
+  2 EMI-005131 1963 BLO  ORAZIO                   ESTENSE NUOTO CSI           3'30"16  629,90
+  3 EMI-020521 1967 MANCINO  LUIGI                ESTENSE NUOTO CSI           3'40"00  601,73
+  4 MAR-014334 1964 RANIERI  GAETANO              CO.GE.SE. S.BENEDET         3'40"33  600,83
+  5 EMI-015144 1964 CERANTO  PAOLO                C.U.S. BOLOGNA              3'52"61  569,11
+  6 EMI-024442 1964 SANGIORGI  STEFANO            MODENA NUOTO                3'56"59  559,53
+
+        200 farfalla  maschile   -  Categoria  Master 50          Tempo Base   :  2'19"48
+----------------------------------------------------------------------------------------------
+  1 EMI-012681 1962 ALBARELLI  MARCO              MASTER AICS BRESCIA         3'11"64  727,82
+  2 TOS-002805 1960 LIBRALATO  RICCARDO           D.L.F. LIVORNO              3'44"76  620,57
+  3 EMI-017837 1961 MELCHIORI  FEDERICO           ESTENSE NUOTO CSI           3'48"57  610,23
+  4 SAR-009926 1962 RAIMONDI  ANTONELLO           RARI NANTES CAGLIAR         3'53"84  596,48
+
+        200 farfalla  maschile   -  Categoria  Master 55          Tempo Base   :  2'26"54
+----------------------------------------------------------------------------------------------
+  1 VEN-006692 1953 KIRKPATRICK  MALCOLM          PADOVANUOTO S.R.L.          3'09"10  774,93
+  2 EMI-007022 1957 VECCHI  GIUSEPPE              NUOTO CLUB LUGO             3'26"53  709,53
+
+        200 farfalla  maschile   -  Categoria  Master 60          Tempo Base   :  2'38"79
+----------------------------------------------------------------------------------------------
+  1 EMI-005355 1948 FALCHIERI  EDI                NUOVO NUOTO                 3'34"83  739,14
+  2 VEN-013528 1952 BARBONI  DINO                 ADRIA NUOTO SSD  AR         3'38"62  726,33
+  3 VEN-006589 1952 GIACCHETTO  ROBERTO           CENTRO NUOTO JESOLO         4'20"55  609,44
+  4 EMI-005160 1949 POGGIOLI  ANGELO              ESTENSE NUOTO CSI           5'12"91  507,46
+Torna a inizio pagina
+
+ 
+
+200MI
+
+        200 misti  femminile  -  Categoria  Under 25               
+----------------------------------------------------------------------------------------------
+  1 FIN-084675 1990 DALLA ROSA  VALENTINA         ZEROUNO SSD ARL             3'04"81  0,00
+  2 EMI-021357 1988 ZAMBERLAN  ILARIA             FERRARANUOTO ASD            3'08"31  0,00
+  3 VEN-026137 1989 ZANCA  SARA                   ACQUAMBIENTE SSD -          4'23"24  0,00
+
+        200 misti  femminile  -  Categoria  Master 25             Tempo Base   :  2'21"73
+----------------------------------------------------------------------------------------------
+  1 EMI-013587 1987 GALLI  CARLOTTA               ESTENSE NUOTO CSI           2'59"67  788,84
+
+        200 misti  femminile  -  Categoria  Master 30             Tempo Base   :  2'21"56
+----------------------------------------------------------------------------------------------
+  1 TOS-000790 1981 FANTECHI  CLAUDIA             AMICI DEL NUOTO FIR         2'52"44  820,92
+  2 VEN-016721 1981 CREPALDI  PAMELA              ESTENSE NUOTO CSI           3'00"92  782,45
+  3 EMI-019352 1979 TOMASI  TANIA                 ESTENSE NUOTO CSI           3'06"26  760,01
+  4 VEN-020348 1978 PIZZIN  VALENTINA             NOTTOLI NUOTO SSD           3'08"91  749,35
+  5 EMI-021949 1982 TADDIA  ANNALISA              ESTENSE NUOTO CSI           3'34"62  659,58
+    EMI-013222 1979 URRACCI  BARBARA              C.U.S. BOLOGNA             Squalif.    0,00
+
+        200 misti  femminile  -  Categoria  Master 35             Tempo Base   :  2'25"50
+----------------------------------------------------------------------------------------------
+  1 EMI-013585 1975 FALZARANO  MARIA SOFIA        ESTENSE NUOTO CSI           3'40"05  661,21
+
+        200 misti  femminile  -  Categoria  Master 40             Tempo Base   :  2'26"01
+----------------------------------------------------------------------------------------------
+  1 EMI-000260 1972 BOARINI  RAFFAELLA            ESTENSE NUOTO CSI           3'14"02  752,55
+  2 EMI-019453 1968 NALESSO  MICHELA              AS MOLINELLA NUOTO          3'24"78  713,01
+
+        200 misti  femminile  -  Categoria  Master 45             Tempo Base   :  2'31"58
+----------------------------------------------------------------------------------------------
+  1 EMI-015540 1967 BEVILACQUA  CLAUDIA           ESTENSE NUOTO CSI           3'56"87  639,93
+
+        200 misti  femminile  -  Categoria  Master 50             Tempo Base   :  2'37"93
+----------------------------------------------------------------------------------------------
+  1 EMI-005361 1960 GIACOMETTI  ELISABETTA        NUOVO NUOTO                 3'18"04  797,47
+
+        200 misti  femminile  -  Categoria  Master 60             Tempo Base   :  2'59"21
+----------------------------------------------------------------------------------------------
+  1 TOS-040579 1950 COLZI  NICOLETTA              FIRENZE NUOTA MASTE         4'20"70  687,42
+
+        200 misti  maschile   -  Categoria  Under 25               
+----------------------------------------------------------------------------------------------
+  1 EMI-003651 1990 ORLANDI  GIANLUCA             NUOTO OTELLO PUTINA         2'27"58  0,00
+  2 VEN-025089 1988 RASI  ANDREA                  CONSELVE NUOTO SSD          2'53"73  0,00
+
+        200 misti  maschile   -  Categoria  Master 25             Tempo Base   :  2'04"04
+----------------------------------------------------------------------------------------------
+  1 TOS-000981 1985 ALBANO  CHRISTIAN             ZEROUNO SSD ARL             2'36"02  795,03
+  2 EMI-017393 1983 DIGNATICI  MATTEO             N MODENESI                  2'37"26  788,76
+  3 EMI-020503 1983 ROLFINI  FEDERICO             ESTENSE NUOTO CSI           3'09"72  653,81
+  4 TOS-036609 1983 BERTINI  FEDERICO             C.S.I. NUOTO PRATO          4'12"06  492,11
+    EMI-004568 1985 CARLOTTI RICCARDO             AS MOLINELLA NUOTO         Squalif.    0,00
+
+        200 misti  maschile   -  Categoria  Master 30             Tempo Base   :  2'03"91
+----------------------------------------------------------------------------------------------
+  1 VEN-002982 1979 FABRIZIO  EDOARDO             SOC. 2001 SRL - PAD         2'34"69  801,02
+
+        200 misti  maschile   -  Categoria  Master 35             Tempo Base   :  2'07"39
+----------------------------------------------------------------------------------------------
+  1 EMI-006809 1976 PELLEGRINI  MARCO             RINASCITA TEAM ROMA         2'27"67  862,67
+  2 MOL-001714 1977 IZZI  ALESSANDRO              EMMEDUE SSD                 3'05"54  686,59
+  3 EMI-016994 1977 FUCHI  DAVIDE                 RINASCITA TEAM ROMA         3'12"73  660,98
+  4 EMI-024759 1975 CORREALE  DAVIDE              ESTENSE NUOTO CSI           3'37"62  585,38
+
+        200 misti  maschile   -  Categoria  Master 40             Tempo Base   :  2'09"22
+----------------------------------------------------------------------------------------------
+  1 EMI-006795 1968 FORTUNA  ALESSANDRO           RINASCITA TEAM ROMA         2'43"66  789,56
+  2 EMI-000925 1971 LONGANESI  DANIELE            NUOTO CLUB LUGO             2'44"28  786,58
+  3 EMI-021359 1972 BARONI  LUCIO                 ESTENSE NUOTO CSI           2'51"89  751,76
+  4 VEN-026951 1971 ANDRIOLO  LEONARDO            ACQUAMBIENTE SSD -          2'55"23  737,43
+  5 EMI-024762 1970 MARCHETTI  RICCARDO           ESTENSE NUOTO CSI           3'32"13  609,15
+
+        200 misti  maschile   -  Categoria  Master 45             Tempo Base   :  2'13"30
+----------------------------------------------------------------------------------------------
+  1 EMI-020415 1965 BARNABE`  FABRIZIO            NUOTO CLUB 2000             3'06"86  713,37
+  2 EMI-027291 1964 BRANDOLA  STEFANO             ESTENSE NUOTO CSI           3'20"58  664,57
+  3 EMI-005573 1965 ROMA  ANDREA                  ESTENSE NUOTO CSI           3'28"10  640,56
+
+        200 misti  maschile   -  Categoria  Master 50             Tempo Base   :  2'18"78
+----------------------------------------------------------------------------------------------
+  1 UMB-000747 1962 PEDROTTI  ALBERTO             ASD PONTEVECCHIO SRL        2'45"03  840,94
+  2 EMI-005253 1959 FRANZONI  STEFANO             ESTENSE NUOTO CSI           2'48"71  822,59
+  3 TOS-000942 1960 SANTONI  GIAMPIERO            FIRENZE NUOTA MASTE         2'58"10  779,23
+  4 VEN-006621 1961 GUERRINI  ALBERTO             RHODIGIUM NUOTO 200         3'03"73  755,35
+  5 EMI-014408 1959 FERRARI  ANDREA               ESTENSE NUOTO CSI           3'51"56  599,33
+
+        200 misti  maschile   -  Categoria  Master 55             Tempo Base   :  2'25"41
+----------------------------------------------------------------------------------------------
+  1 EMI-022899 1957 CAVICCHIOLI  GIORGIO          N MODENESI                  3'25"94  706,08
+
+        200 misti  maschile   -  Categoria  Master 60             Tempo Base   :  2'33"07
+----------------------------------------------------------------------------------------------
+  1 EMI-027505 1951 COCCOLINI  PIETRO             SAVENA NUOTO TEAM A         3'15"20  784,17
+  2 EMI-005160 1949 POGGIOLI  ANGELO              ESTENSE NUOTO CSI           4'27"45  572,33
+Torna a inizio pagina
+
+ 
+
+200RA
+
+        200 rana  femminile  -  Categoria  Under 25                
+----------------------------------------------------------------------------------------------
+  1 EMI-026584 1989 CHIERICATI  CHIARA            NUOTO OTELLO PUTINA         3'21"05  0,00
+  2 LOM-081619 1989 VANNUCCI  ELEONORA            MASTER AICS BRESCIA         3'23"01  0,00
+  3 EMI-028209 1988 ADORNO  LAURA                 NUOTO AICS BOLOGNA          3'57"10  0,00
+  4 EMI-028110 1991 PONTIERI  GIULIA              NUOTO AICS BOLOGNA          3'57"14  0,00
+
+        200 rana  femminile  -  Categoria  Master 25              Tempo Base   :  2'35"79
+----------------------------------------------------------------------------------------------
+  1 TRE-003424 1986 MARCOLINI  BARBARA            CN UISP BOLOGNA             3'10"41  818,18
+  2 ???-000000 1987 ZWANKHUIZEN GINA ELEONORA     CIVATURS DE AKKER           4'02"08  643,55
+
+        200 rana  femminile  -  Categoria  Master 30              Tempo Base   :  2'38"51
+----------------------------------------------------------------------------------------------
+  1 EMI-001649 1980 BALDINI  MARTA                RINASCITA TEAM ROMA         2'56"17  899,76
+  2 EMI-024008 1982 BALLARIN  ILARIA              NUOVO NUOTO                 3'38"87  724,22
+
+        200 rana  femminile  -  Categoria  Master 35              Tempo Base   :  2'43"84
+----------------------------------------------------------------------------------------------
+  1 MAR-002326 1975 PUCCI  GIADA                  CENTRO NUOTO BASTIA         3'19"62  820,76
+  2 SIC-006380 1973 FERRARINI  BARBARA            CN UISP BOLOGNA             3'33"10  768,84
+  3 EMI-025887 1974 MOLINARICH  NORMA             COOPERNUOTO                 3'43"00  734,71
+  4 EMI-013585 1975 FALZARANO  MARIA SOFIA        ESTENSE NUOTO CSI           3'49"07  715,24
+  5 EMI-020605 1977 CIROLLI  CLAUDIA              AQUATIC TEAM RAVENN         3'49"24  714,71
+
+        200 rana  femminile  -  Categoria  Master 40              Tempo Base   :  2'45"39
+----------------------------------------------------------------------------------------------
+  1 EMI-015895 1970 PONTIERI  ANNALISA            CIVATURS DE AKKER           3'46"49  730,23
+
+        200 rana  femminile  -  Categoria  Master 45              Tempo Base   :  2'47"76
+----------------------------------------------------------------------------------------------
+  1 LOM-009691 1967 BOLOGNA  ELEONORA             POL. SANGIULIANESE          3'37"10  772,73
+  2 EMI-024611 1966 PEZZOTTA MANUELA              SAVENA NUOTO TEAM A         3'45"11  745,24
+  3 EMI-015540 1967 BEVILACQUA  CLAUDIA           ESTENSE NUOTO CSI           3'56"77  708,54
+  4 EMI-001090 1964 MINARDI  PAOLA                NUOTO CLUB 2000             4'04"29  686,72
+    EMI-027401 1967 CICOGNANI  AMBRA              NUOTO CLUB 2000            Ritirata    0,00
+
+        200 rana  femminile  -  Categoria  Master 50              Tempo Base   :  2'58"57
+----------------------------------------------------------------------------------------------
+  1 VEN-005551 1962 SCARSI  SILVIA                NUOTATORI VENEZIANI         3'35"26  829,55
+  2 EMI-005491 1960 NORA  ANGELA                  MODENA NUOTO                3'35"31  829,36
+  3 VEN-006676 1960 GRANA  MONICA                 CN UISP BOLOGNA             3'39"33  814,16
+
+        200 rana  femminile  -  Categoria  Master 55              Tempo Base   :  3'09"02
+----------------------------------------------------------------------------------------------
+  1 EMI-014135 1956 GUGLIELMI  GUJA               ASS.NE AMICI DEL NU         3'56"95  797,72
+
+        200 rana  femminile  -  Categoria  Master 60              Tempo Base   :  3'17"84
+----------------------------------------------------------------------------------------------
+  1 EMI-005692 1952 GUGLIELMI  MIRA               ASS.NE AMICI DEL NU         3'35"99  915,97
+
+        200 rana  maschile   -  Categoria  Under 25                
+----------------------------------------------------------------------------------------------
+  1 EMI-026316 1988 LANZONI  GIOVANNI             CIVATURS DE AKKER           3'12"22  0,00
+  2 VEN-025089 1988 RASI  ANDREA                  CONSELVE NUOTO SSD          3'21"92  0,00
+
+        200 rana  maschile   -  Categoria  Master 25              Tempo Base   :  2'18"49
+----------------------------------------------------------------------------------------------
+  1 EMI-002705 1984 RIGONI  EMANUEL               MASTER AICS BRESCIA         2'32"13  910,34
+  2 EMI-014331 1984 PANCIROLI  MATTEO             MASTER AICS BRESCIA         2'40"30  863,94
+  3 TOS-002718 1986 GIOVANNINI  LORENZO           ZEROUNO SSD ARL             2'45"35  837,56
+  4 VEN-006982 1983 FALZONI ANDREA                AS.D.VILLAGGIO FANCIULLO    2'50"82  810,74
+  5 MAR-001939 1985 SCORCELLETTI  RICCARDO        TEAM MARCHE MASTER          3'04"14  752,09
+  6 EMI-020503 1983 ROLFINI  FEDERICO             ESTENSE NUOTO CSI           3'16"01  706,55
+  7 EMI-004568 1985 CARLOTTI RICCARDO             AS MOLINELLA NUOTO          3'31"17  655,82
+  8 VEN-033268 1984 ZANETTI  MICHELE              CONSELVE NUOTO SSD          3'43"34  620,09
+    EMI-017393 1983 DIGNATICI  MATTEO             N MODENESI                 Squalif.    0,00
+
+        200 rana  maschile   -  Categoria  Master 30              Tempo Base   :  2'16"80
+----------------------------------------------------------------------------------------------
+  1 TOS-041346 1979 SALVAGNINI  NICCOLO`          C.S.I. NUOTO PRATO          2'33"22  892,83
+  2 EMI-011602 1981 MORIGI  MATTEO                AQUATIC TEAM RAVENN         2'50"62  801,78
+  3 EMI-001837 1980 BORGHI  ALESSANDRO            MODENA NUOTO                2'56"14  776,65
+  4 EMI-026023 1981 COIRO  FEDERICO               CN UISP BOLOGNA             2'57"69  769,88
+  5 EMI-028100 1980 BONETTI  CESARE               NUOTO CLUB LUGO             3'02"43  749,88
+  6 EMI-001671 1979 BARBIERI  MATTEO              MODENA NUOTO                3'02"62  749,10
+  7 VEN-033270 1980 MARIN  MATTEO                 CONSELVE NUOTO SSD          3'29"97  651,52
+
+        200 rana  maschile   -  Categoria  Master 35              Tempo Base   :  2'19"96
+----------------------------------------------------------------------------------------------
+  1 TOS-007296 1977 BONECHI  LAPO                 HIDRON SPORT SSD            2'35"94  897,52
+  2 EMI-022168 1975 MASI  THOMAS                  NUOTO AICS BOLOGNA          2'53"46  806,87
+  3 EMI-024321 1975 ORSINI  CHRISTIAN             NUOTATORI RAVENNATI         3'04"42  758,92
+  4 EMI-027875 1976 RICCO  GIACOMO FRANCESCO      C.U.S. BOLOGNA              3'19"82  700,43
+  5 MOL-000423 1973 IZZI  MASSIMILIANO            EMMEDUE SSD                 3'20"28  698,82
+  6 EMI-024760 1977 DIEGHI  TOMMASO               ESTENSE NUOTO CSI           3'23"39  688,14
+  7 CAM-020040 1973 MEMOLI  FERNANDO              N MODENESI                  3'24"78  683,47
+  8 EMI-026588 1977 GELLI  ALESSIO                NUOTO AICS BOLOGNA          3'24"97  682,83
+  9 EMI-000251 1973 LOVISON  FABRIZIO             CN UISP BOLOGNA             3'32"66  658,14
+    EMI-022516 1977 TEDESCHI  MICHELE             NUOTO AICS BOLOGNA         Squalif.    0,00
+
+        200 rana  maschile   -  Categoria  Master 40              Tempo Base   :  2'23"61
+----------------------------------------------------------------------------------------------
+  1 EMI-005427 1968 BUSIGNANI  MASSIMO            NUOTO CLUB 2000             2'40"59  894,26
+  2 EMI-004834 1968 GHETTI  RICCARDO              AQUATIC TEAM RAVENN         2'41"89  887,08
+  3 EMI-005316 1970 ANGELINI  MARCO               ESTENSE NUOTO CSI           3'05"10  775,85
+  4 EMI-024903 1970 MANTOVANI  SANDRO             ACQUA TIME                  3'10"29  754,69
+  5 EMI-021359 1972 BARONI  LUCIO                 ESTENSE NUOTO CSI           3'13"61  741,75
+  6 EMI-005255 1968 GIANNINI  LORENZO             ESTENSE NUOTO CSI           3'22"09  710,62
+  7 EMI-024762 1970 MARCHETTI  RICCARDO           ESTENSE NUOTO CSI           3'26"91  694,07
+  8 EMI-005279 1969 VINCENZI  ROSSANO             ESTENSE NUOTO CSI           3'29"51  685,46
+  9 VEN-015841 1971 ROSSETTO  MASSIMILIANO        CENTRO NUOTO JESOLO         3'36"35  663,79
+
+        200 rana  maschile   -  Categoria  Master 45              Tempo Base   :  2'29"10
+----------------------------------------------------------------------------------------------
+  1 EMI-023212 1967 VANELLI CORALLI  ALESSANDRO   AS MOLINELLA NUOTO          3'06"55  799,25
+  2 EMI-006871 1964 MAGRI  CESARE                 C.U.S. BOLOGNA              3'07"38  795,71
+  3 EMI-027291 1964 BRANDOLA  STEFANO             ESTENSE NUOTO CSI           3'23"67  732,07
+  4 EMI-018234 1963 BORDON  ALBERTO               C.U.S. BOLOGNA              3'29"50  711,69
+  5 EMI-021517 1964 MILANDRI  CLAUDIO             FANATIK TEAM FORLI          3'32"49  701,68
+  6 VEN-016078 1966 VOLTOLINA  GIORGIO            C.S. TEAM PADOVA            3'32"50  701,65
+  7 EMI-005131 1963 BLO  ORAZIO                   ESTENSE NUOTO CSI           3'37"34  686,02
+  8 EMI-020779 1966 BONTADINI  SANDRO             CN UISP BOLOGNA             3'38"41  682,66
+  9 EMI-005385 1966 TALE`  FABRIZIO               NUOVO NUOTO                 3'38"81  681,41
+ 10 EMI-019307 1967 VIGNOCCHI  ROBERTO            SEA SUB MODENA              3'38"89  681,16
+    EMI-020521 1967 MANCINO  LUIGI                ESTENSE NUOTO CSI          Squalif.    0,00
+
+        200 rana  maschile   -  Categoria  Master 50              Tempo Base   :  2'34"67
+----------------------------------------------------------------------------------------------
+  1 VEN-023277 1960 CIERI  ENRICO                 SOC. 2001 SRL - PAD         3'17"55  782,94
+  2 EMI-014216 1960 RANDI  STEFANO                NUOTO CLUB 2000             3'36"13  715,63
+  3 EMI-017837 1961 MELCHIORI  FEDERICO           ESTENSE NUOTO CSI           3'45"67  685,38
+  4 SAR-009926 1962 RAIMONDI  ANTONELLO           RARI NANTES CAGLIAR         3'46"85  681,82
+
+        200 rana  maschile   -  Categoria  Master 55              Tempo Base   :  2'42"03
+----------------------------------------------------------------------------------------------
+    LOM-000606 1954 BERRINI  CLAUDIO              CENTRO NUOTO BASTIA        Squalif.    0,00
+
+        200 rana  maschile   -  Categoria  Master 60              Tempo Base   :  2'50"39
+----------------------------------------------------------------------------------------------
+  1 MAR-002331 1948 ROMANI  GABRIELE              G.S. SAMB 87 A.S.D.         4'07"77  687,69
+
+        200 rana  maschile   -  Categoria  Master 65              Tempo Base   :  3'00"32
+----------------------------------------------------------------------------------------------
+  1 EMI-005688 1943 FORMENTI  SERGIO              ASS.NE AMICI DEL NU         3'58"68  755,49
+  2 VEN-000540 1946 D`ANGELO  GAETANO             C.S. TEAM PADOVA            4'15"26  706,42
+
+        200 rana  maschile   -  Categoria  Master 70              Tempo Base   :  3'09"13
+----------------------------------------------------------------------------------------------
+  1 EMI-023227 1939 FANTINI  GIUSEPPE             POL COMUNALE RICCIO         4'11"51  751,98
+
+        200 rana  maschile   -  Categoria  Master 80              Tempo Base   :  3'51"32
+----------------------------------------------------------------------------------------------
+  1 EMI-014487 1929 RINALDI  MARIO                NUOVO NUOTO                 5'36"78  686,86
+Torna a inizio pagina
+
+ 
+
+50SL
+
+        50 stile libero  femminile  -  Categoria  Under 25         
+----------------------------------------------------------------------------------------------
+  1 TOS-001164 1990 BRUNELLI  VERONICA            C.S.I. NUOTO PRATO          0'30"48  0,00
+  2 EMI-004586 1992 CARPANELLI  GIULIA            ABANO NUOTO                 0'32"56  0,00
+  3 EMI-005476 1989 CECCONI  SOFIA                NUOTATORI RAVENNATI         0'33"91  0,00
+  4 VEN-035365 1990 BIDO  ELENA                   ACQUAMBIENTE SSD -          0'35"40  0,00
+  5 VEN-035364 1988 CENTANIN  ERIKA               ACQUAMBIENTE SSD -          0'37"52  0,00
+  6 VEN-026137 1989 ZANCA  SARA                   ACQUAMBIENTE SSD -          0'44"25  0,00
+
+        50 stile libero  femminile  -  Categoria  Master 25       Tempo Base   :  0'26"26
+----------------------------------------------------------------------------------------------
+  1 TOS-001216 1986 MALCOTTI  GIULIA              C.S.I. NUOTO PRATO          0'28"90  908,65
+  2 MAR-001649 1985 PAOLONI  ALESSIA              VELA NUOTO ANCONA           0'29"12  901,79
+  3 TRE-003424 1986 MARCOLINI  BARBARA            CN UISP BOLOGNA             0'31"09  844,64
+  4 EMI-027545 1985 DALL`ARA  CARLOTTA            NUOVO NUOTO                 0'35"90  731,48
+
+        50 stile libero  femminile  -  Categoria  Master 30       Tempo Base   :  0'26"10
+----------------------------------------------------------------------------------------------
+  1 SIC-001749 1979 CORBINO  VALERIA              T.C. MATCH BALL ASD         0'28"71  909,09
+  2 EMI-002593 1980 PERINI  SILVIA                RINASCITA TEAM ROMA         0'29"47  885,65
+  3 MAR-001235 1982 GIORDANI  BARBARA             VELA NUOTO ANCONA           0'30"36  859,68
+  4 EMI-006903 1978 ROMAGNOLI  MAYA               RINASCITA TEAM ROMA         0'30"72  849,61
+  5 TOS-012212 1978 MANZO  ANNA                   C.S.I. NUOTO PRATO          0'33"67  775,17
+  6 EMI-013222 1979 URRACCI  BARBARA              C.U.S. BOLOGNA              0'36"43  716,44
+  7 EMI-026430 1982 VERGNANI  DANIELA             C.U.S. BOLOGNA              0'36"96  706,17
+  8 ???-000000 1979 CANARGIU ELISA                CIVATURS DE AKKER           0'43"74  596,71
+
+        50 stile libero  femminile  -  Categoria  Master 35       Tempo Base   :  0'26"76
+----------------------------------------------------------------------------------------------
+  1 MAR-002326 1975 PUCCI  GIADA                  CENTRO NUOTO BASTIA         0'33"10  808,46
+  2 SIC-006380 1973 FERRARINI  BARBARA            CN UISP BOLOGNA             0'34"50  775,65
+  3 EMI-005225 1975 VALENTINI  CRISTINA           AS MOLINELLA NUOTO          0'38"92  687,56
+  4 EMI-027586 1977 ANFOSSI  VALENTINA            CIVATURS DE AKKER           0'41"38  646,69
+  5 EMI-027760 1974 BARBIERI  VITTORIA            CIVATURS DE AKKER           0'44"70  598,66
+
+        50 stile libero  femminile  -  Categoria  Master 40       Tempo Base   :  0'26"86
+----------------------------------------------------------------------------------------------
+  1 EMI-005448 1970 SIBANI  CLAUDIA               CIVATURS DE AKKER           0'34"48  779,00
+  2 EMI-019453 1968 NALESSO  MICHELA              AS MOLINELLA NUOTO          0'35"13  764,59
+  3 EMI-015895 1970 PONTIERI  ANNALISA            CIVATURS DE AKKER           0'41"11  653,37
+
+        50 stile libero  femminile  -  Categoria  Master 45       Tempo Base   :  0'27"64
+----------------------------------------------------------------------------------------------
+  1 VEN-003997 1967 MARTINELLI  CLAUDIA           S.S. ROVIGO NUOTO           0'32"45  851,77
+  2 EMI-005199 1964 DALL'OLIO  ELENA              AS MOLINELLA NUOTO          0'34"01  812,70
+  3 VEN-012997 1965 SCHIESARI  STEFANIA           S.S. ROVIGO NUOTO           0'36"46  758,09
+  4 VEN-005435 1964 SANAVIO  EMANUELA             CENTRO NUOTO JESOLO         0'36"74  752,31
+  5 EMI-026428 1967 ACCORSI  ALBERTA              C.U.S. BOLOGNA              0'37"16  743,81
+  6 EMI-001040 1963 MATTIOLI BERTACCHINI  EMANUEL N MODENESI                  0'40"01  690,83
+  7 EMI-024621 1966 CREDI  GLORIA                 AQUATIC TEAM RAVENN         0'41"93  659,19
+  8 TOS-036606 1967 BESSI  VERONICA               C.S.I. NUOTO PRATO          0'43"08  641,60
+    LOM-009691 1967 BOLOGNA  ELEONORA             POL. SANGIULIANESE         Squalif.    0,00
+
+        50 stile libero  femminile  -  Categoria  Master 50       Tempo Base   :  0'28"58
+----------------------------------------------------------------------------------------------
+  1 EMI-016621 1962 MONTAGNANI  SIMONA            MODENA NUOTO                0'35"42  806,89
+  2 EMI-015553 1960 NEGRETTI  LUCIA               ESTENSE NUOTO CSI           0'35"48  805,52
+  3 EMI-005491 1960 NORA  ANGELA                  MODENA NUOTO                0'38"35  745,24
+
+        50 stile libero  femminile  -  Categoria  Master 55       Tempo Base   :  0'29"57
+----------------------------------------------------------------------------------------------
+  1 VEN-006445 1956 GIOLO  ROSSELLA               S.S. ROVIGO NUOTO           0'43"28  683,23
+
+        50 stile libero  maschile   -  Categoria  Under 25         
+----------------------------------------------------------------------------------------------
+  1 EMI-002483 1988 MORELLI  NICOLA               AS DELFINO 93               0'24"33  0,00
+  2 EMI-003568 1990 PEDERZOLI LORENZO             AS MOLINELLA NUOTO          0'26"90  0,00
+  3 EMI-003651 1990 ORLANDI  GIANLUCA             NUOTO OTELLO PUTINA         0'27"60  0,00
+  4 FIN-043015 1988 BOLOGNESI  FILIPPO            AS DELFINO 93               0'29"06  0,00
+  5 EMI-025833 1988 BELLEI  LUCA                  N MODENESI                  0'29"27  0,00
+  6 VEN-032447 1990 AVEZZU`  EDOARDO              ACQUAMBIENTE SSD -          0'30"42  0,00
+  7 VEN-034035 1991 FIORATTI  GIACOMO             ABANO NUOTO                 0'30"95  0,00
+  8 VEN-032446 1990 MARCHIORO  ENRICO             ACQUAMBIENTE SSD -          0'31"15  0,00
+
+        50 stile libero  maschile   -  Categoria  Master 25       Tempo Base   :  0'22"58
+----------------------------------------------------------------------------------------------
+  1 MAR-001473 1983 MARZOCCHI  DAVIDE             VELA NUOTO ANCONA           0'24"89  907,19
+  2 EMI-025823 1987 MAGRINI  FRANCESCO            AQUATIC TEAM RAVENN         0'25"77  876,21
+  3 EMI-006567 1985 PIATESI  RICCARDO             NUOTO CLUB LUGO             0'26"23  860,85
+  4 EMI-026434 1983 MARZETTI  GIAN MARCO          NUOTO CLUB LUGO             0'26"61  848,55
+  5 EMI-002705 1984 RIGONI  EMANUEL               MASTER AICS BRESCIA         0'26"79  842,85
+  6 EMI-004741 1987 BOMBARDINI  STEFANO           NUOTATORI RAVENNATI         0'27"02  835,68
+  7 MAR-001773 1987 PRINCIPI  MASSIMO             VELA NUOTO ANCONA           0'27"05  834,75
+  8 EMI-027937 1985 MORSELLI  MIRCO               ACQUA TIME                  0'27"63  817,23
+  9 TOS-028459 1986 INDACO  MAURIZIO              ZEROUNO SSD ARL             0'27"87  810,19
+ 10 EMI-004320 1987 DRAICCHIO  ANGELO             NUOVO NUOTO                 0'28"81  783,76
+ 11 VEN-026272 1985 RIVAROLLO  MARCO              ACQUAMBIENTE SSD -          0'28"88  781,86
+ 12 VEN-035367 1986 FACCIOLI  ANDREA              ACQUAMBIENTE SSD -          0'29"53  764,65
+ 13 EMI-025038 1984 BOTTONI  SIMONE               CN UISP BOLOGNA             0'30"63  737,19
+ 14 ???-000000 1986 RUBINI RICCARDO               NUOTO AICS BOLOGNA          0'31"86  708,73
+ 15 ???-000000 1986 BRANZANTI PAOLO               NUOTO AICS BOLOGNA          0'32"47  695,41
+ 16 EMI-027877 1985 SOVERINI  ANDREA              C.U.S. BOLOGNA              0'33"71  669,83
+ 17 VEN-033268 1984 ZANETTI  MICHELE              CONSELVE NUOTO SSD          0'35"48  636,41
+
+        50 stile libero  maschile   -  Categoria  Master 30       Tempo Base   :  0'22"74
+----------------------------------------------------------------------------------------------
+  1 VEN-002982 1979 FABRIZIO  EDOARDO             SOC. 2001 SRL - PAD         0'26"76  849,78
+  2 TOS-041346 1979 SALVAGNINI  NICCOLO`          C.S.I. NUOTO PRATO          0'27"41  829,62
+  3 TOS-001785 1979 BIANCHI  MIRKO                C.S.I. NUOTO PRATO          0'27"84  816,81
+  4 EMI-011602 1981 MORIGI  MATTEO                AQUATIC TEAM RAVENN         0'27"99  812,43
+  5 EMI-019062 1980 VOLPI  EMILIO                 C.U.S. BOLOGNA              0'29"25  777,44
+  6 VEN-003255 1978 LEROSE  ENRICO                ACQUAMBIENTE SSD -          0'29"42  772,94
+  7 EMI-028100 1980 BONETTI  CESARE               NUOTO CLUB LUGO             0'29"75  764,37
+  8 EMI-024786 1979 MAINARDI  ANDREA              ASD ALDEBARAN               0'31"59  719,85
+  9 EMI-021391 1982 FORNI  ANDREA                 NUOTO CLUB LUGO             0'31"77  715,77
+ 10 VEN-026271 1980 BOLDRIN  STEFANO              ACQUAMBIENTE SSD -          0'32"87  691,82
+ 11 EMI-003230 1980 STELLACCI  GIUSEPPE           C.U.S. BOLOGNA              0'33"49  679,01
+ 12 EMI-027936 1979 TESTONI  GIACOMO              ACQUA TIME                  0'33"67  675,38
+ 13 VEN-033270 1980 MARIN  MATTEO                 CONSELVE NUOTO SSD          0'35"04  648,97
+ 14 TOS-043713 1979 MILICIANI  MICHELE            AREZZO NUOTO ASD            0'39"28  578,92
+ 15 EMI-028211 1982 RAVAIOLI  MATTEO              NUOTO CLUB 2000             0'47"90  474,74
+    EMI-024099 1981 BACCHINI  MARCO               ASD ALDEBARAN              Squalif.    0,00
+
+        50 stile libero  maschile   -  Categoria  Master 35       Tempo Base   :  0'22"94
+----------------------------------------------------------------------------------------------
+  1 EMI-028181 1974 CAMPORESI  ALESSANDRO         NUOTO CLUB LUGO             0'27"67  829,06
+  2 TOS-007296 1977 BONECHI  LAPO                 HIDRON SPORT SSD            0'28"02  818,70
+  3 EMI-000922 1973 LONGANESI  CLAUDIO            NUOTATORI RAVENNATI         0'28"56  803,22
+  4 EMI-026593 1974 ARNABOLDI  CORRADO            REGGIANA NUOTO              0'29"90  767,22
+  5 EMI-020606 1976 FERROTTI  STEFANO             AQUATIC TEAM RAVENN         0'30"26  758,10
+  6 EMI-021546 1973 CASADIO  MARCO                AQUATIC TEAM RAVENN         0'30"62  749,18
+    CAM-020040 1973 MEMOLI  FERNANDO              N MODENESI                  0'30"62  749,18
+  8 MOL-001714 1977 IZZI  ALESSANDRO              EMMEDUE SSD                 0'31"14  736,67
+  9 FIN-021779 1975 PINZA  ROBERTO                NUOTATORI RAVENNATI         0'31"18  735,73
+ 10 MOL-000423 1973 IZZI  MASSIMILIANO            EMMEDUE SSD                 0'31"51  728,02
+ 11 EMI-024759 1975 CORREALE  DAVIDE              ESTENSE NUOTO CSI           0'31"53  727,56
+ 12 EMI-024321 1975 ORSINI  CHRISTIAN             NUOTATORI RAVENNATI         0'31"71  723,43
+ 13 EMI-016994 1977 FUCHI  DAVIDE                 RINASCITA TEAM ROMA         0'31"85  720,25
+ 14 LAZ-026324 1975 MAIORANA  ROBERTO             C.S.I. NUOTO PRATO          0'32"89  697,48
+ 15 TOS-032601 1975 CIONI  CHRISTIAN              FIRENZE NUOTA MASTE         0'33"03  694,52
+ 16 EMI-024760 1977 DIEGHI  TOMMASO               ESTENSE NUOTO CSI           0'33"79  678,90
+ 17 EMI-026589 1977 GUGLIELMI  DAVIDE             NUOTO AICS BOLOGNA          0'34"83  658,63
+ 18 LOM-094795 1976 ABBATTISCIANI  GIUSEPPE       NC MILANO                   0'36"40  630,22
+ 19 EMI-027129 1975 MAZZANTI  GABRIELE            NUOTO CLUB LUGO             0'38"86  590,32
+
+        50 stile libero  maschile   -  Categoria  Master 40       Tempo Base   :  0'23"70
+----------------------------------------------------------------------------------------------
+  1 EMI-005457 1970 BORSARI  ANDREA               CN UISP BOLOGNA             0'26"18  905,27
+  2 EMI-004834 1968 GHETTI  RICCARDO              AQUATIC TEAM RAVENN         0'26"39  898,07
+  3 EMI-027386 1972 FIORINI  MATTEO               CN UISP BOLOGNA             0'27"15  872,93
+  4 EMI-007623 1971 ZOBBOLI  PAOLO                ACQUA TIME                  0'27"49  862,13
+  5 EMI-005432 1972 FLORIDI  SIMONE               ACQUA TIME                  0'28"84  821,78
+    VEN-010335 1970 VIDAL  ALESSANDRO             JESOLO SPORTING CLU         0'28"84  821,78
+  7 EMI-027588 1972 MUGIONE  RICARDO              CIVATURS DE AKKER           0'29"45  804,75
+  8 PUG-006047 1968 MONACO  VINCENZO              BRINDISI NUOTO ASD          0'30"04  788,95
+  9 EMI-005316 1970 ANGELINI  MARCO               ESTENSE NUOTO CSI           0'31"03  763,78
+ 10 EMI-024903 1970 MANTOVANI  SANDRO             ACQUA TIME                  0'31"75  746,46
+ 11 EMI-005279 1969 VINCENZI  ROSSANO             ESTENSE NUOTO CSI           0'31"83  744,58
+ 12 EMI-019751 1972 CAVICCHI  LUCA                ACQUA TIME                  0'32"47  729,90
+
+        50 stile libero  maschile   -  Categoria  Master 45       Tempo Base   :  0'24"11
+----------------------------------------------------------------------------------------------
+  1 EMI-006871 1964 MAGRI  CESARE                 C.U.S. BOLOGNA              0'29"40  820,07
+  2 EMI-005385 1966 TALE`  FABRIZIO               NUOVO NUOTO                 0'31"20  772,76
+  3 EMI-005071 1967 TOSATTO  SIMONE               AQUATIC TEAM RAVENN         0'31"33  769,55
+  4 EMI-015144 1964 CERANTO  PAOLO                C.U.S. BOLOGNA              0'31"45  766,61
+  5 EMI-011132 1966 VASUMINI  ALESSANDRO          FANATIK TEAM FORLI          0'32"54  740,93
+  6 EMI-021851 1967 PIVETTI MARCO                 MODENA NUOTO                0'32"62  739,12
+  7 EMI-027170 1967 LANDI  MARCO                  AQUATIC TEAM RAVENN         0'32"78  735,51
+  8 EMI-011194 1966 FAVA  MATTEO                  AQUATIC TEAM RAVENN         0'33"37  722,51
+  9 VEN-016078 1966 VOLTOLINA  GIORGIO            C.S. TEAM PADOVA            0'33"52  719,27
+ 10 EMI-005058 1965 MARALDI  PAOLO                AQUATIC TEAM RAVENN         0'33"88  711,63
+ 11 EMI-024941 1966 ATTOLINO  MASSIMO             NUOVO NUOTO                 0'34"28  703,33
+ 12 VEN-035449 1964 BOCCHI  MAURO                 CENTRO NUOTO JESOLO         0'34"30  702,92
+ 13 EMI-005573 1965 ROMA  ANDREA                  ESTENSE NUOTO CSI           0'34"89  691,03
+
+        50 stile libero  maschile   -  Categoria  Master 50       Tempo Base   :  0'24"67
+----------------------------------------------------------------------------------------------
+  1 EMI-005253 1959 FRANZONI  STEFANO             ESTENSE NUOTO CSI           0'29"23  844,00
+  2 EMI-024174 1960 VASTA VINICIO                 AS MOLINELLA NUOTO          0'30"39  811,78
+  3 VEN-023277 1960 CIERI  ENRICO                 SOC. 2001 SRL - PAD         0'30"88  798,90
+  4 EMI-026809 1960 SERRA  ANTONIO                SEA SUB MODENA              0'32"27  764,49
+  5 TOS-017228 1962 MEUCCI  STEFANO               FIRENZE NUOTA MASTE         0'33"42  738,18
+  6 EMI-005202 1959 DOLCINI  PAOLO                AS MOLINELLA NUOTO          0'35"54  694,15
+
+        50 stile libero  maschile   -  Categoria  Master 55       Tempo Base   :  0'25"46
+----------------------------------------------------------------------------------------------
+  1 LOM-000606 1954 BERRINI  CLAUDIO              CENTRO NUOTO BASTIA         0'28"69  887,42
+  2 EMI-001246 1954 PASCOTTO  PAOLO               N MODENESI                  0'30"70  829,32
+  3 FRI-003775 1954 CARABELLESE  GIANFRANCO       TRIESTINA NUOTO US          0'31"59  805,95
+  4 EMI-022899 1957 CAVICCHIOLI  GIORGIO          N MODENESI                  0'39"46  645,21
+  5 TOS-036615 1954 STEFANELLI  UMBERTO CESARE    C.S.I. NUOTO PRATO          0'44"09  577,46
+
+        50 stile libero  maschile   -  Categoria  Master 60       Tempo Base   :  0'26"71
+----------------------------------------------------------------------------------------------
+  1 TOS-032667 1952 DIETERICH  STEFANO            D.L.F. LIVORNO              0'28"24  945,82
+  2 EMI-027505 1951 COCCOLINI  PIETRO             SAVENA NUOTO TEAM A         0'32"72  816,32
+  3 VEN-013528 1952 BARBONI  DINO                 ADRIA NUOTO SSD  AR         0'35"42  754,09
+  4 MAR-002331 1948 ROMANI  GABRIELE              G.S. SAMB 87 A.S.D.         0'40"37  661,63
+  5 EMI-005593 1948 MONTANARI  MARIO              AQUATIC TEAM RAVENN         0'40"40  661,14
+
+        50 stile libero  maschile   -  Categoria  Master 65       Tempo Base   :  0'27"16
+----------------------------------------------------------------------------------------------
+  1 EMI-009650 1944 ANFOSSI  ALESSANDRO           CIVATURS DE AKKER           0'37"20  730,11
+  2 VEN-000540 1946 D`ANGELO  GAETANO             C.S. TEAM PADOVA            0'51"70  525,34
+
+        50 stile libero  maschile   -  Categoria  Master 70       Tempo Base   :  0'29"16
+----------------------------------------------------------------------------------------------
+  1 EMI-023227 1939 FANTINI  GIUSEPPE             POL COMUNALE RICCIO         0'39"94  730,10
+  2 EMI-013624 1938 BUONO  CARLO                  NUOTO CLUB 2000             0'40"49  720,18
+Torna a inizio pagina
+
+ 
+
+MiStaff SL
+
+        mistaffetta 4x50 stile libero  -  Categoria M160-199      Tempo Base   :  1'45"29
+----------------------------------------------------------------------------------------------
+                  1  EMI-001439   MODENA NUOTO                     2'20"87  747,43
+                  2  VEN-002980   CENTRO NUOTO JESOLO              2'22"03  741,32
+                  3  EMI-006504   CIVATURS DE AKKER                2'32"95  688,39
+
+        mistaffetta 4x50 stile libero  -  Categoria M240-279      Tempo Base   :  2'02"17
+----------------------------------------------------------------------------------------------
+                  1  EMI-001438   ASS.NE AMICI DEL NU              2'43"31  748,09
+
+        mistaffetta 4x50 stile libero  -  Categoria M160-199      Tempo Base   :  1'45"29
+----------------------------------------------------------------------------------------------
+                  1  EMI-001439   MODENA NUOTO                     2'20"87  747,43
+                  2  VEN-002980   CENTRO NUOTO JESOLO              2'22"03  741,32
+                  3  EMI-006504   CIVATURS DE AKKER                2'32"95  688,39
+
+        mistaffetta 4x50 stile libero  -  Categoria M240-279      Tempo Base   :  2'02"17
+----------------------------------------------------------------------------------------------
+                  1  EMI-001438   ASS.NE AMICI DEL NU              2'43"31  748,09
+Torna a inizio pagina
+
+ 
+
+400SL
+
+        400 stile libero  femminile  -  Categoria  Under 25        
+----------------------------------------------------------------------------------------------
+  1 TOS-002185 1991 FUSI  CARLOTTA                C.U.S. BOLOGNA              5'04"91  0,00
+  2 EMI-004031 1991 GIOVANARDI  GIULIA            N MODENESI                  5'12"04  0,00
+
+        400 stile libero  femminile  -  Categoria  Master 25      Tempo Base   :  4'26"77
+----------------------------------------------------------------------------------------------
+  1 MAR-001308 1987 IPPOLITI  LUCIA               OSIMO NUOTO                 5'28"00  813,32
+  2 EMI-018768 1987 PERSIANI  SARA                CN UISP BOLOGNA             5'38"33  788,49
+  3 EMI-001958 1983 CECCOLINI  ELISA              NUOVO NUOTO                 5'49"22  763,90
+  4 VEN-028227 1983 GALLERAN  LAURA               ACQUAMBIENTE SSD -          7'26"62  597,31
+
+        400 stile libero  femminile  -  Categoria  Master 30      Tempo Base   :  4'26"19
+----------------------------------------------------------------------------------------------
+  1 EMI-025288 1981 ELMI  ELISA                   PRESIDENT BOLOGNA           4'45"90  931,06
+  2 EMI-002868 1981 TAGLIAVENTI  ELEONORA         FANUM FORTUNAE ASD          4'50"32  916,88
+  3 EMI-001816 1982 BONETTI  CHIARA               N MODENESI                  5'15"30  844,24
+  4 VEN-016721 1981 CREPALDI  PAMELA              ESTENSE NUOTO CSI           5'27"28  813,34
+  5 LOM-017916 1981 SILVESTRI  LARA               MILANO NUOTO MASTER         5'38"75  785,80
+  6 VEN-021306 1982 DE LUCA  LOREDANA             NOTTOLI NUOTO SSD           6'03"89  731,51
+  7 EMI-005981 1980 LANZONI  GESSICA              ACQUA TIME                  6'28"80  684,65
+
+        400 stile libero  femminile  -  Categoria  Master 35      Tempo Base   :  4'28"94
+----------------------------------------------------------------------------------------------
+  1 EMI-021942 1976 CAPPELLI  CINZIA              ESTENSE NUOTO CSI           5'56"41  754,58
+  2 VEN-028226 1974 VERDE  VALENTINA              ACQUAMBIENTE SSD -          7'28"00  600,31
+
+        400 stile libero  femminile  -  Categoria  Master 40      Tempo Base   :  4'33"48
+----------------------------------------------------------------------------------------------
+  1 EMI-015564 1972 MORONI  FEDERICA              POL COMUNALE RICCIO         5'38"53  807,85
+  2 EMI-026786 1972 LAGRAVINESE  STEFANIA         NUOVO NUOTO                 5'49"92  781,55
+  3 EMI-019338 1968 BULGARELLI  EMANUELA          ESTENSE NUOTO CSI           5'55"36  769,59
+
+        400 stile libero  femminile  -  Categoria  Master 45      Tempo Base   :  4'40"47
+----------------------------------------------------------------------------------------------
+  1 EMI-006772 1966 FERRONI  STEFANIA             RINASCITA TEAM ROMA         5'18"86  879,60
+  2 EMI-025075 1966 VACCHI  CLAUDIA               SAVENA NUOTO TEAM A         5'25"19  862,48
+  3 VEN-003997 1967 MARTINELLI  CLAUDIA           S.S. ROVIGO NUOTO           5'42"27  819,44
+  4 VEN-012997 1965 SCHIESARI  STEFANIA           S.S. ROVIGO NUOTO           6'28"43  722,06
+
+        400 stile libero  femminile  -  Categoria  Master 50      Tempo Base   :  4'52"58
+----------------------------------------------------------------------------------------------
+  1 EMI-005153 1960 RINALDI  DANIELA              POL COMUNALE RICCIO         5'57"33  818,79
+  2 EMI-016621 1962 MONTAGNANI  SIMONA            MODENA NUOTO                6'05"67  800,12
+
+        400 stile libero  femminile  -  Categoria  Master 55      Tempo Base   :  5'05"41
+----------------------------------------------------------------------------------------------
+  1 VEN-006445 1956 GIOLO  ROSSELLA               S.S. ROVIGO NUOTO           7'41"19  662,22
+  2 EMI-005254 1955 GIACOMETTI  ANGELA            ESTENSE NUOTO CSI           8'04"22  630,73
+
+        400 stile libero  femminile  -  Categoria  Master 70      Tempo Base   :  6'24"33
+----------------------------------------------------------------------------------------------
+  1 EMI-005189 1939 ANGELINI  GEMMA               AS MOLINELLA NUOTO         10'08"16  631,96
+
+        400 stile libero  maschile   -  Categoria  Under 25        
+----------------------------------------------------------------------------------------------
+  1 VEN-034035 1991 FIORATTI  GIACOMO             ABANO NUOTO                 5'24"02  0,00
+
+        400 stile libero  maschile   -  Categoria  Master 25      Tempo Base   :  3'58"75
+----------------------------------------------------------------------------------------------
+  1 EMI-004655 1986 BARONI  IVANO                 N MODENESI                  4'22"42  909,80
+  2 LIG-001493 1985 OTTAVIANI  ANDREA             CROCERANUOTO ASD            4'39"07  855,52
+  3 EMI-004731 1987 BOCCACCIO  PAOLO              N MODENESI                  4'47"73  829,77
+  4 EMI-025730 1983 DEL RIO  SIMONE               CSI NUOTO OBER FERR         5'52"15  677,98
+  5 TOS-038263 1983 CASAGLI  ALESSIO              AREZZO NUOTO ASD            6'00"11  662,99
+
+        400 stile libero  maschile   -  Categoria  Master 30      Tempo Base   :  4'01"42
+----------------------------------------------------------------------------------------------
+  1 EMI-023094 1978 PANCALDI  FABIO               CN UISP BOLOGNA             4'39"80  862,83
+  2 EMI-023245 1982 CAROLI  STEFANO               NUOTO CLUB 2000             4'41"91  856,37
+  3 EMI-001747 1981 BENZI  CLAUDIO                RINASCITA TEAM ROMA         4'45"67  845,10
+  4 EMI-002412 1980 MARTINELLI  NICOLA            N MODENESI                  4'47"74  839,02
+  5 VEN-005981 1981 TODESCO  CLAUDIO              AS L. NUOTO GIUNONE         4'52"41  825,62
+  6 EMI-002214 1979 GAVANELLI  CRISTIAN           NUOVO NUOTO                 4'55"31  817,51
+  7 EMI-012076 1979 BASSI  NICOLA                 AS MOLINELLA NUOTO          5'16"65  762,42
+  8 EMI-024610 1981 MEZZOFANTI  ALESSIO MARIA     SAVENA NUOTO TEAM A         5'46"46  696,82
+  9 TOS-043713 1979 MILICIANI  MICHELE            AREZZO NUOTO ASD            6'47"37  592,63
+ 10 EMI-028211 1982 RAVAIOLI  MATTEO              NUOTO CLUB 2000             8'07"07  495,66
+
+        400 stile libero  maschile   -  Categoria  Master 35      Tempo Base   :  4'03"55
+----------------------------------------------------------------------------------------------
+  1 EMI-021934 1974 PINI  MARCELLO                NUOTO CLUB 2000             4'45"77  852,26
+  2 LAZ-010804 1976 TRABALZI  RICCARDO            DDS                         4'48"14  845,25
+  3 VEN-008883 1973 HENDRIKSEN  MARTIN            PADOVANUOTO S.R.L.          4'48"89  843,05
+  4 EMI-000922 1973 LONGANESI  CLAUDIO            NUOTATORI RAVENNATI         5'09"91  785,87
+  5 TOS-032695 1973 ROSSI  SIMONE                 FIRENZE NUOTA MASTE         5'45"63  704,66
+  6 EMI-025659 1976 URBINATI  FRANCESCO           REGGIANA NUOTO              5'57"76  680,76
+  7 TOS-036574 1975 GELLI  NICOLA                 POL. AMATORI PRATO          6'03"39  670,22
+  8 EMI-026574 1974 FERLINI  DANIELE              NUOTATORI RAVENNATI         6'12"81  653,28
+  9 EMI-021574 1974 PEGGI  MARCO                  N MODENESI                  6'33"96  618,21
+
+        400 stile libero  maschile   -  Categoria  Master 40      Tempo Base   :  4'05"72
+----------------------------------------------------------------------------------------------
+  1 EMI-005457 1970 BORSARI  ANDREA               CN UISP BOLOGNA             4'27"44  918,79
+  2 EMI-002745 1972 ROTA  ALBERTO                 N MODENESI                  4'38"50  882,30
+  3 EMI-006795 1968 FORTUNA  ALESSANDRO           RINASCITA TEAM ROMA         5'00"35  818,11
+  4 VEN-026951 1971 ANDRIOLO  LEONARDO            ACQUAMBIENTE SSD -          5'21"49  764,32
+  5 EMI-005458 1970 BUSIGNANI  ALESSANDRO         NUOTO AICS BOLOGNA          5'48"50  705,08
+  6 EMI-005865 1968 CAPPELLI  MIRIO               RINASCITA TEAM ROMA         6'00"04  682,48
+  7 EMI-023960 1969 CORRIDONI  LUIGI              C.U.S. BOLOGNA              6'01"74  679,27
+
+        400 stile libero  maschile   -  Categoria  Master 45      Tempo Base   :  4'13"37
+----------------------------------------------------------------------------------------------
+  1 EMI-019837 1963 GIBELLINI  ANDREA             N MODENESI                  4'45"67  886,93
+  2 EMI-005441 1967 MASSA  MASSIMILIANO           NUOTO AICS BOLOGNA          5'13"09  809,26
+  3 EMI-023142 1967 SOLDATI  ALESSANDRO           ESTENSE NUOTO CSI           5'18"89  794,54
+  4 EMI-005452 1965 TRENTINI  LUCA                CIVATURS DE AKKER           5'44"56  735,34
+  5 EMI-008965 1963 CARUSO  GIOVANNI              NUOVO NUOTO                 6'45"84  624,31
+  6 EMI-000993 1965 MANUCRA  DAVIDE               NUOVO NUOTO                 6'56"19  608,78
+
+        400 stile libero  maschile   -  Categoria  Master 50      Tempo Base   :  4'24"36
+----------------------------------------------------------------------------------------------
+  1 EMI-005481 1962 BERTONI  STEFANO              MODENA NUOTO                4'55"42  894,86
+  2 LOM-100461 1960 FORSCH  FREDRICK FRANCIS      SPORT MANAGEMENT            5'26"43  809,85
+  3 EMI-006115 1959 CAMANGI  RAFFAELE             NUOVO NUOTO                 5'28"36  805,09
+  4 EMI-007994 1959 TRAVASONI  MASSIMO            CN UISP BOLOGNA             5'30"23  800,53
+  5 EMI-020516 1960 BETTOLI  MASSIMO              ESTENSE NUOTO CSI           5'49"84  755,66
+  6 TOS-017228 1962 MEUCCI  STEFANO               FIRENZE NUOTA MASTE         5'53"07  748,75
+  7 CAL-009125 1960 TALLANDINI  MARIO             CN SUB VILLA ASD            5'53"87  747,05
+  8 VEN-023779 1960 PERSEGHIN  RICCARDO           ACQUAMBIENTE SSD -          6'06"16  721,98
+  9 EMI-008000 1961 OSTI  ROMANO                  CN UISP BOLOGNA             6'14"77  705,39
+ 10 VEN-006731 1959 GROPPO  FABIO                 ONDABLU S.C. A RL           6'15"13  704,72
+ 11 EMI-017635 1961 GALEOTTI  MASSIMO             NUOVO NUOTO                 6'55"60  636,09
+ 12 EMI-022979 1959 SIMONE  MAURIZIO              ESTENSE NUOTO CSI           6'55"70  635,94
+ 13 VEN-001766 1960 GARBELLINI  DANILO            ADRIA NUOTO SSD  AR         7'29"85  587,66
+
+        400 stile libero  maschile   -  Categoria  Master 55      Tempo Base   :  4'32"01
+----------------------------------------------------------------------------------------------
+  1 VEN-006692 1953 KIRKPATRICK  MALCOLM          PADOVANUOTO S.R.L.          5'33"89  814,67
+  2 EMI-005380 1957 RAMPANI  VASCO                NUOVO NUOTO                 5'38"90  802,63
+
+        400 stile libero  maschile   -  Categoria  Master 60      Tempo Base   :  4'46"51
+----------------------------------------------------------------------------------------------
+  1 EMI-015617 1948 CARPI  WALTER                 REGGIANA NUOTO              7'47"34  613,07
+
+        400 stile libero  maschile   -  Categoria  Master 70      Tempo Base   :  5'27"13
+----------------------------------------------------------------------------------------------
+  1 EMI-023221 1940 AGRESTINI  PIERFRANCO         POL COMUNALE RICCIO         8'45"48  622,54
+
+        400 stile libero  maschile   -  Categoria  Master 80      Tempo Base   :  6'41"29
+----------------------------------------------------------------------------------------------
+  1 EMI-022027 1931 GAUDIOSO  CAMILLO             CN UISP BOLOGNA             8'58"13  745,71
+Torna a inizio pagina
+
+ 
+
+50FA
+
+        50 farfalla  femminile  -  Categoria  Under 25             
+----------------------------------------------------------------------------------------------
+  1 EMI-002595 1988 PERNA  ZEUDI                  N MODENESI                  0'32"29  0,00
+  2 LOM-081619 1989 VANNUCCI  ELEONORA            MASTER AICS BRESCIA         0'37"30  0,00
+  3 EMI-028110 1991 PONTIERI  GIULIA              NUOTO AICS BOLOGNA          0'42"18  0,00
+
+        50 farfalla  femminile  -  Categoria  Master 25           Tempo Base   :  0'28"08
+----------------------------------------------------------------------------------------------
+  1 TOS-001216 1986 MALCOTTI  GIULIA              C.S.I. NUOTO PRATO          0'31"69  886,08
+  2 EMI-013587 1987 GALLI  CARLOTTA               ESTENSE NUOTO CSI           0'36"25  774,62
+  3 EMI-001958 1983 CECCOLINI  ELISA              NUOVO NUOTO                 0'41"37  678,75
+  4 EMI-027545 1985 DALL`ARA  CARLOTTA            NUOVO NUOTO                 0'43"17  650,45
+  5 EMI-027546 1985 MANTOVANI  LUCREZIA           NUOVO NUOTO                 0'45"32  619,59
+  6 FIN-060063 1983 RAMBALDI  VALENTINA           NUOVO NUOTO                 0'46"36  605,69
+  7 EMI-027895 1987 LEUCCI  MARTA                 NUOTO AICS BOLOGNA          0'48"54  578,49
+  8 VEN-028227 1983 GALLERAN  LAURA               ACQUAMBIENTE SSD -          0'53"98  520,19
+
+        50 farfalla  femminile  -  Categoria  Master 30           Tempo Base   :  0'28"30
+----------------------------------------------------------------------------------------------
+  1 SIC-001749 1979 CORBINO  VALERIA              T.C. MATCH BALL ASD         0'30"28  934,61
+  2 EMI-006903 1978 ROMAGNOLI  MAYA               RINASCITA TEAM ROMA         0'34"87  811,59
+  3 EMI-019352 1979 TOMASI  TANIA                 ESTENSE NUOTO CSI           0'36"88  767,35
+  4 TOS-038859 1981 MANNORI  SUELLEN              C.S.I. NUOTO PRATO          0'40"81  693,46
+  5 EMI-021949 1982 TADDIA  ANNALISA              ESTENSE NUOTO CSI           0'44"54  635,38
+  6 EMI-026430 1982 VERGNANI  DANIELA             C.U.S. BOLOGNA              0'49"75  568,84
+
+        50 farfalla  femminile  -  Categoria  Master 35           Tempo Base   :  0'28"90
+----------------------------------------------------------------------------------------------
+  1 EMI-026810 1975 BERTAINA  BARBARA             N MODENESI                  0'36"92  782,77
+  2 EMI-020567 1975 VASSURA  LORENA               NUOTATORI RAVENNATI         0'50"35  573,98
+
+        50 farfalla  femminile  -  Categoria  Master 40           Tempo Base   :  0'29"19
+----------------------------------------------------------------------------------------------
+  1 EMI-027882 1971 MULAZZANI  LAURA              POL COMUNALE RICCIO         0'37"03  788,28
+  2 VEN-006606 1969 PANZARIN  SANDRA              CENTRO NUOTO JESOLO         0'38"83  751,74
+  3 EMI-015564 1972 MORONI  FEDERICA              POL COMUNALE RICCIO         0'39"35  741,80
+  4 EMI-015862 1971 MOLNAR  VERONICA              NUOTO CLUB 2000             0'42"94  679,79
+    EMI-019338 1968 BULGARELLI  EMANUELA          ESTENSE NUOTO CSI          Squalif.    0,00
+
+        50 farfalla  femminile  -  Categoria  Master 45           Tempo Base   :  0'29"71
+----------------------------------------------------------------------------------------------
+  1 EMI-005237 1966 PAROCCHI  SILVIA              AS MOLINELLA NUOTO          0'30"00  990,33
+  2 EMI-027731 1967 SENTIMENTI  DANIELA           NUOTO CLUB 2000             0'37"50  792,27
+  3 EMI-020228 1964 FOLLI  NICOLETTA              NUOTO CLUB 2000             0'45"17  657,74
+  4 EMI-026428 1967 ACCORSI  ALBERTA              C.U.S. BOLOGNA              0'49"09  605,21
+  5 EMI-025801 1965 BONDIOLI  FRANCESCA           N MODENESI                  0'50"15  592,42
+  6 VEN-006704 1965 CERCHIARI  SILVIA             TEAM EUGANEO                0'53"34  556,99
+
+        50 farfalla  femminile  -  Categoria  Master 50           Tempo Base   :  0'31"14
+----------------------------------------------------------------------------------------------
+  1 VEN-006076 1962 VACCARI  MONICA               PADOVANUOTO S.R.L.          0'33"22  937,39
+  2 EMI-024763 1962 NEGRETTI  CARLA               ESTENSE NUOTO CSI           0'43"92  709,02
+  3 VEN-006722 1961 PIVA  BARBARA                 TEAM EUGANEO                0'46"77  665,81
+
+        50 farfalla  femminile  -  Categoria  Master 55           Tempo Base   :  0'33"24
+----------------------------------------------------------------------------------------------
+  1 EMI-014135 1956 GUGLIELMI  GUJA               ASS.NE AMICI DEL NU         0'48"96  678,92
+
+        50 farfalla  femminile  -  Categoria  Master 60           Tempo Base   :  0'34"87
+----------------------------------------------------------------------------------------------
+  1 EMI-005692 1952 GUGLIELMI  MIRA               ASS.NE AMICI DEL NU         0'38"89  896,63
+
+        50 farfalla  maschile   -  Categoria  Under 25             
+----------------------------------------------------------------------------------------------
+  1 EMI-003509 1989 POZZETTO  FEDERICO            AS DELFINO 93               0'27"45  0,00
+  2 EMI-005893 1992 CAVALIERI  RICCARDO           N MODENESI                  0'28"37  0,00
+  3 EMI-002581 1988 PELLACANI  LUCA               N MODENESI                  0'29"77  0,00
+  4 EMI-003702 1991 NATALE  MATTEO                N MODENESI                  0'29"87  0,00
+  5 VEN-031609 1989 TON  MICHELE                  SOC. 2001 SRL - PAD         0'31"45  0,00
+  6 ABR-012311 1990 DI GREGORIO MATEO             C.U.S. BOLOGNA              0'32"74  0,00
+  7 VEN-026060 1989 FERRARESE  MARCO              ABANO NUOTO                 0'33"22  0,00
+  8 EMI-025833 1988 BELLEI  LUCA                  N MODENESI                  0'33"45  0,00
+  9 FIN-043015 1988 BOLOGNESI  FILIPPO            AS DELFINO 93               0'33"99  0,00
+ 10 VEN-032447 1990 AVEZZU`  EDOARDO              ACQUAMBIENTE SSD -          0'34"07  0,00
+ 11 EMI-025773 1988 PASTORELLO  LUCA              FERRARANUOTO ASD            0'34"43  0,00
+ 12 VEN-032446 1990 MARCHIORO  ENRICO             ACQUAMBIENTE SSD -          0'35"82  0,00
+
+        50 farfalla  maschile   -  Categoria  Master 25           Tempo Base   :  0'24"38
+----------------------------------------------------------------------------------------------
+  1 EMI-002907 1985 TORO  ALBERTO                 N MODENESI                  0'28"78  847,12
+  2 EMI-004741 1987 BOMBARDINI  STEFANO           NUOTATORI RAVENNATI         0'29"04  839,53
+  3 EMI-001663 1983 BARANZONI  MATTEO             N MODENESI                  0'29"08  838,38
+  4 EMI-025850 1987 BIOLCHINI  ANDREA             N MODENESI                  0'29"36  830,38
+  5 EMI-001613 1985 ARGENIDI  LORENZO             N MODENESI                  0'29"41  828,97
+  6 EMI-014331 1984 PANCIROLI  MATTEO             MASTER AICS BRESCIA         0'29"58  824,21
+  7 EMI-002696 1986 RICCO`  CARLO                 N MODENESI                  0'30"37  802,77
+  8 EMI-027190 1983 DONINI  ANTONIO               N MODENESI                  0'30"53  798,56
+  9 EMI-004731 1987 BOCCACCIO  PAOLO              N MODENESI                  0'30"67  794,91
+ 10 MAR-001939 1985 SCORCELLETTI  RICCARDO        TEAM MARCHE MASTER          0'31"19  781,66
+    CAM-017580 1984 SERENA  ALESSANDRO            NC MILANO                   0'31"19  781,66
+ 12 EMI-025823 1987 MAGRINI  FRANCESCO            AQUATIC TEAM RAVENN         0'31"84  765,70
+ 13 VEN-026272 1985 RIVAROLLO  MARCO              ACQUAMBIENTE SSD -          0'31"95  763,07
+ 14 EMI-028014 1985 FERHATI  ERMIR                NUOVO NUOTO                 0'32"19  757,38
+ 15 EMI-025038 1984 BOTTONI  SIMONE               CN UISP BOLOGNA             0'33"34  731,25
+ 16 VEN-035367 1986 FACCIOLI  ANDREA              ACQUAMBIENTE SSD -          0'34"74  701,78
+ 17 ???-000000 1986 BRANZANTI PAOLO               NUOTO AICS BOLOGNA          0'37"20  655,38
+ 18 ???-000000 1986 RUBINI RICCARDO               NUOTO AICS BOLOGNA          0'38"30  636,55
+ 19 EMI-027877 1985 SOVERINI  ANDREA              C.U.S. BOLOGNA              0'41"89  582,00
+
+        50 farfalla  maschile   -  Categoria  Master 30           Tempo Base   :  0'24"41
+----------------------------------------------------------------------------------------------
+  1 EMI-001747 1981 BENZI  CLAUDIO                RINASCITA TEAM ROMA         0'28"88  845,22
+  2 EMI-002412 1980 MARTINELLI  NICOLA            N MODENESI                  0'29"39  830,55
+  3 VEN-005981 1981 TODESCO  CLAUDIO              AS L. NUOTO GIUNONE         0'31"70  770,03
+  4 EMI-024099 1981 BACCHINI  MARCO               ASD ALDEBARAN               0'31"87  765,92
+  5 EMI-025039 1979 BACCHI  LUCA                  CN UISP BOLOGNA             0'32"60  748,77
+  6 EMI-019062 1980 VOLPI  EMILIO                 C.U.S. BOLOGNA              0'33"17  735,91
+  7 EMI-022933 1979 GILIOLI  DAMIANO              N MODENESI                  0'34"43  708,97
+  8 VEN-023833 1980 TROLESE  MASSIMILIANO         CSS VERONA                  0'34"70  703,46
+  9 EMI-026023 1981 COIRO  FEDERICO               CN UISP BOLOGNA             0'35"05  696,43
+ 10 VEN-037755 1980 BECCHERLE  MICHELE            ASD ARCA CASTELMASS         0'35"29  691,70
+ 11 EMI-020778 1978 VIAGGI  FILIPPO               POLIVALENTE FUTURA          0'35"54  686,83
+ 12 EMI-003230 1980 STELLACCI  GIUSEPPE           C.U.S. BOLOGNA              0'40"47  603,16
+ 13 EMI-024610 1981 MEZZOFANTI  ALESSIO MARIA     SAVENA NUOTO TEAM A         0'41"06  594,50
+ 14 EMI-028113 1980 BACCOLINI  FEDERICO           NUOTO AICS BOLOGNA          0'41"91  582,44
+ 15 EMI-021575 1978 ZAGNOLI  LORENZO              N MODENESI                  0'43"32  563,48
+    EMI-024786 1979 MAINARDI  ANDREA              ASD ALDEBARAN              Squalif.    0,00
+
+        50 farfalla  maschile   -  Categoria  Master 35           Tempo Base   :  0'24"99
+----------------------------------------------------------------------------------------------
+  1 VEN-006550 1976 VIANELLO  ALBERTO             POLISP. SC NOALE AS         0'28"10  889,32
+  2 VEN-002565 1974 ZULIANI  FILIPPO              NUOTATORI PADOVANI          0'30"54  818,27
+  3 EMI-022168 1975 MASI  THOMAS                  NUOTO AICS BOLOGNA          0'30"78  811,89
+  4 VEN-025079 1973 ORUNESU  MAURO                PADOVANUOTO S.R.L.          0'30"80  811,36
+  5 VEN-022602 1973 OSELLIERI  LUCA               PADOVANUOTO S.R.L.          0'31"71  788,08
+  6 EMI-022516 1977 TEDESCHI  MICHELE             NUOTO AICS BOLOGNA          0'33"27  751,13
+  7 EMI-025623 1974 MINGHETTI  LUCIO              NUOTATORI RAVENNATI         0'34"89  716,25
+  8 EMI-027875 1976 RICCO  GIACOMO FRANCESCO      C.U.S. BOLOGNA              0'35"44  705,14
+  9 EMI-005217 1975 MAZZINI  MIRKO                NUOVO NUOTO                 0'35"56  702,76
+ 10 EMI-026588 1977 GELLI  ALESSIO                NUOTO AICS BOLOGNA          0'36"00  694,17
+ 11 EMI-016704 1977 BARTOLACELLI  GIANLUCA        N MODENESI                  0'36"72  680,56
+ 12 EMI-026794 1973 POLASTRI  MARCO               ESTENSE NUOTO CSI           0'40"60  615,52
+ 13 TOS-036574 1975 GELLI  NICOLA                 POL. AMATORI PRATO          0'41"25  605,82
+ 14 EMI-025942 1977 FABBRI  MASSIMO               ESTENSE NUOTO CSI           0'41"36  604,21
+ 15 EMI-026574 1974 FERLINI  DANIELE              NUOTATORI RAVENNATI         0'42"75  584,56
+ 16 EMI-014320 1976 BINI  LUCA                    NUOTO CLUB LUGO             0'43"05  580,49
+ 17 LOM-094795 1976 ABBATTISCIANI  GIUSEPPE       NC MILANO                   0'48"34  516,96
+ 18 EMI-026589 1977 GUGLIELMI  DAVIDE             NUOTO AICS BOLOGNA          0'50"96  490,38
+    EMI-006980 1977 MURATORI  NICO                N MODENESI                 Squalif.    0,00
+
+        50 farfalla  maschile   -  Categoria  Master 40           Tempo Base   :  0'25"61
+----------------------------------------------------------------------------------------------
+  1 VEN-006067 1971 TURRIN  FILIPPO               ASD ARCA CASTELMASS         0'28"39  902,08
+  2 EMI-002745 1972 ROTA  ALBERTO                 N MODENESI                  0'28"69  892,65
+  3 EMI-000066 1970 BALBONI  LUCA                 POLIVALENTE FUTURA          0'28"76  890,47
+  4 VEN-006666 1968 PINTO  ALESSANDRO             PADOVANUOTO S.R.L.          0'29"72  861,71
+  5 EMI-006975 1972 TEBALDI  CHRISTIAN            N MODENESI                  0'30"25  846,61
+  6 EMI-007623 1971 ZOBBOLI  PAOLO                ACQUA TIME                  0'30"44  841,33
+  7 VEN-000052 1969 AMBROSIO  LUIGI               PADOVANUOTO S.R.L.          0'30"99  826,40
+  8 EMI-027386 1972 FIORINI  MATTEO               CN UISP BOLOGNA             0'31"64  809,42
+  9 EMI-005213 1972 MAROZZI  LORENZO              AS MOLINELLA NUOTO          0'32"48  788,49
+ 10 EMI-027588 1972 MUGIONE  RICARDO              CIVATURS DE AKKER           0'32"49  788,24
+ 11 EMI-016710 1968 MENGARELLI  ROBERTO           AQUATIC TEAM RAVENN         0'32"81  780,55
+ 12 EMI-005432 1972 FLORIDI  SIMONE               ACQUA TIME                  0'33"38  767,23
+ 13 EMI-022832 1972 TUGNOLI  SIMONE               NUOVO NUOTO                 0'33"83  757,02
+ 14 EMI-019751 1972 CAVICCHI  LUCA                ACQUA TIME                  0'33"88  755,90
+ 15 EMI-005458 1970 BUSIGNANI  ALESSANDRO         NUOTO AICS BOLOGNA          0'34"49  742,53
+ 16 EMI-020064 1969 BOVINELLI  MARCO              NUOVO NUOTO                 0'37"06  691,04
+ 17 VEN-034984 1969 PORCARI  STEFANO              CENTRO NUOTO JESOLO         0'40"04  639,61
+ 18 EMI-023216 1969 GIORGINI  GIUSEPPE            NUOVO NUOTO                 0'43"81  584,57
+
+        50 farfalla  maschile   -  Categoria  Master 45           Tempo Base   :  0'26"17
+----------------------------------------------------------------------------------------------
+  1 EMI-001308 1966 PIOLA  PAOLO                  AS MOLINELLA NUOTO          0'30"11  869,15
+  2 VEN-022854 1966 PAVANELLO  BRUNO              PADOVANUOTO S.R.L.          0'30"43  860,01
+  3 EMI-021609 1967 SALTINI  GIANCARLO            N MODENESI                  0'31"36  834,50
+  4 VEN-015258 1964 CHIARELLO  FABIO              AS MOLINELLA NUOTO          0'31"53  830,00
+  5 EMI-005452 1965 TRENTINI  LUCA                CIVATURS DE AKKER           0'35"68  733,46
+  6 EMI-015863 1967 CONTI  FRANCESCO              SAVENA NUOTO TEAM A         0'36"62  714,64
+  7 EMI-000993 1965 MANUCRA  DAVIDE               NUOVO NUOTO                 0'39"48  662,87
+  8 MAR-014334 1964 RANIERI  GAETANO              CO.GE.SE. S.BENEDET         0'40"98  638,60
+  9 EMI-008965 1963 CARUSO  GIOVANNI              NUOVO NUOTO                 0'42"36  617,80
+
+        50 farfalla  maschile   -  Categoria  Master 50           Tempo Base   :  0'26"69
+----------------------------------------------------------------------------------------------
+  1 EMI-005481 1962 BERTONI  STEFANO              MODENA NUOTO                0'31"65  843,29
+  2 EMI-007994 1959 TRAVASONI  MASSIMO            CN UISP BOLOGNA             0'32"39  824,02
+  3 EMI-024174 1960 VASTA VINICIO                 AS MOLINELLA NUOTO          0'34"09  782,93
+  4 EMI-008000 1961 OSTI  ROMANO                  CN UISP BOLOGNA             0'36"85  724,29
+  5 EMI-006115 1959 CAMANGI  RAFFAELE             NUOVO NUOTO                 0'36"87  723,89
+  6 EMI-014408 1959 FERRARI  ANDREA               ESTENSE NUOTO CSI           0'48"06  555,35
+  7 VEN-035207 1962 VALLESE  CRISTIANO            CENTRO NUOTO JESOLO         0'50"86  524,77
+
+        50 farfalla  maschile   -  Categoria  Master 55           Tempo Base   :  0'27"90
+----------------------------------------------------------------------------------------------
+  1 EMI-005380 1957 RAMPANI  VASCO                NUOVO NUOTO                 0'34"92  798,97
+  2 FRI-003775 1954 CARABELLESE  GIANFRANCO       TRIESTINA NUOTO US          0'35"57  784,37
+
+        50 farfalla  maschile   -  Categoria  Master 60           Tempo Base   :  0'29"14
+----------------------------------------------------------------------------------------------
+  1 TOS-032667 1952 DIETERICH  STEFANO            D.L.F. LIVORNO              0'30"90  943,04
+  2 TOS-006319 1949 PUGGELLI  SERGIO              C.S.I. NUOTO PRATO          0'40"16  725,60
+
+        50 farfalla  maschile   -  Categoria  Master 65           Tempo Base   :  0'30"08
+----------------------------------------------------------------------------------------------
+  1 EMI-005688 1943 FORMENTI  SERGIO              ASS.NE AMICI DEL NU         0'42"17  713,30
+Torna a inizio pagina
+
+ 
+
+100MI
+
+        100 misti  femminile  -  Categoria  Under 25               
+----------------------------------------------------------------------------------------------
+  1 TOS-002185 1991 FUSI  CARLOTTA                C.U.S. BOLOGNA              1'12"68  0,00
+  2 EMI-002595 1988 PERNA  ZEUDI                  N MODENESI                  1'14"41  0,00
+  3 TOS-001164 1990 BRUNELLI  VERONICA            C.S.I. NUOTO PRATO          1'16"32  0,00
+  4 EMI-004031 1991 GIOVANARDI  GIULIA            N MODENESI                  1'19"84  0,00
+  5 EMI-004586 1992 CARPANELLI  GIULIA            ABANO NUOTO                 1'21"72  0,00
+  6 EMI-005476 1989 CECCONI  SOFIA                NUOTATORI RAVENNATI         1'25"10  0,00
+  7 VEN-035365 1990 BIDO  ELENA                   ACQUAMBIENTE SSD -          1'35"74  0,00
+  8 VEN-035364 1988 CENTANIN  ERIKA               ACQUAMBIENTE SSD -          1'41"32  0,00
+
+        100 misti  femminile  -  Categoria  Master 25             Tempo Base   :  1'05"40
+----------------------------------------------------------------------------------------------
+  1 EMI-027546 1985 MANTOVANI  LUCREZIA           NUOVO NUOTO                 1'38"48  664,09
+  2 EMI-027895 1987 LEUCCI  MARTA                 NUOTO AICS BOLOGNA          1'45"98  617,10
+
+        100 misti  femminile  -  Categoria  Master 30             Tempo Base   :  1'05"11
+----------------------------------------------------------------------------------------------
+  1 EMI-001816 1982 BONETTI  CHIARA               N MODENESI                  1'19"88  815,10
+  2 VEN-020348 1978 PIZZIN  VALENTINA             NOTTOLI NUOTO SSD           1'23"36  781,07
+
+        100 misti  femminile  -  Categoria  Master 35             Tempo Base   :  1'06"87
+----------------------------------------------------------------------------------------------
+  1 EMI-026810 1975 BERTAINA  BARBARA             N MODENESI                  1'22"37  811,82
+  2 EMI-001334 1977 POGGIOLI  MORENA              N MODENESI                  1'32"93  719,57
+  3 VEN-028226 1974 VERDE  VALENTINA              ACQUAMBIENTE SSD -          1'49"37  611,41
+  4 EMI-020567 1975 VASSURA  LORENA               NUOTATORI RAVENNATI         1'51"35  600,54
+
+        100 misti  femminile  -  Categoria  Master 40             Tempo Base   :  1'08"06
+----------------------------------------------------------------------------------------------
+  1 EMI-027569 1970 MUSSIO  LUCIA                 AS MOLINELLA NUOTO          1'21"06  839,62
+  2 EMI-027882 1971 MULAZZANI  LAURA              POL COMUNALE RICCIO         1'22"87  821,29
+  3 EMI-005592 1968 CASILIO  DORIANA              AQUATIC TEAM RAVENN         1'24"22  808,12
+  4 EMI-000260 1972 BOARINI  RAFFAELLA            ESTENSE NUOTO CSI           1'27"42  778,54
+  5 VEN-006606 1969 PANZARIN  SANDRA              CENTRO NUOTO JESOLO         1'28"99  764,81
+  6 EMI-005448 1970 SIBANI  CLAUDIA               CIVATURS DE AKKER           1'32"13  738,74
+  7 LOM-018652 1969 GOTTI  ALESSANDRA             NUOTO CLUB LUGO             1'32"52  735,62
+  8 EMI-015862 1971 MOLNAR  VERONICA              NUOTO CLUB 2000             1'35"51  712,60
+  9 EMI-016646 1968 BIANCIARDI  LARA              NUOVO NUOTO                 1'35"55  712,30
+ 10 TOS-029617 1969 CANDI  SIMONA                 C.S.I. NUOTO PRATO          1'36"17  707,71
+
+        100 misti  femminile  -  Categoria  Master 45             Tempo Base   :  1'09"19
+----------------------------------------------------------------------------------------------
+  1 EMI-005237 1966 PAROCCHI  SILVIA              AS MOLINELLA NUOTO          1'09"54  994,97
+  2 VEN-005435 1964 SANAVIO  EMANUELA             CENTRO NUOTO JESOLO         1'35"71  722,91
+  3 EMI-020228 1964 FOLLI  NICOLETTA              NUOTO CLUB 2000             1'42"11  677,60
+  4 VEN-006704 1965 CERCHIARI  SILVIA             TEAM EUGANEO                1'49"01  634,71
+  5 EMI-025801 1965 BONDIOLI  FRANCESCA           N MODENESI                  1'52"05  617,49
+    EMI-027731 1967 SENTIMENTI  DANIELA           NUOTO CLUB 2000            Squalif.    0,00
+
+        100 misti  femminile  -  Categoria  Master 50             Tempo Base   :  1'12"94
+----------------------------------------------------------------------------------------------
+  1 VEN-006076 1962 VACCARI  MONICA               PADOVANUOTO S.R.L.          1'19"86  913,35
+  2 EMI-015553 1960 NEGRETTI  LUCIA               ESTENSE NUOTO CSI           1'35"10  766,98
+  3 EMI-005153 1960 RINALDI  DANIELA              POL COMUNALE RICCIO         1'36"08  759,16
+  4 VEN-006676 1960 GRANA  MONICA                 CN UISP BOLOGNA             1'38"72  738,86
+  5 EMI-024763 1962 NEGRETTI  CARLA               ESTENSE NUOTO CSI           1'44"73  696,46
+    VEN-006722 1961 PIVA  BARBARA                 TEAM EUGANEO               Squalif.    0,00
+
+        100 misti  maschile   -  Categoria  Under 25               
+----------------------------------------------------------------------------------------------
+  1 EMI-005893 1992 CAVALIERI  RICCARDO           N MODENESI                  1'03"94  0,00
+  2 EMI-002581 1988 PELLACANI  LUCA               N MODENESI                  1'10"02  0,00
+  3 EMI-003702 1991 NATALE  MATTEO                N MODENESI                  1'12"73  0,00
+  4 VEN-026060 1989 FERRARESE  MARCO              ABANO NUOTO                 1'16"13  0,00
+  5 ABR-012311 1990 DI GREGORIO MATEO             C.U.S. BOLOGNA              1'17"34  0,00
+  6 VEN-031609 1989 TON  MICHELE                  SOC. 2001 SRL - PAD         1'17"78  0,00
+  7 EMI-025773 1988 PASTORELLO  LUCA              FERRARANUOTO ASD            1'25"87  0,00
+
+        100 misti  maschile   -  Categoria  Master 25             Tempo Base   :  0'56"53
+----------------------------------------------------------------------------------------------
+  1 EMI-004655 1986 BARONI  IVANO                 N MODENESI                  1'07"61  836,12
+  2 EMI-001663 1983 BARANZONI  MATTEO             N MODENESI                  1'07"78  834,02
+  3 EMI-001613 1985 ARGENIDI  LORENZO             N MODENESI                  1'07"79  833,90
+  4 EMI-025850 1987 BIOLCHINI  ANDREA             N MODENESI                  1'08"50  825,26
+  5 EMI-027190 1983 DONINI  ANTONIO               N MODENESI                  1'09"79  810,00
+  6 EMI-002907 1985 TORO  ALBERTO                 N MODENESI                  1'10"04  807,11
+  7 EMI-002696 1986 RICCO`  CARLO                 N MODENESI                  1'11"47  790,96
+  8 EMI-028014 1985 FERHATI  ERMIR                NUOVO NUOTO                 1'20"19  704,95
+  9 SIC-027074 1987 MOCCIARO  EMANUELE            POL.MIMMO FERRITO S         1'24"56  668,52
+
+        100 misti  maschile   -  Categoria  Master 30             Tempo Base   :  0'56"67
+----------------------------------------------------------------------------------------------
+  1 EMI-023094 1978 PANCALDI  FABIO               CN UISP BOLOGNA             1'10"82  800,20
+  2 EMI-002214 1979 GAVANELLI  CRISTIAN           NUOVO NUOTO                 1'12"40  782,73
+  3 EMI-025039 1979 BACCHI  LUCA                  CN UISP BOLOGNA             1'15"83  747,33
+  4 VEN-023833 1980 TROLESE  MASSIMILIANO         CSS VERONA                  1'16"15  744,19
+  5 VEN-003255 1978 LEROSE  ENRICO                ACQUAMBIENTE SSD -          1'16"30  742,73
+  6 EMI-020748 1979 DECIMO  GIUSEPPE              CIVATURS DE AKKER           1'17"41  732,08
+  7 EMI-022933 1979 GILIOLI  DAMIANO              N MODENESI                  1'20"86  700,84
+  8 VEN-026271 1980 BOLDRIN  STEFANO              ACQUAMBIENTE SSD -          1'29"90  630,37
+  9 EMI-021575 1978 ZAGNOLI  LORENZO              N MODENESI                  1'31"53  619,14
+
+        100 misti  maschile   -  Categoria  Master 35             Tempo Base   :  0'58"02
+----------------------------------------------------------------------------------------------
+  1 VEN-006550 1976 VIANELLO  ALBERTO             POLISP. SC NOALE AS         1'05"46  886,34
+  2 VEN-008883 1973 HENDRIKSEN  MARTIN            PADOVANUOTO S.R.L.          1'08"72  844,30
+  3 EMI-006980 1977 MURATORI  NICO                N MODENESI                  1'11"75  808,64
+  4 VEN-022602 1973 OSELLIERI  LUCA               PADOVANUOTO S.R.L.          1'13"53  789,07
+  5 VEN-002565 1974 ZULIANI  FILIPPO              NUOTATORI PADOVANI          1'14"04  783,63
+  6 VEN-025079 1973 ORUNESU  MAURO                PADOVANUOTO S.R.L.          1'14"05  783,52
+  7 EMI-025623 1974 MINGHETTI  LUCIO              NUOTATORI RAVENNATI         1'19"43  730,45
+  8 FIN-021779 1975 PINZA  ROBERTO                NUOTATORI RAVENNATI         1'21"40  712,78
+  9 TOS-032601 1975 CIONI  CHRISTIAN              FIRENZE NUOTA MASTE         1'24"94  683,07
+ 10 EMI-026794 1973 POLASTRI  MARCO               ESTENSE NUOTO CSI           1'30"70  639,69
+ 11 EMI-000251 1973 LOVISON  FABRIZIO             CN UISP BOLOGNA             1'30"84  638,71
+ 12 EMI-025942 1977 FABBRI  MASSIMO               ESTENSE NUOTO CSI           1'32"65  626,23
+ 13 EMI-014320 1976 BINI  LUCA                    NUOTO CLUB LUGO             1'34"65  613,00
+ 14 EMI-021574 1974 PEGGI  MARCO                  N MODENESI                  1'37"79  593,31
+    TOS-032695 1973 ROSSI  SIMONE                 FIRENZE NUOTA MASTE        Squalif.    0,00
+
+        100 misti  maschile   -  Categoria  Master 40             Tempo Base   :  0'59"24
+----------------------------------------------------------------------------------------------
+  1 EMI-000127 1968 BALDINI  CRISTIANO            AQUATIC TEAM RAVENN         1'05"38  906,09
+  2 VEN-006067 1971 TURRIN  FILIPPO               ASD ARCA CASTELMASS         1'08"52  864,57
+  3 EMI-006975 1972 TEBALDI  CHRISTIAN            N MODENESI                  1'10"66  838,38
+  4 VEN-006666 1968 PINTO  ALESSANDRO             PADOVANUOTO S.R.L.          1'10"84  836,25
+  5 VEN-010335 1970 VIDAL  ALESSANDRO             JESOLO SPORTING CLU         1'14"30  797,31
+  6 EMI-020064 1969 BOVINELLI  MARCO              NUOVO NUOTO                 1'20"64  734,62
+  7 PUG-006047 1968 MONACO  VINCENZO              BRINDISI NUOTO ASD          1'20"77  733,44
+  8 EMI-022832 1972 TUGNOLI  SIMONE               NUOVO NUOTO                 1'21"88  723,50
+  9 EMI-005255 1968 GIANNINI  LORENZO             ESTENSE NUOTO CSI           1'22"33  719,54
+ 10 EMI-005865 1968 CAPPELLI  MIRIO               RINASCITA TEAM ROMA         1'27"62  676,10
+ 11 VEN-034984 1969 PORCARI  STEFANO              CENTRO NUOTO JESOLO         1'33"45  633,92
+ 12 VEN-015841 1971 ROSSETTO  MASSIMILIANO        CENTRO NUOTO JESOLO         1'38"76  599,84
+ 13 EMI-023216 1969 GIORGINI  GIUSEPPE            NUOVO NUOTO                 1'40"04  592,16
+
+        100 misti  maschile   -  Categoria  Master 45             Tempo Base   :  1'00"58
+----------------------------------------------------------------------------------------------
+  1 EMI-021609 1967 SALTINI  GIANCARLO            N MODENESI                  1'10"94  853,96
+  2 VEN-022854 1966 PAVANELLO  BRUNO              PADOVANUOTO S.R.L.          1'10"99  853,36
+  3 VEN-015258 1964 CHIARELLO  FABIO              AS MOLINELLA NUOTO          1'13"50  824,22
+  4 EMI-023142 1967 SOLDATI  ALESSANDRO           ESTENSE NUOTO CSI           1'18"40  772,70
+  5 EMI-000445 1963 CEDOLIN  SERGIO               FERRARANUOTO ASD            1'19"10  765,87
+  6 EMI-015863 1967 CONTI  FRANCESCO              SAVENA NUOTO TEAM A         1'22"81  731,55
+  7 EMI-026207 1964 FORTINI  GIANLUCA             ACQUA TIME                  1'27"43  692,90
+  8 EMI-019307 1967 VIGNOCCHI  ROBERTO            SEA SUB MODENA              1'29"85  674,23
+  9 EMI-000890 1966 LANZONI  MARCO                NUOTO CLUB LUGO             1'33"79  645,91
+ 10 VEN-035449 1964 BOCCHI  MAURO                 CENTRO NUOTO JESOLO         1'42"38  591,72
+
+        100 misti  maschile   -  Categoria  Master 50             Tempo Base   :  1'02"96
+----------------------------------------------------------------------------------------------
+  1 EMI-020516 1960 BETTOLI  MASSIMO              ESTENSE NUOTO CSI           1'24"91  741,49
+  2 EMI-026809 1960 SERRA  ANTONIO                SEA SUB MODENA              1'31"30  689,59
+  3 VEN-006731 1959 GROPPO  FABIO                 ONDABLU S.C. A RL           1'31"32  689,44
+  4 EMI-023034 1958 DE BELLIS  GIULIO             CN UISP BOLOGNA             1'33"99  669,86
+  5 VEN-023779 1960 PERSEGHIN  RICCARDO           ACQUAMBIENTE SSD -          1'35"45  659,61
+  6 VEN-035207 1962 VALLESE  CRISTIANO            CENTRO NUOTO JESOLO         1'48"85  578,41
+
+        100 misti  maschile   -  Categoria  Master 60             Tempo Base   :  1'08"83
+----------------------------------------------------------------------------------------------
+  1 EMI-015617 1948 CARPI  WALTER                 REGGIANA NUOTO              2'06"81  542,78
+
+        100 misti  maschile   -  Categoria  Master 70             Tempo Base   :  1'17"42
+----------------------------------------------------------------------------------------------
+  1 EMI-023221 1940 AGRESTINI  PIERFRANCO         POL COMUNALE RICCIO         2'18"81  557,74
+Torna a inizio pagina
+
+ 
+
+Statistiche
+
+                Numero di società iscritte                               107     
+                Società che hanno fatto iscrizioni online                104     
+                Numero di società partecipanti                            99     
+
+                Numero totale di atleti iscritti                         702     
+                Numero di atleti under 25 iscritti                        53     
+                Percentuale di atleti under 25 iscritti                 7,55 %   
+                Numero di atleti iscritti online                         679     
+                Percentuale di atleti iscritti online                  96,72 %   
+
+                Numero di atleti partecipanti                            630     
+                Numero di atleti assenti                                  72     
+                Percentuale di atleti assenti                          10,26 %   
+                Numero di atleti assenti ad una gara                      51     
+
+                Numero totale di iscrizioni alle gare                   1263     
+                Numero di iscrizioni alle gare di atleti under 25         95     
+                Percentuale di gare di atleti under 25                  7,52 %   
+
+                Numero totale di gare disputate                         1091     
+                Numero di gare disputate da atleti under 25               79     
+
+                Numero di assenze dalle gare                             172     
+                Percentuale di assenze                                 13,62 %   
+                Numero di squalifiche                                     25     
+                Numero di ritiri                                           3     
+
+
+
+                                                        Femmine    Maschi    Totale
+
+      1   CAL-000010  CN SUB VILLA ASD                       0         1         1
+      2   EMI-000248  NUOVO NUOTO                           15        25        40
+      3   EMI-001407  PRESIDENT BOLOGNA                      1         0         1
+      4   EMI-001408  C.U.S. BOLOGNA                         5        10        15
+      5   EMI-001426  POL COMUNALE RICCIO                    5         5        10
+      6   EMI-001427  COOPERNUOTO                            5         5        10
+      7   EMI-001428  REGGIANA NUOTO                         0         3         3
+      8   EMI-001436  AS MOLINELLA NUOTO                     8         6        14
+      9   EMI-001438  ASS.NE AMICI DEL NU                    2         1         3
+     10   EMI-001439  MODENA NUOTO                           2         5         7
+     11   EMI-001442  AS DELFINO 93                          0         3         3
+     12   EMI-001443  NUOTO OTELLO PUTINA                    2         3         5
+     13   EMI-001444  ESTENSE NUOTO CSI                     22        48        70
+     14   EMI-001449  NUOTO CLUB LUGO                        1        10        11
+     15   EMI-001451  RINASCITA TEAM ROMA                    6        11        17
+     16   EMI-001452  AQUATIC TEAM RAVENN                    4        13        17
+     17   EMI-001454  CSI NUOTO OBER FERR                    2         6         8
+     18   EMI-001455  FANATIK TEAM FORLI                     2         6         8
+     19   EMI-001457  NUOTO CLUB 2000                       11        18        29
+     20   EMI-001481  N MODENESI                            12        38        50
+     21   EMI-001483  POLIVALENTE FUTURA                     0         4         4
+     22   EMI-001489  ACQUA TIME                             2        13        15
+     23   EMI-001490  NUOTATORI RAVENNATI                    2         7         9
+     24   EMI-003946  CN UISP BOLOGNA                       11        28        39
+     25   EMI-006504  CIVATURS DE AKKER                      9        10        19
+     26   EMI-013567  NUOTO CENTER FORLI`                    0         1         1
+     27   EMI-013628  NUOTO AICS BOLOGNA                     8        13        21
+     28   EMI-020974  FERRARANUOTO ASD                       1         4         5
+     29   EMI-021925  AS.D.VILLAGGIO FANCIULLO               0         1         1
+     30   EMI-022153  SAVENA NUOTO TEAM A                    3         4         7
+     31   EMI-023107  ASD ALDEBARAN                          0         4         4
+     32   EMI-025587  SEA SUB MODENA                         2         2         4
+     33   FRI-000007  TRIESTINA NUOTO US                     0         1         1
+     34   LAZ-000821  CAN ANIENE                             0         1         1
+     35   LAZ-000831  AQUATIC FORUM                          0         1         1
+     36   LAZ-000837  RARI NANTES APRILIA                    0         3         3
+     37   LAZ-000899  FLAMINIO SPORTING C                    0         2         2
+     38   LAZ-040054  GRUPPO PESCE                           0         1         1
+     39   LIG-016608  CROCERANUOTO ASD                       0         1         1
+     40   LOM-009335  MASTER AICS BRESCIA                    4        10        14
+     41   LOM-009395  OSTIGLIA NUOTO ASD                     1         0         1
+     42   LOM-009417  ASA  CINISELLO                         0         1         1
+     43   LOM-009429  NC MILANO                              0         3         3
+     44   LOM-009437  DDS                                    0         2         2
+     45   LOM-033537  MILANO NUOTO MASTER                    1         0         1
+     46   LOM-037241  SPORT MANAGEMENT                       0         1         1
+     47   LOM-091868  TIBIDABO SSD                           0         1         1
+     48   MAR-000068  VELA NUOTO ANCONA                      2         2         4
+     49   MAR-000117  OSIMO NUOTO                            1         0         1
+     50   MAR-000329  CO.GE.SE. S.BENEDET                    0         1         1
+     51   MAR-000393  G.S. SAMB 87 A.S.D.                    0         1         1
+     52   MAR-000403  POOL N SAMBENEDETTE                    2         2         4
+     53   MAR-008579  FANUM FORTUNAE ASD                     1         0         1
+     54   MAR-013981  TEAM MARCHE MASTER                     0         1         1
+     55   MOL-003263  EMMEDUE SSD                            0         2         2
+     56   PIE-000903  DERTHONA NUOTO                         1         0         1
+     57   PIE-016384  AQUATICA TORINO SSD                    0         1         1
+     58   PUG-000015  BRINDISI NUOTO ASD                     0         1         1
+     59   SAR-000001  RARI NANTES CAGLIAR                    0         1         1
+     60   SIC-003152  T.C. MATCH BALL ASD                    1         0         1
+     61   SIC-020090  POL.MIMMO FERRITO S                    0         1         1
+     62   TOS-000421  C.N. MONTECATINI                       0         2         2
+     63   TOS-000538  D.L.F. LIVORNO                         0         2         2
+     64   TOS-000767  SPORTIVA NUOTO GROS                    0         1         1
+     65   TOS-001468  BENFICA PALLANUOTO                     0         1         1
+     66   TOS-001678  POL. SANGIULIANESE                     1         1         2
+     67   TOS-002471  AREZZO NUOTO ASD                       0         2         2
+     68   TOS-004483  VERSILIANUOTO                          1         1         2
+     69   TOS-017267  C.S.I. NUOTO PRATO                    10        13        23
+     70   TOS-018570  ASS.NUOTO LUCCA CAP                    1         1         2
+     71   TOS-030181  HIDRON SPORT SSD                       0         1         1
+     72   TOS-030471  NUOTO LIVORNO SSD                      3         2         5
+     73   TOS-030764  ZEROUNO SSD ARL                        1         4         5
+     74   TOS-032331  POL. AMATORI PRATO                     0         1         1
+     75   TOS-034786  AMICI DEL NUOTO FIR                    3         1         4
+     76   TOS-039376  FIRENZE NUOTA MASTE                    5        10        15
+     77   UMB-000290  ASD PONTEVECCHIO SRL                   0         1         1
+     78   UMB-004046  CENTRO NUOTO BASTIA                    1         1         2
+     79   VEN-002116  ONDABLU S.C. A RL                      0         1         1
+     80   VEN-002124  NUOTATORI PADOVANI                     0         1         1
+     81   VEN-002135  SOC. 2001 SRL - PAD                    0         3         3
+     82   VEN-002139  PADOVANUOTO S.R.L.                     1         9        10
+     83   VEN-002171  C.S. TEAM PADOVA                       0         3         3
+     84   VEN-002180  S.S. ROVIGO NUOTO                      3         2         5
+     85   VEN-002181  ADRIA NUOTO SSD  AR                    7         8        15
+     86   VEN-002185  NOTTOLI NUOTO SSD                      2         0         2
+     87   VEN-002354  NATATORIUM TREVISO                     2         4         6
+     88   VEN-002880  RIVIERA NUOTO VENET                    0         1         1
+     89   VEN-002892  NUOTATORI VENEZIANI                    3         4         7
+     90   VEN-002894  RARI NANTES VENEZIA                    0         2         2
+     91   VEN-002980  CENTRO NUOTO JESOLO                    2         5         7
+     92   VEN-004572  AS L. NUOTO GIUNONE                    0         1         1
+     93   VEN-004655  SPORT MANAGEMENT SR                    0         1         1
+     94   VEN-004725  NUOTO VICENZA LIB A                    0         1         1
+     95   VEN-009897  CSS VERONA                             0         1         1
+     96   VEN-013175  ABANO NUOTO                            5         4         9
+     97   VEN-020258  DUEMILA SSD A RL                       0         1         1
+     98   VEN-022588  ACQUAMBIENTE SSD -                     5        10        15
+     99   VEN-023561  POLISP. SC NOALE AS                    0         1         1
+    100   VEN-025396  CONSELVE NUOTO SSD                     0         3         3
+    101   VEN-025658  PISCINE DI STRA E V                    0         1         1
+    102   VEN-026160  ASD ARCA CASTELMASS                    3         3         6
+    103   VEN-028306  RHODIGIUM NUOTO 200                    0         1         1
+    104   VEN-029044  SIS NUOTO VERONA AS                    1         0         1
+    105   VEN-029059  TEAM EUGANEO                           4         4         8
+    106   VEN-035063  CITTÀ SPORT VICENZA                    0         1         1
+    107   VEN-035371  JESOLO SPORTING CLU                    0         1         1
+
+              TOTALE                                       221       471       692

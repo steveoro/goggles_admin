@@ -19,7 +19,7 @@ require_relative '../services/data_import_entity_committer'
 
 =end
 class TeamAnalysisResultProcessor
-  include SqlConverter
+  include SqlConvertable
 
   attr_reader :logger, :flash, :sql_executable_log, :process_log,
               :committed_rows

@@ -26,7 +26,7 @@
 
 =end
 class TeamMerger
-  include SqlConverter
+  include SqlConvertable
 
   # Creates a new instance
   #

@@ -177,7 +177,7 @@ class DataImport::HomeController < ApplicationController
           ) and return
         else
           redirect_to(
-            di_step2_checkout_path(
+            di_step2_checkout_get_path(
               id: data_import_session_id,
               force_meeting_creation: force_missing_meeting_creation ? '1' : '0',
               force_team_or_swimmer_creation: '1' # After the Team analysis, we can serialize the missing teams (WAS: force_team_or_swimmer_creation     ? '1' : '0' )
@@ -309,7 +309,7 @@ class DataImport::HomeController < ApplicationController
         data_import_session.save!
         DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id ).delete_all
         redirect_to(
-          di_step2_checkout_path(
+          di_step2_checkout_get_path(
             id: data_import_session_id,
             force_meeting_creation: force_missing_meeting_creation ? '1' : '0',
             force_team_or_swimmer_creation: '1' # After all the analysis phases, we can serialize any missing team (WAS: force_team_or_swimmer_creation ? '1' : '0' )

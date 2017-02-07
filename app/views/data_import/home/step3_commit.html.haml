@@ -2,9 +2,13 @@
   = content_tag( :li, link_to(t('admin_import.step_1'), di_step1_status_path()), class: 'active' )
   = content_tag( :li, link_to(t('admin_import.step_2'), '#'), class: 'disabled' )
   = content_tag( :li, link_to(t('admin_import.step_3'), '#'), class: 'active' )
+
+.col-xs-12.goggles-category-gap
+
 %p.text-center.lead
   = "#{I18n.t('admin_import.import_event_results_title')}"
   \: (3/3) #{"#{I18n.t(:result_log)}"}
-%div{:align => "left"}
-  %p
+
+.text-left
+  %p/
   %pre= @import_log

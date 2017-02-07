@@ -7,7 +7,7 @@
 
 = DataImportEntityBuilder
 
-  - Goggles framework vers.:  6.075
+  - Goggles framework vers.:  6.077
   - author: Steve A.
 
   Service/DSL implementation oriented to build data-import entities, required
@@ -93,7 +93,7 @@
 
 =end
 class DataImportEntityBuilder
-  include SqlConverter
+  include SqlConvertable
 
   # Common basic scope builder
   class BasicScope
@@ -261,13 +261,23 @@ class DataImportEntityBuilder
   #
   def search_for( entity, search_condition )
     @result_id = 0
+    append_to_builder_log_file(
+      @data_import_session,
+      "\r\n*** Entity builder: search_for('#{ entity.name }') ***\r\n"
+    )
 # DEBUG
 #    puts "Seeking existing #{entity.name} with #{search_condition.inspect}\r\n"
-    @data_import_session.phase_1_log << "Seeking existing #{entity.name} with #{search_condition.inspect}\r\n"
+    append_to_builder_log_file(
+      @data_import_session,
+      "Seeking existing #{entity.name} with #{search_condition.inspect}\r\n"
+    )
     set_result( entity.where( search_condition ).first )
 # DEBUG
 #    puts "#{entity.name} found! (ID: #{@result_row.id})\r\n" if @result_row
-    @data_import_session.phase_1_log << "#{entity.name} found! (ID: #{@result_row.id})\r\n" if @result_row
+    append_to_builder_log_file(
+      @data_import_session,
+      "#{entity.name} found! (ID: #{@result_row.id})\r\n"
+    ) if @result_row
     @result_id
   end
 
@@ -336,8 +346,11 @@ class DataImportEntityBuilder
     @result_id = 0
     @result_row = nil
     # Initialize log columns if found still undefined:
-    @data_import_session.phase_2_log ||= ''
     @data_import_session.sql_diff    ||= ''
+    append_to_builder_log_file(
+      @data_import_session,
+      "*** Entity builder: add_new( primary: '#{ @primary_entity.name }', secondary: '#{ secondary_entity.name }') ***\r\n"
+    )
 
     begin
       secondary_entity.transaction do
@@ -348,14 +361,23 @@ class DataImportEntityBuilder
 # DEBUG
       puts "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
       puts "#{ $!.to_s }\r\n" if $!
-      @data_import_session.phase_2_log << "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
-      @data_import_session.phase_2_log << "#{ $!.to_s }\r\n" if $!
+      append_to_builder_log_file(
+        @data_import_session,
+        "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
+      )
+      append_to_builder_log_file(
+        @data_import_session,
+        "#{ $!.to_s }\r\n"
+      ) if $!
     else
       if @result_row
         @result_id = @result_row.id
 # DEBUG
         puts "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
-        @data_import_session.phase_2_log << "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
+        append_to_builder_log_file(
+          @data_import_session,
+          "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
+        )
 
         # Log the SQL diff statement only if the creation entity is not actually a
         # "secondary" one, but the actual serialization destination for the attributes
@@ -388,12 +410,48 @@ class DataImportEntityBuilder
       else
 # DEBUG
 #        puts "ERROR: Add transaction block returned a nil row! (This will result in ID: 0)\r\n"
-        @data_import_session.phase_2_log << "ERROR: Add transaction block returned a nil row! (This will result in ID: 0)\r\n"
+        append_to_builder_log_file(
+          @data_import_session,
+          "ERROR: Add transaction block returned a nil row! (This will result in ID: 0)\r\n"
+        )
       end
     end
 
     @data_import_session.save!
     @result_id
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  protected
+
+
+  # Returns the appendable log file name, which should be used for both the
+  # search phase (for a matching, existing entity) and the creation phase
+  # (which starts during the creation of a new, not found entity).
+  #
+  # The resulting file name contains both the original basename of the source
+  # data-file for the data-import, plus the ID of the current data-import session.
+  #
+  def builder_log_file_name( data_import_session )
+    base_name = File.basename( data_import_session.file_name ).to_s.remove(
+      File.extname( data_import_session.file_name ).to_s
+    )
+    File.join( Rails.root, "log", "#{ base_name }_#{ data_import_session.id }.builder.log" )
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  # Appends to the builder log file the specified text.
+  # The file is created from scratch if it doesn't exist.
+  #
+  def append_to_builder_log_file( data_import_session, text )
+    full_pathname = builder_log_file_name( data_import_session )
+    File.open( full_pathname, 'a+' ) do |f|
+      f.puts( text )
+    end
   end
   #-- -------------------------------------------------------------------------
   #++

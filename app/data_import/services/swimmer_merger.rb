@@ -31,7 +31,7 @@
 
 =end
 class SwimmerMerger
-  include SqlConverter
+  include SqlConvertable
 
   # Creates a new instance
   #

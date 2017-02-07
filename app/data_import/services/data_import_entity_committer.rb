@@ -7,7 +7,7 @@
 
 = DataImportEntityCommitter
 
-  - Goggles framework vers.:  6.075
+  - Goggles framework vers.:  6.077
   - author: Steve A.
 
   Service/DSL implementation oriented to commit data-import entities, required
@@ -41,7 +41,7 @@
 
 =end
 class DataImportEntityCommitter
-  include SqlConverter
+  include SqlConvertable
 
   attr_reader :data_import_session, :committed_data_rows, :last_error
   #-- -------------------------------------------------------------------------
@@ -57,8 +57,7 @@ class DataImportEntityCommitter
     @phase_num  = phase_num
     @last_error = nil
     @committed_data_rows = 0
-    @data_import_session.phase_2_log ||= ''
-    @data_import_session.sql_diff    ||= ''
+    @data_import_session.sql_diff ||= ''
   end
   #-- -------------------------------------------------------------------------
   #++
@@ -117,12 +116,13 @@ class DataImportEntityCommitter
         @committed_row = instance_exec( source_row, *args, &block )
       rescue
         is_ok = false
-        @data_import_session.phase_2_log << "\r\nDataImportCommitter: #{ source_row.class.name } commit: exception caught during save!\r\n"
-        @data_import_session.phase_2_log << "- Returned @committed_row: #{ @committed_row.inspect }\r\n"
-        @data_import_session.phase_2_log << "- source_row: #{ source_row.inspect }\r\n"
+        append_to_committer_log_file(
+          @data_import_session,
+          "\r\nDataImportCommitter: #{ source_row.class.name } commit: exception caught during save!\r\n- Returned @committed_row: #{ @committed_row.inspect }\r\n- source_row: #{ source_row.inspect }\r\n"
+        )
         if $!
           @last_error = $!
-          @data_import_session.phase_2_log << "#{ $!.to_s }\r\n" if $!
+          append_to_committer_log_file( @data_import_session, "#{ $!.to_s }\r\n" )
         end
       else
         # Update the commit log only when something is returned from the block
@@ -132,8 +132,15 @@ class DataImportEntityCommitter
       end
     end
                                                     # Update the logs with current progress:
-    @data_import_session.phase_3_log = "COMMIT:#{ @phase_num }/10, rows: #{@committed_data_rows}/#{data_import_rows.count}"
-    @data_import_session.phase_3_log << " last error: #{ @last_error }" if @last_error
+    append_to_committer_log_file(
+      @data_import_session,
+      "\r\nCOMMIT:#{ @phase_num }/10, rows: #{@committed_data_rows}/#{data_import_rows.count}"
+    )
+    append_to_committer_log_file(
+      @data_import_session,
+      " last error: #{ @last_error }"
+    ) if @last_error
+
     @data_import_session.save!
     is_ok
   end
@@ -158,6 +165,37 @@ class DataImportEntityCommitter
   #++
 
 
+  protected
+
+
+  # Returns the appendable log file name.
+  #
+  # The resulting file name contains both the original basename of the source
+  # data-file for the data-import, plus the ID of the current data-import session.
+  #
+  def committer_log_file_name( data_import_session )
+    base_name = File.basename( data_import_session.file_name ).to_s.remove(
+      File.extname( data_import_session.file_name ).to_s
+    )
+    File.join( Rails.root, "log", "#{ base_name }_#{ data_import_session.id }.committer.log" )
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  # Appends to the committer log file the specified text.
+  # The file is created from scratch if it doesn't exist.
+  #
+  def append_to_committer_log_file( data_import_session, text )
+    full_pathname = committer_log_file_name( data_import_session )
+    File.open( full_pathname, 'a+' ) do |f|
+      f.puts( text )
+    end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
   private
 
 
@@ -167,8 +205,11 @@ class DataImportEntityCommitter
   #
   def update_session_commit_log( resulting_row )
     if resulting_row.kind_of?( ActiveRecord::Base )
-      @data_import_session.phase_2_log << "Committed #{ resulting_row.class.name }, id: #{ resulting_row.id }.\r\n"
-      @data_import_session.sql_diff    << to_sql_insert( resulting_row, false ) # (No user comment)
+      append_to_committer_log_file(
+        @data_import_session,
+        "Committed #{ resulting_row.class.name }, id: #{ resulting_row.id }.\r\n"
+      )
+      @data_import_session.sql_diff << to_sql_insert( resulting_row, false ) # (No user comment)
       @data_import_session.save!
       @committed_data_rows += 1
     end

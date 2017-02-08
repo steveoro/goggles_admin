@@ -7,7 +7,7 @@
 
 = DataImportEntityCommitter
 
-  - Goggles framework vers.:  6.077
+  - Goggles framework vers.:  6.078
   - author: Steve A.
 
   Service/DSL implementation oriented to commit data-import entities, required
@@ -127,8 +127,8 @@ class DataImportEntityCommitter
       else
         # Update the commit log only when something is returned from the block
         # itself:
-        update_session_commit_log( @committed_row )
-        update_session_commit_log( @additional_row )
+        update_session_commit_log( @data_import_session, @committed_row )
+        update_session_commit_log( @data_import_session, @additional_row )
       end
     end
                                                     # Update the logs with current progress:
@@ -203,15 +203,41 @@ class DataImportEntityCommitter
   # specified +resulting_row+ is a sibling of ActiveRecord::Base.
   # It does nothing otherwise.
   #
-  def update_session_commit_log( resulting_row )
+  def update_session_commit_log( data_import_session, resulting_row )
     if resulting_row.kind_of?( ActiveRecord::Base )
       append_to_committer_log_file(
-        @data_import_session,
+        data_import_session,
         "Committed #{ resulting_row.class.name }, id: #{ resulting_row.id }.\r\n"
       )
-      @data_import_session.sql_diff << to_sql_insert( resulting_row, false ) # (No user comment)
-      @data_import_session.save!
+      data_import_session.sql_diff << to_sql_insert( resulting_row, false ) # (No user comment)
+      data_import_session.save!
       @committed_data_rows += 1
     end
   end
+  #-- -------------------------------------------------------------------------
+  #++
+
+  # Getter for a string timestamp including the seconds.
+  def get_iso_timestamp( data_import_session )
+    data_import_session.created_at.strftime("%Y%m%d%H%M")
+  end
+
+  # Getter for the log base file name (pathname + log filename w/o extension)
+  def get_log_basename(data_import_session )
+    datafile_base_name = File.basename( data_import_session.file_name ).to_s
+      .remove( File.extname( data_import_session.file_name ).to_s )
+    File.join( 'log', "#{ get_iso_timestamp }prod_#{ datafile_base_name }" )
+  end
+
+  # Getter for the last completed phase
+  def get_last_completed_phase( data_import_session )
+    data_import_session ? data_import_session.phase : 0
+  end
+
+  # Getter for the full log extension
+  def get_log_extension( default_ext = '.log' )
+    ".%02d#{ default_ext }" % get_last_completed_phase
+  end
+  #-- -------------------------------------------------------------------------
+  #++
 end

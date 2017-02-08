@@ -456,10 +456,45 @@ class DataImport::HomeController < ApplicationController
       @season_description = '?'
     end
 
-    # [Steve, 20141219] We need the associated Meeting#id, if available, used in
-    # grid filtering for some of the drop-down combo lists (specifically, which
-    # meeting session are enlisted, for example):
-    @meeting = importer ? importer.meeting : nil
+    # XXX [Steve, 20170208] We currently assume as already existing both the Season and the Meeting.
+
+    # Retrieve all the data-import ('secondary') entities:
+    @di_meeting_sessions = DataImportMeetingSession.where( data_import_session_id: @data_import_session.id )
+    @di_meeting_prgs     = DataImportMeetingProgram.where( data_import_session_id: @data_import_session.id )
+    @di_meeting_entries  = DataImportMeetingEntry.where( data_import_session_id: @data_import_session.id )
+    @di_swimmers  = DataImportSwimmer.where( data_import_session_id: @data_import_session.id )
+    @di_badges    = DataImportBadge.where( data_import_session_id: @data_import_session.id )
+    @di_teams     = DataImportTeam.where( data_import_session_id: @data_import_session.id )
+    @di_cities    = DataImportCity.where( data_import_session_id: @data_import_session.id )
+    @di_passages  = DataImportPassage.where( data_import_session_id: @data_import_session.id )
+    @di_mirs = DataImportMeetingIndividualResult.where( data_import_session_id: @data_import_session.id )
+    @di_mrrs = DataImportMeetingRelayResult.where( data_import_session_id: @data_import_session.id )
+    @di_mrss = DataImportMeetingRelaySwimmer.where( data_import_session_id: @data_import_session.id )
+    @di_mtss = DataImportMeetingTeamScore.where( data_import_session_id: @data_import_session.id )
+
+    # Retrieve all already existing primary entities:
+    @swimmers = Swimmer.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (swimmer_id is not null)', @data_import_session.id ).map(&:swimmer_id) ).distinct.to_a
+    @badges   = Badge.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (badge_id is not null)', @data_import_session.id ).map(&:badge_id) ).distinct.to_a
+    @teams    = Team.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (team_id is not null)', @data_import_session.id ).map(&:team_id) ).distinct.to_a
+
+    # Get all the possible, already existing and linked MeetingPrograms:
+    @meeting_prgs  = MeetingProgram.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (meeting_program_id is not null)', @data_import_session.id ).map(&:meeting_program_id) ).distinct.to_a
+    @meeting_prgs += MeetingProgram.where( "id in (?)", DataImportMeetingRelayResult.where( '(data_import_session_id = ?) and (meeting_program_id is not null)', @data_import_session.id ).map(&:meeting_program_id) ).distinct.to_a
+    @meeting_prgs += MeetingProgram.where( "id in (?)", DataImportMeetingEntry.where( '(data_import_session_id = ?) and (meeting_program_id is not null)', @data_import_session.id ).map(&:meeting_program_id) ).distinct.to_a
+    @meeting_prgs.uniq!
+
+    @meeting_entries  = MeetingEntry.where( "id in (?)", DataImportPassage.where( '(data_import_session_id = ?) and (meeting_entry_id is not null)', @data_import_session.id ).map(&:meeting_entry_id) ).distinct.to_a
+
+    # Get the already serialized events, in order to get also the meeting sessions, then the meeting:
+    @meeting_events = MeetingEvent.where( "id in (?)", @meeting_prgs.map(&:meeting_event_id).compact.uniq ).distinct.to_a
+
+    # Get all the possible, already existing and linked MeetingSessions:
+    @meeting_sessions  = MeetingSession.where( "id in (?)", DataImportMeetingProgram.where( '(data_import_session_id = ?) and (meeting_session_id is not null)', @data_import_session.id ).map(&:meeting_session_id) ).distinct.to_a
+    @meeting_sessions += MeetingSession.where( "id in (?)", @meeting_events.map(&:meeting_session_id).compact.uniq ).distinct.to_a
+    @meeting_sessions.uniq!
+
+    # Get the actual existing Meeting, if none:
+    @meeting = Meeting.find( @meeting_sessions.map(&:meeting_id).compact.uniq.first )
   end
   #-- -------------------------------------------------------------------------
   #++

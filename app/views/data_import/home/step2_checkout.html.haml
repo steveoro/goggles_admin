@@ -10,29 +10,38 @@
     = I18n.t('admin_import.import_event_results_title')
     \: (2/3) #{"#{I18n.t(:review_edit_data)}"}
 
-  .row.col-xs-12.goggles-category-gap
-    = form_tag( 'step3_commit',  multipart: true, class: 'form-horizontal',         |
-          onsubmit: "$('#btnSubmit').hide(); $('#loadingIndicator').show();" ) do   |
+  .row.well.well-sm
+    .col-xs-12
+      = form_tag( 'step3_commit',  multipart: true, class: 'form-horizontal',         |
+            onsubmit: "$('#btnSubmit').hide(); $('#loadingIndicator').show();" ) do   |
+        .row.col-xs-12.goggles-category-gap
+          .col-xs-3
+            %label{ for: "data_import_session_id" }= I18n.t('admin_import.session')
+            &nbsp;
+            = @data_import_session.id
+            = hidden_field_tag( :data_import_session_id, @data_import_session.id )
+          .col-xs-7
+            %span.help-inline.strong= "#{@meeting.class.name} ID: #{@meeting.id} (#{@meeting.code}) - "
+            %span.help-inline.strong= @season_description
+          .col-xs-2
+            = submit_tag( I18n.t(:commit_rows), id: "btnSubmit", data: {disable_with: I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn btn-primary' )
+            %span#loadingIndicator{hidden: "true"}
+              = image_tag( 'indicator.gif' )
+    .col-xs-12
+      &nbsp;
 
-    .row.col-xs-12.goggles-category-gap
-      .col-xs-3
-        %label{ for: "data_import_session_id" }= I18n.t('admin_import.session')
-        &nbsp;
-        = @data_import_session.id
-        = hidden_field_tag( :data_import_session_id, @data_import_session.id )
-      - if @meeting
-        .col-xs-2
-          %span.help-inline.strong= "#{@meeting.class.name} ID: #{@meeting.id} (#{@meeting.code}) - "
-          %span.help-inline.strong= @season_description
-      .col-xs-2
-        = submit_tag( I18n.t(:commit_rows), id: "btnSubmit", data: {disable_with: I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn btn-primary' )
-        %span#loadingIndicator{hidden: "true"}
-          = image_tag( 'indicator.gif' )
+  .row.col-xs-12
+    = render( partial: "step2_meeting_show" )
+  .row.col-xs-12.goggles-category-gap
+    = render( partial: "step2_meeting_di_totals" )
 
   .row.col-xs-12.goggles-category-gap
-    TODO Make partial with all the details, separated with tab views
+    = render( partial: "step2_nav_tabs" )
 
 - else
   %div{align: "center", style: "padding-top: 2em; padding-bottom: 20em;"}
     %p
       %i= I18nt(:warning_no_import_data_session_found)
+
+:javascript
+  $('#tabSubEntities a[href="#programs"]').tab('show') // Select tab by name

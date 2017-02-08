@@ -1,2 +1,43 @@
-%ul.nav.nav-tabs#pageTop{role: "tablist"}
-  -# SAMPLE: = show_tab_link( params, 'show_invitation', t('meeting.invitation'), meeting_show_invitation_path( id: @meeting.id ) )
+#tabSubEntities
+  %ul.nav.nav-tabs{role: "tablist"}
+    %li.active{role: "presentation"}
+      %a{"aria-controls" => "sessions", "data-toggle" => "tab", href: "#sessions", role: "tab"}
+        = I18n.t('admin_import.meeting_sessions')
+    %li{role: "presentation"}
+      %a{"aria-controls" => "programs", "data-toggle" => "tab", href: "#programs", role: "tab"}
+        = I18n.t('admin_import.meeting_programs')
+    %li{role: "presentation"}
+      %a{"aria-controls" => "badges", "data-toggle" => "tab", href: "#badges", role: "tab"}
+        = I18n.t('admin_import.badges')
+    %li{role: "presentation"}
+      %a{"aria-controls" => "swimmers", "data-toggle" => "tab", href: "#swimmers", role: "tab"}
+        = I18n.t('admin_import.swimmers')
+    %li{role: "presentation"}
+      %a{"aria-controls" => "teams", "data-toggle" => "tab", href: "#teams", role: "tab"}
+        = I18n.t('admin_import.teams')
+  .tab-content
+    #sessions.tab-pane.active{role: "tabpanel"}
+      .col-cs-12.goggles-category-gap
+        = render( partial: "step2_meeting_sessions_show" )
+      .col-cs-12
+        &nbsp;
+    #programs.tab-pane{role: "tabpanel"}
+      .col-cs-12.goggles-category-gap
+        = render( partial: "step2_meeting_programs_show" )
+      .col-cs-12
+        &nbsp;
+    #badges.tab-pane{role: "tabpanel"}
+      .col-cs-12.goggles-category-gap
+        = render( partial: "step2_badges_show" )
+      .col-cs-12
+        &nbsp;
+    #swimmers.tab-pane{role: "tabpanel"}
+      .col-cs-12.goggles-category-gap
+        = render( partial: "step2_swimmers_show" )
+      .col-cs-12
+        &nbsp;
+    #teams.tab-pane{role: "tabpanel"}
+      .col-cs-12.goggles-category-gap
+        = render( partial: "step2_teams_show" )
+      .col-cs-12
+        &nbsp;

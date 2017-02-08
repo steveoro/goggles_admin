@@ -1,0 +1,43 @@
+- if @meeting_sessions.count > 0
+  %h4
+    = I18n.t('admin_import.primary_already_existing')
+    = " (tot. #{ @meeting_sessions.count })"
+  %table.table.table-striped.table-bordered.table-hover.table-condensed
+    %tbody
+      %tr.info.text-center
+        %td
+          %b= "ID"
+        %td
+          %b= t('calendars.date')
+        %td
+          %b= t('admin_import.m_session')
+      - @meeting_sessions.each do |meeting_session|
+        %tr
+          %td.text-right
+            = meeting_session.id
+          %td.text-center
+            = meeting_session.get_scheduled_date
+          %td.text-left
+            = meeting_session.get_full_name
+
+- if @di_meeting_sessions.count > 0
+  %h4
+    = I18n.t('admin_import.secondary_to_be_committed')
+    = " (tot. #{ @di_meeting_sessions.count })"
+  %table.table.table-striped.table-bordered.table-hover.table-condensed
+    %tbody
+      %tr.info.text-center
+        %td
+          %b= "ID"
+        %td
+          %b= t('calendars.date')
+        %td
+          %b= t('admin_import.m_session')
+      - @di_meeting_sessions.each do |meeting_session|
+        %tr
+          %td.text-right
+            = meeting_session.id
+          %td.text-center
+            = meeting_session.get_scheduled_date
+          %td.text-left
+            = meeting_session.get_full_name

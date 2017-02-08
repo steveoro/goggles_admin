@@ -101,7 +101,7 @@ class FinResultParser
   #
   def self.parse_txt_file( full_pathname, logger = nil, parsing_defs = nil )
     parsing_defs = parsing_defs || FileFormatParser.new( full_pathname ).parse( logger )
-    raise ArgumentError.new("File format for '#{full_pathname}' NOT recognized!") if parsing_defs.nil?
+    raise ArgumentError.new("File format for '#{full_pathname}' NOT recognized or file is MISSING!") if parsing_defs.nil?
 
     service = TxtParseService.new( parsing_defs )
     service.log_somehow( logger, "\r\n-- FinResultParser::parse_txt_file(#{ full_pathname }):", true, :info )

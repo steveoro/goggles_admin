@@ -14,7 +14,7 @@ require_relative '../fin_startlist_defs'
 
 = FileFormatParser
 
-  - Goggles framework vers.:  6.075
+  - Goggles framework vers.:  6.077
   - author: Steve A.
 
  Strategy class dedicated to detect which format a data-import text file
@@ -88,6 +88,7 @@ class FileFormatParser
   #   or +nil+, when the file type is not recognized.
   #
   def parse( logger = nil )
+    return nil unless File.exists?( @full_pathname )
     result = nil
     line_count = 0
     detector_fin1_res = ContextDetector.new( FIN1_RESULT_TYPEDEF, logger )

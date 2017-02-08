@@ -1,0 +1,5 @@
+id;date;meeting;code;import_data_file;effective_date;days_to_move
+16253;10-12-2016;X TROFEO SANTA CLAUS;modugnosantaclaus;ris20161210modugnosantaclaus.txt;;
+16261;06-01-2017;MEETING DEL SARACINO MASTER 2017;arezzodelsaracinomaster;ris20170106arezzodelsaracinomaster.txt;;
+16272;04-02-2017;REGIONALI LAZIO 2017;reglazio;ris20170204reglazio.txt;;
+16286;04-02-2017;REGIONALI SARDEGNA 2017;regsardegna;ris20170204regsardegna.txt;;

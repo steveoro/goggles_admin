@@ -310,6 +310,12 @@ DESC
         results_scanned += 1
       end
 
+      # Set is_pb_scanned flag
+      meeting.is_pb_scanned = true
+      meeting.save
+      sql_attributes['is_pb_scanned'] = meeting.is_pb_scanned
+      diff_file.puts << to_sql_update( meeting, false, sql_attributes, "\r\n", "Set meeting is_pb_scanned flag" )
+
       # If no personal bests found delete log file
       if personal_bests_found > 0
         diff_file.puts "-- Found #{personal_bests_found} new personal bests"

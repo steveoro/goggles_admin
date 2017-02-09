@@ -167,11 +167,10 @@ class DataImportTeamBuilder < DataImportEntityBuilder
           )
             result.save!
 # DEBUG
-#            puts "Team analysis saved."
-            data_import_session.phase_1_log ||= ''
-            data_import_session.sql_diff    ||= ''
-            data_import_session.phase_1_log << "#{ analysis_log }\r\n"
-            data_import_session.sql_diff    << "#{ sql_executable_log }\r\n"
+            puts "Additional Team analysis saved."
+            append_to_log_file( data_import_session, "#{ analysis_log }\r\n" )
+            sql_diff_text_log << "#{ sql_executable_log }\r\n"
+            save_diff_file( data_import_session )
           end
           # Result not found w/o row creation => force a manual review of the analysis data.
         end

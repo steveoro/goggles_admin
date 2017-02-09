@@ -177,11 +177,10 @@ class DataImportSwimmerBuilder < DataImportEntityBuilder
             )
               result.save!
 # DEBUG
-              puts "Swimmer analysis saved."
-              data_import_session.phase_1_log ||= ''
-              data_import_session.sql_diff    ||= ''
-              data_import_session.phase_1_log << "#{ analysis_log }\r\n"
-              data_import_session.sql_diff    << "#{ sql_executable_log }\r\n"
+              puts "Additional Swimmer analysis saved."
+              append_to_log_file( data_import_session, "#{ analysis_log }\r\n" )
+              sql_diff_text_log << "#{ sql_executable_log }\r\n"
+              save_diff_file( data_import_session )
             end
           end
           # If the analysis result tells us that we can create a new swimmer, we'll

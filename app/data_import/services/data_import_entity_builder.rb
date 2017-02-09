@@ -1,8 +1,5 @@
 # encoding: utf-8
 
-#require_relative '../../../strategies/sql_converter'
-
-
 =begin
 
 = DataImportEntityBuilder
@@ -92,8 +89,7 @@
     builder.result_id   # => the ID of the row either found or created; 0 on error, negative if the row was found in the primary entity.
 
 =end
-class DataImportEntityBuilder
-  include SqlConvertable
+class DataImportEntityBuilder < BaseTwiceLoggable
 
   # Common basic scope builder
   class BasicScope
@@ -363,10 +359,7 @@ class DataImportEntityBuilder
         @data_import_session,
         "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
       )
-      append_to_log_file(
-        @data_import_session,
-        "#{ $!.to_s }\r\n"
-      ) if $!
+      append_to_log_file( @data_import_session, "#{ $!.to_s }\r\n" ) if $!
     else
       if @result_row
         @result_id = @result_row.id
@@ -416,7 +409,7 @@ class DataImportEntityBuilder
     end
 
     @data_import_session.save!
-    save_diff_file( get_db_diff_full_pathname(@data_import_session) )
+    save_diff_file( @data_import_session )
     @result_id
   end
   #-- -------------------------------------------------------------------------
@@ -429,84 +422,10 @@ class DataImportEntityBuilder
   # Creates a new instance.
   #
   def initialize( data_import_session, &block )
+    super( 'builder' )
     @data_import_session = data_import_session
     # Evaluate the block passed within the context of this instance:
     instance_eval( &block )
-  end
-  #-- -------------------------------------------------------------------------
-  #++
-
-
-  # Appends to the committer session log file the specified text.
-  # The file is created from scratch if it doesn't exist.
-  #
-  def append_to_log_file( data_import_session, text )
-    full_pathname = get_log_full_pathname( data_import_session )
-    File.open( full_pathname, 'a+' ) do |f|
-      f.puts( text )
-    end
-  end
-
-
-  # Appends to the SQL DB diff log text the SQL INSERT statement for
-  # the specified +resulting_row+.
-  # While the statement is added to the buffer (yet to be serialized, later on),
-  # the action is also logged on the process log file.
-  #
-  def append_to_sql_diff( data_import_session, resulting_row )
-    if resulting_row.kind_of?( ActiveRecord::Base )
-      # Append also to the session log file:
-      append_to_log_file(
-        data_import_session,
-        "Committed #{ resulting_row.class.name }, id: #{ resulting_row.id }.\r\n"
-      )
-      # Append/update the SQL DB-diff text:
-      sql_diff_text_log  << to_sql_insert( resulting_row, false )
-      @committed_data_rows += 1
-    end
-  end
-  #-- -------------------------------------------------------------------------
-  #++
-
-
-  # Returns the file name for the appendable session log.
-  # The resulting file name contains both the original basename of the source
-  # and a current timestamp.
-  #
-  def get_log_full_pathname( data_import_session )
-    File.join( Rails.root, 'log', "#{ get_log_basename(data_import_session) }#{ get_log_extension(data_import_session) }" )
-  end
-
-  # Returns the file name for the appendable SQL DB-diff file.
-  # The resulting file name contains both the original basename of the source
-  # and a current timestamp.
-  #
-  def get_db_diff_full_pathname( data_import_session )
-    File.join( Rails.root, 'log', "#{ get_log_basename(data_import_session) }#{ get_log_extension(data_import_session, '.diff.sql') }" )
-  end
-  #-- -------------------------------------------------------------------------
-  #++
-
-  # Getter for a string timestamp including the seconds.
-  def get_iso_timestamp( data_import_session )
-    data_import_session.created_at.strftime("%Y%m%d%H%M%S")
-  end
-
-  # Getter for the last completed phase
-  def get_last_completed_phase( data_import_session )
-    data_import_session ? data_import_session.phase : 0
-  end
-
-  # Getter for the log base file name (pathname + log filename w/o extension)
-  def get_log_basename( data_import_session )
-    datafile_base_name = File.basename( data_import_session.file_name ).to_s
-      .remove( File.extname( data_import_session.file_name ).to_s )
-    "#{ get_iso_timestamp(data_import_session) }#{ Rails.env == 'development' ? 'prod' : 'dev' }_#{ datafile_base_name }"
-  end
-
-  # Getter for the full log extension
-  def get_log_extension( data_import_session, default_ext = '.builder.log' )
-    ".%02d#{ default_ext }" % get_last_completed_phase( data_import_session )
   end
   #-- -------------------------------------------------------------------------
   #++

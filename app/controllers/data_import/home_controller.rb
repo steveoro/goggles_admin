@@ -113,7 +113,7 @@ class DataImport::HomeController < ApplicationController
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
     importer            = DataImporter.new( logger, flash, data_import_session )
-    result_processor    = TeamAnalysisResultProcessor.new( logger, flash )
+    result_processor    = TeamAnalysisResultProcessor.new( data_import_session, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportTeamAnalysisResult.where( data_import_session_id: data_import_session_id )
 
@@ -132,13 +132,16 @@ class DataImport::HomeController < ApplicationController
       )
     end
 
-    importer.set_analysis_logs(
-      result_processor.process_log,
-      result_processor.sql_executable_log
-    )
-                                                    # Write the log files anyway:
-    importer.write_analysis_logfile( is_ok )
-    importer.write_sql_diff_logfile
+# FIXME NOT USED ANYMORE:
+#    importer.set_analysis_logs(
+#      result_processor.process_log,
+#      result_processor.sql_diff_text_log
+#    )
+                                                    # Write the DB-diff to file anyway:
+    result_processor.save_diff_file( data_import_session )
+# FIXME NOT USED ANYMORE:
+#    importer.write_analysis_logfile( is_ok )
+#    importer.write_sql_diff_logfile
 # DEBUG
 #    logger.debug("\r\n- is_ok: #{is_ok}, data_import_session_id: #{data_import_session_id}")
                                                     # Redirect to next action accordingly:
@@ -159,10 +162,12 @@ class DataImport::HomeController < ApplicationController
 
         # Quick hack: disregard any update to the log members and keep them just
         # as variables:
+# FIXME NOT USED ANYMORE:
 #        data_import_session.phase_1_log_will_change!
-        data_import_session.phase_1_log << result_processor.process_log
+#        data_import_session.phase_1_log << result_processor.process_log
 #        data_import_session.sql_diff_will_change!
-        data_import_session.sql_diff    << result_processor.sql_executable_log
+#        data_import_session.sql_diff    << result_processor.sql_diff_text_log
+
         data_import_session.phase = 11              # Update "last completed phase" indicator in session (11 = 1.1)
         data_import_session.save!
         DataImportTeamAnalysisResult.where( data_import_session_id: data_import_session_id ).delete_all
@@ -255,7 +260,7 @@ class DataImport::HomeController < ApplicationController
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
     importer            = DataImporter.new( logger, flash, data_import_session )
-    result_processor    = SwimmerAnalysisResultProcessor.new( logger, flash )
+    result_processor    = SwimmerAnalysisResultProcessor.new( data_import_session, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id )
 
@@ -274,13 +279,16 @@ class DataImport::HomeController < ApplicationController
       )
     end
 
-    importer.set_analysis_logs(
-      result_processor.process_log,
-      result_processor.sql_executable_log
-    )
-                                                    # Write the log files anyway:
-    importer.write_analysis_logfile( is_ok )
-    importer.write_sql_diff_logfile
+# FIXME NOT USED ANYMORE:
+#    importer.set_analysis_logs(
+#      result_processor.process_log,
+#      result_processor.sql_diff_text_log
+#    )
+                                                    # Write the DB-diff to file anyway:
+    result_processor.save_diff_file( data_import_session )
+# FIXME NOT USED ANYMORE:
+#    importer.write_analysis_logfile( is_ok )
+#    importer.write_sql_diff_logfile
 # DEBUG
 #    logger.debug("\r\n- is_ok: #{is_ok}, data_import_session_id: #{data_import_session_id}")
                                                     # Redirect to next action accordingly:
@@ -302,9 +310,11 @@ class DataImport::HomeController < ApplicationController
         # Quick hack: disregard any update to the log members and keep them just
         # as variables:
 #        data_import_session.phase_1_log_will_change!
-        data_import_session.phase_1_log << result_processor.process_log
+# FIXME NOT USED ANYMORE:
+#        data_import_session.phase_1_log << result_processor.process_log
 #        data_import_session.sql_diff_will_change!
-        data_import_session.sql_diff    << result_processor.sql_executable_log
+#        data_import_session.sql_diff    << result_processor.sql_diff_text_log
+
         data_import_session.phase = 11              # Update "last completed phase" indicator in session (11 = 1.1)
         data_import_session.save!
         DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id ).delete_all

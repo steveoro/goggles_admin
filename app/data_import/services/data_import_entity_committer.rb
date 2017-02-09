@@ -57,7 +57,6 @@ class DataImportEntityCommitter
     @phase_num  = phase_num
     @last_error = nil
     @committed_data_rows = 0
-    @data_import_session.sql_diff ||= ''
   end
   #-- -------------------------------------------------------------------------
   #++
@@ -116,32 +115,33 @@ class DataImportEntityCommitter
         @committed_row = instance_exec( source_row, *args, &block )
       rescue
         is_ok = false
-        append_to_committer_log_file(
+        append_to_log_file(
           @data_import_session,
           "\r\nDataImportCommitter: #{ source_row.class.name } commit: exception caught during save!\r\n- Returned @committed_row: #{ @committed_row.inspect }\r\n- source_row: #{ source_row.inspect }\r\n"
         )
         if $!
           @last_error = $!
-          append_to_committer_log_file( @data_import_session, "#{ $!.to_s }\r\n" )
+          append_to_log_file( @data_import_session, "#{ $!.to_s }\r\n" )
         end
       else
         # Update the commit log only when something is returned from the block
         # itself:
-        update_session_commit_log( @data_import_session, @committed_row )
-        update_session_commit_log( @data_import_session, @additional_row )
+        append_to_sql_diff( @data_import_session, @committed_row )
+        append_to_sql_diff( @data_import_session, @additional_row )
       end
     end
                                                     # Update the logs with current progress:
-    append_to_committer_log_file(
+    append_to_log_file(
       @data_import_session,
       "\r\nCOMMIT:#{ @phase_num }/10, rows: #{@committed_data_rows}/#{data_import_rows.count}"
     )
-    append_to_committer_log_file(
+    append_to_log_file(
       @data_import_session,
       " last error: #{ @last_error }"
     ) if @last_error
 
     @data_import_session.save!
+    save_diff_file( get_db_diff_full_pathname(@data_import_session) )
     is_ok
   end
   #-- -------------------------------------------------------------------------
@@ -165,68 +165,62 @@ class DataImportEntityCommitter
   #++
 
 
-  protected
+  private
 
 
-  # Returns the appendable log file name.
-  #
-  # The resulting file name contains both the original basename of the source
-  # data-file for the data-import, plus the ID of the current data-import session.
-  #
-  def committer_log_file_name( data_import_session )
-    base_name = File.basename( data_import_session.file_name ).to_s.remove(
-      File.extname( data_import_session.file_name ).to_s
-    )
-    File.join( Rails.root, "log", "#{ base_name }_#{ data_import_session.id }.committer.log" )
-  end
-  #-- -------------------------------------------------------------------------
-  #++
-
-
-  # Appends to the committer log file the specified text.
+  # Appends to the committer session log file the specified text.
   # The file is created from scratch if it doesn't exist.
   #
-  def append_to_committer_log_file( data_import_session, text )
-    full_pathname = committer_log_file_name( data_import_session )
+  def append_to_log_file( data_import_session, text )
+    full_pathname = get_log_full_pathname( data_import_session )
     File.open( full_pathname, 'a+' ) do |f|
       f.puts( text )
     end
   end
-  #-- -------------------------------------------------------------------------
-  #++
 
 
-  private
-
-
-  # Updates the #data_import_session phase log, commit counter and SQL diff, if the
-  # specified +resulting_row+ is a sibling of ActiveRecord::Base.
-  # It does nothing otherwise.
+  # Appends to the SQL DB diff log text the SQL INSERT statement for
+  # the specified +resulting_row+.
+  # While the statement is added to the buffer (yet to be serialized, later on),
+  # the action is also logged on the process log file.
   #
-  def update_session_commit_log( data_import_session, resulting_row )
+  def append_to_sql_diff( data_import_session, resulting_row )
     if resulting_row.kind_of?( ActiveRecord::Base )
-      append_to_committer_log_file(
+      # Append also to the session log file:
+      append_to_log_file(
         data_import_session,
         "Committed #{ resulting_row.class.name }, id: #{ resulting_row.id }.\r\n"
       )
-      data_import_session.sql_diff << to_sql_insert( resulting_row, false ) # (No user comment)
-      data_import_session.save!
+      # Append/update the SQL DB-diff text:
+      sql_diff_text_log  << to_sql_insert( resulting_row, false )
       @committed_data_rows += 1
     end
   end
   #-- -------------------------------------------------------------------------
   #++
 
-  # Getter for a string timestamp including the seconds.
-  def get_iso_timestamp( data_import_session )
-    data_import_session.created_at.strftime("%Y%m%d%H%M")
+
+  # Returns the file name for the appendable session log.
+  # The resulting file name contains both the original basename of the source
+  # and a current timestamp.
+  #
+  def get_log_full_pathname( data_import_session )
+    File.join( Rails.root, 'log', "#{ get_log_basename(data_import_session) }#{ get_log_extension(data_import_session) }" )
   end
 
-  # Getter for the log base file name (pathname + log filename w/o extension)
-  def get_log_basename(data_import_session )
-    datafile_base_name = File.basename( data_import_session.file_name ).to_s
-      .remove( File.extname( data_import_session.file_name ).to_s )
-    File.join( 'log', "#{ get_iso_timestamp }prod_#{ datafile_base_name }" )
+  # Returns the file name for the appendable SQL DB-diff file.
+  # The resulting file name contains both the original basename of the source
+  # and a current timestamp.
+  #
+  def get_db_diff_full_pathname( data_import_session )
+    File.join( Rails.root, 'log', "#{ get_log_basename(data_import_session) }#{ get_log_extension(data_import_session, '.diff.sql') }" )
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+  # Getter for a string timestamp including the seconds.
+  def get_iso_timestamp( data_import_session )
+    data_import_session.created_at.strftime("%Y%m%d%H%M%S")
   end
 
   # Getter for the last completed phase
@@ -234,9 +228,16 @@ class DataImportEntityCommitter
     data_import_session ? data_import_session.phase : 0
   end
 
+  # Getter for the log base file name (pathname + log filename w/o extension)
+  def get_log_basename( data_import_session )
+    datafile_base_name = File.basename( data_import_session.file_name ).to_s
+      .remove( File.extname( data_import_session.file_name ).to_s )
+    "#{ get_iso_timestamp(data_import_session) }#{ Rails.env == 'development' ? 'prod' : 'dev' }_#{ datafile_base_name }"
+  end
+
   # Getter for the full log extension
-  def get_log_extension( default_ext = '.log' )
-    ".%02d#{ default_ext }" % get_last_completed_phase
+  def get_log_extension( data_import_session, default_ext = '.committer.log' )
+    ".%02d#{ default_ext }" % get_last_completed_phase( data_import_session )
   end
   #-- -------------------------------------------------------------------------
   #++

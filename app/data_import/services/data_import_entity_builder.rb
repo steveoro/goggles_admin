@@ -7,7 +7,7 @@
 
 = DataImportEntityBuilder
 
-  - Goggles framework vers.:  6.077
+  - Goggles framework vers.:  6.078
   - author: Steve A.
 
   Service/DSL implementation oriented to build data-import entities, required
@@ -261,20 +261,20 @@ class DataImportEntityBuilder
   #
   def search_for( entity, search_condition )
     @result_id = 0
-    append_to_builder_log_file(
+    append_to_log_file(
       @data_import_session,
       "\r\n*** Entity builder: search_for('#{ entity.name }') ***\r\n"
     )
 # DEBUG
 #    puts "Seeking existing #{entity.name} with #{search_condition.inspect}\r\n"
-    append_to_builder_log_file(
+    append_to_log_file(
       @data_import_session,
       "Seeking existing #{entity.name} with #{search_condition.inspect}\r\n"
     )
     set_result( entity.where( search_condition ).first )
 # DEBUG
 #    puts "#{entity.name} found! (ID: #{@result_row.id})\r\n" if @result_row
-    append_to_builder_log_file(
+    append_to_log_file(
       @data_import_session,
       "#{entity.name} found! (ID: #{@result_row.id})\r\n"
     ) if @result_row
@@ -345,9 +345,7 @@ class DataImportEntityBuilder
   def add_new()
     @result_id = 0
     @result_row = nil
-    # Initialize log columns if found still undefined:
-    @data_import_session.sql_diff    ||= ''
-    append_to_builder_log_file(
+    append_to_log_file(
       @data_import_session,
       "*** Entity builder: add_new( primary: '#{ @primary_entity.name }', secondary: '#{ secondary_entity.name }') ***\r\n"
     )
@@ -361,11 +359,11 @@ class DataImportEntityBuilder
 # DEBUG
       puts "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
       puts "#{ $!.to_s }\r\n" if $!
-      append_to_builder_log_file(
+      append_to_log_file(
         @data_import_session,
         "\r\n#{secondary_entity.name} creation: exception caught during save!\r\n"
       )
-      append_to_builder_log_file(
+      append_to_log_file(
         @data_import_session,
         "#{ $!.to_s }\r\n"
       ) if $!
@@ -374,7 +372,7 @@ class DataImportEntityBuilder
         @result_id = @result_row.id
 # DEBUG
         puts "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
-        append_to_builder_log_file(
+        append_to_log_file(
           @data_import_session,
           "Added new #{secondary_entity.name}, ID:#{@result_id}.\r\n"
         )
@@ -404,13 +402,13 @@ class DataImportEntityBuilder
            ( (@data_import_session.phase != 12) &&
              (secondary_entity.name =~ /DataImport/).nil?
            )
-          @data_import_session.sql_diff << to_sql_insert( @result_row, false ) # (No user comment)
+          append_to_sql_diff( @data_import_session, @result_row )
         end
         @data_import_session.total_data_rows += 1
       else
 # DEBUG
 #        puts "ERROR: Add transaction block returned a nil row! (This will result in ID: 0)\r\n"
-        append_to_builder_log_file(
+        append_to_log_file(
           @data_import_session,
           "ERROR: Add transaction block returned a nil row! (This will result in ID: 0)\r\n"
         )
@@ -418,40 +416,8 @@ class DataImportEntityBuilder
     end
 
     @data_import_session.save!
+    save_diff_file( get_db_diff_full_pathname(@data_import_session) )
     @result_id
-  end
-  #-- -------------------------------------------------------------------------
-  #++
-
-
-  protected
-
-
-  # Returns the appendable log file name, which should be used for both the
-  # search phase (for a matching, existing entity) and the creation phase
-  # (which starts during the creation of a new, not found entity).
-  #
-  # The resulting file name contains both the original basename of the source
-  # data-file for the data-import, plus the ID of the current data-import session.
-  #
-  def builder_log_file_name( data_import_session )
-    base_name = File.basename( data_import_session.file_name ).to_s.remove(
-      File.extname( data_import_session.file_name ).to_s
-    )
-    File.join( Rails.root, "log", "#{ base_name }_#{ data_import_session.id }.builder.log" )
-  end
-  #-- -------------------------------------------------------------------------
-  #++
-
-
-  # Appends to the builder log file the specified text.
-  # The file is created from scratch if it doesn't exist.
-  #
-  def append_to_builder_log_file( data_import_session, text )
-    full_pathname = builder_log_file_name( data_import_session )
-    File.open( full_pathname, 'a+' ) do |f|
-      f.puts( text )
-    end
   end
   #-- -------------------------------------------------------------------------
   #++
@@ -466,6 +432,81 @@ class DataImportEntityBuilder
     @data_import_session = data_import_session
     # Evaluate the block passed within the context of this instance:
     instance_eval( &block )
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  # Appends to the committer session log file the specified text.
+  # The file is created from scratch if it doesn't exist.
+  #
+  def append_to_log_file( data_import_session, text )
+    full_pathname = get_log_full_pathname( data_import_session )
+    File.open( full_pathname, 'a+' ) do |f|
+      f.puts( text )
+    end
+  end
+
+
+  # Appends to the SQL DB diff log text the SQL INSERT statement for
+  # the specified +resulting_row+.
+  # While the statement is added to the buffer (yet to be serialized, later on),
+  # the action is also logged on the process log file.
+  #
+  def append_to_sql_diff( data_import_session, resulting_row )
+    if resulting_row.kind_of?( ActiveRecord::Base )
+      # Append also to the session log file:
+      append_to_log_file(
+        data_import_session,
+        "Committed #{ resulting_row.class.name }, id: #{ resulting_row.id }.\r\n"
+      )
+      # Append/update the SQL DB-diff text:
+      sql_diff_text_log  << to_sql_insert( resulting_row, false )
+      @committed_data_rows += 1
+    end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  # Returns the file name for the appendable session log.
+  # The resulting file name contains both the original basename of the source
+  # and a current timestamp.
+  #
+  def get_log_full_pathname( data_import_session )
+    File.join( Rails.root, 'log', "#{ get_log_basename(data_import_session) }#{ get_log_extension(data_import_session) }" )
+  end
+
+  # Returns the file name for the appendable SQL DB-diff file.
+  # The resulting file name contains both the original basename of the source
+  # and a current timestamp.
+  #
+  def get_db_diff_full_pathname( data_import_session )
+    File.join( Rails.root, 'log', "#{ get_log_basename(data_import_session) }#{ get_log_extension(data_import_session, '.diff.sql') }" )
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+  # Getter for a string timestamp including the seconds.
+  def get_iso_timestamp( data_import_session )
+    data_import_session.created_at.strftime("%Y%m%d%H%M%S")
+  end
+
+  # Getter for the last completed phase
+  def get_last_completed_phase( data_import_session )
+    data_import_session ? data_import_session.phase : 0
+  end
+
+  # Getter for the log base file name (pathname + log filename w/o extension)
+  def get_log_basename( data_import_session )
+    datafile_base_name = File.basename( data_import_session.file_name ).to_s
+      .remove( File.extname( data_import_session.file_name ).to_s )
+    "#{ get_iso_timestamp(data_import_session) }#{ Rails.env == 'development' ? 'prod' : 'dev' }_#{ datafile_base_name }"
+  end
+
+  # Getter for the full log extension
+  def get_log_extension( data_import_session, default_ext = '.builder.log' )
+    ".%02d#{ default_ext }" % get_last_completed_phase( data_import_session )
   end
   #-- -------------------------------------------------------------------------
   #++

@@ -724,7 +724,7 @@ class DataImporter
 
   # Getter for a string timestamp including the seconds.
   def get_iso_timestamp
-    @data_import_session.created_at.strftime("%Y%m%d%H%M")
+    @data_import_session.created_at.strftime("%Y%m%d%H%M%S")
   end
 
   # Getter for the last completed phase

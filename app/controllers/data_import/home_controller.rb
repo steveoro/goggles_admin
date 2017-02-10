@@ -30,7 +30,7 @@ class DataImport::HomeController < ApplicationController
   def kill_import_session
     data_import_session = DataImportSession.find_by_id( params[:id].to_i )
     if data_import_session
-      DataImporter.new( logger, flash, data_import_session ).destroy_data_import_session
+      DataImporter.new( current_admin.id, data_import_session, flash ).destroy_data_import_session
     end
     redirect_to( di_step1_status_path() )
   end
@@ -112,7 +112,7 @@ class DataImport::HomeController < ApplicationController
 #    logger.debug "Confirmed IDs: #{confirmed_actions_ids.inspect}"
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
-    importer            = DataImporter.new( logger, flash, data_import_session )
+    importer            = DataImporter.new( current_admin.id, data_import_session, flash )
     result_processor    = TeamAnalysisResultProcessor.new( data_import_session, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportTeamAnalysisResult.where( data_import_session_id: data_import_session_id )
@@ -259,7 +259,7 @@ class DataImport::HomeController < ApplicationController
 #    logger.debug "Confirmed IDs: #{confirmed_actions_ids.inspect}"
 #    logger.debug "Overridden Alias IDs: #{overridden_alias_actions.inspect}\r\n- params['alias_ids']: #{params['alias_ids'].class.name}\r\n- params['alias_ids']: #{params['alias_ids'].inspect}"
     data_import_session = DataImportSession.find( data_import_session_id )
-    importer            = DataImporter.new( logger, flash, data_import_session )
+    importer            = DataImporter.new( current_admin.id, data_import_session, flash )
     result_processor    = SwimmerAnalysisResultProcessor.new( data_import_session, flash )
                                                     # retrieve results from dedicated table:
     all_results = DataImportSwimmerAnalysisResult.where( data_import_session_id: data_import_session_id )
@@ -405,23 +405,22 @@ class DataImport::HomeController < ApplicationController
       filename_to_be_parsed = @data_import_session.file_name if filename_to_be_parsed.nil? && @data_import_session
                                                     # Crude data-file macro-format detector:
       if filename_to_be_parsed =~ /csiprova/i       # *** CSI-Result/Start-list datafiles? *** => Use CsiResultParser for phases < 2.0
-        importer = CsiResultParser.new( filename_to_be_parsed, @data_import_session )
+        importer = CsiResultParser.new( current_admin.id, filename_to_be_parsed, @data_import_session, flash )
         importer.logger = logger
         importer.flash  = flash
         importer.force_team_or_swimmer_creation = force_team_or_swimmer_creation
         # importer.do_not_consume_file = false # (default: false)
       else                                          # *** FIN-Result/Start-list datafiles? *** => Use DataImporter for phases < 2.0
-        importer = DataImporter.new( logger, flash, @data_import_session )
+        importer = DataImporter.new( current_admin.id, @data_import_session, flash )
         importer.set_up(
           full_pathname:                  filename_to_be_parsed,
           force_missing_meeting_creation: force_missing_meeting_creation,
-          force_team_or_swimmer_creation: force_team_or_swimmer_creation,
+          force_team_or_swimmer_creation: force_team_or_swimmer_creation
           # do_not_consume_file:           false, # (default)
-          current_admin_id:               current_admin.id
         )
       end
                                                     # -- PHASE 1.0:
-      importer.phase_1_parse
+      importer.phase_1_parse()
                                                     # -- PHASE 1.2: (returns nil on error)
       @data_import_session = importer.phase_1_2_serialize
 # DEBUG
@@ -540,12 +539,15 @@ class DataImport::HomeController < ApplicationController
 # DEBUG
     logger.debug("\r\n- data_import_session: #{data_import_session.inspect}")
 
-    importer = DataImporter.new( logger, flash, data_import_session )
+    importer = DataImporter.new( current_admin.id, data_import_session, flash )
                                                     # -- PHASE 3.0:
     is_ok = importer.phase_3_commit()
 
     redirect_to( di_step1_status_path() ) and return unless is_ok
-    @import_log = importer.import_log          # (get combined import log)
+# FIXME Needs to read the individual files to show the actual log
+# TODO: just show a summary of the imported rows, with the actual actions still to be performed upon the just-ended session (FB-post, Twitter-post, Personal-Best-upodate, ...)
+#
+    @import_log = "TODO: show the action flags still on; show the ending stats; add buttons to get the text for the FB+Twitter postings"
   end
   #-- -------------------------------------------------------------------------
   #++

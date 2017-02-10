@@ -10,7 +10,7 @@ require_relative '../services/data_import_entity_committer'
 
 = FinResultPhase3
 
-  - Goggles framework vers.:  6.075
+  - Goggles framework vers.:  6.078
   - author: Steve A.
 
   Data-Import/Commit Module incapsulating all committing methods
@@ -176,7 +176,7 @@ module FinResultPhase3
             "- source_row......: #{source_row.inspect}\r\n" <<
             "- meeting_event...: #{meeting_event.inspect}.\r\n" <<
             ValidationErrorTools.recursive_error_for( meeting_event )
-          data_import_session.phase_2_log << msg
+          append_to_log_file( @data_import_session, msg )
 # DEBUG
 #          puts msg
         end
@@ -688,9 +688,7 @@ module FinResultPhase3
       if meeting.meeting_individual_results.count > 0
         meeting.are_results_acquired = flag_status
         meeting.save!
-        data_import_session.sql_diff ||= ''
-        data_import_session.sql_diff << "\r\n-- Meeting #{meeting.id}" <<
-          "\r\n-- 'Results acquired' flag setting:" <<
+        sql_diff_text_log << "\r\n-- Meeting #{meeting.id}\r\n-- 'Results acquired' flag setting:" <<
           "\r\nUPDATE meetings SET are_results_acquired = '1' WHERE id = #{meeting.id};\r\n\r\n"
 # DEBUG
 #        puts "=> Meeting.are_results_acquired: #{meeting.are_results_acquired}"
@@ -701,9 +699,7 @@ module FinResultPhase3
       if meeting.meeting_entries.count > 0
         meeting.has_start_list = flag_status
         meeting.save!
-        data_import_session.sql_diff ||= ''
-        data_import_session.sql_diff << "\r\n-- Meeting #{meeting.id}" <<
-          "\r\n-- 'has_start_list' flag setting:" <<
+        sql_diff_text_log << "\r\n-- Meeting #{meeting.id}\r\n-- 'has_start_list' flag setting:" <<
           "\r\nUPDATE meetings SET has_start_list = '1' WHERE id = #{meeting.id};\r\n\r\n"
 # DEBUG
 #        puts "=> Meeting.has_start_list: #{meeting.has_start_list}"

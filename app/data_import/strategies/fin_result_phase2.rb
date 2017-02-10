@@ -28,7 +28,7 @@ require_relative '../services/data_import_time_standard_builder'
 
 = FinResultPhase2
 
-  - Goggles framework vers.:  6.075
+  - Goggles framework vers.:  6.078
   - author: Steve A.
 
   Data-Import/Digest Module incapsulating all "record search/add" methods
@@ -68,7 +68,8 @@ module FinResultPhase2
     team_names_from_results += parse_result[:relay_row].map { |row| row[:fields][:team_name] }.compact
     team_names_from_results.uniq!
     team_names_from_results.sort!
-    update_logs(
+    append_to_log_file(
+      data_import_session,
       "\r\n** Team names collected from RESULTS: **\r\n" <<
       team_names_from_results.join("\r\n") << "\r\n==== Tot.: #{ team_names_from_results.size } ===="
     )
@@ -80,7 +81,8 @@ module FinResultPhase2
       team_names = extract_unique_team_names( ranking_names, team_names_from_results, parse_result )
     end
 
-    update_logs(
+    append_to_log_file(
+      data_import_session,
       "\r\n** Final collected UNIQUE names: **\r\n\r\n" <<
       team_names.join("\r\n") << "\r\n==== Tot.: #{ team_names.size } ====\r\n"
     )
@@ -88,7 +90,8 @@ module FinResultPhase2
     # Signal an error in case the initial list of names is shorter at the end of
     # the "longer name" substitution phase:
     if team_names_from_results.size > team_names.size
-      update_logs(
+      append_to_log_file(
+        data_import_session,
         "\r\n*** WARNING! *** The Fuzzy search may have merged two different Team names!\r\n" <<
         "This may be a signal that the bias value is too low and permissive (currently: #{BIAS_FOR_PRESCAN_FUZZY_SEARCH}).\r\n" <<
         "==> CHECK THE ABOVE TEAM NAMES in Alias Map for lines with NO comment, to see if the aliased team names are referring to the same one! <==\r\n" <<
@@ -109,13 +112,15 @@ module FinResultPhase2
       )
       team = team_builder.result_row
       unless team
-        data_import_session.phase_1_log << "\r\nPrescan Team names: '#{ team_name }' (#{ idx+1 }/#{ team_names.size }) uncertain. 'Team name Analysis' needed.\r\n"
+        append_to_log_file(
+          data_import_session,
+          "\r\nPrescan Team names: '#{ team_name }' (#{ idx+1 }/#{ team_names.size }) uncertain. 'Team name Analysis' needed.\r\n"
+        )
         is_ok = false
       end
                                                     # Update progress on current session:
-      DataImportSession.where( id: data_import_session.id ).update_all(
-        phase_3_log: "1-TEAM-CHECK:#{ idx+1 }/#{ team_names.size }"
-      )
+      DataImportSession.where( id: data_import_session.id ).first
+        .update_columns( phase_3_log: "1-TEAM-CHECK:#{ idx+1 }/#{ team_names.size }" )
     end
     is_ok
   end
@@ -152,9 +157,10 @@ module FinResultPhase2
     swimmer_names_from_results.uniq!
     swimmer_names_from_results.sort! { |a, b| a[:name] <=> b[:name] }
 
-    update_logs(
-      "\r\n** Swimmer names collected from RESULTS: **\r\n" <<
-      swimmer_names_from_results.join("\r\n") << "\r\n==== Tot.: #{ swimmer_names_from_results.size } ===="
+    append_to_log_file(
+      data_import_session,
+      "\r\n** Swimmer names collected from RESULTS: **\r\n#{ swimmer_names_from_results.join("\r\n") }" <<
+      "\r\n==== Tot.: #{ swimmer_names_from_results.size } ===="
     )
 
     swimmer_names_from_results.each_with_index do |swimmer_hash, idx|
@@ -168,13 +174,15 @@ module FinResultPhase2
       )
       swimmer = swimmer_builder.result_row
       unless swimmer
-        data_import_session.phase_1_log << "\r\nPrescan Swimmer names: '#{ swimmer_hash[:name] }' (#{swimmer_hash[:year]}, gender: #{swimmer_hash[:gender]}, #{ idx+1 }/#{ swimmer_names_from_results.size }) uncertain. 'Swimmer name Analysis' needed.\r\n"
+        append_to_log_file(
+          data_import_session,
+          "\r\nPrescan Swimmer names: '#{ swimmer_hash[:name] }' (#{swimmer_hash[:year]}, gender: #{swimmer_hash[:gender]}, #{ idx+1 }/#{ swimmer_names_from_results.size }) uncertain. 'Swimmer name Analysis' needed.\r\n"
+        )
         is_ok = false
       end
                                                     # Update progress on current session:
-      DataImportSession.where( id: data_import_session.id ).update_all(
-        phase_3_log: "1-SWIMMER-CHECK:#{ idx+1 }/#{ swimmer_names_from_results.size }"
-      )
+      DataImportSession.where( id: data_import_session.id ).first
+        .update_columns( phase_3_log: "1-SWIMMER-CHECK:#{ idx+1 }/#{ swimmer_names_from_results.size }" )
     end
     is_ok
   end
@@ -259,9 +267,8 @@ module FinResultPhase2
         return unless is_ok
       end                                           # **** (END of DETAIL) ****
                                                     # Update current header count into "progress counter column"
-      DataImportSession.where( id: data_import_session.id ).update_all(
-        phase_3_log: "1.2-CAT:#{header_index+1}/#{category_headers_ids.size}"
-      )
+      DataImportSession.where( id: data_import_session.id ).first
+        .update_columns( phase_3_log: "1.2-CAT:#{header_index+1}/#{category_headers_ids.size}" )
     end                                             # **** (END of HEADER) ****
     is_ok
   end
@@ -356,9 +363,8 @@ module FinResultPhase2
         return unless is_ok
       end                                           # **** (END of DETAIL) ****
                                                     # Update current header count into "progress counter column"
-      DataImportSession.where( id: data_import_session.id ).update_all(
-        phase_3_log: "1.2-REL:#{ header_index+1 }/#{ relay_headers_ids.size }"
-      )
+      DataImportSession.where( id: data_import_session.id ).first
+        .update_columns( phase_3_log: "1.2-REL:#{ header_index+1 }/#{ relay_headers_ids.size }" )
     end                                             # **** (END of HEADER) ****
     is_ok
   end
@@ -388,9 +394,8 @@ module FinResultPhase2
                                                     # This will store the is_ok status up 'till the end (1 failure is enough)
       is_ok = is_ok && (! mts_builder.result_row.nil?)
                                                     # Update current header count into "progress counter column"
-      DataImportSession.where( id: data_import_session.id ).update_all(
-        phase_3_log: "1.2-RANK:#{ detail_row_idx+1 }/#{ ranking_details.size }"
-      )
+      DataImportSession.where( id: data_import_session.id ).first
+        .update_columns( phase_3_log: "1.2-RANK:#{ detail_row_idx+1 }/#{ ranking_details.size }" )
     end                                             # **** (END loop) ****
     is_ok
   end
@@ -428,7 +433,7 @@ module FinResultPhase2
       if matching_key
         team_key = matching_key
       else
-        update_logs( "WARNING: Unable to find a match for '#{team_name}'!" )
+        append_to_log_file( @data_import_session, "WARNING: Unable to find a match for '#{team_name}'!" )
       end
     end
     team_key
@@ -476,7 +481,8 @@ module FinResultPhase2
 
     ranking_names_map = {}                          # Build a normalized map:
     ranking_names.each { |name| ranking_names_map[ normalize(name) ] = name }
-    update_logs(
+    append_to_log_file(
+      @data_import_session,
       "\r\n** Team names collected from RANKINGS: **\r\n" <<
       ranking_names.join("\r\n") << "\r\n==== Tot.: #{ ranking_names.size } ===="
     )
@@ -489,7 +495,7 @@ module FinResultPhase2
     # Alias Map, from the ranking list into the result names list:
     alias_map = {}
     unique_names_map = {}
-    update_logs( "\r\n** Alias map for Ranking (UNIQ [key]= value | ALIAS key): **" )
+    append_to_log_file( @data_import_session, "\r\n** Alias map for Ranking (UNIQ [key]= value | ALIAS key): **" )
     ranking_names_map.each do |ranking_key, team_name|
       aliased_key = get_matching_normalized_key_for( team_name, result_matcher )
       alias_map[ ranking_key ] = aliased_key
@@ -500,7 +506,8 @@ module FinResultPhase2
       # When the aliased key is different from the starting ranking key, it means that
       # we have a match and we will use the ranking team name overwrite the aliased (destination)
       # name with it (which should be allegedly longer and perhaps more 'complete').
-      update_logs(
+      append_to_log_file(
+        @data_import_session,
         "[%-30s]= '%-40s'  |  (%-25s) #{aliased_key != ranking_key ? '' :  '-- Not found in results or equal'}" %
         [ ranking_key, unique_names_map[ ranking_key ], aliased_key ]
       )
@@ -511,7 +518,8 @@ module FinResultPhase2
     # a corresponding Ranking team name (key):
     result_diff_map = result_names_map.reject{ |key, val| alias_map.has_value?(key) }
     if result_diff_map.size > 0
-      update_logs(
+      append_to_log_file(
+        @data_import_session,
         "\r\n** Result team names NOT found in Ranking: **\r\n" <<
         result_diff_map.values.join("\r\n") << "\r\n==== Tot.: #{ result_diff_map.size } ====\r\n"
       )
@@ -520,16 +528,18 @@ module FinResultPhase2
         # Add the identity members to the alias map, so that we may recognize which names
         # don't get to be changed:
         alias_map[ result_key ] = result_key
-        update_logs(
+        append_to_log_file(
+          @data_import_session,
           "[%-30s]= '%-40s'  |  -- Added to alias as identity" % [ result_key, unique_names_map[ result_key ] ]
         )
       end
-      update_logs( "\r\nResulting sizes: ALIAS Map=#{alias_map.size}, UNIQUE Map=#{unique_names_map.size}" )
+      append_to_log_file( @data_import_session, "\r\nResulting sizes: ALIAS Map=#{alias_map.size}, UNIQUE Map=#{unique_names_map.size}" )
     end
 
     missing_name_keys = result_names_map.keys.reject{ |key| alias_map.values.include?( key ) }
     if missing_name_keys.size > 0                 # This should never occur
-      update_logs(
+      append_to_log_file(
+        @data_import_session,
         "\r\n*** ERROR!! *** Some of the team normalized names from the results are MISSING from the alias values list for the translation! THIS SHOULD NEVER OCCUR!\r\n" <<
         "Missing name keys: #{missing_name_keys.inspect}"
       )

@@ -4,7 +4,7 @@
 
 = SeasonDetectUtils
 
-  - Goggles framework vers.:  6.075
+  - Goggles framework vers.:  6.078
   - author: Steve A.
 
   Data-Import/Digest Module incapsulating all season detector utility methods,
@@ -19,6 +19,10 @@
              the included methods.
 
   - @header_fields_dao: HeaderFieldsDAO instance obtained from parsing the @full_pathname
+
+  - @data_import_session: the currently processed DataImportSession instance
+
+  - #append_to_log_file() method as defined in BaseTwiceLoggable
 
 =end
 module SeasonDetectUtils
@@ -45,12 +49,12 @@ module SeasonDetectUtils
     container_dir_parts = File.dirname( @full_pathname ).split(File::SEPARATOR).last.split('.')
     if ( container_dir_parts.size == 2 )
       @season = Season.find_by_id( (container_dir_parts[1]).to_i )
-      update_logs( "Detected forced season ID=#{ @season.id } from container folder name. Parsing file..." ) if @season
+      append_to_log_file( @data_import_session, "Detected forced season ID=#{ @season.id } from container folder name. Parsing file..." ) if @season
     end
     if @season
-      update_logs( "Detected forced season ID=#{ @season.id } from container folder name. Parsing file..." )
+      append_to_log_file( @data_import_session, "Detected forced season ID=#{ @season.id } from container folder name. Parsing file..." )
     else
-      update_logs( "Season non forced by data-file path ('#{ @full_pathname }')..." )
+      append_to_log_file( @data_import_session, "Season non forced by data-file path ('#{ @full_pathname }')..." )
     end
     @season
   end
@@ -80,9 +84,9 @@ module SeasonDetectUtils
       header_year, mas_season_type.id
     ]).first
     if @season
-      update_logs( "Detected season ID=#{@season.id} from file header date. Parsing file..." )
+      append_to_log_file( @data_import_session, "Detected season ID=#{@season.id} from file header date. Parsing file..." )
     else
-      update_logs( "Un-detected season for #{@header_fields_dao}." )
+      append_to_log_file( @data_import_session, "Un-detected season for #{@header_fields_dao}." )
     end
     @season
   end

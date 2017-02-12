@@ -1,4 +1,6 @@
 # encoding: utf-8
+require_relative '../strategies/base_twice_loggable'
+
 
 =begin
 
@@ -120,12 +122,11 @@ class DataImportEntityCommitter < BaseTwiceLoggable
           @last_error = $!
           append_to_log_file( @data_import_session, "#{ $!.to_s }\r\n" )
         end
-      else
-        # Update the commit log only when something is returned from the block
-        # itself:
-        append_to_sql_diff( @data_import_session, @committed_row )
-        append_to_sql_diff( @data_import_session, @additional_row )
       end
+      # Update the commit log only when something is returned from the block
+      # itself:
+      append_to_sql_diff( @data_import_session, @committed_row )
+      append_to_sql_diff( @data_import_session, @additional_row )
     end
                                                     # Update the logs with current progress:
     append_to_log_file(

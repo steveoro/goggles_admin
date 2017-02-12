@@ -74,11 +74,8 @@ class FilenameParser
     @prefix    = name[ 0 .. date_start_idx-1 ] if date_start_idx
     @code_name = name[ code_start_idx .. name.size ] if code_start_idx
     @code_name = @code_name.split('-')[0]
-    begin
-      @header_date = Date.parse( name[date_start_idx .. code_start_idx-1] )
-    rescue
-      raise ArgumentError.new("Unable to parse header_date!")
-    end
+    # If the parsing fails, let it throw itself the exception:
+    @header_date = Date.parse( name[date_start_idx .. code_start_idx-1] )
     year = @header_date.month < 9 ? @header_date.year - 1 : @header_date.year
     @header_year = "#{year}/#{year+1}"
 

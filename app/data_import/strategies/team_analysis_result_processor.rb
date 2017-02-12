@@ -41,7 +41,7 @@ class TeamAnalysisResultProcessor < BaseTwiceLoggable
   # Returns +true+ on success; +false+ otherwise.
   #
   def run( team_analysis_result, is_confirmed, team_alias_override_id )
-    raise ArgumentError.new("Not a Team-analysis result!") unless swimmer_analysis_result.instance_of?( DataImportTeamAnalysisResult )
+    raise ArgumentError.new("Not a Team-analysis result!") unless team_analysis_result.instance_of?( DataImportTeamAnalysisResult )
 
     append_to_log_file(
       @data_import_session,
@@ -86,8 +86,8 @@ class TeamAnalysisResultProcessor < BaseTwiceLoggable
         # not secondary/temporary entities):
         team_id = nil if committed_row.instance_of?( DataImportTeam )
       rescue
-        append_to_log_file( "\r\n\r\n[ERROR]\r\n*** TeamAnalysisResultProcessor: exception caught during DataImportTeam building! (Name:'#{team_name}')" )
-        append_to_log_file( "*** #{ $!.to_s }\r\n" ) if $!
+        append_to_log_file( @data_import_session, "\r\n\r\n[ERROR]\r\n*** TeamAnalysisResultProcessor: exception caught during DataImportTeam building! (Name:'#{team_name}')" )
+        append_to_log_file( @data_import_session, "*** #{ $!.to_s }\r\n" ) if $!
         @flash[:error] = "#{I18n.t(:something_went_wrong)} ['#{ $!.to_s }']"
         is_ok = false
       end
@@ -107,12 +107,12 @@ class TeamAnalysisResultProcessor < BaseTwiceLoggable
             sql_diff_text_log << "-- aliased with: '#{team_alias.name}' (ID:#{team_alias.id})\r\n" if team_alias
             sql_diff_text_log << to_sql_insert( committed_row, false ) # (No user comment)
           else
-            append_to_log_file( "\r\n*** TeamAnalysisResultProcessor: WARNING: skipping DataImportTeamAlias creation because was (unexpectedly) found already existing! (Name:'#{team_name}', team_id:#{team_id})" )
+            append_to_log_file( @data_import_session, "\r\n*** TeamAnalysisResultProcessor: WARNING: skipping DataImportTeamAlias creation because was (unexpectedly) found already existing! (Name:'#{team_name}', team_id:#{team_id})" )
           end
         end
       rescue
-        append_to_log_file( "\r\n\r\n[ERROR]\r\n*** TeamAnalysisResultProcessor: exception caught during DataImportTeamAlias save! (Name:'#{team_name}', team_id:#{team_id})" )
-        append_to_log_file( "*** #{ $!.to_s }\r\n" ) if $!
+        append_to_log_file( @data_import_session, "\r\n\r\n[ERROR]\r\n*** TeamAnalysisResultProcessor: exception caught during DataImportTeamAlias save! (Name:'#{team_name}', team_id:#{team_id})" )
+        append_to_log_file( @data_import_session, "*** #{ $!.to_s }\r\n" ) if $!
         @flash[:error] = "#{I18n.t(:something_went_wrong)} ['#{ $!.to_s }']"
         is_ok = false
       end
@@ -138,24 +138,24 @@ class TeamAnalysisResultProcessor < BaseTwiceLoggable
             @committed_rows << committed_row
             sql_diff_text_log << to_sql_insert( committed_row, false ) # (No user comment)
           else
-            append_to_log_file( "\r\n*** TeamAnalysisResultProcessor: WARNING: skipping TeamAffiliation creation because was (unexpectedly) found already existing! (Name:'#{team_name}', team_id:#{team_id}, season_id:#{season_id})" )
+            append_to_log_file( @data_import_session, "\r\n*** TeamAnalysisResultProcessor: WARNING: skipping TeamAffiliation creation because was (unexpectedly) found already existing! (Name:'#{team_name}', team_id:#{team_id}, season_id:#{season_id})" )
           end
         end
       rescue
-        append_to_log_file( "\r\n\r\n[ERROR]\r\n*** TeamAnalysisResultProcessor: exception caught during TeamAffiliation save! (Name:'#{team_name}', team_id:#{team_id}, season_id:#{season_id})" )
-        append_to_log_file( "*** #{ $!.to_s }\r\n" ) if $!
+        append_to_log_file( @data_import_session, "\r\n\r\n[ERROR]\r\n*** TeamAnalysisResultProcessor: exception caught during TeamAffiliation save! (Name:'#{team_name}', team_id:#{team_id}, season_id:#{season_id})" )
+        append_to_log_file( @data_import_session, "*** #{ $!.to_s }\r\n" ) if $!
         @flash[:error] = "#{I18n.t(:something_went_wrong)} ['#{ $!.to_s }']"
         is_ok = false
       end
     end
                                                     # Rebuild corrected log files:
     if ( is_confirmed )
-      append_to_log_file( team_analysis_result.analysis_log_text )
+      append_to_log_file( @data_import_session, team_analysis_result.analysis_log_text )
     else
-      append_to_log_file( "\r\n                    [[[ '#{team_name}' ]]]  -- search overridden:\r\n\r\n   => NOT FOUND.\r\n" )
+      append_to_log_file( @data_import_session, "\r\n                    [[[ '#{team_name}' ]]]  -- search overridden:\r\n\r\n   => NOT FOUND.\r\n" )
     end
-    append_to_log_file( "\r\n----8<---- (Original suggested statements:) ----" << team_analysis_result.sql_text )
-    append_to_log_file( "----8<----\r\n" )
+    append_to_log_file( @data_import_session, "\r\n----8<---- (Original suggested statements:) ----" << team_analysis_result.sql_text )
+    append_to_log_file( @data_import_session, "----8<----\r\n" )
     is_ok
   end
   #-- -------------------------------------------------------------------------

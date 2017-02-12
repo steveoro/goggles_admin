@@ -132,6 +132,7 @@ class DataImportTeamBuilder < DataImportEntityBuilder
       end
 
       if_not_found do
+        # ** Automatic row creation (only when enabled by parameters) **
         if force_team_or_swimmer_creation              # Guess city name & setup fields:
           city_builder = DataImportCityBuilder.build_from_parameters( data_import_session, team_name )
           entity_for_creation DataImportTeam
@@ -144,6 +145,7 @@ class DataImportTeamBuilder < DataImportEntityBuilder
             user_id:                1 # (don't care)
           )
           add_new
+        # ** Standard case (search a bit deeper and force a team-analysis when not found) **
         else
           # Not found & can't create a new row? => Do a full depth-first analyze of
           # the team name in search for a match and report the results via the builder

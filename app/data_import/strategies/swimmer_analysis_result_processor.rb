@@ -91,8 +91,8 @@ class SwimmerAnalysisResultProcessor < BaseTwiceLoggable
         # not secondary/temporary entities:
         swimmer_id = nil if committed_row.instance_of?( DataImportSwimmer )
       rescue
-        append_to_log_file( "\r\n\r\n[ERROR]\r\n*** SwimmerAnalysisResultProcessor: exception caught during DataImportSwimmer building! (Name:'#{swimmer_name}')" )
-        append_to_log_file( "*** #{ $!.to_s }\r\n" ) if $!
+        append_to_log_file( @data_import_session, "\r\n\r\n[ERROR]\r\n*** SwimmerAnalysisResultProcessor: exception caught during DataImportSwimmer building! (Name:'#{swimmer_name}')" )
+        append_to_log_file( @data_import_session, "*** #{ $!.to_s }\r\n" ) if $!
         @flash[:error] = "#{ I18n.t(:something_went_wrong) } ['#{ $!.to_s }']"
         is_ok = false
       end
@@ -112,24 +112,24 @@ class SwimmerAnalysisResultProcessor < BaseTwiceLoggable
             sql_diff_text_log << "-- aliased with: '#{swimmer_alias.complete_name}' (ID:#{swimmer_alias.id})\r\n" if swimmer_alias
             sql_diff_text_log << to_sql_insert( committed_row, false ) # (No user comment)
           else
-            append_to_log_file( "\r\n*** SwimmerAnalysisResultProcessor: WARNING: skipping DataImportSwimmerAlias creation because was (unexpectedly) found already existing! (Name:'#{swimmer_name}', swimmer_id:#{swimmer_id})" )
+            append_to_log_file( @data_import_session, "\r\n*** SwimmerAnalysisResultProcessor: WARNING: skipping DataImportSwimmerAlias creation because was (unexpectedly) found already existing! (Name:'#{swimmer_name}', swimmer_id:#{swimmer_id})" )
           end
         end
       rescue
-        append_to_log_file( "\r\n\r\n[ERROR]\r\n*** SwimmerAnalysisResultProcessor: exception caught during DataImportSwimmerAlias save! (Name:'#{swimmer_name}', swimmer_id:#{swimmer_id})" )
-        append_to_log_file( "*** #{ $!.to_s }\r\n" ) if $!
+        append_to_log_file( @data_import_session, "\r\n\r\n[ERROR]\r\n*** SwimmerAnalysisResultProcessor: exception caught during DataImportSwimmerAlias save! (Name:'#{swimmer_name}', swimmer_id:#{swimmer_id})" )
+        append_to_log_file( @data_import_session, "*** #{ $!.to_s }\r\n" ) if $!
         @flash[:error] = "#{I18n.t(:something_went_wrong)} ['#{ $!.to_s }']"
         is_ok = false
       end
     end
                                                     # Rebuild corrected log files:
     if ( is_confirmed )
-      append_to_log_file( swimmer_analysis_result.analysis_log_text )
+      append_to_log_file( @data_import_session, swimmer_analysis_result.analysis_log_text )
     else
-      append_to_log_file( "\r\n                    [[[ '#{swimmer_name}' ]]]  -- search overridden:\r\n\r\n   => NOT FOUND.\r\n" )
+      append_to_log_file( @data_import_session, "\r\n                    [[[ '#{swimmer_name}' ]]]  -- search overridden:\r\n\r\n   => NOT FOUND.\r\n" )
     end
-    append_to_log_file( "\r\n----8<---- (Original suggested statements:) ----" << swimmer_analysis_result.sql_text )
-    append_to_log_file( "----8<----\r\n" )
+    append_to_log_file( @data_import_session, "\r\n----8<---- (Original suggested statements:) ----" << swimmer_analysis_result.sql_text )
+    append_to_log_file( @data_import_session, "----8<----\r\n" )
     is_ok
   end
   #-- -------------------------------------------------------------------------

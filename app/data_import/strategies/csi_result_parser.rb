@@ -213,7 +213,13 @@ class CsiResultParser < BaseTwiceLoggable
       @meeting = meeting_builder.result_row
     end
 
-    if @meeting                                     # Check for possible validation failures:
+    if @meeting
+      # Meeting is surely defined at this point (either as Meeting or as DataImportMeeting)
+      # We store its ID in the session phase-2 log, for quick reference:
+      @data_import_session.phase_2_log = "#{ @meeting.class.name }: #{ @meeting.id }"
+      @data_import_session.save!
+
+      # Try to fix any possible date validation failures:
       append_to_log_file( @data_import_session, "PHASE #1.2: checking possible Meeting validation failures..." )
       sql_diff_for_header = MeetingHeaderYearChecker.check_and_fix( @meeting )
       if sql_diff_for_header.size > 0
@@ -305,10 +311,10 @@ class CsiResultParser < BaseTwiceLoggable
       source_data:      @dao_list.join("\r\n"),
       total_data_rows:  @dao_list.size,
       season_id:        season_id,
-      phase_1_log:      '',
-      phase_2_log:      '',
-      phase_3_log:      '1.0-PARSE',
-      sql_diff:         '',                         # Actual SQL-diff resulting from the whole data-import procedure
+      phase_1_log:      '', # List of DB-diffs produced
+      phase_2_log:      '', # Current meeting instance processed (with class name)
+      phase_3_log:      '1.0-PARSE', # Latest data-import status
+      sql_diff:         '', # Actual resulting, final Meeting.id (just the ID), after phase-3
       user_id:          @current_admin_id
     )
   end

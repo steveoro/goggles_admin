@@ -4,7 +4,7 @@ require 'active_support'
 
 = DataImportable
 
-  - version:  6.071.20170203
+  - version:  6.078
   - author:   Steve A.
 
   Concern that adds relation to a data_import_session plus some other shared
@@ -24,11 +24,11 @@ module DataImportable
   # with the current import data row.
   def get_verbose_conflicting_row
     if ( self.conflicting_id.to_i > 0 )
-      begin
-        conflicting_row = self.class.find( conflicting_id )
+      conflicting_row = self.class.find( conflicting_id )
+      if conflicting_row
         verbose_desc = ( conflicting_row.respond_to?(:get_verbose_name) ? conflicting_row.get_verbose_name : conflicting_row.inspect )
         "(ID:#{conflicting_id}) #{verbose_desc}"
-      rescue
+      else
         "(ID:#{conflicting_id}) <#{ I18n.t('activerecord.errors.unable_to_retrieve_row_data') }>"
       end
     else

@@ -558,9 +558,9 @@ class DataImport::HomeController < ApplicationController
     is_ok = importer.phase_3_commit()
 
     if is_ok
-      redirect_to( di_step1_status_path() ) and return
-    else
       redirect_to( di_result_path(data_import_session.id) ) and return
+    else
+      redirect_to( di_step1_status_path() ) and return
     end
   end
   #-- -------------------------------------------------------------------------

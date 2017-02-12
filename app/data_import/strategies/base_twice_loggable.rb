@@ -4,7 +4,7 @@
 
 = BaseTwiceLoggable
 
-  - Goggles framework vers.:  6.078
+  - Goggles framework vers.:  6.079
   - author: Steve A.
 
   Abstract class container for common methods used to both log a process and create
@@ -118,9 +118,9 @@ class BaseTwiceLoggable
   #-- -------------------------------------------------------------------------
   #++
 
-  # Getter for a string timestamp including the seconds.
+  # Getter for a string timestamp w/o including the seconds.
   def get_iso_timestamp( data_import_session )
-    data_import_session.created_at.strftime("%Y%m%d%H%M%S")
+    data_import_session.created_at.strftime("%Y%m%d%H%M")
   end
 
   # Getter for the last completed phase

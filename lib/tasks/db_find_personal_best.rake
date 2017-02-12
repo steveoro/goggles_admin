@@ -15,7 +15,7 @@ LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
 
 = Find and set personal bests
 
-  - Goggles framework vers.:  4.00.833.20151103
+  - Goggles framework vers.:  6.079
   - Author: Leega
 
   Operation to be performed to find out swimmers persoanl bests
@@ -174,15 +174,24 @@ DESC
     logger.info( "\r\n<------------------------------------------------------------>\r\n" )
 
     # Create diff file (unique if not split or first if split
+    sql_header = "SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";\r\n" <<
+                 "SET AUTOCOMMIT = 0;\r\nSTART TRANSACTION;\r\n" <<
+                 "SET time_zone = \"+00:00\";\r\n/*!40101 SET NAMES utf8 */;\r\n\r\n"
+    sql_footer = "\r\n\r\nCOMMIT;\r\n\r\n"
+    file_name = nil
     if split
       limit = (start_from + split - 1) > stop_after ? stop_after : (start_from + split - 1)
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_scan_all_swimmer_for_personal_bests_#{start_from}_#{limit}.diff"
       diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
+      diff_file.puts sql_header
     else
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_scan_all_swimmer_for_personal_bests_#{start_from}_#{stop_after}.diff"
       diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
+      diff_file.puts sql_header
     end
-    logger.info( "\r\nCreates log file #{file_name}" )
+    # Set the file name change flag in case we are creating more than 1 file:
+    previous_diff_file_name = file_name
+    logger.info( "\r\nCreated log file #{file_name}." )
 
     ActiveRecord::Base.transaction do
       Swimmer.where("id between #{start_from} and #{stop_after}").each do |current_swimmer|
@@ -191,13 +200,13 @@ DESC
           limit = (current_swimmer.id + split - 1) > stop_after ? stop_after : (current_swimmer.id + split - 1)
           file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_scan_all_swimmer_for_personal_bests_#{current_swimmer.id}_#{limit}.diff"
           diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
+          diff_file.puts sql_header
           logger.info( "\r\n" )
           logger.info( "\r\n<------------------------------------------------------------>" )
           logger.info( "\r\nCreating diff file #{file_name}" )
           logger.info( "\r\n<------------------------------------------------------------>" )
           logger.info( "\r\n" )
         end
-
         logger.info( "\r\n- Swimmer to scan: #{current_swimmer.get_full_name} [#{current_swimmer.id}]" )
 
         # Initialize swimmer best finder
@@ -210,9 +219,17 @@ DESC
           # Update diff file
           diff_file.puts swimmer_best_finder.sql_diff_text_log
         else
-          puts("Something wrong with swimmer #{current_swimmer.get_full_name}")
+          puts("Something's wrong with swimmer #{current_swimmer.get_full_name}")
+        end
+        # Close the transaction in the db-diff file when the file changes or ends:
+        if split && previous_diff_file_name != file_name
+          previous_diff_file = File.open( LOG_DIR + '/' + previous_diff_file_name + '.sql', 'a+' )
+          previous_diff_file.puts sql_footer
         end
       end
+
+      # Close the transaction in the last db-diff file created:
+      diff_file.puts sql_footer
 
       # Save or roll back data
       if not persist
@@ -282,6 +299,10 @@ DESC
     diff_file.puts "-- Swimmer personal bests updates for Meeting #{meeting.get_full_name} (#{meeting.id})"
     diff_file.puts "-- #{DateTime.now().strftime('%d-%m-%Y %H:%M')}"
     diff_file.puts '--'
+    sql_header = "SET SQL_MODE = \"NO_AUTO_VALUE_ON_ZERO\";\r\n" <<
+                 "SET AUTOCOMMIT = 0;\r\nSTART TRANSACTION;\r\n" <<
+                 "SET time_zone = \"+00:00\";\r\n/*!40101 SET NAMES utf8 */;\r\n\r\n"
+    diff_file.puts sql_header
     personal_bests_found = 0
     results_scanned      = 0
 
@@ -313,6 +334,11 @@ DESC
       # If no personal bests found delete log file
       if personal_bests_found > 0
         diff_file.puts "-- Found #{personal_bests_found} new personal bests"
+        sql_footer = "\r\n-- Meeting #{meeting.id}\r\n" <<
+                     "-- 'is_pb_scanned' flag setting:\r\n" <<
+                     "UPDATE `meetings` SET `is_pb_scanned` = '1' WHERE id = #{meeting.id};\r\n" <<
+                     "--\r\nCOMMIT;\r\n\r\n"
+        diff_file.puts sql_footer
         diff_file.puts "-- Personal bests update for meeting #{meeting.id} terminated."
       else
         File.delete( LOG_DIR + '/' + file_name + '.sql' )

@@ -1,0 +1,56 @@
+%ul.nav.nav-tabs
+  = content_tag( :li, link_to(t('admin_import.step_1'), di_step1_status_path()) )
+  = content_tag( :li, link_to(t('admin_import.step_2'), '#'), class: 'disabled' )
+  = content_tag( :li, link_to(t('admin_import.step_3'), '#'), class: 'active' )
+
+.col-xs-12.goggles-category-gap
+
+.col-xs-12
+  %p.text-center.lead
+    = I18n.t('admin_import.import_event_results_title')
+
+.col-xs-12
+  %table.table.table-striped.table-bordered.table-hover.table-condensed#history
+    %tr
+      - if @meeting
+        %td.info.text-center
+          %br/
+          %br/
+          %b= "#{ @meeting.get_full_name } (ID #{ @meeting.id })"
+        %td.text-left{ colspan: 2 }
+          .well.well-sm
+            = "#{ I18n.t('admin_import.teams') }: #{ @meeting.teams.distinct.count } / "
+            = "#{ I18n.t('admin_import.swimmers') }: #{ @meeting.swimmers.distinct.count }"
+            %br/
+            = "#{ I18n.t('admin_import.mirs') }: #{ @meeting.meeting_individual_results.distinct.count } / "
+            = "#{ I18n.t('admin_import.mrrs') }: #{ @meeting.meeting_relay_results.distinct.count }"
+            %br/
+            = "#{ I18n.t('admin_import.mtss') }: #{ @meeting.meeting_team_scores.distinct.count }"
+      - else
+        %td.danger.text-left{ colspan: 3 }
+          %i= I18n.t('admin_import.errors.meeting_not_set_in_session')
+    %tr
+      %td
+        %i
+          = "#{I18n.t('admin_import.session')}: #{@data_import_session.id}"
+        %br/
+        %b= h( File.basename( @data_import_session.file_name ) ) if @data_import_session.file_name
+      %td{ colspan: 2 }
+        %i= "#{I18n.t(:last_phase)}: #{@data_import_session.phase}"
+        = show_tag( true ) # (If we get here, the session always ended ok)
+        %i= ", #{I18n.t(:data_rows)}: #{@data_import_session.total_data_rows} #{I18n.t(:data_format)}: #{@data_import_session.file_format}"
+    %tr
+      %td
+        %i
+          = I18n.t('admin_import.db_diffs_produced')
+      %td{ colspan: 2 }
+        - @data_import_session.phase_1_log.split(', ').each do |filename|
+          %pre.small
+            = filename
+    %tr
+      %td
+        = @meeting ? render( partial: "social_tweet_post_status", locals: {meeting: @meeting} ) : "?"
+      %td
+        = @meeting ? render( partial: "social_fb_post_status", locals: {meeting: @meeting} ) : "?"
+      %td
+        = @meeting ? render( partial: "pb_scanned_status", locals: {meeting: @meeting} ) : "?"

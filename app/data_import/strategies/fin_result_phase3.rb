@@ -650,61 +650,33 @@ module FinResultPhase3
 
 
   # This method updates the #are_results_acquired flag and #has_start_list flags
-  # for the Meeting instance associated with the #data_import_session specified,
-  # but only if any individual results or meeting entries are associated to the
-  # Meeting found.
+  # for the Meeting instance specified.
   #
-  # Returns the Meeting instance on success (even when no actions are done), or
-  # +nil+ when it's unable to find the associated Meeting (which should be already
-  # committed by phase 3 in orderfor this to work).
-  #
-  # *WARNING:*
-  # This implementation will work ONLY if the data import session contains at least a
-  # data_import_meeting_programs row.
-  #
-  def update_meeting_flags( data_import_session, flag_status = true )
-    meeting = nil
-    mprg = DataImportMeetingProgram.where( data_import_session_id: data_import_session.id ).first
-# DEBUG
-#    puts "\r\n- update_meeting_flags:\r\n1) M.Program = #{mprg.class} ##{mprg ? mprg.id : ''}"
-    unless mprg
-      di_mir = DataImportMeetingIndividualResult.where( data_import_session_id: data_import_session.id ).first
-# DEBUG
-#      puts "2) MIR = #{di_mir.class} ##{di_mir ? di_mir.id : ''}"
-      mprg = di_mir && ( di_mir.meeting_program || di_mir.data_import_meeting_program )
+  def update_meeting_flags( meeting )
+    if meeting
+      update_meeting_flag( meeting, 'are_results_acquired' ) if meeting.meeting_individual_results.count > 0
+      update_meeting_flag( meeting, 'has_start_list' ) if meeting.meeting_entries.count > 0
     end
-# DEBUG
-#    puts "3) M.Program = #{mprg.class} ##{mprg ? mprg.id : ''}"
-    ms = mprg && ( mprg.meeting_session || ( mprg.respond_to?(:data_import_meeting_session) && mprg.data_import_meeting_session ) )
-# DEBUG
-#    puts "4) M.Session = #{ms.class} ##{ms ? ms.id : ''}"
-    meeting = ms && ms.meeting
-# DEBUG
-#    puts "5) Meeting = #{meeting.class} ##{ms ? meeting.id : ''}"
+  end
+  #-- -------------------------------------------------------------------------
+  #++
 
+
+  # Updates the specified boolean flag in the meeting instance.
+  # Updates also the DB-diff log text with the additional statement for the update,
+  # returning the meeting instance (only after a successful Meeting.save).
+  #
+  def update_meeting_flag( meeting, bool_flag_name, bool_flag_value = true )
     if meeting.instance_of?( Meeting )
-      # Update the are_results_acquired flag ONLY if results where actually imported
-      # and the Meeting is already committed:
-      if meeting.meeting_individual_results.count > 0
-        meeting.are_results_acquired = flag_status
-        meeting.save!
-        sql_diff_text_log << "\r\n-- Meeting #{meeting.id}\r\n-- 'Results acquired' flag setting:" <<
-          "\r\nUPDATE meetings SET are_results_acquired = '1' WHERE id = #{meeting.id};\r\n\r\n"
-# DEBUG
-#        puts "=> Meeting.are_results_acquired: #{meeting.are_results_acquired}"
+      meeting.send( "#{bool_flag_name}=", bool_flag_value )
+      if meeting.save
+        sql_diff_text_log << "\r\n-- Meeting #{meeting.id}\r\n-- '#{ bool_flag_name }' flag setting:" <<
+          "\r\nUPDATE meetings SET #{ bool_flag_name } = '#{ bool_flag_value ? '1' :  '0' }' " <<
+          "WHERE id = #{meeting.id};\r\n\r\n"
+        meeting
+      else
+        nil
       end
-
-      # Update the has_start_list flag ONLY if entries where actually imported
-      # and the Meeting is already committed:
-      if meeting.meeting_entries.count > 0
-        meeting.has_start_list = flag_status
-        meeting.save!
-        sql_diff_text_log << "\r\n-- Meeting #{meeting.id}\r\n-- 'has_start_list' flag setting:" <<
-          "\r\nUPDATE meetings SET has_start_list = '1' WHERE id = #{meeting.id};\r\n\r\n"
-# DEBUG
-#        puts "=> Meeting.has_start_list: #{meeting.has_start_list}"
-      end
-      meeting
     else
       nil
     end

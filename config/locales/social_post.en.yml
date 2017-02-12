@@ -1,0 +1,10 @@
+en:
+  social_post:
+    suggested_title: "Suggested post"
+    total_size: "Tot. chars.: %{len}"
+    twitter:
+      server_maintenance: "Server under maintenance in a few secs for data & application update."
+      published_results: "Added %{federation} %{year} results for %{meeting}, %{city}: %{url}"
+    fb:
+      server_maintenance: "Server under maintenance in a few secs for data & application update."
+      published_results: "Added %{federation} %{year} results for %{meeting}, %{city}: %{url}"

@@ -27,21 +27,21 @@
 .col-xs-5
   %table.table.table-striped.table-bordered.table-hover.table-condensed
     %tbody
-      %tr.text-center
+      %tr.text-center.success
         %td{ colspan: 2 }
           %b
             %i= I18n.t('admin_import.to_be_committed_tot_rows')
-      %tr
+      %tr.success
         %td
           = "Data-import #{ I18n.t('admin_import.mirs') }"
         %td.text-right
           = @di_mirs.distinct.count
-      %tr
+      %tr.success
         %td
           = "Data-import #{ I18n.t('admin_import.mrrs') }"
         %td.text-right
           = @di_mrrs.distinct.count
-      %tr
+      %tr.success
         %td
           = "Data-import #{ I18n.t('admin_import.mtss') }"
         %td.text-right

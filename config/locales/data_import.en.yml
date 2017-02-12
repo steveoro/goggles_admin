@@ -2,7 +2,8 @@ en:
   admin_import:
     title: "Admin/Data Import"
     menu: "Data Import"
-    import_event_results_title: "Import Event results data"
+    import_event_results_title: "Data-Import: results"
+    go_to_results: "Phase-3 results"
     import_text: "Original text"
     conflicting_row: "Conflicting row"
     missing_data_warning: "(EDIT ME: MISSING DATA!)"
@@ -16,6 +17,10 @@ en:
     uploaded_files_still_present: "Uploaded and still present files"
     click_to_show_log_details_tooltip: "Click to show log details"
     create_new_session: "Create a new data-import session"
+    click_to_show_post_details_tooltip: "Click to show post details"
+    command_to_be_executed: "Command to be executed"
+    go_to_console_title: "Shift to a configured console and launch..."
+    db_diffs_produced: "DB-diff files created"
 
     are_you_sure: "Are you sure you want to proceed?"
     del: "Delete"
@@ -51,6 +56,8 @@ en:
     unconfirmed_results_will_be_added: "NOTE: Remember that all unconfirmed results will be treated as 'not-recognized' or MISSING and thus will be added as NEW names."
     team_analysis_completed: "Team Analysis completed."
     parsing_error_nil_result: "Parsing error: unexpected nil result from the parser procedure! (A V3::ParseResult was expected.)"
+    errors:
+      meeting_not_set_in_session: "Meeting NOT set in data-import session (session is corrupted)!"
 
     continue_with_swimmer_analysis: "Continue Swimmer names Analysis"
     continue_with_swimmer_analysis_tooltip: "(This will re-launch Phase 1.1 with a DISABLED global flag for forced creation of missing Swimmers, in order to perform the manual analysis of the existing results.)"
@@ -63,9 +70,9 @@ en:
 
     meeting_sessions: "M.Sessions"
     meeting_programs: "M.Programs"
-    mirs: "M. Individual Res."
-    mrrs: "M. Relay Res."
-    mtss: "M. Team Scores"
+    mirs: "Individual results"
+    mrrs: "Relay results"
+    mtss: "Team scores"
     badges: "Badges"
     swimmers: "Swimmers"
     teams: "Teams"

@@ -4,13 +4,22 @@
 
 = ApplicationController
 
-  - version:  6.075
+  - version:  6.078
   - author:   Steve A.
 
   Main Application controller.
 =end
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
+
+  before_action :set_locale
+
+
+  # Set the default URL options:
+  def default_url_options( options={} )
+    logger.debug "default_url_options is passed options: #{options.inspect}\n"
+    { locale: I18n.locale }
+  end
 
 
   protected
@@ -74,6 +83,24 @@ class ApplicationController < ActionController::Base
       I18n.locale = to_safe_sym( current_locale, accept_locales )
       logger.debug "* Locale is now set to '#{I18n.locale}'"
     end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  private
+
+
+  # Safe #to_sym conversion to avoid DOS-attacks by creating ludicrous amounts of Symbols.
+  def to_safe_sym( value, valid_values )
+    symbolized = nil
+    valid_values.each do |v|
+      if v == value
+         symbolized = v.to_sym
+        break
+      end
+    end
+    symbolized
   end
   #-- -------------------------------------------------------------------------
   #++

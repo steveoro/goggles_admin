@@ -455,8 +455,6 @@ class DataImport::HomeController < ApplicationController
     end
                                                     # -- PHASE 2.0 (MANUAL REVIEW) BEGIN:
                                                     # Compute the filtering parameters:
-    ap = AppParameter.get_parameter_row_for( :data_import )
-    @max_view_height = ap.get_view_height()
     if @data_import_session.season
       @season_description = @data_import_session.season.description
     elsif @data_import_session.data_import_season
@@ -466,6 +464,8 @@ class DataImport::HomeController < ApplicationController
     end
 
     # XXX [Steve, 20170208] We currently assume as already existing both the Season and the Meeting.
+    # At this point, the Meeting ID should be serialized at least into the phase_2_log of the session.
+    @meeting = DataImporter.get_serialized_meeting_from_data_import_session( @data_import_session )
 
     # Retrieve all the data-import ('secondary') entities:
     @di_meeting_sessions = DataImportMeetingSession.where( data_import_session_id: @data_import_session.id )
@@ -485,25 +485,39 @@ class DataImport::HomeController < ApplicationController
     @swimmers = Swimmer.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (swimmer_id is not null)', @data_import_session.id ).map(&:swimmer_id) ).distinct.to_a
     @badges   = Badge.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (badge_id is not null)', @data_import_session.id ).map(&:badge_id) ).distinct.to_a
     @teams    = Team.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (team_id is not null)', @data_import_session.id ).map(&:team_id) ).distinct.to_a
+    if @meeting
+      @swimmers += @meeting.swimmers.distinct.to_a
+      @swimmers.uniq!
+      @teams += @meeting.teams.distinct.to_a
+      @teams.uniq!
+      @badges += @meeting.swimmers.distinct.to_a.map{|s| s.badges.first }.to_a
+      @badges.uniq!
+    end
 
     # Get all the possible, already existing and linked MeetingPrograms:
     @meeting_prgs  = MeetingProgram.where( "id in (?)", DataImportMeetingIndividualResult.where( '(data_import_session_id = ?) and (meeting_program_id is not null)', @data_import_session.id ).map(&:meeting_program_id) ).distinct.to_a
     @meeting_prgs += MeetingProgram.where( "id in (?)", DataImportMeetingRelayResult.where( '(data_import_session_id = ?) and (meeting_program_id is not null)', @data_import_session.id ).map(&:meeting_program_id) ).distinct.to_a
     @meeting_prgs += MeetingProgram.where( "id in (?)", DataImportMeetingEntry.where( '(data_import_session_id = ?) and (meeting_program_id is not null)', @data_import_session.id ).map(&:meeting_program_id) ).distinct.to_a
+    @meeting_prgs += @meeting.meeting_programs.distinct.to_a if @meeting
     @meeting_prgs.uniq!
 
-    @meeting_entries  = MeetingEntry.where( "id in (?)", DataImportPassage.where( '(data_import_session_id = ?) and (meeting_entry_id is not null)', @data_import_session.id ).map(&:meeting_entry_id) ).distinct.to_a
+    @meeting_entries = MeetingEntry.where( "id in (?)", DataImportPassage.where( '(data_import_session_id = ?) and (meeting_entry_id is not null)', @data_import_session.id ).map(&:meeting_entry_id) ).distinct.to_a
+    @meeting_entries += @meeting.meeting_entries.distinct.to_a if @meeting
+    @meeting_entries.uniq!
 
     # Get the already serialized events, in order to get also the meeting sessions, then the meeting:
     @meeting_events = MeetingEvent.where( "id in (?)", @meeting_prgs.map(&:meeting_event_id).compact.uniq ).distinct.to_a
+    @meeting_events += @meeting.meeting_events.distinct.to_a if @meeting
+    @meeting_events.uniq!
 
     # Get all the possible, already existing and linked MeetingSessions:
     @meeting_sessions  = MeetingSession.where( "id in (?)", DataImportMeetingProgram.where( '(data_import_session_id = ?) and (meeting_session_id is not null)', @data_import_session.id ).map(&:meeting_session_id) ).distinct.to_a
     @meeting_sessions += MeetingSession.where( "id in (?)", @meeting_events.map(&:meeting_session_id).compact.uniq ).distinct.to_a
+    @meeting_sessions += @meeting.meeting_sessions.distinct.to_a if @meeting
     @meeting_sessions.uniq!
 
-    # Get the actual existing Meeting, if none:
-    @meeting = Meeting.find( @meeting_sessions.map(&:meeting_id).compact.uniq.first )
+    # Get the actual existing Meeting, if not yet found:
+    @meeting = Meeting.find( @meeting_sessions.map(&:meeting_id).compact.uniq.first ) unless @meeting
   end
   #-- -------------------------------------------------------------------------
   #++
@@ -543,11 +557,33 @@ class DataImport::HomeController < ApplicationController
                                                     # -- PHASE 3.0:
     is_ok = importer.phase_3_commit()
 
-    redirect_to( di_step1_status_path() ) and return unless is_ok
-# FIXME Needs to read the individual files to show the actual log
-# TODO: just show a summary of the imported rows, with the actual actions still to be performed upon the just-ended session (FB-post, Twitter-post, Personal-Best-upodate, ...)
-#
-    @import_log = "TODO: show the action flags still on; show the ending stats; add buttons to get the text for the FB+Twitter postings"
+    if is_ok
+      redirect_to( di_step1_status_path() ) and return
+    else
+      redirect_to( di_result_path(data_import_session.id) ) and return
+    end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  # Shows the results of the final ("Commit") phase of the data-import process.
+  #
+  # == Params:
+  #
+  # - <tt>:id</tt> => the ID of the processed data-import session.
+  #
+  def result
+# DEBUG
+#    logger.debug( "\r\n\r\n!! ------ #{self.class.name} - commit -----" )
+#    logger.debug( "> #{params.inspect}" )
+                                                    # Retrieve data_import_session ID from parameters
+    @data_import_session = DataImportSession.find_by_id( params[:id] )
+    unless ( @data_import_session )
+      flash[:info] = I18n.t( 'admin_import.missing_session_parameter' )
+      redirect_to( di_step1_status_path() ) and return
+    end
+    @meeting = DataImporter.get_serialized_meeting_from_data_import_session( @data_import_session )
   end
   #-- -------------------------------------------------------------------------
   #++

@@ -41,14 +41,21 @@
                      class: 'btn btn-default'                               |
                   )                                                         |
                 &nbsp;
-              - if (s.phase.to_i > 0)
-                = link_to(                                       |
-                     I18n.t(:continue_on_phase2),                |
-                     di_step2_checkout_path( id: s.id ),         |
-                     method: :post,                              |
-                     class: 'btn btn-default'                    |
-                  )                                              |
+              - if (s.phase.to_i > 0) && (s.phase.to_i < 30)
+                = link_to(                                      |
+                     I18n.t(:continue_on_phase2),               |
+                     di_step2_checkout_path( id: s.id ),        |
+                     method: :post,                             |
+                     class: 'btn btn-default'                   |
+                  )                                             |
                 &nbsp;
+              - if (s.phase.to_i >= 30)
+                = link_to(                                      |
+                     I18n.t('admin_import.go_to_results'),      |
+                     di_result_path( id: s.id ),                |
+                     class: 'btn btn-default'                   |
+                  )                                             |
+
             %td
               = link_to(                                                      |
                   I18n.t('admin_import.del'),                                 |
@@ -57,6 +64,19 @@
                   data: { confirm: I18n.t('admin_import.are_you_sure') },     |
                   class: 'btn btn-danger'                                     |
                 )                                                             |
+          - if (s.phase.to_i >= 30) && (s.sql_diff.to_i > 0)
+            - meeting = Meeting.find( s.sql_diff.to_i )
+            %tr.info.text-center
+              %td
+                %b= "#{ meeting.get_full_name } (ID #{ meeting.id })"
+              %td.text-left{ colspan: 4 }
+                %ul
+                  %li
+                    = render( partial: "social_tweet_post_status", locals: {meeting: meeting} )
+                  %li
+                    = render( partial: "social_fb_post_status", locals: {meeting: meeting} )
+                  %li
+                    = render( partial: "pb_scanned_status", locals: {meeting: meeting} )
           %tr
             %td{ colspan: 5 }
               %p.accordion{ id: "accordionLog#{ s.id }" }
@@ -97,22 +117,23 @@
       - @uploaded_files.each do |fn|
         %li
           \-  #{h(fn)}
-%br/
-%hr/
+
+.row.col-xs-12
+  %hr/
 .col-xs-12.goggles-category-gap
 
 %p.text-center.lead
   = I18n.t('admin_import.create_new_session')
 
 .row
-  = form_tag( 'step2_checkout', multipart: true,                                     |
-        class: 'form-horizontal', onsubmit: "$('#loadingIndicator').show(); "        |
-    ) do                                                                             |
+  = form_tag( '/data_import/home/step2_checkout', multipart: true, method: :post,      |
+        class: 'form-horizontal', onsubmit: "$('#loadingIndicator').show(); "         |
+    ) do                                                                              |
     .col-xs-12.form-group
       = label_tag( :season_label, "#{ I18n.t('activerecord.models.season') }:", for: "season[season_id]", class: 'control-label' )
       = select( :season, :season_id,                                                          |
         Season.sort_season_by_begin_date('DESC').all.collect { |s| [s.get_full_name, s.id] }, |
-        { prompt: I18n.t(:please_select) }, { class: 'input-xxlarge' } )                      |
+        { prompt: I18n.t(:please_select) }, { class: 'input-xxlarge combobox' } )                      |
     .col-xs-12.form-group
       = check_box_tag( :force_meeting_creation )
       = label_tag( :force_meeting_creation_label, I18n.t('admin_import.force_meeting_creation'), for: :force_meeting_creation, class: 'control-label' )
@@ -121,7 +142,6 @@
       = label_tag( :force_team_or_swimmer_creation_label, I18n.t('admin_import.force_team_or_swimmer_creation'), for: :force_team_or_swimmer_creation, class: 'control-label' )
     .col-xs-12.form-group
       &nbsp;
-
 
     .col-xs-12
       .form-group.well
@@ -134,3 +154,6 @@
           = submit_tag( I18n.t(:upload), data: { disable_with: I18n.t(:please_wait), class: 'btn disabled' }, class: 'btn btn-primary' )
           %span#loadingIndicator{hidden: "true"}= image_tag( 'indicator.gif' )
           #divProgress.progress.progress-striped.active{hidden: "true"}
+
+%script
+  $('.combobox').combobox();

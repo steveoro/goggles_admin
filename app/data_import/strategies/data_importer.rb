@@ -52,17 +52,16 @@ class DataImporter < BaseTwiceLoggable
   #++
 
   # Creates a new instance.
-  # When the logger is not given the default is to use the current Rails.logger.
   # If the data_import_session is not given a new one will be created.
   #
   def initialize( current_admin_id, data_import_session = nil, flash = nil )
     super( 'data-importer' )
     @flash  = flash  || {}
-    @current_admin_id       = current_admin_id
-    @data_import_session    = data_import_session || create_new_data_import_session()
+    @current_admin_id    = current_admin_id
+    @data_import_session = data_import_session || create_new_data_import_session()
                                                     # Batch parameters' default
-    @season                 = @data_import_session.season
-    @full_pathname          = @data_import_session.file_name
+    @season        = @data_import_session.season
+    @full_pathname = @data_import_session.file_name
     header_fields_dao_init_from_filename if @full_pathname
     @force_missing_meeting_creation = false
     @force_team_or_swimmer_creation = false
@@ -194,7 +193,7 @@ class DataImporter < BaseTwiceLoggable
     @header_fields_dao.edition         = @season.edition
     @header_fields_dao.edition_type_id = @season.edition_type_id
     @header_fields_dao.timing_type_id  = @season.timing_type_id
-    append_to_log_file( @data_import_session, "\r\nParsed header fields: #{@header_fields_dao}", :debug )
+    append_to_log_file( @data_import_session, "\r\nParsed header fields: #{@header_fields_dao}" )
 
     # Parse the file and store the results in memory, inside the @result_hash member.
     #
@@ -221,7 +220,7 @@ class DataImporter < BaseTwiceLoggable
     # > FinResultParser.field_list_for( context_sym )
     # returns the possible fields for either :category_header || :result_row
     #
-    @result_hash = FinResultParser.parse_txt_file( @full_pathname, logger ) # (=> show_progress = false)
+    @result_hash = FinResultParser.parse_txt_file( @full_pathname ) # (=> show_progress = false)
                                                     # Make sure the :parse_result member is in 'standard' form:
     @result_hash[:parse_result] = ParseResultConverter.new.to_parse_result(
       @result_hash[:parse_result],
@@ -301,11 +300,7 @@ class DataImporter < BaseTwiceLoggable
       end
                                                       # If we still haven't found the scheduled date, fall back to some defaults:
       if scheduled_date.nil?
-        begin
-          scheduled_date = @season.begin_date         # This may be null or invalid
-        rescue
-          scheduled_date = Date.today                 # Extreme fall-back case
-        end
+        scheduled_date = @season.begin_date.nil? ? Date.today : @season.begin_date
       end
     end
 
@@ -348,7 +343,13 @@ class DataImporter < BaseTwiceLoggable
       @meeting = meeting_builder.result_row
     end
                                                     # --- TEAM RANKING/SCORES (digest/serialization) --
-    if @meeting                                     # Check for possible validation failures:
+    if @meeting
+      # Meeting is surely defined at this point (either as Meeting or as DataImportMeeting)
+      # We store its ID in the session phase-2 log, for quick reference:
+      @data_import_session.phase_2_log = "#{ @meeting.class.name }: #{ @meeting.id }"
+      @data_import_session.save!
+
+      # Try to fix any possible date validation failures:
       append_to_log_file( @data_import_session, "PHASE #1.2: checking possible Meeting validation failures..." )
       sql_diff_for_header = MeetingHeaderYearChecker.check_and_fix( @meeting )
       if sql_diff_for_header.size > 0
@@ -397,6 +398,8 @@ class DataImporter < BaseTwiceLoggable
     end
                                                     # --- CATEGORY (digest/serialization) --
     if is_ok && meeting_session
+# DEBUG
+      puts "\r\n----- BEFORE 1.2: CATEGORY headers --------"
       append_to_log_file( @data_import_session, "PHASE #1.2: processing CATEGORY headers..." )
       is_ok = process_category_headers(
           @full_pathname,
@@ -412,6 +415,8 @@ class DataImporter < BaseTwiceLoggable
     end
                                                     # --- RELAY (digest/serialization) --
     if is_ok && meeting_session
+# DEBUG
+      puts "\r\n----- BEFORE 1.2: RELAY headers --------"
       append_to_log_file( @data_import_session, "PHASE #1.2: processing RELAY headers..." )
       is_ok = process_relay_headers(
           @full_pathname,
@@ -425,6 +430,8 @@ class DataImporter < BaseTwiceLoggable
           @force_team_or_swimmer_creation
       )
     end
+# DEBUG
+      puts "\r\n----- END 1.2 --------"
                                                     # After having successfully stored the contents, remove the file
     if is_ok
       append_to_log_file( @data_import_session, "-- phase_1_parse(#{ @full_pathname }): file processed and 'digested'(serialized) on support tables." )
@@ -449,8 +456,11 @@ class DataImporter < BaseTwiceLoggable
     append_to_log_file( @data_import_session, "\r\nPHASE #1.2 END, returning #{ is_ok ? '(current session)' : 'NIL'}." )
     append_to_log_file( @data_import_session, "               *** Latest flash[:error]: ***\r\n#{@flash[:error] }\r\n-----------------------------------------------------------\r\n" ) if @flash[:error]
     # Dump the SQL diff file only if no Analysis phase (1.1) is required:
+# DEBUG
+    puts "\r\n----- BEFORE save_diff_file --------"
     save_diff_file( @data_import_session ) if is_ok
     # Return the created/updated data-import session, or nil in case of errors:
+    puts "\r\n----- END save_diff_file --------"
     is_ok ? @data_import_session : nil
   end
   #-- -------------------------------------------------------------------------
@@ -473,7 +483,6 @@ class DataImporter < BaseTwiceLoggable
 
     append_to_log_file( @data_import_session, "\r\n\r\n--------------------[Phase #3 - COMMIT]--------------------" )
     append_to_log_file( @data_import_session, "\r\n-- phase_3_commit: session ID:#{ @data_import_session.id }, season ID: #{ @season.id }..." )
-    @data_import_session.phase_2_log = "#{@data_import_session.phase_2_log}\r\nImporting data @ #{Format.a_short_datetime(DateTime.now)}.\r\nCommitting data_import_session ID:#{@data_import_session.id}, season ID: #{@season.id}...\r\n"
     @committed_data_rows = 0
                                                     # Bail out as soon as something is wrong:
     is_ok = commit_data_import_meeting( @data_import_session )
@@ -490,7 +499,8 @@ class DataImporter < BaseTwiceLoggable
     @data_import_session.phase = 30                 # (30 = '3.0', but without successful ending, since the session in not nil)
     @data_import_session.save!
                                                     # *** SET 'results aquired' flag. This will return the committed/updated meeting:
-    @meeting = update_meeting_flags( @data_import_session ) if is_ok
+    @meeting = DataImporter.get_serialized_meeting_from_data_import_session( @data_import_session )
+    update_meeting_flags( @meeting ) if is_ok && @meeting
 
     if @meeting && is_ok                            # *** FIX-UP committed meeting program's begin times:
       is_begin_time_fixed = BeginTimeCalculator.compute_for_all( @meeting, @data_import_session.sql_diff )
@@ -517,8 +527,42 @@ class DataImporter < BaseTwiceLoggable
       @flash[:error] = "#{ I18n.t(:something_went_wrong) } [#{ data_import_session.phase_3_log }]" + ( $! ? ": '#{ $!.to_s }'" : '' )
     end
                                                     # Rewrite the logs & return the result:
-    save_diff_file( @data_import_session ) if is_ok
+    if is_ok
+      save_diff_file( @data_import_session )
+      # Store the final Meeting ID updated by the data-import in a dedicated column:
+      @data_import_session.sql_diff = "#{ @meeting.id }"
+      @data_import_session.save!
+    end
     is_ok
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  # Returns the currently serialized Meeting instance from the data-import
+  # session specified, or +nil+ when not found.
+  #
+  # When calling this method, it's assumed that the Meeting ID should be serialized
+  # either into the phase_2_log of the session (together with the serialization class
+  # name) or just as its Meeting.id in sql_diff. (This actually happens only after
+  # a successful data-import, with some data to be imported.)
+  #
+  def self.get_serialized_meeting_from_data_import_session( data_import_session )
+    return nil unless data_import_session.instance_of?( DataImportSession )
+    meeting = nil
+
+    if data_import_session.sql_diff.to_i > 0
+      meeting = Meeting.find_by_id( data_import_session.sql_diff.to_i )
+
+    elsif data_import_session.phase_2_log.to_s.size > 0
+      meeting_serialized = data_import_session.phase_2_log.split(': ')
+      # Search only instances of Meeting (not DataImportMeeting):
+      if meeting_serialized.first == 'Meeting'
+        meeting = Meeting.find_by_id( meeting_serialized.last )
+      end
+    end
+
+    meeting
   end
   #-- -------------------------------------------------------------------------
   #++
@@ -539,10 +583,10 @@ class DataImporter < BaseTwiceLoggable
       source_data:      full_text_file_contents,
       total_data_rows:  total_data_rows,
       season_id:        season_id,
-      phase_1_log:      '',
-      phase_2_log:      '',
-      phase_3_log:      '',
-      sql_diff:         '',                         # Actual SQL-diff resulting from the whole data-import procedure
+      phase_1_log:      '', # List of DB-diffs produced
+      phase_2_log:      '', # Current meeting instance processed (with class name)
+      phase_3_log:      '', # Latest data-import status
+      sql_diff:         '', # Actual resulting, final Meeting.id (just the ID), after phase-3
       user_id:          @current_admin_id
     )
   end

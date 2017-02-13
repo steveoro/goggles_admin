@@ -331,24 +331,23 @@ DESC
         results_scanned += 1
       end
 
-      # If no personal bests found delete log file
-      if personal_bests_found > 0
-        diff_file.puts "-- Found #{personal_bests_found} new personal bests"
-        sql_footer = "\r\n-- Meeting #{meeting.id}\r\n" <<
-                     "-- 'is_pb_scanned' flag setting:\r\n" <<
-                     "UPDATE `meetings` SET `is_pb_scanned` = '1' WHERE id = #{meeting.id};\r\n" <<
-                     "--\r\nCOMMIT;\r\n\r\n"
-        diff_file.puts sql_footer
-        diff_file.puts "-- Personal bests update for meeting #{meeting.id} terminated."
-      else
-        File.delete( LOG_DIR + '/' + file_name + '.sql' )
-      end
+      # Set is_pb_scanned flag anyway
+      meeting.is_pb_scanned = true
+      meeting.save
+
+      # Save the diff file anyway, since we have to update the flag:
+      diff_file.puts "-- Found #{ personal_bests_found } new personal bests"
+      sql_footer = "\r\n-- Meeting #{meeting.id}\r\n" <<
+                   "-- 'is_pb_scanned' flag setting:\r\n" <<
+                   "UPDATE `meetings` SET `is_pb_scanned` = '1' WHERE id = #{meeting.id};\r\n" <<
+                   "--\r\nCOMMIT;\r\n\r\n"
+      diff_file.puts sql_footer
+      diff_file.puts "-- Personal bests update for meeting #{ meeting.id } terminated."
 
       logger.info( "\r\n<------------------------------------------------------------>" )
       logger.info( "\r\nScanned #{results_scanned} results" )
       logger.info( "\r\nFound #{personal_bests_found} new personal bests" )
-      logger.info( "\r\nDiff file #{file_name} created" ) if personal_bests_found > 0
-      logger.info( "\r\nNo diff file created" ) if personal_bests_found == 0
+      logger.info( "\r\nDiff file #{file_name} created" )
       logger.info( "\r\n<------------------------------------------------------------>" )
 
       # Save or roll back data

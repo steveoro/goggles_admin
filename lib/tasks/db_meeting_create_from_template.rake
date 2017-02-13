@@ -13,7 +13,7 @@ LOG_DIR = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
 
 = Meeting creation from template
 
-  - Goggles framework vers.:  4.00.775.20150415
+  - Goggles framework vers.:  6.079
   - author: Leega
 
   DB Updater for batch meeting creation based on existing edition
@@ -148,6 +148,11 @@ DESC
       newer_meeting.has_invitation       = false
       newer_meeting.invitation           = nil
       newer_meeting.is_confirmed         = false
+      newer_meeting.is_cancelled         = false
+      newer_meeting.is_pb_scanned        = false
+      newer_meeting.is_fb_posted         = false
+      newer_meeting.is_tweeted           = false
+
 
       if newer_meeting.save
         sql_diff_text_log << to_sql_insert( newer_meeting, false, "\r\n" ) # no additional comment

@@ -1,6 +1,12 @@
 # encoding: utf-8
 
-#require 'reservations_csi_2_csv'
+#require 'reservations_csi_2_csv_matrix'
+require "#{ GogglesCore::Engine.root }/app/strategies/reservations_csi_2_csv_matrix"
+
+require 'date'
+require 'rubygems'
+require 'find'
+require 'fileutils'
 
 
 =begin
@@ -64,10 +70,10 @@ DESC
     end
     # Find target entities
     meeting = Meeting.find( meeting_id.to_i )
-    unless ReservationsCsi2Csv.is_a_csi_meeting( meeting )
-      puts("The specified Meeting is not a valid CSI Meeting! Aborting...")
-      exit
-    end
+    #unless ReservationsCsi2CsvMatrix.is_a_csi_meeting( meeting )
+    #  puts("The specified Meeting is not a valid CSI Meeting! Aborting...")
+    #  exit
+    #end
     team = Team.find_by_id( team_id.to_i ) if team_id.to_i > 0
 
     # Display some info:
@@ -78,7 +84,7 @@ DESC
     puts "\r\nMeeting to scan for: #{ meeting.get_full_name }"
     puts "\r\n"
 
-    csi_2_csv = ReservationsCsi2Csv.new( meeting, team )
+    csi_2_csv = ReservationsCsi2CsvMatrix.new( meeting, team )
     csi_2_csv.collect()
     csi_2_csv.save_to_file( out_dir )
   end

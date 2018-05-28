@@ -43,7 +43,7 @@ GIT
 
 GIT
   remote: https://github.com/steveoro/goggles_core
-  revision: d0dabc0e315b7cfb0e4409b4a94b350236313670
+  revision: 3094cc6236e43ce76d7a241e39a7e8c59bf29b1a
   specs:
     goggles_core (1.3.20)
       active_hash_relation

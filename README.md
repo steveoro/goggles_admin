@@ -1,8 +1,10 @@
 # Goggles Admin -o^o-
 
-[![Code Climate](https://codeclimate.com/github/steveoro/goggles_admin/badges/gpa.svg)](https://codeclimate.com/github/steveoro/goggles_admin)
-[![Test Coverage](https://codeclimate.com/github/steveoro/goggles_admin/badges/coverage.svg)](https://codeclimate.com/github/steveoro/goggles_admin/coverage)
-[![Issue Count](https://codeclimate.com/github/steveoro/goggles_admin/badges/issue_count.svg)](https://codeclimate.com/github/steveoro/goggles_admin)
+[![Maintainability](https://api.codeclimate.com/v1/badges/ec5573edc4f388290ca3/maintainability)](https://codeclimate.com/github/steveoro/goggles_admin/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/ec5573edc4f388290ca3/test_coverage)](https://codeclimate.com/github/steveoro/goggles_admin/test_coverage)
+[![CodeFactor](https://www.codefactor.io/repository/github/steveoro/goggles_admin/badge)](https://www.codefactor.io/repository/github/steveoro/goggles_admin)
+[![Build Status](https://semaphoreci.com/api/v1/steveoro/goggles_admin/branches/master/badge.svg)](https://semaphoreci.com/steveoro/goggles_admin)
+
 
 Admin app for Goggles 5.0+
 _For internal & localhost-usage only - not to be deployed on the cloud._

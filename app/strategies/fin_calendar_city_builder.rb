@@ -74,7 +74,7 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
   def self.parse_pool_city_name_tokens( pool_text )
     # Filter out the interesting parts regarding the swimming pool:
     pool_parts = FinCalendarTextParser.get_filtered_pool_data_tokens( pool_text )
-    pool_name_tokens = FinCalendarSwimmingPoolBuilder.parse_pool_name_tokens( pool_text.gsub(/\``’\’/iu, "'") )
+    pool_name_tokens = FinCalendarSwimmingPoolBuilder.parse_pool_name_tokens( pool_text.gsub(/[\`\’]/iu, "'") )
     pool_addr_tokens = FinCalendarSwimmingPoolBuilder.parse_pool_address_tokens( pool_text )
 # DEBUG
 #    puts "\r\n- pool_parts..................: #{ pool_parts.inspect }"
@@ -84,8 +84,8 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
     # Subtract *single* occurencies of name & cut away the address tokens from pool parts:
     remainder = FinCalendarTextParser.subtract_set_behaviour( pool_parts, pool_name_tokens )
 
-    remainder_max_res = remainder.join(" ").scan(/[\wòàèéìùç̉̉\/`\'°\^\(\)]+/ui)
-    address_max_res   = pool_addr_tokens.join(" ").scan(/[\wòàèéìùç̉̉\/`\'°\^\(\)]+/ui)
+    remainder_max_res = remainder.join(" ").scan(/[\wòàèéìùç\/\\\`\'°\^\(\)]+/ui)
+    address_max_res   = pool_addr_tokens.join(" ").scan(/[\wòàèéìùç\/\\\`\'°\^\(\)]+/ui)
     partitioned_remainder = remainder_max_res.join(" ").partition( address_max_res.join(" ") )
 # DEBUG
 #    puts "- remainder_max_res............: #{ remainder_max_res.inspect }"
@@ -139,12 +139,12 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
 #      puts "=> resulting tokens from addr..: #{ resulting_tokens.inspect }"
       resulting_tokens = resulting_tokens.drop_while do |token|
         # Search for a "belonging to" preposition or a separator:
-        (token.to_s.strip =~ /^[\,\.”\”\"\']\Z|\bdi\b|\ba\b/ui).nil?
+        (token.to_s.strip =~ /^[\,\.\”\"\']\Z|\bdi\b|\ba\b/ui).nil?
       end
       # Drop also the preposition found and consider the remainder as a possible city name::
       resulting_tokens = resulting_tokens.drop_while do |token|
         # Search for a "belonging to" preposition or a separator:
-        (token.to_s.strip =~ /^[\,\.”\”\"\']\Z|\bdi\b|\ba\b/ui)
+        (token.to_s.strip =~ /^[\,\.\”\"\']\Z|\bdi\b|\ba\b/ui)
       end
     end
 
@@ -157,7 +157,7 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
     resulting_tokens = resulting_tokens.take_while do |token|
       (token.to_s.strip =~ /
           \(\w\w\)?\Z|
-          ^[\,\.”\”\"\']\Z|
+          ^[\,\.\”\"\']\Z|
           \bsit[oa]\b|\bin\b|\bpresso\b|\bc\/o\b|
           \bpiscina\b|\bvasca\b|\bcorsie\b|\bimpianto\b|\bprofondit|\bgara\b|\bmattonelle\b|\bacci?aio\b|
           \briscaldamento\b|
@@ -217,7 +217,7 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
   #
   def get_geocode_result( geocoder_api_key = nil )
     # Redundant safety quote conversion: (already taken care by GeocodingParser later)
-    address = @source_text_line.gsub(/[“”`\“\`]/ui, "'")
+    address = @source_text_line.gsub(/[\“\`]/ui, "'")
     address = @meeting_place unless address.present?
     unless @geocode_result_hash || !address.present?
       @geocoder = GeocodingParser.new( address )

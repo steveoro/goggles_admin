@@ -1,10 +1,12 @@
-# [Steve] Test coverage integrated on CodeClimate, with local HTML-file reports
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
+# [Steve] Test coverage integrated on SimpleCov, with local HTML-file reports
 # (Remember to exclude /coverage sub-dir from git repo)
-unless ENV["CI"]
-  require 'simplecov'
-  SimpleCov.start 'rails'
-  puts "SimpleCov required and started."
-end
+require 'simplecov'
+SimpleCov.start 'rails'
+puts "SimpleCov+CodeClimate::TestReporter required and started."
+
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'

@@ -1,0 +1,83 @@
+- if @badges.count > 0
+  %h4
+    = I18n.t('admin_import.primary_already_existing')
+    = " (tot. #{ @badges.count })"
+  %table.table.table-striped.table-bordered.table-hover.table-condensed
+    %tbody
+      %tr.info.text-center
+        %td
+          %b= "ID"
+        %td
+          %b= I18n.t('admin_import.name')
+        %td
+          %b= "swimmer_id"
+        %td
+          %b= "team_id"
+        %td
+          %b= "team_affiliation_id"
+        %td
+          %b= "category_type_id"
+      - @badges.each do |badge|
+        %tr.text-right
+          %td
+            = badge.id
+          %td.text-left
+            = badge.get_full_name
+          %td
+            = badge.swimmer_id
+          %td
+            = badge.team_id
+          %td
+            = badge.team_affiliation_id
+          %td
+            = badge.category_type_id
+
+- if @di_badges.count > 0
+  %h4
+    = I18n.t('admin_import.secondary_to_be_committed')
+    = " (tot. #{ @di_badges.count })"
+  %table.table.table-striped.table-bordered.table-hover.table-condensed
+    %tbody
+      %tr.info.text-center
+        %td
+          %b= "ID"
+        %td
+          %b= I18n.t('admin_import.number')
+        %td
+          %b= "season_id"
+        %td
+          %b= "data_import_season_id"
+        %td
+          %b= "swimmer_id"
+        %td
+          %b= "data_import_swimmer_id"
+        %td
+          %b= "team_id"
+        %td
+          %b= "data_import_team_id"
+        %td
+          %b= "team_affiliation_id"
+        %td
+          %b= "category_type_id"
+      - @di_badges.each do |badge|
+        %tr.text-right
+          %td
+            = badge.id
+          %td
+            = badge.number
+          %td
+            = badge.season_id
+          %td
+            = badge.data_import_season_id
+          %td
+            = badge.swimmer_id
+          %td
+            = badge.data_import_swimmer_id
+          %td
+            = badge.team_id
+          %td
+            = badge.data_import_team_id
+          %td
+            = badge.team_affiliation_id
+          %td
+            = badge.category_type_id

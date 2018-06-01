@@ -1,0 +1,12 @@
+it:
+  social_post:
+    suggested_title: "Post suggerito"
+    total_size: "Lungh. tot.: %{len}"
+    twitter:
+      server_maintenance: "Server in manutenzione a breve per aggiornamento dati ed applicazione."
+      published_results: "Aggiunti risultati %{federation} %{year}, %{meeting}, %{city}: %{url}"
+      published_startlist: "Aggiunta start-list %{federation} %{year}, %{meeting}, %{city}: %{url}"
+    fb:
+      server_maintenance: "Server in manutenzione a breve per aggiornamento dati ed applicazione."
+      published_results: "Aggiunti risultati %{federation} %{year}, %{meeting}, %{city}: %{url}"
+      published_startlist: "Aggiunta start-list %{federation} %{year}, %{meeting}, %{city}: %{url}"

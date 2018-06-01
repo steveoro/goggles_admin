@@ -1,0 +1,28 @@
+= check_box_tag( :fb_posted, '1', meeting.is_fb_posted, disabled: true )
+= "FB-posted? "
+- unless meeting.is_fb_posted?
+  &nbsp;
+  - text_key    = is_a_start_list ? "social_post.fb.published_startlist" : "social_post.fb.published_results"
+  - action_name = is_a_start_list ? "show_start_list" : "show_full"
+  - post_contents = I18n.t( text_key,                                               |
+      federation: meeting.season_type.federation_type.short_name,                   |
+      year: meeting.header_date.year, meeting: meeting.get_full_name,               |
+      city: meeting.swimming_pools.first.city.get_full_name,                        |
+      url: "http://master-goggles.org/it/meeting/#{ action_name }/#{ meeting.id }"  |
+    ) +                                                                             |
+    "\r\n\r\n- #{ I18n.t('admin_import.teams') }: #{ meeting.teams.distinct.count } / " + |
+    "#{ I18n.t('admin_import.swimmers') }: #{ meeting.swimmers.distinct.count }\r\n" +    |
+    "- #{ I18n.t('admin_import.mirs') }: #{ meeting.meeting_individual_results.distinct.count } / " + |
+    "#{ I18n.t('admin_import.mrrs') }: #{ meeting.meeting_relay_results.distinct.count }\r\n" |
+  %span{id: "meetingFB#{ meeting.id }" }
+    .btn.btn-default.btn-xs
+      = I18n.t("social_post.suggested_title")
+
+:javascript
+  var popContent = "#{ escape_javascript( text_area_tag(:post_contents, post_contents, rows: 10, cols: 120, class: 'col-xs-12 well') ) }";
+  $( "#meetingFB#{ meeting.id }" ).popover({
+    title: "#{ escape_javascript( I18n.t("social_post.total_size", len: post_contents.size) ) }",
+    html: true,
+    content: popContent,
+    placement: "bottom"
+  });

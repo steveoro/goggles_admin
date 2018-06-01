@@ -1,0 +1,48 @@
+.col-xs-5
+  %table.table.table-striped.table-bordered.table-hover.table-condensed
+    %tbody
+      %tr.text-center
+        %td{ colspan: 2 }
+          %b
+            %i= I18n.t('admin_import.already_existing_tot_rows')
+      %tr
+        %td
+          = I18n.t('admin_import.mirs')
+        %td.text-right
+          = @meeting.meeting_individual_results.distinct.count
+      %tr
+        %td
+          = I18n.t('admin_import.mrrs')
+        %td.text-right
+          = @meeting.meeting_relay_results.distinct.count
+      %tr
+        %td
+          = I18n.t('admin_import.mtss')
+        %td.text-right
+          = @meeting.meeting_team_scores.distinct.count
+
+.col-xs-2.text-center
+  ="<==(+)=="
+
+.col-xs-5
+  %table.table.table-striped.table-bordered.table-hover.table-condensed
+    %tbody
+      %tr.text-center.success
+        %td{ colspan: 2 }
+          %b
+            %i= I18n.t('admin_import.to_be_committed_tot_rows')
+      %tr.success
+        %td
+          = "Data-import #{ I18n.t('admin_import.mirs') }"
+        %td.text-right
+          = @di_mirs.distinct.count
+      %tr.success
+        %td
+          = "Data-import #{ I18n.t('admin_import.mrrs') }"
+        %td.text-right
+          = @di_mrrs.distinct.count
+      %tr.success
+        %td
+          = "Data-import #{ I18n.t('admin_import.mtss') }"
+        %td.text-right
+          = @di_mtss.distinct.count

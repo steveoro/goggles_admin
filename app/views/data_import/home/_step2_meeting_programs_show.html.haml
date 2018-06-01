@@ -1,0 +1,53 @@
+.col-xs-6
+  - if @meeting_prgs.count > 0
+    %h4
+      = I18n.t('admin_import.primary_already_existing')
+      = " (tot. #{ @meeting_prgs.count })"
+    %table.table.table-striped.table-bordered.table-hover.table-condensed
+      %tbody
+        %tr.info.text-center
+          %td
+            %b= "ID"
+          %td
+            %b= t('calendars.date')
+          %td
+            %b= t('admin_import.event')
+          %td
+            %b= t('admin_import.category')
+        - @meeting_prgs.each do |meeting_prg|
+          %tr
+            %td.text-right
+              = meeting_prg.id
+            %td.text-center
+              = meeting_prg.get_scheduled_date
+            %td.text-left
+              = "(#{ meeting_prg.event_order }) #{ meeting_prg.event_type.i18n_short }"
+            %td.text-left
+              = meeting_prg.get_category_and_gender_short
+
+.col-xs-6
+  - if @di_meeting_prgs.count > 0
+    %h4
+      = I18n.t('admin_import.secondary_to_be_committed')
+      = " (tot. #{ @di_meeting_prgs.count })"
+    %table.table.table-striped.table-bordered.table-hover.table-condensed
+      %tbody
+        %tr.info.text-center
+          %td
+            %b= "ID"
+          %td
+            %b= t('calendars.date')
+          %td
+            %b= t('admin_import.event')
+          %td
+            %b= t('admin_import.category')
+        - @di_meeting_prgs.each do |meeting_prg|
+          %tr
+            %td.text-right
+              = meeting_prg.id
+            %td.text-center
+              = meeting_prg.get_scheduled_date
+            %td.text-left
+              = "(#{ meeting_prg.event_order }) #{ meeting_prg.event_type.i18n_short }"
+            %td.text-left
+              = meeting_prg.get_category_and_gender_short

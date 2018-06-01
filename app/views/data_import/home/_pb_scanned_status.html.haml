@@ -1,0 +1,17 @@
+= check_box_tag( :pb_scanned, '1', meeting.is_pb_scanned, disabled: true )
+= "Personal-best scanned? "
+- unless meeting.is_pb_scanned?
+  &nbsp;
+  - command_line = "zeus rake db:scan_meeting_for_personal_bests persist=true meeting=#{ meeting.id }\r\nzeus rake db:scan_team_records meeting_id=#{ meeting.id }"
+  %span{id: "meetingPBScan#{ meeting.id }" }
+    .btn.btn-default.btn-xs
+      = I18n.t("admin_import.command_to_be_executed")
+
+:javascript
+  var popContent = "#{ escape_javascript( text_area_tag(:post_contents, command_line, rows: 6, cols: 80, class: 'col-xs-12 well') ) }";
+  $( "#meetingPBScan#{ meeting.id }" ).popover({
+    title: "#{ escape_javascript( I18n.t("admin_import.go_to_console_title") ) }",
+    html: true,
+    content: popContent,
+    placement: "bottom"
+  });

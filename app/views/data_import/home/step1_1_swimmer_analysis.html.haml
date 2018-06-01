@@ -1,0 +1,185 @@
+%ul.nav.nav-tabs
+  = content_tag( :li, link_to(t('admin_import.step_1'), di_step1_status_path()) )
+  = content_tag( :li, link_to(t('admin_import.step_1_1'), '#'), class: 'active' )
+  = content_tag( :li, link_to(t('admin_import.step_2'), '#'),   class: 'disabled' )
+  = content_tag( :li, link_to(t('admin_import.step_3'), '#'),   class: 'disabled' )
+
+.col-xs-12.goggles-category-gap
+
+%p.text-center.lead
+  = I18n.t('admin_import.import_event_results_title')
+  \:
+  \#{I18n.t('admin_import.swimmer_analysis_results')}
+  (#{I18n.t('admin_import.session')}: #{@data_import_session.id})
+
+.row.col-xs-12
+  .alert.alert-info
+    = I18n.t('admin_import.unconfirmed_results_will_be_added')
+
+.row.col-xs-12
+  = form_tag( 'step1_1_swimmer_analysis_commit', multipart: true, class: 'form',  |
+        onsubmit: "$('#loadingIndicator').show(); " ) do                          |
+    = hidden_field_tag( :data_import_session_id, @data_import_session.id )
+    = hidden_field_tag( :force_meeting_creation, @force_missing_meeting_creation ? '1' : '0' )
+    = hidden_field_tag( :force_team_or_swimmer_creation, @force_team_or_swimmer_creation ? '1' : '0' )
+
+    .row.col-xs-12
+      %table.table.table-striped.table-bordered.table-hover.table-condensed#history
+        %tbody
+          %tr.text-center
+            %td{ colspan: 1 }
+              = I18n.t('admin_import.searched_swimmer')
+            %td{ colspan: 2 }
+              = I18n.t('admin_import.swimmer_match_name')
+            %td
+              = I18n.t('admin_import.add_alias')
+            %td
+              = I18n.t('admin_import.add_swimmer')
+            %td
+              = I18n.t('admin_import.is_ok')
+
+          - @analysis_results.each_with_index do |result_row, idx|
+            - do_insert_alias = result_row.can_insert_alias
+            - do_insert_swimmer = result_row.can_insert_swimmer
+            %tr
+              %td{ colspan: 1 }
+                %b
+                  = "#{result_row.searched_swimmer_name} (#{result_row.desired_year_of_birth})"
+              %td{ colspan: 2 }
+                .form-group
+                  = hidden_field( :alias_ids, result_row.id, value: result_row.chosen_swimmer_id )
+                  = text_field_tag( "alias_ids_#{ result_row.id }_name",                                              |
+                      result_row.chosen_swimmer_id ? Swimmer.find(result_row.chosen_swimmer_id).get_full_name : nil,  |
+                      {autocomplete: 'off', class: "input-sm form-control typeahead",                                 |
+                      "data-provide"=>"typeahead", placeholder: I18n.t('combobox_3char_tooltip')} )                   |
+              %td
+                = show_tag( do_insert_alias )
+              %td
+                = show_tag( do_insert_swimmer )
+              %td
+                = check_box_tag( "id_#{result_row.id}", '1', do_insert_swimmer )
+
+    .row.col-xs-12.goggles-category-gap
+      .col-xs-6
+        = I18n.t('admin_import.on_commit_go_back_to_step1')
+      .col-xs-1
+        = check_box_tag( "must_go_back" )
+      .col-xs-1
+        = submit_tag( I18n.t('admin_import.confirm'), data: {disable_with: I18n.t(:please_wait), class: 'btn disabled'}, class: 'btn btn-primary' )
+      .col-xs-1
+        %span#loadingIndicator{hidden: "true"}
+          = image_tag( 'indicator.gif' )
+        #divProgress.progress.progress-striped.active{hidden: "true"}
+
+:javascript
+  /**
+   * AJAX response buffer.
+   * Stores the actual array of objects returned by the AJAX request.
+   */
+  var responseSwimmerNamesBuffer = [];
+
+  /**
+   * Datum tokenizer for the Bloodhound suggestion engine.
+   * Returns the datum tokenized into a comparable string.
+   */
+  function tokenizeSwimmerNameInStep11( datum ) {
+    // Extract just the name part:
+    // DEBUG
+    //console.log( "tokenizeSwimmerNameInStep11 datum splitted: ", detokenizeSwimmerNameInStep11(datum) );
+    return Bloodhound.tokenizers.obj.whitespace( detokenizeSwimmerNameInStep11(datum)[0] );
+  }
+
+  /**
+   * De-tokenizer for composed results.
+   * Splits a specified datum using '|' as separator.
+   * Returns an array of string tokens, in which, allegedly, the order should be:
+   * 1. Swimmer#complete_name
+   * 2. Swimmer#year_of_birth (as a string number)
+   * 3. Swimmer#gender_type_id (as a string number)
+   * 4. remote Swimmer ID (as a string number)
+   */
+  function detokenizeSwimmerNameInStep11( datum ) {
+    return datum.split("|");
+  }
+
+  /**
+   * Remote response adapter for the Bloodhound suggestion engine.
+   * It is expected to return a list of tokenized names, ready to be compared/matched.
+   */
+  function transformSwimmerNamesResponse( data ) {
+    // DEBUG
+    console.log( "transformSwimmerNamesResponse response: ", data );
+    // Clear & rebuild the result list and the list of searchable names:
+    responseSwimmerNamesBuffer = [];
+
+    // Since we're bound to return a list of tokenized & comparable strings,
+    // we'll store the additional data to display into the same result row,
+    // concatenated with an underscore (which is surely not used for a name).
+    for ( idx = 0; idx < data.length; idx++ ) {
+      var composedName = data[idx].complete_name  + "|" +
+                         data[idx].year_of_birth + "|" +
+                         data[idx].gender_type_id + "|" + data[idx].id;
+      responseSwimmerNamesBuffer.push( composedName );
+    };
+    // DEBUG
+    //console.log( "responseSwimmerNamesBuffer:", responseSwimmerNamesBuffer );
+    return responseSwimmerNamesBuffer;
+  }
+
+  /**
+   * Bloodhound suggestion engine setup.
+   */
+  var suggestedSwimmerNames = new Bloodhound({
+    datumTokenizer: tokenizeSwimmerNameInStep11,
+    queryTokenizer: Bloodhound.tokenizers.whitespace,
+    // Assuming datum is a JSON-ified instance of swimmer, this should return its ID:
+    //identify: function( datum ){ return datum.id; },
+    remote: {
+      url:       "#{ json_search_swimmers_path( q: 'QUERY') }",
+      wildcard:  'QUERY',
+      transform: transformSwimmerNamesResponse
+    }
+  });
+
+  var typeAheadSwimmerOptions = {
+    name:   'Swimmer-names',
+    // This is just for the displaying limit for the menu, not the actual returned results:
+    limit:  10,
+    asynch: true,
+    source: suggestedSwimmerNames,
+    // Displayable value for selections:
+    display: function( datum ) {
+      // Combine the individual tokens into a displayable value:
+      var tokens = detokenizeSwimmerNameInStep11( datum );
+      var namePart = tokens[0];
+      var yearPart = tokens[1];
+      return namePart + ' (' + yearPart + ')';
+    },
+    templates: {
+      suggestion: function( datum ) {
+        var tokens = detokenizeSwimmerNameInStep11( datum );
+        // DEBUG
+        //console.log('tokens: ', tokens);
+        return '<div>' + tokens[0] + '&nbsp;<i>(' + tokens[1] + ', gender ID: ' + tokens[2] +')</i></div>'
+      }
+    }
+  };
+
+  // (Wait for the page to be ready)
+  $( function() {
+    // Define the typeahead callback handlers:
+    $(".typeahead").typeahead(
+      { minLength: 3, highlight: true },
+      typeAheadSwimmerOptions
+    ).bind('typeahead:select', function( ev, suggestion ) {
+        // DEBUG
+        //console.log('Selection: ', suggestion);
+        // Extract the ID part from the combined string:
+        var remote_id = detokenizeSwimmerNameInStep11( suggestion )[3];
+        // DEBUG
+        //console.log( "remote_id: ", remote_id );
+        // Compose the DOM ID of of the hidden form field to be updated:
+        $( '#' + ev.target.id.split("_name")[0] ).val( remote_id );
+      }
+    );
+  });

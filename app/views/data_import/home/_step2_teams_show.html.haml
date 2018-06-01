@@ -1,0 +1,45 @@
+.col-xs-6
+  - if @teams.count > 0
+    %h4
+      = I18n.t('admin_import.primary_already_existing')
+      = " (tot. #{ @teams.count })"
+    %table.table.table-striped.table-bordered.table-hover.table-condensed
+      %tbody
+        %tr.info.text-center
+          %td
+            %b= "ID"
+          %td
+            %b= I18n.t('admin_import.name')
+          %td
+            %b= I18n.t('admin_import.original_name')
+        - @teams.each do |team|
+          %tr
+            %td.text-right
+              = team.id
+            %td.text-left
+              = team.get_full_name
+            %td.text-left
+              = team.name
+
+.col-xs-6
+  - if @di_teams.count > 0
+    %h4
+      = I18n.t('admin_import.secondary_to_be_committed')
+      = " (tot. #{ @di_teams.count })"
+    %table.table.table-striped.table-bordered.table-hover.table-condensed
+      %tbody
+        %tr.info.text-center
+          %td
+            %b= "ID"
+          %td
+            %b= I18n.t('admin_import.name')
+          %td
+            %b= I18n.t('admin_import.original_name')
+        - @di_teams.each do |team|
+          %tr
+            %td.text-right
+              = team.id
+            %td.text-left
+              = team.get_full_name
+            %td.text-left
+              = team.name

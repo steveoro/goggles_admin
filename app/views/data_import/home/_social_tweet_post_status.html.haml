@@ -1,0 +1,24 @@
+= check_box_tag( :tweeted, '1', meeting.is_tweeted, disabled: true )
+= "Tweeted? "
+- unless meeting.is_tweeted?
+  &nbsp;
+  - text_key = is_a_start_list ? "social_post.twitter.published_startlist" : "social_post.twitter.published_results"
+  - action_name = is_a_start_list ? "show_start_list" : "show_full"
+  - post_contents = I18n.t( text_key,                                               |
+      federation: meeting.season_type.federation_type.short_name,                   |
+      year: meeting.header_date.year, meeting: meeting.get_full_name,               |
+      city: meeting.swimming_pools.first.city.get_full_name,                        |
+      url: "http://master-goggles.org/it/meeting/#{ action_name }/#{ meeting.id }"  |
+    )                                                                               |
+  %span{id: "meetingTweet#{ meeting.id }" }
+    .btn.btn-default.btn-xs
+      = I18n.t("social_post.suggested_title")
+
+:javascript
+  var popContent = "#{ escape_javascript( text_area_tag(:post_contents, post_contents, rows: 6, cols: 60, class: 'col-xs-12 well') ) }";
+  $( "#meetingTweet#{ meeting.id }" ).popover({
+    title: "#{ escape_javascript( I18n.t("social_post.total_size", len: post_contents.size) ) }",
+    html: true,
+    content: popContent,
+    placement: "bottom"
+  });

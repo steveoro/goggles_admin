@@ -1,0 +1,53 @@
+.col-xs-6
+  - if @swimmers.count > 0
+    %h4
+      = I18n.t('admin_import.primary_already_existing')
+      = " (tot. #{ @swimmers.count })"
+    %table.table.table-striped.table-bordered.table-hover.table-condensed
+      %tbody
+        %tr.info.text-center
+          %td
+            %b= "ID"
+          %td
+            %b= I18n.t('admin_import.name')
+          %td
+            &nbsp;
+          %td
+            &nbsp;
+        - @swimmers.each do |swimmer|
+          %tr
+            %td.text-right
+              = swimmer.id
+            %td.text-left
+              = swimmer.get_full_name
+            %td.text-left
+              = swimmer.year_of_birth
+            %td.text-left
+              = swimmer.gender_type ? swimmer.gender_type.code : '?'
+
+.col-xs-6
+  - if @di_swimmers.count > 0
+    %h4
+      = I18n.t('admin_import.secondary_to_be_committed')
+      = " (tot. #{ @di_swimmers.count })"
+    %table.table.table-striped.table-bordered.table-hover.table-condensed
+      %tbody
+        %tr.info.text-center
+          %td
+            %b= "ID"
+          %td
+            %b= I18n.t('admin_import.name')
+          %td
+            &nbsp;
+          %td
+            &nbsp;
+        - @di_swimmers.each do |swimmer|
+          %tr
+            %td.text-right
+              = swimmer.id
+            %td.text-left
+              = swimmer.get_full_name
+            %td.text-left
+              = swimmer.year_of_birth
+            %td.text-left
+              = swimmer.gender_type ? swimmer.gender_type.code : '?'

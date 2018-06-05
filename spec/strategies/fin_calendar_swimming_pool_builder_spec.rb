@@ -326,7 +326,7 @@ DOC_END
           dao.meeting_place = meeting_place
           dao
         end
-        subject { FinCalendarSwimmingPoolBuilder.new( User.find(1), parse_result_dao, parse_result_dao.source_text_line, false ) }
+        subject { FinCalendarSwimmingPoolBuilder.new( User.find(1), parse_result_dao, parse_result_dao.source_text_line, true ) }
 
         it "sets the #result_swimming_pool member to the expected SwimmingPool row (w/ NO updates to the DB)" do
           # Let's make sure that we really have a fixture like that in the DB:
@@ -334,7 +334,7 @@ DOC_END
           subject.find_or_create!() # force_geocoding_search = false (this should skip the API call)
           expect( subject.result_swimming_pool ).to be_a( SwimmingPool )
 # DEBUG
-#          subject.report
+          subject.report
           expect( subject.result_swimming_pool.id ).to eq( expected_pool.id )
           expect( subject.has_updated ).to be false
           expect( subject.has_created ).to be false

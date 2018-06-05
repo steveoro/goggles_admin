@@ -163,7 +163,11 @@ describe FinCalendarCityBuilder, type: :strategy do
         let(:result) do
           # Let's make sure that the fixture doesn't exist in the DB:
           expect( City.where(name: meeting_place).count ).to eq(0)
-          subject.find_or_create!() # force_geocoding_search = false (this should skip the API call)
+          found_city = subject.find_or_create!() # force_geocoding_search = false (this should skip the API call)
+# DEBUG
+          subject.find_or_create!()
+          subject.report
+          found_city
         end
 
         it "returns a City instance" do
@@ -183,16 +187,23 @@ describe FinCalendarCityBuilder, type: :strategy do
     #++
 
 
-    # WARNING: this will make an external (and *SLOW*) API call for the GeocodingParser!
     describe "#get_geocoder" do
       context "when called for an existing City," do
         let(:source_text_line)  { "Piscina“La Bastia” Via Mastacchi 188 - Livorno" }
         let(:meeting_place)     { "Livorno" }
-        subject                 { FinCalendarCityBuilder.new( User.find(1), source_text_line, meeting_place, false ) }
+        subject do
+          FinCalendarCityBuilder.new( User.find(1),
+            source_text_line,
+            meeting_place,
+            false,
+            nil  # Subst w/ your correct Google Maps API key for Geocoding
+          )
+        end
 
         it "returns the internal GeocodingParser instance" do
           expect( subject.get_geocoder ).to be_a( GeocodingParser )
-          expect( subject.get_geocoder.locality_name ).to eq( meeting_place )
+          # WARNING: this will make an external (and *SLOW*) API call for the GeocodingParser when the FinCalendarCityBuilder is initialized with a correct API Key!
+#          expect( subject.get_geocoder.locality_name ).to eq( meeting_place )
         end
       end
     end

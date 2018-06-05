@@ -77,9 +77,9 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
     pool_name_tokens = FinCalendarSwimmingPoolBuilder.parse_pool_name_tokens( pool_text.gsub(/[\`\’]/iu, "'") )
     pool_addr_tokens = FinCalendarSwimmingPoolBuilder.parse_pool_address_tokens( pool_text )
 # DEBUG
-#    puts "\r\n- pool_parts..................: #{ pool_parts.inspect }"
-#    puts "- pool_name_tokens............: #{ pool_name_tokens.inspect }"
-#    puts "- pool_addr_tokens............: #{ pool_addr_tokens.inspect }"
+    puts "\r\n- pool_parts..................: #{ pool_parts.inspect }"
+    puts "- pool_name_tokens............: #{ pool_name_tokens.inspect }"
+    puts "- pool_addr_tokens............: #{ pool_addr_tokens.inspect }"
 
     # Subtract *single* occurencies of name & cut away the address tokens from pool parts:
     remainder = FinCalendarTextParser.subtract_set_behaviour( pool_parts, pool_name_tokens )
@@ -88,19 +88,19 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
     address_max_res   = pool_addr_tokens.join(" ").scan(/[\wòàèéìùç\/\\\`\'°\^\(\)]+/ui)
     partitioned_remainder = remainder_max_res.join(" ").partition( address_max_res.join(" ") )
 # DEBUG
-#    puts "- remainder_max_res............: #{ remainder_max_res.inspect }"
-#    puts "- address_max_res..............: #{ address_max_res.inspect }"
-#    puts "- partitioned_remainder .......: #{ partitioned_remainder.inspect }"
+    puts "- remainder_max_res............: #{ remainder_max_res.inspect }"
+    puts "- address_max_res..............: #{ address_max_res.inspect }"
+    puts "- partitioned_remainder .......: #{ partitioned_remainder.inspect }"
     remainder = [ partitioned_remainder.first, partitioned_remainder.last ]
 # DEBUG
-#    puts "- remainder before splitting...: #{ remainder.inspect }"
+    puts "- remainder before splitting...: #{ remainder.inspect }"
     remainder = remainder.map do |sentence|
       FinCalendarTextParser.split_in_sentences( sentence, true ) # split_using_spaces: true => sub-sentences of tokens
     end
       .flatten
 
 # DEBUG
-#    puts "- remainder before drop........: #{ remainder.inspect }"
+    puts "- remainder before drop........: #{ remainder.inspect }"
     # Drop leading empty tokens and check also for leading preposition:
     resulting_tokens = remainder.drop_while do |token|
       token.to_s.strip.empty? ||
@@ -114,7 +114,7 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
       )
     end
 # DEBUG
-#    puts "=> resulting tokens............: #{ resulting_tokens.inspect } (size: #{ resulting_tokens.size }, addr: #{ pool_addr_tokens.size })"
+    puts "=> resulting tokens............: #{ resulting_tokens.inspect } (size: #{ resulting_tokens.size }, addr: #{ pool_addr_tokens.size })"
 
     # Remove also any possible phone number:
     if resulting_tokens.first.to_s =~ /\btel\b|\btelefono\b/ui
@@ -123,20 +123,20 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
         ( token.to_s.strip =~ /\btel\b|\btelefono\b|\b\d+\b/ui )
       end
 # DEBUG
-#      puts "=> after phone removal.........: #{ resulting_tokens.inspect }"
+      puts "=> after phone removal.........: #{ resulting_tokens.inspect }"
     end
 
     # If the remainder resulting tokens are empty, we need to check "recursively"
     # the address tokens, since the City name may be there:
     if resulting_tokens.size < 1 && pool_addr_tokens.size > 0
 # DEBUG
-#      puts "\r\n   EMPTY resulting tokens! 'Recursive' check on address tokens (#{ pool_addr_tokens.inspect }):"
+      puts "\r\n   EMPTY resulting tokens! 'Recursive' check on address tokens (#{ pool_addr_tokens.inspect }):"
       resulting_tokens = remainder.map do |sentence|
         FinCalendarTextParser.split_in_sentences( pool_addr_tokens.join(" "), true ) # split_using_spaces: true => sub-sentences of tokens
       end
         .flatten
 # DEBUG
-#      puts "=> resulting tokens from addr..: #{ resulting_tokens.inspect }"
+      puts "=> resulting tokens from addr..: #{ resulting_tokens.inspect }"
       resulting_tokens = resulting_tokens.drop_while do |token|
         # Search for a "belonging to" preposition or a separator:
         (token.to_s.strip =~ /^[\,\.\”\"\']\Z|\bdi\b|\ba\b/ui).nil?
@@ -152,7 +152,7 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
     resulting_tokens = resulting_tokens.reject{ |token| token.to_s.strip.size == 0 }
 
 # DEBUG
-#    puts "=> resulting toks. before take: #{ resulting_tokens.inspect }"
+    puts "=> resulting toks. before take: #{ resulting_tokens.inspect }"
     # Drop trailing leftovers from address description:
     resulting_tokens = resulting_tokens.take_while do |token|
       (token.to_s.strip =~ /
@@ -173,7 +173,7 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
       ).nil?
     end
 # DEBUG
-#    puts "=> resulting toks. AFTER take : #{ resulting_tokens.inspect }"
+    puts "=> resulting toks. AFTER take : #{ resulting_tokens.inspect }"
 
     # Remove possible duplicated city names (e.g. "Roma, Roma (ROMA)") and sanitize:
     resulting_tokens = resulting_tokens.map do |name|
@@ -192,7 +192,7 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
       end
     end.uniq.compact.reject{ |token| token.to_s.strip.size == 0 }
 # DEBUG
-#    puts "=> res. tokens @end..: #{ resulting_tokens.inspect }"
+    puts "=> res. tokens @end..: #{ resulting_tokens.inspect }"
     resulting_tokens
   end
   #-- -------------------------------------------------------------------------
@@ -271,21 +271,24 @@ class FinCalendarCityBuilder < FinCalendarBaseBuilder
     area = nil
     area_type_id = nil
                                                     # --- SEARCH #1 ---
-    add_to_log( "\r\nSearching using '#{ name }'" )
+    add_to_log( "\r\nSearching using name from pool city tokens: '#{ name }'" )
     @result_city = CityComparator.new.search_composed_name( name )
                                                     # --- SEARCH #2 ---
     # Not found? Search again using @meeting_place:
     unless @result_city.instance_of?( City )
       name = @meeting_place
-      add_to_log( "Searching using '#{ name }'..." )
+      add_to_log( "Searching using meeting place: '#{ name }'..." )
+######################################################################
+      # FinCalendarSwimmingPoolBuilder.parse_pool_address_tokens( pool_text )
+#############
       @result_city = CityComparator.new.search_composed_name( name )
     end
                                                     # --- GEOCODING ---
     # Not found? Search again using the GeocodingParser:
-    unless @result_city.instance_of?( City ) || force_geocoding_search
+    if @result_city.nil? && force_geocoding_search
       name, zip, area, area_type_id, country, country_code = geocoding_search( force_geocoding_search )
                                                     # --- SEARCH #3 ---
-      add_to_log( "Searching again, using returned name: '#{ name }'..." )
+      add_to_log( "Searching again, using returned name from geoconding: '#{ name }'..." )
       @result_city = CityComparator.new.search_composed_name( name )
       if @result_city.instance_of?( City )
         add_to_log( "City found! => #{ @result_city.inspect }" )

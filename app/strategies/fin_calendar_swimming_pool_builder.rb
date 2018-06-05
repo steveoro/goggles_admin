@@ -5,7 +5,7 @@ require 'common/format'
 
 = FinCalendarSwimmingPoolBuilder
 
-  - Goggles framework vers.:  6.129
+  - Goggles framework vers.:  6.325
   - author: Steve A.
 
  Finds or creates a SwimmingPool instance given the parameters.

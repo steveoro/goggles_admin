@@ -7,7 +7,7 @@ require 'uri'
 
 = GeocodingParser
 
-  - Goggles framework vers.:  6.109
+  - Goggles framework vers.:  6.325
   - author: Steve A.
 
  Given a verbose address description, this strategy makes a request to Google Maps API
@@ -106,9 +106,12 @@ class GeocodingParser
   # Requires a valid API Key to be invoked using an extended API usage plan.
   #
   def make_api_request( api_key = nil )
+    if api_key.nil?
+      @text_log << "Requests to Maps API cannot be key-less since the end of May 2018. Returning nil...\r\n"
+      return nil
+    end
     query_address_text = @verbose_address_text.gsub(/\s/, '+')
-    api_endpoint = "https://maps.googleapis.com/maps/api/geocode/json?address=#{ query_address_text }+IT" +
-                   ( api_key.nil? ? '' : "&key=#{ api_key }" )
+    api_endpoint = "https://maps.googleapis.com/maps/api/geocode/json?address=#{ query_address_text }+IT&key=#{ api_key }"
     @text_log << "GET '#{ api_endpoint }'...\r\n"    # Log the action
     web_response = GeocodingParser.get_raw_web_response( api_endpoint )
     if web_response.nil?

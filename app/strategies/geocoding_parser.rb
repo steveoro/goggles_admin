@@ -7,7 +7,7 @@ require 'uri'
 
 = GeocodingParser
 
-  - Goggles framework vers.:  6.325
+  - Goggles framework vers.:  6.326
   - author: Steve A.
 
  Given a verbose address description, this strategy makes a request to Google Maps API

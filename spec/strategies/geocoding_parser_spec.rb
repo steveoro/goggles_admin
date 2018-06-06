@@ -88,17 +88,20 @@ describe GeocodingParser, type: :strategy do
     #++
 
 
-    describe "#make_api_request" do
-      context "when making a successful call," do
-        # [Steve, 20170530] Do not abuse this method call, since we have a limit
-        # of 2.5K calls/24h, otherwise the API shuts down.
-        it "sets the #json_response member" do
-          expect{
-            subject.make_api_request()
-          }.to change{ subject.json_response }
-        end
-      end
-    end
+    # describe "#make_api_request" do
+      # context "when making a successful call," do
+        # # [Steve, 20180606] Since the end of May 2018 key-less API call are no more feasible
+        # # To test locally with using this spec, uncomment it and subst the text below with a correct
+        # # API key
+        # it "sets the #json_response member" do
+          # expect{
+            # subject.make_api_request(
+              # # <ACTUAL_MAPS_API_KEY>
+            # )
+          # }.to change{ subject.json_response }
+        # end
+      # end
+    # end
     #-- -----------------------------------------------------------------------
     #++
 

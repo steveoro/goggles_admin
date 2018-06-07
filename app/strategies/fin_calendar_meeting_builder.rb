@@ -160,18 +160,22 @@ class FinCalendarMeetingBuilder < FinCalendarBaseBuilder
 
 
   # Compares for difference the meeting instance with the specified values for
-  # the corresponding columns. The other column values are ignored during the
+  # the corresponding columns. Other, non-listed columns are ignored during the
   # comparison.
+  # Currently, the comparison checks only the meeting fields listed as parameters
+  # below.
+  #
   # The specified values are safely checked for presence, thus +nil+ or empty
   # values won't override already set columns.
   #
   # Returns +true+ if any of the columns have different values, +false+ otherwise
-  # or in case of errors.
+  # or in case of errors (or if the pool has been flagged as "do_not_update").
   #
   def self.has_different_values?( meeting, code, header_date, header_year, description,
                                   edition, edition_type_id, timing_type_id, is_confirmed,
                                   entry_deadline_text, manifest_link )
-    return false unless meeting.instance_of?( Meeting )
+    return false if !meeting.instance_of?( Meeting ) ||
+                    ( meeting.instance_of?( Meeting ) && meeting.do_not_update )
 # DEBUG
 #    puts "\r\n- Meeting code:.......... '#{ meeting.code }' vs '#{ code }'"
 #    puts "- header_date:........... '#{ Format.a_date( meeting.header_date ) }' vs '#{Format.a_date( header_date ) }'"
@@ -335,6 +339,10 @@ class FinCalendarMeetingBuilder < FinCalendarBaseBuilder
           @source_row.manifest_link
       )
         update_existing( code, header_date, header_year, season_id, edition, edition_type_id, timing_type_id )
+      else
+        if @result_meeting.do_not_update
+          add_to_log( "Possible difference in values, but do_not_update flag is ON. Skipping update..." )
+        end
       end
                                                     # --- CREATION ---
     else

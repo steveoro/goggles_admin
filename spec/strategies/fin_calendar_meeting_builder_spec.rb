@@ -152,15 +152,17 @@ describe FinCalendarMeetingBuilder, type: :strategy do
 
 
     describe "self.has_different_values?()" do
-      let(:random_meeting)  { Meeting.all.sample }
-      let(:code)            { random_meeting.code }
-      let(:header_date)     { random_meeting.header_date }
-      let(:header_year)     { random_meeting.header_year }
-      let(:description)     { random_meeting.description }
-      let(:edition)         { random_meeting.edition }
-      let(:edition_type_id) { random_meeting.edition_type_id }
-      let(:timing_type_id)  { random_meeting.timing_type_id }
-      let(:is_confirmed)    { random_meeting.is_confirmed? }
+      let(:random_meeting_read_only)  { meeting = Meeting.all.sample; meeting.do_not_update = true; meeting }
+      let(:random_meeting_updatable)  { meeting = Meeting.all.sample; meeting.do_not_update = false; meeting }
+
+      let(:code)            { random_meeting_updatable.code }
+      let(:header_date)     { random_meeting_updatable.header_date }
+      let(:header_year)     { random_meeting_updatable.header_year }
+      let(:description)     { random_meeting_updatable.description }
+      let(:edition)         { random_meeting_updatable.edition }
+      let(:edition_type_id) { random_meeting_updatable.edition_type_id }
+      let(:timing_type_id)  { random_meeting_updatable.timing_type_id }
+      let(:is_confirmed)    { random_meeting_updatable.is_confirmed? }
 
       context "for a nil Meeting," do
         it "is false" do
@@ -176,51 +178,69 @@ describe FinCalendarMeetingBuilder, type: :strategy do
         end
       end
 
-      context "for a valid Meeting compared w/ same values," do
+      context "for a valid, updatable Meeting compared w/ same values," do
         it "is false" do
           expect(
             FinCalendarMeetingBuilder.has_different_values?(
-              random_meeting,
+              random_meeting_updatable,
               code, header_date, header_year, description,
               edition, edition_type_id, timing_type_id, is_confirmed,
-              random_meeting.entry_deadline,
-              random_meeting.invitation
+              random_meeting_updatable.entry_deadline,
+              random_meeting_updatable.invitation
             )
           ).to be false
         end
       end
 
-      context "for a valid Meeting compared w/ same values w/ numbers as strings," do
+      context "for a valid, updatable Meeting compared w/ same values w/ numbers as strings," do
         it "is false" do
           expect(
             FinCalendarMeetingBuilder.has_different_values?(
-              random_meeting,
+              random_meeting_updatable,
               code, header_date, header_year, description,
               edition.to_s,
               edition_type_id.to_s,
               timing_type_id.to_s,
               is_confirmed,
-              random_meeting.entry_deadline,
-              random_meeting.invitation
+              random_meeting_updatable.entry_deadline,
+              random_meeting_updatable.invitation
             )
           ).to be false
         end
       end
 
-      context "for a valid Meeting compared w/ DIFFERENT values," do
+      context "for a valid, updatable Meeting compared w/ DIFFERENT values," do
         it "is true" do
           expect(
             FinCalendarMeetingBuilder.has_different_values?(
-              random_meeting,
+              random_meeting_updatable,
               code, header_date, header_year, description,
               edition.to_i + 1,
               edition_type_id,
               timing_type_id,
               is_confirmed,
-              random_meeting.entry_deadline,
-              random_meeting.invitation
+              random_meeting_updatable.entry_deadline,
+              random_meeting_updatable.invitation
             )
           ).to be true
+        end
+      end
+
+      context "for a valid READ-ONLY Meeting compared w/ DIFFERENT values," do
+        it "is false" do
+          expect(
+            FinCalendarMeetingBuilder.has_different_values?(
+              random_meeting_read_only,
+              random_meeting_read_only.code, random_meeting_read_only.header_date,
+              random_meeting_read_only.header_year, random_meeting_read_only.description,
+              random_meeting_read_only.edition.to_i + 1,
+              random_meeting_read_only.edition_type_id,
+              random_meeting_read_only.timing_type_id,
+              random_meeting_read_only.is_confirmed,
+              random_meeting_read_only.entry_deadline,
+              random_meeting_read_only.invitation
+            )
+          ).to be false
         end
       end
     end
@@ -329,6 +349,7 @@ describe FinCalendarMeetingBuilder, type: :strategy do
           expect( expected_meeting ).to be_a( Meeting )
           # Change the code:
           expected_meeting.code = "cittadi#{ fin_calendar_row.goggles_meeting_code }"
+          expected_meeting.do_not_update = false
           expect( expected_meeting.save ).to be true
           expected_meeting
         end
@@ -361,6 +382,7 @@ describe FinCalendarMeetingBuilder, type: :strategy do
           expect( meeting ).to be_a( Meeting )
           # Change the code:
           meeting.code = "unaltracitta#{ normalized_title }"
+          meeting.do_not_update = false
           expect( meeting.save ).to be true
           meeting
         end

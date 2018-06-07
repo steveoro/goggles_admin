@@ -177,10 +177,12 @@ describe FinCalendarSwimmingPoolBuilder, type: :strategy do
 
 
     describe "self.has_different_values?()" do
-      let(:random_pool)   { SwimmingPool.all.sample }
-      let(:name)          { random_pool.name }
-      let(:address)       { random_pool.address }
-      let(:nick_name)     { random_pool.nick_name }
+      let(:random_pool_read_only)   { pool = SwimmingPool.all.sample; pool.do_not_update = true; pool }
+      let(:random_pool_updatable)   { pool = SwimmingPool.all.sample; pool.do_not_update = false; pool }
+
+      let(:name)                    { random_pool_updatable.name }
+      let(:address)                 { random_pool_updatable.address }
+      let(:nick_name)               { random_pool_updatable.nick_name }
 
       context "for a nil SwimmingPool," do
         it "is false" do
@@ -190,37 +192,42 @@ describe FinCalendarSwimmingPoolBuilder, type: :strategy do
         end
       end
 
-      context "for a valid SwimmingPool compared w/ same values," do
-        it "is false" do
-          expect(
-            FinCalendarSwimmingPoolBuilder.has_different_values?( random_pool, name, address, nick_name )
-          ).to be false
-        end
-      end
-
-      context "for a valid SwimmingPool compared w/ same values," do
+      context "for a valid, updatable SwimmingPool compared w/ same values," do
         it "is false" do
           expect(
             FinCalendarSwimmingPoolBuilder.has_different_values?(
-              random_pool,
-              random_pool.name,
-              random_pool.address,
-              random_pool.nick_name
+              random_pool_updatable,
+              random_pool_updatable.name,
+              random_pool_updatable.address,
+              random_pool_updatable.nick_name
             )
           ).to be false
         end
       end
 
-      context "for a valid SwimmingPool compared w/ DIFFERENT values," do
+      context "for a valid, updatable SwimmingPool compared w/ DIFFERENT values," do
         it "is true" do
           expect(
             FinCalendarSwimmingPoolBuilder.has_different_values?(
-              random_pool,
-              random_pool.name + " #{ FFaker::Lorem.word }",
-              random_pool.address,
-              random_pool.nick_name
+              random_pool_updatable,
+              random_pool_updatable.name + " #{ FFaker::Lorem.word }",
+              random_pool_updatable.address,
+              random_pool_updatable.nick_name
             )
           ).to be true
+        end
+      end
+
+      context "for a READ-ONLY SwimmingPool compared w/ DIFFERENT values," do
+        it "is false" do
+          expect(
+            FinCalendarSwimmingPoolBuilder.has_different_values?(
+              random_pool_read_only,
+              random_pool_read_only.name + " #{ FFaker::Lorem.word }",
+              random_pool_read_only.address,
+              random_pool_read_only.nick_name
+            )
+          ).to be false
         end
       end
     end
@@ -241,7 +248,7 @@ describe FinCalendarSwimmingPoolBuilder, type: :strategy do
 DOC_END
         end
         let(:meeting_place)       { "Bologna" }
-        let(:expected_pool)       { SwimmingPool.find(4) }
+        let(:expected_pool)       { pool = SwimmingPool.find(4); pool.do_not_update = false; pool.save!; pool }
 
         let(:session_order)       { rand * 6 + 1 }
         let(:day_token)           { (rand * 31 + 1).to_s }
@@ -281,6 +288,7 @@ DOC_END
         let(:expected_pool) do
           pool = SwimmingPool.find(95)
           pool.nick_name = "romaforum25" # ("romaforum25" old code before data normalization)
+          pool.do_not_update = false
           pool.save!
           pool
         end
@@ -351,6 +359,7 @@ DOC_END
           pool = SwimmingPool.find(138)
           # Let's make sure the pool has a slightly different address:
           pool.address = "Piazza Dunant 22"
+          pool.do_not_update = false
           expect( pool.save ).to be true
 # DEBUG
 #          puts pool.inspect

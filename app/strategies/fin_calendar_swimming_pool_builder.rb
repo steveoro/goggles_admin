@@ -255,16 +255,19 @@ class FinCalendarSwimmingPoolBuilder < FinCalendarBaseBuilder
 
 
   # Compares for difference the SwimmingPool instance with the specified values for
-  # the corresponding columns. The other column values are ignored during the
+  # the corresponding columns. Other, non-listed columns are ignored during the
   # comparison.
+  # Currently, the comparison checks only: name, address & nick_name.
+  #
   # The specified values are safely checked for presence, thus +nil+ or empty
   # values won't override already set columns.
   #
   # Returns +true+ if any of the columns have different values, +false+ otherwise
-  # or in case of errors.
+  # or in case of errors (or if the pool has been flagged as "do_not_update").
   #
   def self.has_different_values?( swimming_pool, name, address, nick_name )
-    return false unless swimming_pool.instance_of?( SwimmingPool )
+    return false if !swimming_pool.instance_of?( SwimmingPool ) ||
+                    ( swimming_pool.instance_of?( SwimmingPool ) && swimming_pool.do_not_update )
 # DEBUG
 #    puts "\r\nChecking for different values:"
 #    puts "- Pool name...: '#{ swimming_pool.name }' vs '#{ name }'"
@@ -393,9 +396,12 @@ class FinCalendarSwimmingPoolBuilder < FinCalendarBaseBuilder
           ( @honor_single_update && ( 30.minutes.ago > @result_swimming_pool.updated_at ) )
         )
         update_existing( name, pool_type, lanes_number, city, address, nick_name, maps_uri, notes )
-      end
-      if ( @honor_single_update && ( 30.minutes.ago > @result_swimming_pool.updated_at ) )
-        add_to_log( "Difference in values found, but @honor_single_update is ON. Skipping update..." )
+      else
+        if @result_swimming_pool.do_not_update
+          add_to_log( "Possible difference in values, but do_not_update flag is ON. Skipping update..." )
+        elsif ( @honor_single_update && ( 30.minutes.ago > @result_swimming_pool.updated_at ) )
+          add_to_log( "Possible difference in values, but @honor_single_update is ON. Skipping update..." )
+        end
       end
                                                     # --- CREATION ---
     else

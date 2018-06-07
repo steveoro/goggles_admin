@@ -12,55 +12,53 @@ describe MeetingIDGenerator, type: :strategy do
   #++
 
   describe "self.get_free_id()" do
-    context "for a 'MASFIN' season (after 2010)," do
-      let(:season) { Season.where(season_type_id: 2).where("begin_date > '2010-09-01'").sample }
-      subject      { MeetingIDGenerator.get_free_id( season ) }
-
-      it "returns a positive number" do
-        expect( subject).to be_a(Fixnum)
-        expect( subject).to be > 0
+    context "for *ALL* 'MASFIN' seasons after 2010," do
+      Season.where(season_type_id: 1).where("begin_date > '2010-09-01'").each do |season|
+        it "returns a positive number" do
+          result = MeetingIDGenerator.get_free_id( season )
+          expect( result ).to be_a(Fixnum)
+          expect( result ).to be > 0
+        end
       end
     end
 
-    context "for a 'MASCSI' season (after 2010)," do
-      let(:season) { Season.where(season_type_id: 1).where("begin_date > '2010-09-01'").sample }
-      subject      { MeetingIDGenerator.get_free_id( season, 10 ) }
-
-      it "returns a positive number" do
-        expect( subject).to be_a(Fixnum)
-        expect( subject).to be > 0
+    context "for *ALL* 'MASCSI' seasons after 2010," do
+      Season.where(season_type_id: 2).where("begin_date > '2010-09-01'").each do |season|
+        it "returns a positive number" do
+          result = MeetingIDGenerator.get_free_id( season, 10 )
+          expect( result ).to be_a(Fixnum)
+          expect( result ).to be > 0
+        end
       end
     end
 
-    context "for a 'MASUISP' season (after 2010)," do
-      let(:season) { Season.where(season_type_id: 3).where("begin_date > '2010-09-01'").sample }
-      subject      { MeetingIDGenerator.get_free_id( season ) }
-
-      it "returns a positive number" do
-        expect( subject).to be_a(Fixnum)
-        expect( subject).to be > 0
+    context "for *ALL* 'MASUISP' seasons after 2010," do
+      Season.where(season_type_id: 3).where("begin_date > '2010-09-01'").each do |season|
+        it "returns a positive number" do
+          result = MeetingIDGenerator.get_free_id( season )
+          expect( result ).to be_a(Fixnum)
+          expect( result ).to be > 0
+        end
       end
     end
 
-    context "for a 'MASLEN' season (after 2010)," do
-      let(:season) do
-        Season.where(season_type_id: 7).where("begin_date > '2010-09-01'").sample
-      end
-      subject      { MeetingIDGenerator.get_free_id( season ) }
-
-      it "returns a positive number" do
-        expect( subject).to be_a(Fixnum)
-        expect( subject).to be > 0
+    context "for *ALL* 'MASLEN' seasons after 2010," do
+      Season.where(season_type_id: 7).where("begin_date > '2010-09-01'").each do |season|
+        it "returns a positive number" do
+          result = MeetingIDGenerator.get_free_id( season )
+          expect( result ).to be_a(Fixnum)
+          expect( result ).to be > 0
+        end
       end
     end
 
-    context "for a 'MASFINA' season (after 2010)," do
-      let(:season) { Season.where(season_type_id: 8).where("begin_date > '2010-09-01'").sample }
-      subject      { MeetingIDGenerator.get_free_id( season ) }
-
-      it "returns a positive number" do
-        expect( subject).to be_a(Fixnum)
-        expect( subject).to be > 0
+    context "for *ALL* 'MASFINA' seasons after 2010," do
+      Season.where(season_type_id: 8).where("begin_date > '2010-09-01'").each do |season|
+        it "returns a positive number" do
+          result = MeetingIDGenerator.get_free_id( season )
+          expect( result ).to be_a(Fixnum)
+          expect( result ).to be > 0
+        end
       end
     end
   end

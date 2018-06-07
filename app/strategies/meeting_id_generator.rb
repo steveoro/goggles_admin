@@ -4,8 +4,7 @@ require 'common/format'
 =begin
 
 = MeetingIDGenerator
-
-  - Goggles framework vers.:  6.137
+  - Goggles framework vers.:  6.327
   - author: Steve A.
 
  Meeting's "talkative ID" generator.
@@ -17,8 +16,8 @@ class MeetingIDGenerator
 
   # Values used for the 3rd digit of the generated free ID, according to season_type.code
   THIRD_DIGIT_VALUE = {
-    "MASCSI"  => 1,
-    "MASFIN"  => 2,
+    "MASCSI"  => 1,     # DO NOT CONFUSE WITH SEASON TYPE ID! (For MASCSI season_type is '2')
+    "MASFIN"  => 2,     # DO NOT CONFUSE WITH SEASON TYPE ID! (For MASFIN season_type is '1')
     "MASLEN"  => 3,
     "MASFINA" => 4,
     "MASUISP" => 5

@@ -149,16 +149,17 @@ describe FinCalendarMeetingSessionBuilder, type: :strategy do
             has_separate_category_start_list: false
           )
         end
+        let( :session_date )              { meeting.header_date + 1.day }
         let( :session_order )             { meeting.meeting_sessions.count + 1 }
         # Build-up the parsing result DAO for this spec:
         let( :dao_for_new ) do
           dao = FinCalendarParseResultDAO.new(
-            meeting.header_date.day.to_s,
-            I18n.t("date.month_names")[ meeting.header_date.month ],
+            session_date.day.to_s,
+            I18n.t("date.month_names")[ session_date.month ],
             session_order,
-            "Session at: #{ meeting.header_date }, #{ FFaker::Lorem.paragraph }"
+            "Session at: #{ session_date }, #{ FFaker::Lorem.paragraph }"
           )
-          dao.header_date_iso_format = meeting.header_date.to_s
+          dao.header_date_iso_format = session_date.to_s
           dao.start_time_iso_format  = another_time
           dao.day_part_type_id       = DayPartType::NIGHT_ID
           dao.add_meeting_event( new_meeting_event )
@@ -167,7 +168,7 @@ describe FinCalendarMeetingSessionBuilder, type: :strategy do
         subject { FinCalendarMeetingSessionBuilder.new( User.find(1), dao_for_new, meeting ) }
         let(:result) do
           # Let's make sure that the fixture's MeetingSession doesn't exist in the DB:
-          expect( MeetingSession.where(meeting_id: meeting.id, scheduled_date: meeting.header_date, session_order: session_order).count ).to eq(0)
+          expect( MeetingSession.where(meeting_id: meeting.id, scheduled_date: session_date, session_order: session_order).count ).to eq(0)
           subject.find_or_create!()
         end
 
@@ -177,7 +178,7 @@ describe FinCalendarMeetingSessionBuilder, type: :strategy do
         end
         it "creates a new MeetingSession with the expected session order, date, time and meeting id (CHANGING the DB)" do
           expect( result.meeting_id ).to eq( meeting.id )
-          expect( result.scheduled_date ).to eq( meeting.header_date )
+          expect( result.scheduled_date ).to eq( session_date )
           expect( result.session_order ).to eq( session_order )
           expect( Format.a_time( result.begin_time ) ).to eq( another_time )
           expect( result.id ).to be > 0

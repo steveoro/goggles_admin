@@ -5,7 +5,7 @@ require 'common/format'
 
 = FinCalendarMeetingSessionBuilder
 
-  - Goggles framework vers.:  6.131
+  - Goggles framework vers.:  6.329
   - author: Steve A.
 
  Finds or creates a MeetingSession instance given the parameters.

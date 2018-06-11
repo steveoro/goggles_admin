@@ -5,7 +5,7 @@ require 'common/format'
 
 = FinCalendarSwimmingPoolBuilder
 
-  - Goggles framework vers.:  6.325
+  - Goggles framework vers.:  6.329
   - author: Steve A.
 
  Finds or creates a SwimmingPool instance given the parameters.
@@ -269,10 +269,11 @@ class FinCalendarSwimmingPoolBuilder < FinCalendarBaseBuilder
     return false if !swimming_pool.instance_of?( SwimmingPool ) ||
                     ( swimming_pool.instance_of?( SwimmingPool ) && swimming_pool.do_not_update )
 # DEBUG
-#    puts "\r\nChecking for different values:"
-#    puts "- Pool name...: '#{ swimming_pool.name }' vs '#{ name }'"
-#    puts "- address.....: '#{ swimming_pool.address }' vs '#{ address }'"
-#    puts "- nick_name...: '#{ swimming_pool.nick_name }' vs '#{ nick_name }'"
+    puts "\r\nChecking for different values:"
+    puts "- Pool name....: '#{ swimming_pool.name }' vs '#{ name }'"
+    puts "- DO_NOT_UPDATE: #{ swimming_pool.do_not_update }"
+    puts "- address......: '#{ swimming_pool.address }' vs '#{ address }'"
+    puts "- nick_name....: '#{ swimming_pool.nick_name }' vs '#{ nick_name }'"
     ( name.present? && address.present? && nick_name.present? ) &&
     (
        ( swimming_pool.name != name ) ||

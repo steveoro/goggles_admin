@@ -177,8 +177,8 @@ describe FinCalendarSwimmingPoolBuilder, type: :strategy do
 
 
     describe "self.has_different_values?()" do
-      let(:random_pool_read_only)   { pool = SwimmingPool.all.sample; pool.do_not_update = true; pool }
-      let(:random_pool_updatable)   { pool = SwimmingPool.all.sample; pool.do_not_update = false; pool }
+      let(:random_pool_read_only)   { pool = SwimmingPool.all.sample; pool.do_not_update = true; pool.save!; pool }
+      let(:random_pool_updatable)   { pool = SwimmingPool.all.sample; pool.do_not_update = false; pool.save!; pool }
 
       let(:name)                    { random_pool_updatable.name }
       let(:address)                 { random_pool_updatable.address }

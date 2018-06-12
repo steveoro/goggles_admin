@@ -11,7 +11,7 @@ require_relative '../dao/csi_result_dao'
 
 = DataImportMeetingProgramBuilder
 
-  - Goggles framework vers.:  6.075
+  - Goggles framework vers.:  6.330
   - author: Steve A.
 
  Specialized +DataImportEntityBuilder+ for searching (or adding brand new)
@@ -238,13 +238,16 @@ class DataImportMeetingProgramBuilder < DataImportEntityBuilder
   def self.get_event_type( category_type, length_in_meters, stroke_type_id, relay_type_text_token )
 # DEBUG
 #    puts( "\r\nSearching EventType where type='#{relay_type_text_token}', length_in_meters=#{length_in_meters}, stroke_type_id=#{stroke_type_id}, is_a_relay: #{category_type.is_a_relay}..." )
-    event_type = category_type.is_a_relay ?
-      EventType.parse_relay_event_type_from_import_text( stroke_type_id, relay_type_text_token ) :
+#    puts "with #{ category_type.inspect }"
+    event_type = if category_type.is_a_relay
+      EventType.parse_relay_event_type_from_import_text( stroke_type_id, relay_type_text_token )
+    else
       EventType.where(
         length_in_meters: length_in_meters,
         stroke_type_id:   stroke_type_id,
         is_a_relay:       false
       ).first
+    end
 # DEBUG
 #    puts( "=> event_type: #{event_type.inspect}" )
     event_type

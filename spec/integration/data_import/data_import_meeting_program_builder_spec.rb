@@ -204,12 +204,22 @@ describe DataImportMeetingProgramBuilder, type: :integration do
   # Execute on actual real data: (ID 14216: FIN Parma 2014-12-14)
   Meeting.find( 14216 ).meeting_programs.each_with_index do |meeting_program, index|
     subject do
+# DEBUG
+#      puts "\r\n=== SUBJECT BUILD-UP FOR: #{meeting_program.event_type.i18n_short}, test idx #{index} ==="
+#      puts meeting_program.inspect
+#      puts meeting_program.category_type.inspect
+
       DataImportMeetingProgramBuilder.build_from_parameters(
         data_import_session,
         meeting_program.season,
         meeting_program.meeting_session,
-        # base_time is the only one parsed inside the method:
-        { fields: { base_time: meeting_program.time_standard ? meeting_program.time_standard.get_timing : '' } },
+        # base_time is the only one parsed inside the method, together with type:
+        {
+          fields: {
+            base_time: meeting_program.time_standard ? meeting_program.time_standard.get_timing : '',
+            type:      meeting_program.category_type.is_a_relay ? meeting_program.event_type.i18n_short : ''
+          }
+        },
         header_index,   # rand
         meeting_program.gender_type,
         meeting_program.category_type,
@@ -217,23 +227,20 @@ describe DataImportMeetingProgramBuilder, type: :integration do
         meeting_program.event_type.length_in_meters,
         meeting_program.meeting_session.scheduled_date,
         detail_rows_size # rand
-      )
+        )
     end
 
-    context "after a self.build() with existing MeetingProgram data (#{meeting_program.meeting.get_full_name}, #{meeting_program.get_full_name})," do
-# DEBUG
-#      before(:all) do
-#        puts "\r\n\r\n----------------------8<-----------------------[#{index}]"
-#        puts "*** #{meeting_program.event_type.i18n_short} ***"
-#      end
+    context "after a self.build() with existing MeetingProgram data (#{meeting_program.meeting.get_full_name} / #{meeting_program.get_full_name} => #{meeting_program.event_type.i18n_short})," do
       it "returns a DataImportEntityBuilder instance" do
         expect( subject ).to be_an_instance_of( DataImportEntityBuilder )
       end
+
       describe "#data_import_session" do
         it "is the DataImportSession specified for the build" do
           expect( subject.data_import_session ).to eq( data_import_session )
         end
       end
+
       it "doesn't create any primary entity row" do
         expect{ subject }.not_to change{ MeetingProgram.count }
       end
@@ -243,11 +250,13 @@ describe DataImportMeetingProgramBuilder, type: :integration do
       it "doesn't create any MeetingEvent row" do
         expect{ subject }.not_to change{ MeetingEvent.count }
       end
+
       describe "#result_row" do
         it "returns a primary entity instance when the process is successful" do
           expect( subject.result_row ).to be_an_instance_of( MeetingProgram )
         end
       end
+
       describe "#result_id" do
         it "returns a negative ID when the resulting row is a primary entity" do
           expect( subject.result_id ).to be < 0

@@ -24,7 +24,7 @@ require 'framework/console_logger'
 # (EXTERNAL_BASE_DIR is defined in core_00_constants.rake in 'goggles_core')
 LOCALCOPY_DIR     = File.join( EXTERNAL_BASE_DIR, 'meeting_data', 'FIN_crawled')
 LOG_DIR           = File.join( Dir.pwd, 'log' ) unless defined? LOG_DIR
-DEFAULT_SEASON_ID = 172 unless defined? DEFAULT_SEASON_ID
+DEFAULT_SEASON_ID = 182 unless defined? DEFAULT_SEASON_ID
 #-- ---------------------------------------------------------------------------
 #++
 
@@ -45,7 +45,7 @@ Options: [season_id=Season_id|<#{DEFAULT_SEASON_ID}>] [user_id=<1>]
          [output_path=#{LOCALCOPY_DIR}]
 
   - 'season_id' the ID of the FIN season to be crawled.
-    (Currently supported seasons: 122, 132, 142, ... And so on, up to ID 172)
+    (Currently supported seasons: 122, 132, 142, ... And so on, up to ID 182)
   - 'user_id' the default user_id for the admin performing this action (defaults to 1).
   - 'output_path' the path where the files will be stored after the crawling.
 
@@ -67,7 +67,7 @@ DESC
     user_id     = ENV.include?("user_id") ? ENV["user_id"].to_i : 1
     season_id   = ENV.include?("season_id") ? ENV["season_id"].to_i : DEFAULT_SEASON_ID
     user        = User.find( user_id )
-    unless [122, 132, 142, 152, 162, DEFAULT_SEASON_ID].include?( season_id )
+    unless [122, 132, 142, 152, 162, 172, DEFAULT_SEASON_ID].include?( season_id )
       puts "Error: invalid season ID specifed (#{season_id}). Aborting..."
       exit
     end
@@ -84,7 +84,7 @@ DESC
     # - a shader IP
     # - additional HTTP Headers: "UserAgent" => "Mozilla/5.0 (X11; Linux x86_64; rv:49.0) Gecko/20100101 Firefox/49.0"
     #
-    api_run_endpoint = if season_id > 162
+    api_run_endpoint = if season_id > 172
       "https://api.apify.com/v1/YZw3JnXkocmreiBvj/crawlers/p2DPKSzRAZWavEH5D/execute?token=mt7nsLDdZFrF9L8D5QSFaAsDq"
     elsif season_id == 122
       "https://api.apify.com/v1/YZw3JnXkocmreiBvj/crawlers/sR6FNkz3fEQcQuoAr/execute?token=LFR6sizHscyD5pQmkSGcJBQT3"
@@ -96,6 +96,8 @@ DESC
       "https://api.apify.com/v1/YZw3JnXkocmreiBvj/crawlers/ZxJq7AucPgY69WiiH/execute?token=7uuBgQC6BPN3RLnbsr9EMHuhp"
     elsif season_id == 162
       "https://api.apify.com/v1/YZw3JnXkocmreiBvj/crawlers/p2AG7QnwmCdqH5Axy/execute?token=y8ETgNrtbFm8m6cnWTqdKLKMq"
+    elsif season_id == 172
+      "https://api.apify.com/v1/YZw3JnXkocmreiBvj/crawlers/Ep5BFXWdRW3x3ciLE/execute?token=8j25f3Nd7W848eNGLg597Pxgd"
     end
 
     calendar_rows_hash = scan_apifier_crawler_results_for_calendar( api_run_endpoint )
@@ -167,7 +169,7 @@ Options: [ [season_id=Season_id|<#{DEFAULT_SEASON_ID}>] | [row_id=FIN_Calendar_r
          [output_path=#{LOCALCOPY_DIR}]
 
   - 'season_id':      the ID of the FIN season to be crawled.
-    (Currently supported seasons: 122, 132, 142, ... And so on, up to ID 172)
+    (Currently supported seasons: 122, 132, 142, ... And so on, up to ID 182)
 
   - 'row_id':         the specific row ID of the *single* FIN calendar row
                       to be processed. Overrides and takes precedence over the
@@ -321,7 +323,7 @@ Options: [ [season_id=Season_id|<#{DEFAULT_SEASON_ID}>] | [row_id=FIN_Calendar_r
          [honor_single_update=false|<true>]
 
   - 'season_id':      the ID of the FIN season to be crawled.
-    (Currently supported seasons: 122, 132, 142, ... And so on, up to ID 172)
+    (Currently supported seasons: 122, 132, 142, ... And so on, up to ID 182)
 
   - 'row_id':         the specific row ID of the *single* FIN calendar row
                       to be processed. Overrides and takes precedence over the

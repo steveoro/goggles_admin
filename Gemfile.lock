@@ -43,9 +43,9 @@ GIT
 
 GIT
   remote: https://github.com/steveoro/goggles_core
-  revision: cdf0961430c0d9940ca7fb8261d68f5065dd2b40
+  revision: 1a17970aaf16cd4dbd3848a657d5317bd6d8b380
   specs:
-    goggles_core (1.3.36)
+    goggles_core (1.3.40)
       active_hash_relation
       active_model_serializers
       activemodel-serializers-xml
@@ -92,7 +92,7 @@ GEM
       rails-html-sanitizer (~> 1.0, >= 1.0.3)
     active_hash_relation (1.4.1)
       activerecord
-    active_model_serializers (0.10.7)
+    active_model_serializers (0.10.8)
       actionpack (>= 4.1, < 6)
       activemodel (>= 4.1, < 6)
       case_transform (>= 0.2)
@@ -139,6 +139,9 @@ GEM
     binding_of_caller (0.7.3)
       debug_inspector (>= 0.0.1)
     builder (3.2.3)
+    bullet (5.8.1)
+      activesupport (>= 3.0.0)
+      uniform_notifier (~> 1.11)
     byebug (9.1.0)
     capybara (2.17.0)
       addressable
@@ -182,13 +185,13 @@ GEM
     delayed_job_active_record (4.1.2)
       activerecord (>= 3.0, < 5.2)
       delayed_job (>= 3.0, < 5)
-    devise (4.4.3)
+    devise (4.5.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 4.1.0, < 6.0)
       responders
       warden (~> 1.2.3)
-    devise-i18n (1.6.4)
+    devise-i18n (1.6.5)
       devise (>= 4.4)
     diff-lcs (1.3)
     docile (1.1.5)
@@ -283,11 +286,11 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    loofah (2.2.2)
+    loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.12)
-    mail (2.7.0)
+    mail (2.7.1)
       mini_mime (>= 0.1.1)
     mechanize (2.7.5)
       domain_name (~> 0.5, >= 0.5.1)
@@ -298,11 +301,11 @@ GEM
       nokogiri (~> 1.6)
       ntlm-http (~> 0.1, >= 0.1.1)
       webrobots (>= 0.0.9, < 0.2)
-    method_source (0.9.0)
+    method_source (0.9.1)
     mime-types (3.1)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2016.0521)
-    mini_mime (1.0.0)
+    mini_mime (1.0.1)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
     money (6.10.1)
@@ -315,7 +318,7 @@ GEM
     net-http-persistent (2.9.4)
     netrc (0.11.0)
     nio4r (2.3.1)
-    nokogiri (1.8.4)
+    nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
     notiffany (0.1.1)
       nenv (~> 0.1)
@@ -508,6 +511,7 @@ GEM
     unf_ext (0.0.7.4)
     unicode-display_width (1.3.0)
     unicode_utils (1.4.0)
+    uniform_notifier (1.12.1)
     warden (1.2.7)
       rack (>= 1.0)
     web-console (3.5.1)
@@ -532,6 +536,7 @@ DEPENDENCIES
   amistad!
   better_errors
   binding_of_caller
+  bullet
   byebug
   capybara (~> 2.13)
   cocoon
@@ -572,7 +577,7 @@ DEPENDENCIES
   rest-client
   rspec
   rspec-rails
-  rubocop (~> 0.49.0)
+  rubocop
   rubyzip (~> 1.2.1)
   sass-rails (~> 5)
   selenium-webdriver

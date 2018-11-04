@@ -87,7 +87,6 @@ gem 'zip'
 
 # [Steve, 20171117] Fix for potential vulnerability w/ specific version:
 gem 'rubyzip', '~> 1.2.1', require: 'zip/zip'
-gem 'rubocop', '~> 0.49.0', require: false                       # [Steve] For style checking
 
 
 group :development do
@@ -99,6 +98,8 @@ group :development do
   gem 'guard-shell'
 #  gem 'rspec_api_blueprint', require: false
 #  gem "airbrussh", require: false
+
+  gem 'rubocop' # [Steve] For style checking
 
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'web-console'
@@ -130,6 +131,7 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'bullet'
 end
 
 

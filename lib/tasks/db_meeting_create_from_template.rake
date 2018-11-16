@@ -105,7 +105,7 @@ DESC
 
     # Calculate (or force) edition
     increment = (( season.id - meeting.season_id ) / 10 ).to_i
-    new_edition = edition ? meeting.edition + edition : meeting.edition + ( increment / 10 ).to_i
+    new_edition = edition ? meeting.edition + edition : meeting.edition + increment
     unless new_edition >= 0
       puts("The calculated edition " + new_edition.to_s + " is not correct")
       exit
@@ -152,7 +152,7 @@ DESC
       newer_meeting.is_pb_scanned        = false
       newer_meeting.is_fb_posted         = false
       newer_meeting.is_tweeted           = false
-
+      newer_meeting.notes                = ""
 
       if newer_meeting.save
         sql_diff_text_log << to_sql_insert( newer_meeting, false, "\r\n" ) # no additional comment

@@ -111,12 +111,18 @@ DESC
       exit
     end
 
-    logger.info( "Meeting: " + meeting.get_full_name + " will be created in season " + season.get_full_name + " with id " + new_id.to_s + " edition: " + new_edition.to_s + " with increment: " + increment.to_s )
+    logger.info( "Meeting: " + meeting.get_full_name + " will be cloned in season " + season.get_full_name + " with id " + new_id.to_s + " edition: " + new_edition.to_s + " with increment: " + increment.to_s )
+
+    # Verify if edition is in meeting name
+    new_description = meeting.description
+    if meeting.description.start_with?(meeting.edition.to_s)
+      new_description = new_edition.to_s + meeting.description.slice(meeting.edition.to_s.length..-1) 
+    end 
 
     # Create diff file
     file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_meeting_create_from_template_#{new_id}.diff"
     diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
-    diff_file.puts "-- Meeting: #{meeting.get_full_name} (#{new_id})"
+    diff_file.puts "-- Meeting: #{new_description} (#{new_id})"
     diff_file.puts "\r\n-- Season:  #{season.get_full_name} (#{season.id})"
     diff_file.puts "\r\n-- Edition: #{new_edition}"
 
@@ -131,15 +137,19 @@ DESC
       # - header_date
       # - header_year
       newer_meeting.id                   = new_id
+      newer_meeting.description          = new_description
       newer_meeting.season_id            = season.id
       newer_meeting.edition              = new_edition
       newer_meeting.header_date          = SeasonCreator.next_year_eq_day( newer_meeting.header_date, increment )
       newer_meeting.entry_deadline       = SeasonCreator.next_year_eq_day( newer_meeting.entry_deadline, increment )
       newer_meeting.header_year          = SeasonCreator.next_header_year( newer_meeting.header_year, increment )
 
+      logger.info( "<------------------------------------------------------------>" )
+      logger.info( "description: " + newer_meeting.description )
       logger.info( "header_date: " + newer_meeting.header_date.to_s )
       logger.info( "entry_deadline: " + newer_meeting.entry_deadline.to_s )
       logger.info( "header_year: " + newer_meeting.header_year.to_s )
+      logger.info( "<------------------------------------------------------------>" )
 
       # Some values should be cleared
       newer_meeting.are_results_acquired = false
@@ -153,28 +163,38 @@ DESC
       newer_meeting.is_fb_posted         = false
       newer_meeting.is_tweeted           = false
       newer_meeting.notes                = ""
-
+      
       if newer_meeting.save
+        create_sql_diff_header("-- Meeting: #{meeting.get_full_name} (#{new_id})")
         sql_diff_text_log << to_sql_insert( newer_meeting, false, "\r\n" ) # no additional comment
 
         # Collect meeting sessions too
         if sessions
-          meeting.meeting_sessions.each do |meeting_session|
+          event_number = 0
+          meeting.meeting_sessions.each_with_index do |meeting_session, session_index|
             newer_session = MeetingSession.new( meeting_session.attributes.reject{ |e| ['id','lock_version','created_at','updated_at'].include?(e) } )
             newer_session.meeting_id     = newer_meeting.id
             newer_session.scheduled_date = SeasonCreator.next_year_eq_day( newer_session.scheduled_date, increment ) if newer_session.scheduled_date > Date.new()
             newer_session.is_autofilled  = true
+            newer_session.session_order  = session_index + 1  # Reset session order
             if newer_session.save
-              sql_diff_text_log << to_sql_insert( newer_session, false, "\r\n" ) # no additional comment
+              sql_diff_text_log << "\r\n"
+              add_sql_diff_comment("Session #{meeting_session.session_order} -> #{session_index + 1}: #{meeting_session.swimming_pool.get_verbose_name}") 
+              sql_diff_text_log << to_sql_insert( newer_session, false, " -- Session #{session_index + 1} -> #{meeting_session.session_order}: #{meeting_session.swimming_pool.get_verbose_name}\r\n" )
+              logger.info( "Session #{meeting_session.session_order} -> #{session_index + 1}: #{meeting_session.swimming_pool.get_verbose_name}" )
 
               # Collect meeting events too
               if events
-                meeting_session.meeting_events.each do |meeting_event|
+                meeting_session.meeting_events.each_with_index do |meeting_event, event_index|
+                  event_number += 1
                   newer_event = MeetingEvent.new( meeting_event.attributes.reject{ |e| ['id','lock_version','created_at','updated_at'].include?(e) } )
                   newer_event.meeting_session_id = newer_session.id
                   newer_event.is_autofilled      = true
+                  newer_event.event_order  = event_number  # Reset event order
                   if newer_event.save
-                    sql_diff_text_log << to_sql_insert( newer_event, false, "\r\n" ) # no additional comment
+                    add_sql_diff_comment("Event #{meeting_event.event_order} -> #{event_number} - #{meeting_event.event_type.code}") 
+                    sql_diff_text_log << to_sql_insert( newer_event, false, " -- Event #{event_index + 1} -> #{meeting_event.event_order} - #{meeting_event.event_type.code}\r\n" )
+                    logger.info( "- Event #{meeting_event.event_order} -> #{event_number} - #{meeting_event.event_type.code}" )
                   else
                     logger.info( "\r\nUnexpected and unpredictable and unusual error during meeting events save." )
                   end
@@ -184,6 +204,7 @@ DESC
               logger.info( "\r\nUnexpected and unpredictable and unusual error during meeting session(s) save." )
             end
           end
+          create_sql_diff_footer("-- Meeting: #{meeting.get_full_name} (#{new_id})")
         end
 
         diff_file.puts sql_diff_text_log

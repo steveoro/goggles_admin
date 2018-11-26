@@ -190,7 +190,11 @@ DESC
                   newer_event = MeetingEvent.new( meeting_event.attributes.reject{ |e| ['id','lock_version','created_at','updated_at'].include?(e) } )
                   newer_event.meeting_session_id = newer_session.id
                   newer_event.is_autofilled      = true
-                  newer_event.event_order  = event_number  # Reset event order
+                  newer_event.event_order        = event_number  # Reset event order
+
+                  # Some values should be cleared
+                  newer_event.begin_time = nil
+                  
                   if newer_event.save
                     add_sql_diff_comment("Event #{meeting_event.event_order} -> #{event_number} - #{meeting_event.event_type.code}") 
                     sql_diff_text_log << to_sql_insert( newer_event, false, " -- Event #{event_index + 1} -> #{meeting_event.event_order} - #{meeting_event.event_type.code}\r\n" )

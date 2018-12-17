@@ -103,6 +103,14 @@ DESC
       # [Steve, 20170414] The task directly includes SqlConvertable, so we can create the DB-diff file using transactions:
       reset_sql_diff_text_log
       create_sql_diff_header( "*** GoggleCup: #{ goggle_cup.get_full_name } (ID: #{ goggle_cup.id}) ***" )
+      
+      # If GoggleCup has some setup before SQL statements
+      if goggle_cup.pre_calculation_sql
+        ActiveRecord::Base.connection.execute(goggle_cup.pre_calculation_sql)        
+        add_sql_diff_comment( "GoggleCup setup pre SQL statement" )
+        sql_diff_text_log << goggle_cup.pre_calculation_sql + ";\r\n\r\n"
+        logger.info( "\r\nExecuting Pre SQL statement #{goggle_cup.pre_calculation_sql}" )
+      end
 
       if meeting
         # Scan for meeting individual results of goggle cup for given meeting
@@ -133,6 +141,14 @@ DESC
             logger.info( "\r\n<------------------------------------------------------------>\r\n" )
           end
         end
+      end
+
+      # If GoggleCup has some setup after SQL statements
+      if goggle_cup.post_calculation_sql
+        ActiveRecord::Base.connection.execute(goggle_cup.post_calculation_sql)
+        add_sql_diff_comment( "GoggleCup setup post SQL statement" )
+        sql_diff_text_log << goggle_cup.post_calculation_sql + ";\r\n\r\n"
+        logger.info( "\r\nExecuting Post SQL statement #{goggle_cup.post_calculation_sql}" )
       end
 
       if mirs_found > 0

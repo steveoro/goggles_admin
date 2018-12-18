@@ -45,7 +45,7 @@ The resulting SQL DB-diff log files are stored into '#{LOG_DIR}'.
 
   == Options:
 
-  goggle_cup=<goggle_cup_id> [meeting=<meeting_id>] [persist=<false>|true]
+  goggle_cup=<goggle_cup_id> [meeting=<meeting_id> [swimmer=<swimmer_id>]] [persist=<false>|true]
   [recalculate=<false>|true]
   [log_dir=#{LOG_DIR}]
 
@@ -58,6 +58,8 @@ The resulting SQL DB-diff log files are stored into '#{LOG_DIR}'.
 
   - 'meeting'     scans only the given meeting.
 
+  - 'swimmer'     scans only the given swimmer (works only with meeting specification).
+
   - 'log_dir'     allows to override the default log dir destination.
 
 DESC
@@ -67,6 +69,7 @@ DESC
     recalculate     = ENV.include?("recalculate") ? ENV["recalculate"] == 'true' : false
     goggle_cup_id   = ENV.include?("goggle_cup")  ? ENV["goggle_cup"].to_i : nil
     meeting_id      = ENV.include?("meeting")     ? ENV["meeting"].to_i : nil
+    swimmer_id      = ENV.include?("swimmer")     ? ENV["swimmer"].to_i : nil
     rails_config    = Rails.configuration             # Prepare & check configuration:
     db_name         = rails_config.database_configuration[Rails.env]['database']
     db_user         = rails_config.database_configuration[Rails.env]['username']
@@ -97,6 +100,7 @@ DESC
     goggle_cup = GoggleCup.find( goggle_cup_id )
     logger.info( "GoggleCup: " + goggle_cup.get_full_name )
     meeting = Meeting.find( meeting_id ) if meeting_id
+    swimmer = Swimmer.find( swimmer_id ) if swimmer_id
     mirs_found = 0
 
     ActiveRecord::Base.transaction do
@@ -116,13 +120,29 @@ DESC
         # Scan for meeting individual results of goggle cup for given meeting
         logger.info( "\r\nMeeting  : " + meeting.get_full_name )
         add_sql_diff_comment( "Meeting  : #{meeting.get_full_name}" )
-
-        goggle_cup.meeting_individual_results
-          .joins(:meeting, :badge).includes(:meeting, :badge)
-          .where(['(meetings.id = ?) AND (meeting_individual_results.team_id = ?) AND not badges.is_out_of_goggle_cup', meeting_id, goggle_cup.team_id])
-          .each do |meeting_individual_result|
-            calculate_goggle_cup_for_mir( goggle_cup, meeting_individual_result, recalculate, logger )
-            mirs_found = mirs_found + 1
+        
+        if swimmer
+          # Scan for meeting individual results of goggle cup for given meeting
+          logger.info( "\r\nSwimmer  : " + swimmer.complete_name )
+          add_sql_diff_comment( "Swimmer  : #{swimmer.complete_name}" )
+          
+          # Scan meeting swimmer results
+          goggle_cup.meeting_individual_results
+            .joins(:meeting, :badge).includes(:meeting, :badge)
+            .where(['(meetings.id = ?) AND (meeting_individual_results.team_id = ?) AND (meeting_individual_results.swimmer_id = ?) AND not badges.is_out_of_goggle_cup', meeting_id, goggle_cup.team_id, swimmer_id])
+            .each do |meeting_individual_result|
+              calculate_goggle_cup_for_mir( goggle_cup, meeting_individual_result, recalculate, logger )
+              mirs_found = mirs_found + 1
+          end
+        else
+          # Scan meeting results
+          goggle_cup.meeting_individual_results
+            .joins(:meeting, :badge).includes(:meeting, :badge)
+            .where(['(meetings.id = ?) AND (meeting_individual_results.team_id = ?) AND not badges.is_out_of_goggle_cup', meeting_id, goggle_cup.team_id])
+            .each do |meeting_individual_result|
+              calculate_goggle_cup_for_mir( goggle_cup, meeting_individual_result, recalculate, logger )
+              mirs_found = mirs_found + 1
+          end
         end
       else
         goggle_cup.meetings.each do |current_meeting|
@@ -153,7 +173,10 @@ DESC
 
       if mirs_found > 0
         # Setup & save diff file
-        file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{ persist ? 'prod' : 'all' }_goggle_cup_calc_#{goggle_cup_id}.diff.sql"
+        identifier = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{ persist ? 'prod' : 'all' }_goggle_cup_calc_#{goggle_cup_id}"
+        identifier += "_#{meeting_id}" if meeting_id
+        identifier += "_#{swimmer_id}" if swimmer_id
+        file_name = identifier + ".diff.sql"
         full_diff_pathname = File.join( LOG_DIR, file_name )
         save_diff_file( full_diff_pathname )
         logger.info( "\r\nLog file '" + full_diff_pathname + "' created." )

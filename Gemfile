@@ -37,6 +37,9 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
+# [Steve, 20181221] Security update:
+gem "ffi", "~> 1.9.25"
+
 gem "json"
 gem "haml-rails"
 

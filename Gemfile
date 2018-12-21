@@ -37,9 +37,6 @@ gem 'jbuilder', '~> 2.5'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
-# [Steve, 20181221] Security update:
-gem "ffi", "~> 1.9.25"
-
 gem "json"
 gem "haml-rails"
 
@@ -88,8 +85,10 @@ gem "nokogiri"                                      # Used for HTML DOCModel eas
 gem 'generator'
 gem 'zip'
 
-# [Steve, 20171117] Fix for potential vulnerability w/ specific version:
-gem 'rubyzip', '~> 1.2.1', require: 'zip/zip'
+
+# [Steve, 20181221] *** Security updates: ***
+gem "ffi", "~> 1.9.25"
+gem 'rubyzip', '~> 1.2.2', require: 'zip/zip'
 
 
 group :development do

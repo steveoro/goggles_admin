@@ -104,8 +104,6 @@ DESC
 
     # Scan
     ActiveRecord::Base.transaction do
-      # TODO - Use results swimmed in other teams
-      # FIXME- Exclude disqualified results
       goggle_cup_standard_finder.create_goggle_cup_standards!
 
       # Setup diff file

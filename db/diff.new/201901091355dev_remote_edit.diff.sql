@@ -1,0 +1,54 @@
+-- /var/www/goggles.org/releases/20181202174441/public/output/201901091355dev_remote_edit.diff.sql
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Remote editing recorded from actions by User ID 2
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (2657, 18102, 2, 1, 97, 110751, '', 0, 0, '2019-01-09 12:49:39', '2019-01-09 12:49:39');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (18617, 18102, 1, 97, 110751, 18416, 2, 5, 31, 20, '2019-01-09 12:49:39', '2019-01-09 12:49:39', 1);
+
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (18618, 18102, 1, 97, 110751, 18419, 2, 0, 30, 10, '2019-01-09 12:49:41', '2019-01-09 12:49:41', 1);
+
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (2658, 18102, 2, 1, 1406, 110715, '', 0, 0, '2019-01-09 12:50:20', '2019-01-09 12:50:20');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (18619, 18102, 1, 1406, 110715, 18416, 2, 4, 56, 10, '2019-01-09 12:50:20', '2019-01-09 12:50:20', 1);
+
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (18620, 18102, 1, 1406, 110715, 18419, 2, 0, 28, 10, '2019-01-09 12:50:21', '2019-01-09 12:50:21', 1);
+
+UPDATE `meeting_event_reservations`
+  SET `is_doing_this`=1, `suggested_minutes`=5, `suggested_hundreds`=0, `suggested_seconds`=13, `user_id`=2
+  WHERE (`id`=18483);
+
+
+UPDATE `meeting_reservations`
+  SET `is_not_coming`=0, `has_confirmed`=0, `notes`='', `user_id`=2
+  WHERE (`id`=2650);
+
+UPDATE `meeting_event_reservations`
+  SET `is_doing_this`=1, `suggested_minutes`=7, `suggested_hundreds`=0, `suggested_seconds`=59, `user_id`=2
+  WHERE (`id`=18591);
+
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (2659, 18102, 2, 1, 257, 110711, '', 1, 0, '2019-01-09 12:54:57', '2019-01-09 12:54:57');
+
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (2660, 18102, 2, 1, 37487, 110714, '', 1, 0, '2019-01-09 12:55:04', '2019-01-09 12:55:04');
+
+UPDATE `meeting_reservations`
+  SET `is_not_coming`=0, `has_confirmed`=0, `notes`='', `user_id`=2
+  WHERE (`id`=2660);
+
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (2661, 18102, 2, 1, 1641, 110732, '', 1, 0, '2019-01-09 12:55:26', '2019-01-09 12:55:26');
+
+
+--
+COMMIT;

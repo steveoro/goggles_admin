@@ -130,7 +130,7 @@ module Fin2ResultConsts                             # == HEADER CONTEXT TYPES de
     ContextTypeDef.new(
       :result_row,
       [
-        /(?<timing>\d{1,2}\s\d\d\s\d\d)\s{1,2}+(?<score>\d{1,4}[\,|\.]\d\d)?/i
+        /(?<timing>\d{1,2}\s\d\d\s\d\d)\s{1,2}+(?<score>\d{1,4}[\,|\.]\d\d)?/i  # Leega not match 2018 format
       ],
       :category_header                              # parent context
     )
@@ -142,7 +142,7 @@ module Fin2ResultConsts                             # == HEADER CONTEXT TYPES de
     ContextTypeDef.new(
       :relay_row,
       [
-        /(?<=\(U25\)|\([A-Z]\))\s{1,3}(?<timing>\d{1,2}\s\d\d\s\d\d)/i
+        /(?<=\(U25\)|\([A-Z]\))\s{1,3}(?<timing>\d{1,2}\s\d\d\s\d\d)/i  # Leega not match 2018 format
       ],
       :relay_header
     )
@@ -389,7 +389,7 @@ module Fin2ResultConsts                             # == HEADER CONTEXT TYPES de
   def tokenizer_result_row_result_position
     TokenExtractor.new(
       :result_position,
-      /fc|fg|\d{1,3}(?=\s{1,3})/i,
+      /fc|fg|\d{1,3}(?=\s{1,3})/i,  # Leega not match 2018 format
       /\s(?=[a-z]+)/i
     )
   end
@@ -410,7 +410,7 @@ module Fin2ResultConsts                             # == HEADER CONTEXT TYPES de
   def tokenizer_result_row_swimmer_name
     TokenExtractor.new(
       :swimmer_name,
-      /(?<=fc\s|fc\s\s|fg\s|fg\s\s|\d\s|\d\s\s|\D{3}\-.\d{5}\s|\D{3}.\d{5}\s)(\D{22})\D*\s/i,
+      /(?<=fc\s|fc\s\s|fg\s|fg\s\s|\d\s|\d\s\s|\D{3}\-.\d{5}\s|\D{3}.\d{5}\s)(\D{22})\D*\s/i,  # Leega not match 2018 format
       /
         (?=
           (\s\d{4}\s\d\d\s(f|m)\s)|

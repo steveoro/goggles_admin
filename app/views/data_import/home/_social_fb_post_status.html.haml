@@ -10,10 +10,10 @@
       city: meeting.swimming_pools.first.city.get_full_name,                        |
       url: "http://master-goggles.org/it/meeting/#{ action_name }/#{ meeting.id }"  |
     ) +                                                                             |
-    "\r\n\r\n- #{ I18n.t('admin_import.teams') }: #{ meeting.teams.distinct.count } / " + |
-    "#{ I18n.t('admin_import.swimmers') }: #{ meeting.swimmers.distinct.count }\r\n" +    |
-    "- #{ I18n.t('admin_import.mirs') }: #{ meeting.meeting_individual_results.distinct.count } / " + |
-    "#{ I18n.t('admin_import.mrrs') }: #{ meeting.meeting_relay_results.distinct.count }\r\n" |
+    "\r\n\r\n- #{ I18n.t('admin_import.teams') }: #{ meeting.teams.distinct.unscope(:order).count } / " + |
+    "#{ I18n.t('admin_import.swimmers') }: #{ meeting.swimmers.distinct.unscope(:order).count }\r\n" +    |
+    "- #{ I18n.t('admin_import.mirs') }: #{ meeting.meeting_individual_results.distinct.unscope(:order).count } / " + |
+    "#{ I18n.t('admin_import.mrrs') }: #{ meeting.meeting_relay_results.distinct.unscope(:order).count }\r\n" |
   %span{id: "meetingFB#{ meeting.id }" }
     .btn.btn-default.btn-xs
       = I18n.t("social_post.suggested_title")

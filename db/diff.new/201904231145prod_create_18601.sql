@@ -3,7 +3,7 @@
 -- Create Campionati Italiani CSI 
 
 -- Season
-INSERT INTO `goggles_development`.`seasons`
+INSERT INTO seasons
 (`id`, `lock_version`, `description`, `begin_date`, `end_date`, `season_type_id`, `created_at`, `updated_at`, `header_year`, `edition`, `edition_type_id`, `timing_type_id`, `has_individual_rank`)
 VALUES
 (186, 0, 'CAMPIONATI NAZIONALI DI NUOTO CSI', '2019-05-23', '2019-05-26', 2, curdate(), curdate(), '2019', 17, 4, 3, 1);

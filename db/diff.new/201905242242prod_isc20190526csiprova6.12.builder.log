@@ -1,0 +1,412 @@
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>19, :heat_type_id=>3}
+MeetingEvent found! (ID: 19872)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>2, :heat_type_id=>3}
+MeetingEvent found! (ID: 19873)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>15, :heat_type_id=>3}
+MeetingEvent found! (ID: 19871)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>22, :heat_type_id=>3}
+MeetingEvent found! (ID: 19869)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>11, :heat_type_id=>3}
+MeetingEvent found! (ID: 19870)
+
+*** Entity builder: search_for('MeetingEvent') ***
+Seeking existing MeetingEvent with {:meeting_session_id=>[3013, 3014], :event_type_id=>6, :heat_type_id=>3}
+MeetingEvent found! (ID: 19868)

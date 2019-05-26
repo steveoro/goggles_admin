@@ -53,7 +53,7 @@ rake meeting_standard_points meeting=15201
 
 - To calculate all FIN standard points (recaluculate those already presents without persisting and without creating rank)
 rake meeting_standard_points meeting=15201 recalculate=true
-
+//
 - To calculate and persist all FIN standard points (recaluculate those already presents without creating rank)
 rake meeting_standard_points meeting=15201 recalculate=true persist=true
 
@@ -298,5 +298,3 @@ DESC
   end
 end
 # =============================================================================
-
-

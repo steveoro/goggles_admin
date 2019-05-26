@@ -1,0 +1,12 @@
+
+
+--------------------[Phase #3 - COMMIT]--------------------
+
+-- phase_3_commit: session ID:23, season ID: 181...
+
+Begin time re-computed for all meeting programs and updated directly on committed entities.
+data-import PHASES #2 & #3 DONE.
+
+Total committed rows: 444
+Data-import session destroyed successfully.
+===========================================================

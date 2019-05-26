@@ -1,0 +1,22 @@
+
+-------------------------------------------------------------------------------------------------------------
+
+Processing CONFIRMED [DataImportSwimmerAnalysisResult: data_import_session_id=23, 'BASIRICO` MATTEO' - match_name: 'BASIRICO' MATTEO' (ID:40408) score: 0.9792, year_of_birth: 2002, gender: 1, category: , best match: '' score: ]...
+Using swimmer_id alias override = 40408 for 'BASIRICO` MATTEO'...
+Analysis text is currently only serialized on log file!
+
+----8<---- (Original suggested statements:) ----
+INSERT INTO data_import_swimmer_aliases (complete_name,swimmer_id,created_at,updated_at) VALUES
+    ('BASIRICO` MATTEO',40408,CURDATE(),CURDATE());
+----8<----
+
+-------------------------------------------------------------------------------------------------------------
+
+Processing CONFIRMED [DataImportSwimmerAnalysisResult: data_import_session_id=23, 'BONORETTI VILLIAM' - match_name: 'BONORETTI WILLIAM' (ID:34372) score: 0.9839, year_of_birth: 1962, gender: 1, category: , best match: '' score: ]...
+Using swimmer_id alias override = 34372 for 'BONORETTI VILLIAM'...
+Analysis text is currently only serialized on log file!
+
+----8<---- (Original suggested statements:) ----
+INSERT INTO data_import_swimmer_aliases (complete_name,swimmer_id,created_at,updated_at) VALUES
+    ('BONORETTI VILLIAM',34372,CURDATE(),CURDATE());
+----8<----

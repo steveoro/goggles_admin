@@ -1,0 +1,116 @@
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'BASIRICO` MATTEO' ]]]  -- best-match search:
+- Desired YoB: 2002, gender: 1
+
+   - (Swimmer   ) BASIRICO' MATTEO               - YoB: 2002, gender: 1, score 0.9792, ID: 40408
+   - (Swimmer   ) MATTEO BERNA NASCA             - YoB: 1976, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 1183
+   ==> 1 results tot., min. bias: 0.8700
+
+   Hi-scoring....: (Swimmer   ) BASIRICO' MATTEO               - YoB: 2002, gender: 1, score 0.9792, ID: 40408
+   --- SINGLE MATCH! ---
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'BERSAN MICHELE' ]]]  -- best-match search:
+- Desired YoB: 1995, gender: 1
+
+   - (Swimmer   ) BERSAN MICHELE                 - YoB: 1993, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 38326
+   - (Swimmer   ) MICHELE FAUSTO                 - YoB: 1951, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 6933
+   (no results)
+   => NOT FOUND.
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'BONORETTI VILLIAM' ]]]  -- best-match search:
+- Desired YoB: 1962, gender: 1
+
+   - (Swimmer   ) BONORETTI WILLIAM              - YoB: 1962, gender: 1, score 0.9839, ID: 34372
+   ==> 1 results tot., min. bias: 0.8000
+
+   Hi-scoring....: (Swimmer   ) BONORETTI WILLIAM              - YoB: 1962, gender: 1, score 0.9839, ID: 34372
+   --- SINGLE MATCH! ---
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'COZZOLINO SALVATORE' ]]]  -- best-match search:
+- Desired YoB: 2005, gender: 1
+
+   - (Swimmer   ) COLOZZO SALVATORE              - YoB: 1950, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 10688
+   - (Swimmer   ) SALVATORE FABRIZIO             - YoB: 1975, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 8338
+   (no results)
+   => NOT FOUND.
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'MARAMOTTI GIULIA' ]]]  -- best-match search:
+- Desired YoB: 1992, gender: 2
+
+   - (Swimmer   ) MALCOTTI GIULIA                - YoB: 1986, gender: 2, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 13113
+   - (Swimmer   ) GIULIA MARIA                   - YoB: 1991, gender: 2, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 26099
+   (no results)
+   => NOT FOUND.
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'RINALDI GIULIA' ]]]  -- best-match search:
+- Desired YoB: 1992, gender: 2
+
+   - (Swimmer   ) RINALDI GIULIA                 - YoB: 1984, gender: 2, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 38092
+   - (Swimmer   ) GIULIA MARIA                   - YoB: 1991, gender: 2, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 26099
+   (no results)
+   => NOT FOUND.
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'RONZONI DAVIDE' ]]]  -- best-match search:
+- Desired YoB: 2002, gender: 1
+
+   - (Swimmer   ) ROZZI DAVIDE                   - YoB: 2000, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 33753
+   - (Swimmer   ) DAVIDE ROSSINI                 - YoB: 1992, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 29416
+   - (Swimmer   ) DAVIDE ROSSINI                 - YoB: 1993, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 37105
+   (no results)
+   => NOT FOUND.
+
+
+	*****************************
+	 Swimmer Analysis Report
+	*****************************
+
+--------------------------------------------------------------------------------
+                    [[[ 'SCARANO MATTEO' ]]]  -- best-match search:
+- Desired YoB: 2002, gender: 1
+
+   - (Swimmer   ) SCARANO PAOLO                  - YoB: 1984, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 12294
+   - (Swimmer   ) MATTEO BERNA NASCA             - YoB: 1976, gender: 1, score 0.0000 * SKIPPED * (mismatched by year or gender), ID: 1183
+   (no results)
+   => NOT FOUND.

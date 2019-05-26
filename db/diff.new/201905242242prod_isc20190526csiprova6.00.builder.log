@@ -1,0 +1,693 @@
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "CSInuoto OberFerrari%"]
+TeamAffiliation found! (ID: 5107)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>1, :season_id=>181}
+TeamAffiliation found! (ID: 5107)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "Cloromania SSD%"]
+TeamAffiliation found! (ID: 5199)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>33, :season_id=>181}
+TeamAffiliation found! (ID: 5199)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "Eden Sport%"]
+TeamAffiliation found! (ID: 5196)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>826, :season_id=>181}
+TeamAffiliation found! (ID: 5196)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "G.S.Guardia Finanza%"]
+
+*** Entity builder: search_for('DataImportTeam') ***
+Seeking existing DataImportTeam with ["(data_import_session_id = ?) AND (name LIKE ?)", 23, "G.S.Guardia Finanza%"]
+
+*** Entity builder: search_for('DataImportTeamAlias') ***
+Seeking existing DataImportTeamAlias with {:name=>"G.S.Guardia Finanza"}
+DataImportTeamAlias found! (ID: 1405)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>1280, :season_id=>181}
+TeamAffiliation found! (ID: 5205)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "Olympia Nuoto Team%"]
+
+*** Entity builder: search_for('DataImportTeam') ***
+Seeking existing DataImportTeam with ["(data_import_session_id = ?) AND (name LIKE ?)", 23, "Olympia Nuoto Team%"]
+
+*** Entity builder: search_for('DataImportTeamAlias') ***
+Seeking existing DataImportTeamAlias with {:name=>"Olympia Nuoto Team"}
+DataImportTeamAlias found! (ID: 1407)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>1000, :season_id=>181}
+TeamAffiliation found! (ID: 5203)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "Podium Nuoto%"]
+
+*** Entity builder: search_for('DataImportTeam') ***
+Seeking existing DataImportTeam with ["(data_import_session_id = ?) AND (name LIKE ?)", 23, "Podium Nuoto%"]
+
+*** Entity builder: search_for('DataImportTeamAlias') ***
+Seeking existing DataImportTeamAlias with {:name=>"Podium Nuoto"}
+DataImportTeamAlias found! (ID: 424)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>18, :season_id=>181}
+TeamAffiliation found! (ID: 5204)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "Reggiana Nuoto%"]
+TeamAffiliation found! (ID: 5106)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>224, :season_id=>181}
+TeamAffiliation found! (ID: 5106)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with ["(season_id = ?) AND (name LIKE ?)", 181, "Stella Azzurra%"]
+TeamAffiliation found! (ID: 5169)
+
+*** Entity builder: search_for('TeamAffiliation') ***
+Seeking existing TeamAffiliation with {:team_id=>4, :season_id=>181}
+TeamAffiliation found! (ID: 5169)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1996", 2, "ACERBI SARA%"]
+Swimmer found! (ID: 23052)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1969", 1, "ALLORO STEFANO%"]
+Swimmer found! (ID: 142)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1986", 1, "ARNESANO RICCARDO%"]
+Swimmer found! (ID: 1197)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1965", 2, "ASPIDOVA LARISA%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "1965", 2, "ASPIDOVA LARISA%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"ASPIDOVA LARISA"}
+DataImportSwimmerAlias found! (ID: 1365)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1962", 1, "ATTOLINI FEDERICO%"]
+Swimmer found! (ID: 51)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2002", 1, "BALASINI FILIPPO%"]
+Swimmer found! (ID: 35602)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1989", 1, "BARBIERI LUCA%"]
+Swimmer found! (ID: 27913)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2002", 1, "BASIRICO` MATTEO%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "2002", 1, "BASIRICO` MATTEO%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"BASIRICO` MATTEO"}
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1975", 1, "BELGIOIOSO FEDERICO%"]
+Swimmer found! (ID: 40311)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1974", 1, "BELLONI TOMAS%"]
+Swimmer found! (ID: 37365)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1980", 2, "BENASSI ANNAMARIA%"]
+Swimmer found! (ID: 28554)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1995", 1, "BERSAN MICHELE%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "1995", 1, "BERSAN MICHELE%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"BERSAN MICHELE"}
+*** Entity builder: add_new( primary: 'Swimmer', secondary: 'DataImportSwimmer') ***
+Added new DataImportSwimmer, ID:1.
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1974", 1, "BERTANI STEFANO%"]
+Swimmer found! (ID: 97)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1996", 1, "BERTOCCHI FABIO%"]
+Swimmer found! (ID: 28522)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1968", 1, "BERTOZZI ORLANDO%"]
+Swimmer found! (ID: 1227)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1967", 2, "BIANCHI ELENA%"]
+Swimmer found! (ID: 192)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1962", 2, "BONACINI FRANCESCA%"]
+Swimmer found! (ID: 1363)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1969", 2, "BONACINI MONICA%"]
+Swimmer found! (ID: 138)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1982", 1, "BONACINI STEFANO%"]
+Swimmer found! (ID: 1187)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2004", 2, "BONARETTI CHIARA%"]
+Swimmer found! (ID: 38043)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1995", 1, "BONATTI GIANLUCA%"]
+Swimmer found! (ID: 38327)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 1, "BONI ALESSANDRO%"]
+Swimmer found! (ID: 1533)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1994", 1, "BONI CLAUDIO%"]
+Swimmer found! (ID: 1430)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 1, "BONINI WALTER%"]
+Swimmer found! (ID: 35037)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1962", 1, "BONORETTI VILLIAM%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "1962", 1, "BONORETTI VILLIAM%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"BONORETTI VILLIAM"}
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1989", 2, "BOSCAINI LAURA%"]
+Swimmer found! (ID: 28525)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1979", 1, "BRAGLIA LUCA%"]
+Swimmer found! (ID: 31)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1991", 1, "BURANI PIETRO%"]
+Swimmer found! (ID: 1405)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1968", 1, "CAGOSSI CLAUDIO%"]
+Swimmer found! (ID: 1269)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2004", 2, "CANOSSA LARA%"]
+Swimmer found! (ID: 38044)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 2, "CANTONI SAMANTA%"]
+Swimmer found! (ID: 11732)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2000", 1, "CANTONI STEFANO%"]
+Swimmer found! (ID: 36476)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1997", 1, "CARLETTI ALAN%"]
+Swimmer found! (ID: 34374)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1996", 2, "CASARI LUCIA%"]
+Swimmer found! (ID: 28527)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1981", 1, "CAVAZZONI DAVIDE%"]
+Swimmer found! (ID: 38045)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1990", 2, "CERCHIA CONSUELO%"]
+Swimmer found! (ID: 21380)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1983", 1, "COCCHI MARCO%"]
+Swimmer found! (ID: 1240)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1963", 1, "CODELUPPI FRANCO%"]
+Swimmer found! (ID: 24842)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2005", 1, "COZZOLINO SALVATORE%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "2005", 1, "COZZOLINO SALVATORE%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"COZZOLINO SALVATORE"}
+*** Entity builder: add_new( primary: 'Swimmer', secondary: 'DataImportSwimmer') ***
+Added new DataImportSwimmer, ID:2.
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1983", 1, "CRISTOFORI ROBERTO%"]
+Swimmer found! (ID: 5053)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2000", 2, "DE PIERI ALESSIA%"]
+Swimmer found! (ID: 30742)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1983", 1, "DEL RIO SIMONE%"]
+Swimmer found! (ID: 1409)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1991", 2, "DELMONTE ILARIA%"]
+Swimmer found! (ID: 1483)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1995", 2, "DOSSI FRANCESCA%"]
+Swimmer found! (ID: 38075)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1977", 2, "DOTTI PAOLA%"]
+Swimmer found! (ID: 11734)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 1, "ELISSE SAMUELE%"]
+Swimmer found! (ID: 30744)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1978", 1, "ESPOSITO GIUSEPPE%"]
+Swimmer found! (ID: 20996)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1978", 2, "FERRARI ALESSIA%"]
+Swimmer found! (ID: 550)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 1, "FERRARI FRANCESCO%"]
+Swimmer found! (ID: 1406)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1977", 2, "FICARELLI LIA%"]
+Swimmer found! (ID: 1765)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 1, "FORMENTINI DAVIDE%"]
+Swimmer found! (ID: 785)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1977", 1, "FOSSILE ROBERTO%"]
+Swimmer found! (ID: 620)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1992", 1, "FRANCHI ALESSANDRO%"]
+Swimmer found! (ID: 5699)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1987", 2, "FRIGGERI MATILDE%"]
+Swimmer found! (ID: 5701)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2002", 1, "GANAPINI FABRIZIO%"]
+Swimmer found! (ID: 38509)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 2, "GANDOLFI SARA%"]
+Swimmer found! (ID: 28538)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1966", 1, "GANGAROSSA DAVIDE%"]
+Swimmer found! (ID: 149)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1989", 1, "GIANSOLDATI MATTEO%"]
+Swimmer found! (ID: 1452)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1990", 1, "GIAVAZZI JACOPO%"]
+Swimmer found! (ID: 1212)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1971", 1, "GIORGI ROSSI PAOLO%"]
+Swimmer found! (ID: 35216)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 1, "GIOVANELLA ENRICO%"]
+Swimmer found! (ID: 35614)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 1, "GIOVANELLA LORENZO%"]
+Swimmer found! (ID: 38528)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1989", 1, "GOMBI LUCA%"]
+Swimmer found! (ID: 38511)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2000", 2, "INCERTI DELMONTE CHIARA%"]
+Swimmer found! (ID: 22147)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1966", 1, "INCERTI PAOLO%"]
+Swimmer found! (ID: 22149)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1982", 1, "INCERTI TELANI JOHNATAN%"]
+Swimmer found! (ID: 1218)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1973", 2, "KAROBBI IRYNA%"]
+Swimmer found! (ID: 34382)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1975", 2, "LEONARDI ELISA%"]
+Swimmer found! (ID: 468)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1976", 2, "LEONCINI VALERIA%"]
+Swimmer found! (ID: 728)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1989", 1, "LEONI MARCO%"]
+Swimmer found! (ID: 1194)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1971", 1, "LIGABUE MARCO%"]
+Swimmer found! (ID: 23)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1992", 2, "MARAMOTTI GIULIA%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "1992", 2, "MARAMOTTI GIULIA%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"MARAMOTTI GIULIA"}
+*** Entity builder: add_new( primary: 'Swimmer', secondary: 'DataImportSwimmer') ***
+Added new DataImportSwimmer, ID:3.
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1991", 2, "MARANDO SILVIA%"]
+Swimmer found! (ID: 21014)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2001", 1, "MARGINI LEONARDO%"]
+Swimmer found! (ID: 28542)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 1, "MAZZIERI ALBERTO%"]
+Swimmer found! (ID: 5757)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1968", 1, "MENOZZI ANDREA%"]
+Swimmer found! (ID: 5759)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2001", 2, "MESSORI FRANCESCA%"]
+Swimmer found! (ID: 36482)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1991", 1, "MIARI FRANCESCO%"]
+Swimmer found! (ID: 5762)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1989", 2, "MIGNOGNA ELENA%"]
+Swimmer found! (ID: 9280)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1996", 2, "MONTANARI MARTINA%"]
+Swimmer found! (ID: 35619)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1986", 1, "MONTI MARCO%"]
+Swimmer found! (ID: 22151)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1967", 1, "MONTORSI ALESSIO%"]
+Swimmer found! (ID: 32944)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 1, "MONTORSI RICCARDO%"]
+Swimmer found! (ID: 32945)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1994", 1, "MORSIANI FEDERICO%"]
+Swimmer found! (ID: 1308)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1995", 1, "MOSCONI CLAUDIO%"]
+Swimmer found! (ID: 35620)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1993", 2, "MOTTA DEBORAH%"]
+Swimmer found! (ID: 35041)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1975", 1, "NOVELLI MICHELE%"]
+Swimmer found! (ID: 27445)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 2, "OGNIBENE GLORIA%"]
+Swimmer found! (ID: 21021)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1969", 1, "ONGARI MATTEO%"]
+Swimmer found! (ID: 899)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1961", 1, "ORLANDINI EDO%"]
+Swimmer found! (ID: 1652)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1957", 1, "ORLANDINI IDO PIER ALDO%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "1957", 1, "ORLANDINI IDO PIER ALDO%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"ORLANDINI IDO PIER ALDO"}
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 1, "PAGLIANI ROBERTO%"]
+Swimmer found! (ID: 38519)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1990", 2, "PANZETTI NAILA%"]
+Swimmer found! (ID: 1443)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1984", 1, "PAPA ANTONIO%"]
+Swimmer found! (ID: 31488)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2003", 1, "PASCALE CIRO%"]
+Swimmer found! (ID: 28156)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1965", 1, "PELIZZA VINCENZO%"]
+Swimmer found! (ID: 4833)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1981", 2, "PEZZI STEFANIA%"]
+Swimmer found! (ID: 1788)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1992", 1, "PEZZOLI GIANLUCA%"]
+Swimmer found! (ID: 33660)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2000", 1, "PICCININI LUCA%"]
+Swimmer found! (ID: 36488)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 1, "PISTELLI MATTIA%"]
+Swimmer found! (ID: 37370)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1995", 1, "PITOCCHI FEDERICO%"]
+Swimmer found! (ID: 38330)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1993", 1, "POZZOLI ELIA%"]
+Swimmer found! (ID: 38490)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1981", 1, "QUADRI ANDREA%"]
+Swimmer found! (ID: 530)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1959", 1, "RASENTI NORBERTO%"]
+Swimmer found! (ID: 26)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1995", 1, "REBUCCI GIORGIO%"]
+Swimmer found! (ID: 20967)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1992", 2, "RINALDI GIULIA%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "1992", 2, "RINALDI GIULIA%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"RINALDI GIULIA"}
+*** Entity builder: add_new( primary: 'Swimmer', secondary: 'DataImportSwimmer') ***
+Added new DataImportSwimmer, ID:4.
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1964", 1, "RIZZI FABIO%"]
+Swimmer found! (ID: 5813)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1987", 1, "ROCCO SIMONE%"]
+Swimmer found! (ID: 38491)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2001", 2, "ROMANO MARIA CHIARA%"]
+Swimmer found! (ID: 40409)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2000", 2, "RONDONI ALESSIA%"]
+Swimmer found! (ID: 38499)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1984", 1, "RONZONI ALESSANDRO%"]
+Swimmer found! (ID: 1279)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2002", 1, "RONZONI DAVIDE%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "2002", 1, "RONZONI DAVIDE%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"RONZONI DAVIDE"}
+*** Entity builder: add_new( primary: 'Swimmer', secondary: 'DataImportSwimmer') ***
+Added new DataImportSwimmer, ID:5.
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2005", 2, "ROSSI CARLOTTA%"]
+Swimmer found! (ID: 39498)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1989", 2, "ROTA CAMILLA%"]
+Swimmer found! (ID: 21030)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1983", 2, "RUSEANOVSCHI OLGA%"]
+Swimmer found! (ID: 34369)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2002", 1, "SCARANO MATTEO%"]
+
+*** Entity builder: search_for('DataImportSwimmer') ***
+Seeking existing DataImportSwimmer with ["(data_import_session_id = ?) AND (year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", 23, "2002", 1, "SCARANO MATTEO%"]
+
+*** Entity builder: search_for('DataImportSwimmerAlias') ***
+Seeking existing DataImportSwimmerAlias with {:complete_name=>"SCARANO MATTEO"}
+*** Entity builder: add_new( primary: 'Swimmer', secondary: 'DataImportSwimmer') ***
+Added new DataImportSwimmer, ID:6.
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1975", 1, "SENATORE FABIO%"]
+Swimmer found! (ID: 6681)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1971", 2, "SESENA BARBARA%"]
+Swimmer found! (ID: 98)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1974", 2, "SESENA PATRIZIA%"]
+Swimmer found! (ID: 1474)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1982", 2, "SIRINGO ALESSIA%"]
+Swimmer found! (ID: 28547)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1999", 1, "STORCHI LORENZO%"]
+Swimmer found! (ID: 19099)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1963", 1, "STROZZI PIERANTONIO%"]
+Swimmer found! (ID: 1516)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1972", 1, "TEGGI MAURO%"]
+Swimmer found! (ID: 34610)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1996", 1, "TESAURI MARCO%"]
+Swimmer found! (ID: 37372)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1973", 2, "TOFFANETTI LAURA%"]
+Swimmer found! (ID: 503)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1945", 2, "TONDELLI EBE%"]
+Swimmer found! (ID: 28559)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1966", 1, "TONI MARCO%"]
+Swimmer found! (ID: 25)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "2004", 2, "TORRI SARA%"]
+Swimmer found! (ID: 38062)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1988", 1, "VALCAVI LUCA%"]
+Swimmer found! (ID: 1025)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1991", 1, "VALENZA NICOLA%"]
+Swimmer found! (ID: 1204)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1992", 1, "VENESELLI FEDERICO%"]
+Swimmer found! (ID: 1618)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1955", 1, "VERZANI MASSIMO%"]
+Swimmer found! (ID: 900)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1995", 2, "VEZZANI GIORGIA%"]
+Swimmer found! (ID: 1777)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1965", 1, "ZACCARELLI MARCO%"]
+Swimmer found! (ID: 33677)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1974", 1, "ZAGATTI ALESSANDRO%"]
+Swimmer found! (ID: 28551)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1998", 1, "ZANELLA LUCA%"]
+Swimmer found! (ID: 35225)
+
+*** Entity builder: search_for('Swimmer') ***
+Seeking existing Swimmer with ["(year_of_birth = ?) AND (gender_type_id = ?) AND (complete_name LIKE ?)", "1980", 2, "ZOBOLI MANUELA%"]
+Swimmer found! (ID: 28553)

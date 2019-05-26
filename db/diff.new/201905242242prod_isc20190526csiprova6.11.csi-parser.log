@@ -1,0 +1,1654 @@
+Season non forced by data-file path ('public/uploads/isc20190526csiprova6.csv')...
+Detected season ID=181 from file header date. Parsing file...
+Season ID=181 stored in session.
+Parsed header fields: [HeaderFieldsDAO: 'public/uploads/isc20190526csiprova6.csv' (prefix: isc), header:2019-05-26=>2018/2019, code:csiprova6]: edition: 19, ed.type:5, timing_type_id: 2)
+Set-up of data-import session done.
+Datafile: public/uploads/isc20190526csiprova6.csv
+Acquired 323 data rows.
+
+** UNIQUE Team names: **
+
+CSInuoto OberFerrari
+Cloromania SSD
+Eden Sport
+G.S.Guardia Finanza
+Olympia Nuoto Team
+Podium Nuoto
+Reggiana Nuoto
+Stella Azzurra
+==== Tot. teams: 8 ====
+Analyzing name by name...
+
+==== Tot. swimmers: 137 ====
+Analyzing name by name...
+
+
+--------------------[Phase #1.2 - DIGEST/SERIALIZE]--------------------
+Parsing of 'public/uploads/isc20190526csiprova6.csv' done.
+Digesting data...
+Found season '#<Season id: 181, lock_version: 0, description: "Circuito regionale Emilia master CSI 2018/2019", begin_date: "2018-10-01", end_date: "2019-09-30", season_type_id: 2, created_at: "2018-10-17 10:16:41", updated_at: "2018-10-17 10:16:41", header_year: "2018/2019", edition: 19, edition_type_id: 5, timing_type_id: 2, rules: nil, has_individual_rank: true, badge_fee: #<BigDecimal:7f46620fa9b0,'0.1E2',9(18)>>'; #<SeasonType id: 2, lock_version: 0, code: "MASCSI", description: "CIRCUITO ITALIANO MASTER CSI", short_name: "MASTER CSI", federation_type_id: 2, created_at: "2014-10-19 00:00:00", updated_at: "2014-10-19 00:00:00">, season_starting_year=2018
+PHASE #1.2: checking possible Meeting validation failures...
+PHASE #1.2: processing CATEGORY headers...
+Process category headers, header event list: 100MI-SEN, 50RA-SEN, 50FA-SEN, 800SL-SEN, 50SL-SEN, 50DO-SEN, 50DO-M45, 50SL-M45, 100MI-M45, 50FA-M30, 50RA-M30, 100MI-M30, 50FA-M20, 50SL-M20, 100MI-M20, 50FA-M45, 800SL-M45, 50DO-M20
+Tot.: 18
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ACERBI SARA' (1996, g:2)=> 'Eden Sport' b:4230209]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'40"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ACERBI SARA' (1996, g:2)=> 'Eden Sport' b:4230209]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ALLORO STEFANO' (1969, g:1)=> 'CSInuoto OberFerrari' b:4207999]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'19"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ALLORO STEFANO' (1969, g:1)=> 'CSInuoto OberFerrari' b:4207999]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'32"20)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ALLORO STEFANO' (1969, g:1)=> 'CSInuoto OberFerrari' b:4207999]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'35"40)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ARNESANO RICCARDO' (1986, g:1)=> 'Eden Sport' b:4230210]: event: 800SL, cat. SEN, rank: 0)  (entry: 18'10"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ARNESANO RICCARDO' (1986, g:1)=> 'Eden Sport' b:4230210]: event: 100MI, cat. SEN, rank: 0)  (entry: 02'20"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ARNESANO RICCARDO' (1986, g:1)=> 'Eden Sport' b:4230210]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'52"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ARNESANO RICCARDO' (1986, g:1)=> 'Eden Sport' b:4230210]: event: 50DO, cat. SEN, rank: 0)  (entry: 01'06"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ASPIDOVA LARISA' (1965, g:2)=> 'Eden Sport' b:4230211]: event: 800SL, cat. SEN, rank: 0)  (entry: 14'40"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ASPIDOVA LARISA' (1965, g:2)=> 'Eden Sport' b:4230211]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'43"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ATTOLINI FEDERICO' (1962, g:1)=> 'CSInuoto OberFerrari' b:4208017]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'24"30)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ATTOLINI FEDERICO' (1962, g:1)=> 'CSInuoto OberFerrari' b:4208017]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'41"50)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BALASINI FILIPPO' (2002, g:1)=> 'Cloromania SSD' b:4605132]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BALASINI FILIPPO' (2002, g:1)=> 'Cloromania SSD' b:4605132]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BARBIERI LUCA' (1989, g:1)=> 'CSInuoto OberFerrari' b:4208036]: event: 800SL, cat. SEN, rank: 0)  (entry: 12'04"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BARBIERI LUCA' (1989, g:1)=> 'CSInuoto OberFerrari' b:4208036]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'30"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BARBIERI LUCA' (1989, g:1)=> 'CSInuoto OberFerrari' b:4208036]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BASIRICO` MATTEO' (2002, g:1)=> 'Olympia Nuoto Team' b:4242596]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BASIRICO` MATTEO' (2002, g:1)=> 'Olympia Nuoto Team' b:4242596]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'47"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BELGIOIOSO FEDERICO' (1975, g:1)=> 'Reggiana Nuoto' b:4241996]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BELGIOIOSO FEDERICO' (1975, g:1)=> 'Reggiana Nuoto' b:4241996]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'32"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BELLONI TOMAS' (1974, g:1)=> 'Olympia Nuoto Team' b:4230246]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BELLONI TOMAS' (1974, g:1)=> 'Olympia Nuoto Team' b:4230246]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'35"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BENASSI ANNAMARIA' (1980, g:2)=> 'CSInuoto OberFerrari' b:4242731]: event: 800SL, cat. SEN, rank: 0)  (entry: 15'00"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BENASSI ANNAMARIA' (1980, g:2)=> 'CSInuoto OberFerrari' b:4242731]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'44"10)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERSAN MICHELE' (1995, g:1)=> 'Cloromania SSD' b:4605134]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'26"50)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERSAN MICHELE' (1995, g:1)=> 'Cloromania SSD' b:4605134]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'33"50)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERTANI STEFANO' (1974, g:1)=> 'CSInuoto OberFerrari' b:4230431]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'23"60)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERTOCCHI FABIO' (1996, g:1)=> 'CSInuoto OberFerrari' b:4224553]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'16"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERTOCCHI FABIO' (1996, g:1)=> 'CSInuoto OberFerrari' b:4224553]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERTOCCHI FABIO' (1996, g:1)=> 'CSInuoto OberFerrari' b:4224553]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'27"70)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERTOZZI ORLANDO' (1968, g:1)=> 'CSInuoto OberFerrari' b:4224559]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'05"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERTOZZI ORLANDO' (1968, g:1)=> 'CSInuoto OberFerrari' b:4224559]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'19"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BERTOZZI ORLANDO' (1968, g:1)=> 'CSInuoto OberFerrari' b:4224559]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'28"69)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BIANCHI ELENA' (1967, g:2)=> 'CSInuoto OberFerrari' b:4214510]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'44"72)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BIANCHI ELENA' (1967, g:2)=> 'CSInuoto OberFerrari' b:4214510]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'41"50)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONACINI FRANCESCA' (1962, g:2)=> 'Reggiana Nuoto' b:4230410]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONACINI FRANCESCA' (1962, g:2)=> 'Reggiana Nuoto' b:4230410]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'50"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONACINI MONICA' (1969, g:2)=> 'CSInuoto OberFerrari' b:4214512]: event: 800SL, cat. SEN, rank: 0)  (entry: 12'50"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONACINI MONICA' (1969, g:2)=> 'CSInuoto OberFerrari' b:4214512]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'45"20)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONACINI MONICA' (1969, g:2)=> 'CSInuoto OberFerrari' b:4214512]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONACINI STEFANO' (1982, g:1)=> 'CSInuoto OberFerrari' b:4249396]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'30"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONARETTI CHIARA' (2004, g:2)=> 'Olympia Nuoto Team' b:4218027]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'00"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONATTI GIANLUCA' (1995, g:1)=> 'Cloromania SSD' b:4605135]: event: 800SL, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONI ALESSANDRO' (1988, g:1)=> 'G.S.Guardia Finanza' b:4403164]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'12"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONI ALESSANDRO' (1988, g:1)=> 'G.S.Guardia Finanza' b:4403164]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONI ALESSANDRO' (1988, g:1)=> 'G.S.Guardia Finanza' b:4403164]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'28"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONI CLAUDIO' (1994, g:1)=> 'CSInuoto OberFerrari' b:4208109]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'44"10)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONI CLAUDIO' (1994, g:1)=> 'CSInuoto OberFerrari' b:4208109]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONI CLAUDIO' (1994, g:1)=> 'CSInuoto OberFerrari' b:4208109]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONINI WALTER' (1988, g:1)=> 'Olympia Nuoto Team' b:4242197]: event: 50SL, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONINI WALTER' (1988, g:1)=> 'Olympia Nuoto Team' b:4242197]: event: 50DO, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONINI WALTER' (1988, g:1)=> 'Olympia Nuoto Team' b:4242197]: event: 50RA, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONORETTI VILLIAM' (1962, g:1)=> 'Eden Sport' b:4230253]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BONORETTI VILLIAM' (1962, g:1)=> 'Eden Sport' b:4230253]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'44"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BOSCAINI LAURA' (1989, g:2)=> 'Podium Nuoto' b:4311331]: event: 100MI, cat. SEN, rank: 0)  (entry: 03'00"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BOSCAINI LAURA' (1989, g:2)=> 'Podium Nuoto' b:4311331]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'53"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BRAGLIA LUCA' (1979, g:1)=> 'CSInuoto OberFerrari' b:4208136]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'16"50)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BRAGLIA LUCA' (1979, g:1)=> 'CSInuoto OberFerrari' b:4208136]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BRAGLIA LUCA' (1979, g:1)=> 'CSInuoto OberFerrari' b:4208136]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BURANI PIETRO' (1991, g:1)=> 'CSInuoto OberFerrari' b:4208151]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'10"90)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BURANI PIETRO' (1991, g:1)=> 'CSInuoto OberFerrari' b:4208151]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'34"30)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'BURANI PIETRO' (1991, g:1)=> 'CSInuoto OberFerrari' b:4208151]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'27"50)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CAGOSSI CLAUDIO' (1968, g:1)=> 'Olympia Nuoto Team' b:4236192]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CAGOSSI CLAUDIO' (1968, g:1)=> 'Olympia Nuoto Team' b:4236192]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CANOSSA LARA' (2004, g:2)=> 'Olympia Nuoto Team' b:4218031]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'31"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CANOSSA LARA' (2004, g:2)=> 'Olympia Nuoto Team' b:4218031]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'25"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CANTONI SAMANTA' (1988, g:2)=> 'CSInuoto OberFerrari' b:4224554]: event: 800SL, cat. SEN, rank: 0)  (entry: 12'16"90)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CANTONI SAMANTA' (1988, g:2)=> 'CSInuoto OberFerrari' b:4224554]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'47"50)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CANTONI SAMANTA' (1988, g:2)=> 'CSInuoto OberFerrari' b:4224554]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'34"10)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CANTONI STEFANO' (2000, g:1)=> 'Olympia Nuoto Team' b:4218034]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'28"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CANTONI STEFANO' (2000, g:1)=> 'Olympia Nuoto Team' b:4218034]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'12"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CARLETTI ALAN' (1997, g:1)=> 'CSInuoto OberFerrari' b:4208187]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'09"50)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CARLETTI ALAN' (1997, g:1)=> 'CSInuoto OberFerrari' b:4208187]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'29"80)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CARLETTI ALAN' (1997, g:1)=> 'CSInuoto OberFerrari' b:4208187]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'26"10)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CASARI LUCIA' (1996, g:2)=> 'Cloromania SSD' b:4605138]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'20"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CASARI LUCIA' (1996, g:2)=> 'Cloromania SSD' b:4605138]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CAVAZZONI DAVIDE' (1981, g:1)=> 'Eden Sport' b:4230215]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'18"50)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CAVAZZONI DAVIDE' (1981, g:1)=> 'Eden Sport' b:4230215]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CAVAZZONI DAVIDE' (1981, g:1)=> 'Eden Sport' b:4230215]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CERCHIA CONSUELO' (1990, g:2)=> 'Eden Sport' b:4242667]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'00"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CERCHIA CONSUELO' (1990, g:2)=> 'Eden Sport' b:4242667]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'COCCHI MARCO' (1983, g:1)=> 'Olympia Nuoto Team' b:4209300]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'COCCHI MARCO' (1983, g:1)=> 'Olympia Nuoto Team' b:4209300]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'31"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CODELUPPI FRANCO' (1963, g:1)=> 'Eden Sport' b:4230257]: event: 800SL, cat. SEN, rank: 0)  (entry: 15'30"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CODELUPPI FRANCO' (1963, g:1)=> 'Eden Sport' b:4230257]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'COZZOLINO SALVATORE' (2005, g:1)=> 'Olympia Nuoto Team' b:4218039]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'45"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'COZZOLINO SALVATORE' (2005, g:1)=> 'Olympia Nuoto Team' b:4218039]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'24"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'COZZOLINO SALVATORE' (2005, g:1)=> 'Olympia Nuoto Team' b:4218039]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'41"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CRISTOFORI ROBERTO' (1983, g:1)=> 'Reggiana Nuoto' b:4230411]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'15"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'CRISTOFORI ROBERTO' (1983, g:1)=> 'Reggiana Nuoto' b:4230411]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DE PIERI ALESSIA' (2000, g:2)=> 'Cloromania SSD' b:4605141]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DE PIERI ALESSIA' (2000, g:2)=> 'Cloromania SSD' b:4605141]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DEL RIO SIMONE' (1983, g:1)=> 'CSInuoto OberFerrari' b:4224555]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'52"30)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DEL RIO SIMONE' (1983, g:1)=> 'CSInuoto OberFerrari' b:4224555]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'16"70)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DEL RIO SIMONE' (1983, g:1)=> 'CSInuoto OberFerrari' b:4224555]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'37"57)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DELMONTE ILARIA' (1991, g:2)=> 'CSInuoto OberFerrari' b:4208293]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'46"10)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DELMONTE ILARIA' (1991, g:2)=> 'CSInuoto OberFerrari' b:4208293]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'35"90)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DOSSI FRANCESCA' (1995, g:2)=> 'CSInuoto OberFerrari' b:4210463]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'46"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DOSSI FRANCESCA' (1995, g:2)=> 'CSInuoto OberFerrari' b:4210463]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'50"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DOSSI FRANCESCA' (1995, g:2)=> 'CSInuoto OberFerrari' b:4210463]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DOTTI PAOLA' (1977, g:2)=> 'Stella Azzurra' b:4119651]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'40"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'DOTTI PAOLA' (1977, g:2)=> 'Stella Azzurra' b:4119651]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'48"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ELISSE SAMUELE' (1999, g:1)=> 'Cloromania SSD' b:4605142]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'10"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ELISSE SAMUELE' (1999, g:1)=> 'Cloromania SSD' b:4605142]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'34"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ESPOSITO GIUSEPPE' (1978, g:1)=> 'Eden Sport' b:4230217]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ESPOSITO GIUSEPPE' (1978, g:1)=> 'Eden Sport' b:4230217]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'28"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ESPOSITO GIUSEPPE' (1978, g:1)=> 'Eden Sport' b:4230217]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FERRARI ALESSIA' (1978, g:2)=> 'CSInuoto OberFerrari' b:4208331]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'37"20)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FERRARI ALESSIA' (1978, g:2)=> 'CSInuoto OberFerrari' b:4208331]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'44"63)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FERRARI ALESSIA' (1978, g:2)=> 'CSInuoto OberFerrari' b:4208331]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'45"05)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FERRARI FRANCESCO' (1988, g:1)=> 'CSInuoto OberFerrari' b:4209611]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'30"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FERRARI FRANCESCO' (1988, g:1)=> 'CSInuoto OberFerrari' b:4209611]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'15"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FERRARI FRANCESCO' (1988, g:1)=> 'CSInuoto OberFerrari' b:4209611]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'28"10)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FICARELLI LIA' (1977, g:2)=> 'Reggiana Nuoto' b:4230427]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'20"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FICARELLI LIA' (1977, g:2)=> 'Reggiana Nuoto' b:4230427]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FORMENTINI DAVIDE' (1988, g:1)=> 'CSInuoto OberFerrari' b:4208377]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'19"93)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FORMENTINI DAVIDE' (1988, g:1)=> 'CSInuoto OberFerrari' b:4208377]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'38"20)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FORMENTINI DAVIDE' (1988, g:1)=> 'CSInuoto OberFerrari' b:4208377]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'38"60)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FOSSILE ROBERTO' (1977, g:1)=> 'Eden Sport' b:4230218]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'43"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FOSSILE ROBERTO' (1977, g:1)=> 'Eden Sport' b:4230218]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'30"50)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FOSSILE ROBERTO' (1977, g:1)=> 'Eden Sport' b:4230218]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'15"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FRANCHI ALESSANDRO' (1992, g:1)=> 'Reggiana Nuoto' b:4230428]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'25"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FRANCHI ALESSANDRO' (1992, g:1)=> 'Reggiana Nuoto' b:4230428]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'FRIGGERI MATILDE' (1987, g:2)=> 'Olympia Nuoto Team' b:4218090]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'45"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GANAPINI FABRIZIO' (2002, g:1)=> 'Olympia Nuoto Team' b:4218048]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GANAPINI FABRIZIO' (2002, g:1)=> 'Olympia Nuoto Team' b:4218048]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GANAPINI FABRIZIO' (2002, g:1)=> 'Olympia Nuoto Team' b:4218048]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GANDOLFI SARA' (1999, g:2)=> 'Podium Nuoto' b:4311332]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'46"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GANDOLFI SARA' (1999, g:2)=> 'Podium Nuoto' b:4311332]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GANGAROSSA DAVIDE' (1966, g:1)=> 'CSInuoto OberFerrari' b:4208400]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'44"50)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GANGAROSSA DAVIDE' (1966, g:1)=> 'CSInuoto OberFerrari' b:4208400]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'35"50)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIANSOLDATI MATTEO' (1989, g:1)=> 'CSInuoto OberFerrari' b:4224556]: event: 800SL, cat. SEN, rank: 0)  (entry: 09'52"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIANSOLDATI MATTEO' (1989, g:1)=> 'CSInuoto OberFerrari' b:4224556]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'30"80)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIANSOLDATI MATTEO' (1989, g:1)=> 'CSInuoto OberFerrari' b:4224556]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'26"58)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIAVAZZI JACOPO' (1990, g:1)=> 'Cloromania SSD' b:4605148]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIAVAZZI JACOPO' (1990, g:1)=> 'Cloromania SSD' b:4605148]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIORGI ROSSI PAOLO' (1971, g:1)=> 'Reggiana Nuoto' b:4249403]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIORGI ROSSI PAOLO' (1971, g:1)=> 'Reggiana Nuoto' b:4249403]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIOVANELLA ENRICO' (1999, g:1)=> 'Cloromania SSD' b:4605149]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'10"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIOVANELLA ENRICO' (1999, g:1)=> 'Cloromania SSD' b:4605149]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIOVANELLA LORENZO' (1999, g:1)=> 'Cloromania SSD' b:4605905]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'10"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GIOVANELLA LORENZO' (1999, g:1)=> 'Cloromania SSD' b:4605905]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'31"50)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GOMBI LUCA' (1989, g:1)=> 'Olympia Nuoto Team' b:4218092]: event: 800SL, cat. SEN, rank: 0)  (entry: 13'00"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'GOMBI LUCA' (1989, g:1)=> 'Olympia Nuoto Team' b:4218092]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'INCERTI PAOLO' (1966, g:1)=> 'Eden Sport' b:4230258]: event: 800SL, cat. SEN, rank: 0)  (entry: 14'56"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'INCERTI PAOLO' (1966, g:1)=> 'Eden Sport' b:4230258]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'42"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'INCERTI DELMONTE CHIARA' (2000, g:2)=> 'Eden Sport' b:4230221]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'39"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'INCERTI DELMONTE CHIARA' (2000, g:2)=> 'Eden Sport' b:4230221]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'INCERTI TELANI JOHNATAN' (1982, g:1)=> 'Olympia Nuoto Team' b:4218093]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'15"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'INCERTI TELANI JOHNATAN' (1982, g:1)=> 'Olympia Nuoto Team' b:4218093]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'INCERTI TELANI JOHNATAN' (1982, g:1)=> 'Olympia Nuoto Team' b:4218093]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'KAROBBI IRYNA' (1973, g:2)=> 'Eden Sport' b:4230223]: event: 50RA, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'KAROBBI IRYNA' (1973, g:2)=> 'Eden Sport' b:4230223]: event: 50SL, cat. SEN, rank: 0)  (entry: 01'00"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONARDI ELISA' (1975, g:2)=> 'CSInuoto OberFerrari' b:4208529]: event: 800SL, cat. SEN, rank: 0)  (entry: 13'18"90)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONARDI ELISA' (1975, g:2)=> 'CSInuoto OberFerrari' b:4208529]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'38"10)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONARDI ELISA' (1975, g:2)=> 'CSInuoto OberFerrari' b:4208529]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'48"70)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONCINI VALERIA' (1976, g:2)=> 'CSInuoto OberFerrari' b:4208533]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'39"60)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONCINI VALERIA' (1976, g:2)=> 'CSInuoto OberFerrari' b:4208533]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'45"40)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONCINI VALERIA' (1976, g:2)=> 'CSInuoto OberFerrari' b:4208533]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'37"30)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONI MARCO' (1989, g:1)=> 'Olympia Nuoto Team' b:4249131]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'32"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LEONI MARCO' (1989, g:1)=> 'Olympia Nuoto Team' b:4249131]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'21"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LIGABUE MARCO' (1971, g:1)=> 'CSInuoto OberFerrari' b:4216543]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'44"10)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LIGABUE MARCO' (1971, g:1)=> 'CSInuoto OberFerrari' b:4216543]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'43"09)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'LIGABUE MARCO' (1971, g:1)=> 'CSInuoto OberFerrari' b:4216543]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'37"30)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MARAMOTTI GIULIA' (1992, g:2)=> 'Eden Sport' b:4249355]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'42"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MARANDO SILVIA' (1991, g:2)=> 'Podium Nuoto' b:4311333]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'36"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MARANDO SILVIA' (1991, g:2)=> 'Podium Nuoto' b:4311333]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MARGINI LEONARDO' (2001, g:1)=> 'Olympia Nuoto Team' b:4218060]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'30"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MARGINI LEONARDO' (2001, g:1)=> 'Olympia Nuoto Team' b:4218060]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'14"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MARGINI LEONARDO' (2001, g:1)=> 'Olympia Nuoto Team' b:4218060]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'39"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MAZZIERI ALBERTO' (1988, g:1)=> 'Reggiana Nuoto' b:4230419]: event: 800SL, cat. SEN, rank: 0)  (entry: 09'29"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MAZZIERI ALBERTO' (1988, g:1)=> 'Reggiana Nuoto' b:4230419]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'08"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MENOZZI ANDREA' (1968, g:1)=> 'Reggiana Nuoto' b:4230420]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'17"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MENOZZI ANDREA' (1968, g:1)=> 'Reggiana Nuoto' b:4230420]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'31"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MESSORI FRANCESCA' (2001, g:2)=> 'Olympia Nuoto Team' b:4218062]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'00"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MESSORI FRANCESCA' (2001, g:2)=> 'Olympia Nuoto Team' b:4218062]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MIARI FRANCESCO' (1991, g:1)=> 'Eden Sport' b:4230225]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'30"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MIARI FRANCESCO' (1991, g:1)=> 'Eden Sport' b:4230225]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'28"50)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MIARI FRANCESCO' (1991, g:1)=> 'Eden Sport' b:4230225]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'27"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MIGNOGNA ELENA' (1989, g:2)=> 'Reggiana Nuoto' b:4247513]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MIGNOGNA ELENA' (1989, g:2)=> 'Reggiana Nuoto' b:4247513]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTANARI MARTINA' (1996, g:2)=> 'Eden Sport' b:4230227]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'25"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTANARI MARTINA' (1996, g:2)=> 'Eden Sport' b:4230227]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTANARI MARTINA' (1996, g:2)=> 'Eden Sport' b:4230227]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'32"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTI MARCO' (1986, g:1)=> 'Eden Sport' b:4230228]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'32"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTI MARCO' (1986, g:1)=> 'Eden Sport' b:4230228]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'29"50)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTORSI ALESSIO' (1967, g:1)=> 'Stella Azzurra' b:4119655]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'50"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTORSI ALESSIO' (1967, g:1)=> 'Stella Azzurra' b:4119655]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTORSI RICCARDO' (1999, g:1)=> 'Stella Azzurra' b:4119656]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'10"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MONTORSI RICCARDO' (1999, g:1)=> 'Stella Azzurra' b:4119656]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MORSIANI FEDERICO' (1994, g:1)=> 'Olympia Nuoto Team' b:4218094]: event: 800SL, cat. SEN, rank: 0)  (entry: 09'41"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MORSIANI FEDERICO' (1994, g:1)=> 'Olympia Nuoto Team' b:4218094]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'06"60)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MORSIANI FEDERICO' (1994, g:1)=> 'Olympia Nuoto Team' b:4218094]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'27"30)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MOSCONI CLAUDIO' (1995, g:1)=> 'Cloromania SSD' b:4605154]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MOSCONI CLAUDIO' (1995, g:1)=> 'Cloromania SSD' b:4605154]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MOTTA DEBORAH' (1993, g:2)=> 'Olympia Nuoto Team' b:4218394]: event: 800SL, cat. SEN, rank: 0)  (entry: 13'00"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MOTTA DEBORAH' (1993, g:2)=> 'Olympia Nuoto Team' b:4218394]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'35"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'MOTTA DEBORAH' (1993, g:2)=> 'Olympia Nuoto Team' b:4218394]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'NOVELLI MICHELE' (1975, g:1)=> 'CSInuoto OberFerrari' b:4224557]: event: 800SL, cat. SEN, rank: 0)  (entry: 12'53"30)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'NOVELLI MICHELE' (1975, g:1)=> 'CSInuoto OberFerrari' b:4224557]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'47"80)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'NOVELLI MICHELE' (1975, g:1)=> 'CSInuoto OberFerrari' b:4224557]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'36"30)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'OGNIBENE GLORIA' (1999, g:2)=> 'Olympia Nuoto Team' b:4218095]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ONGARI MATTEO' (1969, g:1)=> 'Cloromania SSD' b:4605156]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'30"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ONGARI MATTEO' (1969, g:1)=> 'Cloromania SSD' b:4605156]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ORLANDINI EDO' (1961, g:1)=> 'Eden Sport' b:4230229]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'40"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ORLANDINI EDO' (1961, g:1)=> 'Eden Sport' b:4230229]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'17"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ORLANDINI EDO' (1961, g:1)=> 'Eden Sport' b:4230229]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'32"50)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ORLANDINI IDO PIER ALDO' (1957, g:1)=> 'CSInuoto OberFerrari' b:4208699]: event: 800SL, cat. SEN, rank: 0)  (entry: 12'05"60)
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ORLANDINI IDO PIER ALDO' (1957, g:1)=> 'CSInuoto OberFerrari' b:4208699]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'37"50)
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ORLANDINI IDO PIER ALDO' (1957, g:1)=> 'CSInuoto OberFerrari' b:4208699]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'35"80)
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PAGLIANI ROBERTO' (1988, g:1)=> 'Eden Sport' b:4230591]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PAGLIANI ROBERTO' (1988, g:1)=> 'Eden Sport' b:4230591]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'28"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PANZETTI NAILA' (1990, g:2)=> 'CSInuoto OberFerrari' b:4208720]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'25"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PANZETTI NAILA' (1990, g:2)=> 'CSInuoto OberFerrari' b:4208720]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'34"66)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PANZETTI NAILA' (1990, g:2)=> 'CSInuoto OberFerrari' b:4208720]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'32"61)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PAPA ANTONIO' (1984, g:1)=> 'Eden Sport' b:4230230]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'25"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PAPA ANTONIO' (1984, g:1)=> 'Eden Sport' b:4230230]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PAPA ANTONIO' (1984, g:1)=> 'Eden Sport' b:4230230]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PASCALE CIRO' (2003, g:1)=> 'CSInuoto OberFerrari' b:4208728]: event: 800SL, cat. SEN, rank: 0)  (entry: 12'43"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PELIZZA VINCENZO' (1965, g:1)=> 'Podium Nuoto' b:4311334]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'46"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PELIZZA VINCENZO' (1965, g:1)=> 'Podium Nuoto' b:4311334]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PEZZI STEFANIA' (1981, g:2)=> 'CSInuoto OberFerrari' b:4208757]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'59"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PEZZI STEFANIA' (1981, g:2)=> 'CSInuoto OberFerrari' b:4208757]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'33"50)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PEZZI STEFANIA' (1981, g:2)=> 'CSInuoto OberFerrari' b:4208757]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"70)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PEZZOLI GIANLUCA' (1992, g:1)=> 'CSInuoto OberFerrari' b:4208758]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'30"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PEZZOLI GIANLUCA' (1992, g:1)=> 'CSInuoto OberFerrari' b:4208758]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'35"50)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PEZZOLI GIANLUCA' (1992, g:1)=> 'CSInuoto OberFerrari' b:4208758]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'29"60)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PICCININI LUCA' (2000, g:1)=> 'Olympia Nuoto Team' b:4218070]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'15"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PICCININI LUCA' (2000, g:1)=> 'Olympia Nuoto Team' b:4218070]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PICCININI LUCA' (2000, g:1)=> 'Olympia Nuoto Team' b:4218070]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PISTELLI MATTIA' (1999, g:1)=> 'Olympia Nuoto Team' b:4218096]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PISTELLI MATTIA' (1999, g:1)=> 'Olympia Nuoto Team' b:4218096]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PISTELLI MATTIA' (1999, g:1)=> 'Olympia Nuoto Team' b:4218096]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'20"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'PITOCCHI FEDERICO' (1995, g:1)=> 'Cloromania SSD' b:4605158]: event: 800SL, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'POZZOLI ELIA' (1993, g:1)=> 'Stella Azzurra' b:4119664]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'45"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'POZZOLI ELIA' (1993, g:1)=> 'Stella Azzurra' b:4119664]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'QUADRI ANDREA' (1981, g:1)=> 'Reggiana Nuoto' b:4230422]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'20"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'QUADRI ANDREA' (1981, g:1)=> 'Reggiana Nuoto' b:4230422]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RASENTI NORBERTO' (1959, g:1)=> 'Reggiana Nuoto' b:4236206]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RASENTI NORBERTO' (1959, g:1)=> 'Reggiana Nuoto' b:4236206]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'32"00)
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'REBUCCI GIORGIO' (1995, g:1)=> 'Stella Azzurra' b:4119657]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'37"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'REBUCCI GIORGIO' (1995, g:1)=> 'Stella Azzurra' b:4119657]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RINALDI GIULIA' (1992, g:2)=> 'Olympia Nuoto Team' b:4249132]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'10"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RIZZI FABIO' (1964, g:1)=> 'Reggiana Nuoto' b:4230423]: event: 800SL, cat. SEN, rank: 0)  (entry: 12'20"00)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RIZZI FABIO' (1964, g:1)=> 'Reggiana Nuoto' b:4230423]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'36"70)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RIZZI FABIO' (1964, g:1)=> 'Reggiana Nuoto' b:4230423]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'32"10)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROCCO SIMONE' (1987, g:1)=> 'Stella Azzurra' b:4119665]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROCCO SIMONE' (1987, g:1)=> 'Stella Azzurra' b:4119665]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROMANO MARIA CHIARA' (2001, g:2)=> 'Eden Sport' b:4242331]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROMANO MARIA CHIARA' (2001, g:2)=> 'Eden Sport' b:4242331]: event: 50RA, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RONDONI ALESSIA' (2000, g:2)=> 'CSInuoto OberFerrari' b:4229863]: event: 800SL, cat. SEN, rank: 0)  (entry: 10'59"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RONZONI ALESSANDRO' (1984, g:1)=> 'CSInuoto OberFerrari' b:4208824]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'14"60)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RONZONI ALESSANDRO' (1984, g:1)=> 'CSInuoto OberFerrari' b:4208824]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'37"87)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RONZONI ALESSANDRO' (1984, g:1)=> 'CSInuoto OberFerrari' b:4208824]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'28"30)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RONZONI DAVIDE' (2002, g:1)=> 'Olympia Nuoto Team' b:4232000]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RONZONI DAVIDE' (2002, g:1)=> 'Olympia Nuoto Team' b:4232000]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'28"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RONZONI DAVIDE' (2002, g:1)=> 'Olympia Nuoto Team' b:4232000]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'19"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROSSI CARLOTTA' (2005, g:2)=> 'Olympia Nuoto Team' b:4218077]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'33"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROSSI CARLOTTA' (2005, g:2)=> 'Olympia Nuoto Team' b:4218077]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'38"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROSSI CARLOTTA' (2005, g:2)=> 'Olympia Nuoto Team' b:4218077]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'00"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROTA CAMILLA' (1989, g:2)=> 'Eden Sport' b:4230255]: event: 800SL, cat. SEN, rank: 0)  (entry: 13'00"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROTA CAMILLA' (1989, g:2)=> 'Eden Sport' b:4230255]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'24"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ROTA CAMILLA' (1989, g:2)=> 'Eden Sport' b:4230255]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'43"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RUSEANOVSCHI OLGA' (1983, g:2)=> 'Eden Sport' b:4230256]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'42"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'RUSEANOVSCHI OLGA' (1983, g:2)=> 'Eden Sport' b:4230256]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'52"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SCARANO MATTEO' (2002, g:1)=> 'Olympia Nuoto Team' b:4218082]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'22"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SCARANO MATTEO' (2002, g:1)=> 'Olympia Nuoto Team' b:4218082]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'36"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SCARANO MATTEO' (2002, g:1)=> 'Olympia Nuoto Team' b:4218082]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'32"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SENATORE FABIO' (1975, g:1)=> 'CSInuoto OberFerrari' b:4230433]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'16"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SENATORE FABIO' (1975, g:1)=> 'CSInuoto OberFerrari' b:4230433]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'32"90)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SENATORE FABIO' (1975, g:1)=> 'CSInuoto OberFerrari' b:4230433]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1211 (MASTER 40),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SESENA PATRIZIA' (1974, g:2)=> 'CSInuoto OberFerrari' b:4208881]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'42"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SIRINGO ALESSIA' (1982, g:2)=> 'Eden Sport' b:4230233]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'51"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SIRINGO ALESSIA' (1982, g:2)=> 'Eden Sport' b:4230233]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'STROZZI PIERANTONIO' (1963, g:1)=> 'CSInuoto OberFerrari' b:4235759]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'43"60)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'STROZZI PIERANTONIO' (1963, g:1)=> 'CSInuoto OberFerrari' b:4235759]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'38"10)
+    - Resulting category_type_id=1214 (MASTER 55),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TEGGI MAURO' (1972, g:1)=> 'Reggiana Nuoto' b:4247491]: event: 800SL, cat. SEN, rank: 0)  (entry: 14'00"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TESAURI MARCO' (1996, g:1)=> 'Olympia Nuoto Team' b:4218097]: event: 800SL, cat. SEN, rank: 0)  (entry: 13'00"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TESAURI MARCO' (1996, g:1)=> 'Olympia Nuoto Team' b:4218097]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TESAURI MARCO' (1996, g:1)=> 'Olympia Nuoto Team' b:4218097]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'31"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TONDELLI EBE' (1945, g:2)=> 'Eden Sport' b:4236643]: event: 50RA, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TONDELLI EBE' (1945, g:2)=> 'Eden Sport' b:4236643]: event: 50SL, cat. SEN, rank: 0)  (entry: )
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TONI MARCO' (1966, g:1)=> 'Stella Azzurra' b:4119650]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'17"40)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TONI MARCO' (1966, g:1)=> 'Stella Azzurra' b:4119650]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'37"20)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TORRI SARA' (2004, g:2)=> 'Olympia Nuoto Team' b:4218085]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'16"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TORRI SARA' (2004, g:2)=> 'Olympia Nuoto Team' b:4218085]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TORRI SARA' (2004, g:2)=> 'Olympia Nuoto Team' b:4218085]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'39"00)
+    - Resulting category_type_id=1216 (SENIORES),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VALENZA NICOLA' (1991, g:1)=> 'Cloromania SSD' b:4605168]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'32"50)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VALENZA NICOLA' (1991, g:1)=> 'Cloromania SSD' b:4605168]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VENESELLI FEDERICO' (1992, g:1)=> 'Olympia Nuoto Team' b:4242198]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'29"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VENESELLI FEDERICO' (1992, g:1)=> 'Olympia Nuoto Team' b:4242198]: event: 50DO, cat. SEN, rank: 0)  (entry: 00'35"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VENESELLI FEDERICO' (1992, g:1)=> 'Olympia Nuoto Team' b:4242198]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'20"00)
+    - Resulting category_type_id=1208 (MASTER 25),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VERZANI MASSIMO' (1955, g:1)=> 'Stella Azzurra' b:4123087]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'35"00)
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VERZANI MASSIMO' (1955, g:1)=> 'Stella Azzurra' b:4123087]: event: 50FA, cat. SEN, rank: 0)  (entry: 00'45"00)
+    - Resulting category_type_id=1215 (OVER 60),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZACCARELLI MARCO' (1965, g:1)=> 'Eden Sport' b:4230234]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'39"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZACCARELLI MARCO' (1965, g:1)=> 'Eden Sport' b:4230234]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1213 (MASTER 50),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZAGATTI ALESSANDRO' (1974, g:1)=> 'Eden Sport' b:4230235]: event: 800SL, cat. SEN, rank: 0)  (entry: 11'40"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZAGATTI ALESSANDRO' (1974, g:1)=> 'Eden Sport' b:4230235]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'20"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZAGATTI ALESSANDRO' (1974, g:1)=> 'Eden Sport' b:4230235]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'31"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZAGATTI ALESSANDRO' (1974, g:1)=> 'Eden Sport' b:4230235]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'41"00)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZANELLA LUCA' (1998, g:1)=> 'Reggiana Nuoto' b:4230426]: event: 100MI, cat. SEN, rank: 0)  (entry: 01'19"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZANELLA LUCA' (1998, g:1)=> 'Reggiana Nuoto' b:4230426]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'42"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZANELLA LUCA' (1998, g:1)=> 'Reggiana Nuoto' b:4230426]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'30"00)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZOBOLI MANUELA' (1980, g:2)=> 'Stella Azzurra' b:4119658]: event: 50RA, cat. SEN, rank: 0)  (entry: 00'53"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'ZOBOLI MANUELA' (1980, g:2)=> 'Stella Azzurra' b:4119658]: event: 50SL, cat. SEN, rank: 0)  (entry: 00'40"00)
+    - Resulting category_type_id=1210 (MASTER 35),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TOFFANETTI LAURA' (1973, g:2)=> 'CSInuoto OberFerrari' b:4208928]: event: 50DO, cat. M45, rank: 0)  (entry: 00'52"58)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TOFFANETTI LAURA' (1973, g:2)=> 'CSInuoto OberFerrari' b:4208928]: event: 50SL, cat. M45, rank: 0)  (entry: 00'40"50)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'TOFFANETTI LAURA' (1973, g:2)=> 'CSInuoto OberFerrari' b:4208928]: event: 100MI, cat. M45, rank: 0)  (entry: 01'49"30)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VALCAVI LUCA' (1988, g:1)=> 'CSInuoto OberFerrari' b:4230432]: event: 50FA, cat. M30, rank: 0)  (entry: 00'28"50)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VALCAVI LUCA' (1988, g:1)=> 'CSInuoto OberFerrari' b:4230432]: event: 50RA, cat. M30, rank: 0)  (entry: 00'34"50)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=4 (50 RA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VALCAVI LUCA' (1988, g:1)=> 'CSInuoto OberFerrari' b:4230432]: event: 100MI, cat. M30, rank: 0)  (entry: 01'08"00)
+    - Resulting category_type_id=1209 (MASTER 30),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VEZZANI GIORGIA' (1995, g:2)=> 'CSInuoto OberFerrari' b:4208966]: event: 50FA, cat. M20, rank: 0)  (entry: 00'35"90)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VEZZANI GIORGIA' (1995, g:2)=> 'CSInuoto OberFerrari' b:4208966]: event: 50SL, cat. M20, rank: 0)  (entry: 00'32"10)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'VEZZANI GIORGIA' (1995, g:2)=> 'CSInuoto OberFerrari' b:4208966]: event: 100MI, cat. M20, rank: 0)  (entry: 01'21"90)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=2, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SESENA BARBARA' (1971, g:2)=> 'CSInuoto OberFerrari' b:4208880]: event: 50FA, cat. M45, rank: 0)  (entry: 00'45"80)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=2 (50 FA),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SESENA BARBARA' (1971, g:2)=> 'CSInuoto OberFerrari' b:4208880]: event: 50DO, cat. M45, rank: 0)  (entry: 00'41"70)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'SESENA BARBARA' (1971, g:2)=> 'CSInuoto OberFerrari' b:4208880]: event: 800SL, cat. M45, rank: 0)  (entry: 12'56"50)
+    - Resulting category_type_id=1212 (MASTER 45),
+    - gender_type_id=2, stroke_type_id=1 (800 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'STORCHI LORENZO' (1999, g:1)=> 'CSInuoto OberFerrari' b:4208904]: event: 50DO, cat. M20, rank: 0)  (entry: 00'31"80)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=3 (50 DO),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'STORCHI LORENZO' (1999, g:1)=> 'CSInuoto OberFerrari' b:4208904]: event: 50SL, cat. M20, rank: 0)  (entry: 00'26"50)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=1 (50 SL),
+    - data_import_session ID=23
+
+CATEGORY HEADER: Current DAO: [CsiResultDAO: 'STORCHI LORENZO' (1999, g:1)=> 'CSInuoto OberFerrari' b:4208904]: event: 100MI, cat. M20, rank: 0)  (entry: 01'11"30)
+    - Resulting category_type_id=1207 (MASTER 20),
+    - gender_type_id=1, stroke_type_id=5 (100 MI),
+    - data_import_session ID=23
+-- phase_1_parse(public/uploads/isc20190526csiprova6.csv): file processed and 'digested'(serialized) on support tables.
+Consuming it...
+
+File 'isc20190526csiprova6.csv', created session ID: 23
+Actual stored rows ...: 322
+Meeting ID:...........: 18106
+Season ID:............: 181
+File processed.
+Data-import PHASE #1.2 DONE.
+
+PHASE #1.2 END, returning (current session).

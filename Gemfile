@@ -30,8 +30,8 @@ gem 'haml-rails', '~> 2'
 gem 'jbuilder', '~> 2.5'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-gem 'jquery-ui-rails'
 gem 'jquery-turbolinks'
+gem 'jquery-ui-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
 # Use ActiveModel has_secure_password

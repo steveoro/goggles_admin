@@ -1,0 +1,9 @@
+-- Leega
+-- 26/10/2019
+-- Badge payments
+
+insert into badge_payments (id,notes,payment_date,amount,is_manual,badge_id,user_id,lock_version,created_at,updated_at) VALUES(62,'Iscrizione gara in mare','2019-07-19','-20',0,(select b.id from badges b join swimmers s on s.id = b.swimmer_id where s.complete_name = 'PANZETTI NAILA' and b.team_id = 1 and b.season_id = 182),2,0,CURDATE(),CURDATE());
+insert into badge_payments (id,notes,payment_date,amount,is_manual,badge_id,user_id,lock_version,created_at,updated_at) VALUES(63,'Iscrizione gara in mare','2019-06-19','-20',0,(select b.id from badges b join swimmers s on s.id = b.swimmer_id where s.complete_name = 'PANZETTI NAILA' and b.team_id = 1 and b.season_id = 182),2,0,CURDATE(),CURDATE());
+insert into badge_payments (id,notes,payment_date,amount,is_manual,badge_id,user_id,lock_version,created_at,updated_at) VALUES(64,'Iscrizione gara in mare','2019-06-19','-20',0,(select b.id from badges b join swimmers s on s.id = b.swimmer_id where s.complete_name = 'FERRARI ALESSIA' and b.team_id = 1 and b.season_id = 182),2,0,CURDATE(),CURDATE());
+insert into badge_payments (id,notes,payment_date,amount,is_manual,badge_id,user_id,lock_version,created_at,updated_at) VALUES(65,'Saldo gare FIN + fondo 2018/2019 e acconto su gare FIN 2019/2020','2019-10-19','100',0,(select b.id from badges b join swimmers s on s.id = b.swimmer_id where s.complete_name = 'PANZETTI NAILA' and b.team_id = 1 and b.season_id = 182),2,0,CURDATE(),CURDATE());
+insert into badge_payments (id,notes,payment_date,amount,is_manual,badge_id,user_id,lock_version,created_at,updated_at) VALUES(66,'Pagamento Alessia gare FIN anno 2019-2020','2019-10-19','100',0,(select b.id from badges b join swimmers s on s.id = b.swimmer_id where s.complete_name = 'FERRARI ALESSIA' and b.team_id = 1 and b.season_id = 182),2,0,CURDATE(),CURDATE());

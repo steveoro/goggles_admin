@@ -1,86 +1,507 @@
-{"name":"15° Trofeo Citta` di Riccione","meetingURL":"https://www.federnuoto.it/home/master/circuito-supermaster/eventi-circuito-supermaster.html#/risultati/134219:15%C2%B0-trofeo-citta`%C2%A0di-riccione.html","manifestURL":"/component/solrconnect/download.html?file=L3Zhci93d3cvZmluX2ZpbGVzL2V2ZW50aS8wMDAwMTM0MjE5LnBkZg==","dateDay1":"08","dateMonth1":"Dicembre","dateYear1":"2018","dateDay2":"09","dateMonth2":"Dicembre","dateYear2":"2018","organization":"A.S.D. POLISPORTIVA COMUNALE RICCIONE","venue1":"RICCIONE STADIO DEL NUOTO","address1":"VIA MONTEROSA, SNC - Riccione (RN)","venue2":"","address2":"","poolLength":"50","timeLimit":"SI","registration":"12/11 - 03/12 23:45",
-  "sections":[
-  {"title":"50 Stile Libero - M25",
-  "rows":[{"pos":"1","name":"PETRINI ANDREA","year":"1992","team":"Virtus Buonconvento ssd","timing":"24.32","score":"949,42"},{"pos":"2","name":"Botteghi Marco","year":"1990","team":"Seven Master Nuoto asd","timing":"25.20","score":"916,27"},{"pos":"3","name":"Chiaraluce Mirko","year":"1994","team":"Nuoto Club Lugo","timing":"25.90","score":"891,51"},{"pos":"4","name":"PANTANETTI SABATINI ELIA","year":"1994","team":"Il Grillo ssd Civitanova","timing":"26.21","score":"880,96"},{"pos":"5","name":"GATTEI MANUEL","year":"1990","team":"Pol Comunale Riccione","timing":"26.22","score":"880,63"},{"pos":"6","name":"MONINA GIULIO","year":"1994","team":"Il Grillo ssd Civitanova","timing":"26.90","score":"858,36"},{"pos":"7","name":"FORBICE ANDREA","year":"1991","team":"Team Trezzo Sport ssd","timing":"27.03","score":"854,24"},{"pos":"8","name":"BUTELLI GUIDO","year":"1994","team":"Nuovo Nuoto - Bologna","timing":"27.58","score":"837,20"},{"pos":"9","name":"ZANDOLI MATTIA","year":"1990","team":"Nuotando asd","timing":"28.41","score":"812,74"},{"pos":"10","name":"MARINI ANDREA","year":"1990","team":"Rari Master Pesaro asd","timing":"29.18","score":"791,30"},{"pos":"11","name":"Barbari Michele","year":"1993","team":"Pol Comunale Riccione","timing":"29.93","score":"771,47"},{"pos":"12","name":"BOSCARELLO ALESSANDRO","year":"1992","team":"Centro Nuoto Bastia asd","timing":"33.15","score":"696,53"},{"pos":"13","name":"ORAZI ALESSANDRO","year":"1994","team":"Centro Nuoto Macerata ssd","timing":"35.39","score":"652,44"},{"pos":"14","name":"Burattini Davide","year":"1992","team":"Team Osimo Nuoto asd","timing":"37.63","score":"613,61"},{"pos":"15","name":"LANDI MICHELE","year":"1990","team":"Centro Nuoto Bastia asd","timing":"38.39","score":"601,46"},{"pos":"16","name":"STROLLA LORENZO","year":"1993","team":"Centro Nuoto Macerata ssd","timing":"39.53","score":"584,11"}]},
-  {"title":"50 Stile Libero - M30",
-  "rows":[{"pos":"1","name":"CESERI NICCOLO'","year":"1988","team":"Amici Nuoto Firenze","timing":"23.40","score":"984,62"},{"pos":"2","name":"Rossetti Michele","year":"1986","team":"Nuotatori Ravennati","timing":"25.61","score":"899,65"},{"pos":"3","name":"PROIETTI MATTEO","year":"1986","team":"Pol Comunale Riccione","timing":"26.15","score":"881,07"},{"pos":"4","name":"Bombardini Stefano","year":"1987","team":"Nuotatori Ravennati","timing":"26.92","score":"855,87"},{"pos":"5","name":"Scarponi Simone","year":"1989","team":"SAN MARINO MASTER","timing":"27.44","score":"839,65"},{"pos":"6","name":"Della Corte Marco","year":"1988","team":"Prima ssd","timing":"27.53","score":"836,91"},{"pos":"7","name":"SORDONI FRANCESCO","year":"1987","team":"Fanum Fortunae Nuoto","timing":"27.76","score":"829,97"},{"pos":"8","name":"Corallini Daniel","year":"1989","team":"Il Grillo ssd Civitanova","timing":"28.76","score":"801,11"},{"pos":"9","name":"Ferrarese Marco","year":"1989","team":"Thermae Sport asd","timing":"28.97","score":"795,31"},{"pos":"10","name":"MENGONI ALESSANDRO","year":"1985","team":"Team Osimo Nuoto asd","timing":"29.00","score":"794,48"},{"pos":"11","name":"PERRI EVGHENI","year":"1989","team":"Imolanuoto","timing":"29.26","score":"787,42"},{"pos":"12","name":"LAZZARI ANDREA","year":"1988","team":"Nuovo Nuoto - Bologna","timing":"29.30","score":"786,35"},{"pos":"13","name":"ROSSI GIACOMO","year":"1987","team":"Sport Village Banca di Pesaro","timing":"32.35","score":"712,21"},{"pos":"14","name":"Crociani Paolo","year":"1986","team":"SAN MARINO MASTER","timing":"33.42","score":"689,41"},{"pos":"15","name":"Severini Cesare","year":"1988","team":"SAN MARINO MASTER","timing":"35.13","score":"655,85"},{"pos":"16","name":"GIAMPE' GIORDANO MARIA","year":"1986","team":"Centro Nuoto Bastia asd","timing":"35.23","score":"653,99"},{"pos":"17","name":"Rombaldoni Denis","year":"1989","team":"Sport Village Banca di Pesaro","timing":"36.39","score":"633,14"}]},
-  {"title":"50 Stile Libero - M35",
-  "rows":[{"pos":"1","name":"VENTURI GIAN LUCA","year":"1984","team":"Rinascita Team Romagna","timing":"26.65","score":"878,05"},{"pos":"2","name":"Talacci Loris","year":"1982","team":"Pol Comunale Riccione","timing":"27.56","score":"849,06"},{"pos":"3","name":"COSTANTINI FRANCESCO","year":"1981","team":"Rari Master Pesaro asd","timing":"27.64","score":"846,60"},{"pos":"4","name":"COLOMBI MASSIMILIANO","year":"1983","team":"Bergamo Swim Team","timing":"28.18","score":"830,38"},{"pos":"5","name":"Ricci Enrico","year":"1983","team":"Aquatic Team Ravenna","timing":"28.51","score":"820,76"},{"pos":"6","name":"Pierleoni Filippo","year":"1982","team":"Pol Pian del Bruscolo","timing":"28.64","score":"817,04"},{"pos":"7","name":"BONETTI LUIGI","year":"1982","team":"Nuovo Nuoto - Bologna","timing":"29.21","score":"801,10"},{"pos":"8","name":"FULIMENI LUCA","year":"1982","team":"Virtus Buonconvento ssd","timing":"29.25","score":"800,00"},{"pos":"9","name":"RUFFINI MARCO","year":"1984","team":"Centro Nuoto Macerata ssd","timing":"29.86","score":"783,66"},{"pos":"10","name":"PORCU MARCO","year":"1980","team":"Team Marche Master","timing":"30.15","score":"776,12"},{"pos":"11","name":"DE MARTINO SAVINO","year":"1981","team":"Il Grillo ssd Civitanova","timing":"30.18","score":"775,35"},{"pos":"12","name":"GABELLINI PAOLO","year":"1982","team":"Rari Master Pesaro asd","timing":"30.70","score":"762,21"},{"pos":"13","name":"GARATTONI FILIPPO","year":"1984","team":"Seven Master Nuoto asd","timing":"30.74","score":"761,22"},{"pos":"14","name":"CENTIONI MICHELE","year":"1983","team":"Il Grillo ssd Civitanova","timing":"30.78","score":"760,23"},{"pos":"15","name":"GUASTELLA FILIPPO","year":"1983","team":"Centro Nuoto Bastia asd","timing":"32.25","score":"725,58"},{"pos":"16","name":"BENVENUTI ALESSANDRO","year":"1983","team":"Pol Pian del Bruscolo","timing":"32.27","score":"725,13"},{"pos":"17","name":"BAZZOCCHI ENRICO","year":"1984","team":"Nuotando asd","timing":"32.89","score":"711,46"},{"pos":"18","name":"Frugis Maurizio Raffaele","year":"1982","team":"Sport Village Banca di Pesaro","timing":"33.06","score":"707,80"},{"pos":"19","name":"PONTELLINI DAVIDE","year":"1981","team":"Pol Pian del Bruscolo","timing":"33.21","score":"704,61"},{"pos":"20","name":"Trolese Luca Salvatore","year":"1982","team":"Fanum Fortunae Nuoto","timing":"34.86","score":"671,26"},{"pos":"21","name":"MALAGUTI PIERO","year":"1981","team":"Nuovo Nuoto - Bologna","timing":"35.90","score":"651,81"},{"pos":"22","name":"Salci Marco","year":"1983","team":"Amat.Nuoto Lib. Soc.Coop","timing":"36.93","score":"633,63"}]},
-  {"title":"50 Stile Libero - M40",
-  "rows":[{"pos":"1","name":"PANCALDI SIMONE","year":"1976","team":"Imolanuoto","timing":"27.04","score":"882,77"},{"pos":"2","name":"PICCIALLO ROBERTO","year":"1979","team":"Nuovo Nuoto - Bologna","timing":"28.07","score":"850,37"},{"pos":"3","name":"IAGATTI EMILIANO","year":"1978","team":"Virtus Buonconvento ssd","timing":"28.84","score":"827,67"},{"pos":"4","name":"DONATI MASSIMO","year":"1978","team":"Centro Nuoto Bastia asd","timing":"28.94","score":"824,81"},{"pos":"5","name":"Mattutini Andrea","year":"1975","team":"Fanum Fortunae Nuoto","timing":"29.44","score":"810,80"},{"pos":"6","name":"Cottignoli Riccardo","year":"1978","team":"Nuotatori Ravennati","timing":"30.06","score":"794,08"},{"pos":"7","name":"ZIRONE GUIDO","year":"1978","team":"Imolanuoto","timing":"30.13","score":"792,23"},{"pos":"8","name":"LICCI ALBERTO","year":"1975","team":"Virtus Buonconvento ssd","timing":"30.34","score":"786,75"},{"pos":"9","name":"ROSSETTI MATTEO","year":"1979","team":"Team Marche Master","timing":"31.37","score":"760,92"},{"pos":"10","name":"CELLINI STEFANO","year":"1977","team":"Pol. Nuoto Montefeltro","timing":"31.78","score":"751,10"},{"pos":"11","name":"PIRANI PAOLO","year":"1978","team":"Team Osimo Nuoto asd","timing":"32.00","score":"745,94"},{"pos":"12","name":"PAGLIARANI MARCELLO","year":"1975","team":"Nuotando asd","timing":"32.49","score":"734,69"},{"pos":"13","name":"BALDISSERRI FABIO","year":"1979","team":"Seven Master Nuoto asd","timing":"32.75","score":"728,85"},{"pos":"14","name":"PECORARI RICCARDO","year":"1979","team":"Centro Nuoto Macerata ssd","timing":"32.92","score":"725,09"},{"pos":"15","name":"MELE ANDREA","year":"1978","team":"Imolanuoto","timing":"32.92","score":"725,09"},{"pos":"16","name":"BRUNI SIMONE","year":"1978","team":"CSI Nuoto Ober Ferrari","timing":"33.08","score":"721,58"},{"pos":"17","name":"BONAZELLI NICOLA","year":"1979","team":"Sport Village Banca di Pesaro","timing":"33.55","score":"711,48"},{"pos":"18","name":"ZOPPI ANDREA","year":"1977","team":"Adriakos Nuoto - Senigall","timing":"33.84","score":"705,38"},{"pos":"19","name":"LOTTI ANDREA","year":"1975","team":"Pol Comunale Riccione","timing":"34.50","score":"691,88"},{"pos":"20","name":"NERI MASSIMO","year":"1976","team":"Imolanuoto","timing":"36.23","score":"658,85"}]},
-  {"title":"100 Dorso - M25",
-  "rows":[{"pos":"1","name":"MEZZOLANI SAMUELE","year":"1993","team":"Pol. Nuoto Montefeltro","timing":"01:10.75","score":"804,10"},{"pos":"2","name":"D'ORECCHIA ANTONIO","year":"1991","team":"Team Marche Master","timing":"01:13.24","score":"776,76"},{"pos":"3","name":"LEONARDI FRANCESCO","year":"1993","team":"Azzurra Race Team","timing":"01:17.52","score":"733,88"}]},
-  {"title":"100 Dorso - M30",
-  "rows":[{"pos":"1","name":"TUCCILLO ROBERTO","year":"1986","team":"Roma Nuoto Master asd","timing":"01:04.59","score":"892,40"},{"pos":"2","name":"Tasini Alberto","year":"1989","team":"SAN MARINO MASTER","timing":"01:06.65","score":"864,82"}]},
-  {"title":"100 Dorso - M35",
-  "rows":[{"pos":"1","name":"SANTARELLI LEONARDO","year":"1984","team":"Virtus Buonconvento ssd","timing":"01:21.91","score":"726,77"},{"pos":"2","name":"Serra Sandro","year":"1980","team":"SAN MARINO MASTER","timing":"01:22.83","score":"718,70"},{"pos":"3","name":"CASADEI ALESSIO","year":"1983","team":"asd Fanatik Team Forli '","timing":"01:25.11","score":"699,45"},{"pos":"4","name":"Del Rio Simone","year":"1983","team":"CSI Nuoto Ober Ferrari","timing":"01:25.93","score":"692,77"},{"pos":"5","name":"CHIAVINI LUCA","year":"1981","team":"Azzurra Race Team","timing":"01:36.20","score":"618,81"},{"pos":"6","name":"NASINI DANIELE","year":"1981","team":"Virtus Buonconvento ssd","timing":"01:37.91","score":"608,01"},{"pos":"7","name":"CALZONI MARCO","year":"1983","team":"Virtus Buonconvento ssd","timing":"01:45.17","score":"566,04"}]},
-  {"title":"100 Dorso - M40",
-  "rows":[{"pos":"1","name":"Rossini Marco Giancarlo","year":"1976","team":"SAN MARINO MASTER","timing":"01:24.97","score":"708,96"},{"pos":"2","name":"GALLI LUCA","year":"1975","team":"Azzurra Race Team","timing":"02:01.37","score":"496,33"}]},
-  {"title":"100 Dorso - M45",
-  "rows":[{"pos":"1","name":"Camporesi Alessandro","year":"1974","team":"Nuoto Club Lugo","timing":"01:20.83","score":"764,07"},{"pos":"2","name":"Longanesi Claudio","year":"1973","team":"Nuoto Club Lugo","timing":"01:22.93","score":"744,72"},{"pos":"3","name":"CAPACCI MARCO","year":"1971","team":"Rari Nantes Romagna asd","timing":"01:26.25","score":"716,06"},{"pos":"4","name":"VECCHIONE GIUSEPPE","year":"1972","team":"Nautilus ssd","timing":"01:36.72","score":"638,54"}]},
-  {"title":"100 Dorso - M50",
-  "rows":[{"pos":"1","name":"GIANNONI ANDREA","year":"1969","team":"Amat.Nuoto Lib. Soc.Coop","timing":"01:16.34","score":"832,72"},{"pos":"2","name":"Galloni Umberto","year":"1967","team":"SAN MARINO MASTER","timing":"01:22.83","score":"767,48"},{"pos":"3","name":"Pela' Leonardo","year":"1967","team":"Thermae Sport asd","timing":"02:23.98","score":"441,52"}]},
-  {"title":"100 Dorso - M55",
-  "rows":[{"pos":"1","name":"TIRANTI ENDRIO","year":"1964","team":"Team Marche Master","timing":"01:27.29","score":"767,67"},{"pos":"2","name":"CEDRINI MASSIMO","year":"1961","team":"CUS Ferrara asd","timing":"01:28.81","score":"754,53"}]},
-  {"title":"100 Dorso - M60",
-  "rows":[{"pos":"1","name":"VEDOVI PAOLO","year":"1956","team":"Sport Village Banca di Pesaro","timing":"01:49.69","score":"643,91"}]},
-  {"title":"100 Dorso - M65",
-  "rows":[{"pos":"1","name":"TONI ALVARO","year":"1952","team":"Rinascita Team Romagna","timing":"01:49.92","score":"687,05"},{"pos":"2","name":"DI GIUSEPPE CLAUDIO","year":"1953","team":"Nuovo Nuoto - Bologna","timing":"01:51.79","score":"675,55"}]},
-  {"title":"100 Dorso - M70",
-  "rows":[{"pos":"1","name":"DE LEO SALVATORE","year":"1949","team":"Centro Nuoto Bastia asd","timing":"02:10.49","score":"601,35"}]},
-  {"title":"100 Dorso - M75",
-  "rows":[{"pos":"1","name":"Lalla Mariano","year":"1943","team":"Il Delfino Napoli asd","timing":"02:08.91","score":"661,24"}]},
-  {"title":"400 Misti - M25",
-  "rows":[{"pos":"1","name":"PECCI EDOARDO","year":"1991","team":"Team Marche Master","timing":"05:27.39","score":"841,20"},{"pos":"2","name":"CIRIONI LUCA","year":"1990","team":"Blugallery Team asd","timing":"06:50.09","score":"671,56"}]},
-  {"title":"400 Misti - M30",
-  "rows":[{"pos":"1","name":"GIOVANNINI LORENZO","year":"1986","team":"Nuoto Club Firenze","timing":"04:44.64","score":"964,83"}]},
-  {"title":"400 Misti - M35",
-  "rows":[{"pos":"1","name":"Donati Fabio","year":"1980","team":"SAN MARINO MASTER","timing":"05:30.93","score":"854,89"},{"pos":"2","name":"Del Rio Simone","year":"1983","team":"CSI Nuoto Ober Ferrari","timing":"06:30.70","score":"724,11"},{"pos":"3","name":"POTACQUI MATTEO","year":"1982","team":"Virtus Buonconvento ssd","timing":"06:56.05","score":"679,99"},{"pos":"4","name":"FUSCIELLO ENRICO","year":"1983","team":"Q-Bo Sporting Club ssd","timing":"07:12.86","score":"653,58"}]},
-  {"title":"400 Misti - M45",
-  "rows":[{"pos":"1","name":"GALATI CARLO MARIO","year":"1970","team":"Nuotatori Pugliesi asd","timing":"05:58.55","score":"817,26"},{"pos":"2","name":"Frignani Daniele","year":"1973","team":"Coopernuoto","timing":"06:05.49","score":"801,75"},{"pos":"3","name":"Spendolini Andrea","year":"1970","team":"Fano +Sport Asd Pol","timing":"07:02.86","score":"692,97"}]},
-  {"title":"400 Misti - M50",
-  "rows":[{"pos":"1","name":"Ferrari Gabriele","year":"1967","team":"Thermae Sport asd","timing":"06:47.32","score":"743,94"},{"pos":"2","name":"Spinucci Stefano","year":"1969","team":"GS Samb 87","timing":"06:56.52","score":"727,50"},{"pos":"3","name":"Franceschini Michele","year":"1969","team":"Thermae Sport asd","timing":"07:34.28","score":"667,03"}]},
-  {"title":"400 Misti - M55",
-  "rows":[{"pos":"1","name":"MANNUCCI BENINCASA MARCO","year":"1963","team":"Effetto Sport - Barzanò","timing":"06:21.32","score":"837,49"},{"pos":"2","name":"Ferrari Sarro","year":"1960","team":"Thermae Sport asd","timing":"07:28.20","score":"712,52"},{"pos":"3","name":"Lutero Cesare","year":"1963","team":"Dimensione N Pontedera","timing":"08:11.98","score":"649,11"}]},
-  {"title":"400 Misti - M60",
-  "rows":[{"pos":"1","name":"PANICUCCI MARCO","year":"1958","team":"Dimensione N Pontedera","timing":"07:07.33","score":"781,15"}]},
-  {"title":"400 Misti - M65",
-  "rows":[{"pos":"1","name":"VELARDI EUGENIO","year":"1953","team":"Circolo Canottieri Aniene","timing":"07:13.38","score":"818,40"}]},
-  {"title":"400 Misti - M70",
-  "rows":[{"pos":"1","name":"Poggioli Angelo","year":"1949","team":"Thermae Sport asd","timing":"11:00.56","score":"587,59"},{"pos":"2","name":"Balli Mario","year":"1946","team":"Firenze Nuota Extremo","timing":"12:37.72","score":"512,25"}]},
-  {"title":"50 Stile Libero - M25",
-  "rows":[{"pos":"1","name":"GENTILI ALESSIA","year":"1993","team":"Pol. Nuoto Montefeltro","timing":"29.19","score":"903,05"},{"pos":"2","name":"FUSI CARLOTTA","year":"1991","team":"Nuovo Nuoto - Bologna","timing":"29.84","score":"883,38"},{"pos":"3","name":"Tini Clelia","year":"1992","team":"SAN MARINO MASTER","timing":"29.87","score":"882,49"},{"pos":"4","name":"Bonora Martina","year":"1994","team":"Centro Nuoto Copparo","timing":"30.60","score":"861,44"},{"pos":"5","name":"Ferrari Erika","year":"1992","team":"Nuotatori Ravennati","timing":"33.32","score":"791,12"},{"pos":"6","name":"BARUCCA LUCIA","year":"1993","team":"Rari Master Pesaro asd","timing":"33.49","score":"787,10"},{"pos":"7","name":"Zuppiroli Elisa","year":"1991","team":"Imolanuoto","timing":"33.70","score":"782,20"},{"pos":"8","name":"MULAZZANI CARLOTTA","year":"1993","team":"Pol Comunale Riccione","timing":"33.80","score":"779,88"},{"pos":"9","name":"TOMASONI MARIAPAOLA","year":"1990","team":"Amici Nuoto Firenze","timing":"34.00","score":"775,29"},{"pos":"10","name":"VAGNONI FRANCESCA","year":"1990","team":"Virtus Buonconvento ssd","timing":"34.07","score":"773,70"},{"pos":"11","name":"PANICHI CATERINA","year":"1994","team":"Nuovo Nuoto - Bologna","timing":"34.31","score":"768,29"},{"pos":"12","name":"Budassi Valentina","year":"1990","team":"Fanum Fortunae Nuoto","timing":"37.57","score":"701,62"},{"pos":"13","name":"Colarizi Martina","year":"1991","team":"Sport Village Banca di Pesaro","timing":"40.76","score":"646,71"},{"pos":"14","name":"DI GIROLAMO ROBERTA","year":"1990","team":"Pool Nuoto Sambenedettese","timing":"41.25","score":"639,03"},{"pos":"15","name":"PROPERZI SOFIA","year":"1991","team":"Virtus Buonconvento ssd","timing":"44.69","score":"589,84"},{"pos":"16","name":"Bianchi Flavia","year":"1990","team":"Centro Nuoto Bastia asd","timing":"46.10","score":"571,80"},{"pos":"17","name":"Reginato Sabrina","year":"1991","team":"Sport Village Banca di Pesaro","timing":"50.70","score":"519,92"}]},
-  {"title":"50 Stile Libero - M30",
-  "rows":[{"pos":"1","name":"Tini Elena","year":"1989","team":"SAN MARINO MASTER","timing":"28.13","score":"932,46"},{"pos":"2","name":"PALLERI SARA","year":"1987","team":"Rinascita Team Romagna","timing":"29.00","score":"904,48"},{"pos":"3","name":"PEDICINI VANESSA","year":"1986","team":"Virtus Buonconvento ssd","timing":"29.39","score":"892,48"},{"pos":"4","name":"GUETTI CLAUDIA","year":"1989","team":"Sport Village Banca di Pesaro","timing":"32.10","score":"817,13"},{"pos":"5","name":"BECCI FEDERICA","year":"1987","team":"Team Osimo Nuoto asd","timing":"33.60","score":"780,65"},{"pos":"6","name":"MORETTI VALENTINA","year":"1985","team":"Centro Nuoto Bastia asd","timing":"33.93","score":"773,06"},{"pos":"7","name":"DI GIROLAMO STEFANIA","year":"1988","team":"Pool Nuoto Sambenedettese","timing":"35.58","score":"737,21"},{"pos":"8","name":"Guidi Eleonora","year":"1985","team":"SAN MARINO MASTER","timing":"35.94","score":"729,83"},{"pos":"9","name":"LORENZETTI MARTINA","year":"1985","team":"Adriakos Nuoto - Senigall","timing":"37.23","score":"704,54"},{"pos":"10","name":"BOSI ALESSANDRA","year":"1985","team":"Chimera Nuoto","timing":"39.86","score":"658,05"},{"pos":"11","name":"Scagnetti Silvia","year":"1985","team":"Centro Nuoto Macerata ssd","timing":"53.10","score":"493,97"}]},
-  {"title":"50 Stile Libero - M35",
-  "rows":[{"pos":"1","name":"PERINI SILVIA","year":"1980","team":"Rinascita Team Romagna","timing":"30.57","score":"874,39"},{"pos":"2","name":"PEZZI STEFANIA","year":"1981","team":"CSI Nuoto Ober Ferrari","timing":"31.24","score":"855,63"},{"pos":"3","name":"ZECCHI RITA","year":"1982","team":"Pol.Bondeno Chi Gioca","timing":"31.42","score":"850,73"},{"pos":"4","name":"LUGLI ALICE","year":"1983","team":"Rari Master Pesaro asd","timing":"32.88","score":"812,96"},{"pos":"5","name":"PINAGLIA DANIELA","year":"1980","team":"Centro Nuoto Bastia asd","timing":"36.26","score":"737,18"},{"pos":"6","name":"Masi Monica","year":"1981","team":"Imolanuoto","timing":"36.75","score":"727,35"},{"pos":"7","name":"PUCCI CAROL","year":"1983","team":"Virtus Buonconvento ssd","timing":"40.58","score":"658,70"},{"pos":"8","name":"TOLLUMI ANA","year":"1981","team":"Pol Comunale Riccione","timing":"48.97","score":"545,84"}]},
-  {"title":"50 Stile Libero - M40",
-  "rows":[{"pos":"1","name":"ROMAGNOLI MAYA","year":"1978","team":"Rinascita Team Romagna","timing":"31.99","score":"841,20"},{"pos":"2","name":"ORAZI ALESSIA","year":"1975","team":"Vela Nuoto Ancona","timing":"32.96","score":"816,44"},{"pos":"3","name":"ZOFFOLI SANDRA","year":"1978","team":"Seven Master Nuoto asd","timing":"34.77","score":"773,94"},{"pos":"4","name":"BERTANI FEDERICA","year":"1977","team":"Seven Master Nuoto asd","timing":"34.83","score":"772,61"},{"pos":"5","name":"RUGHI FRANCESCA","year":"1979","team":"Seven Master Nuoto asd","timing":"35.07","score":"767,32"},{"pos":"6","name":"Cirolli Claudia","year":"1977","team":"Aquatic Team Ravenna","timing":"36.33","score":"740,71"},{"pos":"7","name":"CICOGNANI VALENTINA","year":"1978","team":"Imolanuoto","timing":"36.67","score":"733,84"},{"pos":"8","name":"PERITO MICHELA","year":"1978","team":"CN UISP - Bologna","timing":"40.57","score":"663,30"}]},
-  {"title":"50 Stile Libero - M45",
-  "rows":[{"pos":"1","name":"Giovanetti Angela","year":"1970","team":"Aquatic Team Ravenna","timing":"33.90","score":"810,62"},{"pos":"2","name":"VITALONI LAURA","year":"1971","team":"Vela Nuoto Ancona","timing":"34.34","score":"800,23"},{"pos":"3","name":"SANTINI DANIELA","year":"1970","team":"Centro Nuoto Bastia asd","timing":"39.56","score":"694,64"},{"pos":"4","name":"LEONARDI BEATRICE","year":"1974","team":"Vela Nuoto Ancona","timing":"39.98","score":"687,34"},{"pos":"5","name":"SANDRINI SILVIA","year":"1972","team":"Imolanuoto","timing":"43.90","score":"625,97"}]},
-  {"title":"50 Stile Libero - M50",
-  "rows":[{"pos":"1","name":"SENTIMENTI DANIELA","year":"1967","team":"Imolanuoto","timing":"31.48","score":"895,81"},{"pos":"2","name":"Casilio Doriana","year":"1968","team":"Aquatic Team Ravenna","timing":"31.59","score":"892,69"},{"pos":"3","name":"PELLICCIA ALESSANDRA","year":"1965","team":"Centro Nuoto Bastia asd","timing":"34.66","score":"813,62"},{"pos":"4","name":"Volpini Ilaria","year":"1969","team":"Amat.Nuoto Lib. Soc.Coop","timing":"35.43","score":"795,94"},{"pos":"5","name":"NUCCI CATIA","year":"1969","team":"Pool Nuoto Sambenedettese","timing":"36.13","score":"780,51"},{"pos":"6","name":"Casagrande Paola","year":"1968","team":"Aquatic Team Ravenna","timing":"37.50","score":"752,00"},{"pos":"7","name":"Forcellini Roberta","year":"1966","team":"SAN MARINO MASTER","timing":"38.86","score":"725,68"},{"pos":"8","name":"BIAGIOLA STEFANIA","year":"1968","team":"Prima ssd","timing":"01:01.92","score":"455,43"}]},
-  {"title":"50 Stile Libero - M55",
-  "rows":[{"pos":"1","name":"TESTA GERALDINA","year":"1963","team":"CN UISP - Bologna","timing":"34.38","score":"858,93"},{"pos":"2","name":"EISCH KARIN URSULA","year":"1963","team":"Seven Master Nuoto asd","timing":"34.73","score":"850,27"},{"pos":"3","name":"VENTURI VIVIANA","year":"1963","team":"Seven Master Nuoto asd","timing":"36.54","score":"808,16"},{"pos":"4","name":"MORELLI MARINA","year":"1964","team":"Imolanuoto","timing":"41.32","score":"714,67"},{"pos":"5","name":"Cavalli Paola","year":"1961","team":"SAN MARINO MASTER","timing":"53.23","score":"554,76"},{"pos":"6","name":"MAMMOLI CLAUDIA","year":"1964","team":"Prima ssd","timing":"54.06","score":"546,24"}]},
-  {"title":"50 Stile Libero - M60",
-  "rows":[{"pos":"1","name":"Menghi Maurizia","year":"1958","team":"SAN MARINO MASTER","timing":"46.42","score":"657,48"},{"pos":"2","name":"CIVES ISABELLA","year":"1958","team":"Centro Nuoto Bastia asd","timing":"47.77","score":"638,89"}]},
-  {"title":"50 Stile Libero - M65",
-  "rows":[{"pos":"1","name":"BARCHETTA ISABELLA","year":"1954","team":"Imolanuoto","timing":"50.85","score":"628,32"}]},
-  {"title":"50 Stile Libero - M70",
-  "rows":[{"pos":"1","name":"DE ANGELIS MARILENA","year":"1945","team":"CN UISP - Bologna","timing":"48.34","score":"710,18"},{"pos":"2","name":"DALL'AGATA CARMEN","year":"1946","team":"Rari Nantes Romagna asd","timing":"01:06.87","score":"513,38"}]},
-  {"title":"50 Stile Libero - M80",
-  "rows":[{"pos":"1","name":"ANGELINI GEMMA","year":"1939","team":"Molinella Nuoto","timing":"01:24.03","score":"479,59"}]},
-  {"title":"100 Stile Libero - M25",
-  "rows":[{"pos":"1","name":"GENTILI ALESSIA","year":"1993","team":"Pol. Nuoto Montefeltro","timing":"01:05.99","score":"877,25"},{"pos":"2","name":"IPPOLITI GIORGIA","year":"1994","team":"Sport Village Banca di Pesaro","timing":"01:10.06","score":"826,29"},{"pos":"3","name":"VAGNONI FRANCESCA","year":"1990","team":"Virtus Buonconvento ssd","timing":"01:15.99","score":"761,81"},{"pos":"4","name":"CASADIO MARINA","year":"1991","team":"Rinascita Team Romagna","timing":"01:19.07","score":"732,14"},{"pos":"5","name":"Budassi Valentina","year":"1990","team":"Fanum Fortunae Nuoto","timing":"01:22.81","score":"699,07"},{"pos":"6","name":"GAUDINO ANNAMARIA","year":"1990","team":"Fanum Fortunae Nuoto","timing":"01:30.58","score":"639,10"}]},
-  {"title":"100 Stile Libero - M30",
-  "rows":[{"pos":"1","name":"MAZZOLI FEDERICA","year":"1988","team":"Azzurra Race Team","timing":"01:07.97","score":"849,35"},{"pos":"2","name":"DANIELI STEFANIA","year":"1987","team":"Centro Nuoto Bastia asd","timing":"01:08.67","score":"840,69"},{"pos":"3","name":"GAMBUTI ELISA","year":"1985","team":"Pol Comunale Riccione","timing":"01:12.09","score":"800,80"},{"pos":"4","name":"COLOMBO SILVIA","year":"1988","team":"Roma Nuoto Master asd","timing":"01:14.23","score":"777,72"},{"pos":"5","name":"ZAZZERONI ANNALISA","year":"1989","team":"Sport Village Banca di Pesaro","timing":"01:14.49","score":"775,00"},{"pos":"6","name":"MORETTI VALENTINA","year":"1985","team":"Centro Nuoto Bastia asd","timing":"01:15.79","score":"761,71"},{"pos":"7","name":"Guidi Eleonora","year":"1985","team":"SAN MARINO MASTER","timing":"01:20.29","score":"719,02"},{"pos":"8","name":"NOCIARO LETIZIA","year":"1988","team":"Virtus Buonconvento ssd","timing":"01:24.85","score":"680,38"},{"pos":"9","name":"BALDELLI ROBERTA","year":"1985","team":"Azzurra Race Team","timing":"01:29.96","score":"641,73"},{"pos":"10","name":"CANDIDORI LUCIA","year":"1989","team":"Virtus Buonconvento ssd","timing":"01:34.77","score":"609,16"}]},
-  {"title":"100 Stile Libero - M35",
-  "rows":[{"pos":"1","name":"LUGLI ALICE","year":"1983","team":"Rari Master Pesaro asd","timing":"01:12.44","score":"814,47"}]},
-  {"title":"100 Stile Libero - M40",
-  "rows":[{"pos":"1","name":"Loschi Monica","year":"1977","team":"Sportlife ssd","timing":"01:11.52","score":"836,83"}]},
-  {"title":"400 Misti - M35",
-  "rows":[{"pos":"1","name":"Finardi Alice","year":"1981","team":"Thermae Sport asd","timing":"10:38.84","score":"495,29"}]},
-  {"title":"400 Misti - M45",
-  "rows":[{"pos":"1","name":"COLAIANNI SILVIA","year":"1973","team":"Genova Nuoto My Sport ssd","timing":"07:43.57","score":"711,80"},{"pos":"2","name":"FACCIOLI BARBARA","year":"1974","team":"De Akker Team ssd arl","timing":"09:36.28","score":"572,59"}]},
-  {"title":"400 Misti - M50",
-  "rows":[{"pos":"1","name":"POZZI ELISABETTA RAFFAELLA","year":"1966","team":"Effetto Sport - Barzanò","timing":"07:14.17","score":"777,16"}]}]}
+{
+  "name": "15° Trofeo Citta` di Riccione",
+  "meetingURL": "https://www.federnuoto.it/home/master/circuito-supermaster/archivio-2012-2019/stagione-2018-2019.html#/risultati/134219:15%C2%B0-trofeo-citta`%C2%A0di-riccione.html",
+  "manifestURL": "/component/solrconnect/download.html?file=L3Zhci93d3cvZmluX2ZpbGVzL2V2ZW50aS8wMDAwMTM0MjE5LnBkZg==",
+  "dateDay1": "08",
+  "dateMonth1": "Dicembre",
+  "dateYear1": "2018",
+  "dateDay2": "09",
+  "dateMonth2": "Dicembre",
+  "dateYear2": "2018",
+  "organization": "A.S.D. POLISPORTIVA COMUNALE RICCIONE",
+  "venue1": "RICCIONE STADIO DEL NUOTO",
+  "address1": "VIA MONTEROSA, SNC - Riccione (RN)",
+  "venue2": "",
+  "address2": "",
+  "poolLength": "50",
+  "timeLimit": "SI",
+  "registration": "12/11 - 03/12 23:45",
+  "sections": [
+    {
+      "title": "50 Stile Libero - M25",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "00",
+      "fin_sigla_categoria": "M25",
+      "fin_sesso": "M",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "PETRINI ANDREA",
+          "year": "1992",
+          "sex": "M",
+          "team": "Virtus Buonconvento ssd",
+          "timing": "24.32",
+          "score": "949,42"
+        },
+        {
+          "pos": "2",
+          "name": "Botteghi Marco",
+          "year": "1990",
+          "sex": "M",
+          "team": "Seven Master Nuoto asd",
+          "timing": "25.20",
+          "score": "916,27"
+        },
+        {
+          "pos": "3",
+          "name": "Chiaraluce Mirko",
+          "year": "1994",
+          "sex": "M",
+          "team": "Nuoto Club Lugo",
+          "timing": "25.90",
+          "score": "891,51"
+        },
+        {
+          "pos": "4",
+          "name": "PANTANETTI SABATINI ELIA",
+          "year": "1994",
+          "sex": "M",
+          "team": "Il Grillo ssd Civitanova",
+          "timing": "26.21",
+          "score": "880,96"
+        },
+        {
+          "pos": "5",
+          "name": "GATTEI MANUEL",
+          "year": "1990",
+          "sex": "M",
+          "team": "Pol Comunale Riccione",
+          "timing": "26.22",
+          "score": "880,63"
+        },
+        {
+          "pos": "6",
+          "name": "MONINA GIULIO",
+          "year": "1994",
+          "sex": "M",
+          "team": "Il Grillo ssd Civitanova",
+          "timing": "26.90",
+          "score": "858,36"
+        },
+        {
+          "pos": "7",
+          "name": "FORBICE ANDREA",
+          "year": "1991",
+          "sex": "M",
+          "team": "Team Trezzo Sport ssd",
+          "timing": "27.03",
+          "score": "854,24"
+        },
+        {
+          "pos": "8",
+          "name": "BUTELLI GUIDO",
+          "year": "1994",
+          "sex": "M",
+          "team": "Nuovo Nuoto - Bologna",
+          "timing": "27.58",
+          "score": "837,20"
+        },
+        {
+          "pos": "9",
+          "name": "ZANDOLI MATTIA",
+          "year": "1990",
+          "sex": "M",
+          "team": "Nuotando asd",
+          "timing": "28.41",
+          "score": "812,74"
+        },
+        {
+          "pos": "10",
+          "name": "MARINI ANDREA",
+          "year": "1990",
+          "sex": "M",
+          "team": "Rari Master Pesaro asd",
+          "timing": "29.18",
+          "score": "791,30"
+        },
+        {
+          "pos": "11",
+          "name": "Barbari Michele",
+          "year": "1993",
+          "sex": "M",
+          "team": "Pol Comunale Riccione",
+          "timing": "29.93",
+          "score": "771,47"
+        },
+        {
+          "pos": "12",
+          "name": "BOSCARELLO ALESSANDRO",
+          "year": "1992",
+          "sex": "M",
+          "team": "Centro Nuoto Bastia asd",
+          "timing": "33.15",
+          "score": "696,53"
+        },
+        {
+          "pos": "13",
+          "name": "ORAZI ALESSANDRO",
+          "year": "1994",
+          "sex": "M",
+          "team": "Centro Nuoto Macerata ssd",
+          "timing": "35.39",
+          "score": "652,44"
+        },
+        {
+          "pos": "14",
+          "name": "Burattini Davide",
+          "year": "1992",
+          "sex": "M",
+          "team": "Team Osimo Nuoto asd",
+          "timing": "37.63",
+          "score": "613,61"
+        },
+        {
+          "pos": "15",
+          "name": "LANDI MICHELE",
+          "year": "1990",
+          "sex": "M",
+          "team": "Centro Nuoto Bastia asd",
+          "timing": "38.39",
+          "score": "601,46"
+        },
+        {
+          "pos": "16",
+          "name": "STROLLA LORENZO",
+          "year": "1993",
+          "sex": "M",
+          "team": "Centro Nuoto Macerata ssd",
+          "timing": "39.53",
+          "score": "584,11"
+        }
+      ]
+    },
+    {
+      "title": "50 Stile Libero - M30",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "00",
+      "fin_sigla_categoria": "M30",
+      "fin_sesso": "M",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "CESERI NICCOLO'",
+          "year": "1988",
+          "sex": "M",
+          "team": "Amici Nuoto Firenze",
+          "timing": "23.40",
+          "score": "984,62"
+        },
+        {
+          "pos": "2",
+          "name": "Rossetti Michele",
+          "year": "1986",
+          "sex": "M",
+          "team": "Nuotatori Ravennati",
+          "timing": "25.61",
+          "score": "899,65"
+        },
+        {
+          "pos": "3",
+          "name": "PROIETTI MATTEO",
+          "year": "1986",
+          "sex": "M",
+          "team": "Pol Comunale Riccione",
+          "timing": "26.15",
+          "score": "881,07"
+        },
+        {
+          "pos": "4",
+          "name": "Bombardini Stefano",
+          "year": "1987",
+          "sex": "M",
+          "team": "Nuotatori Ravennati",
+          "timing": "26.92",
+          "score": "855,87"
+        },
+        {
+          "pos": "5",
+          "name": "Scarponi Simone",
+          "year": "1989",
+          "sex": "M",
+          "team": "SAN MARINO MASTER",
+          "timing": "27.44",
+          "score": "839,65"
+        },
+        {
+          "pos": "6",
+          "name": "Della Corte Marco",
+          "year": "1988",
+          "sex": "M",
+          "team": "Prima ssd",
+          "timing": "27.53",
+          "score": "836,91"
+        },
+        {
+          "pos": "7",
+          "name": "SORDONI FRANCESCO",
+          "year": "1987",
+          "sex": "M",
+          "team": "Fanum Fortunae Nuoto",
+          "timing": "27.76",
+          "score": "829,97"
+        },
+        {
+          "pos": "8",
+          "name": "Corallini Daniel",
+          "year": "1989",
+          "sex": "M",
+          "team": "Il Grillo ssd Civitanova",
+          "timing": "28.76",
+          "score": "801,11"
+        },
+        {
+          "pos": "9",
+          "name": "Ferrarese Marco",
+          "year": "1989",
+          "sex": "M",
+          "team": "Thermae Sport asd",
+          "timing": "28.97",
+          "score": "795,31"
+        },
+        {
+          "pos": "10",
+          "name": "MENGONI ALESSANDRO",
+          "year": "1985",
+          "sex": "M",
+          "team": "Team Osimo Nuoto asd",
+          "timing": "29.00",
+          "score": "794,48"
+        },
+        {
+          "pos": "11",
+          "name": "PERRI EVGHENI",
+          "year": "1989",
+          "sex": "M",
+          "team": "Imolanuoto",
+          "timing": "29.26",
+          "score": "787,42"
+        },
+        {
+          "pos": "12",
+          "name": "LAZZARI ANDREA",
+          "year": "1988",
+          "sex": "M",
+          "team": "Nuovo Nuoto - Bologna",
+          "timing": "29.30",
+          "score": "786,35"
+        },
+        {
+          "pos": "13",
+          "name": "ROSSI GIACOMO",
+          "year": "1987",
+          "sex": "M",
+          "team": "Sport Village Banca di Pesaro",
+          "timing": "32.35",
+          "score": "712,21"
+        },
+        {
+          "pos": "14",
+          "name": "Crociani Paolo",
+          "year": "1986",
+          "sex": "M",
+          "team": "SAN MARINO MASTER",
+          "timing": "33.42",
+          "score": "689,41"
+        },
+        {
+          "pos": "15",
+          "name": "Severini Cesare",
+          "year": "1988",
+          "sex": "M",
+          "team": "SAN MARINO MASTER",
+          "timing": "35.13",
+          "score": "655,85"
+        },
+        {
+          "pos": "16",
+          "name": "GIAMPE' GIORDANO MARIA",
+          "year": "1986",
+          "sex": "M",
+          "team": "Centro Nuoto Bastia asd",
+          "timing": "35.23",
+          "score": "653,99"
+        },
+        {
+          "pos": "17",
+          "name": "Rombaldoni Denis",
+          "year": "1989",
+          "sex": "M",
+          "team": "Sport Village Banca di Pesaro",
+          "timing": "36.39",
+          "score": "633,14"
+        }
+      ]
+    },
+    {
+      "title": "200 Misti - M30",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "52",
+      "fin_sigla_categoria": "M30",
+      "fin_sesso": "F",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "Romanelli Valeria",
+          "year": "1987",
+          "sex": "F",
+          "team": "Pol. Nuoto Montefeltro",
+          "timing": "02:47.26",
+          "score": "860,94"
+        },
+        {
+          "pos": "2",
+          "name": "Rossini Gloria",
+          "year": "1986",
+          "sex": "F",
+          "team": "Prima ssd",
+          "timing": "02:47.57",
+          "score": "859,34"
+        }
+      ]
+    },
+    {
+      "title": "200 Misti - M35",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "52",
+      "fin_sigla_categoria": "M35",
+      "fin_sesso": "F",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "PEZZI STEFANIA",
+          "year": "1981",
+          "sex": "F",
+          "team": "CSI Nuoto Ober Ferrari",
+          "timing": "02:54.25",
+          "score": "842,58"
+        },
+        {
+          "pos": "2",
+          "name": "ZECCHI RITA",
+          "year": "1982",
+          "sex": "F",
+          "team": "Pol.Bondeno Chi Gioca",
+          "timing": "03:04.28",
+          "score": "796,72"
+        }
+      ]
+    },
+    {
+      "title": "200 Misti - M45",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "52",
+      "fin_sigla_categoria": "M45",
+      "fin_sesso": "F",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "DI UBALDO ANTONELLA",
+          "year": "1970",
+          "sex": "F",
+          "team": "Pool Nuoto Sambenedettese",
+          "timing": "03:17.90",
+          "score": "770,14"
+        },
+        {
+          "pos": "2",
+          "name": "MOTTOLESE MONICA",
+          "year": "1972",
+          "sex": "F",
+          "team": "Pol Comunale Riccione",
+          "timing": "03:31.31",
+          "score": "721,26"
+        }
+      ]
+    },
+    {
+      "title": "200 Misti - M50",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "52",
+      "fin_sigla_categoria": "M50",
+      "fin_sesso": "F",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "OMICCIOLI MORENA",
+          "year": "1967",
+          "sex": "F",
+          "team": "Fanum Fortunae Nuoto",
+          "timing": "03:29.26",
+          "score": "748,78"
+        },
+        {
+          "pos": "2",
+          "name": "RIMONDI BARBARA",
+          "year": "1969",
+          "sex": "F",
+          "team": "Centro Nuoto Copparo",
+          "timing": "03:42.40",
+          "score": "704,54"
+        }
+      ]
+    },
+    {
+      "title": "400 Misti - M35",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "54",
+      "fin_sigla_categoria": "M35",
+      "fin_sesso": "F",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "Finardi Alice",
+          "year": "1981",
+          "sex": "F",
+          "team": "Thermae Sport asd",
+          "timing": "10:38.84",
+          "score": "495,29"
+        }
+      ]
+    },
+    {
+      "title": "400 Misti - M45",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "54",
+      "fin_sigla_categoria": "M45",
+      "fin_sesso": "F",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "COLAIANNI SILVIA",
+          "year": "1973",
+          "sex": "F",
+          "team": "Genova Nuoto My Sport ssd",
+          "timing": "07:43.57",
+          "score": "711,80"
+        },
+        {
+          "pos": "2",
+          "name": "FACCIOLI BARBARA",
+          "year": "1974",
+          "sex": "F",
+          "team": "De Akker Team ssd arl",
+          "timing": "09:36.28",
+          "score": "572,59"
+        }
+      ]
+    },
+    {
+      "title": "400 Misti - M50",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "54",
+      "fin_sigla_categoria": "M50",
+      "fin_sesso": "F",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "POZZI ELISABETTA RAFFAELLA",
+          "year": "1966",
+          "sex": "F",
+          "team": "Effetto Sport - Barzanò",
+          "timing": "07:14.17",
+          "score": "777,16"
+        }
+      ]
+    }
+  ]
+}

@@ -9,12 +9,13 @@ require 'common/format'
   - author: Leega
 
  Strategy that populates importer temporary data structures from json parsed data.
+ Swimmer will be processed inside their respective team
  Steps to perform to parse data
  1. Collect distinct team names
   1.a Validate team names
   1.b Associate validated team names to data
   1.c Create missing affiliations
- 2. Collect distinct swimemr names (with year and team)
+ 2. Collect distinct swimmer names (with year and sex) into corresponding team
   2.a Validate swimemr names considering:
    2.a.1 Existent team's swimmer (badge)
    2.a.2 Existent swimmers
@@ -25,41 +26,42 @@ require 'common/format'
  5. Collect results
 
  Meeting header json example:
- {"name":"7° Trofeo Fanatik Team",
-  "meetingURL":"https://www.federnuoto.it/home/master/circuito-supermaster/eventi-circuito-supermaster.html#/risultati/136782:7%C2%B0-trofeo-fanatik-team.html",
-  "manifestURL":"/component/solrconnect/download.html?file=L3Zhci93d3cvZmluX2ZpbGVzL2V2ZW50aS8wMDAwMTM2NzgyLnBkZg==",
-  "dateDay1":"24",
-  "dateMonth1":"Novembre",
-  "dateYear1":"2019",
-  "dateDay2":"24",
-  "dateMonth2":"Novembre",
-  "dateYear2":"2019",
-  "organization":"ASD FANATIK TEAM NUOTO MASTER FORLI'",
-  "venue1":"FORLI' PISCINA COMUNALE",
-  "address1":"VIA TURATI, 17/19 - Forlì (FC)",
-  "venue2":"",
-  "address2":"",
-  "poolLength":"25",
-  "timeLimit":"SI",
-  "registration":"21/10 - 18/11 00:00",
-  "sections":[]}
+   "name": "15° Trofeo Citta` di Riccione",
+   "meetingURL": "https://www.federnuoto.it/home/master/circuito-supermaster/archivio-2012-2019/stagione-2018-2019.html#/risultati/134219:15%C2%B0-trofeo-citta`%C2%A0di-riccione.html",
+   "manifestURL": "/component/solrconnect/download.html?file=L3Zhci93d3cvZmluX2ZpbGVzL2V2ZW50aS8wMDAwMTM0MjE5LnBkZg==",
+   "dateDay1": "08",
+   "dateMonth1": "Dicembre",
+   "dateYear1": "2018",
+   "dateDay2": "09",
+   "dateMonth2": "Dicembre",
+   "dateYear2": "2018",
+   "organization": "A.S.D. POLISPORTIVA COMUNALE RICCIONE",
+   "venue1": "RICCIONE STADIO DEL NUOTO",
+   "address1": "VIA MONTEROSA, SNC - Riccione (RN)",
+   "venue2": "",
+   "address2": "",
+   "poolLength": "50",
+   "timeLimit": "SI",
+   "registration": "12/11 - 03/12 23:45",
+   "sections": []
 
  Individual result group json example (inside the sections element):
-  {"title":"50 Stile Libero - M30",
-   "event_id": "123456",
-   "race_code": "08",
-   "category_code": "M30",
-   "sex": "M",
-   "rows":[
-    {"pos":"1","name":"MELONARO MATTIA","year":"1988","team":"Virtus Buonconvento ssd","timing":"26.32","score":"846,12"},
-    {"pos":"2","name":"VAGNONI GIACOMO","year":"1988","team":"Virtus Buonconvento ssd","timing":"26.38","score":"844,20"},
-    {"pos":"3","name":"FALAPPA ROBERTO","year":"1985","team":"Team Osimo Nuoto asd","timing":"28.68","score":"776,50"},
-    {"pos":"4","name":"LATINI MICHELE","year":"1986","team":"Accademia PDS Terni","timing":"28.82","score":"772,73"},
-    {"pos":"5","name":"PASSI EMANUELE","year":"1986","team":"Club L 'Aquila Nuoto","timing":"29.86","score":"745,81"},
-    {"pos":"6","name":"ANDRENACCI FABIO","year":"1986","team":"Virtus Buonconvento ssd","timing":"32.30","score":"689,47"},
-    {"pos":"7","name":"BALDASSARRE BRUNO","year":"1988","team":"Pinguino Nuoto - Avezzano","timing":"33.26","score":"669,57"},
-    {"pos":"8","name":"MARTINI EMILIANO","year":"1987","team":"Powerswimming asd","timing":"35.31","score":"630,70"}
-  ]},
+    {
+      "title": "50 Stile Libero - M25",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "00",
+      "fin_sigla_categoria": "M25",
+      "fin_sesso": "M",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "PETRINI ANDREA",
+          "year": "1992",
+          "sex": "M",
+          "team": "Virtus Buonconvento ssd",
+          "timing": "24.32",
+          "score": "949,42"
+        },...
 
 
 =end
@@ -79,8 +81,7 @@ class ImporterEntityPopulator
     @full_pathname = full_pathname
     @data_hash     = nil
     @programs      = []
-    @teams         = []
-    @swimmers      = []
+    @teams         = {}
   end
 
   # Read the file and extract json string
@@ -109,27 +110,24 @@ class ImporterEntityPopulator
     @data_hash[:sections].each do |program|
       # Store programs element
       program_data = Hash.new()
-      program_data[:title]         = program[:title]
-      program_data[:event_id]      = program[:event_id]
-      program_data[:race_code]     = program[:race_code]
-      program_data[:category_code] = program[:category_code]
-      program_data[:sex]           = program[:sex]
-
+      ['title', 'fin_sigla_categoria', 'fin_sesso'].each do |key|
+        program_data[key] = program[key]
+      end
       # Assumes program elements are already unique
       @programs << program_data
 
       # Cycle program reults
-      program[:rows].each do |result|
+      program['rows'].each do |result|
+        team = result['team']
         # For teams we will consider only name
-        @teams << result[:team] if !@teams.include?( result[:team] )
+        @teams[team] = [] if !@teams.has_key?( team )
 
-        # For swimemr we will consider name, year, sex and use team to search in existent badges
+        # For swimmer we will consider name, year, sex
         swimmer = Hash.new()
-        swimmer[:name] = result[:name]
-        swimmer[:year] = result[:year]
-        swimmer[:sex]  = program[:sex]
-        swimmer[:team] = result[:team]
-        @swimmers << swimmer if !@swimmers.include?( swimmer )
+        ['name', 'year', 'sex'].each do |key|
+          swimmer[key] = result[key]
+        end
+        @teams[result['team']] << swimmer
       end
     end
   end

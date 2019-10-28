@@ -46,8 +46,8 @@ require 'common/format'
 
  Individual result group json example (inside the sections element):
   {"title":"50 Stile Libero - M30",
-   "event_id": "50 Stile Libero",
-   "race_code": "codice_stringa_fin_x_gara",
+   "event_id": "123456",
+   "race_code": "08",
    "category_code": "M30",
    "sex": "M",
    "rows":[

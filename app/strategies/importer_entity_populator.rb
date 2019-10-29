@@ -9,21 +9,33 @@ require 'common/format'
   - author: Leega
 
  Strategy that populates importer temporary data structures from json parsed data.
- Swimmer will be processed inside their respective team
- Steps to perform to parse data
+ Team should be matched firstly in existent team_affiliations (team-season)
+ Swimmer will be processed inside their respective team and firstly in existent badges (swimmer-team_affiliation (team-season))
+
+ Steps to perform for data parsing
+ 0. Collect distinct meeting_programs (and meeting_events)
+  0.a Collect events list
+  0.b Collect program list
+  (Those steps could be performed while collecting team names in step 1)
  1. Collect distinct team names
-  1.a Validate team names
-  1.b Associate validated team names to data
-  1.c Create missing affiliations
+  1.a Validate team names:
+    1.a.1 Searching team_affiliations (why not exist a team_affiliation_aliases?!?)
+    1.a.2 Searching teams
+    1.a.3 Searching team_aliases
+  1.b Create missing affiliations
+  1.c Associate validated team names to data (adding team_affiliation_id and team_id)
  2. Collect distinct swimmer names (with year and sex) into corresponding team
-  2.a Validate swimemr names considering:
-   2.a.1 Existent team's swimmer (badge)
-   2.a.2 Existent swimmers
-  2.b Associate validated swimmer names to data
-  2.c Create missing badges
- 3. Collect events list
- 4. Collect program list
- 5. Collect results
+  2.a Validate swimmer names:
+   2.a.1 Searching team's swimmer (team_affiliaton badges)
+   2.a.2 Searching swimmers
+   2.a.3 Searching swimmer aliases
+  2.b Create missing badges
+  2.c Associate validated swimmer names to data (adding badge_id and swimmer_id)
+ 3. Collect results associating them to respectibve swimmers
+
+ The resulting import structure should be like:
+ events_list [event [programs]]
+ teams [team_data, team_id, team_affiliation_id [swimmers [swimmer_data, swimmer_id, badge_id [results [meting_program, result_data]]]]]
 
  Meeting header json example:
    "name": "15° Trofeo Citta` di Riccione",

@@ -9,6 +9,9 @@ require 'common/format'
   - author: Leega
 
  Strategy that populates importer temporary data structures from json parsed data.
+ Assumes meeting already exist. Also meeting_sessions should exists with meeting_events defined
+ Note that importar has to create new meeting_event it will be associated with first meetin_session
+
  Team should be matched firstly in existent team_affiliations (team-season)
  Swimmer will be processed inside their respective team and firstly in existent badges (swimmer-team_affiliation (team-season))
 
@@ -35,7 +38,7 @@ require 'common/format'
 
  The resulting import structure should be like:
  events_list [event [programs]]
- teams [team_data, team_id, team_affiliation_id [swimmers [swimmer_data, swimmer_id, badge_id [results [meting_program, result_data]]]]]
+ teams [team_data, team_id, team_affiliation_id [swimmers [swimmer_data, swimmer_id, badge_id, {meting_program, result_data}]]]
 
  Meeting header json example:
    "name": "15° Trofeo Citta` di Riccione",
@@ -80,20 +83,22 @@ require 'common/format'
 class ImporterEntityPopulator
 
   # These must be initialized on creation:
-  attr_reader :full_pathname
+  attr_reader :full_pathname, :meeting
 
   # These can be edited later on:
-  attr_accessor :data_hash, :programs, :teams, :swimmers
+  attr_accessor :data_hash, :importer_hash, :individual_events_def
 
   # Creates a new instance
   #
   # params: file name with full path
   #
-  def initialize( full_pathname )
+  def initialize( full_pathname, meeting )
     @full_pathname = full_pathname
-    @data_hash     = nil
-    @programs      = []
-    @teams         = {}
+    @meeting       = meeting
+    @data_hash     = Hash.new()
+    @importer_hash = JsonImporterDAO.new( meeting )
+
+    @individual_events_def = nil
   end
 
   # Read the file and extract json string
@@ -118,30 +123,108 @@ class ImporterEntityPopulator
   # Read elements and retrieve distinct primary enetity values
   #
   def get_distinct_elements()
-    # Each program element has distinct results in rows element
-    @data_hash[:sections].each do |program|
-      # Store programs element
-      program_data = Hash.new()
-      ['title', 'fin_sigla_categoria', 'fin_sesso'].each do |key|
-        program_data[key] = program[key]
-      end
-      # Assumes program elements are already unique
-      @programs << program_data
+    #@individual_events_def = get_individual_event_list
 
-      # Cycle program reults
+
+    pool = @data_hash['poolLength']
+
+    # Each program element has distinct results in rows element
+    @data_hash['sections'].each do |program|
+      # Store event and programs element
+      # This is the json structure:
+      #  "title": "50 Stile Libero - M25",
+      #  "fin_id_evento": "134219",
+      #  "fin_codice_gara": "00",
+      #  "fin_sigla_categoria": "M25",
+      #  "fin_sesso": "M"
+
+      # Separates event title
+      event_title = find_event_title( program['title'] )
+      event_code  = find_event_code( event_title )
+      event = @importer_hash.events.has_key?(event_code) ? @importer_hash.events[event_code] : JsonImporterDAO::EventImporterDAO.new( event_title )
+
+      # Assumes program elements are already unique
+      pool = find_pool_type( event_title ) if pool = nil
+      event_program = JsonImporterDAO::EventProgramImporterDAO.new( pool, program['fin_sesso'], program['fin_sigla_categoria'] )
+      event.programs[program['title']] = event_program
+
+      # Cycle program results
       program['rows'].each do |result|
-        team = result['team']
+        # Json structure for result rows
+        # "pos": "1",
+        # "name": "PETRINI ANDREA",
+        # "year": "1992",
+        # "sex": "M",
+        # "team": "Virtus Buonconvento ssd",
+        # "timing": "24.32",
+        # "score": "949,42"
         # For teams we will consider only name
-        @teams[team] = [] if !@teams.has_key?( team )
+        team_name = result['team']
+        team = @importer_hash.teams.has_key?( team_name ) ? @importer_hash.teams[team_name] : JsonImporterDAO::TeamImporterDAO.new( team_name )
 
         # For swimmer we will consider name, year, sex
-        swimmer = Hash.new()
-        ['name', 'year', 'sex'].each do |key|
-          swimmer[key] = result[key]
-        end
-        @teams[result['team']] << swimmer
+        swimmer_name = result['name']
+        swimmer_year = result['year']
+        swimmer_sex = result['sex']
+        swimmer_key = swimmer_name + ';' + swimmer_year + ';' + swimmer_sex
+        swimmer = team.swimmers.has_key?( swimmer_key ) ? team.swimmers[swimmer_key] : JsonImporterDAO::SwimmerImporterDAO.new( swimmer_name, swimmer_year, swimmer_sex )
       end
     end
+  end
+
+  # creates an hash with event_code => [short_name, compact_name, description] for each Individual event
+  #
+  def get_individual_event_list
+    possible_events = Hash.new()
+    EventType.are_not_relays.joins(:stroke_type).includes(:stroke_type).each do |event_type|
+      possible_events[event_type.code] = [event_type.i18n_short, event_type.i18n_compact, event_type.i18n_description]
+    end
+    possible_events
+  end
+
+  # Separates event title from program title
+  # Event title should contain only the event code, short or long description
+  #
+  def find_event_title( program_title )
+    regexp = Regexp::new(/(50|100|200|400|800|1500)\s*(STILE LIBERO|STILE|DORSO|MISTI|RANA|FARFALLA|DELFINO|MI|MX|SL|DO|FA|RA|ST|DE)/i)
+    regexp.match( program_title )[0]
+  end
+
+  # Find event code starting from an event title
+  #
+  def find_event_code( event_title )
+    distace_match = /(50|100|200|400|800|1500)/.match( event_title )
+    if distace_match
+      distance = distace_match[0]
+      stroke_match = /(STILE LIBERO|STILE|DORSO|MISTI|RANA|FARFALLA|DELFINO|MI|MX|SL|DO|FA|RA|ST|DE)/i.match( event_title )
+      if stroke_match
+        stroke = stroke_match[0]
+        if /(DORSO|DO|DS)/i.match?( stroke )
+          stroke_code = 'DO'
+        elsif /(RANA|RA)/i.match?( stroke )
+          stroke_code = 'RA'
+        elsif /(FARFALLA|DELFINO|FA|DE)/i.match?( stroke )
+          stroke_code = 'FA'
+        elsif /(MISTI|MI|MX)/i.match?( stroke )
+          stroke_code = 'MI'
+        else
+          stroke_code = 'SL'
+        end
+        distance + stroke_code
+      else
+        nil
+      end
+    else
+      nil
+    end
+  end
+
+  # Find pool type for given event in meeting schedule
+  # Assumes meeting schedule is complete or at least has one session configured
+  #
+  def find_pool_type( event_title )
+    # TODO
+    '25'
   end
   #-- --------------------------------------------------------------------------
   #++

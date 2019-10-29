@@ -12,7 +12,7 @@ describe JsonImporterDAO, type: :model do
   let(:time_swam)           { Timing.new(1, 1, 1) }
   let(:ind_points)          { (rand * 1010).to_i }
   let(:team_points)         { (rand * 1010).to_i }
-  let(:notes)               { 'Nothing to say' }
+  let(:notes)               { FFaker::Lorem.word.camelcase }
 
   let(:swimmer_name)        { "#{FFaker::Name.last_name} #{FFaker::Name.first_name}" }
   let(:year)                { 1950 + (rand * 50).to_i }
@@ -20,7 +20,7 @@ describe JsonImporterDAO, type: :model do
   let(:swimmer_id)          { (rand * 2000).to_i + 1 }
   let(:badge_id)            { (rand * 10000).to_i + 1 }
 
-  let(:team_name)           { "#{FFaker::Lorem.word} Swimming Team" }
+  let(:team_name)           { "#{FFaker::Lorem.word.camelcase} Swimming Team" }
   let(:affiliation_id)      { (rand * 1000).to_i + 1 }
 
   let(:pool)                { PoolType.all.sample.code }

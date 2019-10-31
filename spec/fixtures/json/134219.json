@@ -131,42 +131,6 @@
           "team": "Centro Nuoto Bastia asd",
           "timing": "33.15",
           "score": "696,53"
-        },
-        {
-          "pos": "13",
-          "name": "ORAZI ALESSANDRO",
-          "year": "1994",
-          "sex": "M",
-          "team": "Centro Nuoto Macerata ssd",
-          "timing": "35.39",
-          "score": "652,44"
-        },
-        {
-          "pos": "14",
-          "name": "Burattini Davide",
-          "year": "1992",
-          "sex": "M",
-          "team": "Team Osimo Nuoto asd",
-          "timing": "37.63",
-          "score": "613,61"
-        },
-        {
-          "pos": "15",
-          "name": "LANDI MICHELE",
-          "year": "1990",
-          "sex": "M",
-          "team": "Centro Nuoto Bastia asd",
-          "timing": "38.39",
-          "score": "601,46"
-        },
-        {
-          "pos": "16",
-          "name": "STROLLA LORENZO",
-          "year": "1993",
-          "sex": "M",
-          "team": "Centro Nuoto Macerata ssd",
-          "timing": "39.53",
-          "score": "584,11"
         }
       ]
     },
@@ -275,60 +239,6 @@
           "team": "Imolanuoto",
           "timing": "29.26",
           "score": "787,42"
-        },
-        {
-          "pos": "12",
-          "name": "LAZZARI ANDREA",
-          "year": "1988",
-          "sex": "M",
-          "team": "Nuovo Nuoto - Bologna",
-          "timing": "29.30",
-          "score": "786,35"
-        },
-        {
-          "pos": "13",
-          "name": "ROSSI GIACOMO",
-          "year": "1987",
-          "sex": "M",
-          "team": "Sport Village Banca di Pesaro",
-          "timing": "32.35",
-          "score": "712,21"
-        },
-        {
-          "pos": "14",
-          "name": "Crociani Paolo",
-          "year": "1986",
-          "sex": "M",
-          "team": "SAN MARINO MASTER",
-          "timing": "33.42",
-          "score": "689,41"
-        },
-        {
-          "pos": "15",
-          "name": "Severini Cesare",
-          "year": "1988",
-          "sex": "M",
-          "team": "SAN MARINO MASTER",
-          "timing": "35.13",
-          "score": "655,85"
-        },
-        {
-          "pos": "16",
-          "name": "GIAMPE' GIORDANO MARIA",
-          "year": "1986",
-          "sex": "M",
-          "team": "Centro Nuoto Bastia asd",
-          "timing": "35.23",
-          "score": "653,99"
-        },
-        {
-          "pos": "17",
-          "name": "Rombaldoni Denis",
-          "year": "1989",
-          "sex": "M",
-          "team": "Sport Village Banca di Pesaro",
-          "timing": "36.39",
-          "score": "633,14"
         }
       ]
     },
@@ -482,6 +392,15 @@
           "team": "De Akker Team ssd arl",
           "timing": "09:36.28",
           "score": "572,59"
+        },
+        {
+          "pos": "3",
+          "name": "MOTTOLESE MONICA",
+          "year": "1972",
+          "sex": "F",
+          "team": "Pol Comunale Riccione",
+          "timing": "9:39.31",
+          "score": "560,26"
         }
       ]
     },

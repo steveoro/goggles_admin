@@ -86,7 +86,7 @@ class ImporterEntityPopulator
   attr_reader :full_pathname, :meeting
 
   # These can be edited later on:
-  attr_accessor :data_hash, :importer_hash, :individual_events_def
+  attr_accessor :data_hash, :importer_hash, :errors, :individual_events_def
 
   # Creates a new instance
   #
@@ -97,6 +97,7 @@ class ImporterEntityPopulator
     @meeting       = meeting
     @data_hash     = Hash.new()
     @importer_hash = JsonImporterDAO.new( meeting )
+    @errors        = []
 
     @individual_events_def = nil
   end
@@ -125,7 +126,8 @@ class ImporterEntityPopulator
   def get_distinct_elements()
     #@individual_events_def = get_individual_event_list
 
-
+    # TODO - Find pool type. Verify this is a good data
+    # What if meeting has multiple pools of different types (such Regionali Emilia)
     pool = @data_hash['poolLength']
 
     # Each program element has distinct results in rows element
@@ -139,14 +141,21 @@ class ImporterEntityPopulator
       #  "fin_sesso": "M"
 
       # Separates event title
-      event_title = find_event_title( program['title'] )
-      event_code  = find_event_code( event_title )
-      event = @importer_hash.events.has_key?(event_code) ? @importer_hash.events[event_code] : JsonImporterDAO::EventImporterDAO.new( event_title )
+      program_title = program['title'].upcase
+      event_title   = find_event_title( program_title )
+      event_code    = find_event_code( event_title )
 
-      # Assumes program elements are already unique
+      # If the event isn't already defined creates
+      @importer_hash.events[event_code] = JsonImporterDAO::EventImporterDAO.new( event_title ) if !@importer_hash.events.has_key?(event_code)
+      event = @importer_hash.events[event_code]
+
+      # Define pool type
       pool = find_pool_type( event_title ) if pool = nil
-      event_program = JsonImporterDAO::EventProgramImporterDAO.new( pool, program['fin_sesso'], program['fin_sigla_categoria'] )
-      event.programs[program['title']] = event_program
+
+      # Assumes program elements are already unique.
+      # If program already present traces an errors
+      @errors << 'meeting_program duplicato: ' + program_title if event.programs.has_key?(program_title)
+      event.programs[program_title] = JsonImporterDAO::EventProgramImporterDAO.new( pool, program['fin_sesso'], program['fin_sigla_categoria'] )
 
       # Cycle program results
       program['rows'].each do |result|
@@ -159,20 +168,43 @@ class ImporterEntityPopulator
         # "timing": "24.32",
         # "score": "949,42"
         # For teams we will consider only name
-        team_name = result['team']
-        team = @importer_hash.teams.has_key?( team_name ) ? @importer_hash.teams[team_name] : JsonImporterDAO::TeamImporterDAO.new( team_name )
+        team_name = result['team'].upcase
+
+        # If the team isn't already defined creates
+        @importer_hash.teams[team_name] = JsonImporterDAO::TeamImporterDAO.new( team_name ) if !@importer_hash.teams.has_key?( team_name )
+        team = @importer_hash.teams[team_name]
 
         # For swimmer we will consider name, year, sex
-        swimmer_name = result['name']
+        swimmer_name = result['name'].upcase
         swimmer_year = result['year']
-        swimmer_sex = result['sex']
-        swimmer_key = swimmer_name + ';' + swimmer_year + ';' + swimmer_sex
-        swimmer = team.swimmers.has_key?( swimmer_key ) ? team.swimmers[swimmer_key] : JsonImporterDAO::SwimmerImporterDAO.new( swimmer_name, swimmer_year, swimmer_sex )
+        swimmer_sex = result['sex'].upcase
+        swimmer_key = create_swimmer_key( swimmer_name, swimmer_year, swimmer_sex )
+
+        # If the team isn't already defined creates
+        team.swimmers[swimmer_key] = JsonImporterDAO::SwimmerImporterDAO.new( swimmer_name, swimmer_year, swimmer_sex ) if !team.swimmers.has_key?( swimmer_key )
+        swimmer = team.swimmers[swimmer_key]
+
+        # Adds result to swimmer
+        # If result exists for event code traces an error
+        @errors << "risultato duplicato: #{swimmer_key} #{event_code} #{program_title}" if swimmer.results.has_key?(event_code)
+        swimmer.results[event_code] = JsonImporterDAO::SwimmerResultImporterDAO.new( result['pos'], result['timing'], result['score'] )
       end
     end
   end
 
-  # creates an hash with event_code => [short_name, compact_name, description] for each Individual event
+  # Removes non valid characters from names
+  #
+  def remove_invalid_char( name )
+    name.gsub(/[\s\-_\.]/, '')
+  end
+
+  # Creates an 'unique' swimemr key to identify swimmers
+  #
+  def create_swimmer_key( swimmer_name, swimmer_year, swimmer_sex, separator = ';' )
+    remove_invalid_char(swimmer_name) + separator + swimmer_year + separator + swimmer_sex
+  end
+
+  # Creates an hash with event_code => [short_name, compact_name, description] for each Individual event
   #
   def get_individual_event_list
     possible_events = Hash.new()

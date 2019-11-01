@@ -77,6 +77,15 @@
           "team": "Nuoto Club Lugo",
           "timing": "26.25",
           "score": "849,10"
+        },
+        {
+          "pos": "6",
+          "name": "Inventato Prima",
+          "year": "1991",
+          "sex": "M",
+          "team": "Seven Master Nuoto asd",
+          "timing": "26.25",
+          "score": "849,10"
         }
       ]
     },
@@ -84,7 +93,7 @@
       "title": "50 Stile Libero - M25",
       "fin_id_evento": "134219",
       "fin_codice_gara": "00",
-      "fin_sigla_categoria": "M30",
+      "fin_sigla_categoria": "M25",
       "fin_sesso": "M",
       "rows": [
         {

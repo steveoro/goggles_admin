@@ -88,11 +88,12 @@ class JsonImporterDAO
   class EventProgramImporterDAO
 
     # These must be initialized on creation:
-    attr_reader :pool, :sex, :category, :out_of_race, :order
+    attr_reader :title, :pool, :sex, :category, :out_of_race, :order
 
     # Creates a new instance.
     #
-    def initialize( pool, sex, category, out_of_race = false, order = nil )
+    def initialize( title, pool, sex, category, out_of_race = false, order = nil )
+      @title       = title
       @pool        = pool
       @sex         = sex
       @category    = category
@@ -128,11 +129,33 @@ class JsonImporterDAO
   #-- -------------------------------------------------------------------------
   #++
 
+  # Represents the errors occured in data parsing
+  #
+  class ErrorImporterDAO
+
+    # These can be edited later on:
+    attr_accessor :programs, :swimmers, :results
+
+    # Creates a new instance.
+    #
+    def initialize()
+      @programs = []
+      @swimmers = []
+      @results  = []
+    end
+
+    def get_total_count
+      @programs.size + @swimmers.size + @results.size
+    end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
   # These must be initialized on creation:
   attr_reader :meeting
 
   # These can be edited later on:
-  attr_accessor :teams, :events
+  attr_accessor :teams, :events, :errors, :swimmer_keys
 
   # Creates a new instance.
   #
@@ -141,6 +164,39 @@ class JsonImporterDAO
 
     @teams  = Hash.new()
     @events = Hash.new()
+
+    # Checks
+    @errors       = ErrorImporterDAO.new()
+    @swimmer_keys = Hash.new()
+  end
+
+  # Safe getters and setters
+  def add_duplicate_program_error( error )
+    @errors.programs << error
+  end
+
+  def get_duplicate_program_errors
+    @errors.programs
+  end
+
+  def add_duplicate_swimmer_error( error )
+    @errors.swimmers << error
+  end
+
+  def get_duplicate_swimmer_errors
+    @errors.swimmers
+  end
+
+  def add_duplicate_result_error( error )
+    @errors.results << error
+  end
+
+  def get_duplicate_result_errors
+    @errors.results
+  end
+  
+  def get_errors_count
+    @errors.get_total_count
   end
   #-- -------------------------------------------------------------------------
   #++

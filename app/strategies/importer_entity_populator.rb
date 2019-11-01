@@ -78,6 +78,8 @@ require 'common/format'
           "score": "949,42"
         },...
 
+ With that regexp we can extract swimmer data for test from json (swimmer name, year, sex and team name)
+ /(?<="name": )(".*",)(?=\s*"year": ("[0-9]{4}",)\s*"sex": ("[MF]",)\s*"team": (".*",))/
 
 =end
 class ImporterEntityPopulator
@@ -86,7 +88,7 @@ class ImporterEntityPopulator
   attr_reader :full_pathname, :meeting
 
   # These can be edited later on:
-  attr_accessor :data_hash, :importer_hash, :errors, :individual_events_def
+  attr_accessor :data_hash, :importer_hash, :individual_events_def
 
   # Creates a new instance
   #
@@ -97,7 +99,6 @@ class ImporterEntityPopulator
     @meeting       = meeting
     @data_hash     = Hash.new()
     @importer_hash = JsonImporterDAO.new( meeting )
-    @errors        = []
 
     @individual_events_def = nil
   end
@@ -140,10 +141,12 @@ class ImporterEntityPopulator
       #  "fin_sigla_categoria": "M25",
       #  "fin_sesso": "M"
 
-      # Separates event title
+      # Separates event title and retrieve program code (event, category, sex)
+      # Assumes in program_title is always present category
       program_title = program['title'].upcase
       event_title   = find_event_title( program_title )
       event_code    = find_event_code( event_title )
+      program_key   = create_program_key(event_code, program['fin_sigla_categoria'], program['fin_sesso'])
 
       # If the event isn't already defined creates
       @importer_hash.events[event_code] = JsonImporterDAO::EventImporterDAO.new( event_title ) if !@importer_hash.events.has_key?(event_code)
@@ -154,8 +157,8 @@ class ImporterEntityPopulator
 
       # Assumes program elements are already unique.
       # If program already present traces an errors
-      @errors << 'meeting_program duplicato: ' + program_title if event.programs.has_key?(program_title)
-      event.programs[program_title] = JsonImporterDAO::EventProgramImporterDAO.new( pool, program['fin_sesso'], program['fin_sigla_categoria'] )
+      @importer_hash.add_duplicate_program_error(program_key) if event.programs.has_key?(program_key)
+      event.programs[program_key] = JsonImporterDAO::EventProgramImporterDAO.new( program_title, pool, program['fin_sesso'], program['fin_sigla_categoria'] )
 
       # Cycle program results
       program['rows'].each do |result|
@@ -180,13 +183,24 @@ class ImporterEntityPopulator
         swimmer_sex = result['sex'].upcase
         swimmer_key = create_swimmer_key( swimmer_name, swimmer_year, swimmer_sex )
 
-        # If the team isn't already defined creates
-        team.swimmers[swimmer_key] = JsonImporterDAO::SwimmerImporterDAO.new( swimmer_name, swimmer_year, swimmer_sex ) if !team.swimmers.has_key?( swimmer_key )
+        if !team.swimmers.has_key?( swimmer_key )
+          # If swimmer key already exixts maybe there is an error
+          if @importer_hash.swimmer_keys.has_key?( swimmer_key )
+            @importer_hash.add_duplicate_swimmer_error( swimmer_key )
+          else
+            #Store swimmer key for checking purposes
+            @importer_hash.swimmer_keys[swimmer_key] = []
+          end
+
+          # If the swimmer isn't already defined creates
+          team.swimmers[swimmer_key] = JsonImporterDAO::SwimmerImporterDAO.new( swimmer_name, swimmer_year, swimmer_sex )
+        end
         swimmer = team.swimmers[swimmer_key]
+        @importer_hash.swimmer_keys[swimmer_key] << "#{team_name} - #{event_code}"
 
         # Adds result to swimmer
         # If result exists for event code traces an error
-        @errors << "risultato duplicato: #{swimmer_key} #{event_code} #{program_title} #{result.to_s}" if swimmer.results.has_key?(event_code)
+        @importer_hash.add_duplicate_result_error("#{swimmer_key} #{event_code} #{program_title} #{result.to_s}") if swimmer.results.has_key?(event_code)
         swimmer.results[event_code] = JsonImporterDAO::SwimmerResultImporterDAO.new( result['pos'], result['timing'], result['score'] )
       end
     end
@@ -198,7 +212,13 @@ class ImporterEntityPopulator
     name.gsub(/[\s\-_\.]/, '')
   end
 
-  # Creates an 'unique' swimemr key to identify swimmers
+  # Creates an 'unique' swimmer key to identify swimmers
+  #
+  def create_program_key( event, category, sex, separator = ';' )
+    event + separator + category + separator + sex
+  end
+
+  # Creates an 'unique' swimmer key to identify swimmers
   #
   def create_swimmer_key( swimmer_name, swimmer_year, swimmer_sex, separator = ';' )
     remove_invalid_char(swimmer_name) + separator + swimmer_year + separator + swimmer_sex

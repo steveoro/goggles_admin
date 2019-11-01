@@ -23,6 +23,7 @@ describe JsonImporterDAO, type: :model do
   let(:team_name)           { "#{FFaker::Lorem.word.camelcase} Swimming Team" }
   let(:affiliation_id)      { (rand * 1000).to_i + 1 }
 
+  let(:program_name)        { "#{EventType.all.sample.i18n_description} - M#{[25, 30, 35, 40, 45, 50, 55, 60].sample}" }
   let(:pool)                { PoolType.all.sample.code }
   let(:category)            { CategoryType.are_not_relays.sample.code }
   let(:out_of_race)         { ((rand * 10) > 5) }
@@ -31,6 +32,8 @@ describe JsonImporterDAO, type: :model do
   let(:event_name)          { EventType.are_not_relays.sample.code }
   let(:event_id)            { (rand * 2000).to_i + 1 }
   let(:session_id)          { (rand * 1000).to_i + 1 }
+
+  let(:iteration)           { (rand * 5).to_i + 1 }
 
   context "SwimmerResultImporterDAO subelement," do
 
@@ -144,7 +147,7 @@ describe JsonImporterDAO, type: :model do
 
   context "EventProgramImporterDAO subelement," do
 
-    subject { JsonImporterDAO::EventProgramImporterDAO.new( pool, sex, category ) }
+    subject { JsonImporterDAO::EventProgramImporterDAO.new( program_name, pool, sex, category ) }
 
     it_behaves_like( "(the existance of a method)", [
       :pool, :sex, :category, :out_of_race, :order
@@ -152,6 +155,7 @@ describe JsonImporterDAO, type: :model do
 
     describe "when initialized with required parameters" do
       it "returns given values" do
+        expect( subject.title ).to eq( program_name,  )
         expect( subject.pool ).to eq( pool )
         expect( subject.sex ).to eq( sex )
         expect( subject.category ).to eq( category )
@@ -164,7 +168,11 @@ describe JsonImporterDAO, type: :model do
 
     describe "when initialized with optional parameters" do
       it "returns given values" do
-        epi = JsonImporterDAO::EventProgramImporterDAO.new( pool, sex, category, out_of_race, order )
+        epi = JsonImporterDAO::EventProgramImporterDAO.new( program_name, pool, sex, category, out_of_race, order )
+        expect( subject.title ).to eq( program_name,  )
+        expect( subject.pool ).to eq( pool )
+        expect( subject.sex ).to eq( sex )
+        expect( subject.category ).to eq( category )
         expect( epi.out_of_race ).to eq( out_of_race )
         expect( epi.order ).to eq( order )
       end
@@ -212,24 +220,137 @@ describe JsonImporterDAO, type: :model do
   #-- -------------------------------------------------------------------------
   #++
 
+  context "ErrorImporterDAO subelement," do
+
+    let(:number) { (rand*10).to_i + 2 }
+
+    subject { JsonImporterDAO::ErrorImporterDAO.new() }
+
+    it_behaves_like( "(the existance of a method returning an array)", [
+      :programs, :swimmers, :results
+    ] )
+
+    it_behaves_like( "(the existance of a method returning numeric values)", [
+      :get_total_count
+    ] )
+
+    it "returns defaults when initialized" do
+      expect( subject.programs.size ).to eq( 0 )
+      expect( subject.swimmers.size ).to eq( 0 )
+      expect( subject.results.size ).to eq( 0 )
+      expect( subject.get_total_count ).to eq( 0 )
+    end
+
+    describe "#get_total_count" do
+      it "returns total size of subelements" do
+        programs = number
+        swimmers = number - 1
+        results  = number + 1
+        programs.times do
+          subject.programs << "pippo"
+        end
+        expect( subject.programs.size ).to eq( programs )
+        swimmers.times do
+          subject.swimmers << "pluto"
+        end
+        expect( subject.swimmers.size ).to eq( swimmers )
+        results.times do
+          subject.results << "ginopino"
+        end
+        expect( subject.results.size ).to eq( results )
+        expect( subject.get_total_count ).to eq( programs + swimmers + results )
+      end
+    end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
   context "JsonImporterDAO general element," do
 
     subject { JsonImporterDAO.new( meeting ) }
 
     it_behaves_like( "(the existance of a method)", [
       :meeting,
-      :teams, :events
+      :teams, :events,
+      :errors, :swimmer_keys,
+      :add_duplicate_program_error, :add_duplicate_result_error, :add_duplicate_swimmer_error
+    ] )
+
+    it_behaves_like( "(the existance of a method returning numeric values)", [
+      :get_errors_count
+    ] )
+
+    it_behaves_like( "(the existance of a method returning an array)", [
+      :get_duplicate_program_errors, :get_duplicate_result_errors, :get_duplicate_swimmer_errors
     ] )
 
     describe "when initialized with required parameters" do
       it "returns given values" do
         expect( subject.meeting ).to eq( meeting )
       end
-      it "returns an empty hash for teams" do
+      it "creates an empty hash for teams" do
         expect( subject.teams ).to be_a_kind_of( Hash )
         expect( subject.teams.size ).to eq( 0 )
+      end
+      it "creates an empty hash for events" do
         expect( subject.events ).to be_a_kind_of( Hash )
         expect( subject.events.size ).to eq( 0 )
+      end
+      it "creates an empty JsonImporterDAO::ErrorImporterDAO for errors" do
+        expect( subject.errors ).to be_an_instance_of( JsonImporterDAO::ErrorImporterDAO )
+        expect( subject.get_errors_count ).to eq( 0 )
+      end
+      it "creates an empty hash for swimmer_keys" do
+        expect( subject.swimmer_keys ).to be_a_kind_of( Hash )
+        expect( subject.swimmer_keys.size ).to eq( 0 )
+      end
+    end
+
+    describe "#add_duplicate_program_error" do
+      it "adds an element to programs array of errors subelement" do
+        expect( subject.errors.programs.size ).to eq( 0 )
+        programs = iteration
+        programs.times do subject.add_duplicate_program_error( notes ) end
+        expect( subject.errors.programs.size ).to eq( programs )
+      end
+    end
+
+    describe "#get_duplicate_program_errors" do
+      it "returns the programs array of errors subelement" do
+        iteration.times do subject.add_duplicate_program_error( notes ) end
+        expect( subject.get_duplicate_program_errors ).to be subject.errors.programs
+      end
+    end
+
+    describe "#add_duplicate_result_error" do
+      it "adds an element to results array of errors subelement" do
+        expect( subject.errors.results.size ).to eq( 0 )
+        results = iteration
+        results.times do subject.add_duplicate_result_error( notes ) end
+        expect( subject.errors.results.size ).to eq( results )
+      end
+    end
+
+    describe "#get_duplicate_result_errors" do
+      it "returns the results array of errors subelement" do
+        iteration.times do subject.add_duplicate_result_error( notes ) end
+        expect( subject.get_duplicate_result_errors ).to be subject.errors.results
+      end
+    end
+
+    describe "#add_duplicate_swimmer_error" do
+      it "adds an element to swimmers array of errors subelement" do
+        expect( subject.errors.swimmers.size ).to eq( 0 )
+        swimmers = iteration
+        swimmers.times do subject.add_duplicate_swimmer_error( notes ) end
+        expect( subject.errors.swimmers.size ).to eq( swimmers )
+      end
+    end
+
+    describe "#get_duplicate_swimmer_errors" do
+      it "returns the swimmers array of errors subelement" do
+        iteration.times do subject.add_duplicate_swimmer_error( notes ) end
+        expect( subject.get_duplicate_swimmer_errors ).to be subject.errors.swimmers
       end
     end
   end

@@ -266,41 +266,42 @@ describe ImporterEntityPopulator, type: :strategy do
     describe "#teams subelement" do
       it "is an hash" do
         expect( @ih.teams ).to be_a_kind_of( Hash )
-        #puts @ih.teams.keys.inspect
-        # "Virtus Buonconvento ssd",
-        # "Seven Master Nuoto asd",
-        # "Nuoto Club Lugo",
-        # "Il Grillo ssd Civitanova",
-        # "Pol Comunale Riccione",
-        # "Team Trezzo Sport ssd",
-        # "Nuovo Nuoto - Bologna",
-        # "Nuotando asd",
-        # "Rari Master Pesaro asd",
-        # "Centro Nuoto Bastia asd",
-        # "Amici Nuoto Firenze",
-        # "Nuotatori Ravennati",
-        # "SAN MARINO MASTER",
-        # "Prima ssd",
-        # "Fanum Fortunae Nuoto",
-        # "Thermae Sport asd",
-        # "Team Osimo Nuoto asd",
-        # "Imolanuoto",
-        # "Pol. Nuoto Montefeltro",
-        # "CSI Nuoto Ober Ferrari",
-        # "Pol.Bondeno Chi Gioca",
-        # "Pool Nuoto Sambenedettese",
-        # "Centro Nuoto Copparo",
-        # "Genova Nuoto My Sport ssd",
-        # "De Akker Team ssd arl",
-        # "Effetto Sport - Barzanò"
       end
       it "has exactly 26 keys" do
+        #puts @ih.teams.keys.inspect
         expect( @ih.teams.keys.size ).to eq( 26 )
       end
       it "contains expexted team_name keys" do
-        expect( @ih.teams.has_key?('Virtus Buonconvento ssd'.upcase) ).to eq( true )
-        expect( @ih.teams.has_key?('CSI Nuoto Ober Ferrari'.upcase) ).to eq( true )
-        expect( @ih.teams.has_key?('Effetto Sport - Barzanò'.upcase) ).to eq( true )
+        [
+          "Virtus Buonconvento ssd",
+          "Seven Master Nuoto asd",
+          "Nuoto Club Lugo",
+          "Il Grillo ssd Civitanova",
+          "Pol Comunale Riccione",
+          "Team Trezzo Sport ssd",
+          "Nuovo Nuoto - Bologna",
+          "Nuotando asd",
+          "Rari Master Pesaro asd",
+          "Centro Nuoto Bastia asd",
+          "Amici Nuoto Firenze",
+          "Nuotatori Ravennati",
+          "SAN MARINO MASTER",
+          "Prima ssd",
+          "Fanum Fortunae Nuoto",
+          "Thermae Sport asd",
+          "Team Osimo Nuoto asd",
+          "Imolanuoto",
+          "Pol. Nuoto Montefeltro",
+          "CSI Nuoto Ober Ferrari",
+          "Pol.Bondeno Chi Gioca",
+          "Pool Nuoto Sambenedettese",
+          "Centro Nuoto Copparo",
+          "Genova Nuoto My Sport ssd",
+          "De Akker Team ssd arl",
+          "Effetto Sport - Barzanò"
+        ].each do |team|
+          expect( @ih.teams.has_key?(team.upcase) ).to eq( true )
+        end
         expect( @ih.teams.has_key?('Team fasullo trallallà'.upcase) ).to eq( false )
       end
     end
@@ -421,6 +422,122 @@ describe ImporterEntityPopulator, type: :strategy do
       it "is empty" do
         #puts @iep.errors.inspect
         expect( @iep.errors.size ).to eq( 0 )
+      end
+    end
+  end
+  #-- -------------------------------------------------------------------------
+  #++
+
+
+  context "after parsed data analysis of 134219_errors sample" do
+
+    before(:context) do
+      @iepe = ImporterEntityPopulator.new( File.join(Rails.root, 'spec/fixtures/json/134219_errors.json'), Meeting.last(100).sample )
+      @iepe.parse
+      @iepe.get_distinct_elements
+      @ihe = @iepe.importer_hash
+      @errors = @iepe.errors
+    end
+
+    describe "#events subelement" do
+      it "is an hash" do
+        expect( @ihe.events ).to be_a_kind_of( Hash )
+      end
+      it "has exactly 1 key" do
+        expect( @ihe.events.keys.size ).to eq( 1 )
+      end
+      it "contains only 50SL key" do
+        expect( @ihe.events.has_key?('50SL') ).to eq( true )
+      end
+      it "has only JsonImporterDAO::EventImporterDAO values" do
+        @ihe.events.values do |event|
+          expect( event ).to be_an_instance_of( JsonImporterDAO::EventImporterDAO )
+        end
+      end
+    end
+
+    describe "#teams subelement" do
+      it "is an hash" do
+        expect( @ihe.teams ).to be_a_kind_of( Hash )
+      end
+      it "has exactly 6 keys" do
+        #puts @ih.teams.keys.inspect
+        expect( @ihe.teams.keys.size ).to eq( 6 )
+      end
+      it "contains expexted team_name keys" do
+        [
+          "Virtus Buonconvento ssd",
+          "Seven Master Nuoto asd",
+          "Nuoto Club Lugo",
+          "Amici Nuoto Firenze",
+          "Nuotatori Ravennati",
+          "Pol Comunale Riccione"
+        ].each do |team|
+          expect( @ihe.teams.has_key?(team.upcase) ).to eq( true )
+        end
+        expect( @ihe.teams.has_key?('Team fasullo trallallà'.upcase) ).to eq( false )
+      end
+    end
+
+    describe "#swimmers subelement" do
+      it "is an hash" do
+        @ihe.teams.values.each do |team|
+          expect( team.swimmers ).to be_a_kind_of( Hash )
+        end
+      end
+      it "has only JsonImporterDAO::EventProgramImporterDAO values" do
+        @ihe.teams.values.each do |team|
+          team.swimmers.values.each do |swimmer|
+            expect( swimmer ).to be_an_instance_of( JsonImporterDAO::SwimmerImporterDAO )
+          end
+        end
+      end
+      it "contains expected swimmer in respective teams" do
+        sks = []
+        sks << ['Virtus Buonconvento ssd', 'PETRINI ANDREA',   '1992', 'M']
+        sks << ['Seven Master Nuoto asd',  'Botteghi Marco',   '1990', 'M']
+        sks << ['Nuoto Club Lugo',         'Chiaraluce Mirko', '1994', 'M']
+        sks << ['Nuoto Club Lugo',         'Inventato Prima',  '1991', 'M']
+        sks << ['Nuoto Club Lugo',         'Inventato Adesso', '1990', 'M']
+        sks << ['Amici Nuoto Firenze',     "CESERI NICCOLO'",  '1988', 'M']
+        sks << ['Nuotatori Ravennati',     'Rossetti Michele', '1986', 'M']
+        sks << ['Pol Comunale Riccione',   'PROIETTI MATTEO',  '1986', 'M']
+        sks << ['Nuoto Club Lugo',         'Inventato Dopo',   '1986', 'M']
+        sks.each do |sk|
+          team = @ihe.teams[sk[0].upcase]
+          key = @iepe.create_swimmer_key( sk[1].upcase, sk[2], sk[3] )
+          #puts team.swimmers.inspect
+          #puts key
+          expect( team.swimmers.has_key?( key ) ).to eq( true )
+          swimmer = team.swimmers[key]
+          expect( swimmer.name ).to eq( sk[1].upcase )
+          expect( swimmer.year ).to eq( sk[2] )
+          expect( swimmer.sex ).to eq( sk[3] )
+        end
+      end
+    end
+
+    describe "#errors" do
+      it "is an Array" do
+        expect( @errors ).to be_a_kind_of( Array )
+      end
+      it "is not empty (contains 3 errors)" do
+        #puts @errors.inspect
+        expect( @errors.size ).to eq( 3 )
+      end
+      it "contains a program duplication error" do
+        #puts @errors.inspect
+        rd = @errors.select{ |error| error.slice(0, 26) == 'meeting_program duplicato:' }
+        expect( rd.size ).to eq( 1 )
+        expect( rd[0] ).to include( '50 Stile Libero - M25'.upcase )
+      end
+      it "contains a program duplication error" do
+        #puts @errors.inspect
+        pd = @errors.select{ |error| error.slice(0, 20) == 'risultato duplicato:' }
+        expect( pd.size ).to eq( 2 )
+        expect( pd.index{ |error| error.include?(@iepe.remove_invalid_char('Botteghi Marco'.upcase)) } ).to be >= 0
+        expect( pd.index{ |error| error.include?(@iepe.remove_invalid_char('Chiaraluce Mirko'.upcase)) } ).to be >= 0
+        expect( pd.index{ |error| error.include?(@iepe.remove_invalid_char('Farlocco Nuotatore'.upcase)) } ).to be_nil
       end
     end
   end

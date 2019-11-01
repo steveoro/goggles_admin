@@ -186,7 +186,7 @@ class ImporterEntityPopulator
 
         # Adds result to swimmer
         # If result exists for event code traces an error
-        @errors << "risultato duplicato: #{swimmer_key} #{event_code} #{program_title}" if swimmer.results.has_key?(event_code)
+        @errors << "risultato duplicato: #{swimmer_key} #{event_code} #{program_title} #{result.to_s}" if swimmer.results.has_key?(event_code)
         swimmer.results[event_code] = JsonImporterDAO::SwimmerResultImporterDAO.new( result['pos'], result['timing'], result['score'] )
       end
     end

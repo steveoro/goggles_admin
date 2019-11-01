@@ -1,0 +1,138 @@
+{
+  "name": "15° Trofeo Citta` di Riccione",
+  "meetingURL": "https://www.federnuoto.it/home/master/circuito-supermaster/archivio-2012-2019/stagione-2018-2019.html#/risultati/134219:15%C2%B0-trofeo-citta`%C2%A0di-riccione.html",
+  "manifestURL": "/component/solrconnect/download.html?file=L3Zhci93d3cvZmluX2ZpbGVzL2V2ZW50aS8wMDAwMTM0MjE5LnBkZg==",
+  "dateDay1": "08",
+  "dateMonth1": "Dicembre",
+  "dateYear1": "2018",
+  "dateDay2": "09",
+  "dateMonth2": "Dicembre",
+  "dateYear2": "2018",
+  "organization": "A.S.D. POLISPORTIVA COMUNALE RICCIONE",
+  "venue1": "RICCIONE STADIO DEL NUOTO",
+  "address1": "VIA MONTEROSA, SNC - Riccione (RN)",
+  "venue2": "",
+  "address2": "",
+  "poolLength": "50",
+  "timeLimit": "SI",
+  "registration": "12/11 - 03/12 23:45",
+  "sections": [
+    {
+      "title": "50 Stile Libero - M25",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "00",
+      "fin_sigla_categoria": "M25",
+      "fin_sesso": "M",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "PETRINI ANDREA",
+          "year": "1992",
+          "sex": "M",
+          "team": "Virtus Buonconvento ssd",
+          "timing": "24.32",
+          "score": "949,42"
+        },
+        {
+          "pos": "2",
+          "name": "Botteghi Marco",
+          "year": "1990",
+          "sex": "M",
+          "team": "Seven Master Nuoto asd",
+          "timing": "25.20",
+          "score": "916,27"
+        },
+        {
+          "pos": "3",
+          "name": "Chiaraluce Mirko",
+          "year": "1994",
+          "sex": "M",
+          "team": "Nuoto Club Lugo",
+          "timing": "25.90",
+          "score": "891,51"
+        },
+        {
+          "pos": "4",
+          "name": "Botteghi Marco",
+          "year": "1990",
+          "sex": "M",
+          "team": "Seven Master Nuoto asd",
+          "timing": "26.20",
+          "score": "850,27"
+        },
+        {
+          "pos": "5",
+          "name": "Inventato Prima",
+          "year": "1991",
+          "sex": "M",
+          "team": "Nuoto Club Lugo",
+          "timing": "26.24",
+          "score": "849,12"
+        },
+        {
+          "pos": "6",
+          "name": "Inventato Adesso",
+          "year": "1990",
+          "sex": "M",
+          "team": "Nuoto Club Lugo",
+          "timing": "26.25",
+          "score": "849,10"
+        }
+      ]
+    },
+    {
+      "title": "50 Stile Libero - M25",
+      "fin_id_evento": "134219",
+      "fin_codice_gara": "00",
+      "fin_sigla_categoria": "M30",
+      "fin_sesso": "M",
+      "rows": [
+        {
+          "pos": "1",
+          "name": "CESERI NICCOLO'",
+          "year": "1988",
+          "sex": "M",
+          "team": "Amici Nuoto Firenze",
+          "timing": "23.40",
+          "score": "984,62"
+        },
+        {
+          "pos": "2",
+          "name": "Rossetti Michele",
+          "year": "1986",
+          "sex": "M",
+          "team": "Nuotatori Ravennati",
+          "timing": "25.61",
+          "score": "899,65"
+        },
+        {
+          "pos": "3",
+          "name": "Chiaraluce Mirko",
+          "year": "1994",
+          "sex": "M",
+          "team": "Nuoto Club Lugo",
+          "timing": "25.90",
+          "score": "891,51"
+        },
+        {
+          "pos": "4",
+          "name": "PROIETTI MATTEO",
+          "year": "1986",
+          "sex": "M",
+          "team": "Pol Comunale Riccione",
+          "timing": "26.15",
+          "score": "881,07"
+        },
+        {
+          "pos": "5",
+          "name": "Inventato Dopo",
+          "year": "1986",
+          "sex": "M",
+          "team": "Nuoto Club Lugo",
+          "timing": "26.24",
+          "score": "849,12"
+        }
+      ]
+    }
+  ]
+}

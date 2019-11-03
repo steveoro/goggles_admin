@@ -91,7 +91,7 @@ gem 'zip'
 
 # [Steve, 20181221] *** Security updates: ***
 gem "ffi", "~> 1.9.25"
-gem 'rubyzip', '~> 1.2.2', require: 'zip/zip'
+gem 'rubyzip', '~> 1.3.0', require: 'zip/zip'
 
 
 group :development do

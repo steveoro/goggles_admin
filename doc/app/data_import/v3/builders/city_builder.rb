@@ -1,6 +1,5 @@
 # encoding: utf-8
 
-require_relative '../../../../app/data_import/v3/strategies/city_comparator'
 require_relative '../../../../app/data_import/v3/builders/entity_builder'
 
 

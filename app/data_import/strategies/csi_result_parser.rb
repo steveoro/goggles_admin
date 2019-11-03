@@ -10,7 +10,6 @@ require_relative './season_detect_utils'
 
 require_relative '../services/team_name_analyzer'
 require_relative '../services/swimmer_name_analyzer'
-require_relative './city_comparator'
 
 require_relative '../services/data_import_entity_builder'
 require_relative '../services/data_import_meeting_builder'

@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 require_relative './data_import_entity_builder'
-require_relative '../strategies/city_comparator'
 
 
 =begin

@@ -3,9 +3,6 @@
 require 'rails_helper'
 require 'ffaker'
 
-# [Steve, 20140925] we must use a relative path for sake of CI server happyness:
-require_relative '../../../../app/data_import/v3/strategies/city_comparator'
-
 
 describe V3::CityComparator, type: :strategy do
 

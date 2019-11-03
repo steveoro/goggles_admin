@@ -6,7 +6,6 @@ require_relative '../dao/header_fields_dao'
 require_relative '../services/team_name_analyzer'
 require_relative '../services/swimmer_name_analyzer'
 
-require_relative './city_comparator'
 require_relative './fin_result_parser'
 
 require_relative '../services/data_import_entity_builder'

@@ -54,6 +54,10 @@ DESC
     db_pwd           = rails_config.database_configuration[Rails.env]['password']
     log_dir          = ENV.include?("log_dir") ? ENV["log_dir"] : LOG_DIR
 
+    puts "Requiring Rails environment to allow usage of any Model..."
+    require 'rails/all'
+    require File.join( Rails.root.to_s, 'config/environment' )
+
     # Verify parameters
     unless season_id && Season.exists?( season_id )
       puts("This needs a valid season to scan for.")
@@ -66,10 +70,6 @@ DESC
     puts "log_dir:          #{log_dir}"
     puts "\r\n"
     logger = ConsoleLogger.new
-
-    puts "Requiring Rails environment to allow usage of any Model..."
-    require 'rails/all'
-    require File.join( Rails.root.to_s, 'config/environment' )
 
     # Find target entities
     season = Season.find( season_id )
@@ -104,7 +104,7 @@ DESC
       swimmer_best_finder = SwimmerPersonalBestFinder.new( swimmer )
       involved_seasons    = swimmer_best_finder.get_closed_seasons_involved_into( season_type, season.begin_date )
       logger.info( " - Seasons considered: #{involved_seasons.count}" )
-      logger.info( "   Last season: #{involved_seasons.first.get_full_name if involved_seasons.exists?}" )
+      logger.info( "   Last season: #{involved_seasons.first.get_full_name if involved_seasons.present?}" )
 
       swimmer_row = swimmer.complete_name + ';'
       swimmer_row << swimmer.year_of_birth.to_s + ';'

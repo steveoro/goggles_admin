@@ -158,7 +158,7 @@ DESC
     log_dir       = ENV.include?("log_dir") ? ENV["log_dir"] : LOG_DIR
 
     # Verify parameters
-    unless meeting_id && (Meeting.has_results.exists?( meeting_id ) || Meeting.find( meeting_id ).meeting_entries.exists? )
+    unless meeting_id && ( Meeting.has_results.exists?( meeting_id ) || Meeting.find( meeting_id ).meeting_entries.exists? )
       puts("This needs a valid meeting with results to scan for.")
       exit
     end
@@ -217,7 +217,7 @@ DESC
             best_swam = swimmer_best_finder.get_involved_season_last_best_for_key( involved_seasons, event_key )
             if best_swam
               swimmer_row << best_swam.to_s
-  
+
               # Prepare data for DB storage
               season_personal_standard               = SeasonPersonalStandard.new()
               season_personal_standard.season_id     = meeting.season_id
@@ -304,5 +304,3 @@ DESC
   end
 end
 # =============================================================================
-
-

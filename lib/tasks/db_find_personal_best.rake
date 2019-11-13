@@ -56,6 +56,10 @@ DESC
     db_pwd          = rails_config.database_configuration[Rails.env]['password']
     log_dir         = ENV.include?("log_dir") ? ENV["log_dir"] : LOG_DIR
 
+    puts "Requiring Rails environment to allow usage of any Model..."
+    require 'rails/all'
+    require File.join( Rails.root.to_s, 'config/environment' )
+
     # Verify parameters
     unless swimmer_id && Swimmer.exists?( swimmer_id )
       puts("This needs a valid swimmer to scan for.")
@@ -68,10 +72,6 @@ DESC
     puts "log_dir:          #{log_dir}"
     puts "\r\n"
     logger = ConsoleLogger.new
-
-    puts "Requiring Rails environment to allow usage of any Model..."
-    require 'rails/all'
-    require File.join( Rails.root.to_s, 'config/environment' )
 
     # Find target entities
     swimmer = Swimmer.find( swimmer_id )
@@ -99,7 +99,7 @@ DESC
 
     ActiveRecord::Base.transaction do
       suffix = ''
-      
+
       # Check if specific event
       if event_code || pool_code
         # Scan for specific event end/or pool type
@@ -120,7 +120,7 @@ DESC
 
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_personal_best_#{swimmer.id}#{suffix}.diff"
-      File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts swimmer_best_updater.sql_diff_text_log }
+      File.open( "#{LOG_DIR}/#{file_name}.sql", 'w' ) { |f| f.puts swimmer_best_updater.sql_diff_text_log }
       logger.info( "\r\nDiff file " + file_name + " created" )
 
       # Save data
@@ -192,13 +192,12 @@ DESC
     if split
       limit = (start_from + split - 1) > stop_after ? stop_after : (start_from + split - 1)
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_full_swimmer_personal_best_scan_#{start_from}_#{limit}.diff"
-      diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
-      diff_file.puts sql_header
     else
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_full_swimmer_personal_best_scan_#{start_from}_#{stop_after}.diff"
-      diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
-      diff_file.puts sql_header
     end
+    diff_file = File.open( "#{LOG_DIR}/#{file_name}.sql", 'w' )
+    diff_file.puts sql_header
+
     # Set the file name change flag in case we are creating more than 1 file:
     previous_diff_file_name = file_name
     logger.info( "\r\nCreated log file #{file_name}." )
@@ -209,7 +208,7 @@ DESC
         if split && current_swimmer.id % split == 1 && start_from != current_swimmer.id
           limit = (current_swimmer.id + split - 1) > stop_after ? stop_after : (current_swimmer.id + split - 1)
           file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_scan_all_swimmer_for_personal_bests_#{current_swimmer.id}_#{limit}.diff"
-          diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
+          diff_file = File.open( "#{LOG_DIR}/#{file_name}.sql", 'w' )
           diff_file.puts sql_header
           logger.info( "\r\n" )
           logger.info( "\r\n<------------------------------------------------------------>" )
@@ -232,7 +231,7 @@ DESC
         end
         # Close the transaction in the db-diff file when the file changes or ends:
         if split && previous_diff_file_name != file_name
-          previous_diff_file = File.open( LOG_DIR + '/' + previous_diff_file_name + '.sql', 'a+' )
+          previous_diff_file = File.open( "#{LOG_DIR}/#{previous_diff_file_name}.sql", 'a+' )
           previous_diff_file.puts sql_footer
         end
       end
@@ -286,15 +285,15 @@ DESC
     puts "\r\n"
     logger = ConsoleLogger.new
 
+    puts "Requiring Rails environment to allow usage of any Model..."
+    require 'rails/all'
+    require File.join( Rails.root.to_s, 'config/environment' )
+
     # Verify parameters
     unless meeting_id && Meeting.exists?( meeting_id )
       puts("This needs a valid meeting to scan for.")
       exit
     end
-
-    puts "Requiring Rails environment to allow usage of any Model..."
-    require 'rails/all'
-    require File.join( Rails.root.to_s, 'config/environment' )
 
     # Find target entities
     meeting = Meeting.find( meeting_id )
@@ -302,7 +301,7 @@ DESC
 
     # Create diff file
     file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_meeting_personal_best_#{meeting.id}.diff"
-    diff_file  = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
+    diff_file  = File.open( "#{LOG_DIR}/#{file_name}.sql", 'w' )
     diff_file.puts '--'
     diff_file.puts "-- Swimmer personal-best timings updates for Meeting #{meeting.get_full_name} (#{meeting.id})"
     diff_file.puts "-- #{DateTime.now().strftime('%d-%m-%Y %H:%M')}"
@@ -314,17 +313,26 @@ DESC
     personal_bests_found = 0
     results_scanned      = 0
 
+    # Optimeze init of finder and updater
+    last_swimmer         = 0
+    swimmer              = nil
+    swimmer_best_finder  = nil
+    swimmer_best_updater = nil
+
     ActiveRecord::Base.transaction do
-      meeting.meeting_individual_results.is_not_disqualified.sort_by_team.each do |meeting_individual_result|
+      meeting.meeting_individual_results.is_not_disqualified.unscope(:order).sort_by_swimmer.each do |meeting_individual_result|
         # Check only if not already the personal best
         if force || !meeting_individual_result.is_personal_best
-          # Initialize swimmer best finder
-          swimmer = meeting_individual_result.swimmer
-          swimmer_best_finder  = SwimmerPersonalBestFinder.new( swimmer )
-          swimmer_best_updater = SwimmerPersonalBestUpdater.new( swimmer )
-          unless swimmer_best_finder && swimmer_best_updater
-            puts("Something's wrong with the swimmer #{ swimmer.get_full_name }, used to scan for (#{ meeting_individual_result.get_team_name }).")
-            exit
+          if last_swimmer != meeting_individual_result.swimmer_id
+            # Initialize swimmer best finder
+            swimmer = meeting_individual_result.swimmer
+            swimmer_best_finder  = SwimmerPersonalBestFinder.new( swimmer )
+            swimmer_best_updater = SwimmerPersonalBestUpdater.new( swimmer )
+            unless swimmer_best_finder && swimmer_best_updater
+              puts("Something's wrong with the swimmer #{ swimmer.get_full_name }, used to scan for (#{ meeting_individual_result.get_team_name }).")
+              exit
+            end
+            last_swimmer = meeting_individual_result.swimmer_id
           end
 
           # Check if result is a new personal best for swimmer
@@ -332,7 +340,7 @@ DESC
             event_by_pool_type = meeting_individual_result.get_event_by_pool_type
             swimmer_best_updater.set_personal_best!( event_by_pool_type, true, meeting_individual_result.id )
             personal_bests_found += 1
-            logger.info( "#{meeting_individual_result.get_team_name} - Found #{swimmer.get_full_name} new personal-best for #{event_by_pool_type.get_full_name}: #{meeting_individual_result.get_timing}" )
+            logger.info( "#{swimmer.get_full_name} (#{meeting_individual_result.get_team_name}) - Found new personal-best for #{event_by_pool_type.get_full_name}: #{meeting_individual_result.get_timing}" )
             diff_file.puts swimmer_best_updater.sql_diff_text_log
           else
             # If forced calculation scan for personal best
@@ -341,9 +349,9 @@ DESC
               best_mir = swimmer_best_finder.find_best_mir_for_event( event_by_pool_type.event_type, event_by_pool_type.pool_type )
               swimmer_best_updater.set_personal_best!( event_by_pool_type, true, best_mir.id )
               personal_bests_found += 1
-              logger.info( "#{meeting_individual_result.get_team_name} - Set existing #{swimmer.get_full_name} personal-best for #{event_by_pool_type.get_full_name}: #{best_mir.get_timing}" )
-              diff_file.puts swimmer_best_updater.sql_diff_text_log             
-            end  
+              logger.info( "#{swimmer.get_full_name} (#{meeting_individual_result.get_team_name}) - Set existing personal-best for #{event_by_pool_type.get_full_name}: #{best_mir.get_timing}" )
+              diff_file.puts swimmer_best_updater.sql_diff_text_log
+            end
           end
         end
         results_scanned += 1
@@ -382,5 +390,3 @@ DESC
 end
 #-- ---------------------------------------------------------------------------
 #++
-
-

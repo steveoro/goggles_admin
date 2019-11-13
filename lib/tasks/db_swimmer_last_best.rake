@@ -157,6 +157,10 @@ DESC
     db_pwd        = rails_config.database_configuration[Rails.env]['password']
     log_dir       = ENV.include?("log_dir") ? ENV["log_dir"] : LOG_DIR
 
+    puts "Requiring Rails environment to allow usage of any Model..."
+    require 'rails/all'
+    require File.join( Rails.root.to_s, 'config/environment' )
+
     # Verify parameters
     unless meeting_id && ( Meeting.has_results.exists?( meeting_id ) || Meeting.find( meeting_id ).meeting_entries.exists? )
       puts("This needs a valid meeting with results to scan for.")
@@ -169,10 +173,6 @@ DESC
     puts "log_dir:          #{log_dir}"
     puts "\r\n"
     logger = ConsoleLogger.new
-
-    puts "Requiring Rails environment to allow usage of any Model..."
-    require 'rails/all'
-    require File.join( Rails.root.to_s, 'config/environment' )
 
     # Find target entities
     meeting = Meeting.find( meeting_id )
@@ -240,7 +240,7 @@ DESC
     # Create csv file
     logger.info( "\r\nSwimmer involved: #{involved_swimmers}" )
     file_name = "meeting_swimmer_last_best_#{meeting.id}"
-    File.open( LOG_DIR + '/' + file_name + '.csv', 'w' ) { |f| f.puts csv_rows }
+    File.open( "#{LOG_DIR}/#{file_name}.csv", 'w' ) { |f| f.puts csv_rows }
     logger.info( "\r\nLog file " + file_name + " created" )
 
     # Store data n DB and prepare diff file
@@ -249,7 +249,7 @@ DESC
       season_personal_standards_to_db( meeting, season_personal_standards, recalculate )
 
       # Create diff file
-      File.open( LOG_DIR + '/' + diff_file_name + '.sql', 'w' ) { |f| f.puts sql_diff_text_log }
+      File.open( "#{LOG_DIR}/#{diff_file_name}.sql", 'w' ) { |f| f.puts sql_diff_text_log }
       logger.info( "\r\nDiff file " + diff_file_name + " created" )
 
       # Persist data if needed

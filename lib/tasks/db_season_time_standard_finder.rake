@@ -55,9 +55,13 @@ DESC
     db_pwd        = rails_config.database_configuration[Rails.env]['password']
     log_dir       = ENV.include?("log_dir") ? ENV["log_dir"] : LOG_DIR
 
+    puts "Requiring Rails environment to allow usage of any Model..."
+    require 'rails/all'
+    require File.join( Rails.root.to_s, 'config/environment' )
+
     # Verify parameters
-    unless season_id
-      puts("This needs season parameter.")
+    unless season_id && Season.exists?( season_id )
+      puts("This needs valid season parameter.")
       exit
     end
 
@@ -67,10 +71,6 @@ DESC
     puts "log_dir:          #{log_dir}"
     puts "\r\n"
     logger = ConsoleLogger.new
-
-    puts "Requiring Rails environment to allow usage of any Model..."
-    require 'rails/all'
-    require File.join( Rails.root.to_s, 'config/environment' )
 
     # Find target entities
     season = Season.find( season_id )
@@ -83,16 +83,16 @@ DESC
     ActiveRecord::Base.transaction do
       # Find best in previous seasons and store to DB
       spb.to_db!
-      
+
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_season_time_standard_finder_#{season_id}.diff"
-      File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts spb.sql_diff_text_log }
-      logger.info( "\r\nLog file " + file_name + " created" )
+      File.open( "#{LOG_DIR}/#{file_name}.sql", 'w' ) { |f| f.puts spb.sql_diff_text_log }
+      logger.info( "\r\nLog file #{file_name} created" )
 
       # Generate CSV file to view data
-      csv_file_name = 'time_standard_' + season.id.to_s
-      spb.to_csv( LOG_DIR + '/' + csv_file_name )
-      logger.info( "\r\nCSV file " + csv_file_name + " created" )
+      csv_file_name = "time_standard_#{season.id}"
+      spb.to_csv( "#{LOG_DIR}/#{csv_file_name}" )
+      logger.info( "\r\nCSV file #{csv_file_name} created" )
 
       # Save data or rollback in persist is false
       if not persist
@@ -107,5 +107,3 @@ DESC
   #++
 end
 # =============================================================================
-
-

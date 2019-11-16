@@ -26,38 +26,32 @@ describe ImporterEntityValidator, type: :strategy do
       end
     end
 
-    describe "#get_season" do
+    describe "#season" do
       it "returns the season of the meeting's data" do
-        expect( subject.season ).to be_nil
         expect( subject.importer_hash.meeting ).to be_an_instance_of( Meeting )
-        subject.get_season
         expect( subject.season ).to be_an_instance_of( Season )
         expect( subject.season.id ).to eq( subject.importer_hash.meeting.season_id )
       end
     end
 
-    describe "#get_season_affiliations" do
-      it "returns a collection of TeamAffiliations and initalize seasonal_affiliations" do
-        expect( subject.seasonal_affiliations ).to be_nil
-        expect( subject.get_season_affiliations ).to all( be_an_instance_of( TeamAffiliation ))
-        expect( subject.seasonal_affiliations ).not_to be_nil
+    describe "#season_affiliations" do
+      it "returns a collection of TeamAffiliations" do
+        expect( subject.season_affiliations ).to all( be_an_instance_of( TeamAffiliation ))
       end
       it "returns a collection of TeamAffiliations of the meeting season" do
-        subject.get_season_affiliations.each do |ta|
+        subject.season_affiliations.each do |ta|
           expect( ta.season_id ).to eq( subject.importer_hash.meeting.season_id )
         end
       end
     end
 
-    describe "#get_all_affiliations" do
-      it "returns a collection of TeamAffiliations and initalize all_affiliations" do
-        expect( subject.all_affiliations ).to be_nil
-        expect( subject.get_all_affiliations ).to all( be_an_instance_of( TeamAffiliation ))
-        expect( subject.all_affiliations ).not_to be_nil
+    describe "#all_affiliations" do
+      it "returns a collection of TeamAffiliations" do
+        expect( subject.all_affiliations ).to all( be_an_instance_of( TeamAffiliation ))
         expect( subject.all_affiliations.count ).to be >= 0
       end
       it "returns a collection of TeamAffiliations at least like seasonals" do
-        expect( subject.get_all_affiliations.count ).to be >= subject.get_season_affiliations.count
+        expect( subject.all_affiliations.count ).to be >= subject.season_affiliations.count
       end
     end
   end

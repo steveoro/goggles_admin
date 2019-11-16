@@ -33,7 +33,7 @@ class ImporterEntityValidator
   attr_reader :importer_hash
 
   # These can be edited later on:
-  attr_accessor :season, :seasonal_affiliations, :all_affiliations
+  #attr_accessor :season, :season_affiliations, :all_affiliations
 
   # Creates a new instance
   #
@@ -51,28 +51,35 @@ class ImporterEntityValidator
 
   # Gets the season of the meeting
   #
-  def get_season
+  def season
     @season ||= Season.find(@importer_hash.meeting.season_id)
   end
 
   # Memorized getter for seasonal TeamAffiliation instances.
   #
-  def get_season_affiliations
-    get_season
-    @seasonal_affiliations ||= TeamAffiliation.where( season_id: @season.id )
+  def season_affiliations
+    @season_affiliations ||= TeamAffiliation.where( season_id: season.id )
   end
 
   # Memorized getter for seasonal TeamAffiliation instances.
   #
-  def get_all_affiliations
-    get_season
-    @all_affiliations ||= TeamAffiliation.joins(:season).where( "seasons.season_type_id = #{@season.season_type_id}" )
+  def all_affiliations
+    @all_affiliations ||= TeamAffiliation.joins(:season).where( "seasons.season_type_id = #{season.season_type_id}" )
+  end
+
+  # Returns the internal FuzzyStringMatcher dedicated to scanning all TeamAffiliation instances.
+  #
+  def season_affiliation_matcher
+    @season_affiliations_matcher ||= FuzzyStringMatcher.new( season_affiliations, :name )
   end
 
   # Validates a team
   # Performs step 1.
-  def validate_team( team_importer_DAO )
+  def validate_team( team_importer_DAO, starting_bias_score = FuzzyStringMatcher::BIAS_SCORE_MAX, ending_bias_score = FuzzyStringMatcher::BIAS_SCORE_MIN )
     name_to_validate = team_importer_DAO.name
+
+    # Step 1 - Validate within seasonal team affiliation
+    bias_score_s, result_list_s = season_affiliation_matcher.seek_deep_match( name_to_validate, starting_bias_score, ending_bias_score )
 
   end
   #-- --------------------------------------------------------------------------

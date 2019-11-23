@@ -116,12 +116,12 @@ DESC
     # Verify if edition is in meeting name
     new_description = meeting.description
     if meeting.description.start_with?(meeting.edition.to_s)
-      new_description = new_edition.to_s + meeting.description.slice(meeting.edition.to_s.length..-1) 
-    end 
+      new_description = new_edition.to_s + meeting.description.slice(meeting.edition.to_s.length..-1)
+    end
 
     # Create diff file
     file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_meeting_create_from_template_#{new_id}.diff"
-    diff_file = File.open( LOG_DIR + '/' + file_name + '.sql', 'w' )
+    diff_file = File.open( "#{LOG_DIR}/#{file_name}.sql", 'w' )
     diff_file.puts "-- Meeting: #{new_description} (#{new_id})"
     diff_file.puts "\r\n-- Season:  #{season.get_full_name} (#{season.id})"
     diff_file.puts "\r\n-- Edition: #{new_edition}"
@@ -163,7 +163,7 @@ DESC
       newer_meeting.is_fb_posted         = false
       newer_meeting.is_tweeted           = false
       newer_meeting.notes                = ""
-      
+
       if newer_meeting.save
         create_sql_diff_header("-- Meeting: #{meeting.get_full_name} (#{new_id})")
         sql_diff_text_log << to_sql_insert( newer_meeting, false, "\r\n" ) # no additional comment
@@ -179,7 +179,7 @@ DESC
             newer_session.session_order  = session_index + 1  # Reset session order
             if newer_session.save
               sql_diff_text_log << "\r\n"
-              add_sql_diff_comment("Session #{meeting_session.session_order} -> #{session_index + 1}: #{meeting_session.swimming_pool.get_verbose_name}") 
+              add_sql_diff_comment("Session #{meeting_session.session_order} -> #{session_index + 1}: #{meeting_session.swimming_pool.get_verbose_name}")
               sql_diff_text_log << to_sql_insert( newer_session, false, " -- Session #{session_index + 1} -> #{meeting_session.session_order}: #{meeting_session.swimming_pool.get_verbose_name}\r\n" )
               logger.info( "Session #{meeting_session.session_order} -> #{session_index + 1}: #{meeting_session.swimming_pool.get_verbose_name}" )
 
@@ -194,9 +194,9 @@ DESC
 
                   # Some values should be cleared
                   newer_event.begin_time = nil
-                  
+
                   if newer_event.save
-                    add_sql_diff_comment("Event #{meeting_event.event_order} -> #{event_number} - #{meeting_event.event_type.code}") 
+                    add_sql_diff_comment("Event #{meeting_event.event_order} -> #{event_number} - #{meeting_event.event_type.code}")
                     sql_diff_text_log << to_sql_insert( newer_event, false, " -- Event #{event_index + 1} -> #{meeting_event.event_order} - #{meeting_event.event_type.code}\r\n" )
                     logger.info( "- Event #{meeting_event.event_order} -> #{event_number} - #{meeting_event.event_type.code}" )
                   else
@@ -232,5 +232,3 @@ DESC
   #++
 end
 # =============================================================================
-
-

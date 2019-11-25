@@ -43,9 +43,9 @@ GIT
 
 GIT
   remote: https://github.com/steveoro/goggles_core
-  revision: 643a081a32d9ef51a921941214a65e767a48dc26
+  revision: c32aeda8905dad948ded12adec27dc067c6d1fd8
   specs:
-    goggles_core (1.4.25)
+    goggles_core (1.4.26)
       actionview (~> 5.1.6.2)
       active_hash_relation
       active_model_serializers
@@ -389,7 +389,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rainbow (2.2.2)
       rake
-    rake (13.0.0)
+    rake (13.0.1)
     rb-fsevent (0.10.2)
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)

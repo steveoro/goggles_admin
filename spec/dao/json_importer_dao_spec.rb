@@ -21,7 +21,8 @@ describe JsonImporterDAO, type: :model do
   let(:badge_id)            { (rand * 10000).to_i + 1 }
 
   let(:team_name)           { "#{FFaker::Lorem.word.camelcase} Swimming Team" }
-  let(:affiliation_id)      { (rand * 1000).to_i + 1 }
+  let(:team_id)             { (rand * 1000).to_i + 1 }
+  let(:affiliation_id)      { (rand * 1500).to_i + 1 }
 
   let(:program_name)        { "#{EventType.all.sample.i18n_description} - M#{[25, 30, 35, 40, 45, 50, 55, 60].sample}" }
   let(:pool)                { PoolType.all.sample.code }
@@ -114,7 +115,7 @@ describe JsonImporterDAO, type: :model do
 
     it_behaves_like( "(the existance of a method)", [
       :name,
-      :affiliation_id, :swimmers
+      :team_id, :affiliation_id, :swimmers
     ] )
 
     describe "when initialized with required parameters" do
@@ -122,6 +123,7 @@ describe JsonImporterDAO, type: :model do
         expect( subject.name ).to eq( team_name )
       end
       it "returns defaults for optional values" do
+        expect( subject.team_id ).to be_nil
         expect( subject.affiliation_id ).to be_nil
       end
       it "returns an empty hash for results" do
@@ -132,11 +134,12 @@ describe JsonImporterDAO, type: :model do
 
     describe "when initialized with optional parameters" do
       it "returns given values" do
-        ti = JsonImporterDAO::TeamImporterDAO.new( team_name, affiliation_id )
+        ti = JsonImporterDAO::TeamImporterDAO.new( team_name, team_id, affiliation_id )
+        expect( ti.team_id ).to eq( team_id )
         expect( ti.affiliation_id ).to eq( affiliation_id )
       end
       it "returns an empty hash for results" do
-        ti = JsonImporterDAO::TeamImporterDAO.new( team_name, affiliation_id )
+        ti = JsonImporterDAO::TeamImporterDAO.new( team_name, team_id, affiliation_id )
         expect( ti.swimmers ).to be_a_kind_of( Hash )
         expect( ti.swimmers.size ).to eq( 0 )
       end

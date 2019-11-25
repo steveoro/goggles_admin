@@ -67,14 +67,15 @@ class JsonImporterDAO
     attr_reader :name
 
     # These can be edited later on:
-    attr_accessor :affiliation_id, :swimmers
+    attr_accessor :affiliation_id, :team_id, :swimmers
 
     # Creates a new instance.
     #
-    def initialize( name, affiliation_id = nil )
+    def initialize( name, team_id = nil, affiliation_id = nil )
       @name = name
 
       # Optional parameters
+      @team_id        = team_id
       @affiliation_id = affiliation_id
 
       @swimmers = Hash.new()
@@ -194,7 +195,7 @@ class JsonImporterDAO
   def get_duplicate_result_errors
     @errors.results
   end
-  
+
   def get_errors_count
     @errors.get_total_count
   end

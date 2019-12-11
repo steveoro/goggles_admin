@@ -145,10 +145,10 @@ DESC
       newer_meeting.header_year          = SeasonCreator.next_header_year( newer_meeting.header_year, increment )
 
       logger.info( "<------------------------------------------------------------>" )
-      logger.info( "description: " + newer_meeting.description )
-      logger.info( "header_date: " + newer_meeting.header_date.to_s )
+      logger.info( "description:    " + newer_meeting.description )
+      logger.info( "header_date:    " + newer_meeting.header_date.to_s )
       logger.info( "entry_deadline: " + newer_meeting.entry_deadline.to_s )
-      logger.info( "header_year: " + newer_meeting.header_year.to_s )
+      logger.info( "header_year:    " + newer_meeting.header_year.to_s )
       logger.info( "<------------------------------------------------------------>" )
 
       # Some values should be cleared
@@ -165,7 +165,7 @@ DESC
       newer_meeting.notes                = ""
 
       if newer_meeting.save
-        create_sql_diff_header("-- Meeting: #{meeting.get_full_name} (#{new_id})")
+        create_sql_diff_header("Meeting: #{meeting.get_full_name} (#{new_id})")
         sql_diff_text_log << to_sql_insert( newer_meeting, false, "\r\n" ) # no additional comment
 
         # Collect meeting sessions too
@@ -208,7 +208,7 @@ DESC
               logger.info( "\r\nUnexpected and unpredictable and unusual error during meeting session(s) save." )
             end
           end
-          create_sql_diff_footer("-- Meeting: #{meeting.get_full_name} (#{new_id})")
+          create_sql_diff_footer("Meeting: #{meeting.get_full_name} (#{new_id})")
         end
 
         diff_file.puts sql_diff_text_log

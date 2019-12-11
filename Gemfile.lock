@@ -43,9 +43,9 @@ GIT
 
 GIT
   remote: https://github.com/steveoro/goggles_core
-  revision: c32aeda8905dad948ded12adec27dc067c6d1fd8
+  revision: b5b45cd14bbf3aaa5ac649366d6ce9cc447edbbf
   specs:
-    goggles_core (1.4.26)
+    goggles_core (1.4.28)
       actionview (~> 5.1.6.2)
       active_hash_relation
       active_model_serializers
@@ -288,7 +288,7 @@ GEM
     listen (3.0.8)
       rb-fsevent (~> 0.9, >= 0.9.4)
       rb-inotify (~> 0.9, >= 0.9.7)
-    loofah (2.3.1)
+    loofah (2.4.0)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
     lumberjack (1.0.12)
@@ -320,7 +320,7 @@ GEM
     net-http-persistent (2.9.4)
     netrc (0.11.0)
     nio4r (2.5.2)
-    nokogiri (1.10.5)
+    nokogiri (1.10.6)
       mini_portile2 (~> 2.4.0)
     notiffany (0.1.1)
       nenv (~> 0.1)

@@ -133,7 +133,11 @@ DESC
 
     if reservations.count > 0
       # Define columns
-      columns = ['SPEC', 'MASTER', 'SEX', 'CAT', 'ISCR', 'MIN', 'SEC', 'CEN', '', '', '', '', '', 'INSERT']
+      columns = ['SPEC', 'SEX', 'CAT', 'MASTER', 'ISCR',
+                 'MIN', 'SEC', 'CEN', 'POSIZIONE', 'PUNTI',
+                 '', '', '',
+                 'INSERT',
+                 'MP_ID', 'SW_ID', 'TM_ID', 'BD_ID', 'TA_ID']
 
       # Create csv file
       file_name = "ris#{meeting.meeting_date_to_iso}#{meeting.code}_realtime_#{team_id}"
@@ -145,6 +149,7 @@ DESC
       logger.info("Found #{reservations.count} results to create:")
       is_ok = true
       added = 0
+      cur_line = 2
 
       # Cycle meeting reservations
       reservations.each do |reservation|
@@ -153,9 +158,31 @@ DESC
 
         # Verify if program already exists
         if reservation['meeting_program_id']
+          cur_line += 1
+
+          # Creates formula to insert mir
+          meeting_program_id  = reservation['meeting_program_id'].to_i
+          swimmer_id          = reservation['swimmer_id'].to_i
+          team_id             = reservation['team_id'].to_i
+          badge_id            = reservation['badge_id'].to_i
+          team_affiliation_id = reservation['team_affiliation_id'].to_i
+          insert_formula = "=\"insert into meeting_individual_results () values () -- #{reservation['event']}-#{reservation['complete_name']}\""
+
+          # Creates formula to calculate fin points
+          time_standard_id = reservation['time_standard_id'].to_i
+          if time_standard_id > 0
+            ts = TimeStandard.find(time_standard_id).get_timing_instance.to_hundreds
+            standard_time_formula = "=#{ts}*1000/(F#{cur_line}*6000+G#{cur_line}*100+H#{cur_line})"
+          else
+            standard_time_formula = '0.00'
+          end
+
           # Creates new meeting result line in csv
-          insert_formula = "=insert into meeting_individual_results () values () -- #{reservation['event']}-#{reservation['complete_name']} (#{suggested_time.to_s})"
-          line = "#{reservation['event']};#{reservation['complete_name']};#{reservation['gender']};#{reservation['category']};#{suggested_time.to_s};;;;;;;;#{insert_formula}"
+          line = "#{reservation['event']};#{reservation['gender']};#{reservation['category']};#{reservation['complete_name']};#{suggested_time.to_s};"
+          line += "0;0;0;0;#{standard_time_formula};"
+          line += ";;;"
+          line += "#{insert_formula};"
+          line += "#{meeting_program_id};#{swimmer_id};#{team_id};#{badge_id};#{team_affiliation_id};"
           csv_file.puts line
 
         else

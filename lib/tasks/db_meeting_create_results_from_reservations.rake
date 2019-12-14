@@ -47,7 +47,7 @@ DESC
     logger.info( "*** db:meeting_create_programs_from_reservations ***" )
     meeting_id      = ENV.include?("meeting")   ? ENV["meeting"].to_i : nil
     team_id         = ENV.include?("team")      ? ENV["team"].to_i    : 1
-    separator       = ENV.include?("separator") ? ENV["separator"]    : ';'
+    separator       = ENV.include?("separator") ? ENV["separator"]    : '|'
     rails_config    = Rails.configuration             # Prepare & check configuration:
     db_name         = rails_config.database_configuration[Rails.env]['database']
     db_user         = rails_config.database_configuration[Rails.env]['username']
@@ -133,16 +133,16 @@ DESC
 
     if reservations.count > 0
       # Define columns
-      columns = ['SPEC', 'SEX', 'CAT', 'MASTER', 'ISCR',
-                 'MIN', 'SEC', 'CEN', 'POSIZIONE', 'PUNTI',
-                 '', '', '',
-                 'INSERT',
-                 'MP_ID', 'SW_ID', 'TM_ID', 'BD_ID', 'TA_ID']
+      columns = ['SPEC', 'SEX', 'CAT', 'MASTER', 'ISCR',             # A, B, C, D, E
+                 'MIN', 'SEC', 'CEN', 'POSIZIONE', 'PUNTI', 'CHECK', # F, G, H, I. J, K
+                 '', '', '', '', '',                                 # L, M, N, O, P,
+                 '0', 'INSERT',                                      # Q, R,
+                 'MP_ID', 'SW_ID', 'TM_ID', 'BD_ID', 'TA_ID']        # S, T, U, V, W
 
       # Create csv file
       file_name = "ris#{meeting.meeting_date_to_iso}#{meeting.code}_realtime_#{team_id}"
       csv_file = File.open( "#{LOG_DIR}/#{file_name}.csv", 'w' )
-      csv_file.puts "#{meeting.get_full_name} - #{meeting.header_date}"
+      csv_file.puts "#{meeting.get_meeting_date}#{separator}#{meeting.get_full_name}"
       headers = columns.join(separator)
       csv_file.puts headers
 
@@ -166,23 +166,29 @@ DESC
           team_id             = reservation['team_id'].to_i
           badge_id            = reservation['badge_id'].to_i
           team_affiliation_id = reservation['team_affiliation_id'].to_i
-          insert_formula = "=\"insert into meeting_individual_results () values () -- #{reservation['event']}-#{reservation['complete_name']}\""
+          id_formula     = "=Q#{cur_line - 1} + 1"
+          fields = '(id,meeting_program_id,swimmer_id,team_id,badge_id,team_affiliation_id,rank, minutes,seconds,hundreds,standard_points)'
+          values = "(\"&Q#{cur_line}&\",\"&S#{cur_line}&\",\"&T#{cur_line}&\",\"&U#{cur_line}&\",\"&V#{cur_line}&\",\"&W#{cur_line}&\",\"&I#{cur_line}&\",\"&F#{cur_line}&\",\"&G#{cur_line}&\",\"&H#{cur_line}&\",\"&SOSTITUISCI(J#{cur_line};\",\";\".\")&\")"
+          insert_formula = "=SE(K#{cur_line}=\"OK\";\"insert into meeting_individual_results #{fields} values #{values};\";\"\")&\" -- #{reservation['event']}-#{reservation['complete_name']}\""
 
           # Creates formula to calculate fin points
           time_standard_id = reservation['time_standard_id'].to_i
           if time_standard_id > 0
             ts = TimeStandard.find(time_standard_id).get_timing_instance.to_hundreds
-            standard_time_formula = "=#{ts}*1000/(F#{cur_line}*6000+G#{cur_line}*100+H#{cur_line})"
+            standard_time_formula = "=SE(SOMMA(F#{cur_line}:H#{cur_line})>0;ARROTONDA(#{ts}*1000/(F#{cur_line}*6000+G#{cur_line}*100+H#{cur_line});2);0)"
           else
-            standard_time_formula = '0.00'
+            standard_time_formula = '0'
           end
 
+          # Creates a check formula to protect insert
+          check_formula = "=SE(O(MAIUSC(I#{cur_line})=\"RIT\";MAIUSC(I#{cur_line})=\"SQ\";E(SOMMA(F#{cur_line}:H#{cur_line})>0;VAL.NUMERO(I#{cur_line})>0;I#{cur_line}>0));\"OK\";\"\")"
+
           # Creates new meeting result line in csv
-          line = "#{reservation['event']};#{reservation['gender']};#{reservation['category']};#{reservation['complete_name']};#{suggested_time.to_s};"
-          line += "0;0;0;0;#{standard_time_formula};"
-          line += ";;;"
-          line += "#{insert_formula};"
-          line += "#{meeting_program_id};#{swimmer_id};#{team_id};#{badge_id};#{team_affiliation_id};"
+          line = "#{reservation['event']}#{separator}#{reservation['gender']}#{separator}#{reservation['category']}#{separator}#{reservation['complete_name']}#{separator}#{suggested_time.to_s}#{separator}"
+          line += "0#{separator}0#{separator}0#{separator}0#{separator}#{standard_time_formula}#{separator}#{check_formula}#{separator}"
+          line += "#{separator}#{separator}#{separator}#{separator}#{separator}"
+          line += "#{id_formula}#{separator}#{insert_formula}#{separator}"
+          line += "#{meeting_program_id}#{separator}#{swimmer_id}#{separator}#{team_id}#{separator}#{badge_id}#{separator}#{team_affiliation_id}"
           csv_file.puts line
 
         else

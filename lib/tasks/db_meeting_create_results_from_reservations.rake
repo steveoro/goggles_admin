@@ -135,7 +135,7 @@ DESC
       # Define columns
       columns = ['SPEC', 'SEX', 'CAT', 'MASTER', 'ISCR',             # A, B, C, D, E
                  'MIN', 'SEC', 'CEN', 'POSIZIONE', 'PUNTI', 'CHECK', # F, G, H, I. J, K
-                 '', '', '', '', '',                                 # L, M, N, O, P,
+                 'FG', '', '', '', '',                               # L, M, N, O, P,
                  '0', 'INSERT',                                      # Q, R,
                  'MP_ID', 'SW_ID', 'TM_ID', 'BD_ID', 'TA_ID']        # S, T, U, V, W
 
@@ -167,9 +167,9 @@ DESC
           badge_id            = reservation['badge_id'].to_i
           team_affiliation_id = reservation['team_affiliation_id'].to_i
           id_formula     = "=Q#{cur_line - 1} + 1"
-          fields = '(id,meeting_program_id,swimmer_id,team_id,badge_id,team_affiliation_id,rank, minutes,seconds,hundreds,standard_points)'
-          values = "(\"&Q#{cur_line}&\",\"&S#{cur_line}&\",\"&T#{cur_line}&\",\"&U#{cur_line}&\",\"&V#{cur_line}&\",\"&W#{cur_line}&\",\"&I#{cur_line}&\",\"&F#{cur_line}&\",\"&G#{cur_line}&\",\"&H#{cur_line}&\",\"&SOSTITUISCI(J#{cur_line};\",\";\".\")&\")"
-          insert_formula = "=SE(K#{cur_line}=\"OK\";\"insert into meeting_individual_results #{fields} values #{values};\";\"\")&\" -- #{reservation['event']}-#{reservation['complete_name']}\""
+          fields = '(id,meeting_program_id,swimmer_id,team_id,badge_id,team_affiliation_id,rank, minutes,seconds,hundreds,standard_points,is_disqualified,is_out_of_race,lock_version,user_id,created_at,updated_at)'
+          values = "(\"&Q#{cur_line}&\",\"&S#{cur_line}&\",\"&T#{cur_line}&\",\"&U#{cur_line}&\",\"&V#{cur_line}&\",\"&W#{cur_line}&\",\"&I#{cur_line}&\",\"&F#{cur_line}&\",\"&G#{cur_line}&\",\"&H#{cur_line}&\",\"&SOSTITUISCI(J#{cur_line};\",\";\".\")&\",\"&SE(I#{cur_line}=\"DSQ\";1;0)&\",\"&L#{cur_line}&\",0,2,curdate(),curdate());\""
+          insert_formula = "=SE(K#{cur_line}=\"OK\";\"insert into meeting_individual_results #{fields} values #{values};\"\")&\" -- #{reservation['event']}-#{reservation['complete_name']}\""
 
           # Creates formula to calculate fin points
           time_standard_id = reservation['time_standard_id'].to_i
@@ -186,7 +186,7 @@ DESC
           # Creates new meeting result line in csv
           line = "#{reservation['event']}#{separator}#{reservation['gender']}#{separator}#{reservation['category']}#{separator}#{reservation['complete_name']}#{separator}#{suggested_time.to_s}#{separator}"
           line += "0#{separator}0#{separator}0#{separator}0#{separator}#{standard_time_formula}#{separator}#{check_formula}#{separator}"
-          line += "#{separator}#{separator}#{separator}#{separator}#{separator}"
+          line += "#{reservation['is_out_of_race']}#{separator}#{separator}#{separator}#{separator}#{separator}"
           line += "#{id_formula}#{separator}#{insert_formula}#{separator}"
           line += "#{meeting_program_id}#{separator}#{swimmer_id}#{separator}#{team_id}#{separator}#{badge_id}#{separator}#{team_affiliation_id}"
           csv_file.puts line

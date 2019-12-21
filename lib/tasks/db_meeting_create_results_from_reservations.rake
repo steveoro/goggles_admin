@@ -132,11 +132,14 @@ DESC
     reservations = ActiveRecord::Base.connection.exec_query(data_retrieve_query)
 
     if reservations.count > 0
+      # Get max mir ID
+      max_id = MeetingIndividualResult.order( :id ).last.id
+
       # Define columns
       columns = ['SPEC', 'SEX', 'CAT', 'MASTER', 'ISCR',             # A, B, C, D, E
                  'MIN', 'SEC', 'CEN', 'POSIZIONE', 'PUNTI', 'CHECK', # F, G, H, I. J, K
                  'FG', '', '', '', '',                               # L, M, N, O, P,
-                 '0', 'INSERT',                                      # Q, R,
+                 max_id.to_s, 'INSERT',                              # Q, R,
                  'MP_ID', 'SW_ID', 'TM_ID', 'BD_ID', 'TA_ID']        # S, T, U, V, W
 
       # Create csv file

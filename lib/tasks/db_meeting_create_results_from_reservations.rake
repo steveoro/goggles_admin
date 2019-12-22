@@ -94,7 +94,8 @@ DESC
       exit
     end
 
-    logger.info( "Meeting: #{meeting.get_full_name}" )
+    meeting_name = meeting.get_full_name
+    logger.info( "Meeting: #{meeting_name}" )
     logger.info( "Team: #{team.get_full_name}" )
 
     # Get reservations
@@ -134,18 +135,19 @@ DESC
     if reservations.count > 0
       # Get max mir ID
       max_id = MeetingIndividualResult.order( :id ).last.id
+      insert_comment = "-- #{meeting_name} #{meeting_id}"
 
       # Define columns
       columns = ['SPEC', 'SEX', 'CAT', 'MASTER', 'ISCR',             # A, B, C, D, E
                  'MIN', 'SEC', 'CEN', 'POSIZIONE', 'PUNTI', 'CHECK', # F, G, H, I. J, K
                  'FG', '', '', '', '',                               # L, M, N, O, P,
-                 max_id.to_s, 'INSERT',                              # Q, R,
+                 max_id.to_s, insert_comment,                        # Q, R,
                  'MP_ID', 'SW_ID', 'TM_ID', 'BD_ID', 'TA_ID']        # S, T, U, V, W
 
       # Create csv file
       file_name = "ris#{meeting.meeting_date_to_iso}#{meeting.code}_realtime_#{team_id}"
       csv_file = File.open( "#{LOG_DIR}/#{file_name}.csv", 'w' )
-      csv_file.puts "#{meeting.get_meeting_date}#{separator}#{meeting.get_full_name}"
+      csv_file.puts "#{meeting.get_meeting_date}#{separator}#{meeting_name}"
       headers = columns.join(separator)
       csv_file.puts headers
 
@@ -171,7 +173,7 @@ DESC
           team_affiliation_id = reservation['team_affiliation_id'].to_i
           id_formula     = "=Q#{cur_line - 1} + 1"
           fields = '(id,meeting_program_id,swimmer_id,team_id,badge_id,team_affiliation_id,rank, minutes,seconds,hundreds,standard_points,is_disqualified,is_out_of_race,lock_version,user_id,created_at,updated_at)'
-          values = "(\"&Q#{cur_line}&\",\"&S#{cur_line}&\",\"&T#{cur_line}&\",\"&U#{cur_line}&\",\"&V#{cur_line}&\",\"&W#{cur_line}&\",\"&I#{cur_line}&\",\"&F#{cur_line}&\",\"&G#{cur_line}&\",\"&H#{cur_line}&\",\"&SOSTITUISCI(J#{cur_line};\",\";\".\")&\",\"&SE(I#{cur_line}=\"DSQ\";1;0)&\",\"&L#{cur_line}&\",0,2,curdate(),curdate());\""
+          values = "(\"&Q#{cur_line}&\",\"&S#{cur_line}&\",\"&T#{cur_line}&\",\"&U#{cur_line}&\",\"&V#{cur_line}&\",\"&W#{cur_line}&\",\"&SE(I#{cur_line}<>\"SQ\";I#{cur_line};\"0\")&\",\"&F#{cur_line}&\",\"&G#{cur_line}&\",\"&H#{cur_line}&\",\"&SOSTITUISCI(J#{cur_line};\",\";\".\")&\",\"&SE(I#{cur_line}=\"SQ\";1;0)&\",\"&L#{cur_line}&\",0,2,curdate(),curdate());\""
           insert_formula = "=SE(K#{cur_line}=\"OK\";\"insert into meeting_individual_results #{fields} values #{values};\"\")&\" -- #{reservation['event']}-#{reservation['complete_name']}\""
 
           # Creates formula to calculate fin points

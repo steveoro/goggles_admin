@@ -1,0 +1,28 @@
+-- /var/www/goggles.org/releases/20191123095224/public/output/202001151759dev_remote_edit.diff.sql
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Remote editing recorded from actions by User ID 22
+INSERT INTO `meeting_reservations` (`id`, `meeting_id`, `user_id`, `team_id`, `swimmer_id`, `badge_id`, `notes`, `is_not_coming`, `has_confirmed`, `created_at`, `updated_at`)
+  VALUES (3119, 19247, 22, 1, 1025, 124945, '', 0, 0, '2020-01-15 16:54:10', '2020-01-15 16:54:10');
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (19528, 19247, 1, 1025, 124945, 20027, 22, 2, 23, 43, '2020-01-15 16:54:10', '2020-01-15 16:54:10', 1);
+
+UPDATE `meeting_event_reservations`
+  SET `is_doing_this`=1, `suggested_minutes`=2, `suggested_hundreds`=0, `suggested_seconds`=23, `user_id`=22
+  WHERE (`id`=19528);
+
+INSERT INTO `meeting_event_reservations` (`id`, `meeting_id`, `team_id`, `swimmer_id`, `badge_id`, `meeting_event_id`, `user_id`, `suggested_minutes`, `suggested_seconds`, `suggested_hundreds`, `created_at`, `updated_at`, `is_doing_this`)
+  VALUES (19529, 19247, 1, 1025, 124945, 20029, 22, 2, 26, 68, '2020-01-15 16:54:21', '2020-01-15 16:54:21', 1);
+
+UPDATE `meeting_event_reservations`
+  SET `is_doing_this`=1, `suggested_minutes`=2, `suggested_hundreds`=0, `suggested_seconds`=26, `user_id`=22
+  WHERE (`id`=19529);
+
+
+--
+COMMIT;

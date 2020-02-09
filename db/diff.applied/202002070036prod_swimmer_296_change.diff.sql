@@ -3,7 +3,7 @@
 -- Fix ball breaker request
 
 UPDATE swimmers
-  SET last_name = 'SCONOSCIUTO_296', first_name = 'SCONOSCIUTO', updated_at = '2020-02-01 17:11:25'
+  SET last_name = 'SCONOSCIUTO_296', first_name = 'SCONOSCIUTO', updated_at = NOW()
   WHERE swimmers.id = 296;
 
 INSERT INTO data_import_swimmer_aliases (created_at,updated_at,complete_name,swimmer_id)

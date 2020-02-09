@@ -41,12 +41,6 @@ parameters ('RAILS_ENV=production') not before having issued also a:
            user_pwd=<password_for_user_email>
            [site=#{SERVER_URL}]
 
-  - 'dump_forms'  => when set to a positive number it will skip the search
-    and dump the list of all form and field names found on the specified URL.
-
-  - 'site' => the search engine URL to be used, on which we are assuming there's
-    a search form to be invoked.
-
   DESC
   task :rebuild do
     puts "\r\n*** cache:rebuild ***"

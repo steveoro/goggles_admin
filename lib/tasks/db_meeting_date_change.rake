@@ -92,7 +92,7 @@ DESC
 
       # Create diff file
       file_name = "#{DateTime.now().strftime('%Y%m%d%H%M')}#{persist ? 'prod' : 'all'}_meeting_date_changer_#{meeting_date_changer.meeting.code}.diff"
-      File.open( LOG_DIR + '/' + file_name + '.sql', 'w' ) { |f| f.puts meeting_date_changer.sql_diff_text_log }
+      File.open( "#{LOG_DIR}/#{file_name}.sql", 'w' ) { |f| f.puts meeting_date_changer.sql_diff_text_log }
       logger.info( "\r\nLog file " + file_name + " created" )
 
       # Save new season
@@ -108,5 +108,3 @@ DESC
   #++
 end
 # =============================================================================
-
-

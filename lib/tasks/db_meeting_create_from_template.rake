@@ -36,13 +36,14 @@ Target meeting's season should exists.
 
 Could force creation of sessions and events
 
-Options: meeting=<meeting_id> season=<season_id> [edition=<edition_diff> sessions=false events=false persist=false log_dir=#{LOG_DIR}]
+Options: meeting=<meeting_id> season=<season_id> [edition=<edition_diff> sessions=true events=true days=<days_offset> persist=false log_dir=#{LOG_DIR}]
 
 - 'meeting'     existing meeting used as template.
 - 'season'      season of target meeting.
 - 'edition'     force the edition difference.
 - 'sessions'    force the creation of sessions.
 - 'events'      force the creation of events.
+- 'days'        change the meeting date
 - 'persist'     force to persist the changes.
 - 'log_dir'     allows to override the default log dir destination.
 
@@ -52,8 +53,9 @@ DESC
     meeting_id      = ENV.include?("meeting")     ? ENV["meeting"].to_i : nil
     season_id       = ENV.include?("season")      ? ENV["season"].to_i : nil
     edition         = ENV.include?("edition")     ? ENV["edition"].to_i : nil
-    sessions        = ENV.include?("sessions")    ? ENV["sessions"] == 'true' : false
-    events          = ENV.include?("events")      ? ENV["events"] == 'true' : false
+    sessions        = ENV.include?("sessions")    ? ENV["sessions"] == 'true' : true
+    events          = ENV.include?("events")      ? ENV["events"] == 'true' : true
+    days_offset     = ENV.include?("days")        ? ENV["days"].to_i : nil
     persist         = ENV.include?("persist")     ? ENV["persist"] == 'true' : false
     rails_config    = Rails.configuration             # Prepare & check configuration:
     db_name         = rails_config.database_configuration[Rails.env]['database']
@@ -141,7 +143,9 @@ DESC
       newer_meeting.season_id            = season.id
       newer_meeting.edition              = new_edition
       newer_meeting.header_date          = SeasonCreator.next_year_eq_day( newer_meeting.header_date, increment )
+      newer_meeting.header_date          = newer_meeting.header_date + days_offset
       newer_meeting.entry_deadline       = SeasonCreator.next_year_eq_day( newer_meeting.entry_deadline, increment )
+      newer_meeting.entry_deadline       = newer_meeting.entry_deadline + days_offset
       newer_meeting.header_year          = SeasonCreator.next_header_year( newer_meeting.header_year, increment )
 
       logger.info( "<------------------------------------------------------------>" )
@@ -175,6 +179,7 @@ DESC
             newer_session = MeetingSession.new( meeting_session.attributes.reject{ |e| ['id','lock_version','created_at','updated_at'].include?(e) } )
             newer_session.meeting_id     = newer_meeting.id
             newer_session.scheduled_date = SeasonCreator.next_year_eq_day( newer_session.scheduled_date, increment ) if newer_session.scheduled_date > Date.new()
+            newer_session.scheduled_date  = newer_session.scheduled_date + days_offset
             newer_session.is_autofilled  = true
             newer_session.session_order  = session_index + 1  # Reset session order
             if newer_session.save
